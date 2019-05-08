@@ -137,6 +137,14 @@ void ConfigParser::addOptionsModel(cli::CLIWrapper& cli) {
   cli.add<std::string>("--dec-cell",
       "Type of RNN cell: gru, lstm, tanh (s2s)",
       "gru");
+
+    cli.add<int>("--context-enc-depth",
+                 "Number of context encoder layers (transformer-context)",
+                 1);
+    cli.add<bool>("--freeze",
+                  "Number of context encoder layers (transformer-context)",
+                  false);
+
   cli.add<int>("--dec-cell-base-depth",
       "Number of transitional cells in first decoder layer (s2s)",
       2);

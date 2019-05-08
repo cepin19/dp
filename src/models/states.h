@@ -4,27 +4,31 @@
 #include "rnn/types.h"
 
 namespace marian {
+    class EncoderState {
+    private:
+        Expr context_;
+        Expr mask_;
+        Ptr<data::CorpusBatch> batch_;
+        Expr documentContext_;
+        Expr documentMask_;
 
-class EncoderState {
-private:
-  Expr context_;
-  Expr mask_;
-  Ptr<data::CorpusBatch> batch_;
+    public:
+        EncoderState(Expr context, Expr mask, Ptr<data::CorpusBatch> batch, Expr documentContext = nullptr, Expr documentMask= nullptr)
+                : context_(context), mask_(mask),batch_(batch) ,documentContext_(documentContext), documentMask_(documentMask) {}
 
-public:
-  EncoderState(Expr context, Expr mask, Ptr<data::CorpusBatch> batch)
-      : context_(context), mask_(mask), batch_(batch) {}
+        EncoderState() {}
 
-  EncoderState() {}
+        virtual Expr getContext() { return context_; }
+        virtual Expr getDocumentContext() { return documentContext_; }
 
-  virtual Expr getContext() { return context_; }
-  virtual Expr getAttended() { return context_; }
-  virtual Expr getMask() { return mask_; }
+        virtual Expr getAttended() { return context_; }
+        virtual Expr getMask() { return mask_; }
+        virtual Expr getDocumentMask() { return documentMask_; }
 
-  virtual const Words& getSourceWords() {
-    return batch_->front()->data();
-  }
-};
+        virtual const Words& getSourceWords() {
+          return batch_->front()->data();
+        }
+    };
 
 class DecoderState {
 protected:

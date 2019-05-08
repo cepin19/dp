@@ -12,4 +12,8 @@ namespace marian {
 // @TODO: find out why static is required here to get to compile
 static Ptr<EncoderBase> NewEncoderTransformer(Ptr<Options> options);
 static Ptr<DecoderBase> NewDecoderTransformer(Ptr<Options> options);
+static Ptr<EncoderBase> NewEncoderTransformerContext(Ptr<Options> options);
+static Ptr<EncoderBase> NewEncoderTransformerVoita(Ptr<Options> options);
+static Ptr<DecoderBase> NewDecoderTransformerContext(Ptr<Options> options);
+
 }  // namespace marian
