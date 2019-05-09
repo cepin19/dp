@@ -907,7 +907,6 @@ public:
                                      layer, // values
                                      layerMask, false, false, !freeze, false);
 
-            }
 
             layer = LayerAttention(prefix_ + "_l" + std::to_string(i) + "_selfToContext",
                                    layer, // query
@@ -915,6 +914,7 @@ public:
                                    layerContext, // values
                                    layerMaskContext);
               layer = LayerFFN(prefix_ + "_l" + std::to_string(i) + "_ffn", layer, "",!freeze, gate);
+          }
 
           // restore organization of batch and time steps. This is currently required
           // to make RNN-based decoders and beam search work with this. We are looking
