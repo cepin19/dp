@@ -211,15 +211,25 @@ public:
       return output;
     }
 
-    Expr postProcess(std::string prefix, std::string ops, Expr input, Expr prevInput, float dropProb = 0.0f, bool trainable=true) const {
+    Expr postProcess(std::string prefix, std::string ops, Expr input, Expr prevInput, float dropProb = 0.0f, bool trainable=true, bool gated=false) const {
       auto output = input;
       for(auto op : ops) {
         // dropout
         if(op == 'd')
           output = dropout(output, dropProb);
           // skip connection
-        else if(op == 'a')
-          output = output + prevInput;
+        else if(op == 'a') {
+            if (gated){
+                int dimModel = input->shape()[-1];
+                auto lambda= sigmoid_gate2(input,prevInput,prefix,"lambda",dimModel);
+                output=lambda*output+(1-lambda)*prevInput;
+            }
+            else {
+                output = output + prevInput;
+
+            }
+
+        }
           // highway connection
         else if(op == 'h') {
           int dimModel = input->shape()[-1];
@@ -230,11 +240,6 @@ public:
         else if(op == 'n')
           output = layerNorm(output, prefix, "", trainable);
           //sigmoid context gate
-        else if (op=='g'){
-          int dimModel = input->shape()[-1];
-          auto lambda= sigmoid_gate2(input,prevInput,prefix,"lambda",dimModel);
-          output=lambda*output+(1-lambda)*prevInput;
-        }
         else
           ABORT("Unknown pre-processing operation '{}'", op);
       }
@@ -387,7 +392,8 @@ public:
                         const Expr& mask,   // [-4: batch size, -3: num heads broadcast=1, -2: max length broadcast=1, -1: max length]
                         bool cache = false,
                         bool saveAttentionWeights = false,
-                        bool trainable=true) {
+                        bool trainable=true,
+                                bool gated=false) {
       int dimModel = input->shape()[-1];
 
       float dropProb = inference_ ? 0 : opt<float>("transformer-dropout");
@@ -400,12 +406,12 @@ public:
       output = MultiHead(prefix, dimModel, heads, output, keys, values, mask, cache, saveAttentionWeights, trainable);
 
       auto opsPost = opt<std::string>("transformer-postprocess");
-      output = postProcess(prefix + "_Wo", opsPost, output, input, dropProb, trainable);
+      output = postProcess(prefix + "_Wo", opsPost, output, input, dropProb, trainable,gated);
       //  output->setTrainable(trainable);
 
       return output;
     }
-
+/*
 
     //adds sigmoid gate with trainable weights
     Expr LayerAttentionGated(std::string prefix,
@@ -430,12 +436,12 @@ public:
       output = MultiHead(prefix, dimModel, heads, output, keys, values, mask, cache, saveAttentionWeights,trainable);
 
       auto opsPost = opt<std::string>("transformer-postprocess");
-      output = postProcess(prefix + "_Wo", opsPost+"g", output, input, dropProb, trainable);
+      output = postProcess(prefix + "_Wo", opsPost, output, input, dropProb, trainable,true);
       //   output->setTrainable(trainable);
 
       return output;
     }
-
+*/
 
     Expr DecoderLayerSelfAttention(rnn::State& decoderLayerState,
                                    const rnn::State& prevdecoderLayerState,
@@ -468,7 +474,7 @@ public:
       ABORT("Invalid activation name '{}'", actName);
     }
 
-    Expr LayerFFN(std::string prefix, Expr input, std::string op="", bool trainable=true) const {
+    Expr LayerFFN(std::string prefix, Expr input, std::string op="", bool trainable=true, bool gated=false) const {
       int dimModel = input->shape()[-1];
 
       float dropProb = inference_ ? 0 : opt<float>("transformer-dropout");
@@ -500,12 +506,12 @@ public:
         opsPost=op;
       }
       output
-              = postProcess(prefix + "_ffn", opsPost, output, input, dropProb, trainable);
+              = postProcess(prefix + "_ffn", opsPost, output, input, dropProb, trainable, gated);
       //output->setTrainable(trainable);
 
       return output;
     }
-
+/*
     Expr LayerFFNGated(std::string prefix, Expr input, std::string op="", bool trainable=true) const {
       int dimModel = input->shape()[-1];
 
@@ -524,10 +530,10 @@ public:
 
       // the stack of FF layers
       for(int i = 1; i < depthFfn; ++i) {
-        output = dense(output, prefix, /*suffix=*/std::to_string(i), dimFfn, actFn, ffnDropProb,trainable);
+        output = dense(output, prefix, std::to_string(i), dimFfn, actFn, ffnDropProb,trainable);
         // output->setTrainable(trainable);
       }
-      output = dense(output, prefix, /*suffix=*/std::to_string(depthFfn), dimModel,nullptr,0.0f,trainable);
+      output = dense(output, prefix, std::to_string(depthFfn), dimModel,nullptr,0.0f,trainable,true);
       //output->setTrainable(trainable);
 
       std::string opsPost;
@@ -542,7 +548,7 @@ public:
       //output->setTrainable(trainable);
 
       return output;
-    }
+    }*/
 
   // Implementation of Average Attention Network Layer (AAN) from
   // https://arxiv.org/pdf/1805.00631.pdf
@@ -868,6 +874,7 @@ public:
                   = reshape(transposeTimeBatch(batchMaskContext), {1, dimBatch, 1, dimSrcContextWords}); // [-4: beam depth=1, -3: batch size, -2: vector dim=1, -1: max length]
           auto opsEmb = opt<std::string>("transformer-postprocess-emb");
           auto freeze = opt<bool>("freeze");
+            auto gate = opt<bool>("context-gate");
 
           float dropProb = inference_ ? 0 : opt<float>("transformer-dropout");
           layer = preProcess(prefix_ + "_emb", opsEmb, layer, dropProb,!freeze);
@@ -887,27 +894,19 @@ public:
                                           layerContext, // keys
                                           layerContext, // values
                                           layerMaskContext);
-            layerContext = LayerFFN("context_encoder__ffn" + std::to_string(i), layerContext);
+            layerContext = LayerFFN("context_encoder_ffn" + std::to_string(i), layerContext);
 
           }
 
           // apply encoder layers
           auto encDepth = opt<int>("enc-depth");
           for(int i = 1; i <= encDepth; ++i) {
-            if (freeze) {
               layer = LayerAttention(prefix_ + "_l" + std::to_string(i) + "_self",
                                      layer, // query
                                      layer, // keys
                                      layer, // values
-                                     layerMask, false, false, false
-              );
-            } else {
+                                     layerMask, false, false, !freeze, false);
 
-              layer = LayerAttention(prefix_ + "_l" + std::to_string(i) + "_self",
-                                     layer, // query
-                                     layer, // keys
-                                     layer, // values
-                                     layerMask);
             }
 
             layer = LayerAttention(prefix_ + "_l" + std::to_string(i) + "_selfToContext",
@@ -915,13 +914,7 @@ public:
                                    layerContext, // keys
                                    layerContext, // values
                                    layerMaskContext);
-            if (freeze) {
-              layer = LayerFFNGated(prefix_ + "_l" + std::to_string(i) + "_ffn", layer, "",false);
-            } else {
-              layer = LayerFFNGated(prefix_ + "_l" + std::to_string(i) + "_ffn", layer);
-
-            }
-          }
+              layer = LayerFFN(prefix_ + "_l" + std::to_string(i) + "_ffn", layer, "",!freeze, gate);
 
           // restore organization of batch and time steps. This is currently required
           // to make RNN-based decoders and beam search work with this. We are looking
@@ -1220,6 +1213,7 @@ public:
           auto opsEmb = opt<std::string>("transformer-postprocess-emb");
           float dropProb = inference_ ? 0 : opt<float>("transformer-dropout");
           auto freeze = opt<bool>("freeze");
+            auto gate = opt<bool>("context-gate");
 
           query = preProcess(prefix_ + "_emb", opsEmb, query, dropProb);
 
@@ -1343,13 +1337,13 @@ public:
                                        encoderDocumentMasks[j],
                         /*cache=*/true,
                                        saveAttentionWeights);
-                query = LayerAttentionGated(prefix,//+"decoderToEncoder",
+                query = LayerAttention(prefix,//+"decoderToEncoder",
                                             query,
                                             encoderContexts[j], // keys
                                             encoderContexts[j], // values
                                             encoderMasks[j],
                         /*cache=*/true,
-                                            saveAttentionWeights,!freeze);
+                                            saveAttentionWeights,!freeze,gate);
 
 
               }
@@ -1635,9 +1629,6 @@ public:
     alignments_.clear();
   }
 };
-
-
-
 
 
 

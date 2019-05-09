@@ -144,7 +144,9 @@ void ConfigParser::addOptionsModel(cli::CLIWrapper& cli) {
     cli.add<bool>("--freeze",
                   "Number of context encoder layers (transformer-context)",
                   false);
-
+  cli.add<bool>("--context-gate",
+                "Number of context encoder layers (transformer-context)",
+                false);
   cli.add<int>("--dec-cell-base-depth",
       "Number of transitional cells in first decoder layer (s2s)",
       2);
