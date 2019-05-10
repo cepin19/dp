@@ -222,9 +222,12 @@ public:
             if (gated){
                 int dimModel = input->shape()[-1];
                 //auto lambda= sigmoid_gate2(input,prevInput,prefix,"lambda",dimModel);
-                auto lambda = dense(x, prefix, "gate", dimModel, (ActivationFunction*)sigmoid);
+               // auto lambda = dense(input, prefix, "gate", dimModel, (ActivationFunction*)sigmoid);
 
-                output=lambda*output+(1-lambda)*prevInput;
+              //  output=lambda*output+(1-lambda)*prevInput;
+                auto gi = dense(prevInput, prefix, /*suffix=*/"i", dimModel, (ActivationFunction*)sigmoid);
+                auto gf = dense(output, prefix, /*suffix=*/"f", dimModel, (ActivationFunction*)sigmoid);
+                output = gi * prevInput + gf * output;
             }
             else {
                 output = output + prevInput;
@@ -241,7 +244,6 @@ public:
           // layer normalization
         else if(op == 'n')
           output = layerNorm(output, prefix, "", trainable);
-          //sigmoid context gate
         else
           ABORT("Unknown pre-processing operation '{}'", op);
       }
