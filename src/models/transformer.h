@@ -221,7 +221,9 @@ public:
         else if(op == 'a') {
             if (gated){
                 int dimModel = input->shape()[-1];
-                auto lambda= sigmoid_gate2(input,prevInput,prefix,"lambda",dimModel);
+                //auto lambda= sigmoid_gate2(input,prevInput,prefix,"lambda",dimModel);
+                auto lambda = dense(x, prefix, "gate", dimModel, (ActivationFunction*)sigmoid);
+
                 output=lambda*output+(1-lambda)*prevInput;
             }
             else {
