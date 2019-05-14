@@ -158,13 +158,13 @@ public:
       auto Wi = graph_x->param(prefix + "_Wi" + suffix, {x->shape()[-1], outDim}, inits::glorot_uniform);
       auto bi = graph_x->param(prefix + "_bi" + suffix, {1, outDim}, inits::zeros);
 
-      auto Ws = graph_y->param(prefix + "_Ws" + suffix, {x->shape()[-1], outDim}, inits::glorot_uniform);
+      auto Ws = graph_y->param(prefix + "_Ws" + suffix, {y->shape()[-1], outDim}, inits::glorot_uniform);
       auto bs = graph_y->param(prefix + "_bs" + suffix, {1, outDim}, inits::zeros);
 
       x = affine(x, Wi, bi);
       y = affine(y, Ws, bs);
-      x = sigmoid(x + y);
-      return x;
+      auto lambda = sigmoid(x + y);
+      return lambda;
     }
     // like affine() but with built-in parameters, activation, and dropout
     static inline
@@ -221,13 +221,13 @@ public:
         else if(op == 'a') {
             if (gated){
                 int dimModel = input->shape()[-1];
-                //auto lambda= sigmoid_gate2(input,prevInput,prefix,"lambda",dimModel);
+                auto lambda= sigmoid_gate2(input,prevInput,prefix,"lambda",dimModel);
                // auto lambda = dense(input, prefix, "gate", dimModel, (ActivationFunction*)sigmoid);
 
-              //  output=lambda*output+(1-lambda)*prevInput;
-                auto gi = dense(prevInput, prefix, /*suffix=*/"i", dimModel, (ActivationFunction*)sigmoid);
-                auto gf = dense(output, prefix, /*suffix=*/"f", dimModel, (ActivationFunction*)sigmoid);
-                output = gi * prevInput + gf * output;
+               output=lambda*output+(1-lambda)*prevInput;
+              //  auto gi = dense(prevInput, prefix, /*suffix=*/"i", dimModel, (ActivationFunction*)sigmoid);
+               // auto gf = dense(output, prefix, /*suffix=*/"f", dimModel, (ActivationFunction*)sigmoid);
+               // output = gi * prevInput + gf * output;
             }
             else {
                 output = output + prevInput;
