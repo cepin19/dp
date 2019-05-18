@@ -844,7 +844,7 @@ public:
           else
             embedding = createWordEmbeddingLayer(batchIndex_+1);
           //embedding2 = createWordEmbeddingLayer2(batchIndex_);
-                  std::cout << "batch index" << batchIndex;
+        //          std::cout << "batch index" << batchIndex;
           std::tie(batchEmbeddings, batchMask) = embedding->apply((*batch)[batchIndex_+1]);
           // std::tie(batchEmbeddings2, batchMask2) = embedding2->apply((*batch)[batchIndex_]);
           std::tie(batchEmbeddingsContext, batchMaskContext) = embedding->apply((*batch)[batchIndex_]);
@@ -1092,7 +1092,9 @@ public:
           // layerSource=LayerFFN(prefix_ + "_l" + std::to_string(encDepth) + "consdafafext_ffn",layerSource);
           auto  lambda=sigmoid_gate2(layerContextSource,layerSource,"sum_gate","lambda",layerContextSource->shape()[-1]);
           auto output=lambda*layerContextSource+(1-lambda)*layerSource;
-          //auto context = transposeTimeBatch(output); // [-4: beam depth=1, -3: max length, -2: batch size, -1: vector dim]
+          output = LayerFFN(prefix_ + "final_ffn", output);
+
+            //auto context = transposeTimeBatch(output); // [-4: beam depth=1, -3: max length, -2: batch size, -1: vector dim]
           //layerContext = transposeTimeBatch(layerContext); // [-4: beam depth=1, -3: max length, -2: batch size, -1: vector dim]
           // layer = transposeTimeBatch(layer); // [-4: beam depth=1, -3: max length, -2: batch size, -1: vector dim]
           //  auto output=layerSource+layerContextSource ;
