@@ -145,7 +145,7 @@ void ConfigParser::addOptionsModel(cli::CLIWrapper& cli) {
                   "Number of context encoder layers (transformer-context)",
                   false);
   cli.add<bool>("--context-gate",
-                "Number of context encoder layers (transformer-context)",
+                "Use context gate (transformer-context)",
                 false);
   cli.add<int>("--dec-cell-base-depth",
       "Number of transitional cells in first decoder layer (s2s)",

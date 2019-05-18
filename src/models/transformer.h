@@ -844,7 +844,7 @@ public:
           else
             embedding = createWordEmbeddingLayer(batchIndex_+1);
           //embedding2 = createWordEmbeddingLayer2(batchIndex_);
-
+                  std::cout << "batch index" << batchIndex;
           std::tie(batchEmbeddings, batchMask) = embedding->apply((*batch)[batchIndex_+1]);
           // std::tie(batchEmbeddings2, batchMask2) = embedding2->apply((*batch)[batchIndex_]);
           std::tie(batchEmbeddingsContext, batchMaskContext) = embedding->apply((*batch)[batchIndex_]);
