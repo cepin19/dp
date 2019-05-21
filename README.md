@@ -6,3 +6,5 @@ This repository contains:
 * scripts/: Python and Bash scripts used for data preprocessing, training, and evalulation of architectures examined in my work
 * test_set/: A discourse test set, based on a English-French original by Bawden et al., translated into English-Czech and extended
 * data/: Training logs, translations of dev and test sets generated of several of the systems, other stuff that does not belong into any of the categories above
+** data/training_logs/
+** data/discourse_eval_logs/
