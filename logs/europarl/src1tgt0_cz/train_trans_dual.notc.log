@@ -1,0 +1,624 @@
+[2019-02-28 23:19:24] [marian] Marian v1.7.8 63e1cfe4 2019-02-11 21:04:00 -0800
+[2019-02-28 23:19:24] [marian] Running on pcknot4 as process 24779 with command line:
+[2019-02-28 23:19:24] [marian] /mnt/minerva1/nlp/projects/nmt/4/marian-dev/build/marian --model model/model.src1tgt0.dual.notc.npz --type multi-transformer --train-sets corp/europarl.cs-en.docs.train.en.bpe.src_prev corp/europarl.cs-en.docs.train.en.bpe.src corp/europarl.cs-en.docs.train.cz.bpe --max-length 55 --dim-vocabs 30000 30000 --vocabs corp/vocab.encs.europarl.yml corp/vocab.encs.europarl.yml corp/vocab.encs.europarl.yml --mini-batch-fit -w 8900 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/europarl.cs-en.docs.dev.en.bpe.src_prev corp/europarl.cs-en.docs.dev.en.bpe.src corp/europarl.cs-en.docs.dev.cz.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 16 --beam-size 6 --normalize 0.6 --log model/train_trans.dual.notc.log --valid-log model/valid_trans.dual.notc.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 8 --devices 0 --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus
+[2019-02-28 23:19:24] [config] after-batches: 0
+[2019-02-28 23:19:24] [config] after-epochs: 0
+[2019-02-28 23:19:24] [config] allow-unk: false
+[2019-02-28 23:19:24] [config] beam-size: 6
+[2019-02-28 23:19:24] [config] bert-class-symbol: "[CLS]"
+[2019-02-28 23:19:24] [config] bert-mask-symbol: "[MASK]"
+[2019-02-28 23:19:24] [config] bert-masking-fraction: 0.15
+[2019-02-28 23:19:24] [config] bert-sep-symbol: "[SEP]"
+[2019-02-28 23:19:24] [config] bert-train-type-embeddings: true
+[2019-02-28 23:19:24] [config] bert-type-vocab-size: 2
+[2019-02-28 23:19:24] [config] best-deep: false
+[2019-02-28 23:19:24] [config] clip-gemm: 0
+[2019-02-28 23:19:24] [config] clip-norm: 5
+[2019-02-28 23:19:24] [config] cost-type: ce-mean
+[2019-02-28 23:19:24] [config] cpu-threads: 0
+[2019-02-28 23:19:24] [config] data-weighting: ""
+[2019-02-28 23:19:24] [config] data-weighting-type: sentence
+[2019-02-28 23:19:24] [config] dec-cell: gru
+[2019-02-28 23:19:24] [config] dec-cell-base-depth: 2
+[2019-02-28 23:19:24] [config] dec-cell-high-depth: 1
+[2019-02-28 23:19:24] [config] dec-depth: 6
+[2019-02-28 23:19:24] [config] devices:
+[2019-02-28 23:19:24] [config]   - 0
+[2019-02-28 23:19:24] [config] dim-emb: 512
+[2019-02-28 23:19:24] [config] dim-rnn: 1024
+[2019-02-28 23:19:24] [config] dim-vocabs:
+[2019-02-28 23:19:24] [config]   - 30000
+[2019-02-28 23:19:24] [config]   - 30000
+[2019-02-28 23:19:24] [config] disp-first: 0
+[2019-02-28 23:19:24] [config] disp-freq: 500
+[2019-02-28 23:19:24] [config] disp-label-counts: false
+[2019-02-28 23:19:24] [config] dropout-rnn: 0
+[2019-02-28 23:19:24] [config] dropout-src: 0
+[2019-02-28 23:19:24] [config] dropout-trg: 0
+[2019-02-28 23:19:24] [config] dump-config: ""
+[2019-02-28 23:19:24] [config] early-stopping: 10
+[2019-02-28 23:19:24] [config] embedding-fix-src: false
+[2019-02-28 23:19:24] [config] embedding-fix-trg: false
+[2019-02-28 23:19:24] [config] embedding-normalization: false
+[2019-02-28 23:19:24] [config] embedding-vectors:
+[2019-02-28 23:19:24] [config]   []
+[2019-02-28 23:19:24] [config] enc-cell: gru
+[2019-02-28 23:19:24] [config] enc-cell-depth: 1
+[2019-02-28 23:19:24] [config] enc-depth: 6
+[2019-02-28 23:19:24] [config] enc-type: bidirectional
+[2019-02-28 23:19:24] [config] exponential-smoothing: 0.0001
+[2019-02-28 23:19:24] [config] grad-dropping-momentum: 0
+[2019-02-28 23:19:24] [config] grad-dropping-rate: 0
+[2019-02-28 23:19:24] [config] grad-dropping-warmup: 100
+[2019-02-28 23:19:24] [config] guided-alignment: none
+[2019-02-28 23:19:24] [config] guided-alignment-cost: mse
+[2019-02-28 23:19:24] [config] guided-alignment-weight: 0.1
+[2019-02-28 23:19:24] [config] ignore-model-config: false
+[2019-02-28 23:19:24] [config] input-types:
+[2019-02-28 23:19:24] [config]   []
+[2019-02-28 23:19:24] [config] interpolate-env-vars: false
+[2019-02-28 23:19:24] [config] keep-best: false
+[2019-02-28 23:19:24] [config] label-smoothing: 0.1
+[2019-02-28 23:19:24] [config] layer-normalization: false
+[2019-02-28 23:19:24] [config] learn-rate: 0.0003
+[2019-02-28 23:19:24] [config] log: model/train_trans.dual.notc.log
+[2019-02-28 23:19:24] [config] log-level: info
+[2019-02-28 23:19:24] [config] log-time-zone: ""
+[2019-02-28 23:19:24] [config] lr-decay: 0
+[2019-02-28 23:19:24] [config] lr-decay-freq: 50000
+[2019-02-28 23:19:24] [config] lr-decay-inv-sqrt:
+[2019-02-28 23:19:24] [config]   - 16000
+[2019-02-28 23:19:24] [config] lr-decay-repeat-warmup: false
+[2019-02-28 23:19:24] [config] lr-decay-reset-optimizer: false
+[2019-02-28 23:19:24] [config] lr-decay-start:
+[2019-02-28 23:19:24] [config]   - 10
+[2019-02-28 23:19:24] [config]   - 1
+[2019-02-28 23:19:24] [config] lr-decay-strategy: epoch+stalled
+[2019-02-28 23:19:24] [config] lr-report: true
+[2019-02-28 23:19:24] [config] lr-warmup: 16000
+[2019-02-28 23:19:24] [config] lr-warmup-at-reload: false
+[2019-02-28 23:19:24] [config] lr-warmup-cycle: false
+[2019-02-28 23:19:24] [config] lr-warmup-start-rate: 0
+[2019-02-28 23:19:24] [config] max-length: 55
+[2019-02-28 23:19:24] [config] max-length-crop: false
+[2019-02-28 23:19:24] [config] max-length-factor: 3
+[2019-02-28 23:19:24] [config] maxi-batch: 1000
+[2019-02-28 23:19:24] [config] maxi-batch-sort: trg
+[2019-02-28 23:19:24] [config] mini-batch: 1000
+[2019-02-28 23:19:24] [config] mini-batch-fit: true
+[2019-02-28 23:19:24] [config] mini-batch-fit-step: 10
+[2019-02-28 23:19:24] [config] mini-batch-overstuff: 1
+[2019-02-28 23:19:24] [config] mini-batch-track-lr: false
+[2019-02-28 23:19:24] [config] mini-batch-understuff: 1
+[2019-02-28 23:19:24] [config] mini-batch-warmup: 0
+[2019-02-28 23:19:24] [config] mini-batch-words: 0
+[2019-02-28 23:19:24] [config] mini-batch-words-ref: 0
+[2019-02-28 23:19:24] [config] model: model/model.src1tgt0.dual.notc.npz
+[2019-02-28 23:19:24] [config] multi-loss-type: sum
+[2019-02-28 23:19:24] [config] multi-node: false
+[2019-02-28 23:19:24] [config] multi-node-overlap: true
+[2019-02-28 23:19:24] [config] n-best: false
+[2019-02-28 23:19:24] [config] no-nccl: false
+[2019-02-28 23:19:24] [config] no-reload: false
+[2019-02-28 23:19:24] [config] no-restore-corpus: true
+[2019-02-28 23:19:24] [config] no-shuffle: false
+[2019-02-28 23:19:24] [config] normalize: 0.6
+[2019-02-28 23:19:24] [config] num-devices: 0
+[2019-02-28 23:19:24] [config] optimizer: adam
+[2019-02-28 23:19:24] [config] optimizer-delay: 8
+[2019-02-28 23:19:24] [config] optimizer-params:
+[2019-02-28 23:19:24] [config]   - 0.9
+[2019-02-28 23:19:24] [config]   - 0.98
+[2019-02-28 23:19:24] [config]   - 1e-09
+[2019-02-28 23:19:24] [config] overwrite: false
+[2019-02-28 23:19:24] [config] pretrained-model: ""
+[2019-02-28 23:19:24] [config] quiet: false
+[2019-02-28 23:19:24] [config] quiet-translation: true
+[2019-02-28 23:19:24] [config] relative-paths: false
+[2019-02-28 23:19:24] [config] right-left: false
+[2019-02-28 23:19:24] [config] save-freq: 5000
+[2019-02-28 23:19:24] [config] seed: 1111
+[2019-02-28 23:19:24] [config] shuffle-in-ram: false
+[2019-02-28 23:19:24] [config] skip: false
+[2019-02-28 23:19:24] [config] sqlite: ""
+[2019-02-28 23:19:24] [config] sqlite-drop: false
+[2019-02-28 23:19:24] [config] sync-sgd: true
+[2019-02-28 23:19:24] [config] tempdir: /tmp
+[2019-02-28 23:19:24] [config] tied-embeddings: false
+[2019-02-28 23:19:24] [config] tied-embeddings-all: true
+[2019-02-28 23:19:24] [config] tied-embeddings-src: false
+[2019-02-28 23:19:24] [config] train-sets:
+[2019-02-28 23:19:24] [config]   - corp/europarl.cs-en.docs.train.en.bpe.src_prev
+[2019-02-28 23:19:24] [config]   - corp/europarl.cs-en.docs.train.en.bpe.src
+[2019-02-28 23:19:24] [config]   - corp/europarl.cs-en.docs.train.cz.bpe
+[2019-02-28 23:19:24] [config] transformer-aan-activation: swish
+[2019-02-28 23:19:24] [config] transformer-aan-depth: 2
+[2019-02-28 23:19:24] [config] transformer-aan-nogate: false
+[2019-02-28 23:19:24] [config] transformer-decoder-autoreg: self-attention
+[2019-02-28 23:19:24] [config] transformer-dim-aan: 2048
+[2019-02-28 23:19:24] [config] transformer-dim-ffn: 2048
+[2019-02-28 23:19:24] [config] transformer-dropout: 0.1
+[2019-02-28 23:19:24] [config] transformer-dropout-attention: 0
+[2019-02-28 23:19:24] [config] transformer-dropout-ffn: 0
+[2019-02-28 23:19:24] [config] transformer-ffn-activation: swish
+[2019-02-28 23:19:24] [config] transformer-ffn-depth: 2
+[2019-02-28 23:19:24] [config] transformer-guided-alignment-layer: last
+[2019-02-28 23:19:24] [config] transformer-heads: 8
+[2019-02-28 23:19:24] [config] transformer-no-projection: false
+[2019-02-28 23:19:24] [config] transformer-postprocess: dan
+[2019-02-28 23:19:24] [config] transformer-postprocess-emb: d
+[2019-02-28 23:19:24] [config] transformer-preprocess: ""
+[2019-02-28 23:19:24] [config] transformer-tied-layers:
+[2019-02-28 23:19:24] [config]   []
+[2019-02-28 23:19:24] [config] transformer-train-position-embeddings: false
+[2019-02-28 23:19:24] [config] type: multi-transformer
+[2019-02-28 23:19:24] [config] ulr: false
+[2019-02-28 23:19:24] [config] ulr-dim-emb: 0
+[2019-02-28 23:19:24] [config] ulr-dropout: 0
+[2019-02-28 23:19:24] [config] ulr-keys-vectors: ""
+[2019-02-28 23:19:24] [config] ulr-query-vectors: ""
+[2019-02-28 23:19:24] [config] ulr-softmax-temperature: 1
+[2019-02-28 23:19:24] [config] ulr-trainable-transformation: false
+[2019-02-28 23:19:24] [config] valid-freq: 5000
+[2019-02-28 23:19:24] [config] valid-log: model/valid_trans.dual.notc.log
+[2019-02-28 23:19:24] [config] valid-max-length: 1000
+[2019-02-28 23:19:24] [config] valid-metrics:
+[2019-02-28 23:19:24] [config]   - cross-entropy
+[2019-02-28 23:19:24] [config]   - perplexity
+[2019-02-28 23:19:24] [config]   - translation
+[2019-02-28 23:19:24] [config] valid-mini-batch: 16
+[2019-02-28 23:19:24] [config] valid-script-path: ./val.sh
+[2019-02-28 23:19:24] [config] valid-sets:
+[2019-02-28 23:19:24] [config]   - corp/europarl.cs-en.docs.dev.en.bpe.src_prev
+[2019-02-28 23:19:24] [config]   - corp/europarl.cs-en.docs.dev.en.bpe.src
+[2019-02-28 23:19:24] [config]   - corp/europarl.cs-en.docs.dev.cz.bpe
+[2019-02-28 23:19:24] [config] valid-translation-output: data/valid.bpe.en.output
+[2019-02-28 23:19:24] [config] vocabs:
+[2019-02-28 23:19:24] [config]   - corp/vocab.encs.europarl.yml
+[2019-02-28 23:19:24] [config]   - corp/vocab.encs.europarl.yml
+[2019-02-28 23:19:24] [config]   - corp/vocab.encs.europarl.yml
+[2019-02-28 23:19:24] [config] word-penalty: 0
+[2019-02-28 23:19:24] [config] workspace: 8900
+[2019-02-28 23:19:24] [config] Model is being created with Marian v1.7.8 63e1cfe4 2019-02-11 21:04:00 -0800
+[2019-02-28 23:19:24] Using synchronous training
+[2019-02-28 23:19:24] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.europarl.yml
+[2019-02-28 23:19:25] [data] Setting vocabulary size for input 0 to 30000
+[2019-02-28 23:19:25] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.europarl.yml
+[2019-02-28 23:19:25] [data] Setting vocabulary size for input 1 to 30000
+[2019-02-28 23:19:25] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.europarl.yml
+[2019-02-28 23:19:25] [data] Setting vocabulary size for input 2 to 30000
+[2019-02-28 23:19:25] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-02-28 23:19:25] [batching] Collecting statistics for batch fitting with step size 10
+[2019-02-28 23:19:25] [memory] Extending reserved space to 8960 MB (device gpu0)
+[2019-02-28 23:19:28] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-02-28 23:19:28] [comm] NCCLCommunicator constructed successfully.
+[2019-02-28 23:19:28] [training] Using 1 GPUs
+[2019-02-28 23:19:28] [memory] Reserving 323 MB, device gpu0
+[2019-02-28 23:19:28] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-02-28 23:19:28] [memory] Reserving 323 MB, device gpu0
+[2019-02-28 23:19:34] [batching] Done. Typical MB size is 38080 target words
+[2019-02-28 23:19:34] [memory] Extending reserved space to 8960 MB (device gpu0)
+[2019-02-28 23:19:34] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-02-28 23:19:34] [comm] NCCLCommunicator constructed successfully.
+[2019-02-28 23:19:34] [training] Using 1 GPUs
+[2019-02-28 23:19:34] Training started
+[2019-02-28 23:19:34] [data] Shuffling data
+[2019-02-28 23:19:41] [data] Done reading 620637 sentences
+[2019-02-28 23:19:43] [data] Done shuffling 620637 sentences to temp files
+[2019-02-28 23:20:04] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-02-28 23:20:04] [memory] Reserving 323 MB, device gpu0
+[2019-02-28 23:20:04] [memory] Reserving 323 MB, device gpu0
+[2019-02-28 23:20:04] [memory] Reserving 323 MB, device gpu0
+[2019-02-28 23:20:05] [memory] Reserving 646 MB, device gpu0
+[2019-02-28 23:30:00] Ep. 1 : Up. 500 : Sen. 314,495 : Cost 246.20288086 : Time 635.14s : 13097.64 words/s : L.r. 9.3750e-06
+[2019-02-28 23:36:23] Seen 515211 samples
+[2019-02-28 23:36:23] Starting epoch 2
+[2019-02-28 23:36:23] [data] Shuffling data
+[2019-02-28 23:36:24] [data] Done reading 620637 sentences
+[2019-02-28 23:36:26] [data] Done shuffling 620637 sentences to temp files
+[2019-02-28 23:40:23] Ep. 2 : Up. 1000 : Sen. 116,458 : Cost 209.31814575 : Time 622.47s : 13330.87 words/s : L.r. 1.8750e-05
+[2019-02-28 23:50:31] Ep. 2 : Up. 1500 : Sen. 431,403 : Cost 202.65165710 : Time 607.96s : 13935.81 words/s : L.r. 2.8125e-05
+[2019-02-28 23:53:11] Seen 515211 samples
+[2019-02-28 23:53:11] Starting epoch 3
+[2019-02-28 23:53:11] [data] Shuffling data
+[2019-02-28 23:53:12] [data] Done reading 620637 sentences
+[2019-02-28 23:53:14] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 00:00:48] Ep. 3 : Up. 2000 : Sen. 231,590 : Cost 188.11698914 : Time 617.26s : 13261.26 words/s : L.r. 3.7500e-05
+[2019-03-01 00:09:59] Seen 515211 samples
+[2019-03-01 00:10:00] Starting epoch 4
+[2019-03-01 00:10:00] [data] Shuffling data
+[2019-03-01 00:10:00] [data] Done reading 620637 sentences
+[2019-03-01 00:10:02] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 00:11:20] Ep. 4 : Up. 2500 : Sen. 28,786 : Cost 186.29858398 : Time 632.34s : 13386.16 words/s : L.r. 4.6875e-05
+[2019-03-01 00:21:29] Ep. 4 : Up. 3000 : Sen. 343,811 : Cost 171.52104187 : Time 608.98s : 13930.22 words/s : L.r. 5.6250e-05
+[2019-03-01 00:26:50] Seen 515211 samples
+[2019-03-01 00:26:50] Starting epoch 5
+[2019-03-01 00:26:50] [data] Shuffling data
+[2019-03-01 00:26:50] [data] Done reading 620637 sentences
+[2019-03-01 00:26:52] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 00:31:48] Ep. 5 : Up. 3500 : Sen. 142,119 : Cost 154.27558899 : Time 619.02s : 13202.92 words/s : L.r. 6.5625e-05
+[2019-03-01 00:41:48] Ep. 5 : Up. 4000 : Sen. 458,291 : Cost 143.55354309 : Time 599.89s : 13810.12 words/s : L.r. 7.5000e-05
+[2019-03-01 00:43:38] Seen 515211 samples
+[2019-03-01 00:43:38] Starting epoch 6
+[2019-03-01 00:43:38] [data] Shuffling data
+[2019-03-01 00:43:38] [data] Done reading 620637 sentences
+[2019-03-01 00:43:41] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 00:52:18] Ep. 6 : Up. 4500 : Sen. 260,194 : Cost 134.66848755 : Time 630.06s : 13395.83 words/s : L.r. 8.4375e-05
+[2019-03-01 01:00:29] Seen 515211 samples
+[2019-03-01 01:00:29] Starting epoch 7
+[2019-03-01 01:00:29] [data] Shuffling data
+[2019-03-01 01:00:29] [data] Done reading 620637 sentences
+[2019-03-01 01:00:31] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 01:02:46] Ep. 7 : Up. 5000 : Sen. 58,499 : Cost 126.08150482 : Time 628.11s : 13280.58 words/s : L.r. 9.3750e-05
+[2019-03-01 01:02:46] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz.orig.npz
+[2019-03-01 01:02:52] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.iter5000.npz
+[2019-03-01 01:02:57] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz
+[2019-03-01 01:03:02] Saving Adam parameters to model/model.src1tgt0.dual.notc.npz.optimizer.npz
+[2019-03-01 01:03:22] [valid] Ep. 7 : Up. 5000 : cross-entropy : 125.985 : new best
+[2019-03-01 01:03:31] [valid] Ep. 7 : Up. 5000 : perplexity : 58.5449 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-01 01:10:50] [valid] Ep. 7 : Up. 5000 : translation : 7.3 : new best
+[2019-03-01 01:20:49] Ep. 7 : Up. 5500 : Sen. 372,759 : Cost 116.40520477 : Time 1082.20s : 7650.36 words/s : L.r. 1.0313e-04
+[2019-03-01 01:25:22] Seen 515211 samples
+[2019-03-01 01:25:22] Starting epoch 8
+[2019-03-01 01:25:22] [data] Shuffling data
+[2019-03-01 01:25:22] [data] Done reading 620637 sentences
+[2019-03-01 01:25:24] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 01:31:11] Ep. 8 : Up. 6000 : Sen. 174,287 : Cost 107.03128052 : Time 622.17s : 13207.15 words/s : L.r. 1.1250e-04
+[2019-03-01 01:41:18] Ep. 8 : Up. 6500 : Sen. 488,749 : Cost 103.34365082 : Time 606.85s : 13902.92 words/s : L.r. 1.2188e-04
+[2019-03-01 01:42:13] Seen 515211 samples
+[2019-03-01 01:42:13] Starting epoch 9
+[2019-03-01 01:42:13] [data] Shuffling data
+[2019-03-01 01:42:13] [data] Done reading 620637 sentences
+[2019-03-01 01:42:15] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 01:51:45] Ep. 9 : Up. 7000 : Sen. 285,689 : Cost 96.48809814 : Time 627.44s : 13318.86 words/s : L.r. 1.3125e-04
+[2019-03-01 01:59:01] Seen 515211 samples
+[2019-03-01 01:59:01] Starting epoch 10
+[2019-03-01 01:59:01] [data] Shuffling data
+[2019-03-01 01:59:02] [data] Done reading 620637 sentences
+[2019-03-01 01:59:04] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 02:02:14] Ep. 10 : Up. 7500 : Sen. 86,049 : Cost 91.24973297 : Time 628.79s : 13389.30 words/s : L.r. 1.4063e-04
+[2019-03-01 02:12:12] Ep. 10 : Up. 8000 : Sen. 400,677 : Cost 85.44258881 : Time 598.19s : 13785.71 words/s : L.r. 1.5000e-04
+[2019-03-01 02:15:50] Seen 515211 samples
+[2019-03-01 02:15:50] Starting epoch 11
+[2019-03-01 02:15:50] [data] Shuffling data
+[2019-03-01 02:15:51] [data] Done reading 620637 sentences
+[2019-03-01 02:15:53] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 02:22:33] Ep. 11 : Up. 8500 : Sen. 202,080 : Cost 81.69680786 : Time 620.98s : 13323.98 words/s : L.r. 1.5938e-04
+[2019-03-01 02:32:39] Seen 515211 samples
+[2019-03-01 02:32:39] Starting epoch 12
+[2019-03-01 02:32:39] [data] Shuffling data
+[2019-03-01 02:32:39] [data] Done reading 620637 sentences
+[2019-03-01 02:32:42] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 02:33:05] Ep. 12 : Up. 9000 : Sen. 1,806 : Cost 81.80754852 : Time 632.51s : 13344.89 words/s : L.r. 1.6875e-04
+[2019-03-01 02:43:02] Ep. 12 : Up. 9500 : Sen. 317,783 : Cost 76.44163513 : Time 596.84s : 13738.83 words/s : L.r. 1.7813e-04
+[2019-03-01 02:49:28] Seen 515211 samples
+[2019-03-01 02:49:28] Starting epoch 13
+[2019-03-01 02:49:28] [data] Shuffling data
+[2019-03-01 02:49:28] [data] Done reading 620637 sentences
+[2019-03-01 02:49:30] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 02:53:29] Ep. 13 : Up. 10000 : Sen. 117,505 : Cost 76.31311035 : Time 626.48s : 13353.27 words/s : L.r. 1.8750e-04
+[2019-03-01 02:53:29] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz.orig.npz
+[2019-03-01 02:53:34] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.iter10000.npz
+[2019-03-01 02:53:39] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz
+[2019-03-01 02:53:44] Saving Adam parameters to model/model.src1tgt0.dual.notc.npz.optimizer.npz
+[2019-03-01 02:54:04] [valid] Ep. 13 : Up. 10000 : cross-entropy : 64.4716 : new best
+[2019-03-01 02:54:13] [valid] Ep. 13 : Up. 10000 : perplexity : 8.02595 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-01 02:57:46] [valid] Ep. 13 : Up. 10000 : translation : 22.1 : new best
+[2019-03-01 03:07:55] Ep. 13 : Up. 10500 : Sen. 430,500 : Cost 76.64720154 : Time 865.82s : 9792.76 words/s : L.r. 1.9688e-04
+[2019-03-01 03:10:34] Seen 515211 samples
+[2019-03-01 03:10:34] Starting epoch 14
+[2019-03-01 03:10:34] [data] Shuffling data
+[2019-03-01 03:10:34] [data] Done reading 620637 sentences
+[2019-03-01 03:10:36] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 03:18:16] Ep. 14 : Up. 11000 : Sen. 231,066 : Cost 72.09073639 : Time 621.30s : 13293.28 words/s : L.r. 2.0625e-04
+[2019-03-01 03:27:22] Seen 515211 samples
+[2019-03-01 03:27:22] Starting epoch 15
+[2019-03-01 03:27:22] [data] Shuffling data
+[2019-03-01 03:27:22] [data] Done reading 620637 sentences
+[2019-03-01 03:27:24] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 03:28:45] Ep. 15 : Up. 11500 : Sen. 31,646 : Cost 72.80915070 : Time 628.99s : 13385.51 words/s : L.r. 2.1563e-04
+[2019-03-01 03:38:50] Ep. 15 : Up. 12000 : Sen. 346,205 : Cost 71.42728424 : Time 605.13s : 13884.91 words/s : L.r. 2.2500e-04
+[2019-03-01 03:44:10] Seen 515211 samples
+[2019-03-01 03:44:10] Starting epoch 16
+[2019-03-01 03:44:10] [data] Shuffling data
+[2019-03-01 03:44:10] [data] Done reading 620637 sentences
+[2019-03-01 03:44:13] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 03:49:15] Ep. 16 : Up. 12500 : Sen. 145,320 : Cost 69.72671509 : Time 625.19s : 13300.23 words/s : L.r. 2.3438e-04
+[2019-03-01 03:59:12] Ep. 16 : Up. 13000 : Sen. 459,913 : Cost 68.99715424 : Time 596.84s : 13911.21 words/s : L.r. 2.4375e-04
+[2019-03-01 04:00:58] Seen 515211 samples
+[2019-03-01 04:00:58] Starting epoch 17
+[2019-03-01 04:00:58] [data] Shuffling data
+[2019-03-01 04:00:58] [data] Done reading 620637 sentences
+[2019-03-01 04:01:01] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 04:09:34] Ep. 17 : Up. 13500 : Sen. 260,634 : Cost 67.35064697 : Time 621.52s : 13309.42 words/s : L.r. 2.5313e-04
+[2019-03-01 04:17:46] Seen 515211 samples
+[2019-03-01 04:17:46] Starting epoch 18
+[2019-03-01 04:17:46] [data] Shuffling data
+[2019-03-01 04:17:46] [data] Done reading 620637 sentences
+[2019-03-01 04:17:49] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 04:20:04] Ep. 18 : Up. 14000 : Sen. 58,223 : Cost 68.89196014 : Time 630.24s : 13365.27 words/s : L.r. 2.6250e-04
+[2019-03-01 04:30:10] Ep. 18 : Up. 14500 : Sen. 373,817 : Cost 67.29174805 : Time 605.72s : 13858.47 words/s : L.r. 2.7188e-04
+[2019-03-01 04:34:36] Seen 515211 samples
+[2019-03-01 04:34:36] Starting epoch 19
+[2019-03-01 04:34:36] [data] Shuffling data
+[2019-03-01 04:34:36] [data] Done reading 620637 sentences
+[2019-03-01 04:34:38] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 04:40:36] Ep. 19 : Up. 15000 : Sen. 175,073 : Cost 65.95772552 : Time 626.77s : 13334.81 words/s : L.r. 2.8125e-04
+[2019-03-01 04:40:36] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz.orig.npz
+[2019-03-01 04:40:41] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.iter15000.npz
+[2019-03-01 04:40:46] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz
+[2019-03-01 04:40:51] Saving Adam parameters to model/model.src1tgt0.dual.notc.npz.optimizer.npz
+[2019-03-01 04:41:12] [valid] Ep. 19 : Up. 15000 : cross-entropy : 52.2769 : new best
+[2019-03-01 04:41:21] [valid] Ep. 19 : Up. 15000 : perplexity : 5.41267 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-01 04:44:30] [valid] Ep. 19 : Up. 15000 : translation : 26.5 : new best
+[2019-03-01 04:54:28] Ep. 19 : Up. 15500 : Sen. 487,733 : Cost 65.68882751 : Time 831.53s : 9911.82 words/s : L.r. 2.9063e-04
+[2019-03-01 04:55:17] Seen 515211 samples
+[2019-03-01 04:55:17] Starting epoch 20
+[2019-03-01 04:55:17] [data] Shuffling data
+[2019-03-01 04:55:17] [data] Done reading 620637 sentences
+[2019-03-01 04:55:20] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 05:04:54] Ep. 20 : Up. 16000 : Sen. 288,672 : Cost 64.61106110 : Time 626.03s : 13286.07 words/s : L.r. 3.0000e-04
+[2019-03-01 05:12:07] Seen 515211 samples
+[2019-03-01 05:12:07] Starting epoch 21
+[2019-03-01 05:12:07] [data] Shuffling data
+[2019-03-01 05:12:08] [data] Done reading 620637 sentences
+[2019-03-01 05:12:10] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 05:15:20] Ep. 21 : Up. 16500 : Sen. 87,179 : Cost 65.37567902 : Time 625.86s : 13397.52 words/s : L.r. 2.9542e-04
+[2019-03-01 05:25:25] Ep. 21 : Up. 17000 : Sen. 403,377 : Cost 64.09311676 : Time 605.40s : 13835.99 words/s : L.r. 2.9104e-04
+[2019-03-01 05:28:57] Seen 515211 samples
+[2019-03-01 05:28:57] Starting epoch 22
+[2019-03-01 05:28:57] [data] Shuffling data
+[2019-03-01 05:28:58] [data] Done reading 620637 sentences
+[2019-03-01 05:29:00] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 05:35:50] Ep. 22 : Up. 17500 : Sen. 204,210 : Cost 63.29185867 : Time 624.51s : 13387.40 words/s : L.r. 2.8685e-04
+[2019-03-01 05:45:47] Seen 515211 samples
+[2019-03-01 05:45:47] Starting epoch 23
+[2019-03-01 05:45:47] [data] Shuffling data
+[2019-03-01 05:45:47] [data] Done reading 620637 sentences
+[2019-03-01 05:45:50] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 05:46:14] Ep. 23 : Up. 18000 : Sen. 2,680 : Cost 62.67036819 : Time 624.65s : 13162.98 words/s : L.r. 2.8284e-04
+[2019-03-01 05:56:24] Ep. 23 : Up. 18500 : Sen. 315,273 : Cost 63.95564651 : Time 609.64s : 13973.92 words/s : L.r. 2.7899e-04
+[2019-03-01 06:02:35] Seen 515211 samples
+[2019-03-01 06:02:35] Starting epoch 24
+[2019-03-01 06:02:35] [data] Shuffling data
+[2019-03-01 06:02:35] [data] Done reading 620637 sentences
+[2019-03-01 06:02:38] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 06:06:43] Ep. 24 : Up. 19000 : Sen. 116,959 : Cost 60.54925919 : Time 618.96s : 13251.14 words/s : L.r. 2.7530e-04
+[2019-03-01 06:16:46] Ep. 24 : Up. 19500 : Sen. 433,989 : Cost 61.16471100 : Time 603.51s : 13829.35 words/s : L.r. 2.7175e-04
+[2019-03-01 06:19:25] Seen 515211 samples
+[2019-03-01 06:19:25] Starting epoch 25
+[2019-03-01 06:19:25] [data] Shuffling data
+[2019-03-01 06:19:25] [data] Done reading 620637 sentences
+[2019-03-01 06:19:27] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 06:27:15] Ep. 25 : Up. 20000 : Sen. 230,467 : Cost 62.37578964 : Time 629.07s : 13404.33 words/s : L.r. 2.6833e-04
+[2019-03-01 06:27:15] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz.orig.npz
+[2019-03-01 06:27:21] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.iter20000.npz
+[2019-03-01 06:27:26] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz
+[2019-03-01 06:27:32] Saving Adam parameters to model/model.src1tgt0.dual.notc.npz.optimizer.npz
+[2019-03-01 06:27:52] [valid] Ep. 25 : Up. 20000 : cross-entropy : 48.7719 : new best
+[2019-03-01 06:28:01] [valid] Ep. 25 : Up. 20000 : perplexity : 4.83326 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-01 06:30:55] [valid] Ep. 25 : Up. 20000 : translation : 27.9 : new best
+[2019-03-01 06:39:54] Seen 515211 samples
+[2019-03-01 06:39:54] Starting epoch 26
+[2019-03-01 06:39:54] [data] Shuffling data
+[2019-03-01 06:39:54] [data] Done reading 620637 sentences
+[2019-03-01 06:39:57] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 06:41:18] Ep. 26 : Up. 20500 : Sen. 30,992 : Cost 59.82073593 : Time 842.32s : 9761.70 words/s : L.r. 2.6504e-04
+[2019-03-01 06:51:24] Ep. 26 : Up. 21000 : Sen. 343,926 : Cost 61.29676056 : Time 605.77s : 13950.12 words/s : L.r. 2.6186e-04
+[2019-03-01 06:56:42] Seen 515211 samples
+[2019-03-01 06:56:42] Starting epoch 27
+[2019-03-01 06:56:42] [data] Shuffling data
+[2019-03-01 06:56:42] [data] Done reading 620637 sentences
+[2019-03-01 06:56:44] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 07:01:42] Ep. 27 : Up. 21500 : Sen. 148,937 : Cost 57.46012497 : Time 618.64s : 13210.84 words/s : L.r. 2.5880e-04
+[2019-03-01 07:11:43] Ep. 27 : Up. 22000 : Sen. 461,623 : Cost 60.01657867 : Time 600.41s : 13859.00 words/s : L.r. 2.5584e-04
+[2019-03-01 07:13:30] Seen 515211 samples
+[2019-03-01 07:13:30] Starting epoch 28
+[2019-03-01 07:13:30] [data] Shuffling data
+[2019-03-01 07:13:30] [data] Done reading 620637 sentences
+[2019-03-01 07:13:32] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 07:22:10] Ep. 28 : Up. 22500 : Sen. 259,508 : Cost 59.38076401 : Time 627.06s : 13316.89 words/s : L.r. 2.5298e-04
+[2019-03-01 07:30:18] Seen 515211 samples
+[2019-03-01 07:30:18] Starting epoch 29
+[2019-03-01 07:30:18] [data] Shuffling data
+[2019-03-01 07:30:19] [data] Done reading 620637 sentences
+[2019-03-01 07:30:21] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 07:32:36] Ep. 29 : Up. 23000 : Sen. 60,716 : Cost 59.11206818 : Time 626.81s : 13388.97 words/s : L.r. 2.5022e-04
+[2019-03-01 07:42:40] Ep. 29 : Up. 23500 : Sen. 378,703 : Cost 57.60544205 : Time 603.24s : 13764.57 words/s : L.r. 2.4754e-04
+[2019-03-01 07:47:08] Seen 515211 samples
+[2019-03-01 07:47:08] Starting epoch 30
+[2019-03-01 07:47:08] [data] Shuffling data
+[2019-03-01 07:47:08] [data] Done reading 620637 sentences
+[2019-03-01 07:47:11] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 07:53:03] Ep. 30 : Up. 24000 : Sen. 173,981 : Cost 58.64862061 : Time 622.85s : 13334.01 words/s : L.r. 2.4495e-04
+[2019-03-01 08:03:08] Ep. 30 : Up. 24500 : Sen. 489,869 : Cost 58.50985336 : Time 605.03s : 13864.10 words/s : L.r. 2.4244e-04
+[2019-03-01 08:03:58] Seen 515211 samples
+[2019-03-01 08:03:58] Starting epoch 31
+[2019-03-01 08:03:58] [data] Shuffling data
+[2019-03-01 08:03:58] [data] Done reading 620637 sentences
+[2019-03-01 08:04:00] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 08:13:35] Ep. 31 : Up. 25000 : Sen. 287,800 : Cost 58.08320236 : Time 627.31s : 13379.28 words/s : L.r. 2.4000e-04
+[2019-03-01 08:13:35] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz.orig.npz
+[2019-03-01 08:13:40] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.iter25000.npz
+[2019-03-01 08:13:45] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz
+[2019-03-01 08:13:50] Saving Adam parameters to model/model.src1tgt0.dual.notc.npz.optimizer.npz
+[2019-03-01 08:14:10] [valid] Ep. 31 : Up. 25000 : cross-entropy : 48.1154 : new best
+[2019-03-01 08:14:20] [valid] Ep. 31 : Up. 25000 : perplexity : 4.73184 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-01 08:17:14] [valid] Ep. 31 : Up. 25000 : translation : 28.2 : new best
+[2019-03-01 08:24:26] Seen 515211 samples
+[2019-03-01 08:24:26] Starting epoch 32
+[2019-03-01 08:24:26] [data] Shuffling data
+[2019-03-01 08:24:26] [data] Done reading 620637 sentences
+[2019-03-01 08:24:29] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 08:27:37] Ep. 32 : Up. 25500 : Sen. 88,570 : Cost 56.72233582 : Time 842.18s : 9821.48 words/s : L.r. 2.3764e-04
+[2019-03-01 08:37:40] Ep. 32 : Up. 26000 : Sen. 401,767 : Cost 57.41160202 : Time 603.13s : 13804.31 words/s : L.r. 2.3534e-04
+[2019-03-01 08:41:16] Seen 515211 samples
+[2019-03-01 08:41:16] Starting epoch 33
+[2019-03-01 08:41:16] [data] Shuffling data
+[2019-03-01 08:41:16] [data] Done reading 620637 sentences
+[2019-03-01 08:41:18] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 08:48:07] Ep. 33 : Up. 26500 : Sen. 207,728 : Cost 56.08698273 : Time 626.82s : 13422.03 words/s : L.r. 2.3311e-04
+[2019-03-01 08:58:04] Seen 515211 samples
+[2019-03-01 08:58:04] Starting epoch 34
+[2019-03-01 08:58:04] [data] Shuffling data
+[2019-03-01 08:58:04] [data] Done reading 620637 sentences
+[2019-03-01 08:58:06] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 08:58:35] Ep. 34 : Up. 27000 : Sen. 3,584 : Cost 57.72555161 : Time 627.82s : 13284.12 words/s : L.r. 2.3094e-04
+[2019-03-01 09:08:40] Ep. 34 : Up. 27500 : Sen. 318,223 : Cost 56.64910507 : Time 604.80s : 13897.13 words/s : L.r. 2.2883e-04
+[2019-03-01 09:14:54] Seen 515211 samples
+[2019-03-01 09:14:54] Starting epoch 35
+[2019-03-01 09:14:54] [data] Shuffling data
+[2019-03-01 09:14:54] [data] Done reading 620637 sentences
+[2019-03-01 09:14:56] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 09:19:01] Ep. 35 : Up. 28000 : Sen. 117,158 : Cost 55.31575012 : Time 621.54s : 13214.16 words/s : L.r. 2.2678e-04
+[2019-03-01 09:29:04] Ep. 35 : Up. 28500 : Sen. 432,704 : Cost 55.97477341 : Time 603.22s : 13810.33 words/s : L.r. 2.2478e-04
+[2019-03-01 09:31:44] Seen 515211 samples
+[2019-03-01 09:31:44] Starting epoch 36
+[2019-03-01 09:31:44] [data] Shuffling data
+[2019-03-01 09:31:44] [data] Done reading 620637 sentences
+[2019-03-01 09:31:47] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 09:39:32] Ep. 36 : Up. 29000 : Sen. 232,777 : Cost 55.80168915 : Time 627.08s : 13392.71 words/s : L.r. 2.2283e-04
+[2019-03-01 09:48:34] Seen 515211 samples
+[2019-03-01 09:48:34] Starting epoch 37
+[2019-03-01 09:48:34] [data] Shuffling data
+[2019-03-01 09:48:35] [data] Done reading 620637 sentences
+[2019-03-01 09:48:37] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 09:50:02] Ep. 37 : Up. 29500 : Sen. 31,938 : Cost 56.35330582 : Time 630.49s : 13312.66 words/s : L.r. 2.2094e-04
+[2019-03-01 10:00:06] Ep. 37 : Up. 30000 : Sen. 346,342 : Cost 55.59905624 : Time 604.01s : 13888.76 words/s : L.r. 2.1909e-04
+[2019-03-01 10:00:06] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz.orig.npz
+[2019-03-01 10:00:11] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.iter30000.npz
+[2019-03-01 10:00:16] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz
+[2019-03-01 10:00:22] Saving Adam parameters to model/model.src1tgt0.dual.notc.npz.optimizer.npz
+[2019-03-01 10:00:41] [valid] Ep. 37 : Up. 30000 : cross-entropy : 48.6364 : stalled 1 times (last best: 48.1154)
+[2019-03-01 10:00:51] [valid] Ep. 37 : Up. 30000 : perplexity : 4.81214 : stalled 1 times (last best: 4.73184)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-01 10:03:41] [valid] Ep. 37 : Up. 30000 : translation : 28.3 : new best
+[2019-03-01 10:08:59] Seen 515211 samples
+[2019-03-01 10:08:59] Starting epoch 38
+[2019-03-01 10:08:59] [data] Shuffling data
+[2019-03-01 10:08:59] [data] Done reading 620637 sentences
+[2019-03-01 10:09:01] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 10:14:14] Ep. 38 : Up. 30500 : Sen. 150,823 : Cost 55.37818909 : Time 848.15s : 10036.15 words/s : L.r. 2.1729e-04
+[2019-03-01 10:24:09] Ep. 38 : Up. 31000 : Sen. 462,803 : Cost 54.20599365 : Time 594.62s : 13694.21 words/s : L.r. 2.1553e-04
+[2019-03-01 10:25:47] Seen 515211 samples
+[2019-03-01 10:25:47] Starting epoch 39
+[2019-03-01 10:25:47] [data] Shuffling data
+[2019-03-01 10:25:47] [data] Done reading 620637 sentences
+[2019-03-01 10:25:50] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 10:34:27] Ep. 39 : Up. 31500 : Sen. 268,326 : Cost 52.30810547 : Time 617.88s : 13241.04 words/s : L.r. 2.1381e-04
+[2019-03-01 10:42:35] Seen 515211 samples
+[2019-03-01 10:42:35] Starting epoch 40
+[2019-03-01 10:42:35] [data] Shuffling data
+[2019-03-01 10:42:35] [data] Done reading 620637 sentences
+[2019-03-01 10:42:38] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 10:44:58] Ep. 40 : Up. 32000 : Sen. 61,463 : Cost 56.92366409 : Time 631.36s : 13422.37 words/s : L.r. 2.1213e-04
+[2019-03-01 10:54:59] Ep. 40 : Up. 32500 : Sen. 376,765 : Cost 53.88061142 : Time 601.12s : 13783.90 words/s : L.r. 2.1049e-04
+[2019-03-01 10:59:25] Seen 515211 samples
+[2019-03-01 10:59:25] Starting epoch 41
+[2019-03-01 10:59:25] [data] Shuffling data
+[2019-03-01 10:59:25] [data] Done reading 620637 sentences
+[2019-03-01 10:59:28] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 11:05:17] Ep. 41 : Up. 33000 : Sen. 176,268 : Cost 53.01998138 : Time 617.41s : 13225.59 words/s : L.r. 2.0889e-04
+[2019-03-01 11:15:30] Ep. 41 : Up. 33500 : Sen. 490,255 : Cost 56.11547470 : Time 613.48s : 13964.48 words/s : L.r. 2.0733e-04
+[2019-03-01 11:16:15] Seen 515211 samples
+[2019-03-01 11:16:15] Starting epoch 42
+[2019-03-01 11:16:15] [data] Shuffling data
+[2019-03-01 11:16:15] [data] Done reading 620637 sentences
+[2019-03-01 11:16:17] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 11:25:52] Ep. 42 : Up. 34000 : Sen. 293,080 : Cost 52.55326843 : Time 622.30s : 13289.38 words/s : L.r. 2.0580e-04
+[2019-03-01 11:33:03] Seen 515211 samples
+[2019-03-01 11:33:03] Starting epoch 43
+[2019-03-01 11:33:03] [data] Shuffling data
+[2019-03-01 11:33:03] [data] Done reading 620637 sentences
+[2019-03-01 11:33:05] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 11:36:16] Ep. 43 : Up. 34500 : Sen. 90,648 : Cost 54.16403961 : Time 624.09s : 13337.86 words/s : L.r. 2.0430e-04
+[2019-03-01 11:46:25] Ep. 43 : Up. 35000 : Sen. 407,343 : Cost 54.45173264 : Time 608.82s : 13972.69 words/s : L.r. 2.0284e-04
+[2019-03-01 11:46:25] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz.orig.npz
+[2019-03-01 11:46:30] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.iter35000.npz
+[2019-03-01 11:46:35] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz
+[2019-03-01 11:46:41] Saving Adam parameters to model/model.src1tgt0.dual.notc.npz.optimizer.npz
+[2019-03-01 11:47:01] [valid] Ep. 43 : Up. 35000 : cross-entropy : 49.4958 : stalled 2 times (last best: 48.1154)
+[2019-03-01 11:47:10] [valid] Ep. 43 : Up. 35000 : perplexity : 4.94761 : stalled 2 times (last best: 4.73184)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-01 11:50:01] [valid] Ep. 43 : Up. 35000 : translation : 28.2 : stalled 1 times (last best: 28.3)
+[2019-03-01 11:53:26] Seen 515211 samples
+[2019-03-01 11:53:26] Starting epoch 44
+[2019-03-01 11:53:26] [data] Shuffling data
+[2019-03-01 11:53:27] [data] Done reading 620637 sentences
+[2019-03-01 11:53:29] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 12:00:18] Ep. 44 : Up. 35500 : Sen. 204,006 : Cost 52.67814636 : Time 833.23s : 9817.42 words/s : L.r. 2.0140e-04
+[2019-03-01 12:10:14] Seen 515211 samples
+[2019-03-01 12:10:14] Starting epoch 45
+[2019-03-01 12:10:14] [data] Shuffling data
+[2019-03-01 12:10:14] [data] Done reading 620637 sentences
+[2019-03-01 12:10:16] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 12:10:47] Ep. 45 : Up. 36000 : Sen. 4,708 : Cost 53.85440445 : Time 628.72s : 13356.09 words/s : L.r. 2.0000e-04
+[2019-03-01 12:20:54] Ep. 45 : Up. 36500 : Sen. 321,800 : Cost 53.11320877 : Time 607.01s : 13922.12 words/s : L.r. 1.9863e-04
+[2019-03-01 12:27:03] Seen 515211 samples
+[2019-03-01 12:27:03] Starting epoch 46
+[2019-03-01 12:27:03] [data] Shuffling data
+[2019-03-01 12:27:04] [data] Done reading 620637 sentences
+[2019-03-01 12:27:06] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 12:31:19] Ep. 46 : Up. 37000 : Sen. 117,967 : Cost 53.39575577 : Time 624.41s : 13266.40 words/s : L.r. 1.9728e-04
+[2019-03-01 12:41:20] Ep. 46 : Up. 37500 : Sen. 434,723 : Cost 52.16393280 : Time 601.82s : 13742.09 words/s : L.r. 1.9596e-04
+[2019-03-01 12:43:53] Seen 515211 samples
+[2019-03-01 12:43:53] Starting epoch 47
+[2019-03-01 12:43:53] [data] Shuffling data
+[2019-03-01 12:43:54] [data] Done reading 620637 sentences
+[2019-03-01 12:43:56] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 12:51:50] Ep. 47 : Up. 38000 : Sen. 232,940 : Cost 53.85146713 : Time 629.08s : 13481.07 words/s : L.r. 1.9467e-04
+[2019-03-01 13:00:43] Seen 515211 samples
+[2019-03-01 13:00:43] Starting epoch 48
+[2019-03-01 13:00:43] [data] Shuffling data
+[2019-03-01 13:00:44] [data] Done reading 620637 sentences
+[2019-03-01 13:00:46] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 13:02:12] Ep. 48 : Up. 38500 : Sen. 32,925 : Cost 51.93327713 : Time 622.95s : 13210.73 words/s : L.r. 1.9340e-04
+[2019-03-01 13:12:10] Ep. 48 : Up. 39000 : Sen. 348,631 : Cost 51.79149628 : Time 597.88s : 13860.55 words/s : L.r. 1.9215e-04
+[2019-03-01 13:17:31] Seen 515211 samples
+[2019-03-01 13:17:31] Starting epoch 49
+[2019-03-01 13:17:31] [data] Shuffling data
+[2019-03-01 13:17:31] [data] Done reading 620637 sentences
+[2019-03-01 13:17:33] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 13:22:34] Ep. 49 : Up. 39500 : Sen. 147,301 : Cost 52.51382828 : Time 623.19s : 13378.81 words/s : L.r. 1.9093e-04
+[2019-03-01 13:32:41] Ep. 49 : Up. 40000 : Sen. 465,088 : Cost 52.27010345 : Time 607.97s : 13809.14 words/s : L.r. 1.8974e-04
+[2019-03-01 13:32:41] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz.orig.npz
+[2019-03-01 13:32:47] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.iter40000.npz
+[2019-03-01 13:32:51] Saving model weights and runtime parameters to model/model.src1tgt0.dual.notc.npz
+[2019-03-01 13:32:57] Saving Adam parameters to model/model.src1tgt0.dual.notc.npz.optimizer.npz
+[2019-03-01 13:33:17] [valid] Ep. 49 : Up. 40000 : cross-entropy : 50.4927 : stalled 3 times (last best: 48.1154)
+[2019-03-01 13:33:27] [valid] Ep. 49 : Up. 40000 : perplexity : 5.10953 : stalled 3 times (last best: 4.73184)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-01 13:36:16] [valid] Ep. 49 : Up. 40000 : translation : 28 : stalled 2 times (last best: 28.3)
+[2019-03-01 13:37:55] Seen 515211 samples
+[2019-03-01 13:37:55] Starting epoch 50
+[2019-03-01 13:37:55] [data] Shuffling data
+[2019-03-01 13:37:55] [data] Done reading 620637 sentences
+[2019-03-01 13:37:57] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 13:46:50] Ep. 50 : Up. 40500 : Sen. 260,166 : Cost 53.82688904 : Time 848.64s : 10013.13 words/s : L.r. 1.8856e-04
+[2019-03-01 13:54:44] Seen 515211 samples
+[2019-03-01 13:54:44] Starting epoch 51
+[2019-03-01 13:54:44] [data] Shuffling data
+[2019-03-01 13:54:44] [data] Done reading 620637 sentences
+[2019-03-01 13:54:47] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 13:57:07] Ep. 51 : Up. 41000 : Sen. 61,220 : Cost 50.61650085 : Time 617.17s : 13214.07 words/s : L.r. 1.8741e-04
+[2019-03-01 14:07:03] Ep. 51 : Up. 41500 : Sen. 377,219 : Cost 50.41729736 : Time 595.34s : 13700.67 words/s : L.r. 1.8628e-04
+[2019-03-01 14:11:34] Seen 515211 samples
+[2019-03-01 14:11:34] Starting epoch 52
+[2019-03-01 14:11:34] [data] Shuffling data
+[2019-03-01 14:11:34] [data] Done reading 620637 sentences
+[2019-03-01 14:11:37] [data] Done shuffling 620637 sentences to temp files
+[2019-03-01 14:17:39] Ep. 52 : Up. 42000 : Sen. 178,977 : Cost 52.79162598 : Time 636.14s : 13450.40 words/s : L.r. 1.8516e-04
+train_trans_dual.sh: řádek 28: 24779 Ukončen (SIGTERM)      $marian_home/marian --model model/model.src1tgt0.dual.notc.npz --type multi-transformer --train-sets corp/europarl.cs-en.docs.train.en.bpe.src_prev corp/europarl.cs-en.docs.train.en.bpe.src corp/europarl.cs-en.docs.train.cz.bpe --max-length 55 --dim-vocabs 30000 30000 --vocabs corp/vocab.encs.europarl.yml corp/vocab.encs.europarl.yml corp/vocab.encs.europarl.yml --mini-batch-fit -w 8900 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/europarl.cs-en.docs.dev.en.bpe.src_prev corp/europarl.cs-en.docs.dev.en.bpe.src corp/europarl.cs-en.docs.dev.cz.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 16 --beam-size 6 --normalize 0.6 --log model/train_trans.dual.notc.log --valid-log model/valid_trans.dual.notc.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 8 --devices 0 --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus

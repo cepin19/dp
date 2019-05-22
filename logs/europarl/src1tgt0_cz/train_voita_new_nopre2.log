@@ -1,0 +1,960 @@
+[2019-05-08 23:55:03] [marian] Marian v1.7.8 12fc6fcd 2019-05-08 22:41:02 +0200
+[2019-05-08 23:55:03] [marian] Running on pcknot5 as process 6113 with command line:
+[2019-05-08 23:55:03] [marian] /mnt/minerva1/nlp/projects/nmt/doc-marian3/build/marian --model model/model.src1tgt0.voita.new.nopre3.npz --type transformer-voita --train-sets corp/europarl.cs-en.docs.train.en.bpe.src_prev corp/europarl.cs-en.docs.train.en.bpe.src corp/europarl.cs-en.docs.train.cz.bpe --max-length 160 --dim-vocabs 30000 30000 --vocabs corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml --mini-batch-fit -w 8800 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 1000 --valid-metrics cross-entropy perplexity translation --valid-sets corp/europarl.cs-en.docs.dev.en.bpe.src_prev corp/europarl.cs-en.docs.dev.en.bpe.src corp/europarl.cs-en.docs.dev.cz.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 16 --keep-best --beam-size 6 --normalize 0.6 --log model/train_trans.gate.log --valid-log model/valid_trans.gate.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0001 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus
+[2019-05-08 23:55:03] [config] after-batches: 0
+[2019-05-08 23:55:03] [config] after-epochs: 0
+[2019-05-08 23:55:03] [config] allow-unk: false
+[2019-05-08 23:55:03] [config] beam-size: 6
+[2019-05-08 23:55:03] [config] bert-class-symbol: "[CLS]"
+[2019-05-08 23:55:03] [config] bert-mask-symbol: "[MASK]"
+[2019-05-08 23:55:03] [config] bert-masking-fraction: 0.15
+[2019-05-08 23:55:03] [config] bert-sep-symbol: "[SEP]"
+[2019-05-08 23:55:03] [config] bert-train-type-embeddings: true
+[2019-05-08 23:55:03] [config] bert-type-vocab-size: 2
+[2019-05-08 23:55:03] [config] best-deep: false
+[2019-05-08 23:55:03] [config] clip-gemm: 0
+[2019-05-08 23:55:03] [config] clip-norm: 5
+[2019-05-08 23:55:03] [config] context-enc-depth: 1
+[2019-05-08 23:55:03] [config] cost-type: ce-mean
+[2019-05-08 23:55:03] [config] cpu-threads: 0
+[2019-05-08 23:55:03] [config] data-weighting: ""
+[2019-05-08 23:55:03] [config] data-weighting-type: sentence
+[2019-05-08 23:55:03] [config] dec-cell: gru
+[2019-05-08 23:55:03] [config] dec-cell-base-depth: 2
+[2019-05-08 23:55:03] [config] dec-cell-high-depth: 1
+[2019-05-08 23:55:03] [config] dec-depth: 6
+[2019-05-08 23:55:03] [config] devices:
+[2019-05-08 23:55:03] [config]   - 0
+[2019-05-08 23:55:03] [config] dim-emb: 512
+[2019-05-08 23:55:03] [config] dim-rnn: 1024
+[2019-05-08 23:55:03] [config] dim-vocabs:
+[2019-05-08 23:55:03] [config]   - 30000
+[2019-05-08 23:55:03] [config]   - 30000
+[2019-05-08 23:55:03] [config] disp-first: 0
+[2019-05-08 23:55:03] [config] disp-freq: 1000
+[2019-05-08 23:55:03] [config] disp-label-counts: false
+[2019-05-08 23:55:03] [config] dropout-rnn: 0
+[2019-05-08 23:55:03] [config] dropout-src: 0
+[2019-05-08 23:55:03] [config] dropout-trg: 0
+[2019-05-08 23:55:03] [config] dump-config: ""
+[2019-05-08 23:55:03] [config] early-stopping: 10
+[2019-05-08 23:55:03] [config] embedding-fix-src: false
+[2019-05-08 23:55:03] [config] embedding-fix-trg: false
+[2019-05-08 23:55:03] [config] embedding-normalization: false
+[2019-05-08 23:55:03] [config] embedding-vectors:
+[2019-05-08 23:55:03] [config]   []
+[2019-05-08 23:55:03] [config] enc-cell: gru
+[2019-05-08 23:55:03] [config] enc-cell-depth: 1
+[2019-05-08 23:55:03] [config] enc-depth: 6
+[2019-05-08 23:55:03] [config] enc-type: bidirectional
+[2019-05-08 23:55:03] [config] exponential-smoothing: 0.0001
+[2019-05-08 23:55:03] [config] freeze: false
+[2019-05-08 23:55:03] [config] grad-dropping-momentum: 0
+[2019-05-08 23:55:03] [config] grad-dropping-rate: 0
+[2019-05-08 23:55:03] [config] grad-dropping-warmup: 100
+[2019-05-08 23:55:03] [config] guided-alignment: none
+[2019-05-08 23:55:03] [config] guided-alignment-cost: mse
+[2019-05-08 23:55:03] [config] guided-alignment-weight: 0.1
+[2019-05-08 23:55:03] [config] ignore-model-config: false
+[2019-05-08 23:55:03] [config] input-types:
+[2019-05-08 23:55:03] [config]   []
+[2019-05-08 23:55:03] [config] interpolate-env-vars: false
+[2019-05-08 23:55:03] [config] keep-best: true
+[2019-05-08 23:55:03] [config] label-smoothing: 0.1
+[2019-05-08 23:55:03] [config] layer-normalization: false
+[2019-05-08 23:55:03] [config] learn-rate: 0.0001
+[2019-05-08 23:55:03] [config] log: model/train_trans.gate.log
+[2019-05-08 23:55:03] [config] log-level: info
+[2019-05-08 23:55:03] [config] log-time-zone: ""
+[2019-05-08 23:55:03] [config] lr-decay: 0
+[2019-05-08 23:55:03] [config] lr-decay-freq: 50000
+[2019-05-08 23:55:03] [config] lr-decay-inv-sqrt:
+[2019-05-08 23:55:03] [config]   - 16000
+[2019-05-08 23:55:03] [config] lr-decay-repeat-warmup: false
+[2019-05-08 23:55:03] [config] lr-decay-reset-optimizer: false
+[2019-05-08 23:55:03] [config] lr-decay-start:
+[2019-05-08 23:55:03] [config]   - 10
+[2019-05-08 23:55:03] [config]   - 1
+[2019-05-08 23:55:03] [config] lr-decay-strategy: epoch+stalled
+[2019-05-08 23:55:03] [config] lr-report: true
+[2019-05-08 23:55:03] [config] lr-warmup: 16000
+[2019-05-08 23:55:03] [config] lr-warmup-at-reload: false
+[2019-05-08 23:55:03] [config] lr-warmup-cycle: false
+[2019-05-08 23:55:03] [config] lr-warmup-start-rate: 0
+[2019-05-08 23:55:03] [config] max-length: 160
+[2019-05-08 23:55:03] [config] max-length-crop: false
+[2019-05-08 23:55:03] [config] max-length-factor: 3
+[2019-05-08 23:55:03] [config] maxi-batch: 1000
+[2019-05-08 23:55:03] [config] maxi-batch-sort: trg
+[2019-05-08 23:55:03] [config] mini-batch: 1000
+[2019-05-08 23:55:03] [config] mini-batch-fit: true
+[2019-05-08 23:55:03] [config] mini-batch-fit-step: 10
+[2019-05-08 23:55:03] [config] mini-batch-overstuff: 1
+[2019-05-08 23:55:03] [config] mini-batch-track-lr: false
+[2019-05-08 23:55:03] [config] mini-batch-understuff: 1
+[2019-05-08 23:55:03] [config] mini-batch-warmup: 0
+[2019-05-08 23:55:03] [config] mini-batch-words: 0
+[2019-05-08 23:55:03] [config] mini-batch-words-ref: 0
+[2019-05-08 23:55:03] [config] model: model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-08 23:55:03] [config] multi-loss-type: sum
+[2019-05-08 23:55:03] [config] multi-node: false
+[2019-05-08 23:55:03] [config] multi-node-overlap: true
+[2019-05-08 23:55:03] [config] n-best: false
+[2019-05-08 23:55:03] [config] no-nccl: false
+[2019-05-08 23:55:03] [config] no-reload: false
+[2019-05-08 23:55:03] [config] no-restore-corpus: true
+[2019-05-08 23:55:03] [config] no-shuffle: false
+[2019-05-08 23:55:03] [config] normalize: 0.6
+[2019-05-08 23:55:03] [config] num-devices: 0
+[2019-05-08 23:55:03] [config] optimizer: adam
+[2019-05-08 23:55:03] [config] optimizer-delay: 4
+[2019-05-08 23:55:03] [config] optimizer-params:
+[2019-05-08 23:55:03] [config]   - 0.9
+[2019-05-08 23:55:03] [config]   - 0.98
+[2019-05-08 23:55:03] [config]   - 1e-09
+[2019-05-08 23:55:03] [config] overwrite: false
+[2019-05-08 23:55:03] [config] pretrained-model: ""
+[2019-05-08 23:55:03] [config] quiet: false
+[2019-05-08 23:55:03] [config] quiet-translation: true
+[2019-05-08 23:55:03] [config] relative-paths: false
+[2019-05-08 23:55:03] [config] right-left: false
+[2019-05-08 23:55:03] [config] save-freq: 5000
+[2019-05-08 23:55:03] [config] seed: 1111
+[2019-05-08 23:55:03] [config] shuffle-in-ram: false
+[2019-05-08 23:55:03] [config] skip: false
+[2019-05-08 23:55:03] [config] sqlite: ""
+[2019-05-08 23:55:03] [config] sqlite-drop: false
+[2019-05-08 23:55:03] [config] sync-sgd: true
+[2019-05-08 23:55:03] [config] tempdir: /tmp
+[2019-05-08 23:55:03] [config] tied-embeddings: false
+[2019-05-08 23:55:03] [config] tied-embeddings-all: true
+[2019-05-08 23:55:03] [config] tied-embeddings-src: false
+[2019-05-08 23:55:03] [config] train-sets:
+[2019-05-08 23:55:03] [config]   - corp/europarl.cs-en.docs.train.en.bpe.src_prev
+[2019-05-08 23:55:03] [config]   - corp/europarl.cs-en.docs.train.en.bpe.src
+[2019-05-08 23:55:03] [config]   - corp/europarl.cs-en.docs.train.cz.bpe
+[2019-05-08 23:55:03] [config] transformer-aan-activation: swish
+[2019-05-08 23:55:03] [config] transformer-aan-depth: 2
+[2019-05-08 23:55:03] [config] transformer-aan-nogate: false
+[2019-05-08 23:55:03] [config] transformer-decoder-autoreg: self-attention
+[2019-05-08 23:55:03] [config] transformer-dim-aan: 2048
+[2019-05-08 23:55:03] [config] transformer-dim-ffn: 2048
+[2019-05-08 23:55:03] [config] transformer-dropout: 0.1
+[2019-05-08 23:55:03] [config] transformer-dropout-attention: 0
+[2019-05-08 23:55:03] [config] transformer-dropout-ffn: 0
+[2019-05-08 23:55:03] [config] transformer-ffn-activation: swish
+[2019-05-08 23:55:03] [config] transformer-ffn-depth: 2
+[2019-05-08 23:55:03] [config] transformer-guided-alignment-layer: last
+[2019-05-08 23:55:03] [config] transformer-heads: 8
+[2019-05-08 23:55:03] [config] transformer-no-projection: false
+[2019-05-08 23:55:03] [config] transformer-postprocess: dan
+[2019-05-08 23:55:03] [config] transformer-postprocess-emb: d
+[2019-05-08 23:55:03] [config] transformer-preprocess: ""
+[2019-05-08 23:55:03] [config] transformer-tied-layers:
+[2019-05-08 23:55:03] [config]   []
+[2019-05-08 23:55:03] [config] transformer-train-position-embeddings: false
+[2019-05-08 23:55:03] [config] type: transformer-voita
+[2019-05-08 23:55:03] [config] ulr: false
+[2019-05-08 23:55:03] [config] ulr-dim-emb: 0
+[2019-05-08 23:55:03] [config] ulr-dropout: 0
+[2019-05-08 23:55:03] [config] ulr-keys-vectors: ""
+[2019-05-08 23:55:03] [config] ulr-query-vectors: ""
+[2019-05-08 23:55:03] [config] ulr-softmax-temperature: 1
+[2019-05-08 23:55:03] [config] ulr-trainable-transformation: false
+[2019-05-08 23:55:03] [config] valid-freq: 5000
+[2019-05-08 23:55:03] [config] valid-log: model/valid_trans.gate.log
+[2019-05-08 23:55:03] [config] valid-max-length: 1000
+[2019-05-08 23:55:03] [config] valid-metrics:
+[2019-05-08 23:55:03] [config]   - cross-entropy
+[2019-05-08 23:55:03] [config]   - perplexity
+[2019-05-08 23:55:03] [config]   - translation
+[2019-05-08 23:55:03] [config] valid-mini-batch: 16
+[2019-05-08 23:55:03] [config] valid-script-path: ./val.sh
+[2019-05-08 23:55:03] [config] valid-sets:
+[2019-05-08 23:55:03] [config]   - corp/europarl.cs-en.docs.dev.en.bpe.src_prev
+[2019-05-08 23:55:03] [config]   - corp/europarl.cs-en.docs.dev.en.bpe.src
+[2019-05-08 23:55:03] [config]   - corp/europarl.cs-en.docs.dev.cz.bpe
+[2019-05-08 23:55:03] [config] valid-translation-output: data/valid.bpe.en.output
+[2019-05-08 23:55:03] [config] vocabs:
+[2019-05-08 23:55:03] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-05-08 23:55:03] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-05-08 23:55:03] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-05-08 23:55:03] [config] word-penalty: 0
+[2019-05-08 23:55:03] [config] workspace: 8800
+[2019-05-08 23:55:03] [config] Model is being created with Marian v1.7.8 12fc6fcd 2019-05-08 22:41:02 +0200
+[2019-05-08 23:55:03] Using synchronous training
+[2019-05-08 23:55:03] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-05-08 23:55:03] [data] Setting vocabulary size for input 0 to 30000
+[2019-05-08 23:55:03] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-05-08 23:55:04] [data] Setting vocabulary size for input 1 to 30000
+[2019-05-08 23:55:04] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-05-08 23:55:04] [data] Setting vocabulary size for input 2 to 30000
+[2019-05-08 23:55:04] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-05-08 23:55:04] [batching] Collecting statistics for batch fitting with step size 10
+[2019-05-08 23:55:04] [memory] Extending reserved space to 8832 MB (device gpu0)
+[2019-05-08 23:55:06] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-05-08 23:55:06] [comm] NCCLCommunicator constructed successfully.
+[2019-05-08 23:55:06] [training] Using 1 GPUs
+[2019-05-08 23:55:06] [memory] Reserving 237 MB, device gpu0
+[2019-05-08 23:55:06] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-05-08 23:55:06] [memory] Reserving 237 MB, device gpu0
+[2019-05-08 23:55:16] [batching] Done. Typical MB size is 15407 target words
+[2019-05-08 23:55:16] [memory] Extending reserved space to 8832 MB (device gpu0)
+[2019-05-08 23:55:16] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-05-08 23:55:16] [comm] NCCLCommunicator constructed successfully.
+[2019-05-08 23:55:16] [training] Using 1 GPUs
+[2019-05-08 23:55:16] Training started
+[2019-05-08 23:55:16] [data] Shuffling data
+[2019-05-08 23:55:16] [data] Done reading 620637 sentences
+[2019-05-08 23:55:18] [data] Done shuffling 620637 sentences to temp files
+[2019-05-08 23:55:40] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-05-08 23:55:40] [memory] Reserving 237 MB, device gpu0
+[2019-05-08 23:55:40] [memory] Reserving 237 MB, device gpu0
+[2019-05-08 23:55:40] [memory] Reserving 237 MB, device gpu0
+[2019-05-08 23:55:41] [memory] Reserving 474 MB, device gpu0
+[2019-05-09 00:03:14] Ep. 1 : Up. 1000 : Sen. 217,104 : Cost 288.76028442 : Time 490.68s : 13794.73 words/s : L.r. 6.2500e-06
+[2019-05-09 00:10:49] Ep. 1 : Up. 2000 : Sen. 438,748 : Cost 236.25886536 : Time 454.89s : 14628.60 words/s : L.r. 1.2500e-05
+[2019-05-09 00:17:07] Seen 620307 samples
+[2019-05-09 00:17:07] Starting epoch 2
+[2019-05-09 00:17:07] [data] Shuffling data
+[2019-05-09 00:17:07] [data] Done reading 620637 sentences
+[2019-05-09 00:17:09] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 00:18:53] Ep. 2 : Up. 3000 : Sen. 39,678 : Cost 228.50282288 : Time 483.56s : 14005.66 words/s : L.r. 1.8750e-05
+[2019-05-09 00:26:32] Ep. 2 : Up. 4000 : Sen. 258,656 : Cost 218.43479919 : Time 458.95s : 14701.65 words/s : L.r. 2.5000e-05
+[2019-05-09 00:34:04] Ep. 2 : Up. 5000 : Sen. 478,005 : Cost 198.79180908 : Time 451.98s : 14616.35 words/s : L.r. 3.1250e-05
+[2019-05-09 00:34:04] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 00:34:08] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter5000.npz
+[2019-05-09 00:34:11] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 00:34:15] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 00:34:33] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 00:34:36] [valid] Ep. 2 : Up. 5000 : cross-entropy : 183.7 : new best
+[2019-05-09 00:34:45] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 00:34:49] [valid] Ep. 2 : Up. 5000 : perplexity : 377.747 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 00:43:17] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 00:43:20] [valid] Ep. 2 : Up. 5000 : translation : 2.1 : new best
+[2019-05-09 00:48:19] Seen 620307 samples
+[2019-05-09 00:48:19] Starting epoch 3
+[2019-05-09 00:48:19] [data] Shuffling data
+[2019-05-09 00:48:19] [data] Done reading 620637 sentences
+[2019-05-09 00:48:21] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 00:51:27] Ep. 3 : Up. 6000 : Sen. 76,102 : Cost 193.28239441 : Time 1042.95s : 6570.68 words/s : L.r. 3.7500e-05
+[2019-05-09 00:59:06] Ep. 3 : Up. 7000 : Sen. 297,724 : Cost 176.35742188 : Time 459.61s : 14746.31 words/s : L.r. 4.3750e-05
+[2019-05-09 01:06:47] Ep. 3 : Up. 8000 : Sen. 524,455 : Cost 161.11781311 : Time 460.47s : 14682.48 words/s : L.r. 5.0000e-05
+[2019-05-09 01:10:16] Seen 620307 samples
+[2019-05-09 01:10:16] Starting epoch 4
+[2019-05-09 01:10:16] [data] Shuffling data
+[2019-05-09 01:10:16] [data] Done reading 620637 sentences
+[2019-05-09 01:10:18] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 01:14:43] Ep. 4 : Up. 9000 : Sen. 113,160 : Cost 159.96089172 : Time 476.01s : 13817.37 words/s : L.r. 5.6250e-05
+[2019-05-09 01:22:24] Ep. 4 : Up. 10000 : Sen. 338,718 : Cost 144.58619690 : Time 461.43s : 14783.45 words/s : L.r. 6.2500e-05
+[2019-05-09 01:22:24] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 01:22:28] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter10000.npz
+[2019-05-09 01:22:32] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 01:22:36] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 01:22:53] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 01:22:56] [valid] Ep. 4 : Up. 10000 : cross-entropy : 123.99 : new best
+[2019-05-09 01:23:05] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 01:23:09] [valid] Ep. 4 : Up. 10000 : perplexity : 54.891 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 01:27:56] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 01:27:59] [valid] Ep. 4 : Up. 10000 : translation : 6.3 : new best
+[2019-05-09 01:35:37] Ep. 4 : Up. 11000 : Sen. 561,392 : Cost 136.72927856 : Time 792.35s : 8470.91 words/s : L.r. 6.8750e-05
+[2019-05-09 01:37:48] Seen 620307 samples
+[2019-05-09 01:37:48] Starting epoch 5
+[2019-05-09 01:37:48] [data] Shuffling data
+[2019-05-09 01:37:48] [data] Done reading 620637 sentences
+[2019-05-09 01:37:50] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 01:43:42] Ep. 5 : Up. 12000 : Sen. 158,932 : Cost 133.02210999 : Time 485.24s : 13895.93 words/s : L.r. 7.5000e-05
+[2019-05-09 01:51:16] Ep. 5 : Up. 13000 : Sen. 378,498 : Cost 122.56379700 : Time 453.66s : 14499.88 words/s : L.r. 8.1250e-05
+[2019-05-09 01:58:53] Ep. 5 : Up. 14000 : Sen. 596,022 : Cost 121.21273804 : Time 457.55s : 14806.34 words/s : L.r. 8.7500e-05
+[2019-05-09 01:59:46] Seen 620307 samples
+[2019-05-09 01:59:46] Starting epoch 6
+[2019-05-09 01:59:46] [data] Shuffling data
+[2019-05-09 01:59:46] [data] Done reading 620637 sentences
+[2019-05-09 01:59:48] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 02:07:00] Ep. 6 : Up. 15000 : Sen. 196,030 : Cost 113.82066345 : Time 486.43s : 14128.20 words/s : L.r. 9.3750e-05
+[2019-05-09 02:07:00] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 02:07:03] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter15000.npz
+[2019-05-09 02:07:07] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 02:07:11] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 02:07:27] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 02:07:30] [valid] Ep. 6 : Up. 15000 : cross-entropy : 86.1621 : new best
+[2019-05-09 02:07:39] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 02:07:42] [valid] Ep. 6 : Up. 15000 : perplexity : 16.1734 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 02:11:08] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 02:11:11] [valid] Ep. 6 : Up. 15000 : translation : 15 : new best
+[2019-05-09 02:18:50] Ep. 6 : Up. 16000 : Sen. 413,900 : Cost 107.82617950 : Time 710.41s : 9459.19 words/s : L.r. 1.0000e-04
+[2019-05-09 02:25:53] Seen 620307 samples
+[2019-05-09 02:25:53] Starting epoch 7
+[2019-05-09 02:25:53] [data] Shuffling data
+[2019-05-09 02:25:54] [data] Done reading 620637 sentences
+[2019-05-09 02:25:56] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 02:26:48] Ep. 7 : Up. 17000 : Sen. 15,081 : Cost 100.73637390 : Time 477.88s : 13884.54 words/s : L.r. 9.7014e-05
+[2019-05-09 02:34:26] Ep. 7 : Up. 18000 : Sen. 231,382 : Cost 100.39434052 : Time 457.80s : 14732.08 words/s : L.r. 9.4281e-05
+[2019-05-09 02:42:03] Ep. 7 : Up. 19000 : Sen. 455,633 : Cost 93.52815247 : Time 457.05s : 14660.68 words/s : L.r. 9.1766e-05
+[2019-05-09 02:47:51] Seen 620307 samples
+[2019-05-09 02:47:51] Starting epoch 8
+[2019-05-09 02:47:51] [data] Shuffling data
+[2019-05-09 02:47:52] [data] Done reading 620637 sentences
+[2019-05-09 02:47:54] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 02:50:11] Ep. 8 : Up. 20000 : Sen. 58,273 : Cost 93.31674957 : Time 488.24s : 13903.07 words/s : L.r. 8.9443e-05
+[2019-05-09 02:50:11] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 02:50:16] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter20000.npz
+[2019-05-09 02:50:21] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 02:50:29] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 02:50:47] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 02:50:52] [valid] Ep. 8 : Up. 20000 : cross-entropy : 65.3895 : new best
+[2019-05-09 02:51:01] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 02:51:06] [valid] Ep. 8 : Up. 20000 : perplexity : 8.2675 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 02:53:46] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 02:53:50] [valid] Ep. 8 : Up. 20000 : translation : 21.6 : new best
+[2019-05-09 03:01:21] Ep. 8 : Up. 21000 : Sen. 269,375 : Cost 94.11522675 : Time 669.91s : 9901.59 words/s : L.r. 8.7287e-05
+[2019-05-09 03:08:55] Ep. 8 : Up. 22000 : Sen. 493,222 : Cost 86.72268677 : Time 453.93s : 14554.07 words/s : L.r. 8.5280e-05
+[2019-05-09 03:13:26] Seen 620307 samples
+[2019-05-09 03:13:26] Starting epoch 9
+[2019-05-09 03:13:26] [data] Shuffling data
+[2019-05-09 03:13:26] [data] Done reading 620637 sentences
+[2019-05-09 03:13:29] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 03:17:04] Ep. 9 : Up. 23000 : Sen. 90,494 : Cost 92.27625275 : Time 489.61s : 14163.24 words/s : L.r. 8.3406e-05
+[2019-05-09 03:24:35] Ep. 9 : Up. 24000 : Sen. 304,770 : Cost 87.52825928 : Time 450.75s : 14617.66 words/s : L.r. 8.1650e-05
+[2019-05-09 03:32:11] Ep. 9 : Up. 25000 : Sen. 522,361 : Cost 86.96410370 : Time 456.03s : 14692.75 words/s : L.r. 8.0000e-05
+[2019-05-09 03:32:11] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 03:32:15] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter25000.npz
+[2019-05-09 03:32:19] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 03:32:24] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 03:32:39] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 03:32:43] [valid] Ep. 9 : Up. 25000 : cross-entropy : 57.2339 : new best
+[2019-05-09 03:32:51] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 03:32:55] [valid] Ep. 9 : Up. 25000 : perplexity : 6.35266 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 03:35:27] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 03:35:31] [valid] Ep. 9 : Up. 25000 : translation : 24.5 : new best
+[2019-05-09 03:38:41] Seen 620307 samples
+[2019-05-09 03:38:41] Starting epoch 10
+[2019-05-09 03:38:41] [data] Shuffling data
+[2019-05-09 03:38:42] [data] Done reading 620637 sentences
+[2019-05-09 03:38:44] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 03:43:41] Ep. 10 : Up. 26000 : Sen. 135,173 : Cost 81.43502808 : Time 689.94s : 9955.72 words/s : L.r. 7.8446e-05
+[2019-05-09 03:51:16] Ep. 10 : Up. 27000 : Sen. 353,605 : Cost 84.30459595 : Time 454.97s : 14730.36 words/s : L.r. 7.6980e-05
+[2019-05-09 03:58:59] Ep. 10 : Up. 28000 : Sen. 574,202 : Cost 84.50279999 : Time 462.79s : 14732.64 words/s : L.r. 7.5593e-05
+[2019-05-09 04:00:37] Seen 620307 samples
+[2019-05-09 04:00:37] Starting epoch 11
+[2019-05-09 04:00:37] [data] Shuffling data
+[2019-05-09 04:00:38] [data] Done reading 620637 sentences
+[2019-05-09 04:00:40] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 04:07:02] Ep. 11 : Up. 29000 : Sen. 174,313 : Cost 82.62456512 : Time 482.95s : 14001.36 words/s : L.r. 7.4278e-05
+[2019-05-09 04:14:40] Ep. 11 : Up. 30000 : Sen. 395,125 : Cost 81.90936279 : Time 458.37s : 14754.04 words/s : L.r. 7.3030e-05
+[2019-05-09 04:14:40] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 04:14:44] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter30000.npz
+[2019-05-09 04:14:48] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 04:14:52] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 04:15:08] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 04:15:12] [valid] Ep. 11 : Up. 30000 : cross-entropy : 53.1834 : new best
+[2019-05-09 04:15:20] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 04:15:25] [valid] Ep. 11 : Up. 30000 : perplexity : 5.57353 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 04:17:57] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 04:18:01] [valid] Ep. 11 : Up. 30000 : translation : 26 : new best
+[2019-05-09 04:25:36] Ep. 11 : Up. 31000 : Sen. 611,626 : Cost 81.94480133 : Time 656.13s : 10128.09 words/s : L.r. 7.1842e-05
+[2019-05-09 04:25:55] Seen 620307 samples
+[2019-05-09 04:25:55] Starting epoch 12
+[2019-05-09 04:25:55] [data] Shuffling data
+[2019-05-09 04:25:55] [data] Done reading 620637 sentences
+[2019-05-09 04:25:57] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 04:33:36] Ep. 12 : Up. 32000 : Sen. 206,309 : Cost 82.02590179 : Time 479.90s : 13975.52 words/s : L.r. 7.0711e-05
+[2019-05-09 04:41:20] Ep. 12 : Up. 33000 : Sen. 429,778 : Cost 80.09191132 : Time 463.44s : 14707.67 words/s : L.r. 6.9631e-05
+[2019-05-09 04:47:51] Seen 620307 samples
+[2019-05-09 04:47:51] Starting epoch 13
+[2019-05-09 04:47:51] [data] Shuffling data
+[2019-05-09 04:47:51] [data] Done reading 620637 sentences
+[2019-05-09 04:47:53] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 04:49:15] Ep. 13 : Up. 34000 : Sen. 25,363 : Cost 79.73269653 : Time 474.95s : 13887.68 words/s : L.r. 6.8599e-05
+[2019-05-09 04:57:08] Ep. 13 : Up. 35000 : Sen. 257,882 : Cost 78.30352020 : Time 473.18s : 14940.08 words/s : L.r. 6.7612e-05
+[2019-05-09 04:57:08] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 04:57:12] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter35000.npz
+[2019-05-09 04:57:15] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 04:57:19] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 04:57:35] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 04:57:38] [valid] Ep. 13 : Up. 35000 : cross-entropy : 50.7892 : new best
+[2019-05-09 04:57:47] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 04:57:50] [valid] Ep. 13 : Up. 35000 : perplexity : 5.15872 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 05:00:23] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 05:00:27] [valid] Ep. 13 : Up. 35000 : translation : 26.9 : new best
+[2019-05-09 05:08:02] Ep. 13 : Up. 36000 : Sen. 470,980 : Cost 81.14289856 : Time 654.47s : 10209.10 words/s : L.r. 6.6667e-05
+[2019-05-09 05:13:06] Seen 620307 samples
+[2019-05-09 05:13:06] Starting epoch 14
+[2019-05-09 05:13:06] [data] Shuffling data
+[2019-05-09 05:13:06] [data] Done reading 620637 sentences
+[2019-05-09 05:13:09] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 05:15:57] Ep. 14 : Up. 37000 : Sen. 69,951 : Cost 76.60277557 : Time 475.15s : 13803.80 words/s : L.r. 6.5760e-05
+[2019-05-09 05:23:40] Ep. 14 : Up. 38000 : Sen. 298,893 : Cost 75.56568909 : Time 462.61s : 14731.24 words/s : L.r. 6.4889e-05
+[2019-05-09 05:31:17] Ep. 14 : Up. 39000 : Sen. 511,047 : Cost 81.04087830 : Time 457.29s : 14727.91 words/s : L.r. 6.4051e-05
+[2019-05-09 05:35:02] Seen 620307 samples
+[2019-05-09 05:35:02] Starting epoch 15
+[2019-05-09 05:35:02] [data] Shuffling data
+[2019-05-09 05:35:02] [data] Done reading 620637 sentences
+[2019-05-09 05:35:05] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 05:39:15] Ep. 15 : Up. 40000 : Sen. 109,675 : Cost 76.11361694 : Time 477.90s : 13848.17 words/s : L.r. 6.3246e-05
+[2019-05-09 05:39:15] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 05:39:19] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter40000.npz
+[2019-05-09 05:39:22] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 05:39:26] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 05:39:42] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 05:39:46] [valid] Ep. 15 : Up. 40000 : cross-entropy : 49.222 : new best
+[2019-05-09 05:39:54] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 05:39:58] [valid] Ep. 15 : Up. 40000 : perplexity : 4.90403 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 05:42:31] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 05:42:34] [valid] Ep. 15 : Up. 40000 : translation : 27.6 : new best
+[2019-05-09 05:50:07] Ep. 15 : Up. 41000 : Sen. 327,051 : Cost 76.85977173 : Time 651.87s : 10204.32 words/s : L.r. 6.2470e-05
+[2019-05-09 05:57:48] Ep. 15 : Up. 42000 : Sen. 547,076 : Cost 78.15967560 : Time 461.16s : 14828.18 words/s : L.r. 6.1721e-05
+[2019-05-09 06:00:17] Seen 620307 samples
+[2019-05-09 06:00:17] Starting epoch 16
+[2019-05-09 06:00:17] [data] Shuffling data
+[2019-05-09 06:00:17] [data] Done reading 620637 sentences
+[2019-05-09 06:00:19] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 06:05:42] Ep. 16 : Up. 43000 : Sen. 145,433 : Cost 74.56208038 : Time 474.25s : 13822.38 words/s : L.r. 6.0999e-05
+[2019-05-09 06:13:22] Ep. 16 : Up. 44000 : Sen. 365,472 : Cost 76.54254150 : Time 459.09s : 14742.19 words/s : L.r. 6.0302e-05
+[2019-05-09 06:21:03] Ep. 16 : Up. 45000 : Sen. 584,708 : Cost 76.74365234 : Time 461.13s : 14663.16 words/s : L.r. 5.9628e-05
+[2019-05-09 06:21:03] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 06:21:07] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter45000.npz
+[2019-05-09 06:21:10] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 06:21:16] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 06:21:32] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 06:21:36] [valid] Ep. 16 : Up. 45000 : cross-entropy : 48.1207 : new best
+[2019-05-09 06:21:44] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 06:21:48] [valid] Ep. 16 : Up. 45000 : perplexity : 4.73264 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 06:24:20] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 06:24:24] [valid] Ep. 16 : Up. 45000 : translation : 28.1 : new best
+[2019-05-09 06:25:34] Seen 620307 samples
+[2019-05-09 06:25:34] Starting epoch 17
+[2019-05-09 06:25:34] [data] Shuffling data
+[2019-05-09 06:25:35] [data] Done reading 620637 sentences
+[2019-05-09 06:25:37] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 06:32:26] Ep. 17 : Up. 46000 : Sen. 188,938 : Cost 73.63914490 : Time 683.06s : 9873.06 words/s : L.r. 5.8977e-05
+[2019-05-09 06:40:05] Ep. 17 : Up. 47000 : Sen. 406,687 : Cost 76.79415131 : Time 459.34s : 14757.37 words/s : L.r. 5.8346e-05
+[2019-05-09 06:47:31] Seen 620307 samples
+[2019-05-09 06:47:31] Starting epoch 18
+[2019-05-09 06:47:31] [data] Shuffling data
+[2019-05-09 06:47:31] [data] Done reading 620637 sentences
+[2019-05-09 06:47:34] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 06:48:08] Ep. 18 : Up. 48000 : Sen. 5,691 : Cost 75.10341644 : Time 482.43s : 13872.46 words/s : L.r. 5.7735e-05
+[2019-05-09 06:55:48] Ep. 18 : Up. 49000 : Sen. 224,680 : Cost 75.78392029 : Time 460.64s : 14802.72 words/s : L.r. 5.7143e-05
+[2019-05-09 07:03:28] Ep. 18 : Up. 50000 : Sen. 447,556 : Cost 73.84495544 : Time 459.65s : 14679.25 words/s : L.r. 5.6569e-05
+[2019-05-09 07:03:28] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 07:03:32] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter50000.npz
+[2019-05-09 07:03:35] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 07:03:39] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 07:03:55] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 07:03:59] [valid] Ep. 18 : Up. 50000 : cross-entropy : 47.3418 : new best
+[2019-05-09 07:04:07] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 07:04:11] [valid] Ep. 18 : Up. 50000 : perplexity : 4.61505 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 07:06:43] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 07:06:47] [valid] Ep. 18 : Up. 50000 : translation : 28.4 : new best
+[2019-05-09 07:12:46] Seen 620307 samples
+[2019-05-09 07:12:46] Starting epoch 19
+[2019-05-09 07:12:46] [data] Shuffling data
+[2019-05-09 07:12:47] [data] Done reading 620637 sentences
+[2019-05-09 07:12:49] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 07:14:46] Ep. 19 : Up. 51000 : Sen. 49,256 : Cost 72.56689453 : Time 677.81s : 9780.30 words/s : L.r. 5.6011e-05
+[2019-05-09 07:22:24] Ep. 19 : Up. 52000 : Sen. 268,718 : Cost 74.49324036 : Time 458.81s : 14765.02 words/s : L.r. 5.5470e-05
+[2019-05-09 07:29:58] Ep. 19 : Up. 53000 : Sen. 488,055 : Cost 73.48523712 : Time 453.94s : 14663.11 words/s : L.r. 5.4944e-05
+[2019-05-09 07:34:43] Seen 620307 samples
+[2019-05-09 07:34:43] Starting epoch 20
+[2019-05-09 07:34:43] [data] Shuffling data
+[2019-05-09 07:34:43] [data] Done reading 620637 sentences
+[2019-05-09 07:34:45] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 07:37:57] Ep. 20 : Up. 54000 : Sen. 83,013 : Cost 74.67976379 : Time 479.03s : 13912.40 words/s : L.r. 5.4433e-05
+[2019-05-09 07:45:40] Ep. 20 : Up. 55000 : Sen. 304,919 : Cost 73.95457458 : Time 462.35s : 14816.72 words/s : L.r. 5.3936e-05
+[2019-05-09 07:45:40] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 07:45:45] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter55000.npz
+[2019-05-09 07:45:48] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 07:45:52] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 07:46:08] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 07:46:12] [valid] Ep. 20 : Up. 55000 : cross-entropy : 46.7483 : new best
+[2019-05-09 07:46:20] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 07:46:24] [valid] Ep. 20 : Up. 55000 : perplexity : 4.5274 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 07:48:58] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 07:49:02] [valid] Ep. 20 : Up. 55000 : translation : 28.7 : new best
+[2019-05-09 07:56:40] Ep. 20 : Up. 56000 : Sen. 527,263 : Cost 72.35346985 : Time 660.04s : 10134.85 words/s : L.r. 5.3452e-05
+[2019-05-09 08:00:00] Seen 620307 samples
+[2019-05-09 08:00:00] Starting epoch 21
+[2019-05-09 08:00:00] [data] Shuffling data
+[2019-05-09 08:00:01] [data] Done reading 620637 sentences
+[2019-05-09 08:00:03] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 08:04:32] Ep. 21 : Up. 57000 : Sen. 113,615 : Cost 76.42596436 : Time 472.56s : 13950.63 words/s : L.r. 5.2981e-05
+[2019-05-09 08:12:13] Ep. 21 : Up. 58000 : Sen. 332,672 : Cost 73.43553925 : Time 460.13s : 14679.18 words/s : L.r. 5.2523e-05
+[2019-05-09 08:19:57] Ep. 21 : Up. 59000 : Sen. 564,225 : Cost 70.59510040 : Time 464.21s : 14781.20 words/s : L.r. 5.2076e-05
+[2019-05-09 08:21:57] Seen 620307 samples
+[2019-05-09 08:21:57] Starting epoch 22
+[2019-05-09 08:21:57] [data] Shuffling data
+[2019-05-09 08:21:57] [data] Done reading 620637 sentences
+[2019-05-09 08:21:59] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 08:27:54] Ep. 22 : Up. 60000 : Sen. 156,730 : Cost 74.06584930 : Time 476.95s : 13909.72 words/s : L.r. 5.1640e-05
+[2019-05-09 08:27:54] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 08:27:58] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter60000.npz
+[2019-05-09 08:28:01] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 08:28:05] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 08:28:21] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 08:28:24] [valid] Ep. 22 : Up. 60000 : cross-entropy : 46.3047 : new best
+[2019-05-09 08:28:33] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 08:28:37] [valid] Ep. 22 : Up. 60000 : perplexity : 4.46299 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 08:31:10] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 08:31:14] [valid] Ep. 22 : Up. 60000 : translation : 28.9 : new best
+[2019-05-09 08:38:53] Ep. 22 : Up. 61000 : Sen. 375,768 : Cost 73.01480865 : Time 659.58s : 10236.50 words/s : L.r. 5.1215e-05
+[2019-05-09 08:46:31] Ep. 22 : Up. 62000 : Sen. 597,692 : Cost 71.36215210 : Time 457.31s : 14628.51 words/s : L.r. 5.0800e-05
+[2019-05-09 08:47:13] Seen 620307 samples
+[2019-05-09 08:47:13] Starting epoch 23
+[2019-05-09 08:47:13] [data] Shuffling data
+[2019-05-09 08:47:13] [data] Done reading 620637 sentences
+[2019-05-09 08:47:16] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 08:54:48] Ep. 23 : Up. 63000 : Sen. 210,098 : Cost 71.29556274 : Time 497.34s : 14178.38 words/s : L.r. 5.0395e-05
+[2019-05-09 09:02:17] Ep. 23 : Up. 64000 : Sen. 427,006 : Cost 70.86691284 : Time 449.47s : 14563.28 words/s : L.r. 5.0000e-05
+[2019-05-09 09:09:10] Seen 620307 samples
+[2019-05-09 09:09:10] Starting epoch 24
+[2019-05-09 09:09:10] [data] Shuffling data
+[2019-05-09 09:09:10] [data] Done reading 620637 sentences
+[2019-05-09 09:09:12] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 09:10:21] Ep. 24 : Up. 65000 : Sen. 22,609 : Cost 73.80425262 : Time 483.76s : 13960.90 words/s : L.r. 4.9614e-05
+[2019-05-09 09:10:21] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 09:10:25] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter65000.npz
+[2019-05-09 09:10:29] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 09:10:33] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 09:10:49] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 09:10:53] [valid] Ep. 24 : Up. 65000 : cross-entropy : 45.9799 : new best
+[2019-05-09 09:11:01] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 09:11:05] [valid] Ep. 24 : Up. 65000 : perplexity : 4.41641 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 09:13:39] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 09:13:43] [valid] Ep. 24 : Up. 65000 : translation : 29.1 : new best
+[2019-05-09 09:21:22] Ep. 24 : Up. 66000 : Sen. 240,160 : Cost 72.65887451 : Time 660.87s : 10222.82 words/s : L.r. 4.9237e-05
+[2019-05-09 09:28:54] Ep. 24 : Up. 67000 : Sen. 460,380 : Cost 70.39463806 : Time 451.53s : 14683.25 words/s : L.r. 4.8868e-05
+[2019-05-09 09:34:26] Seen 620307 samples
+[2019-05-09 09:34:26] Starting epoch 25
+[2019-05-09 09:34:26] [data] Shuffling data
+[2019-05-09 09:34:27] [data] Done reading 620637 sentences
+[2019-05-09 09:34:29] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 09:36:54] Ep. 25 : Up. 68000 : Sen. 60,288 : Cost 71.18608856 : Time 480.88s : 13954.06 words/s : L.r. 4.8507e-05
+[2019-05-09 09:44:33] Ep. 25 : Up. 69000 : Sen. 280,830 : Cost 71.05513000 : Time 458.13s : 14712.63 words/s : L.r. 4.8154e-05
+[2019-05-09 09:52:13] Ep. 25 : Up. 70000 : Sen. 499,758 : Cost 72.72919464 : Time 460.71s : 14776.24 words/s : L.r. 4.7809e-05
+[2019-05-09 09:52:13] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 09:52:17] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter70000.npz
+[2019-05-09 09:52:21] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 09:52:25] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 09:52:41] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 09:52:45] [valid] Ep. 25 : Up. 70000 : cross-entropy : 45.7364 : new best
+[2019-05-09 09:52:53] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 09:52:57] [valid] Ep. 25 : Up. 70000 : perplexity : 4.38181 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 09:55:30] [valid] Ep. 25 : Up. 70000 : translation : 29.1 : stalled 1 times (last best: 29.1)
+[2019-05-09 09:59:39] Seen 620307 samples
+[2019-05-09 09:59:39] Starting epoch 26
+[2019-05-09 09:59:39] [data] Shuffling data
+[2019-05-09 09:59:39] [data] Done reading 620637 sentences
+[2019-05-09 09:59:41] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 10:03:23] Ep. 26 : Up. 71000 : Sen. 95,527 : Cost 69.94570160 : Time 669.96s : 9748.06 words/s : L.r. 4.7471e-05
+[2019-05-09 10:11:02] Ep. 26 : Up. 72000 : Sen. 316,601 : Cost 70.75856018 : Time 458.36s : 14731.65 words/s : L.r. 4.7140e-05
+[2019-05-09 10:18:46] Ep. 26 : Up. 73000 : Sen. 540,589 : Cost 71.17984772 : Time 464.46s : 14792.51 words/s : L.r. 4.6816e-05
+[2019-05-09 10:21:34] Seen 620307 samples
+[2019-05-09 10:21:34] Starting epoch 27
+[2019-05-09 10:21:34] [data] Shuffling data
+[2019-05-09 10:21:35] [data] Done reading 620637 sentences
+[2019-05-09 10:21:37] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 10:26:47] Ep. 27 : Up. 74000 : Sen. 138,087 : Cost 71.13667297 : Time 481.24s : 13976.49 words/s : L.r. 4.6499e-05
+[2019-05-09 10:34:20] Ep. 27 : Up. 75000 : Sen. 354,838 : Cost 70.86657715 : Time 452.76s : 14711.34 words/s : L.r. 4.6188e-05
+[2019-05-09 10:34:20] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 10:34:24] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter75000.npz
+[2019-05-09 10:34:28] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 10:34:32] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 10:34:48] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 10:34:51] [valid] Ep. 27 : Up. 75000 : cross-entropy : 45.5622 : new best
+[2019-05-09 10:35:00] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 10:35:03] [valid] Ep. 27 : Up. 75000 : perplexity : 4.35722 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 10:37:36] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 10:37:40] [valid] Ep. 27 : Up. 75000 : translation : 29.2 : new best
+[2019-05-09 10:45:20] Ep. 27 : Up. 76000 : Sen. 577,684 : Cost 70.06876373 : Time 660.05s : 10239.49 words/s : L.r. 4.5883e-05
+[2019-05-09 10:46:50] Seen 620307 samples
+[2019-05-09 10:46:50] Starting epoch 28
+[2019-05-09 10:46:50] [data] Shuffling data
+[2019-05-09 10:46:50] [data] Done reading 620637 sentences
+[2019-05-09 10:46:52] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 10:53:22] Ep. 28 : Up. 77000 : Sen. 173,036 : Cost 71.72955322 : Time 482.08s : 13996.63 words/s : L.r. 4.5584e-05
+[2019-05-09 11:01:01] Ep. 28 : Up. 78000 : Sen. 399,558 : Cost 68.13175201 : Time 458.77s : 14653.30 words/s : L.r. 4.5291e-05
+[2019-05-09 11:08:37] Ep. 28 : Up. 79000 : Sen. 616,235 : Cost 71.25106812 : Time 455.73s : 14733.57 words/s : L.r. 4.5004e-05
+[2019-05-09 11:08:45] Seen 620307 samples
+[2019-05-09 11:08:45] Starting epoch 29
+[2019-05-09 11:08:45] [data] Shuffling data
+[2019-05-09 11:08:45] [data] Done reading 620637 sentences
+[2019-05-09 11:08:47] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 11:16:41] Ep. 29 : Up. 80000 : Sen. 218,140 : Cost 69.57288361 : Time 484.44s : 14013.70 words/s : L.r. 4.4721e-05
+[2019-05-09 11:16:41] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 11:16:45] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter80000.npz
+[2019-05-09 11:16:48] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 11:16:53] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 11:17:09] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 11:17:12] [valid] Ep. 29 : Up. 80000 : cross-entropy : 45.4257 : new best
+[2019-05-09 11:17:21] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 11:17:24] [valid] Ep. 29 : Up. 80000 : perplexity : 4.33805 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 11:19:57] [valid] Ep. 29 : Up. 80000 : translation : 29.2 : stalled 1 times (last best: 29.2)
+[2019-05-09 11:27:40] Ep. 29 : Up. 81000 : Sen. 442,012 : Cost 69.83267212 : Time 658.79s : 10382.07 words/s : L.r. 4.4444e-05
+[2019-05-09 11:33:56] Seen 620307 samples
+[2019-05-09 11:33:56] Starting epoch 30
+[2019-05-09 11:33:56] [data] Shuffling data
+[2019-05-09 11:33:57] [data] Done reading 620637 sentences
+[2019-05-09 11:33:59] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 11:35:35] Ep. 30 : Up. 82000 : Sen. 36,055 : Cost 69.98438263 : Time 474.73s : 13819.05 words/s : L.r. 4.4173e-05
+[2019-05-09 11:43:06] Ep. 30 : Up. 83000 : Sen. 251,187 : Cost 69.19049072 : Time 450.99s : 14537.01 words/s : L.r. 4.3906e-05
+[2019-05-09 11:50:47] Ep. 30 : Up. 84000 : Sen. 473,137 : Cost 70.18724823 : Time 461.02s : 14821.16 words/s : L.r. 4.3644e-05
+[2019-05-09 11:55:51] Seen 620307 samples
+[2019-05-09 11:55:51] Starting epoch 31
+[2019-05-09 11:55:51] [data] Shuffling data
+[2019-05-09 11:55:52] [data] Done reading 620637 sentences
+[2019-05-09 11:55:54] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 11:58:50] Ep. 31 : Up. 85000 : Sen. 75,587 : Cost 68.85723877 : Time 482.87s : 14005.47 words/s : L.r. 4.3386e-05
+[2019-05-09 11:58:50] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 11:58:54] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter85000.npz
+[2019-05-09 11:58:57] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 11:59:02] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 11:59:18] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 11:59:21] [valid] Ep. 31 : Up. 85000 : cross-entropy : 45.3396 : new best
+[2019-05-09 11:59:29] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 11:59:33] [valid] Ep. 31 : Up. 85000 : perplexity : 4.326 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 12:02:06] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 12:02:10] [valid] Ep. 31 : Up. 85000 : translation : 29.3 : new best
+[2019-05-09 12:09:51] Ep. 31 : Up. 86000 : Sen. 294,413 : Cost 70.05409241 : Time 661.14s : 10241.56 words/s : L.r. 4.3133e-05
+[2019-05-09 12:17:32] Ep. 31 : Up. 87000 : Sen. 516,052 : Cost 69.85201263 : Time 460.97s : 14771.93 words/s : L.r. 4.2885e-05
+[2019-05-09 12:21:09] Seen 620307 samples
+[2019-05-09 12:21:09] Starting epoch 32
+[2019-05-09 12:21:09] [data] Shuffling data
+[2019-05-09 12:21:09] [data] Done reading 620637 sentences
+[2019-05-09 12:21:11] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 12:25:34] Ep. 32 : Up. 88000 : Sen. 115,700 : Cost 69.11884308 : Time 482.51s : 13967.30 words/s : L.r. 4.2640e-05
+[2019-05-09 12:33:03] Ep. 32 : Up. 89000 : Sen. 328,531 : Cost 69.48824310 : Time 449.12s : 14600.23 words/s : L.r. 4.2400e-05
+[2019-05-09 12:40:44] Ep. 32 : Up. 90000 : Sen. 552,139 : Cost 68.76335144 : Time 460.94s : 14719.68 words/s : L.r. 4.2164e-05
+[2019-05-09 12:40:44] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 12:40:48] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter90000.npz
+[2019-05-09 12:40:52] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 12:40:56] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 12:41:12] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 12:41:16] [valid] Ep. 32 : Up. 90000 : cross-entropy : 45.2828 : new best
+[2019-05-09 12:41:25] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 12:41:28] [valid] Ep. 32 : Up. 90000 : perplexity : 4.31806 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 12:44:02] [valid] Ep. 32 : Up. 90000 : translation : 29.3 : stalled 1 times (last best: 29.3)
+[2019-05-09 12:46:23] Seen 620307 samples
+[2019-05-09 12:46:23] Starting epoch 33
+[2019-05-09 12:46:23] [data] Shuffling data
+[2019-05-09 12:46:23] [data] Done reading 620637 sentences
+[2019-05-09 12:46:25] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 12:52:03] Ep. 33 : Up. 91000 : Sen. 150,755 : Cost 69.10628510 : Time 678.60s : 9919.72 words/s : L.r. 4.1931e-05
+[2019-05-09 12:59:37] Ep. 33 : Up. 92000 : Sen. 372,414 : Cost 66.63649750 : Time 454.38s : 14480.33 words/s : L.r. 4.1703e-05
+[2019-05-09 13:07:22] Ep. 33 : Up. 93000 : Sen. 595,382 : Cost 70.18630981 : Time 465.16s : 14913.31 words/s : L.r. 4.1478e-05
+[2019-05-09 13:08:19] Seen 620307 samples
+[2019-05-09 13:08:19] Starting epoch 34
+[2019-05-09 13:08:19] [data] Shuffling data
+[2019-05-09 13:08:19] [data] Done reading 620637 sentences
+[2019-05-09 13:08:21] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 13:15:25] Ep. 34 : Up. 94000 : Sen. 190,857 : Cost 70.00316620 : Time 482.59s : 14022.46 words/s : L.r. 4.1257e-05
+[2019-05-09 13:23:00] Ep. 34 : Up. 95000 : Sen. 409,070 : Cost 68.58106232 : Time 455.42s : 14646.31 words/s : L.r. 4.1039e-05
+[2019-05-09 13:23:00] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 13:23:05] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter95000.npz
+[2019-05-09 13:23:08] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 13:23:13] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 13:23:29] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 13:23:33] [valid] Ep. 34 : Up. 95000 : cross-entropy : 45.2607 : new best
+[2019-05-09 13:23:42] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 13:23:45] [valid] Ep. 34 : Up. 95000 : perplexity : 4.31499 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 13:26:19] [valid] Ep. 34 : Up. 95000 : translation : 29.3 : stalled 2 times (last best: 29.3)
+[2019-05-09 13:33:31] Seen 620307 samples
+[2019-05-09 13:33:31] Starting epoch 35
+[2019-05-09 13:33:31] [data] Shuffling data
+[2019-05-09 13:33:32] [data] Done reading 620637 sentences
+[2019-05-09 13:33:34] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 13:34:20] Ep. 35 : Up. 96000 : Sen. 12,495 : Cost 67.77436829 : Time 680.01s : 9910.28 words/s : L.r. 4.0825e-05
+[2019-05-09 13:41:54] Ep. 35 : Up. 97000 : Sen. 227,221 : Cost 69.23639679 : Time 453.75s : 14714.93 words/s : L.r. 4.0614e-05
+[2019-05-09 13:49:37] Ep. 35 : Up. 98000 : Sen. 451,591 : Cost 68.19885254 : Time 462.59s : 14794.89 words/s : L.r. 4.0406e-05
+[2019-05-09 13:55:26] Seen 620307 samples
+[2019-05-09 13:55:26] Starting epoch 36
+[2019-05-09 13:55:26] [data] Shuffling data
+[2019-05-09 13:55:26] [data] Done reading 620637 sentences
+[2019-05-09 13:55:28] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 13:57:36] Ep. 36 : Up. 99000 : Sen. 52,149 : Cost 67.70729828 : Time 479.77s : 13953.52 words/s : L.r. 4.0202e-05
+[2019-05-09 14:05:07] Ep. 36 : Up. 100000 : Sen. 271,495 : Cost 66.62014771 : Time 450.75s : 14604.94 words/s : L.r. 4.0000e-05
+[2019-05-09 14:05:07] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 14:05:11] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter100000.npz
+[2019-05-09 14:05:15] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 14:05:20] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 14:05:36] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-cross-entropy.npz
+[2019-05-09 14:05:40] [valid] Ep. 36 : Up. 100000 : cross-entropy : 45.2431 : new best
+[2019-05-09 14:05:48] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-perplexity.npz
+[2019-05-09 14:05:52] [valid] Ep. 36 : Up. 100000 : perplexity : 4.31254 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 14:08:24] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 14:08:28] [valid] Ep. 36 : Up. 100000 : translation : 29.4 : new best
+[2019-05-09 14:16:07] Ep. 36 : Up. 101000 : Sen. 486,697 : Cost 70.60453033 : Time 660.21s : 10302.93 words/s : L.r. 3.9801e-05
+[2019-05-09 14:20:41] Seen 620307 samples
+[2019-05-09 14:20:41] Starting epoch 37
+[2019-05-09 14:20:41] [data] Shuffling data
+[2019-05-09 14:20:41] [data] Done reading 620637 sentences
+[2019-05-09 14:20:43] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 14:24:12] Ep. 37 : Up. 102000 : Sen. 86,441 : Cost 68.07798004 : Time 484.40s : 13912.81 words/s : L.r. 3.9606e-05
+[2019-05-09 14:31:50] Ep. 37 : Up. 103000 : Sen. 303,317 : Cost 68.80371094 : Time 457.69s : 14719.81 words/s : L.r. 3.9413e-05
+[2019-05-09 14:39:29] Ep. 37 : Up. 104000 : Sen. 526,734 : Cost 67.68069458 : Time 459.49s : 14795.73 words/s : L.r. 3.9223e-05
+[2019-05-09 14:42:36] Seen 620307 samples
+[2019-05-09 14:42:36] Starting epoch 38
+[2019-05-09 14:42:36] [data] Shuffling data
+[2019-05-09 14:42:37] [data] Done reading 620637 sentences
+[2019-05-09 14:42:39] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 14:47:36] Ep. 38 : Up. 105000 : Sen. 138,458 : Cost 64.68029022 : Time 487.18s : 13944.45 words/s : L.r. 3.9036e-05
+[2019-05-09 14:47:36] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 14:47:40] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter105000.npz
+[2019-05-09 14:47:44] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 14:47:48] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 14:48:04] [valid] Ep. 38 : Up. 105000 : cross-entropy : 45.2549 : stalled 1 times (last best: 45.2431)
+[2019-05-09 14:48:12] [valid] Ep. 38 : Up. 105000 : perplexity : 4.31418 : stalled 1 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 14:50:45] [valid] Ep. 38 : Up. 105000 : translation : 29.3 : stalled 1 times (last best: 29.4)
+[2019-05-09 14:58:18] Ep. 38 : Up. 106000 : Sen. 353,825 : Cost 68.39824677 : Time 641.76s : 10379.88 words/s : L.r. 3.8851e-05
+[2019-05-09 15:05:48] Ep. 38 : Up. 107000 : Sen. 566,805 : Cost 68.63867950 : Time 449.97s : 14639.76 words/s : L.r. 3.8669e-05
+[2019-05-09 15:07:40] Seen 620307 samples
+[2019-05-09 15:07:40] Starting epoch 39
+[2019-05-09 15:07:40] [data] Shuffling data
+[2019-05-09 15:07:40] [data] Done reading 620637 sentences
+[2019-05-09 15:07:42] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 15:14:03] Ep. 39 : Up. 108000 : Sen. 173,762 : Cost 68.37606812 : Time 495.41s : 14221.33 words/s : L.r. 3.8490e-05
+[2019-05-09 15:21:31] Ep. 39 : Up. 109000 : Sen. 382,137 : Cost 69.50456238 : Time 447.82s : 14652.10 words/s : L.r. 3.8313e-05
+[2019-05-09 15:29:08] Ep. 39 : Up. 110000 : Sen. 606,471 : Cost 65.68700409 : Time 456.40s : 14615.34 words/s : L.r. 3.8139e-05
+[2019-05-09 15:29:08] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 15:29:12] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter110000.npz
+[2019-05-09 15:29:15] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 15:29:19] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 15:29:35] [valid] Ep. 39 : Up. 110000 : cross-entropy : 45.2887 : stalled 2 times (last best: 45.2431)
+[2019-05-09 15:29:44] [valid] Ep. 39 : Up. 110000 : perplexity : 4.31889 : stalled 2 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 15:32:16] [valid] Ep. 39 : Up. 110000 : translation : 29.4 : stalled 2 times (last best: 29.4)
+[2019-05-09 15:32:44] Seen 620307 samples
+[2019-05-09 15:32:44] Starting epoch 40
+[2019-05-09 15:32:44] [data] Shuffling data
+[2019-05-09 15:32:44] [data] Done reading 620637 sentences
+[2019-05-09 15:32:46] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 15:40:09] Ep. 40 : Up. 111000 : Sen. 203,273 : Cost 66.44875336 : Time 661.18s : 9949.51 words/s : L.r. 3.7966e-05
+[2019-05-09 15:47:54] Ep. 40 : Up. 112000 : Sen. 426,058 : Cost 68.03026581 : Time 465.29s : 14787.77 words/s : L.r. 3.7796e-05
+[2019-05-09 15:54:39] Seen 620307 samples
+[2019-05-09 15:54:39] Starting epoch 41
+[2019-05-09 15:54:39] [data] Shuffling data
+[2019-05-09 15:54:40] [data] Done reading 620637 sentences
+[2019-05-09 15:54:42] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 15:55:59] Ep. 41 : Up. 113000 : Sen. 26,812 : Cost 67.03521729 : Time 484.95s : 13883.00 words/s : L.r. 3.7629e-05
+[2019-05-09 16:03:42] Ep. 41 : Up. 114000 : Sen. 250,833 : Cost 66.64586639 : Time 462.60s : 14736.30 words/s : L.r. 3.7463e-05
+[2019-05-09 16:11:16] Ep. 41 : Up. 115000 : Sen. 466,224 : Cost 67.99921417 : Time 454.66s : 14682.03 words/s : L.r. 3.7300e-05
+[2019-05-09 16:11:16] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 16:11:20] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter115000.npz
+[2019-05-09 16:11:23] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 16:11:28] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 16:11:44] [valid] Ep. 41 : Up. 115000 : cross-entropy : 45.348 : stalled 3 times (last best: 45.2431)
+[2019-05-09 16:11:52] [valid] Ep. 41 : Up. 115000 : perplexity : 4.32717 : stalled 3 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 16:14:25] [valid] Ep. 41 : Up. 115000 : translation : 29.4 : stalled 3 times (last best: 29.4)
+[2019-05-09 16:19:46] Seen 620307 samples
+[2019-05-09 16:19:46] Starting epoch 42
+[2019-05-09 16:19:46] [data] Shuffling data
+[2019-05-09 16:19:46] [data] Done reading 620637 sentences
+[2019-05-09 16:19:48] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 16:22:25] Ep. 42 : Up. 116000 : Sen. 64,406 : Cost 66.74684143 : Time 668.33s : 9957.96 words/s : L.r. 3.7139e-05
+[2019-05-09 16:30:08] Ep. 42 : Up. 117000 : Sen. 288,531 : Cost 66.40400696 : Time 463.01s : 14740.23 words/s : L.r. 3.6980e-05
+[2019-05-09 16:37:44] Ep. 42 : Up. 118000 : Sen. 509,560 : Cost 66.28518677 : Time 456.92s : 14627.97 words/s : L.r. 3.6823e-05
+[2019-05-09 16:41:42] Seen 620307 samples
+[2019-05-09 16:41:42] Starting epoch 43
+[2019-05-09 16:41:42] [data] Shuffling data
+[2019-05-09 16:41:43] [data] Done reading 620637 sentences
+[2019-05-09 16:41:45] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 16:45:43] Ep. 43 : Up. 119000 : Sen. 105,878 : Cost 67.52668762 : Time 478.62s : 13991.48 words/s : L.r. 3.6668e-05
+[2019-05-09 16:53:25] Ep. 43 : Up. 120000 : Sen. 331,751 : Cost 65.53353119 : Time 461.94s : 14718.26 words/s : L.r. 3.6515e-05
+[2019-05-09 16:53:25] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 16:53:29] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter120000.npz
+[2019-05-09 16:53:33] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 16:53:37] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 16:53:53] [valid] Ep. 43 : Up. 120000 : cross-entropy : 45.4038 : stalled 4 times (last best: 45.2431)
+[2019-05-09 16:54:01] [valid] Ep. 43 : Up. 120000 : perplexity : 4.33499 : stalled 4 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 16:56:34] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.best-translation.npz
+[2019-05-09 16:56:37] [valid] Ep. 43 : Up. 120000 : translation : 29.5 : new best
+[2019-05-09 17:04:11] Ep. 43 : Up. 121000 : Sen. 542,476 : Cost 69.43522644 : Time 646.28s : 10333.30 words/s : L.r. 3.6364e-05
+[2019-05-09 17:06:51] Seen 620307 samples
+[2019-05-09 17:06:51] Starting epoch 44
+[2019-05-09 17:06:51] [data] Shuffling data
+[2019-05-09 17:06:52] [data] Done reading 620637 sentences
+[2019-05-09 17:06:54] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 17:12:15] Ep. 44 : Up. 122000 : Sen. 144,260 : Cost 65.47163391 : Time 483.59s : 13851.49 words/s : L.r. 3.6214e-05
+[2019-05-09 17:19:59] Ep. 44 : Up. 123000 : Sen. 368,587 : Cost 67.08679199 : Time 464.28s : 14884.08 words/s : L.r. 3.6067e-05
+[2019-05-09 17:27:34] Ep. 44 : Up. 124000 : Sen. 585,949 : Cost 66.52182770 : Time 454.83s : 14561.64 words/s : L.r. 3.5921e-05
+[2019-05-09 17:28:49] Seen 620307 samples
+[2019-05-09 17:28:49] Starting epoch 45
+[2019-05-09 17:28:49] [data] Shuffling data
+[2019-05-09 17:28:49] [data] Done reading 620637 sentences
+[2019-05-09 17:28:51] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 17:35:30] Ep. 45 : Up. 125000 : Sen. 180,776 : Cost 66.34779358 : Time 476.14s : 13854.39 words/s : L.r. 3.5777e-05
+[2019-05-09 17:35:30] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 17:35:34] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter125000.npz
+[2019-05-09 17:35:38] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 17:35:42] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 17:35:58] [valid] Ep. 45 : Up. 125000 : cross-entropy : 45.4661 : stalled 5 times (last best: 45.2431)
+[2019-05-09 17:36:06] [valid] Ep. 45 : Up. 125000 : perplexity : 4.34372 : stalled 5 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 17:38:40] [valid] Ep. 45 : Up. 125000 : translation : 29.5 : stalled 1 times (last best: 29.5)
+[2019-05-09 17:46:22] Ep. 45 : Up. 126000 : Sen. 401,298 : Cost 67.46634674 : Time 652.18s : 10484.31 words/s : L.r. 3.5635e-05
+[2019-05-09 17:53:56] Seen 620307 samples
+[2019-05-09 17:53:56] Starting epoch 46
+[2019-05-09 17:53:56] [data] Shuffling data
+[2019-05-09 17:53:57] [data] Done reading 620637 sentences
+[2019-05-09 17:53:59] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 17:54:27] Ep. 46 : Up. 127000 : Sen. 2,354 : Cost 66.07070923 : Time 484.30s : 13890.19 words/s : L.r. 3.5494e-05
+[2019-05-09 18:02:05] Ep. 46 : Up. 128000 : Sen. 224,211 : Cost 66.00750732 : Time 458.08s : 14807.85 words/s : L.r. 3.5355e-05
+[2019-05-09 18:09:43] Ep. 46 : Up. 129000 : Sen. 445,452 : Cost 65.45432281 : Time 458.15s : 14591.84 words/s : L.r. 3.5218e-05
+[2019-05-09 18:15:54] Seen 620307 samples
+[2019-05-09 18:15:54] Starting epoch 47
+[2019-05-09 18:15:54] [data] Shuffling data
+[2019-05-09 18:15:54] [data] Done reading 620637 sentences
+[2019-05-09 18:15:56] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 18:17:50] Ep. 47 : Up. 130000 : Sen. 43,588 : Cost 67.83920288 : Time 486.99s : 14014.55 words/s : L.r. 3.5082e-05
+[2019-05-09 18:17:50] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 18:17:54] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter130000.npz
+[2019-05-09 18:17:57] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 18:18:01] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 18:18:17] [valid] Ep. 47 : Up. 130000 : cross-entropy : 45.5299 : stalled 6 times (last best: 45.2431)
+[2019-05-09 18:18:25] [valid] Ep. 47 : Up. 130000 : perplexity : 4.35267 : stalled 6 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 18:20:58] [valid] Ep. 47 : Up. 130000 : translation : 29.5 : stalled 2 times (last best: 29.5)
+[2019-05-09 18:28:27] Ep. 47 : Up. 131000 : Sen. 257,102 : Cost 66.59848785 : Time 637.55s : 10352.60 words/s : L.r. 3.4948e-05
+[2019-05-09 18:36:04] Ep. 47 : Up. 132000 : Sen. 473,575 : Cost 66.60340881 : Time 457.05s : 14582.93 words/s : L.r. 3.4816e-05
+[2019-05-09 18:40:58] Seen 620307 samples
+[2019-05-09 18:40:58] Starting epoch 48
+[2019-05-09 18:40:58] [data] Shuffling data
+[2019-05-09 18:40:59] [data] Done reading 620637 sentences
+[2019-05-09 18:41:01] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 18:44:09] Ep. 48 : Up. 133000 : Sen. 78,854 : Cost 65.02069855 : Time 484.97s : 14040.41 words/s : L.r. 3.4684e-05
+[2019-05-09 18:51:48] Ep. 48 : Up. 134000 : Sen. 298,323 : Cost 65.91327667 : Time 458.32s : 14673.41 words/s : L.r. 3.4555e-05
+[2019-05-09 18:59:21] Ep. 48 : Up. 135000 : Sen. 518,338 : Cost 65.32868958 : Time 453.63s : 14662.75 words/s : L.r. 3.4427e-05
+[2019-05-09 18:59:21] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 18:59:26] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter135000.npz
+[2019-05-09 18:59:29] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 18:59:33] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 18:59:49] [valid] Ep. 48 : Up. 135000 : cross-entropy : 45.6159 : stalled 7 times (last best: 45.2431)
+[2019-05-09 18:59:57] [valid] Ep. 48 : Up. 135000 : perplexity : 4.36479 : stalled 7 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 19:02:30] [valid] Ep. 48 : Up. 135000 : translation : 29.4 : stalled 3 times (last best: 29.5)
+[2019-05-09 19:06:03] Seen 620307 samples
+[2019-05-09 19:06:03] Starting epoch 49
+[2019-05-09 19:06:03] [data] Shuffling data
+[2019-05-09 19:06:03] [data] Done reading 620637 sentences
+[2019-05-09 19:06:05] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 19:10:30] Ep. 49 : Up. 136000 : Sen. 114,160 : Cost 66.67841339 : Time 669.09s : 10005.31 words/s : L.r. 3.4300e-05
+[2019-05-09 19:18:07] Ep. 49 : Up. 137000 : Sen. 333,448 : Cost 65.87891388 : Time 456.14s : 14759.52 words/s : L.r. 3.4174e-05
+[2019-05-09 19:25:51] Ep. 49 : Up. 138000 : Sen. 558,918 : Cost 65.45674133 : Time 464.41s : 14731.81 words/s : L.r. 3.4050e-05
+[2019-05-09 19:27:59] Seen 620307 samples
+[2019-05-09 19:27:59] Starting epoch 50
+[2019-05-09 19:27:59] [data] Shuffling data
+[2019-05-09 19:28:00] [data] Done reading 620637 sentences
+[2019-05-09 19:28:02] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 19:33:48] Ep. 50 : Up. 139000 : Sen. 151,492 : Cost 66.87440491 : Time 477.33s : 13907.83 words/s : L.r. 3.3928e-05
+[2019-05-09 19:41:35] Ep. 50 : Up. 140000 : Sen. 376,558 : Cost 65.73670959 : Time 466.58s : 14760.12 words/s : L.r. 3.3806e-05
+[2019-05-09 19:41:35] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 19:41:39] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter140000.npz
+[2019-05-09 19:41:42] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 19:41:46] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 19:42:02] [valid] Ep. 50 : Up. 140000 : cross-entropy : 45.6974 : stalled 8 times (last best: 45.2431)
+[2019-05-09 19:42:11] [valid] Ep. 50 : Up. 140000 : perplexity : 4.37629 : stalled 8 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 19:44:44] [valid] Ep. 50 : Up. 140000 : translation : 29.4 : stalled 4 times (last best: 29.5)
+[2019-05-09 19:52:20] Ep. 50 : Up. 141000 : Sen. 598,281 : Cost 64.45716858 : Time 644.85s : 10318.50 words/s : L.r. 3.3686e-05
+[2019-05-09 19:53:06] Seen 620307 samples
+[2019-05-09 19:53:06] Starting epoch 51
+[2019-05-09 19:53:06] [data] Shuffling data
+[2019-05-09 19:53:07] [data] Done reading 620637 sentences
+[2019-05-09 19:53:09] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 20:00:29] Ep. 51 : Up. 142000 : Sen. 197,839 : Cost 66.92845917 : Time 489.41s : 14062.92 words/s : L.r. 3.3567e-05
+[2019-05-09 20:08:09] Ep. 51 : Up. 143000 : Sen. 422,332 : Cost 64.41444397 : Time 459.55s : 14697.87 words/s : L.r. 3.3450e-05
+[2019-05-09 20:15:03] Seen 620307 samples
+[2019-05-09 20:15:03] Starting epoch 52
+[2019-05-09 20:15:03] [data] Shuffling data
+[2019-05-09 20:15:03] [data] Done reading 620637 sentences
+[2019-05-09 20:15:05] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 20:16:05] Ep. 52 : Up. 144000 : Sen. 18,438 : Cost 65.29178619 : Time 475.77s : 13847.99 words/s : L.r. 3.3333e-05
+[2019-05-09 20:23:39] Ep. 52 : Up. 145000 : Sen. 229,498 : Cost 67.86309814 : Time 454.84s : 14764.54 words/s : L.r. 3.3218e-05
+[2019-05-09 20:23:39] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 20:23:44] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter145000.npz
+[2019-05-09 20:23:47] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 20:23:51] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 20:24:07] [valid] Ep. 52 : Up. 145000 : cross-entropy : 45.7791 : stalled 9 times (last best: 45.2431)
+[2019-05-09 20:24:15] [valid] Ep. 52 : Up. 145000 : perplexity : 4.38785 : stalled 9 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 20:26:48] [valid] Ep. 52 : Up. 145000 : translation : 29.3 : stalled 5 times (last best: 29.5)
+[2019-05-09 20:34:24] Ep. 52 : Up. 146000 : Sen. 449,671 : Cost 64.35058594 : Time 644.33s : 10289.19 words/s : L.r. 3.3104e-05
+[2019-05-09 20:40:09] Seen 620307 samples
+[2019-05-09 20:40:09] Starting epoch 53
+[2019-05-09 20:40:09] [data] Shuffling data
+[2019-05-09 20:40:09] [data] Done reading 620637 sentences
+[2019-05-09 20:40:11] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 20:42:21] Ep. 53 : Up. 147000 : Sen. 49,040 : Cost 64.48336792 : Time 477.17s : 13900.10 words/s : L.r. 3.2991e-05
+[2019-05-09 20:50:19] Ep. 53 : Up. 148000 : Sen. 281,194 : Cost 65.66667175 : Time 477.63s : 14974.32 words/s : L.r. 3.2880e-05
+[2019-05-09 20:57:50] Ep. 53 : Up. 149000 : Sen. 500,421 : Cost 63.30975723 : Time 451.26s : 14438.43 words/s : L.r. 3.2769e-05
+[2019-05-09 21:02:06] Seen 620307 samples
+[2019-05-09 21:02:06] Starting epoch 54
+[2019-05-09 21:02:06] [data] Shuffling data
+[2019-05-09 21:02:07] [data] Done reading 620637 sentences
+[2019-05-09 21:02:09] [data] Done shuffling 620637 sentences to temp files
+[2019-05-09 21:05:50] Ep. 54 : Up. 150000 : Sen. 98,311 : Cost 65.22047424 : Time 480.39s : 13884.01 words/s : L.r. 3.2660e-05
+[2019-05-09 21:05:50] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 21:05:54] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.iter150000.npz
+[2019-05-09 21:05:57] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 21:06:02] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz
+[2019-05-09 21:06:18] [valid] Ep. 54 : Up. 150000 : cross-entropy : 45.8703 : stalled 10 times (last best: 45.2431)
+[2019-05-09 21:06:26] [valid] Ep. 54 : Up. 150000 : perplexity : 4.4008 : stalled 10 times (last best: 4.31254)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-09 21:08:59] [valid] Ep. 54 : Up. 150000 : translation : 29.3 : stalled 6 times (last best: 29.5)
+[2019-05-09 21:09:00] Training finished
+[2019-05-09 21:09:00] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz.orig.npz
+[2019-05-09 21:09:04] Saving model weights and runtime parameters to model/model.src1tgt0.voita.new.nopre3.npz
+[2019-05-09 21:09:08] Saving Adam parameters to model/model.src1tgt0.voita.new.nopre3.npz.optimizer.npz

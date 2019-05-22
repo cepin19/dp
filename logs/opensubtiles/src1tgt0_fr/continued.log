@@ -1,0 +1,945 @@
+[2019-04-07 18:59:51] [marian] Marian v1.7.8 b59f01a 2019-04-02 03:22:27 +0200
+[2019-04-07 18:59:51] [marian] Running on pcknot5 as process 643 with command line:
+[2019-04-07 18:59:51] [marian] /mnt/minerva1/nlp/projects/nmt/doc-marian_w/build/marian --model test.npz --pretrained-model model/model.src1tgt0.docnew.enc_depth.test_base.npz.best-translation.npz --type transformer-context --train-sets corp/opensub.en-fr.docs.train.en.bpe.src_prev corp/opensub.en-fr.docs.train.en.bpe.src corp/opensub.en-fr.docs.train.fr.bpe --max-length 160 --dim-vocabs 30000 30000 --embedding-fix-src --embedding-fix-trg --vocabs corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml --mini-batch-fit -w 7800 --freeze --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --context-enc-depth 1 --valid-freq 5000 --save-freq 5000 --disp-freq 100 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe.src_prev corp/opensub.en-fr.docs.dev.en.bpe.src corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 16 --keep-best --beam-size 6 --normalize 0.6 --log model/train_trans.gate.log --valid-log model/valid_trans.gate.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0001 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 --no-nccl --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus
+[2019-04-07 18:59:51] [config] after-batches: 0
+[2019-04-07 18:59:51] [config] after-epochs: 0
+[2019-04-07 18:59:51] [config] allow-unk: false
+[2019-04-07 18:59:51] [config] beam-size: 6
+[2019-04-07 18:59:51] [config] bert-class-symbol: "[CLS]"
+[2019-04-07 18:59:51] [config] bert-mask-symbol: "[MASK]"
+[2019-04-07 18:59:51] [config] bert-masking-fraction: 0.15
+[2019-04-07 18:59:51] [config] bert-sep-symbol: "[SEP]"
+[2019-04-07 18:59:51] [config] bert-train-type-embeddings: true
+[2019-04-07 18:59:51] [config] bert-type-vocab-size: 2
+[2019-04-07 18:59:51] [config] best-deep: false
+[2019-04-07 18:59:51] [config] clip-gemm: 0
+[2019-04-07 18:59:51] [config] clip-norm: 5
+[2019-04-07 18:59:51] [config] context-enc-depth: 1
+[2019-04-07 18:59:51] [config] cost-type: ce-mean
+[2019-04-07 18:59:51] [config] cpu-threads: 0
+[2019-04-07 18:59:51] [config] data-weighting: ""
+[2019-04-07 18:59:51] [config] data-weighting-type: sentence
+[2019-04-07 18:59:51] [config] dec-cell: gru
+[2019-04-07 18:59:51] [config] dec-cell-base-depth: 2
+[2019-04-07 18:59:51] [config] dec-cell-high-depth: 1
+[2019-04-07 18:59:51] [config] dec-depth: 6
+[2019-04-07 18:59:51] [config] devices:
+[2019-04-07 18:59:51] [config]   - 0
+[2019-04-07 18:59:51] [config] dim-emb: 512
+[2019-04-07 18:59:51] [config] dim-rnn: 1024
+[2019-04-07 18:59:51] [config] dim-vocabs:
+[2019-04-07 18:59:51] [config]   - 30000
+[2019-04-07 18:59:51] [config]   - 30000
+[2019-04-07 18:59:51] [config] disp-first: 0
+[2019-04-07 18:59:51] [config] disp-freq: 100
+[2019-04-07 18:59:51] [config] disp-label-counts: false
+[2019-04-07 18:59:51] [config] dropout-rnn: 0
+[2019-04-07 18:59:51] [config] dropout-src: 0
+[2019-04-07 18:59:51] [config] dropout-trg: 0
+[2019-04-07 18:59:51] [config] dump-config: ""
+[2019-04-07 18:59:51] [config] early-stopping: 10
+[2019-04-07 18:59:51] [config] embedding-fix-src: true
+[2019-04-07 18:59:51] [config] embedding-fix-trg: true
+[2019-04-07 18:59:51] [config] embedding-normalization: false
+[2019-04-07 18:59:51] [config] embedding-vectors:
+[2019-04-07 18:59:51] [config]   []
+[2019-04-07 18:59:51] [config] enc-cell: gru
+[2019-04-07 18:59:51] [config] enc-cell-depth: 1
+[2019-04-07 18:59:51] [config] enc-depth: 6
+[2019-04-07 18:59:51] [config] enc-type: bidirectional
+[2019-04-07 18:59:51] [config] exponential-smoothing: 0.0001
+[2019-04-07 18:59:51] [config] freeze: true
+[2019-04-07 18:59:51] [config] grad-dropping-momentum: 0
+[2019-04-07 18:59:51] [config] grad-dropping-rate: 0
+[2019-04-07 18:59:51] [config] grad-dropping-warmup: 100
+[2019-04-07 18:59:51] [config] guided-alignment: none
+[2019-04-07 18:59:51] [config] guided-alignment-cost: mse
+[2019-04-07 18:59:51] [config] guided-alignment-weight: 0.1
+[2019-04-07 18:59:51] [config] hier-att: false
+[2019-04-07 18:59:51] [config] ignore-model-config: false
+[2019-04-07 18:59:51] [config] input-types:
+[2019-04-07 18:59:51] [config]   []
+[2019-04-07 18:59:51] [config] interpolate-env-vars: false
+[2019-04-07 18:59:51] [config] keep-best: true
+[2019-04-07 18:59:51] [config] label-smoothing: 0.1
+[2019-04-07 18:59:51] [config] layer-normalization: false
+[2019-04-07 18:59:51] [config] learn-rate: 0.0001
+[2019-04-07 18:59:51] [config] log: model/train_trans.gate.log
+[2019-04-07 18:59:51] [config] log-level: info
+[2019-04-07 18:59:51] [config] log-time-zone: ""
+[2019-04-07 18:59:51] [config] lr-decay: 0
+[2019-04-07 18:59:51] [config] lr-decay-freq: 50000
+[2019-04-07 18:59:51] [config] lr-decay-inv-sqrt:
+[2019-04-07 18:59:51] [config]   - 16000
+[2019-04-07 18:59:51] [config] lr-decay-repeat-warmup: false
+[2019-04-07 18:59:51] [config] lr-decay-reset-optimizer: false
+[2019-04-07 18:59:51] [config] lr-decay-start:
+[2019-04-07 18:59:51] [config]   - 10
+[2019-04-07 18:59:51] [config]   - 1
+[2019-04-07 18:59:51] [config] lr-decay-strategy: epoch+stalled
+[2019-04-07 18:59:51] [config] lr-report: true
+[2019-04-07 18:59:51] [config] lr-warmup: 16000
+[2019-04-07 18:59:51] [config] lr-warmup-at-reload: false
+[2019-04-07 18:59:51] [config] lr-warmup-cycle: false
+[2019-04-07 18:59:51] [config] lr-warmup-start-rate: 0
+[2019-04-07 18:59:51] [config] max-length: 160
+[2019-04-07 18:59:51] [config] max-length-crop: false
+[2019-04-07 18:59:51] [config] max-length-factor: 3
+[2019-04-07 18:59:51] [config] maxi-batch: 1000
+[2019-04-07 18:59:51] [config] maxi-batch-sort: trg
+[2019-04-07 18:59:51] [config] mini-batch: 1000
+[2019-04-07 18:59:51] [config] mini-batch-fit: true
+[2019-04-07 18:59:51] [config] mini-batch-fit-step: 10
+[2019-04-07 18:59:51] [config] mini-batch-overstuff: 1
+[2019-04-07 18:59:51] [config] mini-batch-track-lr: false
+[2019-04-07 18:59:51] [config] mini-batch-understuff: 1
+[2019-04-07 18:59:51] [config] mini-batch-warmup: 0
+[2019-04-07 18:59:51] [config] mini-batch-words: 0
+[2019-04-07 18:59:51] [config] mini-batch-words-ref: 0
+[2019-04-07 18:59:51] [config] model: test.npz
+[2019-04-07 18:59:51] [config] multi-loss-type: sum
+[2019-04-07 18:59:51] [config] multi-node: false
+[2019-04-07 18:59:51] [config] multi-node-overlap: true
+[2019-04-07 18:59:51] [config] n-best: false
+[2019-04-07 18:59:51] [config] no-nccl: true
+[2019-04-07 18:59:51] [config] no-reload: false
+[2019-04-07 18:59:51] [config] no-restore-corpus: true
+[2019-04-07 18:59:51] [config] no-shuffle: false
+[2019-04-07 18:59:51] [config] normalize: 0.6
+[2019-04-07 18:59:51] [config] num-devices: 0
+[2019-04-07 18:59:51] [config] optimizer: adam
+[2019-04-07 18:59:51] [config] optimizer-delay: 4
+[2019-04-07 18:59:51] [config] optimizer-params:
+[2019-04-07 18:59:51] [config]   - 0.9
+[2019-04-07 18:59:51] [config]   - 0.98
+[2019-04-07 18:59:51] [config]   - 1e-09
+[2019-04-07 18:59:51] [config] overwrite: false
+[2019-04-07 18:59:51] [config] pretrained-model: model/model.src1tgt0.docnew.enc_depth.test_base.npz.best-translation.npz
+[2019-04-07 18:59:51] [config] quiet: false
+[2019-04-07 18:59:51] [config] quiet-translation: true
+[2019-04-07 18:59:51] [config] relative-paths: false
+[2019-04-07 18:59:51] [config] right-left: false
+[2019-04-07 18:59:51] [config] save-freq: 5000
+[2019-04-07 18:59:51] [config] seed: 1111
+[2019-04-07 18:59:51] [config] shuffle-in-ram: false
+[2019-04-07 18:59:51] [config] skip: false
+[2019-04-07 18:59:51] [config] sqlite: ""
+[2019-04-07 18:59:51] [config] sqlite-drop: false
+[2019-04-07 18:59:51] [config] sync-sgd: true
+[2019-04-07 18:59:51] [config] tempdir: /tmp
+[2019-04-07 18:59:51] [config] tied-embeddings: false
+[2019-04-07 18:59:51] [config] tied-embeddings-all: true
+[2019-04-07 18:59:51] [config] tied-embeddings-src: false
+[2019-04-07 18:59:51] [config] train-sets:
+[2019-04-07 18:59:51] [config]   - corp/opensub.en-fr.docs.train.en.bpe.src_prev
+[2019-04-07 18:59:51] [config]   - corp/opensub.en-fr.docs.train.en.bpe.src
+[2019-04-07 18:59:51] [config]   - corp/opensub.en-fr.docs.train.fr.bpe
+[2019-04-07 18:59:51] [config] transformer-aan-activation: swish
+[2019-04-07 18:59:51] [config] transformer-aan-depth: 2
+[2019-04-07 18:59:51] [config] transformer-aan-nogate: false
+[2019-04-07 18:59:51] [config] transformer-decoder-autoreg: self-attention
+[2019-04-07 18:59:51] [config] transformer-dim-aan: 2048
+[2019-04-07 18:59:51] [config] transformer-dim-ffn: 2048
+[2019-04-07 18:59:51] [config] transformer-dropout: 0.1
+[2019-04-07 18:59:51] [config] transformer-dropout-attention: 0
+[2019-04-07 18:59:51] [config] transformer-dropout-ffn: 0
+[2019-04-07 18:59:51] [config] transformer-ffn-activation: swish
+[2019-04-07 18:59:51] [config] transformer-ffn-depth: 2
+[2019-04-07 18:59:51] [config] transformer-guided-alignment-layer: last
+[2019-04-07 18:59:51] [config] transformer-heads: 8
+[2019-04-07 18:59:51] [config] transformer-no-projection: false
+[2019-04-07 18:59:51] [config] transformer-postprocess: dan
+[2019-04-07 18:59:51] [config] transformer-postprocess-emb: d
+[2019-04-07 18:59:51] [config] transformer-preprocess: ""
+[2019-04-07 18:59:51] [config] transformer-tied-layers:
+[2019-04-07 18:59:51] [config]   []
+[2019-04-07 18:59:51] [config] transformer-train-position-embeddings: false
+[2019-04-07 18:59:51] [config] type: transformer-context
+[2019-04-07 18:59:51] [config] ulr: false
+[2019-04-07 18:59:51] [config] ulr-dim-emb: 0
+[2019-04-07 18:59:51] [config] ulr-dropout: 0
+[2019-04-07 18:59:51] [config] ulr-keys-vectors: ""
+[2019-04-07 18:59:51] [config] ulr-query-vectors: ""
+[2019-04-07 18:59:51] [config] ulr-softmax-temperature: 1
+[2019-04-07 18:59:51] [config] ulr-trainable-transformation: false
+[2019-04-07 18:59:51] [config] valid-freq: 5000
+[2019-04-07 18:59:51] [config] valid-log: model/valid_trans.gate.log
+[2019-04-07 18:59:51] [config] valid-max-length: 1000
+[2019-04-07 18:59:51] [config] valid-metrics:
+[2019-04-07 18:59:51] [config]   - cross-entropy
+[2019-04-07 18:59:51] [config]   - perplexity
+[2019-04-07 18:59:51] [config]   - translation
+[2019-04-07 18:59:51] [config] valid-mini-batch: 16
+[2019-04-07 18:59:51] [config] valid-script-path: ./val.sh
+[2019-04-07 18:59:51] [config] valid-sets:
+[2019-04-07 18:59:51] [config]   - corp/opensub.en-fr.docs.dev.en.bpe.src_prev
+[2019-04-07 18:59:51] [config]   - corp/opensub.en-fr.docs.dev.en.bpe.src
+[2019-04-07 18:59:51] [config]   - corp/opensub.en-fr.docs.dev.fr.bpe
+[2019-04-07 18:59:51] [config] valid-translation-output: data/valid.bpe.en.output
+[2019-04-07 18:59:51] [config] vocabs:
+[2019-04-07 18:59:51] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-04-07 18:59:51] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-04-07 18:59:51] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-04-07 18:59:51] [config] word-penalty: 0
+[2019-04-07 18:59:51] [config] workspace: 7800
+[2019-04-07 18:59:51] [config] Model is being created with Marian v1.7.8 b59f01a 2019-04-02 03:22:27 +0200
+[2019-04-07 18:59:51] Using synchronous training
+[2019-04-07 18:59:51] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-04-07 18:59:52] [data] Setting vocabulary size for input 0 to 30000
+[2019-04-07 18:59:52] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-04-07 18:59:52] [data] Setting vocabulary size for input 1 to 30000
+[2019-04-07 18:59:52] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-04-07 18:59:52] [data] Setting vocabulary size for input 2 to 30000
+[2019-04-07 18:59:52] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-04-07 18:59:52] [batching] Collecting statistics for batch fitting with step size 10
+[2019-04-07 18:59:52] [memory] Extending reserved space to 7808 MB (device gpu0)
+[2019-04-07 18:59:53] [comm] NCCL communicator overridden
+[2019-04-07 18:59:53] [training] Using 1 GPUs
+[2019-04-07 18:59:53] [memory] Reserving 311 MB, device gpu0
+[2019-04-07 18:59:53] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-04-07 18:59:53] [memory] Reserving 311 MB, device gpu0
+[2019-04-07 18:59:59] [batching] Done. Typical MB size is 10685 target words
+[2019-04-07 18:59:59] [memory] Extending reserved space to 7808 MB (device gpu0)
+[2019-04-07 18:59:59] [comm] NCCL communicator overridden
+[2019-04-07 18:59:59] [training] Using 1 GPUs
+[2019-04-07 18:59:59] [training] Initializing model weights with the pre-trained model model/model.src1tgt0.docnew.enc_depth.test_base.npz.best-translation.npz
+[2019-04-07 18:59:59] Loading model from model/model.src1tgt0.docnew.enc_depth.test_base.npz.best-translation.npz
+[2019-04-07 19:00:02] Training started
+[2019-04-07 19:00:02] [data] Shuffling data
+[2019-04-07 19:00:20] [data] Done reading 41736982 sentences
+[2019-04-07 19:02:51] [data] Done shuffling 41736982 sentences to temp files
+[2019-04-07 19:03:16] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-04-07 19:03:16] [memory] Reserving 311 MB, device gpu0
+[2019-04-07 19:03:16] [memory] Reserving 311 MB, device gpu0
+[2019-04-07 19:03:16] [memory] Reserving 311 MB, device gpu0
+[2019-04-07 19:03:17] [memory] Reserving 311 MB, device gpu0
+[2019-04-07 19:03:17] [memory] Reserving 622 MB, device gpu0
+[2019-04-07 19:04:02] Ep. 1 : Up. 100 : Sen. 72,784 : Cost 88.79093933 : Time 249.88s : 2995.99 words/s : L.r. 6.2500e-07
+[2019-04-07 19:04:43] Ep. 1 : Up. 200 : Sen. 140,141 : Cost 75.77626038 : Time 41.48s : 15808.91 words/s : L.r. 1.2500e-06
+[2019-04-07 19:05:24] Ep. 1 : Up. 300 : Sen. 206,667 : Cost 65.57894897 : Time 40.83s : 15445.53 words/s : L.r. 1.8750e-06
+[2019-04-07 19:06:09] Ep. 1 : Up. 400 : Sen. 288,374 : Cost 50.64526749 : Time 44.80s : 16049.70 words/s : L.r. 2.5000e-06
+[2019-04-07 19:06:53] Ep. 1 : Up. 500 : Sen. 364,869 : Cost 46.33994293 : Time 43.93s : 15801.67 words/s : L.r. 3.1250e-06
+[2019-04-07 19:07:38] Ep. 1 : Up. 600 : Sen. 439,392 : Cost 43.20233917 : Time 44.67s : 16198.20 words/s : L.r. 3.7500e-06
+[2019-04-07 19:08:22] Ep. 1 : Up. 700 : Sen. 514,557 : Cost 34.52018356 : Time 43.95s : 15717.35 words/s : L.r. 4.3750e-06
+[2019-04-07 19:09:07] Ep. 1 : Up. 800 : Sen. 595,332 : Cost 29.68462372 : Time 45.51s : 15914.38 words/s : L.r. 5.0000e-06
+[2019-04-07 19:09:52] Ep. 1 : Up. 900 : Sen. 669,692 : Cost 29.10175514 : Time 44.75s : 15655.74 words/s : L.r. 5.6250e-06
+[2019-04-07 19:10:33] Ep. 1 : Up. 1000 : Sen. 739,107 : Cost 25.75403404 : Time 40.96s : 14790.94 words/s : L.r. 6.2500e-06
+[2019-04-07 19:11:14] Ep. 1 : Up. 1100 : Sen. 805,446 : Cost 28.27874947 : Time 41.26s : 15473.61 words/s : L.r. 6.8750e-06
+[2019-04-07 19:11:57] Ep. 1 : Up. 1200 : Sen. 872,195 : Cost 29.00633049 : Time 43.09s : 16237.77 words/s : L.r. 7.5000e-06
+[2019-04-07 19:12:40] Ep. 1 : Up. 1300 : Sen. 939,489 : Cost 27.20742416 : Time 42.50s : 15703.88 words/s : L.r. 8.1250e-06
+[2019-04-07 19:13:24] Ep. 1 : Up. 1400 : Sen. 1,011,389 : Cost 25.70614243 : Time 44.32s : 15845.81 words/s : L.r. 8.7500e-06
+[2019-04-07 19:14:06] Ep. 1 : Up. 1500 : Sen. 1,080,970 : Cost 24.45856667 : Time 42.01s : 15676.92 words/s : L.r. 9.3750e-06
+[2019-04-07 19:14:50] Ep. 1 : Up. 1600 : Sen. 1,161,142 : Cost 21.29136658 : Time 43.95s : 15480.42 words/s : L.r. 1.0000e-05
+[2019-04-07 19:15:34] Ep. 1 : Up. 1700 : Sen. 1,231,492 : Cost 26.68042564 : Time 44.34s : 16271.94 words/s : L.r. 1.0625e-05
+[2019-04-07 19:16:17] Ep. 1 : Up. 1800 : Sen. 1,298,348 : Cost 26.00334740 : Time 42.43s : 16238.26 words/s : L.r. 1.1250e-05
+[2019-04-07 19:17:01] Ep. 1 : Up. 1900 : Sen. 1,377,763 : Cost 21.80488396 : Time 44.63s : 15681.51 words/s : L.r. 1.1875e-05
+[2019-04-07 19:17:42] Ep. 1 : Up. 2000 : Sen. 1,441,126 : Cost 25.42710114 : Time 41.10s : 15375.79 words/s : L.r. 1.2500e-05
+[2019-04-07 19:18:27] Ep. 1 : Up. 2100 : Sen. 1,514,854 : Cost 24.99218369 : Time 44.92s : 15988.58 words/s : L.r. 1.3125e-05
+[2019-04-07 19:19:10] Ep. 1 : Up. 2200 : Sen. 1,583,612 : Cost 24.51216888 : Time 42.78s : 15469.51 words/s : L.r. 1.3750e-05
+[2019-04-07 19:19:52] Ep. 1 : Up. 2300 : Sen. 1,652,240 : Cost 24.13391876 : Time 42.39s : 15598.04 words/s : L.r. 1.4375e-05
+[2019-04-07 19:20:36] Ep. 1 : Up. 2400 : Sen. 1,727,934 : Cost 22.01877975 : Time 43.13s : 15687.74 words/s : L.r. 1.5000e-05
+[2019-04-07 19:21:19] Ep. 1 : Up. 2500 : Sen. 1,797,572 : Cost 24.33463860 : Time 43.41s : 15850.84 words/s : L.r. 1.5625e-05
+[2019-04-07 19:22:02] Ep. 1 : Up. 2600 : Sen. 1,869,314 : Cost 23.86293602 : Time 42.88s : 15821.88 words/s : L.r. 1.6250e-05
+[2019-04-07 19:22:47] Ep. 1 : Up. 2700 : Sen. 1,946,447 : Cost 22.58100891 : Time 45.25s : 15698.27 words/s : L.r. 1.6875e-05
+[2019-04-07 19:23:29] Ep. 1 : Up. 2800 : Sen. 2,017,721 : Cost 22.47687531 : Time 42.05s : 15172.22 words/s : L.r. 1.7500e-05
+[2019-04-07 19:24:11] Ep. 1 : Up. 2900 : Sen. 2,084,473 : Cost 24.59355164 : Time 42.22s : 15477.06 words/s : L.r. 1.8125e-05
+[2019-04-07 19:24:57] Ep. 1 : Up. 3000 : Sen. 2,159,269 : Cost 24.61096573 : Time 45.46s : 16219.06 words/s : L.r. 1.8750e-05
+[2019-04-07 19:25:40] Ep. 1 : Up. 3100 : Sen. 2,228,541 : Cost 25.00686455 : Time 42.88s : 15785.85 words/s : L.r. 1.9375e-05
+[2019-04-07 19:26:25] Ep. 1 : Up. 3200 : Sen. 2,302,773 : Cost 24.49933434 : Time 44.78s : 16068.51 words/s : L.r. 2.0000e-05
+[2019-04-07 19:27:06] Ep. 1 : Up. 3300 : Sen. 2,363,630 : Cost 26.79950905 : Time 41.13s : 15337.80 words/s : L.r. 2.0625e-05
+[2019-04-07 19:27:52] Ep. 1 : Up. 3400 : Sen. 2,444,718 : Cost 22.08912468 : Time 45.99s : 15962.78 words/s : L.r. 2.1250e-05
+[2019-04-07 19:28:38] Ep. 1 : Up. 3500 : Sen. 2,522,139 : Cost 23.34737587 : Time 45.86s : 16134.85 words/s : L.r. 2.1875e-05
+[2019-04-07 19:29:17] Ep. 1 : Up. 3600 : Sen. 2,582,757 : Cost 25.27922821 : Time 39.72s : 15115.96 words/s : L.r. 2.2500e-05
+[2019-04-07 19:30:00] Ep. 1 : Up. 3700 : Sen. 2,658,808 : Cost 21.18351936 : Time 42.53s : 15427.73 words/s : L.r. 2.3125e-05
+[2019-04-07 19:30:42] Ep. 1 : Up. 3800 : Sen. 2,728,091 : Cost 23.90013885 : Time 42.57s : 15821.14 words/s : L.r. 2.3750e-05
+[2019-04-07 19:31:26] Ep. 1 : Up. 3900 : Sen. 2,806,990 : Cost 20.86288452 : Time 43.82s : 15387.20 words/s : L.r. 2.4375e-05
+[2019-04-07 19:32:08] Ep. 1 : Up. 4000 : Sen. 2,873,948 : Cost 23.93498802 : Time 41.33s : 15693.29 words/s : L.r. 2.5000e-05
+[2019-04-07 19:32:52] Ep. 1 : Up. 4100 : Sen. 2,950,940 : Cost 22.98920822 : Time 44.83s : 16251.08 words/s : L.r. 2.5625e-05
+[2019-04-07 19:33:38] Ep. 1 : Up. 4200 : Sen. 3,029,994 : Cost 22.56567955 : Time 45.39s : 16177.89 words/s : L.r. 2.6250e-05
+[2019-04-07 19:34:20] Ep. 1 : Up. 4300 : Sen. 3,097,178 : Cost 24.96947861 : Time 42.52s : 15817.95 words/s : L.r. 2.6875e-05
+[2019-04-07 19:35:03] Ep. 1 : Up. 4400 : Sen. 3,166,867 : Cost 24.44385338 : Time 42.98s : 15601.92 words/s : L.r. 2.7500e-05
+[2019-04-07 19:35:44] Ep. 1 : Up. 4500 : Sen. 3,237,647 : Cost 21.48714828 : Time 40.89s : 15107.80 words/s : L.r. 2.8125e-05
+[2019-04-07 19:36:26] Ep. 1 : Up. 4600 : Sen. 3,301,595 : Cost 25.89603806 : Time 42.31s : 15672.37 words/s : L.r. 2.8750e-05
+[2019-04-07 19:37:09] Ep. 1 : Up. 4700 : Sen. 3,370,530 : Cost 24.31954956 : Time 42.86s : 15573.82 words/s : L.r. 2.9375e-05
+[2019-04-07 19:37:54] Ep. 1 : Up. 4800 : Sen. 3,448,916 : Cost 23.02964401 : Time 44.95s : 16397.67 words/s : L.r. 3.0000e-05
+[2019-04-07 19:38:38] Ep. 1 : Up. 4900 : Sen. 3,520,131 : Cost 24.34970474 : Time 43.54s : 16258.92 words/s : L.r. 3.0625e-05
+[2019-04-07 19:39:21] Ep. 1 : Up. 5000 : Sen. 3,590,910 : Cost 22.60999489 : Time 43.09s : 15359.74 words/s : L.r. 3.1250e-05
+[2019-04-07 19:39:21] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-07 19:39:25] Saving model weights and runtime parameters to test.iter5000.npz
+[2019-04-07 19:39:29] Saving model weights and runtime parameters to test.npz
+[2019-04-07 19:39:33] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-07 19:39:49] Saving model weights and runtime parameters to test.npz.best-cross-entropy.npz
+[2019-04-07 19:39:53] [valid] Ep. 1 : Up. 5000 : cross-entropy : 19.2004 : new best
+[2019-04-07 19:40:00] Saving model weights and runtime parameters to test.npz.best-perplexity.npz
+[2019-04-07 19:40:04] [valid] Ep. 1 : Up. 5000 : perplexity : 4.43583 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-07 19:41:29] Saving model weights and runtime parameters to test.npz.best-translation.npz
+[2019-04-07 19:41:34] [valid] Ep. 1 : Up. 5000 : translation : 34.5 : new best
+[2019-04-07 19:42:18] Ep. 1 : Up. 5100 : Sen. 3,666,904 : Cost 22.12561035 : Time 176.86s : 3804.77 words/s : L.r. 3.1875e-05
+[2019-04-07 19:43:00] Ep. 1 : Up. 5200 : Sen. 3,740,645 : Cost 22.23620415 : Time 42.63s : 15594.72 words/s : L.r. 3.2500e-05
+[2019-04-07 19:43:43] Ep. 1 : Up. 5300 : Sen. 3,805,665 : Cost 25.15233803 : Time 42.13s : 15489.42 words/s : L.r. 3.3125e-05
+[2019-04-07 19:44:28] Ep. 1 : Up. 5400 : Sen. 3,886,248 : Cost 21.88364601 : Time 45.76s : 15831.04 words/s : L.r. 3.3750e-05
+[2019-04-07 19:45:14] Ep. 1 : Up. 5500 : Sen. 3,963,090 : Cost 23.40292931 : Time 45.40s : 16136.43 words/s : L.r. 3.4375e-05
+[2019-04-07 19:45:57] Ep. 1 : Up. 5600 : Sen. 4,040,596 : Cost 21.25198746 : Time 43.20s : 15166.59 words/s : L.r. 3.5000e-05
+[2019-04-07 19:46:40] Ep. 1 : Up. 5700 : Sen. 4,109,081 : Cost 24.04515839 : Time 42.71s : 15674.48 words/s : L.r. 3.5625e-05
+[2019-04-07 19:47:25] Ep. 1 : Up. 5800 : Sen. 4,182,746 : Cost 25.88631058 : Time 45.87s : 16808.17 words/s : L.r. 3.6250e-05
+[2019-04-07 19:48:08] Ep. 1 : Up. 5900 : Sen. 4,253,323 : Cost 23.84217453 : Time 43.02s : 15534.48 words/s : L.r. 3.6875e-05
+[2019-04-07 19:48:50] Ep. 1 : Up. 6000 : Sen. 4,322,354 : Cost 22.65657806 : Time 41.08s : 15345.53 words/s : L.r. 3.7500e-05
+[2019-04-07 19:49:35] Ep. 1 : Up. 6100 : Sen. 4,398,406 : Cost 24.02201653 : Time 45.29s : 16087.10 words/s : L.r. 3.8125e-05
+[2019-04-07 19:50:18] Ep. 1 : Up. 6200 : Sen. 4,473,908 : Cost 22.30804062 : Time 43.21s : 15679.61 words/s : L.r. 3.8750e-05
+[2019-04-07 19:51:00] Ep. 1 : Up. 6300 : Sen. 4,539,265 : Cost 24.89134216 : Time 42.05s : 15561.98 words/s : L.r. 3.9375e-05
+[2019-04-07 19:51:45] Ep. 1 : Up. 6400 : Sen. 4,618,655 : Cost 21.71465302 : Time 45.10s : 15543.32 words/s : L.r. 4.0000e-05
+[2019-04-07 19:52:27] Ep. 1 : Up. 6500 : Sen. 4,683,866 : Cost 24.77257538 : Time 41.67s : 15573.24 words/s : L.r. 4.0625e-05
+[2019-04-07 19:53:12] Ep. 1 : Up. 6600 : Sen. 4,760,398 : Cost 23.77338409 : Time 45.48s : 16342.97 words/s : L.r. 4.1250e-05
+[2019-04-07 19:53:55] Ep. 1 : Up. 6700 : Sen. 4,834,052 : Cost 21.87466431 : Time 43.00s : 15308.52 words/s : L.r. 4.1875e-05
+[2019-04-07 19:54:40] Ep. 1 : Up. 6800 : Sen. 4,902,517 : Cost 25.43759727 : Time 44.19s : 15804.06 words/s : L.r. 4.2500e-05
+[2019-04-07 19:55:23] Ep. 1 : Up. 6900 : Sen. 4,975,351 : Cost 23.15652275 : Time 43.33s : 15758.47 words/s : L.r. 4.3125e-05
+[2019-04-07 19:56:07] Ep. 1 : Up. 7000 : Sen. 5,048,260 : Cost 23.34617424 : Time 44.51s : 15657.41 words/s : L.r. 4.3750e-05
+[2019-04-07 19:56:48] Ep. 1 : Up. 7100 : Sen. 5,114,388 : Cost 23.76995468 : Time 40.70s : 15458.22 words/s : L.r. 4.4375e-05
+[2019-04-07 19:57:29] Ep. 1 : Up. 7200 : Sen. 5,181,946 : Cost 23.25843811 : Time 41.23s : 15358.77 words/s : L.r. 4.5000e-05
+[2019-04-07 19:58:14] Ep. 1 : Up. 7300 : Sen. 5,254,989 : Cost 24.58282280 : Time 45.03s : 16067.04 words/s : L.r. 4.5625e-05
+[2019-04-07 19:58:57] Ep. 1 : Up. 7400 : Sen. 5,323,052 : Cost 24.48989677 : Time 42.68s : 15745.69 words/s : L.r. 4.6250e-05
+[2019-04-07 19:59:41] Ep. 1 : Up. 7500 : Sen. 5,395,137 : Cost 24.17270088 : Time 44.36s : 15792.22 words/s : L.r. 4.6875e-05
+[2019-04-07 20:00:27] Ep. 1 : Up. 7600 : Sen. 5,477,560 : Cost 21.08622551 : Time 45.87s : 15796.83 words/s : L.r. 4.7500e-05
+[2019-04-07 20:01:11] Ep. 1 : Up. 7700 : Sen. 5,551,215 : Cost 22.72820091 : Time 43.54s : 15761.99 words/s : L.r. 4.8125e-05
+[2019-04-07 20:01:53] Ep. 1 : Up. 7800 : Sen. 5,626,404 : Cost 21.56595039 : Time 42.59s : 15436.12 words/s : L.r. 4.8750e-05
+[2019-04-07 20:02:36] Ep. 1 : Up. 7900 : Sen. 5,702,525 : Cost 20.93656731 : Time 42.77s : 15288.88 words/s : L.r. 4.9375e-05
+[2019-04-07 20:03:20] Ep. 1 : Up. 8000 : Sen. 5,773,882 : Cost 24.38792038 : Time 43.50s : 15983.23 words/s : L.r. 5.0000e-05
+[2019-04-07 20:04:00] Ep. 1 : Up. 8100 : Sen. 5,835,705 : Cost 25.18993950 : Time 40.52s : 15341.75 words/s : L.r. 5.0625e-05
+[2019-04-07 20:04:46] Ep. 1 : Up. 8200 : Sen. 5,912,287 : Cost 23.53179550 : Time 45.49s : 15976.07 words/s : L.r. 5.1250e-05
+[2019-04-07 20:05:28] Ep. 1 : Up. 8300 : Sen. 5,978,519 : Cost 26.36114120 : Time 42.76s : 16130.82 words/s : L.r. 5.1875e-05
+[2019-04-07 20:06:11] Ep. 1 : Up. 8400 : Sen. 6,050,094 : Cost 22.51087570 : Time 42.38s : 15468.32 words/s : L.r. 5.2500e-05
+[2019-04-07 20:06:55] Ep. 1 : Up. 8500 : Sen. 6,127,429 : Cost 22.31133461 : Time 44.55s : 15700.30 words/s : L.r. 5.3125e-05
+[2019-04-07 20:07:43] Ep. 1 : Up. 8600 : Sen. 6,204,669 : Cost 25.32884979 : Time 47.32s : 16651.50 words/s : L.r. 5.3750e-05
+[2019-04-07 20:08:27] Ep. 1 : Up. 8700 : Sen. 6,285,663 : Cost 21.23989868 : Time 44.68s : 15666.26 words/s : L.r. 5.4375e-05
+[2019-04-07 20:09:09] Ep. 1 : Up. 8800 : Sen. 6,352,298 : Cost 25.77172279 : Time 42.01s : 15916.28 words/s : L.r. 5.5000e-05
+[2019-04-07 20:09:53] Ep. 1 : Up. 8900 : Sen. 6,425,457 : Cost 22.19555664 : Time 43.49s : 15343.84 words/s : L.r. 5.5625e-05
+[2019-04-07 20:10:35] Ep. 1 : Up. 9000 : Sen. 6,494,035 : Cost 24.30636024 : Time 42.45s : 15739.59 words/s : L.r. 5.6250e-05
+[2019-04-07 20:11:19] Ep. 1 : Up. 9100 : Sen. 6,565,949 : Cost 23.37913322 : Time 43.46s : 15682.55 words/s : L.r. 5.6875e-05
+[2019-04-07 20:12:02] Ep. 1 : Up. 9200 : Sen. 6,636,884 : Cost 23.85278320 : Time 43.23s : 15724.44 words/s : L.r. 5.7500e-05
+[2019-04-07 20:12:46] Ep. 1 : Up. 9300 : Sen. 6,711,346 : Cost 22.98363304 : Time 44.38s : 15830.67 words/s : L.r. 5.8125e-05
+[2019-04-07 20:13:32] Ep. 1 : Up. 9400 : Sen. 6,792,040 : Cost 22.03346443 : Time 45.70s : 16077.27 words/s : L.r. 5.8750e-05
+[2019-04-07 20:14:15] Ep. 1 : Up. 9500 : Sen. 6,861,052 : Cost 25.16482162 : Time 42.96s : 16027.70 words/s : L.r. 5.9375e-05
+[2019-04-07 20:14:57] Ep. 1 : Up. 9600 : Sen. 6,926,119 : Cost 24.01738167 : Time 41.59s : 15229.62 words/s : L.r. 6.0000e-05
+[2019-04-07 20:15:41] Ep. 1 : Up. 9700 : Sen. 6,999,356 : Cost 23.19046783 : Time 44.27s : 15827.06 words/s : L.r. 6.0625e-05
+[2019-04-07 20:16:25] Ep. 1 : Up. 9800 : Sen. 7,074,352 : Cost 22.09453201 : Time 43.83s : 15387.87 words/s : L.r. 6.1250e-05
+[2019-04-07 20:17:07] Ep. 1 : Up. 9900 : Sen. 7,145,909 : Cost 23.42519379 : Time 42.69s : 15738.70 words/s : L.r. 6.1875e-05
+[2019-04-07 20:17:51] Ep. 1 : Up. 10000 : Sen. 7,215,586 : Cost 24.10950661 : Time 43.13s : 15682.14 words/s : L.r. 6.2500e-05
+[2019-04-07 20:17:51] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-07 20:17:55] Saving model weights and runtime parameters to test.iter10000.npz
+[2019-04-07 20:17:59] Saving model weights and runtime parameters to test.npz
+[2019-04-07 20:18:03] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-07 20:18:19] Saving model weights and runtime parameters to test.npz.best-cross-entropy.npz
+[2019-04-07 20:18:23] [valid] Ep. 1 : Up. 10000 : cross-entropy : 19.1359 : new best
+[2019-04-07 20:18:30] Saving model weights and runtime parameters to test.npz.best-perplexity.npz
+[2019-04-07 20:18:34] [valid] Ep. 1 : Up. 10000 : perplexity : 4.41367 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-07 20:19:59] Saving model weights and runtime parameters to test.npz.best-translation.npz
+[2019-04-07 20:20:03] [valid] Ep. 1 : Up. 10000 : translation : 34.6 : new best
+[2019-04-07 20:20:51] Ep. 1 : Up. 10100 : Sen. 7,297,132 : Cost 23.76893806 : Time 180.08s : 4382.38 words/s : L.r. 6.3125e-05
+[2019-04-07 20:21:31] Ep. 1 : Up. 10200 : Sen. 7,365,480 : Cost 22.81207848 : Time 40.66s : 15319.86 words/s : L.r. 6.3750e-05
+[2019-04-07 20:22:14] Ep. 1 : Up. 10300 : Sen. 7,434,456 : Cost 24.09820938 : Time 42.47s : 15785.38 words/s : L.r. 6.4375e-05
+[2019-04-07 20:22:56] Ep. 1 : Up. 10400 : Sen. 7,501,696 : Cost 24.33129311 : Time 42.15s : 15582.82 words/s : L.r. 6.5000e-05
+[2019-04-07 20:23:40] Ep. 1 : Up. 10500 : Sen. 7,572,185 : Cost 24.30562019 : Time 44.31s : 15823.41 words/s : L.r. 6.5625e-05
+[2019-04-07 20:24:22] Ep. 1 : Up. 10600 : Sen. 7,640,738 : Cost 22.59941101 : Time 42.12s : 15052.24 words/s : L.r. 6.6250e-05
+[2019-04-07 20:25:07] Ep. 1 : Up. 10700 : Sen. 7,717,912 : Cost 23.37537193 : Time 44.20s : 16327.22 words/s : L.r. 6.6875e-05
+[2019-04-07 20:25:52] Ep. 1 : Up. 10800 : Sen. 7,795,657 : Cost 22.61377525 : Time 45.10s : 15753.38 words/s : L.r. 6.7500e-05
+[2019-04-07 20:26:35] Ep. 1 : Up. 10900 : Sen. 7,869,597 : Cost 22.10579681 : Time 43.59s : 15606.87 words/s : L.r. 6.8125e-05
+[2019-04-07 20:27:18] Ep. 1 : Up. 11000 : Sen. 7,938,812 : Cost 24.25957489 : Time 42.91s : 15841.11 words/s : L.r. 6.8750e-05
+[2019-04-07 20:28:01] Ep. 1 : Up. 11100 : Sen. 8,008,636 : Cost 23.56542397 : Time 43.28s : 15361.97 words/s : L.r. 6.9375e-05
+[2019-04-07 20:28:44] Ep. 1 : Up. 11200 : Sen. 8,081,143 : Cost 22.04561234 : Time 42.21s : 15391.52 words/s : L.r. 7.0000e-05
+[2019-04-07 20:29:26] Ep. 1 : Up. 11300 : Sen. 8,156,937 : Cost 20.42217636 : Time 42.17s : 15291.53 words/s : L.r. 7.0625e-05
+[2019-04-07 20:30:09] Ep. 1 : Up. 11400 : Sen. 8,227,086 : Cost 23.39537621 : Time 42.75s : 15487.31 words/s : L.r. 7.1250e-05
+[2019-04-07 20:30:51] Ep. 1 : Up. 11500 : Sen. 8,295,089 : Cost 24.06615829 : Time 42.06s : 15624.87 words/s : L.r. 7.1875e-05
+[2019-04-07 20:31:34] Ep. 1 : Up. 11600 : Sen. 8,366,187 : Cost 24.15510368 : Time 43.17s : 15990.28 words/s : L.r. 7.2500e-05
+[2019-04-07 20:32:19] Ep. 1 : Up. 11700 : Sen. 8,439,627 : Cost 24.03761673 : Time 44.80s : 15745.47 words/s : L.r. 7.3125e-05
+[2019-04-07 20:33:03] Ep. 1 : Up. 11800 : Sen. 8,515,797 : Cost 22.88390350 : Time 44.83s : 15870.95 words/s : L.r. 7.3750e-05
+[2019-04-07 20:33:45] Ep. 1 : Up. 11900 : Sen. 8,583,300 : Cost 23.80360794 : Time 41.19s : 15436.84 words/s : L.r. 7.4375e-05
+[2019-04-07 20:34:26] Ep. 1 : Up. 12000 : Sen. 8,648,316 : Cost 24.22604752 : Time 41.67s : 15182.40 words/s : L.r. 7.5000e-05
+[2019-04-07 20:35:15] Ep. 1 : Up. 12100 : Sen. 8,731,162 : Cost 23.64277267 : Time 48.99s : 16537.14 words/s : L.r. 7.5625e-05
+[2019-04-07 20:35:59] Ep. 1 : Up. 12200 : Sen. 8,800,459 : Cost 25.02512360 : Time 43.73s : 16175.63 words/s : L.r. 7.6250e-05
+[2019-04-07 20:36:42] Ep. 1 : Up. 12300 : Sen. 8,876,522 : Cost 21.39063454 : Time 43.09s : 15575.85 words/s : L.r. 7.6875e-05
+[2019-04-07 20:37:26] Ep. 1 : Up. 12400 : Sen. 8,948,798 : Cost 24.65568352 : Time 44.28s : 16119.54 words/s : L.r. 7.7500e-05
+[2019-04-07 20:38:10] Ep. 1 : Up. 12500 : Sen. 9,015,066 : Cost 26.40484810 : Time 43.12s : 16134.84 words/s : L.r. 7.8125e-05
+[2019-04-07 20:38:52] Ep. 1 : Up. 12600 : Sen. 9,078,683 : Cost 25.73855019 : Time 42.48s : 15160.38 words/s : L.r. 7.8750e-05
+[2019-04-07 20:39:37] Ep. 1 : Up. 12700 : Sen. 9,151,667 : Cost 24.64719582 : Time 45.01s : 16326.60 words/s : L.r. 7.9375e-05
+[2019-04-07 20:40:20] Ep. 1 : Up. 12800 : Sen. 9,220,141 : Cost 24.85447121 : Time 43.32s : 15861.30 words/s : L.r. 8.0000e-05
+[2019-04-07 20:41:04] Ep. 1 : Up. 12900 : Sen. 9,293,475 : Cost 23.22475052 : Time 43.71s : 15810.69 words/s : L.r. 8.0625e-05
+[2019-04-07 20:41:47] Ep. 1 : Up. 13000 : Sen. 9,364,222 : Cost 22.95263100 : Time 42.62s : 15603.64 words/s : L.r. 8.1250e-05
+[2019-04-07 20:42:30] Ep. 1 : Up. 13100 : Sen. 9,433,886 : Cost 24.45304871 : Time 43.36s : 16111.15 words/s : L.r. 8.1875e-05
+[2019-04-07 20:43:15] Ep. 1 : Up. 13200 : Sen. 9,515,843 : Cost 21.85194778 : Time 45.45s : 16097.50 words/s : L.r. 8.2500e-05
+[2019-04-07 20:43:57] Ep. 1 : Up. 13300 : Sen. 9,586,157 : Cost 22.43854523 : Time 41.61s : 15248.81 words/s : L.r. 8.3125e-05
+[2019-04-07 20:44:38] Ep. 1 : Up. 13400 : Sen. 9,653,432 : Cost 22.69271278 : Time 40.65s : 15056.68 words/s : L.r. 8.3750e-05
+[2019-04-07 20:45:20] Ep. 1 : Up. 13500 : Sen. 9,719,353 : Cost 24.79778290 : Time 42.46s : 15394.63 words/s : L.r. 8.4375e-05
+[2019-04-07 20:46:05] Ep. 1 : Up. 13600 : Sen. 9,798,667 : Cost 21.54391861 : Time 44.84s : 15605.86 words/s : L.r. 8.5000e-05
+[2019-04-07 20:46:49] Ep. 1 : Up. 13700 : Sen. 9,872,166 : Cost 23.46059036 : Time 44.19s : 15951.51 words/s : L.r. 8.5625e-05
+[2019-04-07 20:47:33] Ep. 1 : Up. 13800 : Sen. 9,951,213 : Cost 21.44779015 : Time 43.90s : 15657.48 words/s : L.r. 8.6250e-05
+[2019-04-07 20:48:18] Ep. 1 : Up. 13900 : Sen. 10,026,887 : Cost 22.82926750 : Time 44.94s : 15755.20 words/s : L.r. 8.6875e-05
+[2019-04-07 20:49:01] Ep. 1 : Up. 14000 : Sen. 10,095,869 : Cost 25.01734352 : Time 43.08s : 16131.71 words/s : L.r. 8.7500e-05
+[2019-04-07 20:49:44] Ep. 1 : Up. 14100 : Sen. 10,160,375 : Cost 26.32319260 : Time 42.85s : 15862.26 words/s : L.r. 8.8125e-05
+[2019-04-07 20:50:26] Ep. 1 : Up. 14200 : Sen. 10,227,205 : Cost 24.73314095 : Time 41.91s : 15711.20 words/s : L.r. 8.8750e-05
+[2019-04-07 20:51:09] Ep. 1 : Up. 14300 : Sen. 10,300,684 : Cost 22.37193871 : Time 42.73s : 15804.54 words/s : L.r. 8.9375e-05
+[2019-04-07 20:51:51] Ep. 1 : Up. 14400 : Sen. 10,366,979 : Cost 24.94807625 : Time 42.18s : 15696.32 words/s : L.r. 9.0000e-05
+[2019-04-07 20:52:36] Ep. 1 : Up. 14500 : Sen. 10,444,039 : Cost 22.87816238 : Time 44.97s : 16056.40 words/s : L.r. 9.0625e-05
+[2019-04-07 20:53:20] Ep. 1 : Up. 14600 : Sen. 10,520,561 : Cost 22.25626373 : Time 44.09s : 15868.01 words/s : L.r. 9.1250e-05
+[2019-04-07 20:54:04] Ep. 1 : Up. 14700 : Sen. 10,592,722 : Cost 23.22259903 : Time 44.07s : 15431.83 words/s : L.r. 9.1875e-05
+[2019-04-07 20:54:47] Ep. 1 : Up. 14800 : Sen. 10,664,382 : Cost 23.12878990 : Time 43.20s : 15520.30 words/s : L.r. 9.2500e-05
+[2019-04-07 20:55:31] Ep. 1 : Up. 14900 : Sen. 10,736,494 : Cost 23.35428238 : Time 44.09s : 15637.43 words/s : L.r. 9.3125e-05
+[2019-04-07 20:56:13] Ep. 1 : Up. 15000 : Sen. 10,806,458 : Cost 22.22303772 : Time 42.08s : 14901.23 words/s : L.r. 9.3750e-05
+[2019-04-07 20:56:13] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-07 20:56:18] Saving model weights and runtime parameters to test.iter15000.npz
+[2019-04-07 20:56:22] Saving model weights and runtime parameters to test.npz
+[2019-04-07 20:56:26] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-07 20:56:42] Saving model weights and runtime parameters to test.npz.best-cross-entropy.npz
+[2019-04-07 20:56:46] [valid] Ep. 1 : Up. 15000 : cross-entropy : 19.1025 : new best
+[2019-04-07 20:56:53] Saving model weights and runtime parameters to test.npz.best-perplexity.npz
+[2019-04-07 20:56:57] [valid] Ep. 1 : Up. 15000 : perplexity : 4.40225 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-07 20:58:21] [valid] Ep. 1 : Up. 15000 : translation : 34.6 : stalled 1 times (last best: 34.6)
+[2019-04-07 20:59:05] Ep. 1 : Up. 15100 : Sen. 10,879,091 : Cost 23.18535042 : Time 171.37s : 4010.22 words/s : L.r. 9.4375e-05
+[2019-04-07 20:59:46] Ep. 1 : Up. 15200 : Sen. 10,949,751 : Cost 22.55385590 : Time 41.57s : 15339.49 words/s : L.r. 9.5000e-05
+[2019-04-07 21:00:31] Ep. 1 : Up. 15300 : Sen. 11,029,623 : Cost 21.91732979 : Time 44.71s : 15782.15 words/s : L.r. 9.5625e-05
+[2019-04-07 21:01:14] Ep. 1 : Up. 15400 : Sen. 11,097,656 : Cost 25.79754448 : Time 43.43s : 16040.02 words/s : L.r. 9.6250e-05
+[2019-04-07 21:01:58] Ep. 1 : Up. 15500 : Sen. 11,167,006 : Cost 24.81737328 : Time 43.72s : 15881.15 words/s : L.r. 9.6875e-05
+[2019-04-07 21:02:42] Ep. 1 : Up. 15600 : Sen. 11,236,659 : Cost 24.62223434 : Time 44.32s : 15691.50 words/s : L.r. 9.7500e-05
+[2019-04-07 21:03:24] Ep. 1 : Up. 15700 : Sen. 11,304,712 : Cost 22.49754333 : Time 41.41s : 15097.76 words/s : L.r. 9.8125e-05
+[2019-04-07 21:04:07] Ep. 1 : Up. 15800 : Sen. 11,383,234 : Cost 20.20588112 : Time 42.64s : 15230.23 words/s : L.r. 9.8750e-05
+[2019-04-07 21:04:50] Ep. 1 : Up. 15900 : Sen. 11,452,640 : Cost 24.41495514 : Time 43.82s : 15995.45 words/s : L.r. 9.9375e-05
+[2019-04-07 21:05:33] Ep. 1 : Up. 16000 : Sen. 11,530,929 : Cost 20.51894188 : Time 43.06s : 15581.22 words/s : L.r. 1.0000e-04
+[2019-04-07 21:06:17] Ep. 1 : Up. 16100 : Sen. 11,600,978 : Cost 23.98813057 : Time 43.23s : 15614.10 words/s : L.r. 9.9689e-05
+[2019-04-07 21:07:01] Ep. 1 : Up. 16200 : Sen. 11,679,415 : Cost 22.18733215 : Time 44.49s : 15850.99 words/s : L.r. 9.9381e-05
+[2019-04-07 21:07:47] Ep. 1 : Up. 16300 : Sen. 11,759,412 : Cost 22.80984688 : Time 46.11s : 16184.94 words/s : L.r. 9.9075e-05
+[2019-04-07 21:08:32] Ep. 1 : Up. 16400 : Sen. 11,840,968 : Cost 21.28809738 : Time 44.70s : 15703.03 words/s : L.r. 9.8773e-05
+[2019-04-07 21:09:14] Ep. 1 : Up. 16500 : Sen. 11,902,942 : Cost 26.66893959 : Time 41.87s : 15867.14 words/s : L.r. 9.8473e-05
+[2019-04-07 21:09:56] Ep. 1 : Up. 16600 : Sen. 11,967,356 : Cost 25.09955597 : Time 41.97s : 15458.72 words/s : L.r. 9.8176e-05
+[2019-04-07 21:10:40] Ep. 1 : Up. 16700 : Sen. 12,038,321 : Cost 25.41584015 : Time 44.50s : 16180.95 words/s : L.r. 9.7882e-05
+[2019-04-07 21:11:25] Ep. 1 : Up. 16800 : Sen. 12,117,183 : Cost 21.92870522 : Time 45.20s : 15678.09 words/s : L.r. 9.7590e-05
+[2019-04-07 21:12:08] Ep. 1 : Up. 16900 : Sen. 12,188,339 : Cost 23.44731331 : Time 42.18s : 15777.45 words/s : L.r. 9.7301e-05
+[2019-04-07 21:12:48] Ep. 1 : Up. 17000 : Sen. 12,251,944 : Cost 23.85658073 : Time 40.62s : 15376.55 words/s : L.r. 9.7014e-05
+[2019-04-07 21:13:33] Ep. 1 : Up. 17100 : Sen. 12,327,024 : Cost 23.45059776 : Time 44.46s : 15827.34 words/s : L.r. 9.6730e-05
+[2019-04-07 21:14:15] Ep. 1 : Up. 17200 : Sen. 12,396,827 : Cost 23.55475998 : Time 42.69s : 15727.24 words/s : L.r. 9.6449e-05
+[2019-04-07 21:15:00] Ep. 1 : Up. 17300 : Sen. 12,472,707 : Cost 23.68088722 : Time 44.77s : 16117.12 words/s : L.r. 9.6169e-05
+[2019-04-07 21:15:44] Ep. 1 : Up. 17400 : Sen. 12,539,078 : Cost 26.08341026 : Time 43.47s : 16052.11 words/s : L.r. 9.5893e-05
+[2019-04-07 21:16:24] Ep. 1 : Up. 17500 : Sen. 12,603,942 : Cost 22.48125839 : Time 40.08s : 14958.33 words/s : L.r. 9.5618e-05
+[2019-04-07 21:17:10] Ep. 1 : Up. 17600 : Sen. 12,689,304 : Cost 20.94570541 : Time 46.23s : 16006.40 words/s : L.r. 9.5346e-05
+[2019-04-07 21:17:54] Ep. 1 : Up. 17700 : Sen. 12,764,242 : Cost 22.19075203 : Time 43.88s : 15604.58 words/s : L.r. 9.5077e-05
+[2019-04-07 21:18:35] Ep. 1 : Up. 17800 : Sen. 12,826,836 : Cost 24.34679222 : Time 40.81s : 15021.47 words/s : L.r. 9.4809e-05
+[2019-04-07 21:19:20] Ep. 1 : Up. 17900 : Sen. 12,902,837 : Cost 23.12652969 : Time 44.96s : 15901.35 words/s : L.r. 9.4544e-05
+[2019-04-07 21:20:03] Ep. 1 : Up. 18000 : Sen. 12,973,341 : Cost 24.02135658 : Time 43.08s : 15888.64 words/s : L.r. 9.4281e-05
+[2019-04-07 21:20:46] Ep. 1 : Up. 18100 : Sen. 13,043,150 : Cost 24.27980614 : Time 43.62s : 15804.77 words/s : L.r. 9.4020e-05
+[2019-04-07 21:21:30] Ep. 1 : Up. 18200 : Sen. 13,114,737 : Cost 23.49249268 : Time 43.48s : 15755.53 words/s : L.r. 9.3761e-05
+[2019-04-07 21:22:14] Ep. 1 : Up. 18300 : Sen. 13,187,384 : Cost 23.80512810 : Time 44.27s : 15850.20 words/s : L.r. 9.3505e-05
+[2019-04-07 21:22:55] Ep. 1 : Up. 18400 : Sen. 13,249,847 : Cost 25.30182457 : Time 41.03s : 15300.87 words/s : L.r. 9.3250e-05
+[2019-04-07 21:23:40] Ep. 1 : Up. 18500 : Sen. 13,328,138 : Cost 21.40433502 : Time 44.72s : 15539.87 words/s : L.r. 9.2998e-05
+[2019-04-07 21:24:25] Ep. 1 : Up. 18600 : Sen. 13,404,612 : Cost 22.77565384 : Time 44.74s : 15805.07 words/s : L.r. 9.2748e-05
+[2019-04-07 21:25:08] Ep. 1 : Up. 18700 : Sen. 13,474,309 : Cost 24.26999092 : Time 43.28s : 15904.84 words/s : L.r. 9.2499e-05
+[2019-04-07 21:25:53] Ep. 1 : Up. 18800 : Sen. 13,551,874 : Cost 23.04360962 : Time 44.91s : 16194.20 words/s : L.r. 9.2253e-05
+[2019-04-07 21:26:35] Ep. 1 : Up. 18900 : Sen. 13,624,278 : Cost 21.60826302 : Time 41.81s : 15484.83 words/s : L.r. 9.2009e-05
+[2019-04-07 21:27:18] Ep. 1 : Up. 19000 : Sen. 13,691,927 : Cost 25.80622101 : Time 43.49s : 15703.76 words/s : L.r. 9.1766e-05
+[2019-04-07 21:28:02] Ep. 1 : Up. 19100 : Sen. 13,762,434 : Cost 24.79767609 : Time 44.23s : 15967.89 words/s : L.r. 9.1526e-05
+[2019-04-07 21:28:44] Ep. 1 : Up. 19200 : Sen. 13,832,035 : Cost 23.76268005 : Time 42.20s : 15897.54 words/s : L.r. 9.1287e-05
+[2019-04-07 21:29:27] Ep. 1 : Up. 19300 : Sen. 13,906,630 : Cost 21.22960663 : Time 42.67s : 15260.21 words/s : L.r. 9.1050e-05
+[2019-04-07 21:30:12] Ep. 1 : Up. 19400 : Sen. 13,982,685 : Cost 22.95273781 : Time 44.46s : 15987.46 words/s : L.r. 9.0815e-05
+[2019-04-07 21:30:54] Ep. 1 : Up. 19500 : Sen. 14,050,296 : Cost 23.82774734 : Time 42.16s : 15013.73 words/s : L.r. 9.0582e-05
+[2019-04-07 21:31:39] Ep. 1 : Up. 19600 : Sen. 14,125,998 : Cost 23.23773575 : Time 45.02s : 16153.81 words/s : L.r. 9.0351e-05
+[2019-04-07 21:32:22] Ep. 1 : Up. 19700 : Sen. 14,201,515 : Cost 22.05916977 : Time 43.56s : 15566.18 words/s : L.r. 9.0121e-05
+[2019-04-07 21:33:05] Ep. 1 : Up. 19800 : Sen. 14,269,980 : Cost 24.96680450 : Time 43.15s : 15865.15 words/s : L.r. 8.9893e-05
+[2019-04-07 21:33:46] Ep. 1 : Up. 19900 : Sen. 14,331,816 : Cost 24.37517357 : Time 40.19s : 15067.96 words/s : L.r. 8.9667e-05
+[2019-04-07 21:34:28] Ep. 1 : Up. 20000 : Sen. 14,406,571 : Cost 21.48048973 : Time 42.68s : 15544.78 words/s : L.r. 8.9443e-05
+[2019-04-07 21:34:28] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-07 21:34:33] Saving model weights and runtime parameters to test.iter20000.npz
+[2019-04-07 21:34:37] Saving model weights and runtime parameters to test.npz
+[2019-04-07 21:34:41] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-07 21:34:56] Saving model weights and runtime parameters to test.npz.best-cross-entropy.npz
+[2019-04-07 21:35:01] [valid] Ep. 1 : Up. 20000 : cross-entropy : 19.0932 : new best
+[2019-04-07 21:35:07] Saving model weights and runtime parameters to test.npz.best-perplexity.npz
+[2019-04-07 21:35:12] [valid] Ep. 1 : Up. 20000 : perplexity : 4.39907 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-07 21:36:36] Saving model weights and runtime parameters to test.npz.best-translation.npz
+[2019-04-07 21:36:40] [valid] Ep. 1 : Up. 20000 : translation : 34.7 : new best
+[2019-04-07 21:37:23] Ep. 1 : Up. 20100 : Sen. 14,476,728 : Cost 23.53564262 : Time 174.93s : 3895.91 words/s : L.r. 8.9220e-05
+[2019-04-07 21:38:06] Ep. 1 : Up. 20200 : Sen. 14,548,694 : Cost 23.63799095 : Time 42.93s : 15869.54 words/s : L.r. 8.8999e-05
+[2019-04-07 21:38:50] Ep. 1 : Up. 20300 : Sen. 14,622,541 : Cost 22.67679024 : Time 43.56s : 15689.63 words/s : L.r. 8.8779e-05
+[2019-04-07 21:39:34] Ep. 1 : Up. 20400 : Sen. 14,695,286 : Cost 23.61434555 : Time 44.20s : 15742.08 words/s : L.r. 8.8561e-05
+[2019-04-07 21:40:17] Ep. 1 : Up. 20500 : Sen. 14,768,032 : Cost 22.40283775 : Time 42.68s : 15452.20 words/s : L.r. 8.8345e-05
+[2019-04-07 21:41:01] Ep. 1 : Up. 20600 : Sen. 14,844,117 : Cost 22.69672012 : Time 44.65s : 15988.46 words/s : L.r. 8.8131e-05
+[2019-04-07 21:41:47] Ep. 1 : Up. 20700 : Sen. 14,919,862 : Cost 24.09295082 : Time 45.66s : 16075.35 words/s : L.r. 8.7917e-05
+[2019-04-07 21:42:31] Ep. 1 : Up. 20800 : Sen. 14,989,510 : Cost 24.39683914 : Time 43.66s : 15923.85 words/s : L.r. 8.7706e-05
+[2019-04-07 21:43:12] Ep. 1 : Up. 20900 : Sen. 15,057,441 : Cost 22.71212578 : Time 40.90s : 15057.20 words/s : L.r. 8.7496e-05
+[2019-04-07 21:43:55] Ep. 1 : Up. 21000 : Sen. 15,126,982 : Cost 24.05436325 : Time 43.44s : 15548.66 words/s : L.r. 8.7287e-05
+[2019-04-07 21:44:39] Ep. 1 : Up. 21100 : Sen. 15,203,896 : Cost 21.66797638 : Time 44.11s : 15945.86 words/s : L.r. 8.7080e-05
+[2019-04-07 21:45:21] Ep. 1 : Up. 21200 : Sen. 15,269,874 : Cost 24.85824585 : Time 41.56s : 15710.10 words/s : L.r. 8.6874e-05
+[2019-04-07 21:46:06] Ep. 1 : Up. 21300 : Sen. 15,348,417 : Cost 22.46168900 : Time 45.60s : 15680.73 words/s : L.r. 8.6670e-05
+[2019-04-07 21:46:49] Ep. 1 : Up. 21400 : Sen. 15,415,610 : Cost 25.19294930 : Time 42.50s : 15824.23 words/s : L.r. 8.6468e-05
+[2019-04-07 21:47:33] Ep. 1 : Up. 21500 : Sen. 15,494,426 : Cost 21.84244156 : Time 44.63s : 15773.04 words/s : L.r. 8.6266e-05
+[2019-04-07 21:48:18] Ep. 1 : Up. 21600 : Sen. 15,569,776 : Cost 23.38287354 : Time 44.79s : 16139.70 words/s : L.r. 8.6066e-05
+[2019-04-07 21:49:02] Ep. 1 : Up. 21700 : Sen. 15,645,436 : Cost 22.48464584 : Time 44.26s : 15939.51 words/s : L.r. 8.5868e-05
+[2019-04-07 21:49:48] Ep. 1 : Up. 21800 : Sen. 15,722,578 : Cost 23.00446701 : Time 45.11s : 16077.32 words/s : L.r. 8.5671e-05
+[2019-04-07 21:50:31] Ep. 1 : Up. 21900 : Sen. 15,796,654 : Cost 22.98777390 : Time 43.86s : 15697.69 words/s : L.r. 8.5475e-05
+[2019-04-07 21:51:14] Ep. 1 : Up. 22000 : Sen. 15,862,995 : Cost 25.16360283 : Time 43.02s : 15636.28 words/s : L.r. 8.5280e-05
+[2019-04-07 21:51:59] Ep. 1 : Up. 22100 : Sen. 15,935,430 : Cost 24.14394188 : Time 44.46s : 15945.07 words/s : L.r. 8.5087e-05
+[2019-04-07 21:52:41] Ep. 1 : Up. 22200 : Sen. 16,004,317 : Cost 23.65954781 : Time 41.74s : 15643.51 words/s : L.r. 8.4895e-05
+[2019-04-07 21:53:23] Ep. 1 : Up. 22300 : Sen. 16,071,705 : Cost 24.61294556 : Time 42.47s : 15673.71 words/s : L.r. 8.4705e-05
+[2019-04-07 21:54:04] Ep. 1 : Up. 22400 : Sen. 16,143,302 : Cost 21.61109352 : Time 41.30s : 15016.15 words/s : L.r. 8.4515e-05
+[2019-04-07 21:54:46] Ep. 1 : Up. 22500 : Sen. 16,207,599 : Cost 24.66768265 : Time 41.88s : 15169.37 words/s : L.r. 8.4327e-05
+[2019-04-07 21:55:30] Ep. 1 : Up. 22600 : Sen. 16,277,722 : Cost 24.85791779 : Time 43.56s : 16158.89 words/s : L.r. 8.4141e-05
+[2019-04-07 21:56:13] Ep. 1 : Up. 22700 : Sen. 16,350,599 : Cost 22.59805298 : Time 43.42s : 15321.93 words/s : L.r. 8.3955e-05
+[2019-04-07 21:56:57] Ep. 1 : Up. 22800 : Sen. 16,417,869 : Cost 25.74751854 : Time 43.29s : 15959.89 words/s : L.r. 8.3771e-05
+[2019-04-07 21:57:44] Ep. 1 : Up. 22900 : Sen. 16,506,810 : Cost 20.72379112 : Time 47.62s : 16138.27 words/s : L.r. 8.3588e-05
+[2019-04-07 21:58:26] Ep. 1 : Up. 23000 : Sen. 16,571,337 : Cost 24.86805344 : Time 41.87s : 15625.96 words/s : L.r. 8.3406e-05
+[2019-04-07 21:59:11] Ep. 1 : Up. 23100 : Sen. 16,650,258 : Cost 22.31668282 : Time 44.94s : 16196.05 words/s : L.r. 8.3225e-05
+[2019-04-07 21:59:54] Ep. 1 : Up. 23200 : Sen. 16,723,208 : Cost 22.44010162 : Time 43.36s : 15550.40 words/s : L.r. 8.3045e-05
+[2019-04-07 22:00:39] Ep. 1 : Up. 23300 : Sen. 16,803,692 : Cost 21.25379753 : Time 44.75s : 15799.34 words/s : L.r. 8.2867e-05
+[2019-04-07 22:01:20] Ep. 1 : Up. 23400 : Sen. 16,868,616 : Cost 24.85735703 : Time 41.23s : 15654.10 words/s : L.r. 8.2690e-05
+[2019-04-07 22:02:04] Ep. 1 : Up. 23500 : Sen. 16,945,393 : Cost 21.99183273 : Time 44.15s : 15846.93 words/s : L.r. 8.2514e-05
+[2019-04-07 22:02:49] Ep. 1 : Up. 23600 : Sen. 17,020,822 : Cost 24.26590919 : Time 45.04s : 16112.06 words/s : L.r. 8.2339e-05
+[2019-04-07 22:03:32] Ep. 1 : Up. 23700 : Sen. 17,087,796 : Cost 24.26744843 : Time 42.25s : 15637.09 words/s : L.r. 8.2165e-05
+[2019-04-07 22:04:15] Ep. 1 : Up. 23800 : Sen. 17,155,101 : Cost 24.89748573 : Time 42.88s : 15884.79 words/s : L.r. 8.1992e-05
+[2019-04-07 22:04:57] Ep. 1 : Up. 23900 : Sen. 17,228,051 : Cost 22.46182060 : Time 42.55s : 15386.09 words/s : L.r. 8.1820e-05
+[2019-04-07 22:05:41] Ep. 1 : Up. 24000 : Sen. 17,296,415 : Cost 24.88359451 : Time 43.67s : 15864.23 words/s : L.r. 8.1650e-05
+[2019-04-07 22:06:22] Ep. 1 : Up. 24100 : Sen. 17,366,851 : Cost 21.66235733 : Time 40.73s : 15190.79 words/s : L.r. 8.1480e-05
+[2019-04-07 22:07:05] Ep. 1 : Up. 24200 : Sen. 17,443,020 : Cost 21.07396126 : Time 43.10s : 15202.67 words/s : L.r. 8.1312e-05
+[2019-04-07 22:07:52] Ep. 1 : Up. 24300 : Sen. 17,523,549 : Cost 23.19006729 : Time 47.33s : 16466.48 words/s : L.r. 8.1144e-05
+[2019-04-07 22:08:37] Ep. 1 : Up. 24400 : Sen. 17,599,017 : Cost 23.38916588 : Time 45.41s : 15947.05 words/s : L.r. 8.0978e-05
+[2019-04-07 22:09:18] Ep. 1 : Up. 24500 : Sen. 17,664,867 : Cost 23.28781509 : Time 40.39s : 15213.50 words/s : L.r. 8.0812e-05
+[2019-04-07 22:10:02] Ep. 1 : Up. 24600 : Sen. 17,738,516 : Cost 23.28605270 : Time 43.74s : 15856.09 words/s : L.r. 8.0648e-05
+[2019-04-07 22:10:45] Ep. 1 : Up. 24700 : Sen. 17,809,464 : Cost 23.90117836 : Time 43.27s : 15780.71 words/s : L.r. 8.0484e-05
+[2019-04-07 22:11:31] Ep. 1 : Up. 24800 : Sen. 17,881,591 : Cost 26.12159538 : Time 46.21s : 16674.85 words/s : L.r. 8.0322e-05
+[2019-04-07 22:12:14] Ep. 1 : Up. 24900 : Sen. 17,953,146 : Cost 23.06066704 : Time 42.99s : 15723.88 words/s : L.r. 8.0160e-05
+[2019-04-07 22:12:55] Ep. 1 : Up. 25000 : Sen. 18,022,446 : Cost 22.56191063 : Time 41.33s : 15053.53 words/s : L.r. 8.0000e-05
+[2019-04-07 22:12:55] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-07 22:13:00] Saving model weights and runtime parameters to test.iter25000.npz
+[2019-04-07 22:13:04] Saving model weights and runtime parameters to test.npz
+[2019-04-07 22:13:08] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-07 22:13:23] [valid] Ep. 1 : Up. 25000 : cross-entropy : 19.096 : stalled 1 times (last best: 19.0932)
+[2019-04-07 22:13:30] [valid] Ep. 1 : Up. 25000 : perplexity : 4.40003 : stalled 1 times (last best: 4.39907)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-07 22:14:54] [valid] Ep. 1 : Up. 25000 : translation : 34.6 : stalled 1 times (last best: 34.7)
+[2019-04-07 22:15:41] Ep. 1 : Up. 25100 : Sen. 18,103,743 : Cost 22.01949310 : Time 165.21s : 4473.33 words/s : L.r. 7.9840e-05
+[2019-04-07 22:16:22] Ep. 1 : Up. 25200 : Sen. 18,173,146 : Cost 22.87592316 : Time 41.55s : 15294.74 words/s : L.r. 7.9682e-05
+[2019-04-07 22:17:09] Ep. 1 : Up. 25300 : Sen. 18,255,997 : Cost 21.92439651 : Time 46.67s : 15802.40 words/s : L.r. 7.9524e-05
+[2019-04-07 22:17:53] Ep. 1 : Up. 25400 : Sen. 18,332,093 : Cost 22.39308929 : Time 44.04s : 16036.00 words/s : L.r. 7.9368e-05
+[2019-04-07 22:18:32] Ep. 1 : Up. 25500 : Sen. 18,394,752 : Cost 24.11743927 : Time 39.65s : 15273.42 words/s : L.r. 7.9212e-05
+[2019-04-07 22:19:17] Ep. 1 : Up. 25600 : Sen. 18,469,522 : Cost 22.46922874 : Time 44.04s : 15630.29 words/s : L.r. 7.9057e-05
+[2019-04-07 22:20:02] Ep. 1 : Up. 25700 : Sen. 18,540,853 : Cost 24.51792717 : Time 45.00s : 16162.64 words/s : L.r. 7.8903e-05
+[2019-04-07 22:20:43] Ep. 1 : Up. 25800 : Sen. 18,608,134 : Cost 24.36064148 : Time 41.91s : 15862.88 words/s : L.r. 7.8750e-05
+[2019-04-07 22:21:25] Ep. 1 : Up. 25900 : Sen. 18,674,678 : Cost 24.36800003 : Time 42.04s : 15230.62 words/s : L.r. 7.8598e-05
+[2019-04-07 22:22:08] Ep. 1 : Up. 26000 : Sen. 18,742,870 : Cost 24.64548874 : Time 42.52s : 15807.69 words/s : L.r. 7.8446e-05
+[2019-04-07 22:22:51] Ep. 1 : Up. 26100 : Sen. 18,813,355 : Cost 23.60380745 : Time 42.77s : 15623.71 words/s : L.r. 7.8296e-05
+[2019-04-07 22:23:36] Ep. 1 : Up. 26200 : Sen. 18,893,065 : Cost 21.71381187 : Time 44.94s : 15932.19 words/s : L.r. 7.8146e-05
+[2019-04-07 22:24:19] Ep. 1 : Up. 26300 : Sen. 18,960,009 : Cost 25.50388336 : Time 42.87s : 15997.58 words/s : L.r. 7.7998e-05
+[2019-04-07 22:25:04] Ep. 1 : Up. 26400 : Sen. 19,038,849 : Cost 22.82526398 : Time 45.80s : 15968.49 words/s : L.r. 7.7850e-05
+[2019-04-07 22:25:50] Ep. 1 : Up. 26500 : Sen. 19,111,377 : Cost 25.13669395 : Time 45.71s : 16186.74 words/s : L.r. 7.7703e-05
+[2019-04-07 22:26:34] Ep. 1 : Up. 26600 : Sen. 19,189,900 : Cost 21.81116104 : Time 43.73s : 15917.52 words/s : L.r. 7.7557e-05
+[2019-04-07 22:27:19] Ep. 1 : Up. 26700 : Sen. 19,262,249 : Cost 25.75185776 : Time 45.20s : 16527.68 words/s : L.r. 7.7411e-05
+[2019-04-07 22:28:00] Ep. 1 : Up. 26800 : Sen. 19,328,810 : Cost 23.22240067 : Time 41.34s : 15118.93 words/s : L.r. 7.7267e-05
+[2019-04-07 22:28:42] Ep. 1 : Up. 26900 : Sen. 19,394,296 : Cost 24.78800964 : Time 41.76s : 15468.99 words/s : L.r. 7.7123e-05
+[2019-04-07 22:29:26] Ep. 1 : Up. 27000 : Sen. 19,472,860 : Cost 21.12502289 : Time 43.95s : 15456.77 words/s : L.r. 7.6980e-05
+[2019-04-07 22:30:10] Ep. 1 : Up. 27100 : Sen. 19,543,278 : Cost 24.21517563 : Time 44.01s : 15791.58 words/s : L.r. 7.6838e-05
+[2019-04-07 22:30:54] Ep. 1 : Up. 27200 : Sen. 19,617,425 : Cost 23.06342506 : Time 44.00s : 15938.39 words/s : L.r. 7.6696e-05
+[2019-04-07 22:31:35] Ep. 1 : Up. 27300 : Sen. 19,684,735 : Cost 22.68265343 : Time 40.79s : 15188.42 words/s : L.r. 7.6556e-05
+[2019-04-07 22:32:19] Ep. 1 : Up. 27400 : Sen. 19,756,296 : Cost 24.24959564 : Time 44.17s : 16116.80 words/s : L.r. 7.6416e-05
+[2019-04-07 22:33:02] Ep. 1 : Up. 27500 : Sen. 19,828,601 : Cost 23.16547012 : Time 43.12s : 15720.30 words/s : L.r. 7.6277e-05
+[2019-04-07 22:33:44] Ep. 1 : Up. 27600 : Sen. 19,902,534 : Cost 20.24864388 : Time 41.69s : 14948.47 words/s : L.r. 7.6139e-05
+[2019-04-07 22:34:28] Ep. 1 : Up. 27700 : Sen. 19,973,267 : Cost 24.26534653 : Time 43.69s : 15964.22 words/s : L.r. 7.6001e-05
+[2019-04-07 22:35:12] Ep. 1 : Up. 27800 : Sen. 20,044,587 : Cost 24.19385910 : Time 44.05s : 15817.23 words/s : L.r. 7.5864e-05
+[2019-04-07 22:35:55] Ep. 1 : Up. 27900 : Sen. 20,123,037 : Cost 20.65747833 : Time 43.17s : 15557.85 words/s : L.r. 7.5728e-05
+[2019-04-07 22:36:38] Ep. 1 : Up. 28000 : Sen. 20,192,775 : Cost 24.60161591 : Time 43.52s : 15916.56 words/s : L.r. 7.5593e-05
+[2019-04-07 22:37:22] Ep. 1 : Up. 28100 : Sen. 20,269,297 : Cost 21.37472916 : Time 43.75s : 15720.33 words/s : L.r. 7.5458e-05
+[2019-04-07 22:38:03] Ep. 1 : Up. 28200 : Sen. 20,326,706 : Cost 27.51032066 : Time 40.89s : 15345.25 words/s : L.r. 7.5324e-05
+[2019-04-07 22:38:47] Ep. 1 : Up. 28300 : Sen. 20,402,947 : Cost 21.87358856 : Time 43.79s : 15749.12 words/s : L.r. 7.5191e-05
+[2019-04-07 22:39:30] Ep. 1 : Up. 28400 : Sen. 20,472,460 : Cost 24.25552177 : Time 43.39s : 15620.22 words/s : L.r. 7.5059e-05
+[2019-04-07 22:40:11] Ep. 1 : Up. 28500 : Sen. 20,533,861 : Cost 26.06282043 : Time 40.45s : 15456.36 words/s : L.r. 7.4927e-05
+[2019-04-07 22:40:55] Ep. 1 : Up. 28600 : Sen. 20,606,359 : Cost 24.30595589 : Time 44.51s : 15918.85 words/s : L.r. 7.4796e-05
+[2019-04-07 22:41:39] Ep. 1 : Up. 28700 : Sen. 20,683,695 : Cost 21.95159340 : Time 44.10s : 15588.18 words/s : L.r. 7.4665e-05
+[2019-04-07 22:42:24] Ep. 1 : Up. 28800 : Sen. 20,757,067 : Cost 23.97811508 : Time 44.81s : 16147.90 words/s : L.r. 7.4536e-05
+[2019-04-07 22:43:08] Ep. 1 : Up. 28900 : Sen. 20,829,132 : Cost 24.22934723 : Time 44.28s : 16165.73 words/s : L.r. 7.4407e-05
+[2019-04-07 22:43:52] Ep. 1 : Up. 29000 : Sen. 20,904,148 : Cost 22.13926315 : Time 43.90s : 15654.67 words/s : L.r. 7.4278e-05
+[2019-04-07 22:44:35] Ep. 1 : Up. 29100 : Sen. 20,979,115 : Cost 22.65291405 : Time 43.12s : 15556.19 words/s : L.r. 7.4150e-05
+[2019-04-07 22:45:20] Ep. 1 : Up. 29200 : Sen. 21,057,880 : Cost 22.08370781 : Time 44.79s : 15741.55 words/s : L.r. 7.4023e-05
+[2019-04-07 22:46:03] Ep. 1 : Up. 29300 : Sen. 21,126,765 : Cost 24.41546631 : Time 42.98s : 15677.76 words/s : L.r. 7.3897e-05
+[2019-04-07 22:46:47] Ep. 1 : Up. 29400 : Sen. 21,195,548 : Cost 25.10123634 : Time 43.57s : 16121.03 words/s : L.r. 7.3771e-05
+[2019-04-07 22:47:30] Ep. 1 : Up. 29500 : Sen. 21,264,025 : Cost 24.65435410 : Time 43.08s : 15664.22 words/s : L.r. 7.3646e-05
+[2019-04-07 22:48:13] Ep. 1 : Up. 29600 : Sen. 21,330,370 : Cost 24.87149048 : Time 42.81s : 15594.31 words/s : L.r. 7.3521e-05
+[2019-04-07 22:48:57] Ep. 1 : Up. 29700 : Sen. 21,409,794 : Cost 21.40656471 : Time 44.74s : 15834.49 words/s : L.r. 7.3398e-05
+[2019-04-07 22:49:39] Ep. 1 : Up. 29800 : Sen. 21,482,748 : Cost 21.89521217 : Time 42.05s : 15510.83 words/s : L.r. 7.3274e-05
+[2019-04-07 22:50:20] Ep. 1 : Up. 29900 : Sen. 21,546,409 : Cost 23.66729164 : Time 40.45s : 15028.67 words/s : L.r. 7.3152e-05
+[2019-04-07 22:51:03] Ep. 1 : Up. 30000 : Sen. 21,616,156 : Cost 24.14977264 : Time 43.04s : 15874.53 words/s : L.r. 7.3030e-05
+[2019-04-07 22:51:03] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-07 22:51:07] Saving model weights and runtime parameters to test.iter30000.npz
+[2019-04-07 22:51:11] Saving model weights and runtime parameters to test.npz
+[2019-04-07 22:51:15] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-07 22:51:31] Saving model weights and runtime parameters to test.npz.best-cross-entropy.npz
+[2019-04-07 22:51:35] [valid] Ep. 1 : Up. 30000 : cross-entropy : 19.0901 : new best
+[2019-04-07 22:51:42] Saving model weights and runtime parameters to test.npz.best-perplexity.npz
+[2019-04-07 22:51:46] [valid] Ep. 1 : Up. 30000 : perplexity : 4.39803 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-07 22:53:10] [valid] Ep. 1 : Up. 30000 : translation : 34.6 : stalled 2 times (last best: 34.7)
+[2019-04-07 22:53:56] Ep. 1 : Up. 30100 : Sen. 21,702,231 : Cost 20.30084419 : Time 173.02s : 4283.19 words/s : L.r. 7.2908e-05
+[2019-04-07 22:54:39] Ep. 1 : Up. 30200 : Sen. 21,778,301 : Cost 21.91493797 : Time 43.02s : 15729.22 words/s : L.r. 7.2787e-05
+[2019-04-07 22:55:23] Ep. 1 : Up. 30300 : Sen. 21,853,468 : Cost 23.14933968 : Time 44.55s : 15801.23 words/s : L.r. 7.2667e-05
+[2019-04-07 22:56:05] Ep. 1 : Up. 30400 : Sen. 21,921,295 : Cost 23.51316643 : Time 41.80s : 15177.67 words/s : L.r. 7.2548e-05
+[2019-04-07 22:56:49] Ep. 1 : Up. 30500 : Sen. 21,989,607 : Cost 25.39664650 : Time 43.36s : 16303.87 words/s : L.r. 7.2429e-05
+[2019-04-07 22:57:31] Ep. 1 : Up. 30600 : Sen. 22,057,802 : Cost 24.06133080 : Time 42.47s : 15774.63 words/s : L.r. 7.2310e-05
+[2019-04-07 22:58:17] Ep. 1 : Up. 30700 : Sen. 22,137,171 : Cost 22.03273773 : Time 45.60s : 15928.04 words/s : L.r. 7.2192e-05
+[2019-04-07 22:59:00] Ep. 1 : Up. 30800 : Sen. 22,203,545 : Cost 25.42585182 : Time 43.30s : 15930.25 words/s : L.r. 7.2075e-05
+[2019-04-07 22:59:43] Ep. 1 : Up. 30900 : Sen. 22,273,823 : Cost 23.77004623 : Time 42.82s : 15818.39 words/s : L.r. 7.1958e-05
+[2019-04-07 23:00:26] Ep. 1 : Up. 31000 : Sen. 22,349,661 : Cost 21.55540657 : Time 43.47s : 15383.79 words/s : L.r. 7.1842e-05
+[2019-04-07 23:01:09] Ep. 1 : Up. 31100 : Sen. 22,419,496 : Cost 23.36409187 : Time 42.70s : 15375.50 words/s : L.r. 7.1727e-05
+[2019-04-07 23:01:53] Ep. 1 : Up. 31200 : Sen. 22,496,009 : Cost 23.03055763 : Time 43.89s : 16182.70 words/s : L.r. 7.1611e-05
+[2019-04-07 23:02:35] Ep. 1 : Up. 31300 : Sen. 22,566,095 : Cost 23.69332695 : Time 42.68s : 15653.74 words/s : L.r. 7.1497e-05
+[2019-04-07 23:03:18] Ep. 1 : Up. 31400 : Sen. 22,634,414 : Cost 24.19593048 : Time 42.44s : 15610.13 words/s : L.r. 7.1383e-05
+[2019-04-07 23:04:01] Ep. 1 : Up. 31500 : Sen. 22,702,563 : Cost 24.12837219 : Time 42.59s : 15792.04 words/s : L.r. 7.1270e-05
+[2019-04-07 23:04:46] Ep. 1 : Up. 31600 : Sen. 22,778,442 : Cost 24.02585220 : Time 45.42s : 16113.00 words/s : L.r. 7.1157e-05
+[2019-04-07 23:05:29] Ep. 1 : Up. 31700 : Sen. 22,844,428 : Cost 25.08081055 : Time 42.61s : 15650.17 words/s : L.r. 7.1044e-05
+[2019-04-07 23:06:12] Ep. 1 : Up. 31800 : Sen. 22,923,522 : Cost 20.62301254 : Time 43.69s : 15423.67 words/s : L.r. 7.0933e-05
+[2019-04-07 23:06:56] Ep. 1 : Up. 31900 : Sen. 22,995,335 : Cost 23.12444305 : Time 43.43s : 15694.13 words/s : L.r. 7.0821e-05
+[2019-04-07 23:07:39] Ep. 1 : Up. 32000 : Sen. 23,069,948 : Cost 22.15497208 : Time 43.48s : 15498.50 words/s : L.r. 7.0711e-05
+[2019-04-07 23:08:24] Ep. 1 : Up. 32100 : Sen. 23,147,578 : Cost 22.71070862 : Time 44.37s : 15896.42 words/s : L.r. 7.0600e-05
+[2019-04-07 23:09:07] Ep. 1 : Up. 32200 : Sen. 23,220,313 : Cost 23.57018471 : Time 43.53s : 16097.62 words/s : L.r. 7.0491e-05
+[2019-04-07 23:09:51] Ep. 1 : Up. 32300 : Sen. 23,291,652 : Cost 25.03863335 : Time 44.30s : 16260.73 words/s : L.r. 7.0382e-05
+[2019-04-07 23:10:35] Ep. 1 : Up. 32400 : Sen. 23,370,398 : Cost 20.68563271 : Time 44.01s : 15346.44 words/s : L.r. 7.0273e-05
+[2019-04-07 23:11:18] Ep. 1 : Up. 32500 : Sen. 23,445,094 : Cost 22.32101059 : Time 43.01s : 15624.57 words/s : L.r. 7.0165e-05
+[2019-04-07 23:12:00] Ep. 1 : Up. 32600 : Sen. 23,514,079 : Cost 22.33163834 : Time 41.53s : 14965.94 words/s : L.r. 7.0057e-05
+[2019-04-07 23:12:42] Ep. 1 : Up. 32700 : Sen. 23,581,959 : Cost 24.13033104 : Time 41.91s : 15695.13 words/s : L.r. 6.9950e-05
+[2019-04-07 23:13:25] Ep. 1 : Up. 32800 : Sen. 23,647,446 : Cost 25.97834396 : Time 42.78s : 15876.52 words/s : L.r. 6.9843e-05
+[2019-04-07 23:14:07] Ep. 1 : Up. 32900 : Sen. 23,714,553 : Cost 23.93229485 : Time 42.51s : 15530.96 words/s : L.r. 6.9737e-05
+[2019-04-07 23:14:51] Ep. 1 : Up. 33000 : Sen. 23,789,655 : Cost 22.35772514 : Time 43.89s : 15692.07 words/s : L.r. 6.9631e-05
+[2019-04-07 23:15:37] Ep. 1 : Up. 33100 : Sen. 23,866,785 : Cost 23.33544922 : Time 46.27s : 16099.53 words/s : L.r. 6.9526e-05
+[2019-04-07 23:16:23] Ep. 1 : Up. 33200 : Sen. 23,937,984 : Cost 25.46352959 : Time 45.37s : 16320.50 words/s : L.r. 6.9421e-05
+[2019-04-07 23:17:06] Ep. 1 : Up. 33300 : Sen. 24,011,649 : Cost 22.26652336 : Time 43.18s : 15544.20 words/s : L.r. 6.9317e-05
+[2019-04-07 23:17:49] Ep. 1 : Up. 33400 : Sen. 24,088,540 : Cost 21.39865685 : Time 43.23s : 15455.79 words/s : L.r. 6.9213e-05
+[2019-04-07 23:18:32] Ep. 1 : Up. 33500 : Sen. 24,159,671 : Cost 23.40269661 : Time 43.10s : 15643.74 words/s : L.r. 6.9109e-05
+[2019-04-07 23:19:14] Ep. 1 : Up. 33600 : Sen. 24,226,237 : Cost 23.48321342 : Time 41.63s : 15058.44 words/s : L.r. 6.9007e-05
+[2019-04-07 23:19:58] Ep. 1 : Up. 33700 : Sen. 24,298,313 : Cost 24.08558273 : Time 43.98s : 16138.08 words/s : L.r. 6.8904e-05
+[2019-04-07 23:20:43] Ep. 1 : Up. 33800 : Sen. 24,371,162 : Cost 24.33173561 : Time 45.14s : 16097.46 words/s : L.r. 6.8802e-05
+[2019-04-07 23:21:26] Ep. 1 : Up. 33900 : Sen. 24,443,571 : Cost 22.88673782 : Time 43.48s : 15407.13 words/s : L.r. 6.8701e-05
+[2019-04-07 23:22:10] Ep. 1 : Up. 34000 : Sen. 24,515,447 : Cost 23.20174026 : Time 43.67s : 15811.48 words/s : L.r. 6.8599e-05
+[2019-04-07 23:22:53] Ep. 1 : Up. 34100 : Sen. 24,580,328 : Cost 27.01802826 : Time 42.91s : 16245.08 words/s : L.r. 6.8499e-05
+[2019-04-07 23:23:35] Ep. 1 : Up. 34200 : Sen. 24,649,542 : Cost 23.36257744 : Time 42.22s : 15602.94 words/s : L.r. 6.8399e-05
+[2019-04-07 23:24:19] Ep. 1 : Up. 34300 : Sen. 24,722,943 : Cost 23.55627632 : Time 43.93s : 15930.82 words/s : L.r. 6.8299e-05
+[2019-04-07 23:25:03] Ep. 1 : Up. 34400 : Sen. 24,798,869 : Cost 22.43434525 : Time 44.26s : 15636.90 words/s : L.r. 6.8199e-05
+[2019-04-07 23:25:47] Ep. 1 : Up. 34500 : Sen. 24,866,935 : Cost 24.55113602 : Time 43.22s : 15633.16 words/s : L.r. 6.8101e-05
+[2019-04-07 23:26:30] Ep. 1 : Up. 34600 : Sen. 24,944,022 : Cost 21.59148026 : Time 43.28s : 15710.53 words/s : L.r. 6.8002e-05
+[2019-04-07 23:27:16] Ep. 1 : Up. 34700 : Sen. 25,026,083 : Cost 21.51771927 : Time 45.67s : 15887.16 words/s : L.r. 6.7904e-05
+[2019-04-07 23:27:59] Ep. 1 : Up. 34800 : Sen. 25,096,548 : Cost 24.78093719 : Time 43.60s : 16007.13 words/s : L.r. 6.7806e-05
+[2019-04-07 23:28:42] Ep. 1 : Up. 34900 : Sen. 25,169,627 : Cost 21.58930206 : Time 42.81s : 15251.38 words/s : L.r. 6.7709e-05
+[2019-04-07 23:29:27] Ep. 1 : Up. 35000 : Sen. 25,242,651 : Cost 23.82337379 : Time 44.58s : 15784.21 words/s : L.r. 6.7612e-05
+[2019-04-07 23:29:27] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-07 23:29:31] Saving model weights and runtime parameters to test.iter35000.npz
+[2019-04-07 23:29:35] Saving model weights and runtime parameters to test.npz
+[2019-04-07 23:29:39] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-07 23:29:55] [valid] Ep. 1 : Up. 35000 : cross-entropy : 19.0987 : stalled 1 times (last best: 19.0901)
+[2019-04-07 23:30:01] [valid] Ep. 1 : Up. 35000 : perplexity : 4.40094 : stalled 1 times (last best: 4.39803)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-07 23:31:26] [valid] Ep. 1 : Up. 35000 : translation : 34.6 : stalled 3 times (last best: 34.7)
+[2019-04-07 23:32:08] Ep. 1 : Up. 35100 : Sen. 25,311,572 : Cost 22.96521187 : Time 161.09s : 3998.89 words/s : L.r. 6.7516e-05
+[2019-04-07 23:32:52] Ep. 1 : Up. 35200 : Sen. 25,386,276 : Cost 23.21650696 : Time 44.26s : 16040.36 words/s : L.r. 6.7420e-05
+[2019-04-07 23:33:33] Ep. 1 : Up. 35300 : Sen. 25,457,250 : Cost 20.80520248 : Time 40.69s : 14945.15 words/s : L.r. 6.7324e-05
+[2019-04-07 23:34:17] Ep. 1 : Up. 35400 : Sen. 25,533,529 : Cost 22.51733780 : Time 44.28s : 15788.33 words/s : L.r. 6.7229e-05
+[2019-04-07 23:35:00] Ep. 1 : Up. 35500 : Sen. 25,605,316 : Cost 23.03510475 : Time 43.34s : 15655.48 words/s : L.r. 6.7135e-05
+[2019-04-07 23:35:43] Ep. 1 : Up. 35600 : Sen. 25,676,004 : Cost 22.71477509 : Time 42.40s : 15385.07 words/s : L.r. 6.7040e-05
+[2019-04-07 23:36:26] Ep. 1 : Up. 35700 : Sen. 25,742,048 : Cost 26.12337875 : Time 43.51s : 15800.36 words/s : L.r. 6.6946e-05
+[2019-04-07 23:37:09] Ep. 1 : Up. 35800 : Sen. 25,811,185 : Cost 23.32309341 : Time 42.51s : 15417.04 words/s : L.r. 6.6853e-05
+[2019-04-07 23:37:52] Ep. 1 : Up. 35900 : Sen. 25,879,710 : Cost 25.32615852 : Time 43.15s : 15925.68 words/s : L.r. 6.6759e-05
+[2019-04-07 23:38:37] Ep. 1 : Up. 36000 : Sen. 25,954,549 : Cost 24.65846825 : Time 45.51s : 16565.33 words/s : L.r. 6.6667e-05
+[2019-04-07 23:39:22] Ep. 1 : Up. 36100 : Sen. 26,026,279 : Cost 23.97970390 : Time 44.42s : 15781.83 words/s : L.r. 6.6574e-05
+[2019-04-07 23:40:06] Ep. 1 : Up. 36200 : Sen. 26,104,737 : Cost 22.16214371 : Time 44.53s : 15864.87 words/s : L.r. 6.6482e-05
+[2019-04-07 23:40:50] Ep. 1 : Up. 36300 : Sen. 26,181,617 : Cost 21.78993225 : Time 43.57s : 15737.30 words/s : L.r. 6.6391e-05
+[2019-04-07 23:41:32] Ep. 1 : Up. 36400 : Sen. 26,253,274 : Cost 23.14108276 : Time 42.28s : 15750.30 words/s : L.r. 6.6299e-05
+[2019-04-07 23:42:14] Ep. 1 : Up. 36500 : Sen. 26,320,902 : Cost 23.71297264 : Time 42.34s : 15478.32 words/s : L.r. 6.6208e-05
+[2019-04-07 23:42:56] Ep. 1 : Up. 36600 : Sen. 26,384,248 : Cost 25.36657143 : Time 41.23s : 15512.15 words/s : L.r. 6.6118e-05
+[2019-04-07 23:43:38] Ep. 1 : Up. 36700 : Sen. 26,447,018 : Cost 26.66291046 : Time 42.43s : 16076.77 words/s : L.r. 6.6028e-05
+[2019-04-07 23:44:22] Ep. 1 : Up. 36800 : Sen. 26,519,120 : Cost 22.95126534 : Time 43.58s : 15697.42 words/s : L.r. 6.5938e-05
+[2019-04-07 23:45:07] Ep. 1 : Up. 36900 : Sen. 26,599,320 : Cost 21.82788467 : Time 45.09s : 15753.28 words/s : L.r. 6.5849e-05
+[2019-04-07 23:45:49] Ep. 1 : Up. 37000 : Sen. 26,674,114 : Cost 21.53367043 : Time 42.53s : 15090.74 words/s : L.r. 6.5760e-05
+[2019-04-07 23:46:35] Ep. 1 : Up. 37100 : Sen. 26,750,248 : Cost 23.60138512 : Time 45.68s : 16083.01 words/s : L.r. 6.5671e-05
+[2019-04-07 23:47:18] Ep. 1 : Up. 37200 : Sen. 26,818,223 : Cost 24.52376175 : Time 42.95s : 15743.04 words/s : L.r. 6.5583e-05
+[2019-04-07 23:48:01] Ep. 1 : Up. 37300 : Sen. 26,887,556 : Cost 23.22755814 : Time 43.11s : 15305.22 words/s : L.r. 6.5495e-05
+[2019-04-07 23:48:46] Ep. 1 : Up. 37400 : Sen. 26,966,205 : Cost 22.30091286 : Time 45.42s : 16006.59 words/s : L.r. 6.5407e-05
+[2019-04-07 23:49:30] Ep. 1 : Up. 37500 : Sen. 27,032,812 : Cost 25.60047340 : Time 43.49s : 15952.89 words/s : L.r. 6.5320e-05
+[2019-04-07 23:50:14] Ep. 1 : Up. 37600 : Sen. 27,097,696 : Cost 27.41253662 : Time 43.82s : 15986.84 words/s : L.r. 6.5233e-05
+[2019-04-07 23:50:55] Ep. 1 : Up. 37700 : Sen. 27,164,520 : Cost 23.45268250 : Time 41.69s : 15303.07 words/s : L.r. 6.5146e-05
+[2019-04-07 23:51:38] Ep. 1 : Up. 37800 : Sen. 27,237,136 : Cost 22.41907692 : Time 42.54s : 15415.97 words/s : L.r. 6.5060e-05
+[2019-04-07 23:52:22] Ep. 1 : Up. 37900 : Sen. 27,312,634 : Cost 22.17761803 : Time 44.41s : 15605.24 words/s : L.r. 6.4974e-05
+[2019-04-07 23:53:08] Ep. 1 : Up. 38000 : Sen. 27,394,890 : Cost 21.51286507 : Time 45.43s : 16016.49 words/s : L.r. 6.4889e-05
+[2019-04-07 23:53:50] Ep. 1 : Up. 38100 : Sen. 27,461,237 : Cost 24.41903687 : Time 42.42s : 15547.18 words/s : L.r. 6.4803e-05
+[2019-04-07 23:54:36] Ep. 1 : Up. 38200 : Sen. 27,544,348 : Cost 21.68214798 : Time 46.21s : 15966.55 words/s : L.r. 6.4718e-05
+[2019-04-07 23:55:20] Ep. 1 : Up. 38300 : Sen. 27,617,923 : Cost 22.57126999 : Time 43.98s : 15555.66 words/s : L.r. 6.4634e-05
+[2019-04-07 23:56:04] Ep. 1 : Up. 38400 : Sen. 27,686,543 : Cost 25.92689323 : Time 43.81s : 16273.01 words/s : L.r. 6.4550e-05
+[2019-04-07 23:56:47] Ep. 1 : Up. 38500 : Sen. 27,762,848 : Cost 21.89077377 : Time 43.21s : 15707.43 words/s : L.r. 6.4466e-05
+[2019-04-07 23:57:30] Ep. 1 : Up. 38600 : Sen. 27,836,631 : Cost 22.57227516 : Time 42.38s : 15680.80 words/s : L.r. 6.4382e-05
+[2019-04-07 23:58:13] Ep. 1 : Up. 38700 : Sen. 27,910,293 : Cost 22.81771851 : Time 43.57s : 15843.29 words/s : L.r. 6.4299e-05
+[2019-04-07 23:58:56] Ep. 1 : Up. 38800 : Sen. 27,978,508 : Cost 23.05606651 : Time 42.27s : 15381.23 words/s : L.r. 6.4216e-05
+[2019-04-07 23:59:38] Ep. 1 : Up. 38900 : Sen. 28,043,435 : Cost 25.61720467 : Time 42.59s : 15829.21 words/s : L.r. 6.4134e-05
+[2019-04-08 00:00:22] Ep. 1 : Up. 39000 : Sen. 28,113,234 : Cost 24.55912590 : Time 43.78s : 15857.76 words/s : L.r. 6.4051e-05
+[2019-04-08 00:01:04] Ep. 1 : Up. 39100 : Sen. 28,178,820 : Cost 24.65187454 : Time 41.75s : 15421.95 words/s : L.r. 6.3969e-05
+[2019-04-08 00:01:47] Ep. 1 : Up. 39200 : Sen. 28,249,173 : Cost 23.65094566 : Time 42.91s : 15563.29 words/s : L.r. 6.3888e-05
+[2019-04-08 00:02:32] Ep. 1 : Up. 39300 : Sen. 28,328,308 : Cost 21.70322609 : Time 44.89s : 15959.83 words/s : L.r. 6.3806e-05
+[2019-04-08 00:03:14] Ep. 1 : Up. 39400 : Sen. 28,398,429 : Cost 22.89053345 : Time 42.31s : 15336.26 words/s : L.r. 6.3725e-05
+[2019-04-08 00:03:58] Ep. 1 : Up. 39500 : Sen. 28,473,760 : Cost 22.68908691 : Time 44.22s : 15769.45 words/s : L.r. 6.3645e-05
+[2019-04-08 00:04:41] Ep. 1 : Up. 39600 : Sen. 28,547,851 : Cost 22.04062843 : Time 43.08s : 15564.35 words/s : L.r. 6.3564e-05
+[2019-04-08 00:05:25] Ep. 1 : Up. 39700 : Sen. 28,623,028 : Cost 22.29298973 : Time 43.82s : 15803.18 words/s : L.r. 6.3484e-05
+[2019-04-08 00:06:06] Ep. 1 : Up. 39800 : Sen. 28,686,180 : Cost 25.51469994 : Time 41.16s : 15444.25 words/s : L.r. 6.3404e-05
+[2019-04-08 00:06:50] Ep. 1 : Up. 39900 : Sen. 28,760,094 : Cost 22.93472862 : Time 43.66s : 15783.86 words/s : L.r. 6.3325e-05
+[2019-04-08 00:07:31] Ep. 1 : Up. 40000 : Sen. 28,826,556 : Cost 23.83795166 : Time 41.12s : 15487.43 words/s : L.r. 6.3246e-05
+[2019-04-08 00:07:31] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-08 00:07:35] Saving model weights and runtime parameters to test.iter40000.npz
+[2019-04-08 00:07:39] Saving model weights and runtime parameters to test.npz
+[2019-04-08 00:07:44] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-08 00:07:59] [valid] Ep. 1 : Up. 40000 : cross-entropy : 19.1053 : stalled 2 times (last best: 19.0901)
+[2019-04-08 00:08:06] [valid] Ep. 1 : Up. 40000 : perplexity : 4.40319 : stalled 2 times (last best: 4.39803)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-08 00:09:31] [valid] Ep. 1 : Up. 40000 : translation : 34.5 : stalled 4 times (last best: 34.7)
+[2019-04-08 00:10:16] Ep. 1 : Up. 40100 : Sen. 28,905,076 : Cost 21.83469772 : Time 164.84s : 4272.95 words/s : L.r. 6.3167e-05
+[2019-04-08 00:11:02] Ep. 1 : Up. 40200 : Sen. 28,983,760 : Cost 23.64022446 : Time 46.62s : 16345.80 words/s : L.r. 6.3088e-05
+[2019-04-08 00:11:47] Ep. 1 : Up. 40300 : Sen. 29,059,914 : Cost 23.15674400 : Time 45.07s : 16182.83 words/s : L.r. 6.3010e-05
+[2019-04-08 00:12:32] Ep. 1 : Up. 40400 : Sen. 29,133,470 : Cost 23.98582458 : Time 44.27s : 16231.38 words/s : L.r. 6.2932e-05
+[2019-04-08 00:13:14] Ep. 1 : Up. 40500 : Sen. 29,201,487 : Cost 23.68697166 : Time 41.87s : 15207.75 words/s : L.r. 6.2854e-05
+[2019-04-08 00:13:58] Ep. 1 : Up. 40600 : Sen. 29,277,898 : Cost 22.86834717 : Time 44.45s : 15884.02 words/s : L.r. 6.2776e-05
+[2019-04-08 00:14:39] Ep. 1 : Up. 40700 : Sen. 29,344,927 : Cost 22.58961868 : Time 40.80s : 14950.31 words/s : L.r. 6.2699e-05
+[2019-04-08 00:15:18] Ep. 1 : Up. 40800 : Sen. 29,402,781 : Cost 26.73811531 : Time 39.46s : 15565.84 words/s : L.r. 6.2622e-05
+[2019-04-08 00:16:03] Ep. 1 : Up. 40900 : Sen. 29,480,757 : Cost 22.10016823 : Time 44.65s : 15846.54 words/s : L.r. 6.2546e-05
+[2019-04-08 00:16:46] Ep. 1 : Up. 41000 : Sen. 29,551,434 : Cost 23.53242683 : Time 43.50s : 15575.96 words/s : L.r. 6.2470e-05
+[2019-04-08 00:17:29] Ep. 1 : Up. 41100 : Sen. 29,619,517 : Cost 24.17979431 : Time 42.67s : 15666.88 words/s : L.r. 6.2393e-05
+[2019-04-08 00:18:14] Ep. 1 : Up. 41200 : Sen. 29,693,799 : Cost 23.31896973 : Time 44.55s : 15991.42 words/s : L.r. 6.2318e-05
+[2019-04-08 00:18:58] Ep. 1 : Up. 41300 : Sen. 29,768,693 : Cost 22.57537460 : Time 44.20s : 15625.65 words/s : L.r. 6.2242e-05
+[2019-04-08 00:19:44] Ep. 1 : Up. 41400 : Sen. 29,844,637 : Cost 22.98971939 : Time 45.64s : 15794.17 words/s : L.r. 6.2167e-05
+[2019-04-08 00:20:28] Ep. 1 : Up. 41500 : Sen. 29,919,037 : Cost 22.83926010 : Time 44.31s : 15839.36 words/s : L.r. 6.2092e-05
+[2019-04-08 00:21:12] Ep. 1 : Up. 41600 : Sen. 29,995,969 : Cost 22.44435692 : Time 44.40s : 15813.73 words/s : L.r. 6.2017e-05
+[2019-04-08 00:21:55] Ep. 1 : Up. 41700 : Sen. 30,065,543 : Cost 22.15860748 : Time 42.32s : 15237.93 words/s : L.r. 6.1943e-05
+[2019-04-08 00:22:39] Ep. 1 : Up. 41800 : Sen. 30,139,005 : Cost 24.06474876 : Time 44.55s : 16284.82 words/s : L.r. 6.1869e-05
+[2019-04-08 00:23:22] Ep. 1 : Up. 41900 : Sen. 30,213,222 : Cost 21.50454330 : Time 42.46s : 15476.02 words/s : L.r. 6.1795e-05
+[2019-04-08 00:24:04] Ep. 1 : Up. 42000 : Sen. 30,288,120 : Cost 21.82736778 : Time 42.83s : 15486.79 words/s : L.r. 6.1721e-05
+[2019-04-08 00:24:46] Ep. 1 : Up. 42100 : Sen. 30,359,578 : Cost 22.64631462 : Time 42.05s : 15244.42 words/s : L.r. 6.1648e-05
+[2019-04-08 00:25:31] Ep. 1 : Up. 42200 : Sen. 30,435,458 : Cost 22.70267105 : Time 44.44s : 15723.74 words/s : L.r. 6.1575e-05
+[2019-04-08 00:26:15] Ep. 1 : Up. 42300 : Sen. 30,506,050 : Cost 24.75893593 : Time 44.29s : 16083.35 words/s : L.r. 6.1502e-05
+[2019-04-08 00:26:59] Ep. 1 : Up. 42400 : Sen. 30,575,781 : Cost 23.77247429 : Time 43.58s : 15357.84 words/s : L.r. 6.1430e-05
+[2019-04-08 00:27:42] Ep. 1 : Up. 42500 : Sen. 30,651,690 : Cost 21.78878021 : Time 43.27s : 15450.01 words/s : L.r. 6.1357e-05
+[2019-04-08 00:28:26] Ep. 1 : Up. 42600 : Sen. 30,720,383 : Cost 25.45413017 : Time 43.89s : 16127.93 words/s : L.r. 6.1285e-05
+[2019-04-08 00:29:10] Ep. 1 : Up. 42700 : Sen. 30,795,283 : Cost 23.16875839 : Time 44.45s : 16236.84 words/s : L.r. 6.1213e-05
+[2019-04-08 00:29:53] Ep. 1 : Up. 42800 : Sen. 30,862,578 : Cost 24.31589508 : Time 42.51s : 15294.54 words/s : L.r. 6.1142e-05
+[2019-04-08 00:30:35] Ep. 1 : Up. 42900 : Sen. 30,930,258 : Cost 24.75093460 : Time 42.48s : 15931.08 words/s : L.r. 6.1070e-05
+[2019-04-08 00:31:21] Ep. 1 : Up. 43000 : Sen. 31,004,883 : Cost 24.25404739 : Time 45.48s : 16203.28 words/s : L.r. 6.0999e-05
+[2019-04-08 00:32:06] Ep. 1 : Up. 43100 : Sen. 31,085,040 : Cost 21.74128914 : Time 44.69s : 16241.19 words/s : L.r. 6.0929e-05
+[2019-04-08 00:32:49] Ep. 1 : Up. 43200 : Sen. 31,161,817 : Cost 20.32072639 : Time 42.92s : 15146.93 words/s : L.r. 6.0858e-05
+[2019-04-08 00:33:32] Ep. 1 : Up. 43300 : Sen. 31,238,684 : Cost 21.66410255 : Time 43.20s : 15701.98 words/s : L.r. 6.0788e-05
+[2019-04-08 00:34:16] Ep. 1 : Up. 43400 : Sen. 31,311,180 : Cost 23.99958038 : Time 44.18s : 15943.28 words/s : L.r. 6.0718e-05
+[2019-04-08 00:34:56] Ep. 1 : Up. 43500 : Sen. 31,373,644 : Cost 25.05554771 : Time 40.45s : 15369.41 words/s : L.r. 6.0648e-05
+[2019-04-08 00:35:41] Ep. 1 : Up. 43600 : Sen. 31,447,104 : Cost 24.38473129 : Time 45.01s : 16273.72 words/s : L.r. 6.0578e-05
+[2019-04-08 00:36:29] Ep. 1 : Up. 43700 : Sen. 31,522,504 : Cost 25.12690544 : Time 47.25s : 16274.85 words/s : L.r. 6.0509e-05
+[2019-04-08 00:37:11] Ep. 1 : Up. 43800 : Sen. 31,588,533 : Cost 25.44549561 : Time 42.88s : 15733.66 words/s : L.r. 6.0440e-05
+[2019-04-08 00:37:55] Ep. 1 : Up. 43900 : Sen. 31,664,743 : Cost 21.48238373 : Time 43.50s : 15432.37 words/s : L.r. 6.0371e-05
+[2019-04-08 00:38:36] Ep. 1 : Up. 44000 : Sen. 31,728,329 : Cost 24.52388000 : Time 41.47s : 15023.96 words/s : L.r. 6.0302e-05
+[2019-04-08 00:39:18] Ep. 1 : Up. 44100 : Sen. 31,798,936 : Cost 22.62325287 : Time 41.98s : 15330.88 words/s : L.r. 6.0234e-05
+[2019-04-08 00:40:01] Ep. 1 : Up. 44200 : Sen. 31,869,019 : Cost 24.14749146 : Time 42.90s : 15647.71 words/s : L.r. 6.0166e-05
+[2019-04-08 00:40:44] Ep. 1 : Up. 44300 : Sen. 31,937,400 : Cost 24.41946030 : Time 42.54s : 16042.41 words/s : L.r. 6.0098e-05
+[2019-04-08 00:41:27] Ep. 1 : Up. 44400 : Sen. 32,008,145 : Cost 22.20384407 : Time 42.82s : 15155.49 words/s : L.r. 6.0030e-05
+[2019-04-08 00:42:09] Ep. 1 : Up. 44500 : Sen. 32,077,211 : Cost 22.80597496 : Time 42.16s : 15305.96 words/s : L.r. 5.9963e-05
+[2019-04-08 00:42:52] Ep. 1 : Up. 44600 : Sen. 32,141,549 : Cost 26.48099136 : Time 43.17s : 16035.45 words/s : L.r. 5.9895e-05
+[2019-04-08 00:43:36] Ep. 1 : Up. 44700 : Sen. 32,212,513 : Cost 24.14266014 : Time 43.61s : 15818.22 words/s : L.r. 5.9828e-05
+[2019-04-08 00:44:19] Ep. 1 : Up. 44800 : Sen. 32,283,707 : Cost 23.95584297 : Time 43.76s : 15959.78 words/s : L.r. 5.9761e-05
+[2019-04-08 00:45:05] Ep. 1 : Up. 44900 : Sen. 32,365,736 : Cost 21.87961960 : Time 45.50s : 15979.06 words/s : L.r. 5.9695e-05
+[2019-04-08 00:45:50] Ep. 1 : Up. 45000 : Sen. 32,445,398 : Cost 22.11121178 : Time 45.02s : 15688.62 words/s : L.r. 5.9628e-05
+[2019-04-08 00:45:50] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-08 00:45:54] Saving model weights and runtime parameters to test.iter45000.npz
+[2019-04-08 00:45:58] Saving model weights and runtime parameters to test.npz
+[2019-04-08 00:46:03] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-08 00:46:18] [valid] Ep. 1 : Up. 45000 : cross-entropy : 19.1027 : stalled 3 times (last best: 19.0901)
+[2019-04-08 00:46:25] [valid] Ep. 1 : Up. 45000 : perplexity : 4.40232 : stalled 3 times (last best: 4.39803)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-08 00:47:50] [valid] Ep. 1 : Up. 45000 : translation : 34.5 : stalled 5 times (last best: 34.7)
+[2019-04-08 00:48:33] Ep. 1 : Up. 45100 : Sen. 32,518,093 : Cost 23.29695702 : Time 163.37s : 4275.19 words/s : L.r. 5.9562e-05
+[2019-04-08 00:49:17] Ep. 1 : Up. 45200 : Sen. 32,588,816 : Cost 24.22804832 : Time 44.04s : 15679.37 words/s : L.r. 5.9496e-05
+[2019-04-08 00:50:02] Ep. 1 : Up. 45300 : Sen. 32,664,485 : Cost 22.84586906 : Time 44.66s : 16082.94 words/s : L.r. 5.9431e-05
+[2019-04-08 00:50:43] Ep. 1 : Up. 45400 : Sen. 32,730,109 : Cost 23.08735466 : Time 40.86s : 15065.90 words/s : L.r. 5.9365e-05
+[2019-04-08 00:51:24] Ep. 1 : Up. 45500 : Sen. 32,800,719 : Cost 22.24627113 : Time 41.53s : 15413.11 words/s : L.r. 5.9300e-05
+[2019-04-08 00:52:09] Ep. 1 : Up. 45600 : Sen. 32,879,260 : Cost 22.04058266 : Time 44.28s : 15940.73 words/s : L.r. 5.9235e-05
+[2019-04-08 00:52:51] Ep. 1 : Up. 45700 : Sen. 32,946,078 : Cost 24.44698715 : Time 42.26s : 15641.16 words/s : L.r. 5.9170e-05
+[2019-04-08 00:53:35] Ep. 1 : Up. 45800 : Sen. 33,021,388 : Cost 22.43815613 : Time 44.06s : 15687.71 words/s : L.r. 5.9105e-05
+[2019-04-08 00:54:20] Ep. 1 : Up. 45900 : Sen. 33,090,241 : Cost 25.72471619 : Time 44.86s : 16037.96 words/s : L.r. 5.9041e-05
+[2019-04-08 00:55:01] Ep. 1 : Up. 46000 : Sen. 33,160,622 : Cost 21.47243118 : Time 41.05s : 15090.45 words/s : L.r. 5.8977e-05
+[2019-04-08 00:55:47] Ep. 1 : Up. 46100 : Sen. 33,230,477 : Cost 26.24803543 : Time 45.65s : 16474.08 words/s : L.r. 5.8913e-05
+[2019-04-08 00:56:30] Ep. 1 : Up. 46200 : Sen. 33,303,044 : Cost 23.08824158 : Time 43.32s : 15747.62 words/s : L.r. 5.8849e-05
+[2019-04-08 00:57:12] Ep. 1 : Up. 46300 : Sen. 33,371,622 : Cost 24.25826454 : Time 42.47s : 15924.57 words/s : L.r. 5.8785e-05
+[2019-04-08 00:57:54] Ep. 1 : Up. 46400 : Sen. 33,442,167 : Cost 22.22847557 : Time 41.64s : 15338.85 words/s : L.r. 5.8722e-05
+[2019-04-08 00:58:38] Ep. 1 : Up. 46500 : Sen. 33,513,846 : Cost 23.59264183 : Time 43.67s : 15788.66 words/s : L.r. 5.8659e-05
+[2019-04-08 00:59:22] Ep. 1 : Up. 46600 : Sen. 33,590,743 : Cost 22.48860931 : Time 44.17s : 15924.35 words/s : L.r. 5.8596e-05
+[2019-04-08 01:00:06] Ep. 1 : Up. 46700 : Sen. 33,671,069 : Cost 21.25153923 : Time 44.08s : 15689.59 words/s : L.r. 5.8533e-05
+[2019-04-08 01:00:51] Ep. 1 : Up. 46800 : Sen. 33,749,249 : Cost 22.39804840 : Time 45.57s : 15805.92 words/s : L.r. 5.8471e-05
+[2019-04-08 01:01:36] Ep. 1 : Up. 46900 : Sen. 33,824,945 : Cost 22.60789680 : Time 44.96s : 15578.06 words/s : L.r. 5.8408e-05
+[2019-04-08 01:02:19] Ep. 1 : Up. 47000 : Sen. 33,898,177 : Cost 22.01945686 : Time 42.44s : 15447.67 words/s : L.r. 5.8346e-05
+[2019-04-08 01:03:01] Ep. 1 : Up. 47100 : Sen. 33,963,054 : Cost 25.09881783 : Time 42.33s : 15388.98 words/s : L.r. 5.8284e-05
+[2019-04-08 01:03:44] Ep. 1 : Up. 47200 : Sen. 34,033,127 : Cost 24.55022049 : Time 43.25s : 16059.75 words/s : L.r. 5.8222e-05
+[2019-04-08 01:04:27] Ep. 1 : Up. 47300 : Sen. 34,102,347 : Cost 24.07120705 : Time 42.13s : 15682.20 words/s : L.r. 5.8161e-05
+[2019-04-08 01:05:11] Ep. 1 : Up. 47400 : Sen. 34,171,329 : Cost 25.35309410 : Time 44.33s : 16120.71 words/s : L.r. 5.8099e-05
+[2019-04-08 01:05:54] Ep. 1 : Up. 47500 : Sen. 34,240,608 : Cost 24.09172630 : Time 42.69s : 16137.34 words/s : L.r. 5.8038e-05
+[2019-04-08 01:06:38] Ep. 1 : Up. 47600 : Sen. 34,305,119 : Cost 27.21949959 : Time 44.08s : 15795.59 words/s : L.r. 5.7977e-05
+[2019-04-08 01:07:22] Ep. 1 : Up. 47700 : Sen. 34,384,660 : Cost 20.93165779 : Time 44.55s : 15521.15 words/s : L.r. 5.7916e-05
+[2019-04-08 01:08:05] Ep. 1 : Up. 47800 : Sen. 34,453,871 : Cost 24.03976440 : Time 43.15s : 15562.51 words/s : L.r. 5.7856e-05
+[2019-04-08 01:08:49] Ep. 1 : Up. 47900 : Sen. 34,529,528 : Cost 21.82128143 : Time 43.46s : 15426.56 words/s : L.r. 5.7795e-05
+[2019-04-08 01:09:33] Ep. 1 : Up. 48000 : Sen. 34,602,397 : Cost 23.63361549 : Time 43.80s : 15931.74 words/s : L.r. 5.7735e-05
+[2019-04-08 01:10:16] Ep. 1 : Up. 48100 : Sen. 34,675,583 : Cost 22.62423325 : Time 43.34s : 15455.76 words/s : L.r. 5.7675e-05
+[2019-04-08 01:10:58] Ep. 1 : Up. 48200 : Sen. 34,748,613 : Cost 21.61889267 : Time 42.27s : 15310.82 words/s : L.r. 5.7615e-05
+[2019-04-08 01:11:42] Ep. 1 : Up. 48300 : Sen. 34,822,592 : Cost 22.52470398 : Time 43.51s : 15661.86 words/s : L.r. 5.7555e-05
+[2019-04-08 01:12:27] Ep. 1 : Up. 48400 : Sen. 34,903,442 : Cost 21.27912712 : Time 45.51s : 15723.53 words/s : L.r. 5.7496e-05
+[2019-04-08 01:13:10] Ep. 1 : Up. 48500 : Sen. 34,972,618 : Cost 24.66452980 : Time 43.09s : 15908.53 words/s : L.r. 5.7437e-05
+[2019-04-08 01:13:51] Ep. 1 : Up. 48600 : Sen. 35,040,298 : Cost 22.53545570 : Time 40.49s : 15170.02 words/s : L.r. 5.7378e-05
+[2019-04-08 01:14:35] Ep. 1 : Up. 48700 : Sen. 35,110,147 : Cost 24.83980370 : Time 44.16s : 16174.70 words/s : L.r. 5.7319e-05
+[2019-04-08 01:15:19] Ep. 1 : Up. 48800 : Sen. 35,179,977 : Cost 24.27793694 : Time 43.69s : 15807.78 words/s : L.r. 5.7260e-05
+[2019-04-08 01:16:03] Ep. 1 : Up. 48900 : Sen. 35,252,827 : Cost 23.08654976 : Time 44.08s : 15578.55 words/s : L.r. 5.7201e-05
+[2019-04-08 01:16:47] Ep. 1 : Up. 49000 : Sen. 35,328,258 : Cost 22.50070190 : Time 43.84s : 15909.11 words/s : L.r. 5.7143e-05
+[2019-04-08 01:17:30] Ep. 1 : Up. 49100 : Sen. 35,402,627 : Cost 22.53295517 : Time 43.69s : 15492.00 words/s : L.r. 5.7085e-05
+[2019-04-08 01:18:12] Ep. 1 : Up. 49200 : Sen. 35,471,004 : Cost 23.30315208 : Time 42.10s : 15649.67 words/s : L.r. 5.7027e-05
+[2019-04-08 01:18:55] Ep. 1 : Up. 49300 : Sen. 35,538,416 : Cost 24.08921814 : Time 42.43s : 15422.65 words/s : L.r. 5.6969e-05
+[2019-04-08 01:19:39] Ep. 1 : Up. 49400 : Sen. 35,615,094 : Cost 22.42996788 : Time 44.34s : 15796.11 words/s : L.r. 5.6911e-05
+[2019-04-08 01:20:23] Ep. 1 : Up. 49500 : Sen. 35,685,682 : Cost 24.36734200 : Time 43.79s : 16028.10 words/s : L.r. 5.6854e-05
+[2019-04-08 01:21:06] Ep. 1 : Up. 49600 : Sen. 35,762,260 : Cost 20.71998405 : Time 42.96s : 15280.38 words/s : L.r. 5.6796e-05
+[2019-04-08 01:21:50] Ep. 1 : Up. 49700 : Sen. 35,833,399 : Cost 23.87775612 : Time 43.76s : 15671.40 words/s : L.r. 5.6739e-05
+[2019-04-08 01:22:34] Ep. 1 : Up. 49800 : Sen. 35,908,543 : Cost 23.46119690 : Time 44.43s : 15696.81 words/s : L.r. 5.6682e-05
+[2019-04-08 01:23:18] Ep. 1 : Up. 49900 : Sen. 35,978,263 : Cost 24.99032402 : Time 44.05s : 16119.61 words/s : L.r. 5.6625e-05
+[2019-04-08 01:24:03] Ep. 1 : Up. 50000 : Sen. 36,055,533 : Cost 22.19246674 : Time 44.65s : 15683.63 words/s : L.r. 5.6569e-05
+[2019-04-08 01:24:03] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-08 01:24:07] Saving model weights and runtime parameters to test.iter50000.npz
+[2019-04-08 01:24:12] Saving model weights and runtime parameters to test.npz
+[2019-04-08 01:24:16] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-08 01:24:32] [valid] Ep. 1 : Up. 50000 : cross-entropy : 19.1073 : stalled 4 times (last best: 19.0901)
+[2019-04-08 01:24:39] [valid] Ep. 1 : Up. 50000 : perplexity : 4.40387 : stalled 4 times (last best: 4.39803)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-08 01:26:04] [valid] Ep. 1 : Up. 50000 : translation : 34.5 : stalled 6 times (last best: 34.7)
+[2019-04-08 01:26:47] Ep. 1 : Up. 50100 : Sen. 36,129,945 : Cost 22.39872742 : Time 164.47s : 4056.99 words/s : L.r. 5.6512e-05
+[2019-04-08 01:27:29] Ep. 1 : Up. 50200 : Sen. 36,199,832 : Cost 22.98151207 : Time 42.17s : 15589.33 words/s : L.r. 5.6456e-05
+[2019-04-08 01:28:14] Ep. 1 : Up. 50300 : Sen. 36,269,690 : Cost 25.47765541 : Time 44.46s : 16040.85 words/s : L.r. 5.6400e-05
+[2019-04-08 01:28:59] Ep. 1 : Up. 50400 : Sen. 36,350,804 : Cost 21.33791733 : Time 45.37s : 15804.50 words/s : L.r. 5.6344e-05
+[2019-04-08 01:29:41] Ep. 1 : Up. 50500 : Sen. 36,417,944 : Cost 24.05201340 : Time 41.98s : 15673.02 words/s : L.r. 5.6288e-05
+[2019-04-08 01:30:27] Ep. 1 : Up. 50600 : Sen. 36,490,481 : Cost 24.62226105 : Time 45.44s : 16170.97 words/s : L.r. 5.6232e-05
+[2019-04-08 01:31:10] Ep. 1 : Up. 50700 : Sen. 36,553,393 : Cost 27.24853706 : Time 42.86s : 16088.19 words/s : L.r. 5.6177e-05
+[2019-04-08 01:31:53] Ep. 1 : Up. 50800 : Sen. 36,618,942 : Cost 25.73939705 : Time 43.20s : 15794.71 words/s : L.r. 5.6121e-05
+[2019-04-08 01:32:37] Ep. 1 : Up. 50900 : Sen. 36,695,320 : Cost 22.41197968 : Time 44.53s : 15632.19 words/s : L.r. 5.6066e-05
+[2019-04-08 01:33:21] Ep. 1 : Up. 51000 : Sen. 36,771,659 : Cost 21.74100494 : Time 43.28s : 15429.83 words/s : L.r. 5.6011e-05
+[2019-04-08 01:34:02] Ep. 1 : Up. 51100 : Sen. 36,846,305 : Cost 20.84520912 : Time 41.78s : 15154.96 words/s : L.r. 5.5956e-05
+[2019-04-08 01:34:47] Ep. 1 : Up. 51200 : Sen. 36,922,725 : Cost 22.82567215 : Time 44.59s : 15964.45 words/s : L.r. 5.5902e-05
+[2019-04-08 01:35:29] Ep. 1 : Up. 51300 : Sen. 36,992,156 : Cost 23.08103943 : Time 42.30s : 15394.75 words/s : L.r. 5.5847e-05
+[2019-04-08 01:36:11] Ep. 1 : Up. 51400 : Sen. 37,054,822 : Cost 26.31535912 : Time 41.74s : 15862.74 words/s : L.r. 5.5793e-05
+[2019-04-08 01:36:54] Ep. 1 : Up. 51500 : Sen. 37,129,571 : Cost 21.42871666 : Time 42.83s : 15226.12 words/s : L.r. 5.5739e-05
+[2019-04-08 01:37:38] Ep. 1 : Up. 51600 : Sen. 37,203,317 : Cost 23.41656113 : Time 43.93s : 15960.33 words/s : L.r. 5.5685e-05
+[2019-04-08 01:38:23] Ep. 1 : Up. 51700 : Sen. 37,284,921 : Cost 20.93457031 : Time 45.25s : 15411.89 words/s : L.r. 5.5631e-05
+[2019-04-08 01:39:06] Ep. 1 : Up. 51800 : Sen. 37,360,517 : Cost 22.06890488 : Time 43.27s : 15870.05 words/s : L.r. 5.5577e-05
+[2019-04-08 01:39:51] Ep. 1 : Up. 51900 : Sen. 37,433,070 : Cost 23.91495895 : Time 44.58s : 15864.07 words/s : L.r. 5.5523e-05
+[2019-04-08 01:40:34] Ep. 1 : Up. 52000 : Sen. 37,505,420 : Cost 22.65741348 : Time 43.53s : 15628.14 words/s : L.r. 5.5470e-05
+[2019-04-08 01:41:19] Ep. 1 : Up. 52100 : Sen. 37,583,466 : Cost 21.51174545 : Time 44.21s : 15430.53 words/s : L.r. 5.5417e-05
+[2019-04-08 01:42:02] Ep. 1 : Up. 52200 : Sen. 37,649,027 : Cost 26.21107101 : Time 43.49s : 16004.16 words/s : L.r. 5.5364e-05
+[2019-04-08 01:42:44] Ep. 1 : Up. 52300 : Sen. 37,721,657 : Cost 21.07288551 : Time 42.19s : 14974.49 words/s : L.r. 5.5311e-05
+[2019-04-08 01:43:28] Ep. 1 : Up. 52400 : Sen. 37,791,859 : Cost 23.81995964 : Time 43.38s : 15787.43 words/s : L.r. 5.5258e-05
+[2019-04-08 01:44:13] Ep. 1 : Up. 52500 : Sen. 37,858,269 : Cost 28.20351219 : Time 45.48s : 16436.47 words/s : L.r. 5.5205e-05
+[2019-04-08 01:44:58] Ep. 1 : Up. 52600 : Sen. 37,931,976 : Cost 23.37777138 : Time 44.66s : 15475.03 words/s : L.r. 5.5153e-05
+[2019-04-08 01:45:42] Ep. 1 : Up. 52700 : Sen. 38,002,324 : Cost 24.15170097 : Time 43.97s : 15558.80 words/s : L.r. 5.5100e-05
+[2019-04-08 01:46:27] Ep. 1 : Up. 52800 : Sen. 38,077,143 : Cost 22.98388863 : Time 44.91s : 15561.53 words/s : L.r. 5.5048e-05
+[2019-04-08 01:47:09] Ep. 1 : Up. 52900 : Sen. 38,146,976 : Cost 23.18931007 : Time 42.71s : 15435.00 words/s : L.r. 5.4996e-05
+[2019-04-08 01:47:54] Ep. 1 : Up. 53000 : Sen. 38,219,543 : Cost 24.04647255 : Time 44.80s : 15801.83 words/s : L.r. 5.4944e-05
+[2019-04-08 01:48:36] Ep. 1 : Up. 53100 : Sen. 38,289,567 : Cost 23.00155830 : Time 42.03s : 15524.41 words/s : L.r. 5.4892e-05
+[2019-04-08 01:49:20] Ep. 1 : Up. 53200 : Sen. 38,362,680 : Cost 22.68991470 : Time 43.91s : 15512.96 words/s : L.r. 5.4841e-05
+[2019-04-08 01:50:04] Ep. 1 : Up. 53300 : Sen. 38,434,297 : Cost 22.52071571 : Time 43.73s : 15277.02 words/s : L.r. 5.4789e-05
+[2019-04-08 01:50:48] Ep. 1 : Up. 53400 : Sen. 38,510,750 : Cost 22.08384323 : Time 44.50s : 15568.20 words/s : L.r. 5.4738e-05
+[2019-04-08 01:51:32] Ep. 1 : Up. 53500 : Sen. 38,588,129 : Cost 21.75242043 : Time 43.90s : 15513.65 words/s : L.r. 5.4687e-05
+[2019-04-08 01:52:16] Ep. 1 : Up. 53600 : Sen. 38,654,665 : Cost 25.75684357 : Time 43.76s : 15700.64 words/s : L.r. 5.4636e-05
+[2019-04-08 01:53:00] Ep. 1 : Up. 53700 : Sen. 38,723,864 : Cost 24.62959290 : Time 43.91s : 15571.38 words/s : L.r. 5.4585e-05
+[2019-04-08 01:53:46] Ep. 1 : Up. 53800 : Sen. 38,797,640 : Cost 23.57859802 : Time 45.77s : 15604.16 words/s : L.r. 5.4534e-05
+[2019-04-08 01:54:27] Ep. 1 : Up. 53900 : Sen. 38,862,973 : Cost 23.77110863 : Time 41.07s : 15453.97 words/s : L.r. 5.4484e-05
+[2019-04-08 01:55:11] Ep. 1 : Up. 54000 : Sen. 38,934,066 : Cost 22.93848038 : Time 43.73s : 15322.26 words/s : L.r. 5.4433e-05
+[2019-04-08 01:55:56] Ep. 1 : Up. 54100 : Sen. 39,012,311 : Cost 22.59105110 : Time 45.30s : 15858.52 words/s : L.r. 5.4383e-05
+[2019-04-08 01:56:42] Ep. 1 : Up. 54200 : Sen. 39,085,121 : Cost 24.67592812 : Time 46.05s : 16319.34 words/s : L.r. 5.4333e-05
+[2019-04-08 01:57:26] Ep. 1 : Up. 54300 : Sen. 39,150,977 : Cost 26.80976677 : Time 43.67s : 16077.00 words/s : L.r. 5.4283e-05
+[2019-04-08 01:58:08] Ep. 1 : Up. 54400 : Sen. 39,223,242 : Cost 22.28099442 : Time 42.65s : 15310.44 words/s : L.r. 5.4233e-05
+[2019-04-08 01:58:52] Ep. 1 : Up. 54500 : Sen. 39,296,041 : Cost 23.02616882 : Time 43.71s : 15263.15 words/s : L.r. 5.4183e-05
+[2019-04-08 01:59:33] Ep. 1 : Up. 54600 : Sen. 39,360,311 : Cost 24.85995102 : Time 41.40s : 15305.63 words/s : L.r. 5.4133e-05
+[2019-04-08 02:00:22] Ep. 1 : Up. 54700 : Sen. 39,440,264 : Cost 24.04305649 : Time 48.25s : 16268.63 words/s : L.r. 5.4084e-05
+[2019-04-08 02:01:07] Ep. 1 : Up. 54800 : Sen. 39,517,980 : Cost 22.54196930 : Time 45.56s : 15847.83 words/s : L.r. 5.4034e-05
+[2019-04-08 02:01:52] Ep. 1 : Up. 54900 : Sen. 39,591,304 : Cost 23.84157944 : Time 44.55s : 16101.26 words/s : L.r. 5.3985e-05
+[2019-04-08 02:02:33] Ep. 1 : Up. 55000 : Sen. 39,657,311 : Cost 22.82557106 : Time 41.22s : 14964.29 words/s : L.r. 5.3936e-05
+[2019-04-08 02:02:33] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-08 02:02:38] Saving model weights and runtime parameters to test.iter55000.npz
+[2019-04-08 02:02:43] Saving model weights and runtime parameters to test.npz
+[2019-04-08 02:02:48] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-08 02:03:04] [valid] Ep. 1 : Up. 55000 : cross-entropy : 19.1093 : stalled 5 times (last best: 19.0901)
+[2019-04-08 02:03:11] [valid] Ep. 1 : Up. 55000 : perplexity : 4.40459 : stalled 5 times (last best: 4.39803)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-08 02:04:36] [valid] Ep. 1 : Up. 55000 : translation : 34.5 : stalled 7 times (last best: 34.7)
+[2019-04-08 02:05:16] Ep. 1 : Up. 55100 : Sen. 39,725,382 : Cost 21.36246490 : Time 162.88s : 3600.26 words/s : L.r. 5.3887e-05
+[2019-04-08 02:05:58] Ep. 1 : Up. 55200 : Sen. 39,795,097 : Cost 23.42128563 : Time 42.55s : 15670.08 words/s : L.r. 5.3838e-05
+[2019-04-08 02:06:41] Ep. 1 : Up. 55300 : Sen. 39,865,330 : Cost 23.07385635 : Time 42.69s : 15459.67 words/s : L.r. 5.3789e-05
+[2019-04-08 02:07:25] Ep. 1 : Up. 55400 : Sen. 39,943,260 : Cost 21.55259895 : Time 44.41s : 15514.03 words/s : L.r. 5.3741e-05
+[2019-04-08 02:08:10] Ep. 1 : Up. 55500 : Sen. 40,016,908 : Cost 23.66413116 : Time 44.16s : 15783.47 words/s : L.r. 5.3692e-05
+[2019-04-08 02:08:53] Ep. 1 : Up. 55600 : Sen. 40,091,075 : Cost 22.25461197 : Time 43.66s : 15572.38 words/s : L.r. 5.3644e-05
+[2019-04-08 02:09:34] Ep. 1 : Up. 55700 : Sen. 40,155,784 : Cost 23.69571114 : Time 41.19s : 15052.02 words/s : L.r. 5.3596e-05
+[2019-04-08 02:10:19] Ep. 1 : Up. 55800 : Sen. 40,229,695 : Cost 23.26356506 : Time 44.48s : 15883.86 words/s : L.r. 5.3548e-05
+[2019-04-08 02:11:01] Ep. 1 : Up. 55900 : Sen. 40,292,631 : Cost 26.61572838 : Time 42.07s : 15835.67 words/s : L.r. 5.3500e-05
+[2019-04-08 02:11:43] Ep. 1 : Up. 56000 : Sen. 40,366,782 : Cost 21.20598030 : Time 42.14s : 15442.84 words/s : L.r. 5.3452e-05
+[2019-04-08 02:12:28] Ep. 1 : Up. 56100 : Sen. 40,436,313 : Cost 25.77116394 : Time 45.05s : 16165.29 words/s : L.r. 5.3405e-05
+[2019-04-08 02:13:11] Ep. 1 : Up. 56200 : Sen. 40,505,137 : Cost 23.85563087 : Time 42.52s : 15428.06 words/s : L.r. 5.3357e-05
+[2019-04-08 02:13:54] Ep. 1 : Up. 56300 : Sen. 40,577,334 : Cost 23.31863213 : Time 43.66s : 15671.02 words/s : L.r. 5.3310e-05
+[2019-04-08 02:14:39] Ep. 1 : Up. 56400 : Sen. 40,656,992 : Cost 20.84440231 : Time 44.57s : 15504.12 words/s : L.r. 5.3262e-05
+[2019-04-08 02:15:21] Ep. 1 : Up. 56500 : Sen. 40,725,870 : Cost 24.00655174 : Time 42.31s : 15230.74 words/s : L.r. 5.3215e-05
+[2019-04-08 02:16:04] Ep. 1 : Up. 56600 : Sen. 40,799,346 : Cost 22.27612495 : Time 43.12s : 15406.59 words/s : L.r. 5.3168e-05
+[2019-04-08 02:16:52] Ep. 1 : Up. 56700 : Sen. 40,883,028 : Cost 21.67627335 : Time 47.42s : 15734.38 words/s : L.r. 5.3121e-05
+[2019-04-08 02:17:37] Ep. 1 : Up. 56800 : Sen. 40,951,388 : Cost 25.78444099 : Time 44.71s : 16039.95 words/s : L.r. 5.3074e-05
+[2019-04-08 02:18:21] Ep. 1 : Up. 56900 : Sen. 41,028,754 : Cost 21.69895935 : Time 44.34s : 15544.30 words/s : L.r. 5.3028e-05
+[2019-04-08 02:19:03] Ep. 1 : Up. 57000 : Sen. 41,100,468 : Cost 21.46429634 : Time 42.38s : 15005.21 words/s : L.r. 5.2981e-05
+[2019-04-08 02:19:45] Ep. 1 : Up. 57100 : Sen. 41,168,262 : Cost 22.46952438 : Time 41.64s : 14917.58 words/s : L.r. 5.2935e-05
+[2019-04-08 02:20:26] Ep. 1 : Up. 57200 : Sen. 41,238,959 : Cost 20.93099213 : Time 40.72s : 14898.06 words/s : L.r. 5.2889e-05
+[2019-04-08 02:21:08] Ep. 1 : Up. 57300 : Sen. 41,302,196 : Cost 25.90510750 : Time 42.25s : 15617.06 words/s : L.r. 5.2842e-05
+[2019-04-08 02:21:52] Ep. 1 : Up. 57400 : Sen. 41,370,803 : Cost 24.32209778 : Time 44.15s : 15411.46 words/s : L.r. 5.2796e-05
+[2019-04-08 02:22:32] Ep. 1 : Up. 57500 : Sen. 41,436,457 : Cost 23.18655968 : Time 40.14s : 15148.62 words/s : L.r. 5.2750e-05
+[2019-04-08 02:23:18] Ep. 1 : Up. 57600 : Sen. 41,508,603 : Cost 24.77485085 : Time 45.36s : 16089.22 words/s : L.r. 5.2705e-05
+[2019-04-08 02:24:01] Ep. 1 : Up. 57700 : Sen. 41,578,423 : Cost 23.68132401 : Time 43.21s : 15812.06 words/s : L.r. 5.2659e-05
+[2019-04-08 02:24:44] Ep. 1 : Up. 57800 : Sen. 41,650,730 : Cost 22.75664711 : Time 43.42s : 15510.77 words/s : L.r. 5.2613e-05
+[2019-04-08 02:25:26] Ep. 1 : Up. 57900 : Sen. 41,718,483 : Cost 23.78097534 : Time 42.12s : 15272.27 words/s : L.r. 5.2568e-05
+[2019-04-08 02:25:40] Seen 41736958 samples
+[2019-04-08 02:25:40] Starting epoch 2
+[2019-04-08 02:25:40] [data] Shuffling data
+[2019-04-08 02:25:56] [data] Done reading 41736982 sentences
+[2019-04-08 02:28:41] [data] Done shuffling 41736982 sentences to temp files
+[2019-04-08 02:29:41] Ep. 2 : Up. 58000 : Sen. 43,129 : Cost 26.45680809 : Time 255.06s : 2602.07 words/s : L.r. 5.2523e-05
+[2019-04-08 02:30:23] Ep. 2 : Up. 58100 : Sen. 105,766 : Cost 25.80696487 : Time 41.97s : 15826.83 words/s : L.r. 5.2477e-05
+[2019-04-08 02:31:08] Ep. 2 : Up. 58200 : Sen. 182,574 : Cost 22.58306885 : Time 44.86s : 16096.08 words/s : L.r. 5.2432e-05
+[2019-04-08 02:31:51] Ep. 2 : Up. 58300 : Sen. 257,980 : Cost 22.04501915 : Time 42.86s : 15465.42 words/s : L.r. 5.2387e-05
+[2019-04-08 02:32:37] Ep. 2 : Up. 58400 : Sen. 344,052 : Cost 20.47879791 : Time 46.23s : 15790.60 words/s : L.r. 5.2342e-05
+[2019-04-08 02:33:20] Ep. 2 : Up. 58500 : Sen. 413,184 : Cost 23.69235611 : Time 43.04s : 15250.55 words/s : L.r. 5.2298e-05
+[2019-04-08 02:34:04] Ep. 2 : Up. 58600 : Sen. 485,901 : Cost 23.26233292 : Time 44.09s : 15746.18 words/s : L.r. 5.2253e-05
+[2019-04-08 02:34:48] Ep. 2 : Up. 58700 : Sen. 564,279 : Cost 20.60959053 : Time 43.59s : 15289.23 words/s : L.r. 5.2208e-05
+[2019-04-08 02:35:31] Ep. 2 : Up. 58800 : Sen. 632,360 : Cost 25.02631569 : Time 43.31s : 15907.60 words/s : L.r. 5.2164e-05
+[2019-04-08 02:36:12] Ep. 2 : Up. 58900 : Sen. 693,474 : Cost 24.86350060 : Time 40.16s : 14855.49 words/s : L.r. 5.2120e-05
+[2019-04-08 02:36:57] Ep. 2 : Up. 59000 : Sen. 769,455 : Cost 23.38097191 : Time 45.83s : 16037.54 words/s : L.r. 5.2076e-05
+[2019-04-08 02:37:40] Ep. 2 : Up. 59100 : Sen. 839,637 : Cost 22.98106956 : Time 43.09s : 15312.66 words/s : L.r. 5.2031e-05
+[2019-04-08 02:38:26] Ep. 2 : Up. 59200 : Sen. 915,200 : Cost 24.00797844 : Time 46.00s : 16009.50 words/s : L.r. 5.1988e-05
+[2019-04-08 02:39:09] Ep. 2 : Up. 59300 : Sen. 981,771 : Cost 24.94873810 : Time 42.66s : 15712.10 words/s : L.r. 5.1944e-05
+[2019-04-08 02:39:55] Ep. 2 : Up. 59400 : Sen. 1,058,401 : Cost 23.08996391 : Time 46.19s : 15452.72 words/s : L.r. 5.1900e-05
+[2019-04-08 02:40:43] Ep. 2 : Up. 59500 : Sen. 1,142,260 : Cost 21.31712151 : Time 47.62s : 15487.75 words/s : L.r. 5.1856e-05
+[2019-04-08 02:41:30] Ep. 2 : Up. 59600 : Sen. 1,219,866 : Cost 23.24664116 : Time 47.05s : 15649.64 words/s : L.r. 5.1813e-05
+[2019-04-08 02:42:13] Ep. 2 : Up. 59700 : Sen. 1,294,244 : Cost 21.20186424 : Time 43.45s : 14866.97 words/s : L.r. 5.1769e-05
+[2019-04-08 02:42:55] Ep. 2 : Up. 59800 : Sen. 1,358,831 : Cost 24.46426201 : Time 41.38s : 15319.80 words/s : L.r. 5.1726e-05
+[2019-04-08 02:43:38] Ep. 2 : Up. 59900 : Sen. 1,430,497 : Cost 23.75682449 : Time 43.65s : 15777.30 words/s : L.r. 5.1683e-05
+[2019-04-08 02:44:20] Ep. 2 : Up. 60000 : Sen. 1,499,437 : Cost 23.43774223 : Time 41.56s : 15349.10 words/s : L.r. 5.1640e-05
+[2019-04-08 02:44:20] Saving model weights and runtime parameters to test.npz.orig.npz
+[2019-04-08 02:44:25] Saving model weights and runtime parameters to test.iter60000.npz
+[2019-04-08 02:44:30] Saving model weights and runtime parameters to test.npz
+[2019-04-08 02:44:35] Saving Adam parameters to test.npz.optimizer.npz
+[2019-04-08 02:44:51] [valid] Ep. 2 : Up. 60000 : cross-entropy : 19.1033 : stalled 6 times (last best: 19.0901)
+[2019-04-08 02:44:58] [valid] Ep. 2 : Up. 60000 : perplexity : 4.40252 : stalled 6 times (last best: 4.39803)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-08 02:46:23] [valid] Ep. 2 : Up. 60000 : translation : 34.5 : stalled 8 times (last best: 34.7)
+[2019-04-08 02:47:07] Ep. 2 : Up. 60100 : Sen. 1,571,105 : Cost 23.13780975 : Time 167.34s : 4134.48 words/s : L.r. 5.1597e-05
+[2019-04-08 02:47:50] Ep. 2 : Up. 60200 : Sen. 1,642,934 : Cost 22.57592773 : Time 42.96s : 15384.64 words/s : L.r. 5.1554e-05
+train_doc_docnew_enc_depth_pretrain_freeze2.sh: řádek 30:   643 Ukončen (SIGTERM)      $marian_home/marian --model test.npz --pretrained-model model/model.src1tgt0.docnew.enc_depth.test_base.npz.best-translation.npz --type transformer-context --train-sets corp/opensub.en-fr.docs.train.en.bpe.src_prev corp/opensub.en-fr.docs.train.en.bpe.src corp/opensub.en-fr.docs.train.fr.bpe --max-length 160 --dim-vocabs 30000 30000 --embedding-fix-src --embedding-fix-trg --vocabs corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml --mini-batch-fit -w 7800 --freeze --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --context-enc-depth 1 --valid-freq 5000 --save-freq 5000 --disp-freq 100 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe.src_prev corp/opensub.en-fr.docs.dev.en.bpe.src corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 16 --keep-best --beam-size 6 --normalize 0.6 --log model/train_trans.gate.log --valid-log model/valid_trans.gate.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0001 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 --no-nccl --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus

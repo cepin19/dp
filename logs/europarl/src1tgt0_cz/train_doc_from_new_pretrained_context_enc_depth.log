@@ -1,0 +1,485 @@
+[2019-04-02 12:49:19] [marian] Marian v1.7.8 b59f01a 2019-04-02 03:22:27 +0200
+[2019-04-02 12:49:19] [marian] Running on pcknot5 as process 17380 with command line:
+[2019-04-02 12:49:19] [marian] /mnt/minerva1/nlp/projects/nmt/doc-marian/build/marian --model model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz --pretrained-model model/model.src1tgt0.docnew.enc_depth.test_base.npz.best-perplexity.npz --type transformer-context --train-sets corp/europarl.cs-en.docs.train.en.bpe.src_prev corp/europarl.cs-en.docs.train.en.bpe.src corp/europarl.cs-en.docs.train.cz.bpe --max-length 160 --dim-vocabs 30000 30000 --embedding-fix-src --embedding-fix-trg --vocabs corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml --mini-batch-fit -w 7800 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --freeze --context-enc-depth 6 --valid-freq 5000 --save-freq 5000 --disp-freq 1000 --valid-metrics cross-entropy perplexity translation --valid-sets corp/europarl.cs-en.docs.dev.en.bpe.src_prev corp/europarl.cs-en.docs.dev.en.bpe.src corp/europarl.cs-en.docs.dev.cz.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 16 --keep-best --beam-size 6 --normalize 0.6 --log model/train_trans.gate.log --valid-log model/valid_trans.gate.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0001 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 --no-nccl --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus
+[2019-04-02 12:49:19] [config] after-batches: 0
+[2019-04-02 12:49:19] [config] after-epochs: 0
+[2019-04-02 12:49:19] [config] allow-unk: false
+[2019-04-02 12:49:19] [config] beam-size: 6
+[2019-04-02 12:49:19] [config] bert-class-symbol: "[CLS]"
+[2019-04-02 12:49:19] [config] bert-mask-symbol: "[MASK]"
+[2019-04-02 12:49:19] [config] bert-masking-fraction: 0.15
+[2019-04-02 12:49:19] [config] bert-sep-symbol: "[SEP]"
+[2019-04-02 12:49:19] [config] bert-train-type-embeddings: true
+[2019-04-02 12:49:19] [config] bert-type-vocab-size: 2
+[2019-04-02 12:49:19] [config] best-deep: false
+[2019-04-02 12:49:19] [config] clip-gemm: 0
+[2019-04-02 12:49:19] [config] clip-norm: 5
+[2019-04-02 12:49:19] [config] context-enc-depth: 6
+[2019-04-02 12:49:19] [config] cost-type: ce-mean
+[2019-04-02 12:49:19] [config] cpu-threads: 0
+[2019-04-02 12:49:19] [config] data-weighting: ""
+[2019-04-02 12:49:19] [config] data-weighting-type: sentence
+[2019-04-02 12:49:19] [config] dec-cell: gru
+[2019-04-02 12:49:19] [config] dec-cell-base-depth: 2
+[2019-04-02 12:49:19] [config] dec-cell-high-depth: 1
+[2019-04-02 12:49:19] [config] dec-depth: 6
+[2019-04-02 12:49:19] [config] devices:
+[2019-04-02 12:49:19] [config]   - 0
+[2019-04-02 12:49:19] [config] dim-emb: 512
+[2019-04-02 12:49:19] [config] dim-rnn: 1024
+[2019-04-02 12:49:19] [config] dim-vocabs:
+[2019-04-02 12:49:19] [config]   - 30000
+[2019-04-02 12:49:19] [config]   - 30000
+[2019-04-02 12:49:19] [config] disp-first: 0
+[2019-04-02 12:49:19] [config] disp-freq: 1000
+[2019-04-02 12:49:19] [config] disp-label-counts: false
+[2019-04-02 12:49:19] [config] dropout-rnn: 0
+[2019-04-02 12:49:19] [config] dropout-src: 0
+[2019-04-02 12:49:19] [config] dropout-trg: 0
+[2019-04-02 12:49:19] [config] dump-config: ""
+[2019-04-02 12:49:19] [config] early-stopping: 10
+[2019-04-02 12:49:19] [config] embedding-fix-src: true
+[2019-04-02 12:49:19] [config] embedding-fix-trg: true
+[2019-04-02 12:49:19] [config] embedding-normalization: false
+[2019-04-02 12:49:19] [config] embedding-vectors:
+[2019-04-02 12:49:19] [config]   []
+[2019-04-02 12:49:19] [config] enc-cell: gru
+[2019-04-02 12:49:19] [config] enc-cell-depth: 1
+[2019-04-02 12:49:19] [config] enc-depth: 6
+[2019-04-02 12:49:19] [config] enc-type: bidirectional
+[2019-04-02 12:49:19] [config] exponential-smoothing: 0.0001
+[2019-04-02 12:49:19] [config] freeze: true
+[2019-04-02 12:49:19] [config] grad-dropping-momentum: 0
+[2019-04-02 12:49:19] [config] grad-dropping-rate: 0
+[2019-04-02 12:49:19] [config] grad-dropping-warmup: 100
+[2019-04-02 12:49:19] [config] guided-alignment: none
+[2019-04-02 12:49:19] [config] guided-alignment-cost: mse
+[2019-04-02 12:49:19] [config] guided-alignment-weight: 0.1
+[2019-04-02 12:49:19] [config] hier-att: false
+[2019-04-02 12:49:19] [config] ignore-model-config: false
+[2019-04-02 12:49:19] [config] input-types:
+[2019-04-02 12:49:19] [config]   []
+[2019-04-02 12:49:19] [config] interpolate-env-vars: false
+[2019-04-02 12:49:19] [config] keep-best: true
+[2019-04-02 12:49:19] [config] label-smoothing: 0.1
+[2019-04-02 12:49:19] [config] layer-normalization: false
+[2019-04-02 12:49:19] [config] learn-rate: 0.0001
+[2019-04-02 12:49:19] [config] log: model/train_trans.gate.log
+[2019-04-02 12:49:19] [config] log-level: info
+[2019-04-02 12:49:19] [config] log-time-zone: ""
+[2019-04-02 12:49:19] [config] lr-decay: 0
+[2019-04-02 12:49:19] [config] lr-decay-freq: 50000
+[2019-04-02 12:49:19] [config] lr-decay-inv-sqrt:
+[2019-04-02 12:49:19] [config]   - 16000
+[2019-04-02 12:49:19] [config] lr-decay-repeat-warmup: false
+[2019-04-02 12:49:19] [config] lr-decay-reset-optimizer: false
+[2019-04-02 12:49:19] [config] lr-decay-start:
+[2019-04-02 12:49:19] [config]   - 10
+[2019-04-02 12:49:19] [config]   - 1
+[2019-04-02 12:49:19] [config] lr-decay-strategy: epoch+stalled
+[2019-04-02 12:49:19] [config] lr-report: true
+[2019-04-02 12:49:19] [config] lr-warmup: 16000
+[2019-04-02 12:49:19] [config] lr-warmup-at-reload: false
+[2019-04-02 12:49:19] [config] lr-warmup-cycle: false
+[2019-04-02 12:49:19] [config] lr-warmup-start-rate: 0
+[2019-04-02 12:49:19] [config] max-length: 160
+[2019-04-02 12:49:19] [config] max-length-crop: false
+[2019-04-02 12:49:19] [config] max-length-factor: 3
+[2019-04-02 12:49:19] [config] maxi-batch: 1000
+[2019-04-02 12:49:19] [config] maxi-batch-sort: trg
+[2019-04-02 12:49:19] [config] mini-batch: 1000
+[2019-04-02 12:49:19] [config] mini-batch-fit: true
+[2019-04-02 12:49:19] [config] mini-batch-fit-step: 10
+[2019-04-02 12:49:19] [config] mini-batch-overstuff: 1
+[2019-04-02 12:49:19] [config] mini-batch-track-lr: false
+[2019-04-02 12:49:19] [config] mini-batch-understuff: 1
+[2019-04-02 12:49:19] [config] mini-batch-warmup: 0
+[2019-04-02 12:49:19] [config] mini-batch-words: 0
+[2019-04-02 12:49:19] [config] mini-batch-words-ref: 0
+[2019-04-02 12:49:19] [config] model: model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 12:49:19] [config] multi-loss-type: sum
+[2019-04-02 12:49:19] [config] multi-node: false
+[2019-04-02 12:49:19] [config] multi-node-overlap: true
+[2019-04-02 12:49:19] [config] n-best: false
+[2019-04-02 12:49:19] [config] no-nccl: true
+[2019-04-02 12:49:19] [config] no-reload: false
+[2019-04-02 12:49:19] [config] no-restore-corpus: true
+[2019-04-02 12:49:19] [config] no-shuffle: false
+[2019-04-02 12:49:19] [config] normalize: 0.6
+[2019-04-02 12:49:19] [config] num-devices: 0
+[2019-04-02 12:49:19] [config] optimizer: adam
+[2019-04-02 12:49:19] [config] optimizer-delay: 4
+[2019-04-02 12:49:19] [config] optimizer-params:
+[2019-04-02 12:49:19] [config]   - 0.9
+[2019-04-02 12:49:19] [config]   - 0.98
+[2019-04-02 12:49:19] [config]   - 1e-09
+[2019-04-02 12:49:19] [config] overwrite: false
+[2019-04-02 12:49:19] [config] pretrained-model: model/model.src1tgt0.docnew.enc_depth.test_base.npz.best-perplexity.npz
+[2019-04-02 12:49:19] [config] quiet: false
+[2019-04-02 12:49:19] [config] quiet-translation: true
+[2019-04-02 12:49:19] [config] relative-paths: false
+[2019-04-02 12:49:19] [config] right-left: false
+[2019-04-02 12:49:19] [config] save-freq: 5000
+[2019-04-02 12:49:19] [config] seed: 1111
+[2019-04-02 12:49:19] [config] shuffle-in-ram: false
+[2019-04-02 12:49:19] [config] skip: false
+[2019-04-02 12:49:19] [config] sqlite: ""
+[2019-04-02 12:49:19] [config] sqlite-drop: false
+[2019-04-02 12:49:19] [config] sync-sgd: true
+[2019-04-02 12:49:19] [config] tempdir: /tmp
+[2019-04-02 12:49:19] [config] tied-embeddings: false
+[2019-04-02 12:49:19] [config] tied-embeddings-all: true
+[2019-04-02 12:49:19] [config] tied-embeddings-src: false
+[2019-04-02 12:49:19] [config] train-sets:
+[2019-04-02 12:49:19] [config]   - corp/europarl.cs-en.docs.train.en.bpe.src_prev
+[2019-04-02 12:49:19] [config]   - corp/europarl.cs-en.docs.train.en.bpe.src
+[2019-04-02 12:49:19] [config]   - corp/europarl.cs-en.docs.train.cz.bpe
+[2019-04-02 12:49:19] [config] transformer-aan-activation: swish
+[2019-04-02 12:49:19] [config] transformer-aan-depth: 2
+[2019-04-02 12:49:19] [config] transformer-aan-nogate: false
+[2019-04-02 12:49:19] [config] transformer-decoder-autoreg: self-attention
+[2019-04-02 12:49:19] [config] transformer-dim-aan: 2048
+[2019-04-02 12:49:19] [config] transformer-dim-ffn: 2048
+[2019-04-02 12:49:19] [config] transformer-dropout: 0.1
+[2019-04-02 12:49:19] [config] transformer-dropout-attention: 0
+[2019-04-02 12:49:19] [config] transformer-dropout-ffn: 0
+[2019-04-02 12:49:19] [config] transformer-ffn-activation: swish
+[2019-04-02 12:49:19] [config] transformer-ffn-depth: 2
+[2019-04-02 12:49:19] [config] transformer-guided-alignment-layer: last
+[2019-04-02 12:49:19] [config] transformer-heads: 8
+[2019-04-02 12:49:19] [config] transformer-no-projection: false
+[2019-04-02 12:49:19] [config] transformer-postprocess: dan
+[2019-04-02 12:49:19] [config] transformer-postprocess-emb: d
+[2019-04-02 12:49:19] [config] transformer-preprocess: ""
+[2019-04-02 12:49:19] [config] transformer-tied-layers:
+[2019-04-02 12:49:19] [config]   []
+[2019-04-02 12:49:19] [config] transformer-train-position-embeddings: false
+[2019-04-02 12:49:19] [config] type: transformer-context
+[2019-04-02 12:49:19] [config] ulr: false
+[2019-04-02 12:49:19] [config] ulr-dim-emb: 0
+[2019-04-02 12:49:19] [config] ulr-dropout: 0
+[2019-04-02 12:49:19] [config] ulr-keys-vectors: ""
+[2019-04-02 12:49:19] [config] ulr-query-vectors: ""
+[2019-04-02 12:49:19] [config] ulr-softmax-temperature: 1
+[2019-04-02 12:49:19] [config] ulr-trainable-transformation: false
+[2019-04-02 12:49:19] [config] valid-freq: 5000
+[2019-04-02 12:49:19] [config] valid-log: model/valid_trans.gate.log
+[2019-04-02 12:49:19] [config] valid-max-length: 1000
+[2019-04-02 12:49:19] [config] valid-metrics:
+[2019-04-02 12:49:19] [config]   - cross-entropy
+[2019-04-02 12:49:19] [config]   - perplexity
+[2019-04-02 12:49:19] [config]   - translation
+[2019-04-02 12:49:19] [config] valid-mini-batch: 16
+[2019-04-02 12:49:19] [config] valid-script-path: ./val.sh
+[2019-04-02 12:49:19] [config] valid-sets:
+[2019-04-02 12:49:19] [config]   - corp/europarl.cs-en.docs.dev.en.bpe.src_prev
+[2019-04-02 12:49:19] [config]   - corp/europarl.cs-en.docs.dev.en.bpe.src
+[2019-04-02 12:49:19] [config]   - corp/europarl.cs-en.docs.dev.cz.bpe
+[2019-04-02 12:49:19] [config] valid-translation-output: data/valid.bpe.en.output
+[2019-04-02 12:49:19] [config] vocabs:
+[2019-04-02 12:49:19] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-04-02 12:49:19] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-04-02 12:49:19] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-04-02 12:49:19] [config] word-penalty: 0
+[2019-04-02 12:49:19] [config] workspace: 7800
+[2019-04-02 12:49:19] [config] Model is being created with Marian v1.7.8 b59f01a 2019-04-02 03:22:27 +0200
+[2019-04-02 12:49:19] Using synchronous training
+[2019-04-02 12:49:19] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-04-02 12:49:19] [data] Setting vocabulary size for input 0 to 30000
+[2019-04-02 12:49:19] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-04-02 12:49:20] [data] Setting vocabulary size for input 1 to 30000
+[2019-04-02 12:49:20] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-04-02 12:49:20] [data] Setting vocabulary size for input 2 to 30000
+[2019-04-02 12:49:20] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-04-02 12:49:20] [batching] Collecting statistics for batch fitting with step size 10
+[2019-04-02 12:49:20] [memory] Extending reserved space to 7808 MB (device gpu0)
+[2019-04-02 12:49:20] [comm] NCCL communicator overridden
+[2019-04-02 12:49:20] [training] Using 1 GPUs
+[2019-04-02 12:49:20] [memory] Reserving 371 MB, device gpu0
+[2019-04-02 12:49:20] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-04-02 12:49:21] [memory] Reserving 371 MB, device gpu0
+[2019-04-02 12:49:26] [batching] Done. Typical MB size is 8765 target words
+[2019-04-02 12:49:26] [memory] Extending reserved space to 7808 MB (device gpu0)
+[2019-04-02 12:49:27] [comm] NCCL communicator overridden
+[2019-04-02 12:49:27] [training] Using 1 GPUs
+[2019-04-02 12:49:27] [training] Initializing model weights with the pre-trained model model/model.src1tgt0.docnew.enc_depth.test_base.npz.best-perplexity.npz
+[2019-04-02 12:49:27] Loading model from model/model.src1tgt0.docnew.enc_depth.test_base.npz.best-perplexity.npz
+[2019-04-02 12:49:27] Training started
+[2019-04-02 12:49:27] [data] Shuffling data
+[2019-04-02 12:49:27] [data] Done reading 620637 sentences
+[2019-04-02 12:49:29] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 12:49:52] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-04-02 12:49:52] [memory] Reserving 371 MB, device gpu0
+[2019-04-02 12:49:52] [memory] Reserving 371 MB, device gpu0
+[2019-04-02 12:49:52] [memory] Reserving 371 MB, device gpu0
+[2019-04-02 12:49:52] [memory] Reserving 371 MB, device gpu0
+[2019-04-02 12:49:52] [memory] Reserving 742 MB, device gpu0
+[2019-04-02 12:56:04] Ep. 1 : Up. 1000 : Sen. 149,134 : Cost 136.05772400 : Time 404.34s : 11094.96 words/s : L.r. 6.2500e-06
+[2019-04-02 13:02:15] Ep. 1 : Up. 2000 : Sen. 295,364 : Cost 67.54418182 : Time 370.63s : 11874.15 words/s : L.r. 1.2500e-05
+[2019-04-02 13:08:28] Ep. 1 : Up. 3000 : Sen. 440,538 : Cost 64.97994995 : Time 372.86s : 11966.28 words/s : L.r. 1.8750e-05
+[2019-04-02 13:14:43] Ep. 1 : Up. 4000 : Sen. 584,945 : Cost 65.58150482 : Time 375.86s : 11954.06 words/s : L.r. 2.5000e-05
+[2019-04-02 13:16:17] Seen 620307 samples
+[2019-04-02 13:16:17] Starting epoch 2
+[2019-04-02 13:16:17] [data] Shuffling data
+[2019-04-02 13:16:18] [data] Done reading 620637 sentences
+[2019-04-02 13:16:20] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 13:21:25] Ep. 2 : Up. 5000 : Sen. 110,269 : Cost 66.41504669 : Time 401.34s : 11421.98 words/s : L.r. 3.1250e-05
+[2019-04-02 13:21:25] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 13:21:30] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter5000.npz
+[2019-04-02 13:21:36] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 13:21:41] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 13:22:03] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.best-cross-entropy.npz
+[2019-04-02 13:22:09] [valid] Ep. 2 : Up. 5000 : cross-entropy : 41.9084 : new best
+[2019-04-02 13:22:20] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.best-perplexity.npz
+[2019-04-02 13:22:26] [valid] Ep. 2 : Up. 5000 : perplexity : 3.87213 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 13:25:45] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.best-translation.npz
+[2019-04-02 13:25:49] [valid] Ep. 2 : Up. 5000 : translation : 30.4 : new best
+[2019-04-02 13:32:00] Ep. 2 : Up. 6000 : Sen. 254,796 : Cost 63.61983490 : Time 634.74s : 6880.25 words/s : L.r. 3.7500e-05
+[2019-04-02 13:38:14] Ep. 2 : Up. 7000 : Sen. 401,003 : Cost 64.29940796 : Time 374.76s : 11905.41 words/s : L.r. 4.3750e-05
+[2019-04-02 13:44:26] Ep. 2 : Up. 8000 : Sen. 547,294 : Cost 64.11305237 : Time 371.82s : 11997.61 words/s : L.r. 5.0000e-05
+[2019-04-02 13:47:36] Seen 620307 samples
+[2019-04-02 13:47:36] Starting epoch 3
+[2019-04-02 13:47:36] [data] Shuffling data
+[2019-04-02 13:47:36] [data] Done reading 620637 sentences
+[2019-04-02 13:47:38] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 13:51:10] Ep. 3 : Up. 9000 : Sen. 75,512 : Cost 64.49188232 : Time 404.02s : 11284.12 words/s : L.r. 5.6250e-05
+[2019-04-02 13:57:17] Ep. 3 : Up. 10000 : Sen. 218,675 : Cost 63.24954605 : Time 366.63s : 11756.70 words/s : L.r. 6.2500e-05
+[2019-04-02 13:57:17] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 13:57:22] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter10000.npz
+[2019-04-02 13:57:28] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 13:57:33] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 13:57:55] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.best-cross-entropy.npz
+[2019-04-02 13:58:01] [valid] Ep. 3 : Up. 10000 : cross-entropy : 41.7888 : new best
+[2019-04-02 13:58:12] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.best-perplexity.npz
+[2019-04-02 13:58:17] [valid] Ep. 3 : Up. 10000 : perplexity : 3.85718 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 14:01:37] [valid] Ep. 3 : Up. 10000 : translation : 30.4 : stalled 1 times (last best: 30.4)
+[2019-04-02 14:07:55] Ep. 3 : Up. 11000 : Sen. 367,151 : Cost 65.69929504 : Time 638.70s : 7249.03 words/s : L.r. 6.8750e-05
+[2019-04-02 14:14:08] Ep. 3 : Up. 12000 : Sen. 512,140 : Cost 63.87963867 : Time 372.06s : 11832.68 words/s : L.r. 7.5000e-05
+[2019-04-02 14:18:48] Seen 620307 samples
+[2019-04-02 14:18:48] Starting epoch 4
+[2019-04-02 14:18:48] [data] Shuffling data
+[2019-04-02 14:18:49] [data] Done reading 620637 sentences
+[2019-04-02 14:18:51] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 14:20:42] Ep. 4 : Up. 13000 : Sen. 34,024 : Cost 64.89638519 : Time 394.02s : 11116.98 words/s : L.r. 8.1250e-05
+[2019-04-02 14:26:55] Ep. 4 : Up. 14000 : Sen. 179,455 : Cost 65.14128876 : Time 373.92s : 12024.04 words/s : L.r. 8.7500e-05
+[2019-04-02 14:33:07] Ep. 4 : Up. 15000 : Sen. 325,588 : Cost 63.99168015 : Time 371.71s : 11956.38 words/s : L.r. 9.3750e-05
+[2019-04-02 14:33:07] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 14:33:13] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter15000.npz
+[2019-04-02 14:33:18] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 14:33:24] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 14:33:45] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.best-cross-entropy.npz
+[2019-04-02 14:33:51] [valid] Ep. 4 : Up. 15000 : cross-entropy : 41.7755 : new best
+[2019-04-02 14:34:02] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.best-perplexity.npz
+[2019-04-02 14:34:07] [valid] Ep. 4 : Up. 15000 : perplexity : 3.85554 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 14:37:27] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.best-translation.npz
+[2019-04-02 14:37:32] [valid] Ep. 4 : Up. 15000 : translation : 30.5 : new best
+[2019-04-02 14:43:58] Ep. 4 : Up. 16000 : Sen. 480,121 : Cost 63.93314743 : Time 651.13s : 7219.08 words/s : L.r. 1.0000e-04
+[2019-04-02 14:50:01] Ep. 4 : Up. 17000 : Sen. 618,446 : Cost 65.06683350 : Time 363.14s : 11790.37 words/s : L.r. 9.7014e-05
+[2019-04-02 14:50:06] Seen 620307 samples
+[2019-04-02 14:50:06] Starting epoch 5
+[2019-04-02 14:50:06] [data] Shuffling data
+[2019-04-02 14:50:06] [data] Done reading 620637 sentences
+[2019-04-02 14:50:08] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 14:56:37] Ep. 5 : Up. 18000 : Sen. 138,489 : Cost 65.78260040 : Time 395.15s : 11088.74 words/s : L.r. 9.4281e-05
+[2019-04-02 15:02:48] Ep. 5 : Up. 19000 : Sen. 284,981 : Cost 63.74807358 : Time 371.25s : 11960.36 words/s : L.r. 9.1766e-05
+[2019-04-02 15:09:02] Ep. 5 : Up. 20000 : Sen. 433,845 : Cost 63.42711639 : Time 374.29s : 12003.21 words/s : L.r. 8.9443e-05
+[2019-04-02 15:09:02] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 15:09:07] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter20000.npz
+[2019-04-02 15:09:13] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 15:09:18] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 15:09:40] [valid] Ep. 5 : Up. 20000 : cross-entropy : 41.7789 : stalled 1 times (last best: 41.7755)
+[2019-04-02 15:09:51] [valid] Ep. 5 : Up. 20000 : perplexity : 3.85596 : stalled 1 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 15:13:11] [valid] Ep. 5 : Up. 20000 : translation : 30.5 : stalled 1 times (last best: 30.5)
+[2019-04-02 15:19:28] Ep. 5 : Up. 21000 : Sen. 583,579 : Cost 63.21641541 : Time 625.83s : 7209.74 words/s : L.r. 8.7287e-05
+[2019-04-02 15:21:07] Seen 620307 samples
+[2019-04-02 15:21:07] Starting epoch 6
+[2019-04-02 15:21:07] [data] Shuffling data
+[2019-04-02 15:21:08] [data] Done reading 620637 sentences
+[2019-04-02 15:21:10] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 15:26:09] Ep. 6 : Up. 22000 : Sen. 110,469 : Cost 65.07071686 : Time 400.54s : 11353.24 words/s : L.r. 8.5280e-05
+[2019-04-02 15:32:19] Ep. 6 : Up. 23000 : Sen. 255,665 : Cost 63.44534302 : Time 370.18s : 11851.38 words/s : L.r. 8.3406e-05
+[2019-04-02 15:38:33] Ep. 6 : Up. 24000 : Sen. 400,204 : Cost 65.35400391 : Time 374.00s : 12009.98 words/s : L.r. 8.1650e-05
+[2019-04-02 15:44:42] Ep. 6 : Up. 25000 : Sen. 542,500 : Cost 65.13311768 : Time 369.76s : 11899.85 words/s : L.r. 8.0000e-05
+[2019-04-02 15:44:42] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 15:44:48] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter25000.npz
+[2019-04-02 15:44:53] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 15:44:59] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 15:45:21] [valid] Ep. 6 : Up. 25000 : cross-entropy : 41.7841 : stalled 2 times (last best: 41.7755)
+[2019-04-02 15:45:32] [valid] Ep. 6 : Up. 25000 : perplexity : 3.8566 : stalled 2 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 15:48:53] [valid] Ep. 6 : Up. 25000 : translation : 30.5 : stalled 2 times (last best: 30.5)
+[2019-04-02 15:52:10] Seen 620307 samples
+[2019-04-02 15:52:10] Starting epoch 7
+[2019-04-02 15:52:10] [data] Shuffling data
+[2019-04-02 15:52:10] [data] Done reading 620637 sentences
+[2019-04-02 15:52:12] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 15:55:37] Ep. 7 : Up. 26000 : Sen. 71,723 : Cost 64.10839081 : Time 654.95s : 6963.43 words/s : L.r. 7.8446e-05
+[2019-04-02 16:01:59] Ep. 7 : Up. 27000 : Sen. 224,627 : Cost 63.60474396 : Time 381.96s : 12130.80 words/s : L.r. 7.6980e-05
+[2019-04-02 16:08:05] Ep. 7 : Up. 28000 : Sen. 364,205 : Cost 65.13014221 : Time 366.06s : 11792.96 words/s : L.r. 7.5593e-05
+[2019-04-02 16:14:14] Ep. 7 : Up. 29000 : Sen. 506,249 : Cost 65.07988739 : Time 368.85s : 11906.73 words/s : L.r. 7.4278e-05
+[2019-04-02 16:19:03] Seen 620307 samples
+[2019-04-02 16:19:03] Starting epoch 8
+[2019-04-02 16:19:03] [data] Shuffling data
+[2019-04-02 16:19:03] [data] Done reading 620637 sentences
+[2019-04-02 16:19:05] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 16:20:59] Ep. 8 : Up. 30000 : Sen. 35,588 : Cost 64.58882904 : Time 404.60s : 11367.01 words/s : L.r. 7.3030e-05
+[2019-04-02 16:20:59] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 16:21:04] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter30000.npz
+[2019-04-02 16:21:09] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 16:21:15] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 16:21:37] [valid] Ep. 8 : Up. 30000 : cross-entropy : 41.7839 : stalled 3 times (last best: 41.7755)
+[2019-04-02 16:21:49] [valid] Ep. 8 : Up. 30000 : perplexity : 3.85659 : stalled 3 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 16:25:09] [valid] Ep. 8 : Up. 30000 : translation : 30.5 : stalled 3 times (last best: 30.5)
+[2019-04-02 16:31:24] Ep. 8 : Up. 31000 : Sen. 184,984 : Cost 63.14787674 : Time 624.66s : 7186.29 words/s : L.r. 7.1842e-05
+[2019-04-02 16:37:36] Ep. 8 : Up. 32000 : Sen. 329,145 : Cost 64.98289490 : Time 372.68s : 11941.78 words/s : L.r. 7.0711e-05
+[2019-04-02 16:43:44] Ep. 8 : Up. 33000 : Sen. 473,647 : Cost 63.67635727 : Time 367.65s : 11917.05 words/s : L.r. 6.9631e-05
+[2019-04-02 16:49:56] Ep. 8 : Up. 34000 : Sen. 616,652 : Cost 64.87316895 : Time 372.20s : 11856.49 words/s : L.r. 6.8599e-05
+[2019-04-02 16:50:06] Seen 620307 samples
+[2019-04-02 16:50:06] Starting epoch 9
+[2019-04-02 16:50:06] [data] Shuffling data
+[2019-04-02 16:50:06] [data] Done reading 620637 sentences
+[2019-04-02 16:50:08] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 16:56:42] Ep. 9 : Up. 35000 : Sen. 148,539 : Cost 63.45847321 : Time 405.55s : 11341.56 words/s : L.r. 6.7612e-05
+[2019-04-02 16:56:42] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 16:56:47] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter35000.npz
+[2019-04-02 16:56:52] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 16:56:57] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 16:57:19] [valid] Ep. 9 : Up. 35000 : cross-entropy : 41.7885 : stalled 4 times (last best: 41.7755)
+[2019-04-02 16:57:30] [valid] Ep. 9 : Up. 35000 : perplexity : 3.85715 : stalled 4 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 17:00:50] [valid] Ep. 9 : Up. 35000 : translation : 30.5 : stalled 4 times (last best: 30.5)
+[2019-04-02 17:06:58] Ep. 9 : Up. 36000 : Sen. 294,328 : Cost 63.32912445 : Time 616.57s : 7130.15 words/s : L.r. 6.6667e-05
+[2019-04-02 17:13:08] Ep. 9 : Up. 37000 : Sen. 436,047 : Cost 65.66111755 : Time 369.43s : 11960.85 words/s : L.r. 6.5760e-05
+[2019-04-02 17:19:27] Ep. 9 : Up. 38000 : Sen. 582,858 : Cost 65.27696991 : Time 379.12s : 12015.69 words/s : L.r. 6.4889e-05
+[2019-04-02 17:21:07] Seen 620307 samples
+[2019-04-02 17:21:07] Starting epoch 10
+[2019-04-02 17:21:07] [data] Shuffling data
+[2019-04-02 17:21:08] [data] Done reading 620637 sentences
+[2019-04-02 17:21:10] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 17:26:01] Ep. 10 : Up. 39000 : Sen. 101,340 : Cost 65.68667603 : Time 394.73s : 10972.97 words/s : L.r. 6.4051e-05
+[2019-04-02 17:32:13] Ep. 10 : Up. 40000 : Sen. 248,775 : Cost 63.38280106 : Time 371.76s : 11950.53 words/s : L.r. 6.3246e-05
+[2019-04-02 17:32:13] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 17:32:18] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter40000.npz
+[2019-04-02 17:32:24] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 17:32:30] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 17:32:52] [valid] Ep. 10 : Up. 40000 : cross-entropy : 41.7894 : stalled 5 times (last best: 41.7755)
+[2019-04-02 17:33:04] [valid] Ep. 10 : Up. 40000 : perplexity : 3.85727 : stalled 5 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 17:36:24] [valid] Ep. 10 : Up. 40000 : translation : 30.4 : stalled 5 times (last best: 30.5)
+[2019-04-02 17:42:27] Ep. 10 : Up. 41000 : Sen. 388,555 : Cost 64.52530670 : Time 614.15s : 6994.03 words/s : L.r. 6.2470e-05
+[2019-04-02 17:48:52] Ep. 10 : Up. 42000 : Sen. 540,230 : Cost 64.87844086 : Time 384.50s : 12180.05 words/s : L.r. 6.1721e-05
+[2019-04-02 17:52:11] Seen 620307 samples
+[2019-04-02 17:52:11] Starting epoch 11
+[2019-04-02 17:52:11] [data] Shuffling data
+[2019-04-02 17:52:11] [data] Done reading 620637 sentences
+[2019-04-02 17:52:13] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 17:55:28] Ep. 11 : Up. 43000 : Sen. 66,310 : Cost 63.54112625 : Time 395.98s : 11181.12 words/s : L.r. 6.0999e-05
+[2019-04-02 18:01:38] Ep. 11 : Up. 44000 : Sen. 210,603 : Cost 64.05257416 : Time 369.82s : 11877.80 words/s : L.r. 6.0302e-05
+[2019-04-02 18:07:49] Ep. 11 : Up. 45000 : Sen. 353,716 : Cost 65.17726898 : Time 371.68s : 11944.85 words/s : L.r. 5.9628e-05
+[2019-04-02 18:07:49] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 18:07:55] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter45000.npz
+[2019-04-02 18:08:01] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 18:08:07] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 18:08:30] [valid] Ep. 11 : Up. 45000 : cross-entropy : 41.7921 : stalled 6 times (last best: 41.7755)
+[2019-04-02 18:08:42] [valid] Ep. 11 : Up. 45000 : perplexity : 3.8576 : stalled 6 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 18:12:03] [valid] Ep. 11 : Up. 45000 : translation : 30.4 : stalled 6 times (last best: 30.5)
+[2019-04-02 18:18:16] Ep. 11 : Up. 46000 : Sen. 499,531 : Cost 64.17195129 : Time 626.43s : 7119.64 words/s : L.r. 5.8977e-05
+[2019-04-02 18:23:18] Seen 620307 samples
+[2019-04-02 18:23:18] Starting epoch 12
+[2019-04-02 18:23:18] [data] Shuffling data
+[2019-04-02 18:23:19] [data] Done reading 620637 sentences
+[2019-04-02 18:23:21] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 18:25:02] Ep. 12 : Up. 47000 : Sen. 31,051 : Cost 63.21944046 : Time 406.06s : 11233.12 words/s : L.r. 5.8346e-05
+[2019-04-02 18:31:16] Ep. 12 : Up. 48000 : Sen. 175,380 : Cost 65.69481659 : Time 373.98s : 12074.42 words/s : L.r. 5.7735e-05
+[2019-04-02 18:37:36] Ep. 12 : Up. 49000 : Sen. 325,241 : Cost 64.67297363 : Time 380.10s : 12117.36 words/s : L.r. 5.7143e-05
+[2019-04-02 18:43:52] Ep. 12 : Up. 50000 : Sen. 471,127 : Cost 64.90351105 : Time 376.09s : 11985.95 words/s : L.r. 5.6569e-05
+[2019-04-02 18:43:52] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 18:43:58] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter50000.npz
+[2019-04-02 18:44:03] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 18:44:09] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 18:44:33] [valid] Ep. 12 : Up. 50000 : cross-entropy : 41.7951 : stalled 7 times (last best: 41.7755)
+[2019-04-02 18:44:44] [valid] Ep. 12 : Up. 50000 : perplexity : 3.85798 : stalled 7 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 18:48:04] [valid] Ep. 12 : Up. 50000 : translation : 30.4 : stalled 7 times (last best: 30.5)
+[2019-04-02 18:54:09] Ep. 12 : Up. 51000 : Sen. 614,321 : Cost 62.74280167 : Time 617.28s : 6929.34 words/s : L.r. 5.6011e-05
+[2019-04-02 18:54:23] Seen 620307 samples
+[2019-04-02 18:54:23] Starting epoch 13
+[2019-04-02 18:54:23] [data] Shuffling data
+[2019-04-02 18:54:23] [data] Done reading 620637 sentences
+[2019-04-02 18:54:26] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 19:00:49] Ep. 13 : Up. 52000 : Sen. 138,822 : Cost 65.99470520 : Time 399.66s : 11372.12 words/s : L.r. 5.5470e-05
+[2019-04-02 19:06:58] Ep. 13 : Up. 53000 : Sen. 280,017 : Cost 65.36722565 : Time 368.90s : 11901.34 words/s : L.r. 5.4944e-05
+[2019-04-02 19:13:10] Ep. 13 : Up. 54000 : Sen. 425,941 : Cost 63.19920731 : Time 371.80s : 11812.09 words/s : L.r. 5.4433e-05
+[2019-04-02 19:19:29] Ep. 13 : Up. 55000 : Sen. 578,940 : Cost 62.45666885 : Time 379.78s : 11985.59 words/s : L.r. 5.3936e-05
+[2019-04-02 19:19:29] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 19:19:35] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter55000.npz
+[2019-04-02 19:19:40] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 19:19:46] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 19:20:09] [valid] Ep. 13 : Up. 55000 : cross-entropy : 41.7991 : stalled 8 times (last best: 41.7755)
+[2019-04-02 19:20:20] [valid] Ep. 13 : Up. 55000 : perplexity : 3.85847 : stalled 8 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 19:23:40] [valid] Ep. 13 : Up. 55000 : translation : 30.4 : stalled 8 times (last best: 30.5)
+[2019-04-02 19:25:28] Seen 620307 samples
+[2019-04-02 19:25:28] Starting epoch 14
+[2019-04-02 19:25:28] [data] Shuffling data
+[2019-04-02 19:25:28] [data] Done reading 620637 sentences
+[2019-04-02 19:25:30] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 19:30:20] Ep. 14 : Up. 56000 : Sen. 103,690 : Cost 65.43510437 : Time 650.64s : 6929.49 words/s : L.r. 5.3452e-05
+[2019-04-02 19:36:32] Ep. 14 : Up. 57000 : Sen. 251,324 : Cost 62.91186142 : Time 371.82s : 11894.74 words/s : L.r. 5.2981e-05
+[2019-04-02 19:42:49] Ep. 14 : Up. 58000 : Sen. 398,790 : Cost 64.11847687 : Time 376.60s : 11965.72 words/s : L.r. 5.2523e-05
+[2019-04-02 19:48:56] Ep. 14 : Up. 59000 : Sen. 541,124 : Cost 64.29593658 : Time 367.79s : 11843.81 words/s : L.r. 5.2076e-05
+[2019-04-02 19:52:21] Seen 620307 samples
+[2019-04-02 19:52:21] Starting epoch 15
+[2019-04-02 19:52:21] [data] Shuffling data
+[2019-04-02 19:52:21] [data] Done reading 620637 sentences
+[2019-04-02 19:52:23] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 19:55:32] Ep. 15 : Up. 60000 : Sen. 63,081 : Cost 65.24670410 : Time 395.68s : 11142.23 words/s : L.r. 5.1640e-05
+[2019-04-02 19:55:32] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 19:55:38] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter60000.npz
+[2019-04-02 19:55:43] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 19:55:49] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 19:56:12] [valid] Ep. 15 : Up. 60000 : cross-entropy : 41.7997 : stalled 9 times (last best: 41.7755)
+[2019-04-02 19:56:23] [valid] Ep. 15 : Up. 60000 : perplexity : 3.85855 : stalled 9 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 19:59:43] [valid] Ep. 15 : Up. 60000 : translation : 30.4 : stalled 9 times (last best: 30.5)
+[2019-04-02 20:06:02] Ep. 15 : Up. 61000 : Sen. 211,444 : Cost 64.53117371 : Time 629.86s : 7228.08 words/s : L.r. 5.1215e-05
+[2019-04-02 20:12:16] Ep. 15 : Up. 62000 : Sen. 358,109 : Cost 64.56246185 : Time 374.30s : 12030.91 words/s : L.r. 5.0800e-05
+[2019-04-02 20:18:35] Ep. 15 : Up. 63000 : Sen. 506,067 : Cost 65.07507324 : Time 378.79s : 12091.38 words/s : L.r. 5.0395e-05
+[2019-04-02 20:23:28] Seen 620307 samples
+[2019-04-02 20:23:28] Starting epoch 16
+[2019-04-02 20:23:28] [data] Shuffling data
+[2019-04-02 20:23:28] [data] Done reading 620637 sentences
+[2019-04-02 20:23:30] [data] Done shuffling 620637 sentences to temp files
+[2019-04-02 20:25:11] Ep. 16 : Up. 64000 : Sen. 32,631 : Cost 61.83432388 : Time 395.71s : 10951.99 words/s : L.r. 5.0000e-05
+[2019-04-02 20:31:27] Ep. 16 : Up. 65000 : Sen. 177,955 : Cost 65.40405273 : Time 376.20s : 12026.86 words/s : L.r. 4.9614e-05
+[2019-04-02 20:31:27] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 20:31:32] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.iter65000.npz
+[2019-04-02 20:31:37] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 20:31:42] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
+[2019-04-02 20:32:05] [valid] Ep. 16 : Up. 65000 : cross-entropy : 41.802 : stalled 10 times (last best: 41.7755)
+[2019-04-02 20:32:16] [valid] Ep. 16 : Up. 65000 : perplexity : 3.85884 : stalled 10 times (last best: 3.85554)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-02 20:35:36] [valid] Ep. 16 : Up. 65000 : translation : 30.4 : stalled 10 times (last best: 30.5)
+[2019-04-02 20:35:36] Training finished
+[2019-04-02 20:35:36] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.orig.npz
+[2019-04-02 20:35:41] Saving model weights and runtime parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz
+[2019-04-02 20:35:47] Saving Adam parameters to model/model.src1tgt0.from_new_pretrained.context-enc-depth6.npz.optimizer.npz
