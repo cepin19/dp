@@ -1,0 +1,1723 @@
+[2019-05-04 03:49:16] [marian] Marian v1.7.8 1fcb013 2019-05-03 03:15:04 +0200
+[2019-05-04 03:49:16] [marian] Running on bakchus.lingea.cz as process 24339 with command line:
+[2019-05-04 03:49:16] [marian] /home/large/data/models/marian/marian-doc/marian_voita/doc-marian/build/marian --model model/model.voita.gate2.nopre.npz --type transformer-context --train-sets corp/opensub.en-fr.docs.train.en.bpe.src_prev corp/opensub.en-fr.docs.train.en.bpe.src corp/opensub.en-fr.docs.train.fr.bpe --max-length 55 --dim-vocabs 30000 30000 --vocabs corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml --mini-batch-fit -w 9300 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe.src_prev corp/opensub.en-fr.docs.dev.en.bpe.src corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 6 --normalize 0.6 --log model/train_trans.gate.log --valid-log model/valid_trans.gate.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus
+[2019-05-04 03:49:16] [config] after-batches: 0
+[2019-05-04 03:49:16] [config] after-epochs: 0
+[2019-05-04 03:49:16] [config] allow-unk: false
+[2019-05-04 03:49:16] [config] beam-size: 6
+[2019-05-04 03:49:16] [config] bert-class-symbol: "[CLS]"
+[2019-05-04 03:49:16] [config] bert-mask-symbol: "[MASK]"
+[2019-05-04 03:49:16] [config] bert-masking-fraction: 0.15
+[2019-05-04 03:49:16] [config] bert-sep-symbol: "[SEP]"
+[2019-05-04 03:49:16] [config] bert-train-type-embeddings: true
+[2019-05-04 03:49:16] [config] bert-type-vocab-size: 2
+[2019-05-04 03:49:16] [config] best-deep: false
+[2019-05-04 03:49:16] [config] clip-gemm: 0
+[2019-05-04 03:49:16] [config] clip-norm: 5
+[2019-05-04 03:49:16] [config] context-enc-depth: 1
+[2019-05-04 03:49:16] [config] cost-type: ce-mean
+[2019-05-04 03:49:16] [config] cpu-threads: 0
+[2019-05-04 03:49:16] [config] data-weighting: ""
+[2019-05-04 03:49:16] [config] data-weighting-type: sentence
+[2019-05-04 03:49:16] [config] dec-cell: gru
+[2019-05-04 03:49:16] [config] dec-cell-base-depth: 2
+[2019-05-04 03:49:16] [config] dec-cell-high-depth: 1
+[2019-05-04 03:49:16] [config] dec-depth: 6
+[2019-05-04 03:49:16] [config] devices:
+[2019-05-04 03:49:16] [config]   - 0
+[2019-05-04 03:49:16] [config] dim-emb: 512
+[2019-05-04 03:49:16] [config] dim-rnn: 1024
+[2019-05-04 03:49:16] [config] dim-vocabs:
+[2019-05-04 03:49:16] [config]   - 30000
+[2019-05-04 03:49:16] [config]   - 30000
+[2019-05-04 03:49:16] [config] disp-first: 0
+[2019-05-04 03:49:16] [config] disp-freq: 500
+[2019-05-04 03:49:16] [config] disp-label-counts: false
+[2019-05-04 03:49:16] [config] dropout-rnn: 0
+[2019-05-04 03:49:16] [config] dropout-src: 0
+[2019-05-04 03:49:16] [config] dropout-trg: 0
+[2019-05-04 03:49:16] [config] dump-config: ""
+[2019-05-04 03:49:16] [config] early-stopping: 10
+[2019-05-04 03:49:16] [config] embedding-fix-src: false
+[2019-05-04 03:49:16] [config] embedding-fix-trg: false
+[2019-05-04 03:49:16] [config] embedding-normalization: false
+[2019-05-04 03:49:16] [config] embedding-vectors:
+[2019-05-04 03:49:16] [config]   []
+[2019-05-04 03:49:16] [config] enc-cell: gru
+[2019-05-04 03:49:16] [config] enc-cell-depth: 1
+[2019-05-04 03:49:16] [config] enc-depth: 6
+[2019-05-04 03:49:16] [config] enc-type: bidirectional
+[2019-05-04 03:49:16] [config] exponential-smoothing: 0.0001
+[2019-05-04 03:49:16] [config] freeze: false
+[2019-05-04 03:49:16] [config] grad-dropping-momentum: 0
+[2019-05-04 03:49:16] [config] grad-dropping-rate: 0
+[2019-05-04 03:49:16] [config] grad-dropping-warmup: 100
+[2019-05-04 03:49:16] [config] guided-alignment: none
+[2019-05-04 03:49:16] [config] guided-alignment-cost: mse
+[2019-05-04 03:49:16] [config] guided-alignment-weight: 0.1
+[2019-05-04 03:49:16] [config] hier-att: false
+[2019-05-04 03:49:16] [config] ignore-model-config: false
+[2019-05-04 03:49:16] [config] input-types:
+[2019-05-04 03:49:16] [config]   []
+[2019-05-04 03:49:16] [config] interpolate-env-vars: false
+[2019-05-04 03:49:16] [config] keep-best: false
+[2019-05-04 03:49:16] [config] label-smoothing: 0.1
+[2019-05-04 03:49:16] [config] layer-normalization: false
+[2019-05-04 03:49:16] [config] learn-rate: 0.0002
+[2019-05-04 03:49:16] [config] log: model/train_trans.gate.log
+[2019-05-04 03:49:16] [config] log-level: info
+[2019-05-04 03:49:16] [config] log-time-zone: ""
+[2019-05-04 03:49:16] [config] lr-decay: 0
+[2019-05-04 03:49:16] [config] lr-decay-freq: 50000
+[2019-05-04 03:49:16] [config] lr-decay-inv-sqrt:
+[2019-05-04 03:49:16] [config]   - 16000
+[2019-05-04 03:49:16] [config] lr-decay-repeat-warmup: false
+[2019-05-04 03:49:16] [config] lr-decay-reset-optimizer: false
+[2019-05-04 03:49:16] [config] lr-decay-start:
+[2019-05-04 03:49:16] [config]   - 10
+[2019-05-04 03:49:16] [config]   - 1
+[2019-05-04 03:49:16] [config] lr-decay-strategy: epoch+stalled
+[2019-05-04 03:49:16] [config] lr-report: true
+[2019-05-04 03:49:16] [config] lr-warmup: 16000
+[2019-05-04 03:49:16] [config] lr-warmup-at-reload: false
+[2019-05-04 03:49:16] [config] lr-warmup-cycle: false
+[2019-05-04 03:49:16] [config] lr-warmup-start-rate: 0
+[2019-05-04 03:49:16] [config] max-length: 55
+[2019-05-04 03:49:16] [config] max-length-crop: false
+[2019-05-04 03:49:16] [config] max-length-factor: 3
+[2019-05-04 03:49:16] [config] maxi-batch: 1000
+[2019-05-04 03:49:16] [config] maxi-batch-sort: trg
+[2019-05-04 03:49:16] [config] mini-batch: 1000
+[2019-05-04 03:49:16] [config] mini-batch-fit: true
+[2019-05-04 03:49:16] [config] mini-batch-fit-step: 10
+[2019-05-04 03:49:16] [config] mini-batch-overstuff: 1
+[2019-05-04 03:49:16] [config] mini-batch-track-lr: false
+[2019-05-04 03:49:16] [config] mini-batch-understuff: 1
+[2019-05-04 03:49:16] [config] mini-batch-warmup: 0
+[2019-05-04 03:49:16] [config] mini-batch-words: 0
+[2019-05-04 03:49:16] [config] mini-batch-words-ref: 0
+[2019-05-04 03:49:16] [config] model: model/model.voita.gate2.nopre.npz
+[2019-05-04 03:49:16] [config] multi-loss-type: sum
+[2019-05-04 03:49:16] [config] multi-node: false
+[2019-05-04 03:49:16] [config] multi-node-overlap: true
+[2019-05-04 03:49:16] [config] n-best: false
+[2019-05-04 03:49:16] [config] no-nccl: false
+[2019-05-04 03:49:16] [config] no-reload: false
+[2019-05-04 03:49:16] [config] no-restore-corpus: true
+[2019-05-04 03:49:16] [config] no-shuffle: false
+[2019-05-04 03:49:16] [config] normalize: 0.6
+[2019-05-04 03:49:16] [config] num-devices: 0
+[2019-05-04 03:49:16] [config] optimizer: adam
+[2019-05-04 03:49:16] [config] optimizer-delay: 4
+[2019-05-04 03:49:16] [config] optimizer-params:
+[2019-05-04 03:49:16] [config]   - 0.9
+[2019-05-04 03:49:16] [config]   - 0.98
+[2019-05-04 03:49:16] [config]   - 1e-09
+[2019-05-04 03:49:16] [config] overwrite: false
+[2019-05-04 03:49:16] [config] pretrained-model: ""
+[2019-05-04 03:49:16] [config] quiet: false
+[2019-05-04 03:49:16] [config] quiet-translation: true
+[2019-05-04 03:49:16] [config] relative-paths: false
+[2019-05-04 03:49:16] [config] right-left: false
+[2019-05-04 03:49:16] [config] save-freq: 5000
+[2019-05-04 03:49:16] [config] seed: 1111
+[2019-05-04 03:49:16] [config] shuffle-in-ram: false
+[2019-05-04 03:49:16] [config] skip: false
+[2019-05-04 03:49:16] [config] sqlite: ""
+[2019-05-04 03:49:16] [config] sqlite-drop: false
+[2019-05-04 03:49:16] [config] sync-sgd: true
+[2019-05-04 03:49:16] [config] tempdir: /tmp
+[2019-05-04 03:49:16] [config] tied-embeddings: false
+[2019-05-04 03:49:16] [config] tied-embeddings-all: true
+[2019-05-04 03:49:16] [config] tied-embeddings-src: false
+[2019-05-04 03:49:16] [config] train-sets:
+[2019-05-04 03:49:16] [config]   - corp/opensub.en-fr.docs.train.en.bpe.src_prev
+[2019-05-04 03:49:16] [config]   - corp/opensub.en-fr.docs.train.en.bpe.src
+[2019-05-04 03:49:16] [config]   - corp/opensub.en-fr.docs.train.fr.bpe
+[2019-05-04 03:49:16] [config] transformer-aan-activation: swish
+[2019-05-04 03:49:16] [config] transformer-aan-depth: 2
+[2019-05-04 03:49:16] [config] transformer-aan-nogate: false
+[2019-05-04 03:49:16] [config] transformer-decoder-autoreg: self-attention
+[2019-05-04 03:49:16] [config] transformer-dim-aan: 2048
+[2019-05-04 03:49:16] [config] transformer-dim-ffn: 2048
+[2019-05-04 03:49:16] [config] transformer-dropout: 0.1
+[2019-05-04 03:49:16] [config] transformer-dropout-attention: 0
+[2019-05-04 03:49:16] [config] transformer-dropout-ffn: 0
+[2019-05-04 03:49:16] [config] transformer-ffn-activation: swish
+[2019-05-04 03:49:16] [config] transformer-ffn-depth: 2
+[2019-05-04 03:49:16] [config] transformer-guided-alignment-layer: last
+[2019-05-04 03:49:16] [config] transformer-heads: 8
+[2019-05-04 03:49:16] [config] transformer-no-projection: false
+[2019-05-04 03:49:16] [config] transformer-postprocess: dan
+[2019-05-04 03:49:16] [config] transformer-postprocess-emb: d
+[2019-05-04 03:49:16] [config] transformer-preprocess: ""
+[2019-05-04 03:49:16] [config] transformer-tied-layers:
+[2019-05-04 03:49:16] [config]   []
+[2019-05-04 03:49:16] [config] transformer-train-position-embeddings: false
+[2019-05-04 03:49:16] [config] type: transformer-context
+[2019-05-04 03:49:16] [config] ulr: false
+[2019-05-04 03:49:16] [config] ulr-dim-emb: 0
+[2019-05-04 03:49:16] [config] ulr-dropout: 0
+[2019-05-04 03:49:16] [config] ulr-keys-vectors: ""
+[2019-05-04 03:49:16] [config] ulr-query-vectors: ""
+[2019-05-04 03:49:16] [config] ulr-softmax-temperature: 1
+[2019-05-04 03:49:16] [config] ulr-trainable-transformation: false
+[2019-05-04 03:49:16] [config] valid-freq: 5000
+[2019-05-04 03:49:16] [config] valid-log: model/valid_trans.gate.log
+[2019-05-04 03:49:16] [config] valid-max-length: 1000
+[2019-05-04 03:49:16] [config] valid-metrics:
+[2019-05-04 03:49:16] [config]   - cross-entropy
+[2019-05-04 03:49:16] [config]   - perplexity
+[2019-05-04 03:49:16] [config]   - translation
+[2019-05-04 03:49:16] [config] valid-mini-batch: 64
+[2019-05-04 03:49:16] [config] valid-script-path: ./val.sh
+[2019-05-04 03:49:16] [config] valid-sets:
+[2019-05-04 03:49:16] [config]   - corp/opensub.en-fr.docs.dev.en.bpe.src_prev
+[2019-05-04 03:49:16] [config]   - corp/opensub.en-fr.docs.dev.en.bpe.src
+[2019-05-04 03:49:16] [config]   - corp/opensub.en-fr.docs.dev.fr.bpe
+[2019-05-04 03:49:16] [config] valid-translation-output: data/valid.bpe.en.output
+[2019-05-04 03:49:16] [config] vocabs:
+[2019-05-04 03:49:16] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-05-04 03:49:16] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-05-04 03:49:16] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-05-04 03:49:16] [config] word-penalty: 0
+[2019-05-04 03:49:16] [config] workspace: 9300
+[2019-05-04 03:49:16] [config] Model is being created with Marian v1.7.8 1fcb013 2019-05-03 03:15:04 +0200
+[2019-05-04 03:49:16] Using synchronous training
+[2019-05-04 03:49:16] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-05-04 03:49:16] [data] Setting vocabulary size for input 0 to 30000
+[2019-05-04 03:49:16] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-05-04 03:49:16] [data] Setting vocabulary size for input 1 to 30000
+[2019-05-04 03:49:16] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-05-04 03:49:17] [data] Setting vocabulary size for input 2 to 30000
+[2019-05-04 03:49:17] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-05-04 03:49:17] [batching] Collecting statistics for batch fitting with step size 10
+[2019-05-04 03:49:19] [memory] Extending reserved space to 9344 MB (device gpu0)
+[2019-05-04 03:49:20] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-05-04 03:49:20] [comm] NCCLCommunicator constructed successfully.
+[2019-05-04 03:49:20] [training] Using 1 GPUs
+[2019-05-04 03:49:20] [memory] Reserving 237 MB, device gpu0
+[2019-05-04 03:49:20] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-05-04 03:49:20] [memory] Reserving 237 MB, device gpu0
+[2019-05-04 03:49:31] [batching] Done. Typical MB size is 21840 target words
+[2019-05-04 03:49:31] [memory] Extending reserved space to 9344 MB (device gpu0)
+[2019-05-04 03:49:32] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-05-04 03:49:32] [comm] NCCLCommunicator constructed successfully.
+[2019-05-04 03:49:32] [training] Using 1 GPUs
+[2019-05-04 03:49:32] Training started
+[2019-05-04 03:49:32] [data] Shuffling data
+[2019-05-04 03:50:14] [data] Done reading 41736982 sentences
+[2019-05-04 03:53:43] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-04 03:54:19] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-05-04 03:54:19] [memory] Reserving 237 MB, device gpu0
+[2019-05-04 03:54:20] [memory] Reserving 237 MB, device gpu0
+[2019-05-04 03:54:20] [memory] Reserving 237 MB, device gpu0
+[2019-05-04 03:54:21] [memory] Reserving 474 MB, device gpu0
+[2019-05-04 04:02:48] Ep. 1 : Up. 500 : Sen. 481,176 : Cost 81.22731018 : Time 811.25s : 5477.22 words/s : L.r. 6.2500e-06
+[2019-05-04 04:11:22] Ep. 1 : Up. 1000 : Sen. 948,383 : Cost 68.50157928 : Time 514.22s : 8736.32 words/s : L.r. 1.2500e-05
+[2019-05-04 04:20:01] Ep. 1 : Up. 1500 : Sen. 1,430,450 : Cost 58.05564499 : Time 518.42s : 8690.55 words/s : L.r. 1.8750e-05
+[2019-05-04 04:28:37] Ep. 1 : Up. 2000 : Sen. 1,901,686 : Cost 55.86909866 : Time 516.04s : 8718.00 words/s : L.r. 2.5000e-05
+[2019-05-04 04:37:19] Ep. 1 : Up. 2500 : Sen. 2,378,288 : Cost 52.83643341 : Time 522.43s : 8697.41 words/s : L.r. 3.1250e-05
+[2019-05-04 04:45:45] Ep. 1 : Up. 3000 : Sen. 2,843,733 : Cost 49.85533905 : Time 506.10s : 8678.23 words/s : L.r. 3.7500e-05
+[2019-05-04 04:54:17] Ep. 1 : Up. 3500 : Sen. 3,299,767 : Cost 50.24293900 : Time 511.98s : 8691.16 words/s : L.r. 4.3750e-05
+[2019-05-04 05:02:55] Ep. 1 : Up. 4000 : Sen. 3,782,479 : Cost 45.04505920 : Time 517.89s : 8558.89 words/s : L.r. 5.0000e-05
+[2019-05-04 05:11:33] Ep. 1 : Up. 4500 : Sen. 4,260,777 : Cost 44.62384033 : Time 517.61s : 8653.34 words/s : L.r. 5.6250e-05
+[2019-05-04 05:20:11] Ep. 1 : Up. 5000 : Sen. 4,725,790 : Cost 44.89488602 : Time 518.40s : 8654.54 words/s : L.r. 6.2500e-05
+[2019-05-04 05:20:11] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 05:20:15] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter5000.npz
+[2019-05-04 05:20:18] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 05:20:22] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 05:20:35] [valid] Ep. 1 : Up. 5000 : cross-entropy : 57.7231 : new best
+[2019-05-04 05:20:41] [valid] Ep. 1 : Up. 5000 : perplexity : 88.1105 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 05:23:55] [valid] Ep. 1 : Up. 5000 : translation : 5.74 : new best
+[2019-05-04 05:32:25] Ep. 1 : Up. 5500 : Sen. 5,204,499 : Cost 40.86074066 : Time 733.72s : 5975.24 words/s : L.r. 6.8750e-05
+[2019-05-04 05:41:08] Ep. 1 : Up. 6000 : Sen. 5,671,244 : Cost 42.70437241 : Time 522.86s : 8669.39 words/s : L.r. 7.5000e-05
+[2019-05-04 05:49:43] Ep. 1 : Up. 6500 : Sen. 6,136,632 : Cost 41.11277771 : Time 515.56s : 8739.51 words/s : L.r. 8.1250e-05
+[2019-05-04 05:58:27] Ep. 1 : Up. 7000 : Sen. 6,613,609 : Cost 38.78731155 : Time 523.37s : 8601.75 words/s : L.r. 8.7500e-05
+[2019-05-04 06:07:02] Ep. 1 : Up. 7500 : Sen. 7,091,964 : Cost 37.06127930 : Time 515.68s : 8633.98 words/s : L.r. 9.3750e-05
+[2019-05-04 06:15:38] Ep. 1 : Up. 8000 : Sen. 7,556,491 : Cost 36.97318649 : Time 515.35s : 8561.36 words/s : L.r. 1.0000e-04
+[2019-05-04 06:24:20] Ep. 1 : Up. 8500 : Sen. 8,037,273 : Cost 35.57864761 : Time 522.54s : 8686.90 words/s : L.r. 1.0625e-04
+[2019-05-04 06:32:57] Ep. 1 : Up. 9000 : Sen. 8,517,143 : Cost 34.24924088 : Time 516.56s : 8667.39 words/s : L.r. 1.1250e-04
+[2019-05-04 06:41:35] Ep. 1 : Up. 9500 : Sen. 8,989,896 : Cost 34.24586868 : Time 518.45s : 8613.38 words/s : L.r. 1.1875e-04
+[2019-05-04 06:49:58] Ep. 1 : Up. 10000 : Sen. 9,447,976 : Cost 33.18724823 : Time 502.74s : 8497.39 words/s : L.r. 1.2500e-04
+[2019-05-04 06:49:58] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 06:50:02] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter10000.npz
+[2019-05-04 06:50:05] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 06:50:09] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 06:50:22] [valid] Ep. 1 : Up. 10000 : cross-entropy : 38.4481 : new best
+[2019-05-04 06:50:28] [valid] Ep. 1 : Up. 10000 : perplexity : 19.7488 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 06:52:40] [valid] Ep. 1 : Up. 10000 : translation : 18.73 : new best
+[2019-05-04 07:01:23] Ep. 1 : Up. 10500 : Sen. 9,922,221 : Cost 33.59568787 : Time 685.08s : 6651.50 words/s : L.r. 1.3125e-04
+[2019-05-04 07:09:55] Ep. 1 : Up. 11000 : Sen. 10,390,666 : Cost 32.40678024 : Time 511.57s : 8636.47 words/s : L.r. 1.3750e-04
+[2019-05-04 07:18:26] Ep. 1 : Up. 11500 : Sen. 10,865,770 : Cost 31.68679237 : Time 511.63s : 8645.53 words/s : L.r. 1.4375e-04
+[2019-05-04 07:27:01] Ep. 1 : Up. 12000 : Sen. 11,332,027 : Cost 32.23869705 : Time 515.17s : 8659.56 words/s : L.r. 1.5000e-04
+[2019-05-04 07:35:39] Ep. 1 : Up. 12500 : Sen. 11,800,518 : Cost 31.95325279 : Time 518.03s : 8651.08 words/s : L.r. 1.5625e-04
+[2019-05-04 07:44:10] Ep. 1 : Up. 13000 : Sen. 12,266,446 : Cost 30.67779160 : Time 510.83s : 8572.53 words/s : L.r. 1.6250e-04
+[2019-05-04 07:52:53] Ep. 1 : Up. 13500 : Sen. 12,745,591 : Cost 30.96895981 : Time 522.31s : 8721.07 words/s : L.r. 1.6875e-04
+[2019-05-04 08:01:27] Ep. 1 : Up. 14000 : Sen. 13,214,452 : Cost 30.48719406 : Time 514.47s : 8647.41 words/s : L.r. 1.7500e-04
+[2019-05-04 08:10:00] Ep. 1 : Up. 14500 : Sen. 13,687,367 : Cost 29.84583473 : Time 513.19s : 8607.94 words/s : L.r. 1.8125e-04
+[2019-05-04 08:18:37] Ep. 1 : Up. 15000 : Sen. 14,146,402 : Cost 31.68632317 : Time 516.58s : 8707.46 words/s : L.r. 1.8750e-04
+[2019-05-04 08:18:37] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 08:18:40] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter15000.npz
+[2019-05-04 08:18:44] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 08:18:48] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 08:19:01] [valid] Ep. 1 : Up. 15000 : cross-entropy : 30.2298 : new best
+[2019-05-04 08:19:07] [valid] Ep. 1 : Up. 15000 : perplexity : 10.438 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 08:20:48] [valid] Ep. 1 : Up. 15000 : translation : 25.1 : new best
+[2019-05-04 08:29:27] Ep. 1 : Up. 15500 : Sen. 14,629,058 : Cost 29.22506142 : Time 649.91s : 6888.02 words/s : L.r. 1.9375e-04
+[2019-05-04 08:37:59] Ep. 1 : Up. 16000 : Sen. 15,105,707 : Cost 28.74919319 : Time 511.90s : 8649.72 words/s : L.r. 2.0000e-04
+[2019-05-04 08:46:33] Ep. 1 : Up. 16500 : Sen. 15,567,792 : Cost 30.29998398 : Time 514.38s : 8650.86 words/s : L.r. 1.9695e-04
+[2019-05-04 08:55:09] Ep. 1 : Up. 17000 : Sen. 16,049,913 : Cost 28.38396835 : Time 515.74s : 8665.57 words/s : L.r. 1.9403e-04
+[2019-05-04 09:03:41] Ep. 1 : Up. 17500 : Sen. 16,521,282 : Cost 28.74573135 : Time 512.64s : 8629.60 words/s : L.r. 1.9124e-04
+[2019-05-04 09:12:27] Ep. 1 : Up. 18000 : Sen. 16,996,580 : Cost 29.56995201 : Time 525.80s : 8728.70 words/s : L.r. 1.8856e-04
+[2019-05-04 09:21:07] Ep. 1 : Up. 18500 : Sen. 17,476,346 : Cost 28.42551994 : Time 520.06s : 8694.11 words/s : L.r. 1.8600e-04
+[2019-05-04 09:29:36] Ep. 1 : Up. 19000 : Sen. 17,938,059 : Cost 28.68523216 : Time 509.14s : 8596.48 words/s : L.r. 1.8353e-04
+[2019-05-04 09:38:14] Ep. 1 : Up. 19500 : Sen. 18,416,942 : Cost 28.05287361 : Time 517.49s : 8676.56 words/s : L.r. 1.8116e-04
+[2019-05-04 09:46:55] Ep. 1 : Up. 20000 : Sen. 18,896,933 : Cost 28.10629654 : Time 521.20s : 8639.62 words/s : L.r. 1.7889e-04
+[2019-05-04 09:46:55] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 09:46:59] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter20000.npz
+[2019-05-04 09:47:02] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 09:47:06] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 09:47:20] [valid] Ep. 1 : Up. 20000 : cross-entropy : 26.7347 : new best
+[2019-05-04 09:47:25] [valid] Ep. 1 : Up. 20000 : perplexity : 7.9588 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 09:49:01] [valid] Ep. 1 : Up. 20000 : translation : 28.17 : new best
+[2019-05-04 09:57:32] Ep. 1 : Up. 20500 : Sen. 19,358,960 : Cost 28.28501320 : Time 637.47s : 6848.50 words/s : L.r. 1.7669e-04
+[2019-05-04 10:06:22] Ep. 1 : Up. 21000 : Sen. 19,847,892 : Cost 27.83386612 : Time 529.02s : 8733.04 words/s : L.r. 1.7457e-04
+[2019-05-04 10:14:54] Ep. 1 : Up. 21500 : Sen. 20,322,526 : Cost 27.36259270 : Time 512.97s : 8575.09 words/s : L.r. 1.7253e-04
+[2019-05-04 10:23:33] Ep. 1 : Up. 22000 : Sen. 20,788,362 : Cost 28.31898499 : Time 518.03s : 8635.40 words/s : L.r. 1.7056e-04
+[2019-05-04 10:32:15] Ep. 1 : Up. 22500 : Sen. 21,267,860 : Cost 27.67899132 : Time 522.78s : 8701.87 words/s : L.r. 1.6865e-04
+[2019-05-04 10:40:55] Ep. 1 : Up. 23000 : Sen. 21,744,610 : Cost 27.71187401 : Time 519.62s : 8730.71 words/s : L.r. 1.6681e-04
+[2019-05-04 10:49:23] Ep. 1 : Up. 23500 : Sen. 22,203,855 : Cost 27.96220779 : Time 507.75s : 8552.00 words/s : L.r. 1.6503e-04
+[2019-05-04 10:58:05] Ep. 1 : Up. 24000 : Sen. 22,677,112 : Cost 27.78871918 : Time 522.23s : 8731.98 words/s : L.r. 1.6330e-04
+[2019-05-04 11:06:35] Ep. 1 : Up. 24500 : Sen. 23,144,408 : Cost 27.15459824 : Time 509.98s : 8516.00 words/s : L.r. 1.6162e-04
+[2019-05-04 11:15:10] Ep. 1 : Up. 25000 : Sen. 23,627,306 : Cost 26.30042648 : Time 514.64s : 8606.91 words/s : L.r. 1.6000e-04
+[2019-05-04 11:15:10] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 11:15:13] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter25000.npz
+[2019-05-04 11:15:17] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 11:15:21] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 11:15:34] [valid] Ep. 1 : Up. 25000 : cross-entropy : 25.0438 : new best
+[2019-05-04 11:15:40] [valid] Ep. 1 : Up. 25000 : perplexity : 6.98024 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 11:16:57] [valid] Ep. 1 : Up. 25000 : translation : 29.86 : new best
+[2019-05-04 11:25:38] Ep. 1 : Up. 25500 : Sen. 24,085,909 : Cost 28.83636856 : Time 628.06s : 7229.28 words/s : L.r. 1.5842e-04
+[2019-05-04 11:34:14] Ep. 1 : Up. 26000 : Sen. 24,560,271 : Cost 27.24991608 : Time 516.23s : 8698.88 words/s : L.r. 1.5689e-04
+[2019-05-04 11:42:43] Ep. 1 : Up. 26500 : Sen. 25,029,620 : Cost 26.83075714 : Time 509.25s : 8632.90 words/s : L.r. 1.5541e-04
+[2019-05-04 11:51:15] Ep. 1 : Up. 27000 : Sen. 25,509,345 : Cost 26.27839851 : Time 511.93s : 8601.02 words/s : L.r. 1.5396e-04
+[2019-05-04 11:59:59] Ep. 1 : Up. 27500 : Sen. 25,980,875 : Cost 27.75931358 : Time 523.68s : 8729.08 words/s : L.r. 1.5255e-04
+[2019-05-04 12:08:34] Ep. 1 : Up. 28000 : Sen. 26,449,004 : Cost 27.28021049 : Time 515.79s : 8621.26 words/s : L.r. 1.5119e-04
+[2019-05-04 12:17:11] Ep. 1 : Up. 28500 : Sen. 26,924,091 : Cost 26.65320015 : Time 516.10s : 8696.06 words/s : L.r. 1.4985e-04
+[2019-05-04 12:25:52] Ep. 1 : Up. 29000 : Sen. 27,397,779 : Cost 27.59231186 : Time 521.44s : 8769.65 words/s : L.r. 1.4856e-04
+[2019-05-04 12:34:33] Ep. 1 : Up. 29500 : Sen. 27,883,100 : Cost 26.23226166 : Time 521.44s : 8621.13 words/s : L.r. 1.4729e-04
+[2019-05-04 12:42:59] Ep. 1 : Up. 30000 : Sen. 28,343,547 : Cost 26.75869179 : Time 505.35s : 8569.78 words/s : L.r. 1.4606e-04
+[2019-05-04 12:42:59] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 12:43:03] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter30000.npz
+[2019-05-04 12:43:07] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 12:43:12] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 12:43:26] [valid] Ep. 1 : Up. 30000 : cross-entropy : 24.0698 : new best
+[2019-05-04 12:43:31] [valid] Ep. 1 : Up. 30000 : perplexity : 6.47221 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 12:44:37] [valid] Ep. 1 : Up. 30000 : translation : 30.67 : new best
+[2019-05-04 12:53:17] Ep. 1 : Up. 30500 : Sen. 28,822,887 : Cost 26.63598061 : Time 618.08s : 7307.85 words/s : L.r. 1.4486e-04
+[2019-05-04 13:01:57] Ep. 1 : Up. 31000 : Sen. 29,295,014 : Cost 26.99265099 : Time 520.38s : 8689.28 words/s : L.r. 1.4368e-04
+[2019-05-04 13:10:22] Ep. 1 : Up. 31500 : Sen. 29,757,642 : Cost 26.35445023 : Time 505.01s : 8598.44 words/s : L.r. 1.4254e-04
+[2019-05-04 13:19:13] Ep. 1 : Up. 32000 : Sen. 30,237,925 : Cost 27.12103271 : Time 530.87s : 8675.19 words/s : L.r. 1.4142e-04
+[2019-05-04 13:27:45] Ep. 1 : Up. 32500 : Sen. 30,703,768 : Cost 26.60322380 : Time 512.11s : 8612.70 words/s : L.r. 1.4033e-04
+[2019-05-04 13:36:24] Ep. 1 : Up. 33000 : Sen. 31,202,413 : Cost 25.09683418 : Time 518.97s : 8644.93 words/s : L.r. 1.3926e-04
+[2019-05-04 13:45:01] Ep. 1 : Up. 33500 : Sen. 31,667,817 : Cost 26.79219627 : Time 517.10s : 8583.49 words/s : L.r. 1.3822e-04
+[2019-05-04 13:53:39] Ep. 1 : Up. 34000 : Sen. 32,139,044 : Cost 26.77258682 : Time 517.30s : 8716.59 words/s : L.r. 1.3720e-04
+[2019-05-04 14:02:16] Ep. 1 : Up. 34500 : Sen. 32,610,247 : Cost 26.77162743 : Time 517.07s : 8703.98 words/s : L.r. 1.3620e-04
+[2019-05-04 14:10:52] Ep. 1 : Up. 35000 : Sen. 33,075,532 : Cost 26.79286957 : Time 515.85s : 8627.95 words/s : L.r. 1.3522e-04
+[2019-05-04 14:10:52] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 14:10:55] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter35000.npz
+[2019-05-04 14:10:59] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 14:11:03] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 14:11:16] [valid] Ep. 1 : Up. 35000 : cross-entropy : 23.4116 : new best
+[2019-05-04 14:11:22] [valid] Ep. 1 : Up. 35000 : perplexity : 6.14998 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 14:12:35] [valid] Ep. 1 : Up. 35000 : translation : 31.27 : new best
+[2019-05-04 14:21:06] Ep. 1 : Up. 35500 : Sen. 33,546,292 : Cost 26.39688110 : Time 614.82s : 7238.26 words/s : L.r. 1.3427e-04
+[2019-05-04 14:29:48] Ep. 1 : Up. 36000 : Sen. 34,026,327 : Cost 26.01832390 : Time 521.88s : 8615.28 words/s : L.r. 1.3333e-04
+[2019-05-04 14:38:32] Ep. 1 : Up. 36500 : Sen. 34,500,608 : Cost 26.85143661 : Time 523.64s : 8725.18 words/s : L.r. 1.3242e-04
+[2019-05-04 14:47:07] Ep. 1 : Up. 37000 : Sen. 34,982,373 : Cost 25.50124168 : Time 514.83s : 8624.35 words/s : L.r. 1.3152e-04
+[2019-05-04 14:55:36] Ep. 1 : Up. 37500 : Sen. 35,464,458 : Cost 25.10910988 : Time 509.48s : 8635.70 words/s : L.r. 1.3064e-04
+[2019-05-04 15:04:16] Ep. 1 : Up. 38000 : Sen. 35,924,843 : Cost 27.42910957 : Time 520.03s : 8699.90 words/s : L.r. 1.2978e-04
+[2019-05-04 15:12:51] Ep. 1 : Up. 38500 : Sen. 36,381,322 : Cost 27.42091370 : Time 515.12s : 8665.37 words/s : L.r. 1.2893e-04
+[2019-05-04 15:21:26] Ep. 1 : Up. 39000 : Sen. 36,861,314 : Cost 25.21128845 : Time 514.40s : 8542.03 words/s : L.r. 1.2810e-04
+[2019-05-04 15:30:15] Ep. 1 : Up. 39500 : Sen. 37,348,850 : Cost 26.25793457 : Time 528.90s : 8745.35 words/s : L.r. 1.2729e-04
+[2019-05-04 15:38:53] Ep. 1 : Up. 40000 : Sen. 37,818,555 : Cost 26.23993874 : Time 517.98s : 8610.23 words/s : L.r. 1.2649e-04
+[2019-05-04 15:38:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 15:38:57] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter40000.npz
+[2019-05-04 15:39:01] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 15:39:06] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 15:39:19] [valid] Ep. 1 : Up. 40000 : cross-entropy : 22.9396 : new best
+[2019-05-04 15:39:25] [valid] Ep. 1 : Up. 40000 : perplexity : 5.92884 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 15:40:45] [valid] Ep. 1 : Up. 40000 : translation : 31.56 : new best
+[2019-05-04 15:49:09] Ep. 1 : Up. 40500 : Sen. 38,274,172 : Cost 26.35093880 : Time 616.04s : 7014.06 words/s : L.r. 1.2571e-04
+[2019-05-04 15:57:44] Ep. 1 : Up. 41000 : Sen. 38,741,924 : Cost 26.26696014 : Time 515.39s : 8702.65 words/s : L.r. 1.2494e-04
+[2019-05-04 16:06:30] Ep. 1 : Up. 41500 : Sen. 39,242,214 : Cost 24.92268562 : Time 525.74s : 8675.93 words/s : L.r. 1.2418e-04
+[2019-05-04 16:15:08] Ep. 1 : Up. 42000 : Sen. 39,710,424 : Cost 26.51178360 : Time 518.57s : 8631.13 words/s : L.r. 1.2344e-04
+[2019-05-04 16:23:33] Ep. 1 : Up. 42500 : Sen. 40,165,220 : Cost 25.86238670 : Time 504.31s : 8492.98 words/s : L.r. 1.2271e-04
+[2019-05-04 16:32:04] Ep. 1 : Up. 43000 : Sen. 40,627,736 : Cost 26.46278191 : Time 511.09s : 8661.32 words/s : L.r. 1.2200e-04
+[2019-05-04 16:40:42] Ep. 1 : Up. 43500 : Sen. 41,108,145 : Cost 25.61224365 : Time 518.23s : 8690.12 words/s : L.r. 1.2130e-04
+[2019-05-04 16:49:02] Ep. 1 : Up. 44000 : Sen. 41,561,708 : Cost 25.59883690 : Time 500.47s : 8495.44 words/s : L.r. 1.2060e-04
+[2019-05-04 16:51:54] Seen 41709169 samples
+[2019-05-04 16:51:54] Starting epoch 2
+[2019-05-04 16:51:54] [data] Shuffling data
+[2019-05-04 16:52:39] [data] Done reading 41736982 sentences
+[2019-05-04 16:56:11] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-04 17:02:24] Ep. 2 : Up. 44500 : Sen. 323,175 : Cost 25.84117508 : Time 801.39s : 5537.65 words/s : L.r. 1.1993e-04
+[2019-05-04 17:10:51] Ep. 2 : Up. 45000 : Sen. 785,474 : Cost 25.48584366 : Time 506.86s : 8524.53 words/s : L.r. 1.1926e-04
+[2019-05-04 17:10:51] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 17:10:55] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter45000.npz
+[2019-05-04 17:10:58] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 17:11:02] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 17:11:15] [valid] Ep. 2 : Up. 45000 : cross-entropy : 22.5956 : new best
+[2019-05-04 17:11:21] [valid] Ep. 2 : Up. 45000 : perplexity : 5.7727 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 17:12:32] [valid] Ep. 2 : Up. 45000 : translation : 31.78 : new best
+[2019-05-04 17:21:19] Ep. 2 : Up. 45500 : Sen. 1,260,918 : Cost 26.36426926 : Time 627.82s : 7338.38 words/s : L.r. 1.1860e-04
+[2019-05-04 17:29:48] Ep. 2 : Up. 46000 : Sen. 1,728,081 : Cost 25.34645462 : Time 508.96s : 8529.39 words/s : L.r. 1.1795e-04
+[2019-05-04 17:38:25] Ep. 2 : Up. 46500 : Sen. 2,188,531 : Cost 26.83527565 : Time 517.88s : 8707.80 words/s : L.r. 1.1732e-04
+[2019-05-04 17:47:00] Ep. 2 : Up. 47000 : Sen. 2,656,032 : Cost 25.76753616 : Time 515.00s : 8579.25 words/s : L.r. 1.1669e-04
+[2019-05-04 17:55:45] Ep. 2 : Up. 47500 : Sen. 3,149,916 : Cost 25.26664543 : Time 524.97s : 8791.31 words/s : L.r. 1.1608e-04
+[2019-05-04 18:04:22] Ep. 2 : Up. 48000 : Sen. 3,626,100 : Cost 25.64723778 : Time 516.45s : 8662.02 words/s : L.r. 1.1547e-04
+[2019-05-04 18:12:45] Ep. 2 : Up. 48500 : Sen. 4,083,088 : Cost 25.44727707 : Time 503.45s : 8490.40 words/s : L.r. 1.1487e-04
+[2019-05-04 18:21:30] Ep. 2 : Up. 49000 : Sen. 4,557,842 : Cost 26.23647690 : Time 524.84s : 8724.58 words/s : L.r. 1.1429e-04
+[2019-05-04 18:30:06] Ep. 2 : Up. 49500 : Sen. 5,032,092 : Cost 25.33208084 : Time 515.39s : 8622.19 words/s : L.r. 1.1371e-04
+[2019-05-04 18:38:43] Ep. 2 : Up. 50000 : Sen. 5,507,177 : Cost 25.30056190 : Time 517.37s : 8564.75 words/s : L.r. 1.1314e-04
+[2019-05-04 18:38:43] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 18:38:47] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter50000.npz
+[2019-05-04 18:38:50] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 18:38:54] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 18:39:08] [valid] Ep. 2 : Up. 50000 : cross-entropy : 22.3245 : new best
+[2019-05-04 18:39:13] [valid] Ep. 2 : Up. 50000 : perplexity : 5.65251 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 18:40:20] [valid] Ep. 2 : Up. 50000 : translation : 31.93 : new best
+[2019-05-04 18:48:57] Ep. 2 : Up. 50500 : Sen. 5,976,853 : Cost 25.99210358 : Time 614.54s : 7317.50 words/s : L.r. 1.1258e-04
+[2019-05-04 18:57:39] Ep. 2 : Up. 51000 : Sen. 6,467,244 : Cost 24.68948936 : Time 521.36s : 8653.41 words/s : L.r. 1.1202e-04
+[2019-05-04 19:06:11] Ep. 2 : Up. 51500 : Sen. 6,921,890 : Cost 26.66280746 : Time 512.67s : 8650.16 words/s : L.r. 1.1148e-04
+[2019-05-04 19:14:44] Ep. 2 : Up. 52000 : Sen. 7,380,465 : Cost 26.27545547 : Time 512.69s : 8628.95 words/s : L.r. 1.1094e-04
+[2019-05-04 19:23:23] Ep. 2 : Up. 52500 : Sen. 7,866,156 : Cost 24.76379776 : Time 518.39s : 8603.30 words/s : L.r. 1.1041e-04
+[2019-05-04 19:32:08] Ep. 2 : Up. 53000 : Sen. 8,350,023 : Cost 25.51733017 : Time 525.07s : 8715.05 words/s : L.r. 1.0989e-04
+[2019-05-04 19:40:40] Ep. 2 : Up. 53500 : Sen. 8,813,805 : Cost 25.83324051 : Time 512.64s : 8641.92 words/s : L.r. 1.0937e-04
+[2019-05-04 19:49:15] Ep. 2 : Up. 54000 : Sen. 9,272,412 : Cost 26.54482651 : Time 514.98s : 8670.15 words/s : L.r. 1.0887e-04
+[2019-05-04 19:57:47] Ep. 2 : Up. 54500 : Sen. 9,746,401 : Cost 25.20765114 : Time 511.71s : 8685.74 words/s : L.r. 1.0837e-04
+[2019-05-04 20:06:26] Ep. 2 : Up. 55000 : Sen. 10,224,176 : Cost 24.73813629 : Time 518.64s : 8501.18 words/s : L.r. 1.0787e-04
+[2019-05-04 20:06:26] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 20:06:30] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter55000.npz
+[2019-05-04 20:06:33] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 20:06:38] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 20:06:51] [valid] Ep. 2 : Up. 55000 : cross-entropy : 22.0704 : new best
+[2019-05-04 20:06:57] [valid] Ep. 2 : Up. 55000 : perplexity : 5.54219 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 20:08:06] [valid] Ep. 2 : Up. 55000 : translation : 32.14 : new best
+[2019-05-04 20:16:48] Ep. 2 : Up. 55500 : Sen. 10,700,525 : Cost 25.69574356 : Time 622.02s : 7301.45 words/s : L.r. 1.0738e-04
+[2019-05-04 20:25:33] Ep. 2 : Up. 56000 : Sen. 11,182,719 : Cost 25.32876015 : Time 525.28s : 8630.08 words/s : L.r. 1.0690e-04
+[2019-05-04 20:34:04] Ep. 2 : Up. 56500 : Sen. 11,645,165 : Cost 25.77799797 : Time 510.93s : 8613.86 words/s : L.r. 1.0643e-04
+[2019-05-04 20:42:48] Ep. 2 : Up. 57000 : Sen. 12,126,751 : Cost 25.33180237 : Time 523.69s : 8655.09 words/s : L.r. 1.0596e-04
+[2019-05-04 20:51:23] Ep. 2 : Up. 57500 : Sen. 12,603,270 : Cost 25.25721359 : Time 515.83s : 8645.14 words/s : L.r. 1.0550e-04
+[2019-05-04 20:59:58] Ep. 2 : Up. 58000 : Sen. 13,058,460 : Cost 26.23829842 : Time 514.38s : 8630.11 words/s : L.r. 1.0505e-04
+[2019-05-04 21:08:39] Ep. 2 : Up. 58500 : Sen. 13,530,640 : Cost 26.22646713 : Time 521.47s : 8808.71 words/s : L.r. 1.0460e-04
+[2019-05-04 21:17:11] Ep. 2 : Up. 59000 : Sen. 14,010,965 : Cost 24.11711311 : Time 511.48s : 8465.72 words/s : L.r. 1.0415e-04
+[2019-05-04 21:25:51] Ep. 2 : Up. 59500 : Sen. 14,499,870 : Cost 24.49493027 : Time 520.09s : 8629.23 words/s : L.r. 1.0371e-04
+[2019-05-04 21:34:26] Ep. 2 : Up. 60000 : Sen. 14,956,186 : Cost 26.68010330 : Time 514.93s : 8720.71 words/s : L.r. 1.0328e-04
+[2019-05-04 21:34:26] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 21:34:30] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter60000.npz
+[2019-05-04 21:34:33] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 21:34:37] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 21:34:51] [valid] Ep. 2 : Up. 60000 : cross-entropy : 21.8583 : new best
+[2019-05-04 21:34:56] [valid] Ep. 2 : Up. 60000 : perplexity : 5.45174 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 21:36:06] [valid] Ep. 2 : Up. 60000 : translation : 32.33 : new best
+[2019-05-04 21:44:40] Ep. 2 : Up. 60500 : Sen. 15,426,562 : Cost 25.33304024 : Time 614.23s : 7226.11 words/s : L.r. 1.0285e-04
+[2019-05-04 21:53:19] Ep. 2 : Up. 61000 : Sen. 15,901,150 : Cost 25.40366936 : Time 518.81s : 8651.57 words/s : L.r. 1.0243e-04
+[2019-05-04 22:01:50] Ep. 2 : Up. 61500 : Sen. 16,364,969 : Cost 25.74677658 : Time 511.59s : 8694.13 words/s : L.r. 1.0201e-04
+[2019-05-04 22:10:30] Ep. 2 : Up. 62000 : Sen. 16,840,727 : Cost 25.46229172 : Time 519.88s : 8671.51 words/s : L.r. 1.0160e-04
+[2019-05-04 22:18:57] Ep. 2 : Up. 62500 : Sen. 17,315,293 : Cost 24.61574364 : Time 507.02s : 8630.47 words/s : L.r. 1.0119e-04
+[2019-05-04 22:27:49] Ep. 2 : Up. 63000 : Sen. 17,798,543 : Cost 25.70963097 : Time 531.54s : 8712.15 words/s : L.r. 1.0079e-04
+[2019-05-04 22:36:15] Ep. 2 : Up. 63500 : Sen. 18,276,527 : Cost 24.10040283 : Time 506.59s : 8497.37 words/s : L.r. 1.0039e-04
+[2019-05-04 22:44:53] Ep. 2 : Up. 64000 : Sen. 18,742,681 : Cost 25.81205177 : Time 517.17s : 8708.48 words/s : L.r. 1.0000e-04
+[2019-05-04 22:53:18] Ep. 2 : Up. 64500 : Sen. 19,194,166 : Cost 25.92339516 : Time 505.17s : 8613.84 words/s : L.r. 9.9612e-05
+[2019-05-04 23:02:05] Ep. 2 : Up. 65000 : Sen. 19,693,602 : Cost 24.46164894 : Time 527.34s : 8713.22 words/s : L.r. 9.9228e-05
+[2019-05-04 23:02:05] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-04 23:02:09] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter65000.npz
+[2019-05-04 23:02:12] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-04 23:02:16] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-04 23:02:30] [valid] Ep. 2 : Up. 65000 : cross-entropy : 21.6892 : new best
+[2019-05-04 23:02:36] [valid] Ep. 2 : Up. 65000 : perplexity : 5.38064 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-04 23:03:42] [valid] Ep. 2 : Up. 65000 : translation : 32.55 : new best
+[2019-05-04 23:12:02] Ep. 2 : Up. 65500 : Sen. 20,130,146 : Cost 26.61866760 : Time 597.36s : 7206.03 words/s : L.r. 9.8848e-05
+[2019-05-04 23:20:45] Ep. 2 : Up. 66000 : Sen. 20,600,663 : Cost 25.79289818 : Time 522.65s : 8625.16 words/s : L.r. 9.8473e-05
+[2019-05-04 23:29:31] Ep. 2 : Up. 66500 : Sen. 21,095,454 : Cost 24.47762680 : Time 526.01s : 8715.82 words/s : L.r. 9.8102e-05
+[2019-05-04 23:38:07] Ep. 2 : Up. 67000 : Sen. 21,568,078 : Cost 25.01094437 : Time 516.03s : 8602.15 words/s : L.r. 9.7736e-05
+[2019-05-04 23:46:46] Ep. 2 : Up. 67500 : Sen. 22,051,739 : Cost 24.81129265 : Time 518.81s : 8686.03 words/s : L.r. 9.7373e-05
+[2019-05-04 23:55:31] Ep. 2 : Up. 68000 : Sen. 22,533,050 : Cost 24.97868538 : Time 524.98s : 8626.05 words/s : L.r. 9.7014e-05
+[2019-05-05 00:04:03] Ep. 2 : Up. 68500 : Sen. 22,994,993 : Cost 25.73704529 : Time 511.94s : 8644.13 words/s : L.r. 9.6660e-05
+[2019-05-05 00:12:46] Ep. 2 : Up. 69000 : Sen. 23,485,018 : Cost 24.55216408 : Time 523.31s : 8637.32 words/s : L.r. 9.6309e-05
+[2019-05-05 00:21:18] Ep. 2 : Up. 69500 : Sen. 23,943,713 : Cost 25.88454247 : Time 511.74s : 8690.37 words/s : L.r. 9.5962e-05
+[2019-05-05 00:29:52] Ep. 2 : Up. 70000 : Sen. 24,406,150 : Cost 25.78964233 : Time 514.51s : 8641.82 words/s : L.r. 9.5618e-05
+[2019-05-05 00:29:52] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 00:29:57] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter70000.npz
+[2019-05-05 00:30:00] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 00:30:04] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 00:30:17] [valid] Ep. 2 : Up. 70000 : cross-entropy : 21.5263 : new best
+[2019-05-05 00:30:23] [valid] Ep. 2 : Up. 70000 : perplexity : 5.31309 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 00:31:29] [valid] Ep. 2 : Up. 70000 : translation : 32.59 : new best
+[2019-05-05 00:40:10] Ep. 2 : Up. 70500 : Sen. 24,880,793 : Cost 25.12267113 : Time 617.80s : 7271.78 words/s : L.r. 9.5279e-05
+[2019-05-05 00:48:52] Ep. 2 : Up. 71000 : Sen. 25,366,409 : Cost 24.73725510 : Time 522.23s : 8668.31 words/s : L.r. 9.4943e-05
+[2019-05-05 00:57:29] Ep. 2 : Up. 71500 : Sen. 25,831,608 : Cost 25.45948792 : Time 516.66s : 8608.01 words/s : L.r. 9.4610e-05
+[2019-05-05 01:06:01] Ep. 2 : Up. 72000 : Sen. 26,307,058 : Cost 24.20544243 : Time 511.87s : 8489.96 words/s : L.r. 9.4281e-05
+[2019-05-05 01:14:36] Ep. 2 : Up. 72500 : Sen. 26,785,941 : Cost 24.96685791 : Time 514.82s : 8722.55 words/s : L.r. 9.3955e-05
+[2019-05-05 01:23:12] Ep. 2 : Up. 73000 : Sen. 27,251,066 : Cost 25.29400635 : Time 515.86s : 8567.39 words/s : L.r. 9.3633e-05
+[2019-05-05 01:32:01] Ep. 2 : Up. 73500 : Sen. 27,710,462 : Cost 26.64852905 : Time 529.26s : 8662.57 words/s : L.r. 9.3314e-05
+[2019-05-05 01:40:42] Ep. 2 : Up. 74000 : Sen. 28,193,473 : Cost 24.79456520 : Time 520.81s : 8639.32 words/s : L.r. 9.2998e-05
+[2019-05-05 01:49:14] Ep. 2 : Up. 74500 : Sen. 28,660,277 : Cost 24.97221756 : Time 511.90s : 8592.66 words/s : L.r. 9.2686e-05
+[2019-05-05 01:58:05] Ep. 2 : Up. 75000 : Sen. 29,143,108 : Cost 25.00770187 : Time 531.44s : 8576.62 words/s : L.r. 9.2376e-05
+[2019-05-05 01:58:05] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 01:58:12] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter75000.npz
+[2019-05-05 01:58:16] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 01:58:25] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 01:58:40] [valid] Ep. 2 : Up. 75000 : cross-entropy : 21.3783 : new best
+[2019-05-05 01:58:46] [valid] Ep. 2 : Up. 75000 : perplexity : 5.25241 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 01:59:56] [valid] Ep. 2 : Up. 75000 : translation : 32.82 : new best
+[2019-05-05 02:08:38] Ep. 2 : Up. 75500 : Sen. 29,619,150 : Cost 25.24677849 : Time 633.15s : 7143.15 words/s : L.r. 9.2070e-05
+[2019-05-05 02:17:15] Ep. 2 : Up. 76000 : Sen. 30,097,114 : Cost 24.48905945 : Time 517.23s : 8547.29 words/s : L.r. 9.1766e-05
+[2019-05-05 02:25:56] Ep. 2 : Up. 76500 : Sen. 30,561,257 : Cost 25.75252914 : Time 520.55s : 8633.00 words/s : L.r. 9.1466e-05
+[2019-05-05 02:34:31] Ep. 2 : Up. 77000 : Sen. 31,035,677 : Cost 24.64371681 : Time 515.46s : 8546.93 words/s : L.r. 9.1168e-05
+[2019-05-05 02:43:07] Ep. 2 : Up. 77500 : Sen. 31,507,359 : Cost 24.74243164 : Time 515.61s : 8555.20 words/s : L.r. 9.0874e-05
+[2019-05-05 02:51:49] Ep. 2 : Up. 78000 : Sen. 31,983,021 : Cost 25.23812675 : Time 522.26s : 8663.57 words/s : L.r. 9.0582e-05
+[2019-05-05 03:00:24] Ep. 2 : Up. 78500 : Sen. 32,446,655 : Cost 25.19999313 : Time 515.13s : 8512.49 words/s : L.r. 9.0293e-05
+[2019-05-05 03:09:16] Ep. 2 : Up. 79000 : Sen. 32,926,267 : Cost 25.48526955 : Time 531.46s : 8681.01 words/s : L.r. 9.0007e-05
+[2019-05-05 03:17:58] Ep. 2 : Up. 79500 : Sen. 33,407,071 : Cost 25.08485222 : Time 521.93s : 8724.09 words/s : L.r. 8.9724e-05
+[2019-05-05 03:26:36] Ep. 2 : Up. 80000 : Sen. 33,880,274 : Cost 24.56869316 : Time 518.57s : 8491.66 words/s : L.r. 8.9443e-05
+[2019-05-05 03:26:36] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 03:26:44] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter80000.npz
+[2019-05-05 03:26:48] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 03:27:01] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 03:27:17] [valid] Ep. 2 : Up. 80000 : cross-entropy : 21.2531 : new best
+[2019-05-05 03:27:23] [valid] Ep. 2 : Up. 80000 : perplexity : 5.20165 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 03:28:35] [valid] Ep. 2 : Up. 80000 : translation : 33 : new best
+[2019-05-05 03:37:01] Ep. 2 : Up. 80500 : Sen. 34,342,017 : Cost 25.01642227 : Time 624.91s : 6968.62 words/s : L.r. 8.9165e-05
+[2019-05-05 03:45:45] Ep. 2 : Up. 81000 : Sen. 34,818,098 : Cost 25.01203537 : Time 524.05s : 8583.93 words/s : L.r. 8.8889e-05
+[2019-05-05 03:54:23] Ep. 2 : Up. 81500 : Sen. 35,290,152 : Cost 25.00619125 : Time 517.62s : 8661.19 words/s : L.r. 8.8616e-05
+[2019-05-05 04:03:07] Ep. 2 : Up. 82000 : Sen. 35,766,871 : Cost 25.00880432 : Time 524.12s : 8557.47 words/s : L.r. 8.8345e-05
+[2019-05-05 04:11:49] Ep. 2 : Up. 82500 : Sen. 36,238,078 : Cost 25.30219269 : Time 521.64s : 8660.87 words/s : L.r. 8.8077e-05
+[2019-05-05 04:20:35] Ep. 2 : Up. 83000 : Sen. 36,714,016 : Cost 25.49562454 : Time 525.82s : 8708.73 words/s : L.r. 8.7811e-05
+[2019-05-05 04:29:02] Ep. 2 : Up. 83500 : Sen. 37,180,321 : Cost 24.35620499 : Time 507.01s : 8504.33 words/s : L.r. 8.7548e-05
+[2019-05-05 04:37:44] Ep. 2 : Up. 84000 : Sen. 37,649,913 : Cost 25.53493118 : Time 522.01s : 8628.65 words/s : L.r. 8.7287e-05
+[2019-05-05 04:46:27] Ep. 2 : Up. 84500 : Sen. 38,131,955 : Cost 24.51621056 : Time 523.46s : 8594.67 words/s : L.r. 8.7029e-05
+[2019-05-05 04:55:08] Ep. 2 : Up. 85000 : Sen. 38,609,894 : Cost 24.79254532 : Time 520.93s : 8637.95 words/s : L.r. 8.6772e-05
+[2019-05-05 04:55:08] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 04:55:12] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter85000.npz
+[2019-05-05 04:55:16] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 04:55:28] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 04:55:42] [valid] Ep. 2 : Up. 85000 : cross-entropy : 21.1495 : new best
+[2019-05-05 04:55:48] [valid] Ep. 2 : Up. 85000 : perplexity : 5.16001 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 04:57:08] [valid] Ep. 2 : Up. 85000 : translation : 33.14 : new best
+[2019-05-05 05:05:49] Ep. 2 : Up. 85500 : Sen. 39,091,121 : Cost 24.61858559 : Time 641.23s : 6986.45 words/s : L.r. 8.6518e-05
+[2019-05-05 05:14:37] Ep. 2 : Up. 86000 : Sen. 39,576,280 : Cost 25.07921791 : Time 527.31s : 8765.26 words/s : L.r. 8.6266e-05
+[2019-05-05 05:23:05] Ep. 2 : Up. 86500 : Sen. 40,021,635 : Cost 25.65751648 : Time 508.34s : 8430.19 words/s : L.r. 8.6017e-05
+[2019-05-05 05:31:43] Ep. 2 : Up. 87000 : Sen. 40,491,642 : Cost 25.09730911 : Time 517.42s : 8671.50 words/s : L.r. 8.5769e-05
+[2019-05-05 05:40:21] Ep. 2 : Up. 87500 : Sen. 40,969,034 : Cost 24.66843796 : Time 518.41s : 8616.55 words/s : L.r. 8.5524e-05
+[2019-05-05 05:48:46] Ep. 2 : Up. 88000 : Sen. 41,420,829 : Cost 25.29509163 : Time 504.43s : 8537.82 words/s : L.r. 8.5280e-05
+[2019-05-05 05:54:05] Seen 41709169 samples
+[2019-05-05 05:54:05] Starting epoch 3
+[2019-05-05 05:54:05] [data] Shuffling data
+[2019-05-05 05:55:20] [data] Done reading 41736982 sentences
+[2019-05-05 05:59:04] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-05 06:02:44] Ep. 3 : Up. 88500 : Sen. 161,719 : Cost 24.93207169 : Time 838.79s : 5099.23 words/s : L.r. 8.5039e-05
+[2019-05-05 06:11:31] Ep. 3 : Up. 89000 : Sen. 635,171 : Cost 25.18949509 : Time 526.34s : 8618.16 words/s : L.r. 8.4800e-05
+[2019-05-05 06:20:00] Ep. 3 : Up. 89500 : Sen. 1,117,878 : Cost 23.65510559 : Time 509.25s : 8577.02 words/s : L.r. 8.4563e-05
+[2019-05-05 06:28:51] Ep. 3 : Up. 90000 : Sen. 1,595,186 : Cost 25.42749214 : Time 530.83s : 8723.51 words/s : L.r. 8.4327e-05
+[2019-05-05 06:28:51] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 06:29:07] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter90000.npz
+[2019-05-05 06:29:12] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 06:29:29] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 06:29:44] [valid] Ep. 3 : Up. 90000 : cross-entropy : 21.0566 : new best
+[2019-05-05 06:29:50] [valid] Ep. 3 : Up. 90000 : perplexity : 5.12293 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 06:31:09] [valid] Ep. 3 : Up. 90000 : translation : 33.19 : new best
+[2019-05-05 06:39:31] Ep. 3 : Up. 90500 : Sen. 2,052,223 : Cost 24.59792137 : Time 640.50s : 6680.76 words/s : L.r. 8.4094e-05
+[2019-05-05 06:48:16] Ep. 3 : Up. 91000 : Sen. 2,532,774 : Cost 24.98658562 : Time 525.00s : 8695.89 words/s : L.r. 8.3863e-05
+[2019-05-05 06:56:49] Ep. 3 : Up. 91500 : Sen. 2,997,008 : Cost 24.66263199 : Time 512.44s : 8523.84 words/s : L.r. 8.3633e-05
+[2019-05-05 07:05:29] Ep. 3 : Up. 92000 : Sen. 3,469,396 : Cost 25.08945274 : Time 520.04s : 8697.94 words/s : L.r. 8.3406e-05
+[2019-05-05 07:14:15] Ep. 3 : Up. 92500 : Sen. 3,945,219 : Cost 24.71435928 : Time 526.64s : 8477.95 words/s : L.r. 8.3180e-05
+[2019-05-05 07:22:49] Ep. 3 : Up. 93000 : Sen. 4,409,664 : Cost 24.79455566 : Time 513.39s : 8547.74 words/s : L.r. 8.2956e-05
+[2019-05-05 07:31:27] Ep. 3 : Up. 93500 : Sen. 4,878,815 : Cost 24.94479179 : Time 518.15s : 8610.60 words/s : L.r. 8.2734e-05
+[2019-05-05 07:40:10] Ep. 3 : Up. 94000 : Sen. 5,360,018 : Cost 24.78691673 : Time 522.58s : 8743.71 words/s : L.r. 8.2514e-05
+[2019-05-05 07:48:52] Ep. 3 : Up. 94500 : Sen. 5,844,797 : Cost 24.06332397 : Time 522.07s : 8564.58 words/s : L.r. 8.2295e-05
+[2019-05-05 07:57:32] Ep. 3 : Up. 95000 : Sen. 6,318,349 : Cost 24.67344856 : Time 520.57s : 8621.09 words/s : L.r. 8.2078e-05
+[2019-05-05 07:57:32] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 07:57:38] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter95000.npz
+[2019-05-05 07:57:42] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 07:57:49] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 07:58:03] [valid] Ep. 3 : Up. 95000 : cross-entropy : 20.9933 : new best
+[2019-05-05 07:58:09] [valid] Ep. 3 : Up. 95000 : perplexity : 5.09784 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 07:59:19] [valid] Ep. 3 : Up. 95000 : translation : 33.27 : new best
+[2019-05-05 08:07:59] Ep. 3 : Up. 95500 : Sen. 6,787,645 : Cost 25.19955063 : Time 626.42s : 7153.58 words/s : L.r. 8.1863e-05
+[2019-05-05 08:16:35] Ep. 3 : Up. 96000 : Sen. 7,258,682 : Cost 24.81405830 : Time 516.89s : 8585.61 words/s : L.r. 8.1650e-05
+[2019-05-05 08:25:02] Ep. 3 : Up. 96500 : Sen. 7,710,948 : Cost 25.21189499 : Time 506.85s : 8535.59 words/s : L.r. 8.1438e-05
+[2019-05-05 08:33:46] Ep. 3 : Up. 97000 : Sen. 8,189,098 : Cost 24.87889290 : Time 523.82s : 8720.67 words/s : L.r. 8.1228e-05
+[2019-05-05 08:42:22] Ep. 3 : Up. 97500 : Sen. 8,666,086 : Cost 24.35275459 : Time 516.19s : 8670.99 words/s : L.r. 8.1019e-05
+[2019-05-05 08:51:01] Ep. 3 : Up. 98000 : Sen. 9,142,186 : Cost 24.41542625 : Time 519.03s : 8535.09 words/s : L.r. 8.0812e-05
+[2019-05-05 08:59:44] Ep. 3 : Up. 98500 : Sen. 9,621,568 : Cost 24.49988937 : Time 523.05s : 8586.21 words/s : L.r. 8.0607e-05
+[2019-05-05 09:08:24] Ep. 3 : Up. 99000 : Sen. 10,093,948 : Cost 24.89192772 : Time 519.96s : 8628.09 words/s : L.r. 8.0403e-05
+[2019-05-05 09:16:57] Ep. 3 : Up. 99500 : Sen. 10,556,313 : Cost 25.22722435 : Time 512.83s : 8654.75 words/s : L.r. 8.0201e-05
+[2019-05-05 09:25:44] Ep. 3 : Up. 100000 : Sen. 11,033,000 : Cost 24.92912292 : Time 526.83s : 8621.48 words/s : L.r. 8.0000e-05
+[2019-05-05 09:25:44] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 09:25:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter100000.npz
+[2019-05-05 09:26:00] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 09:26:16] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 09:26:31] [valid] Ep. 3 : Up. 100000 : cross-entropy : 20.9161 : new best
+[2019-05-05 09:26:37] [valid] Ep. 3 : Up. 100000 : perplexity : 5.06742 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 09:27:51] [valid] Ep. 3 : Up. 100000 : translation : 33.46 : new best
+[2019-05-05 09:36:32] Ep. 3 : Up. 100500 : Sen. 11,506,069 : Cost 25.00383377 : Time 648.34s : 6946.40 words/s : L.r. 7.9801e-05
+[2019-05-05 09:45:07] Ep. 3 : Up. 101000 : Sen. 11,977,518 : Cost 24.27774620 : Time 514.56s : 8541.14 words/s : L.r. 7.9603e-05
+[2019-05-05 09:53:46] Ep. 3 : Up. 101500 : Sen. 12,464,018 : Cost 24.20228004 : Time 519.29s : 8699.70 words/s : L.r. 7.9407e-05
+[2019-05-05 10:02:32] Ep. 3 : Up. 102000 : Sen. 12,933,571 : Cost 25.16716194 : Time 525.84s : 8580.52 words/s : L.r. 7.9212e-05
+[2019-05-05 10:11:14] Ep. 3 : Up. 102500 : Sen. 13,403,731 : Cost 25.32534027 : Time 521.76s : 8700.57 words/s : L.r. 7.9018e-05
+[2019-05-05 10:19:53] Ep. 3 : Up. 103000 : Sen. 13,883,639 : Cost 24.03396416 : Time 518.95s : 8497.63 words/s : L.r. 7.8826e-05
+[2019-05-05 10:28:13] Ep. 3 : Up. 103500 : Sen. 14,332,680 : Cost 24.75472641 : Time 500.14s : 8519.53 words/s : L.r. 7.8636e-05
+[2019-05-05 10:37:07] Ep. 3 : Up. 104000 : Sen. 14,825,910 : Cost 24.42293167 : Time 533.74s : 8663.18 words/s : L.r. 7.8446e-05
+[2019-05-05 10:45:52] Ep. 3 : Up. 104500 : Sen. 15,296,791 : Cost 25.24579430 : Time 525.22s : 8616.53 words/s : L.r. 7.8259e-05
+[2019-05-05 10:54:25] Ep. 3 : Up. 105000 : Sen. 15,765,721 : Cost 24.52655602 : Time 513.09s : 8602.07 words/s : L.r. 7.8072e-05
+[2019-05-05 10:54:25] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 10:54:31] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter105000.npz
+[2019-05-05 10:54:35] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 10:54:48] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 10:55:03] [valid] Ep. 3 : Up. 105000 : cross-entropy : 20.8449 : new best
+[2019-05-05 10:55:09] [valid] Ep. 3 : Up. 105000 : perplexity : 5.0395 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 10:56:27] [valid] Ep. 3 : Up. 105000 : translation : 33.54 : new best
+[2019-05-05 11:05:04] Ep. 3 : Up. 105500 : Sen. 16,240,760 : Cost 24.40044975 : Time 639.03s : 6902.46 words/s : L.r. 7.7887e-05
+[2019-05-05 11:13:29] Ep. 3 : Up. 106000 : Sen. 16,695,821 : Cost 24.95613289 : Time 505.24s : 8586.75 words/s : L.r. 7.7703e-05
+[2019-05-05 11:22:25] Ep. 3 : Up. 106500 : Sen. 17,184,796 : Cost 24.65516090 : Time 535.75s : 8642.81 words/s : L.r. 7.7520e-05
+[2019-05-05 11:31:00] Ep. 3 : Up. 107000 : Sen. 17,651,343 : Cost 24.80190659 : Time 515.46s : 8620.14 words/s : L.r. 7.7339e-05
+[2019-05-05 11:39:30] Ep. 3 : Up. 107500 : Sen. 18,115,110 : Cost 24.83934212 : Time 509.13s : 8660.16 words/s : L.r. 7.7159e-05
+[2019-05-05 11:48:10] Ep. 3 : Up. 108000 : Sen. 18,592,615 : Cost 24.51749039 : Time 520.29s : 8614.61 words/s : L.r. 7.6980e-05
+[2019-05-05 11:56:52] Ep. 3 : Up. 108500 : Sen. 19,068,329 : Cost 24.70054817 : Time 522.31s : 8621.74 words/s : L.r. 7.6802e-05
+[2019-05-05 12:05:27] Ep. 3 : Up. 109000 : Sen. 19,539,287 : Cost 24.60171890 : Time 514.96s : 8619.21 words/s : L.r. 7.6626e-05
+[2019-05-05 12:14:02] Ep. 3 : Up. 109500 : Sen. 20,007,661 : Cost 24.81454086 : Time 515.31s : 8645.68 words/s : L.r. 7.6451e-05
+[2019-05-05 12:22:38] Ep. 3 : Up. 110000 : Sen. 20,493,705 : Cost 23.77320480 : Time 515.74s : 8588.17 words/s : L.r. 7.6277e-05
+[2019-05-05 12:22:38] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 12:22:48] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter110000.npz
+[2019-05-05 12:22:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 12:23:10] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 12:23:26] [valid] Ep. 3 : Up. 110000 : cross-entropy : 20.7759 : new best
+[2019-05-05 12:23:32] [valid] Ep. 3 : Up. 110000 : perplexity : 5.01258 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 12:24:43] [valid] Ep. 3 : Up. 110000 : translation : 33.65 : new best
+[2019-05-05 12:33:27] Ep. 3 : Up. 110500 : Sen. 20,952,735 : Cost 25.86617470 : Time 648.37s : 6995.66 words/s : L.r. 7.6104e-05
+[2019-05-05 12:42:02] Ep. 3 : Up. 111000 : Sen. 21,439,185 : Cost 23.40660286 : Time 515.60s : 8579.56 words/s : L.r. 7.5933e-05
+[2019-05-05 12:50:44] Ep. 3 : Up. 111500 : Sen. 21,910,935 : Cost 24.97763634 : Time 521.91s : 8608.00 words/s : L.r. 7.5762e-05
+[2019-05-05 12:59:25] Ep. 3 : Up. 112000 : Sen. 22,372,654 : Cost 25.42657852 : Time 521.24s : 8662.88 words/s : L.r. 7.5593e-05
+[2019-05-05 13:08:01] Ep. 3 : Up. 112500 : Sen. 22,839,875 : Cost 24.66351891 : Time 515.47s : 8510.38 words/s : L.r. 7.5425e-05
+[2019-05-05 13:16:35] Ep. 3 : Up. 113000 : Sen. 23,309,408 : Cost 24.44992828 : Time 514.60s : 8557.57 words/s : L.r. 7.5258e-05
+[2019-05-05 13:25:13] Ep. 3 : Up. 113500 : Sen. 23,781,768 : Cost 24.44095039 : Time 517.95s : 8548.58 words/s : L.r. 7.5092e-05
+[2019-05-05 13:33:59] Ep. 3 : Up. 114000 : Sen. 24,254,339 : Cost 25.08102608 : Time 525.53s : 8632.14 words/s : L.r. 7.4927e-05
+[2019-05-05 13:42:49] Ep. 3 : Up. 114500 : Sen. 24,745,229 : Cost 24.32017899 : Time 530.60s : 8674.74 words/s : L.r. 7.4763e-05
+[2019-05-05 13:51:22] Ep. 3 : Up. 115000 : Sen. 25,200,529 : Cost 25.02617455 : Time 512.13s : 8510.66 words/s : L.r. 7.4600e-05
+[2019-05-05 13:51:22] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 13:51:33] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter115000.npz
+[2019-05-05 13:51:37] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 13:51:52] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 13:52:08] [valid] Ep. 3 : Up. 115000 : cross-entropy : 20.7012 : new best
+[2019-05-05 13:52:13] [valid] Ep. 3 : Up. 115000 : perplexity : 4.98361 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 13:53:29] [valid] Ep. 3 : Up. 115000 : translation : 33.66 : new best
+[2019-05-05 14:02:06] Ep. 3 : Up. 115500 : Sen. 25,673,790 : Cost 24.31851196 : Time 644.16s : 6848.19 words/s : L.r. 7.4439e-05
+[2019-05-05 14:10:49] Ep. 3 : Up. 116000 : Sen. 26,145,176 : Cost 24.87693596 : Time 523.36s : 8605.79 words/s : L.r. 7.4278e-05
+[2019-05-05 14:19:27] Ep. 3 : Up. 116500 : Sen. 26,611,694 : Cost 25.00693130 : Time 517.51s : 8644.62 words/s : L.r. 7.4119e-05
+[2019-05-05 14:28:16] Ep. 3 : Up. 117000 : Sen. 27,089,413 : Cost 24.47330093 : Time 529.50s : 8473.65 words/s : L.r. 7.3960e-05
+[2019-05-05 14:37:00] Ep. 3 : Up. 117500 : Sen. 27,563,514 : Cost 24.64266396 : Time 524.20s : 8535.93 words/s : L.r. 7.3802e-05
+[2019-05-05 14:45:40] Ep. 3 : Up. 118000 : Sen. 28,040,810 : Cost 24.47893715 : Time 519.63s : 8702.28 words/s : L.r. 7.3646e-05
+[2019-05-05 14:54:29] Ep. 3 : Up. 118500 : Sen. 28,537,136 : Cost 23.85597420 : Time 528.79s : 8684.14 words/s : L.r. 7.3490e-05
+[2019-05-05 15:02:56] Ep. 3 : Up. 119000 : Sen. 28,986,446 : Cost 25.33226013 : Time 507.36s : 8531.39 words/s : L.r. 7.3336e-05
+[2019-05-05 15:11:33] Ep. 3 : Up. 119500 : Sen. 29,465,198 : Cost 24.24958801 : Time 516.80s : 8638.51 words/s : L.r. 7.3182e-05
+[2019-05-05 15:20:14] Ep. 3 : Up. 120000 : Sen. 29,935,262 : Cost 24.84339142 : Time 521.52s : 8610.34 words/s : L.r. 7.3030e-05
+[2019-05-05 15:20:14] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 15:20:26] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter120000.npz
+[2019-05-05 15:20:31] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 15:20:53] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 15:21:10] [valid] Ep. 3 : Up. 120000 : cross-entropy : 20.6418 : new best
+[2019-05-05 15:21:16] [valid] Ep. 3 : Up. 120000 : perplexity : 4.96069 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 15:22:29] [valid] Ep. 3 : Up. 120000 : translation : 33.79 : new best
+[2019-05-05 15:31:03] Ep. 3 : Up. 120500 : Sen. 30,414,604 : Cost 23.84933853 : Time 648.50s : 6812.59 words/s : L.r. 7.2878e-05
+[2019-05-05 15:39:46] Ep. 3 : Up. 121000 : Sen. 30,884,377 : Cost 24.97551727 : Time 523.47s : 8587.16 words/s : L.r. 7.2727e-05
+[2019-05-05 15:48:25] Ep. 3 : Up. 121500 : Sen. 31,347,434 : Cost 25.15143585 : Time 518.29s : 8588.27 words/s : L.r. 7.2577e-05
+[2019-05-05 15:57:07] Ep. 3 : Up. 122000 : Sen. 31,841,053 : Cost 23.66706085 : Time 522.61s : 8629.30 words/s : L.r. 7.2429e-05
+[2019-05-05 16:05:43] Ep. 3 : Up. 122500 : Sen. 32,293,529 : Cost 25.39326668 : Time 515.54s : 8571.98 words/s : L.r. 7.2281e-05
+[2019-05-05 16:14:34] Ep. 3 : Up. 123000 : Sen. 32,784,386 : Cost 24.40583038 : Time 531.19s : 8696.08 words/s : L.r. 7.2134e-05
+[2019-05-05 16:23:10] Ep. 3 : Up. 123500 : Sen. 33,239,331 : Cost 25.79477692 : Time 516.02s : 8632.84 words/s : L.r. 7.1987e-05
+[2019-05-05 16:31:50] Ep. 3 : Up. 124000 : Sen. 33,725,184 : Cost 23.66322517 : Time 519.44s : 8605.59 words/s : L.r. 7.1842e-05
+[2019-05-05 16:40:28] Ep. 3 : Up. 124500 : Sen. 34,203,506 : Cost 24.14541245 : Time 518.16s : 8588.53 words/s : L.r. 7.1698e-05
+[2019-05-05 16:49:15] Ep. 3 : Up. 125000 : Sen. 34,680,266 : Cost 24.91294479 : Time 526.86s : 8673.39 words/s : L.r. 7.1554e-05
+[2019-05-05 16:49:15] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 16:49:26] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter125000.npz
+[2019-05-05 16:49:32] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 16:49:46] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 16:50:04] [valid] Ep. 3 : Up. 125000 : cross-entropy : 20.5885 : new best
+[2019-05-05 16:50:10] [valid] Ep. 3 : Up. 125000 : perplexity : 4.94024 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 16:51:34] [valid] Ep. 3 : Up. 125000 : translation : 33.73 : stalled 1 times (last best: 33.79)
+[2019-05-05 17:00:05] Ep. 3 : Up. 125500 : Sen. 35,150,986 : Cost 23.92392731 : Time 650.24s : 6672.59 words/s : L.r. 7.1411e-05
+[2019-05-05 17:08:42] Ep. 3 : Up. 126000 : Sen. 35,616,875 : Cost 24.90914345 : Time 517.20s : 8574.10 words/s : L.r. 7.1270e-05
+[2019-05-05 17:17:25] Ep. 3 : Up. 126500 : Sen. 36,088,356 : Cost 24.77513695 : Time 523.20s : 8661.61 words/s : L.r. 7.1129e-05
+[2019-05-05 17:26:06] Ep. 3 : Up. 127000 : Sen. 36,554,998 : Cost 24.75698090 : Time 521.23s : 8547.41 words/s : L.r. 7.0989e-05
+[2019-05-05 17:34:52] Ep. 3 : Up. 127500 : Sen. 37,041,064 : Cost 24.21096992 : Time 525.38s : 8607.91 words/s : L.r. 7.0849e-05
+[2019-05-05 17:43:26] Ep. 3 : Up. 128000 : Sen. 37,509,800 : Cost 24.41879272 : Time 514.20s : 8600.61 words/s : L.r. 7.0711e-05
+[2019-05-05 17:52:02] Ep. 3 : Up. 128500 : Sen. 37,977,027 : Cost 24.93929100 : Time 515.98s : 8672.37 words/s : L.r. 7.0573e-05
+[2019-05-05 18:00:50] Ep. 3 : Up. 129000 : Sen. 38,483,713 : Cost 23.35694885 : Time 528.48s : 8727.26 words/s : L.r. 7.0436e-05
+[2019-05-05 18:09:17] Ep. 3 : Up. 129500 : Sen. 38,928,786 : Cost 25.64703369 : Time 506.10s : 8577.15 words/s : L.r. 7.0300e-05
+[2019-05-05 18:17:58] Ep. 3 : Up. 130000 : Sen. 39,406,833 : Cost 24.40731812 : Time 521.42s : 8645.39 words/s : L.r. 7.0165e-05
+[2019-05-05 18:17:58] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 18:18:03] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter130000.npz
+[2019-05-05 18:18:07] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 18:18:28] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 18:18:43] [valid] Ep. 3 : Up. 130000 : cross-entropy : 20.5375 : new best
+[2019-05-05 18:18:48] [valid] Ep. 3 : Up. 130000 : perplexity : 4.92071 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 18:20:12] [valid] Ep. 3 : Up. 130000 : translation : 33.64 : stalled 2 times (last best: 33.79)
+[2019-05-05 18:28:42] Ep. 3 : Up. 130500 : Sen. 39,863,942 : Cost 25.06088066 : Time 644.12s : 6830.46 words/s : L.r. 7.0030e-05
+[2019-05-05 18:37:19] Ep. 3 : Up. 131000 : Sen. 40,337,514 : Cost 24.51034355 : Time 516.98s : 8607.54 words/s : L.r. 6.9896e-05
+[2019-05-05 18:46:15] Ep. 3 : Up. 131500 : Sen. 40,812,196 : Cost 24.37324715 : Time 535.62s : 8321.38 words/s : L.r. 6.9763e-05
+[2019-05-05 18:54:51] Ep. 3 : Up. 132000 : Sen. 41,285,259 : Cost 24.12520409 : Time 515.83s : 8599.93 words/s : L.r. 6.9631e-05
+[2019-05-05 19:02:50] Seen 41709169 samples
+[2019-05-05 19:02:50] Starting epoch 4
+[2019-05-05 19:02:50] [data] Shuffling data
+[2019-05-05 19:04:09] [data] Done reading 41736982 sentences
+[2019-05-05 19:07:41] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-05 19:08:38] Ep. 4 : Up. 132500 : Sen. 21,423 : Cost 24.86503220 : Time 826.82s : 5144.19 words/s : L.r. 6.9500e-05
+[2019-05-05 19:17:05] Ep. 4 : Up. 133000 : Sen. 480,556 : Cost 24.53618050 : Time 507.37s : 8576.75 words/s : L.r. 6.9369e-05
+[2019-05-05 19:25:45] Ep. 4 : Up. 133500 : Sen. 959,682 : Cost 24.14691734 : Time 519.62s : 8645.90 words/s : L.r. 6.9239e-05
+[2019-05-05 19:34:37] Ep. 4 : Up. 134000 : Sen. 1,444,934 : Cost 24.89163780 : Time 532.18s : 8784.09 words/s : L.r. 6.9109e-05
+[2019-05-05 19:43:08] Ep. 4 : Up. 134500 : Sen. 1,920,914 : Cost 23.66614151 : Time 511.44s : 8555.64 words/s : L.r. 6.8981e-05
+[2019-05-05 19:51:36] Ep. 4 : Up. 135000 : Sen. 2,382,107 : Cost 24.70649529 : Time 508.31s : 8650.59 words/s : L.r. 6.8853e-05
+[2019-05-05 19:51:36] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 19:51:47] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter135000.npz
+[2019-05-05 19:51:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 19:52:13] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 19:52:27] [valid] Ep. 4 : Up. 135000 : cross-entropy : 20.4997 : new best
+[2019-05-05 19:52:33] [valid] Ep. 4 : Up. 135000 : perplexity : 4.9063 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 19:53:53] [valid] Ep. 4 : Up. 135000 : translation : 33.74 : stalled 3 times (last best: 33.79)
+[2019-05-05 20:02:35] Ep. 4 : Up. 135500 : Sen. 2,866,128 : Cost 23.86772537 : Time 658.94s : 6831.13 words/s : L.r. 6.8726e-05
+[2019-05-05 20:11:21] Ep. 4 : Up. 136000 : Sen. 3,338,086 : Cost 25.17210579 : Time 525.21s : 8715.58 words/s : L.r. 6.8599e-05
+[2019-05-05 20:19:57] Ep. 4 : Up. 136500 : Sen. 3,803,614 : Cost 24.72997475 : Time 516.73s : 8625.35 words/s : L.r. 6.8474e-05
+[2019-05-05 20:28:21] Ep. 4 : Up. 137000 : Sen. 4,253,631 : Cost 25.15291214 : Time 504.01s : 8636.39 words/s : L.r. 6.8349e-05
+[2019-05-05 20:37:03] Ep. 4 : Up. 137500 : Sen. 4,734,042 : Cost 24.32848930 : Time 521.56s : 8682.48 words/s : L.r. 6.8224e-05
+[2019-05-05 20:45:47] Ep. 4 : Up. 138000 : Sen. 5,221,330 : Cost 23.70446968 : Time 523.63s : 8638.30 words/s : L.r. 6.8101e-05
+[2019-05-05 20:54:23] Ep. 4 : Up. 138500 : Sen. 5,690,764 : Cost 24.67363930 : Time 516.10s : 8640.12 words/s : L.r. 6.7977e-05
+[2019-05-05 21:02:58] Ep. 4 : Up. 139000 : Sen. 6,162,333 : Cost 24.35115814 : Time 515.00s : 8652.37 words/s : L.r. 6.7855e-05
+[2019-05-05 21:11:23] Ep. 4 : Up. 139500 : Sen. 6,606,098 : Cost 25.39424896 : Time 505.21s : 8552.06 words/s : L.r. 6.7733e-05
+[2019-05-05 21:20:10] Ep. 4 : Up. 140000 : Sen. 7,102,985 : Cost 23.71302414 : Time 526.73s : 8729.13 words/s : L.r. 6.7612e-05
+[2019-05-05 21:20:10] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 21:20:27] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter140000.npz
+[2019-05-05 21:20:34] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 21:20:59] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 21:21:22] [valid] Ep. 4 : Up. 140000 : cross-entropy : 20.4591 : new best
+[2019-05-05 21:21:28] [valid] Ep. 4 : Up. 140000 : perplexity : 4.89088 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 21:23:01] [valid] Ep. 4 : Up. 140000 : translation : 33.81 : new best
+[2019-05-05 21:31:49] Ep. 4 : Up. 140500 : Sen. 7,599,733 : Cost 23.57766533 : Time 699.35s : 6484.95 words/s : L.r. 6.7492e-05
+[2019-05-05 21:40:18] Ep. 4 : Up. 141000 : Sen. 8,064,353 : Cost 24.50662613 : Time 509.10s : 8688.35 words/s : L.r. 6.7372e-05
+[2019-05-05 21:48:50] Ep. 4 : Up. 141500 : Sen. 8,523,681 : Cost 24.67056274 : Time 512.37s : 8577.50 words/s : L.r. 6.7253e-05
+[2019-05-05 21:57:36] Ep. 4 : Up. 142000 : Sen. 9,007,378 : Cost 24.42443657 : Time 525.22s : 8701.61 words/s : L.r. 6.7135e-05
+[2019-05-05 22:06:18] Ep. 4 : Up. 142500 : Sen. 9,479,147 : Cost 24.64951706 : Time 522.69s : 8611.40 words/s : L.r. 6.7017e-05
+[2019-05-05 22:14:52] Ep. 4 : Up. 143000 : Sen. 9,945,055 : Cost 24.85921478 : Time 514.02s : 8703.92 words/s : L.r. 6.6899e-05
+[2019-05-05 22:23:32] Ep. 4 : Up. 143500 : Sen. 10,425,646 : Cost 23.93938637 : Time 519.66s : 8584.93 words/s : L.r. 6.6783e-05
+[2019-05-05 22:32:05] Ep. 4 : Up. 144000 : Sen. 10,897,516 : Cost 24.31419945 : Time 513.35s : 8653.61 words/s : L.r. 6.6667e-05
+[2019-05-05 22:40:40] Ep. 4 : Up. 144500 : Sen. 11,367,591 : Cost 24.42282104 : Time 515.08s : 8624.99 words/s : L.r. 6.6551e-05
+[2019-05-05 22:49:16] Ep. 4 : Up. 145000 : Sen. 11,852,477 : Cost 23.65674019 : Time 515.04s : 8695.91 words/s : L.r. 6.6436e-05
+[2019-05-05 22:49:16] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-05 22:49:20] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter145000.npz
+[2019-05-05 22:49:23] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-05 22:49:28] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-05 22:49:41] [valid] Ep. 4 : Up. 145000 : cross-entropy : 20.4214 : new best
+[2019-05-05 22:49:47] [valid] Ep. 4 : Up. 145000 : perplexity : 4.87657 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-05 22:51:11] [valid] Ep. 4 : Up. 145000 : translation : 33.81 : stalled 1 times (last best: 33.81)
+[2019-05-05 22:59:40] Ep. 4 : Up. 145500 : Sen. 12,292,368 : Cost 25.63763046 : Time 624.27s : 6939.80 words/s : L.r. 6.6322e-05
+[2019-05-05 23:08:26] Ep. 4 : Up. 146000 : Sen. 12,787,729 : Cost 23.81036568 : Time 526.50s : 8689.49 words/s : L.r. 6.6208e-05
+[2019-05-05 23:17:11] Ep. 4 : Up. 146500 : Sen. 13,261,829 : Cost 24.72969055 : Time 525.00s : 8721.83 words/s : L.r. 6.6095e-05
+[2019-05-05 23:25:56] Ep. 4 : Up. 147000 : Sen. 13,748,289 : Cost 24.02798080 : Time 524.35s : 8685.51 words/s : L.r. 6.5983e-05
+[2019-05-05 23:34:22] Ep. 4 : Up. 147500 : Sen. 14,212,681 : Cost 24.09905243 : Time 506.15s : 8533.64 words/s : L.r. 6.5871e-05
+[2019-05-05 23:43:02] Ep. 4 : Up. 148000 : Sen. 14,679,395 : Cost 25.25698853 : Time 520.46s : 8753.96 words/s : L.r. 6.5760e-05
+[2019-05-05 23:51:31] Ep. 4 : Up. 148500 : Sen. 15,149,797 : Cost 23.81823158 : Time 508.27s : 8566.82 words/s : L.r. 6.5649e-05
+[2019-05-06 00:00:14] Ep. 4 : Up. 149000 : Sen. 15,630,295 : Cost 24.40757179 : Time 523.21s : 8685.64 words/s : L.r. 6.5539e-05
+[2019-05-06 00:08:43] Ep. 4 : Up. 149500 : Sen. 16,092,538 : Cost 24.74489403 : Time 508.88s : 8692.77 words/s : L.r. 6.5429e-05
+[2019-05-06 00:17:10] Ep. 4 : Up. 150000 : Sen. 16,566,630 : Cost 23.77812386 : Time 507.45s : 8615.65 words/s : L.r. 6.5320e-05
+[2019-05-06 00:17:10] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 00:17:14] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter150000.npz
+[2019-05-06 00:17:18] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 00:17:22] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 00:17:35] [valid] Ep. 4 : Up. 150000 : cross-entropy : 20.3845 : new best
+[2019-05-06 00:17:41] [valid] Ep. 4 : Up. 150000 : perplexity : 4.86263 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 00:18:58] [valid] Ep. 4 : Up. 150000 : translation : 33.98 : new best
+[2019-05-06 00:27:37] Ep. 4 : Up. 150500 : Sen. 17,035,020 : Cost 24.85409927 : Time 626.75s : 7223.17 words/s : L.r. 6.5211e-05
+[2019-05-06 00:36:10] Ep. 4 : Up. 151000 : Sen. 17,497,514 : Cost 24.64294243 : Time 513.17s : 8602.69 words/s : L.r. 6.5103e-05
+[2019-05-06 00:44:44] Ep. 4 : Up. 151500 : Sen. 17,981,708 : Cost 23.78356171 : Time 514.09s : 8684.54 words/s : L.r. 6.4996e-05
+[2019-05-06 00:53:17] Ep. 4 : Up. 152000 : Sen. 18,462,065 : Cost 23.48664093 : Time 513.28s : 8566.19 words/s : L.r. 6.4889e-05
+[2019-05-06 01:01:56] Ep. 4 : Up. 152500 : Sen. 18,923,730 : Cost 25.42092705 : Time 518.88s : 8733.52 words/s : L.r. 6.4782e-05
+[2019-05-06 01:10:24] Ep. 4 : Up. 153000 : Sen. 19,407,881 : Cost 22.99212837 : Time 507.75s : 8551.24 words/s : L.r. 6.4676e-05
+[2019-05-06 01:18:58] Ep. 4 : Up. 153500 : Sen. 19,858,227 : Cost 25.83011436 : Time 514.34s : 8691.23 words/s : L.r. 6.4571e-05
+[2019-05-06 01:27:51] Ep. 4 : Up. 154000 : Sen. 20,351,582 : Cost 24.09292412 : Time 532.76s : 8709.77 words/s : L.r. 6.4466e-05
+[2019-05-06 01:36:24] Ep. 4 : Up. 154500 : Sen. 20,816,200 : Cost 24.76938438 : Time 512.89s : 8670.81 words/s : L.r. 6.4361e-05
+[2019-05-06 01:44:52] Ep. 4 : Up. 155000 : Sen. 21,284,497 : Cost 24.02017403 : Time 508.35s : 8602.95 words/s : L.r. 6.4258e-05
+[2019-05-06 01:44:52] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 01:44:57] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter155000.npz
+[2019-05-06 01:45:00] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 01:45:05] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 01:45:19] [valid] Ep. 4 : Up. 155000 : cross-entropy : 20.3564 : new best
+[2019-05-06 01:45:25] [valid] Ep. 4 : Up. 155000 : perplexity : 4.85206 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 01:46:47] [valid] Ep. 4 : Up. 155000 : translation : 33.81 : stalled 1 times (last best: 33.98)
+[2019-05-06 01:55:25] Ep. 4 : Up. 155500 : Sen. 21,757,716 : Cost 24.58015442 : Time 632.28s : 7161.66 words/s : L.r. 6.4154e-05
+[2019-05-06 02:03:57] Ep. 4 : Up. 156000 : Sen. 22,220,430 : Cost 24.45933533 : Time 512.12s : 8503.65 words/s : L.r. 6.4051e-05
+[2019-05-06 02:12:29] Ep. 4 : Up. 156500 : Sen. 22,705,328 : Cost 23.42202759 : Time 512.39s : 8674.07 words/s : L.r. 6.3949e-05
+[2019-05-06 02:21:10] Ep. 4 : Up. 157000 : Sen. 23,177,187 : Cost 25.00638580 : Time 521.32s : 8765.88 words/s : L.r. 6.3847e-05
+[2019-05-06 02:29:55] Ep. 4 : Up. 157500 : Sen. 23,653,763 : Cost 24.78465462 : Time 525.02s : 8760.24 words/s : L.r. 6.3746e-05
+[2019-05-06 02:38:21] Ep. 4 : Up. 158000 : Sen. 24,116,549 : Cost 24.21985245 : Time 505.87s : 8573.35 words/s : L.r. 6.3645e-05
+[2019-05-06 02:47:01] Ep. 4 : Up. 158500 : Sen. 24,598,580 : Cost 24.07748413 : Time 519.75s : 8729.42 words/s : L.r. 6.3544e-05
+[2019-05-06 02:55:33] Ep. 4 : Up. 159000 : Sen. 25,062,275 : Cost 24.61533928 : Time 511.45s : 8608.65 words/s : L.r. 6.3444e-05
+[2019-05-06 03:04:06] Ep. 4 : Up. 159500 : Sen. 25,534,871 : Cost 23.98796082 : Time 513.77s : 8550.22 words/s : L.r. 6.3345e-05
+[2019-05-06 03:12:45] Ep. 4 : Up. 160000 : Sen. 26,004,768 : Cost 24.64663696 : Time 518.40s : 8714.69 words/s : L.r. 6.3246e-05
+[2019-05-06 03:12:45] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 03:12:49] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter160000.npz
+[2019-05-06 03:12:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 03:12:57] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 03:13:11] [valid] Ep. 4 : Up. 160000 : cross-entropy : 20.3291 : new best
+[2019-05-06 03:13:17] [valid] Ep. 4 : Up. 160000 : perplexity : 4.8418 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 03:14:41] [valid] Ep. 4 : Up. 160000 : translation : 33.89 : stalled 2 times (last best: 33.98)
+[2019-05-06 03:23:26] Ep. 4 : Up. 160500 : Sen. 26,496,211 : Cost 23.77644730 : Time 641.17s : 7109.85 words/s : L.r. 6.3147e-05
+[2019-05-06 03:31:57] Ep. 4 : Up. 161000 : Sen. 26,953,321 : Cost 24.95890045 : Time 511.28s : 8636.16 words/s : L.r. 6.3049e-05
+[2019-05-06 03:40:26] Ep. 4 : Up. 161500 : Sen. 27,419,272 : Cost 24.15406036 : Time 509.08s : 8552.49 words/s : L.r. 6.2951e-05
+[2019-05-06 03:49:14] Ep. 4 : Up. 162000 : Sen. 27,902,610 : Cost 24.41560936 : Time 527.58s : 8709.12 words/s : L.r. 6.2854e-05
+[2019-05-06 03:57:36] Ep. 4 : Up. 162500 : Sen. 28,340,547 : Cost 25.90408134 : Time 501.80s : 8683.26 words/s : L.r. 6.2757e-05
+[2019-05-06 04:06:20] Ep. 4 : Up. 163000 : Sen. 28,837,180 : Cost 23.15698433 : Time 524.11s : 8614.94 words/s : L.r. 6.2661e-05
+[2019-05-06 04:15:01] Ep. 4 : Up. 163500 : Sen. 29,325,608 : Cost 23.99396515 : Time 521.49s : 8822.97 words/s : L.r. 6.2565e-05
+[2019-05-06 04:23:32] Ep. 4 : Up. 164000 : Sen. 29,797,157 : Cost 23.99451637 : Time 511.09s : 8605.63 words/s : L.r. 6.2470e-05
+[2019-05-06 04:32:14] Ep. 4 : Up. 164500 : Sen. 30,272,479 : Cost 24.42251778 : Time 521.76s : 8583.73 words/s : L.r. 6.2374e-05
+[2019-05-06 04:40:43] Ep. 4 : Up. 165000 : Sen. 30,730,674 : Cost 25.05420494 : Time 509.23s : 8729.90 words/s : L.r. 6.2280e-05
+[2019-05-06 04:40:43] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 04:40:48] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter165000.npz
+[2019-05-06 04:40:51] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 04:40:55] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 04:41:08] [valid] Ep. 4 : Up. 165000 : cross-entropy : 20.2942 : new best
+[2019-05-06 04:41:14] [valid] Ep. 4 : Up. 165000 : perplexity : 4.82871 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 04:42:39] [valid] Ep. 4 : Up. 165000 : translation : 33.87 : stalled 3 times (last best: 33.98)
+[2019-05-06 04:51:15] Ep. 4 : Up. 165500 : Sen. 31,215,396 : Cost 23.68435669 : Time 631.61s : 7112.57 words/s : L.r. 6.2186e-05
+[2019-05-06 04:59:45] Ep. 4 : Up. 166000 : Sen. 31,680,319 : Cost 24.21750832 : Time 510.05s : 8558.76 words/s : L.r. 6.2092e-05
+[2019-05-06 05:08:24] Ep. 4 : Up. 166500 : Sen. 32,152,597 : Cost 24.68815613 : Time 519.51s : 8694.83 words/s : L.r. 6.1999e-05
+[2019-05-06 05:17:02] Ep. 4 : Up. 167000 : Sen. 32,635,015 : Cost 23.63237762 : Time 518.01s : 8590.50 words/s : L.r. 6.1906e-05
+[2019-05-06 05:25:37] Ep. 4 : Up. 167500 : Sen. 33,095,338 : Cost 25.38622093 : Time 515.02s : 8769.14 words/s : L.r. 6.1813e-05
+[2019-05-06 05:34:12] Ep. 4 : Up. 168000 : Sen. 33,567,445 : Cost 23.96026230 : Time 514.50s : 8602.63 words/s : L.r. 6.1721e-05
+[2019-05-06 05:42:53] Ep. 4 : Up. 168500 : Sen. 34,042,528 : Cost 24.69060135 : Time 521.05s : 8729.07 words/s : L.r. 6.1630e-05
+[2019-05-06 05:51:18] Ep. 4 : Up. 169000 : Sen. 34,494,871 : Cost 24.74230194 : Time 505.23s : 8543.87 words/s : L.r. 6.1538e-05
+[2019-05-06 05:59:59] Ep. 4 : Up. 169500 : Sen. 34,984,531 : Cost 23.58219719 : Time 521.05s : 8698.33 words/s : L.r. 6.1448e-05
+[2019-05-06 06:08:30] Ep. 4 : Up. 170000 : Sen. 35,447,089 : Cost 24.36378479 : Time 511.12s : 8602.41 words/s : L.r. 6.1357e-05
+[2019-05-06 06:08:30] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 06:08:34] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter170000.npz
+[2019-05-06 06:08:38] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 06:08:42] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 06:08:55] [valid] Ep. 4 : Up. 170000 : cross-entropy : 20.259 : new best
+[2019-05-06 06:09:01] [valid] Ep. 4 : Up. 170000 : perplexity : 4.81553 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 06:10:16] [valid] Ep. 4 : Up. 170000 : translation : 33.79 : stalled 4 times (last best: 33.98)
+[2019-05-06 06:18:55] Ep. 4 : Up. 170500 : Sen. 35,925,758 : Cost 24.26422691 : Time 625.00s : 7215.17 words/s : L.r. 6.1267e-05
+[2019-05-06 06:27:28] Ep. 4 : Up. 171000 : Sen. 36,381,420 : Cost 25.20110703 : Time 512.76s : 8651.33 words/s : L.r. 6.1178e-05
+[2019-05-06 06:36:09] Ep. 4 : Up. 171500 : Sen. 36,876,446 : Cost 23.42514038 : Time 520.72s : 8683.69 words/s : L.r. 6.1088e-05
+[2019-05-06 06:44:36] Ep. 4 : Up. 172000 : Sen. 37,344,121 : Cost 23.82413292 : Time 507.11s : 8556.47 words/s : L.r. 6.0999e-05
+[2019-05-06 06:53:12] Ep. 4 : Up. 172500 : Sen. 37,805,158 : Cost 25.18627167 : Time 515.72s : 8760.48 words/s : L.r. 6.0911e-05
+[2019-05-06 07:01:50] Ep. 4 : Up. 173000 : Sen. 38,297,026 : Cost 23.12011147 : Time 518.14s : 8623.55 words/s : L.r. 6.0823e-05
+[2019-05-06 07:10:29] Ep. 4 : Up. 173500 : Sen. 38,768,227 : Cost 24.81392097 : Time 519.34s : 8715.39 words/s : L.r. 6.0735e-05
+[2019-05-06 07:19:07] Ep. 4 : Up. 174000 : Sen. 39,241,599 : Cost 24.29926300 : Time 517.38s : 8661.11 words/s : L.r. 6.0648e-05
+[2019-05-06 07:27:37] Ep. 4 : Up. 174500 : Sen. 39,702,080 : Cost 24.56775665 : Time 510.39s : 8577.51 words/s : L.r. 6.0561e-05
+[2019-05-06 07:36:16] Ep. 4 : Up. 175000 : Sen. 40,178,165 : Cost 24.41943550 : Time 519.04s : 8730.86 words/s : L.r. 6.0474e-05
+[2019-05-06 07:36:16] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 07:36:20] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter175000.npz
+[2019-05-06 07:36:23] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 07:36:28] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 07:36:41] [valid] Ep. 4 : Up. 175000 : cross-entropy : 20.235 : new best
+[2019-05-06 07:36:46] [valid] Ep. 4 : Up. 175000 : perplexity : 4.80656 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 07:38:00] [valid] Ep. 4 : Up. 175000 : translation : 33.81 : stalled 5 times (last best: 33.98)
+[2019-05-06 07:46:40] Ep. 4 : Up. 175500 : Sen. 40,640,344 : Cost 25.02220345 : Time 623.78s : 7188.62 words/s : L.r. 6.0388e-05
+[2019-05-06 07:55:11] Ep. 4 : Up. 176000 : Sen. 41,121,602 : Cost 23.34628487 : Time 510.92s : 8653.43 words/s : L.r. 6.0302e-05
+[2019-05-06 08:03:28] Ep. 4 : Up. 176500 : Sen. 41,562,180 : Cost 24.65496635 : Time 497.60s : 8458.91 words/s : L.r. 6.0217e-05
+[2019-05-06 08:06:10] Seen 41709169 samples
+[2019-05-06 08:06:10] Starting epoch 5
+[2019-05-06 08:06:10] [data] Shuffling data
+[2019-05-06 08:06:53] [data] Done reading 41736982 sentences
+[2019-05-06 08:10:25] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-06 08:16:54] Ep. 5 : Up. 177000 : Sen. 323,789 : Cost 24.40313911 : Time 805.74s : 5552.57 words/s : L.r. 6.0132e-05
+[2019-05-06 08:25:38] Ep. 5 : Up. 177500 : Sen. 819,285 : Cost 23.38584518 : Time 523.49s : 8736.05 words/s : L.r. 6.0047e-05
+[2019-05-06 08:34:07] Ep. 5 : Up. 178000 : Sen. 1,271,115 : Cost 24.94678688 : Time 509.10s : 8627.48 words/s : L.r. 5.9963e-05
+[2019-05-06 08:42:34] Ep. 5 : Up. 178500 : Sen. 1,740,926 : Cost 23.60410690 : Time 507.14s : 8546.71 words/s : L.r. 5.9878e-05
+[2019-05-06 08:51:18] Ep. 5 : Up. 179000 : Sen. 2,219,686 : Cost 24.31746292 : Time 524.18s : 8691.81 words/s : L.r. 5.9795e-05
+[2019-05-06 08:59:48] Ep. 5 : Up. 179500 : Sen. 2,683,963 : Cost 24.23467827 : Time 509.66s : 8595.30 words/s : L.r. 5.9711e-05
+[2019-05-06 09:08:25] Ep. 5 : Up. 180000 : Sen. 3,157,630 : Cost 24.29171944 : Time 517.82s : 8666.49 words/s : L.r. 5.9628e-05
+[2019-05-06 09:08:25] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 09:08:30] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter180000.npz
+[2019-05-06 09:08:34] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 09:08:39] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 09:08:52] [valid] Ep. 5 : Up. 180000 : cross-entropy : 20.2077 : new best
+[2019-05-06 09:08:57] [valid] Ep. 5 : Up. 180000 : perplexity : 4.7964 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 09:10:18] [valid] Ep. 5 : Up. 180000 : translation : 33.92 : stalled 6 times (last best: 33.98)
+[2019-05-06 09:18:48] Ep. 5 : Up. 180500 : Sen. 3,624,505 : Cost 24.18787193 : Time 622.11s : 7099.77 words/s : L.r. 5.9546e-05
+[2019-05-06 09:27:33] Ep. 5 : Up. 181000 : Sen. 4,105,278 : Cost 24.48714256 : Time 524.95s : 8762.94 words/s : L.r. 5.9464e-05
+[2019-05-06 09:36:07] Ep. 5 : Up. 181500 : Sen. 4,581,324 : Cost 23.83465767 : Time 514.88s : 8614.97 words/s : L.r. 5.9382e-05
+[2019-05-06 09:44:47] Ep. 5 : Up. 182000 : Sen. 5,051,558 : Cost 24.24563789 : Time 520.02s : 8576.03 words/s : L.r. 5.9300e-05
+[2019-05-06 09:53:28] Ep. 5 : Up. 182500 : Sen. 5,529,762 : Cost 24.17472458 : Time 520.63s : 8709.10 words/s : L.r. 5.9219e-05
+[2019-05-06 10:02:05] Ep. 5 : Up. 183000 : Sen. 6,002,149 : Cost 24.30461311 : Time 516.96s : 8676.25 words/s : L.r. 5.9138e-05
+[2019-05-06 10:10:31] Ep. 5 : Up. 183500 : Sen. 6,460,135 : Cost 24.37884712 : Time 506.02s : 8603.61 words/s : L.r. 5.9057e-05
+[2019-05-06 10:19:17] Ep. 5 : Up. 184000 : Sen. 6,954,657 : Cost 23.80898476 : Time 526.18s : 8758.11 words/s : L.r. 5.8977e-05
+[2019-05-06 10:27:46] Ep. 5 : Up. 184500 : Sen. 7,419,054 : Cost 23.99011230 : Time 508.45s : 8579.65 words/s : L.r. 5.8897e-05
+[2019-05-06 10:36:31] Ep. 5 : Up. 185000 : Sen. 7,896,963 : Cost 24.72905731 : Time 524.96s : 8809.83 words/s : L.r. 5.8817e-05
+[2019-05-06 10:36:31] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 10:36:35] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter185000.npz
+[2019-05-06 10:36:39] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 10:36:43] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 10:36:57] [valid] Ep. 5 : Up. 185000 : cross-entropy : 20.1971 : new best
+[2019-05-06 10:37:03] [valid] Ep. 5 : Up. 185000 : perplexity : 4.79245 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 10:38:18] [valid] Ep. 5 : Up. 185000 : translation : 33.94 : stalled 7 times (last best: 33.98)
+[2019-05-06 10:46:42] Ep. 5 : Up. 185500 : Sen. 8,358,412 : Cost 24.09156799 : Time 611.04s : 7070.71 words/s : L.r. 5.8738e-05
+[2019-05-06 10:55:17] Ep. 5 : Up. 186000 : Sen. 8,832,662 : Cost 23.79053497 : Time 515.69s : 8575.51 words/s : L.r. 5.8659e-05
+[2019-05-06 11:03:55] Ep. 5 : Up. 186500 : Sen. 9,299,511 : Cost 24.58966446 : Time 517.14s : 8665.73 words/s : L.r. 5.8580e-05
+[2019-05-06 11:12:29] Ep. 5 : Up. 187000 : Sen. 9,774,261 : Cost 24.10762596 : Time 514.35s : 8708.99 words/s : L.r. 5.8502e-05
+[2019-05-06 11:21:10] Ep. 5 : Up. 187500 : Sen. 10,260,973 : Cost 23.79456139 : Time 520.66s : 8785.06 words/s : L.r. 5.8424e-05
+[2019-05-06 11:29:34] Ep. 5 : Up. 188000 : Sen. 10,711,540 : Cost 24.54360390 : Time 504.71s : 8499.48 words/s : L.r. 5.8346e-05
+[2019-05-06 11:38:13] Ep. 5 : Up. 188500 : Sen. 11,197,517 : Cost 23.86046219 : Time 518.75s : 8722.60 words/s : L.r. 5.8269e-05
+[2019-05-06 11:46:46] Ep. 5 : Up. 189000 : Sen. 11,655,958 : Cost 25.01541519 : Time 512.52s : 8701.87 words/s : L.r. 5.8191e-05
+[2019-05-06 11:55:15] Ep. 5 : Up. 189500 : Sen. 12,125,008 : Cost 23.93730736 : Time 509.23s : 8653.36 words/s : L.r. 5.8115e-05
+[2019-05-06 12:03:55] Ep. 5 : Up. 190000 : Sen. 12,622,412 : Cost 23.39702225 : Time 520.35s : 8784.23 words/s : L.r. 5.8038e-05
+[2019-05-06 12:03:55] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 12:03:59] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter190000.npz
+[2019-05-06 12:04:03] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 12:04:07] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 12:04:21] [valid] Ep. 5 : Up. 190000 : cross-entropy : 20.1757 : new best
+[2019-05-06 12:04:27] [valid] Ep. 5 : Up. 190000 : perplexity : 4.7845 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 12:05:44] [valid] Ep. 5 : Up. 190000 : translation : 33.97 : stalled 8 times (last best: 33.98)
+[2019-05-06 12:14:16] Ep. 5 : Up. 190500 : Sen. 13,076,283 : Cost 25.01612282 : Time 620.44s : 7093.59 words/s : L.r. 5.7962e-05
+[2019-05-06 12:22:59] Ep. 5 : Up. 191000 : Sen. 13,560,580 : Cost 24.13898277 : Time 523.21s : 8757.65 words/s : L.r. 5.7886e-05
+[2019-05-06 12:31:32] Ep. 5 : Up. 191500 : Sen. 14,031,562 : Cost 23.90400887 : Time 512.90s : 8613.53 words/s : L.r. 5.7810e-05
+[2019-05-06 12:39:58] Ep. 5 : Up. 192000 : Sen. 14,506,845 : Cost 23.24356270 : Time 505.92s : 8571.33 words/s : L.r. 5.7735e-05
+[2019-05-06 12:48:35] Ep. 5 : Up. 192500 : Sen. 14,968,854 : Cost 25.19626617 : Time 517.87s : 8764.69 words/s : L.r. 5.7660e-05
+[2019-05-06 12:57:20] Ep. 5 : Up. 193000 : Sen. 15,458,040 : Cost 24.01088142 : Time 524.83s : 8819.39 words/s : L.r. 5.7585e-05
+[2019-05-06 13:05:52] Ep. 5 : Up. 193500 : Sen. 15,924,034 : Cost 24.15006065 : Time 512.04s : 8564.41 words/s : L.r. 5.7511e-05
+[2019-05-06 13:14:35] Ep. 5 : Up. 194000 : Sen. 16,395,449 : Cost 24.92786026 : Time 523.06s : 8781.64 words/s : L.r. 5.7437e-05
+[2019-05-06 13:22:50] Ep. 5 : Up. 194500 : Sen. 16,852,415 : Cost 23.44856644 : Time 494.41s : 8458.90 words/s : L.r. 5.7363e-05
+[2019-05-06 13:31:37] Ep. 5 : Up. 195000 : Sen. 17,328,033 : Cost 24.93601990 : Time 526.78s : 8767.36 words/s : L.r. 5.7289e-05
+[2019-05-06 13:31:37] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 13:31:41] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter195000.npz
+[2019-05-06 13:31:44] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 13:31:49] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 13:32:03] [valid] Ep. 5 : Up. 195000 : cross-entropy : 20.1557 : new best
+[2019-05-06 13:32:09] [valid] Ep. 5 : Up. 195000 : perplexity : 4.7771 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 13:33:24] [valid] Ep. 5 : Up. 195000 : translation : 33.99 : new best
+[2019-05-06 13:41:50] Ep. 5 : Up. 195500 : Sen. 17,789,722 : Cost 24.24907303 : Time 613.35s : 7117.46 words/s : L.r. 5.7216e-05
+[2019-05-06 13:50:28] Ep. 5 : Up. 196000 : Sen. 18,278,404 : Cost 23.12902451 : Time 517.92s : 8631.31 words/s : L.r. 5.7143e-05
+[2019-05-06 13:58:58] Ep. 5 : Up. 196500 : Sen. 18,749,986 : Cost 24.02116013 : Time 509.82s : 8700.09 words/s : L.r. 5.7070e-05
+[2019-05-06 14:07:30] Ep. 5 : Up. 197000 : Sen. 19,222,866 : Cost 24.11591911 : Time 512.55s : 8680.18 words/s : L.r. 5.6998e-05
+[2019-05-06 14:16:13] Ep. 5 : Up. 197500 : Sen. 19,684,754 : Cost 25.64706993 : Time 522.79s : 8783.48 words/s : L.r. 5.6925e-05
+[2019-05-06 14:24:39] Ep. 5 : Up. 198000 : Sen. 20,164,793 : Cost 22.90574646 : Time 506.48s : 8555.92 words/s : L.r. 5.6854e-05
+[2019-05-06 14:33:20] Ep. 5 : Up. 198500 : Sen. 20,628,853 : Cost 25.12220383 : Time 520.50s : 8691.46 words/s : L.r. 5.6782e-05
+[2019-05-06 14:41:59] Ep. 5 : Up. 199000 : Sen. 21,107,562 : Cost 23.88165283 : Time 518.54s : 8672.00 words/s : L.r. 5.6710e-05
+[2019-05-06 14:50:29] Ep. 5 : Up. 199500 : Sen. 21,564,669 : Cost 24.56831551 : Time 510.08s : 8577.62 words/s : L.r. 5.6639e-05
+[2019-05-06 14:59:14] Ep. 5 : Up. 200000 : Sen. 22,060,942 : Cost 23.24173927 : Time 524.92s : 8665.12 words/s : L.r. 5.6569e-05
+[2019-05-06 14:59:14] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 14:59:17] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter200000.npz
+[2019-05-06 14:59:21] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 14:59:25] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 14:59:39] [valid] Ep. 5 : Up. 200000 : cross-entropy : 20.1248 : new best
+[2019-05-06 14:59:45] [valid] Ep. 5 : Up. 200000 : perplexity : 4.76563 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 15:01:03] [valid] Ep. 5 : Up. 200000 : translation : 33.91 : stalled 1 times (last best: 33.99)
+[2019-05-06 15:09:36] Ep. 5 : Up. 200500 : Sen. 22,533,572 : Cost 23.89162636 : Time 622.09s : 7065.82 words/s : L.r. 5.6498e-05
+[2019-05-06 15:18:10] Ep. 5 : Up. 201000 : Sen. 22,995,816 : Cost 24.89132118 : Time 514.52s : 8755.76 words/s : L.r. 5.6428e-05
+[2019-05-06 15:26:44] Ep. 5 : Up. 201500 : Sen. 23,472,387 : Cost 23.98440933 : Time 514.19s : 8687.18 words/s : L.r. 5.6358e-05
+[2019-05-06 15:35:09] Ep. 5 : Up. 202000 : Sen. 23,933,506 : Cost 24.10188484 : Time 504.74s : 8627.57 words/s : L.r. 5.6288e-05
+[2019-05-06 15:43:55] Ep. 5 : Up. 202500 : Sen. 24,414,483 : Cost 24.31031609 : Time 526.37s : 8678.04 words/s : L.r. 5.6218e-05
+[2019-05-06 15:52:27] Ep. 5 : Up. 203000 : Sen. 24,878,265 : Cost 24.22662163 : Time 511.10s : 8586.29 words/s : L.r. 5.6149e-05
+[2019-05-06 16:01:05] Ep. 5 : Up. 203500 : Sen. 25,355,191 : Cost 24.24895287 : Time 518.86s : 8735.52 words/s : L.r. 5.6080e-05
+[2019-05-06 16:09:42] Ep. 5 : Up. 204000 : Sen. 25,824,637 : Cost 24.53601456 : Time 516.31s : 8750.76 words/s : L.r. 5.6011e-05
+[2019-05-06 16:18:09] Ep. 5 : Up. 204500 : Sen. 26,290,216 : Cost 24.08925056 : Time 507.08s : 8528.29 words/s : L.r. 5.5943e-05
+[2019-05-06 16:26:49] Ep. 5 : Up. 205000 : Sen. 26,771,935 : Cost 23.99252892 : Time 520.34s : 8715.06 words/s : L.r. 5.5874e-05
+[2019-05-06 16:26:49] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 16:26:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter205000.npz
+[2019-05-06 16:26:57] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 16:27:01] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 16:27:16] [valid] Ep. 5 : Up. 205000 : cross-entropy : 20.096 : new best
+[2019-05-06 16:27:21] [valid] Ep. 5 : Up. 205000 : perplexity : 4.75501 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 16:28:40] [valid] Ep. 5 : Up. 205000 : translation : 33.95 : stalled 2 times (last best: 33.99)
+[2019-05-06 16:37:26] Ep. 5 : Up. 205500 : Sen. 27,246,673 : Cost 24.36013985 : Time 636.47s : 7156.59 words/s : L.r. 5.5806e-05
+[2019-05-06 16:45:59] Ep. 5 : Up. 206000 : Sen. 27,722,656 : Cost 23.88015556 : Time 513.07s : 8709.76 words/s : L.r. 5.5739e-05
+[2019-05-06 16:54:42] Ep. 5 : Up. 206500 : Sen. 28,206,444 : Cost 23.94108582 : Time 522.85s : 8667.31 words/s : L.r. 5.5671e-05
+[2019-05-06 17:03:19] Ep. 5 : Up. 207000 : Sen. 28,679,240 : Cost 24.09762955 : Time 517.42s : 8663.94 words/s : L.r. 5.5604e-05
+[2019-05-06 17:11:44] Ep. 5 : Up. 207500 : Sen. 29,150,487 : Cost 23.58464050 : Time 504.64s : 8555.03 words/s : L.r. 5.5537e-05
+[2019-05-06 17:20:28] Ep. 5 : Up. 208000 : Sen. 29,628,851 : Cost 24.27740288 : Time 524.19s : 8659.81 words/s : L.r. 5.5470e-05
+[2019-05-06 17:29:02] Ep. 5 : Up. 208500 : Sen. 30,089,321 : Cost 24.82205772 : Time 514.54s : 8739.33 words/s : L.r. 5.5403e-05
+[2019-05-06 17:37:38] Ep. 5 : Up. 209000 : Sen. 30,570,913 : Cost 23.71862984 : Time 516.13s : 8746.80 words/s : L.r. 5.5337e-05
+[2019-05-06 17:46:09] Ep. 5 : Up. 209500 : Sen. 31,032,982 : Cost 24.44423294 : Time 510.17s : 8574.55 words/s : L.r. 5.5271e-05
+[2019-05-06 17:54:43] Ep. 5 : Up. 210000 : Sen. 31,499,759 : Cost 24.58640289 : Time 514.56s : 8733.30 words/s : L.r. 5.5205e-05
+[2019-05-06 17:54:43] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 17:54:47] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter210000.npz
+[2019-05-06 17:54:51] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 17:54:56] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 17:55:09] [valid] Ep. 5 : Up. 210000 : cross-entropy : 20.0782 : new best
+[2019-05-06 17:55:15] [valid] Ep. 5 : Up. 210000 : perplexity : 4.74844 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 17:56:28] [valid] Ep. 5 : Up. 210000 : translation : 34.06 : new best
+[2019-05-06 18:05:05] Ep. 5 : Up. 210500 : Sen. 31,978,243 : Cost 23.79328728 : Time 622.19s : 7146.04 words/s : L.r. 5.5140e-05
+[2019-05-06 18:13:40] Ep. 5 : Up. 211000 : Sen. 32,444,806 : Cost 24.31348991 : Time 514.20s : 8657.33 words/s : L.r. 5.5074e-05
+[2019-05-06 18:22:24] Ep. 5 : Up. 211500 : Sen. 32,925,292 : Cost 24.31309319 : Time 524.04s : 8717.96 words/s : L.r. 5.5009e-05
+[2019-05-06 18:30:59] Ep. 5 : Up. 212000 : Sen. 33,414,224 : Cost 23.25505638 : Time 515.02s : 8717.78 words/s : L.r. 5.4944e-05
+[2019-05-06 18:39:26] Ep. 5 : Up. 212500 : Sen. 33,861,913 : Cost 25.06423569 : Time 507.44s : 8614.49 words/s : L.r. 5.4880e-05
+[2019-05-06 18:48:00] Ep. 5 : Up. 213000 : Sen. 34,329,466 : Cost 24.26290321 : Time 514.03s : 8580.89 words/s : L.r. 5.4815e-05
+[2019-05-06 18:56:41] Ep. 5 : Up. 213500 : Sen. 34,808,419 : Cost 24.35838127 : Time 520.63s : 8810.77 words/s : L.r. 5.4751e-05
+[2019-05-06 19:05:12] Ep. 5 : Up. 214000 : Sen. 35,287,019 : Cost 23.59090042 : Time 511.30s : 8622.64 words/s : L.r. 5.4687e-05
+[2019-05-06 19:13:43] Ep. 5 : Up. 214500 : Sen. 35,757,845 : Cost 23.89053917 : Time 511.39s : 8655.87 words/s : L.r. 5.4623e-05
+[2019-05-06 19:22:05] Ep. 5 : Up. 215000 : Sen. 36,218,200 : Cost 23.81530952 : Time 501.97s : 8580.16 words/s : L.r. 5.4560e-05
+[2019-05-06 19:22:05] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 19:22:09] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter215000.npz
+[2019-05-06 19:22:13] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 19:22:17] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 19:22:31] [valid] Ep. 5 : Up. 215000 : cross-entropy : 20.0501 : new best
+[2019-05-06 19:22:37] [valid] Ep. 5 : Up. 215000 : perplexity : 4.73811 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 19:23:48] [valid] Ep. 5 : Up. 215000 : translation : 34.07 : new best
+[2019-05-06 19:32:34] Ep. 5 : Up. 215500 : Sen. 36,707,529 : Cost 23.76592255 : Time 628.39s : 7266.91 words/s : L.r. 5.4496e-05
+[2019-05-06 19:41:14] Ep. 5 : Up. 216000 : Sen. 37,176,640 : Cost 24.84303474 : Time 519.89s : 8689.86 words/s : L.r. 5.4433e-05
+[2019-05-06 19:49:48] Ep. 5 : Up. 216500 : Sen. 37,643,496 : Cost 24.57224274 : Time 513.94s : 8730.04 words/s : L.r. 5.4370e-05
+[2019-05-06 19:58:24] Ep. 5 : Up. 217000 : Sen. 38,110,864 : Cost 24.35223579 : Time 516.26s : 8685.04 words/s : L.r. 5.4308e-05
+[2019-05-06 20:06:57] Ep. 5 : Up. 217500 : Sen. 38,589,180 : Cost 23.59362984 : Time 513.13s : 8600.63 words/s : L.r. 5.4245e-05
+[2019-05-06 20:15:47] Ep. 5 : Up. 218000 : Sen. 39,071,135 : Cost 24.56951141 : Time 530.00s : 8773.36 words/s : L.r. 5.4183e-05
+[2019-05-06 20:24:26] Ep. 5 : Up. 218500 : Sen. 39,557,370 : Cost 23.52584839 : Time 519.36s : 8661.82 words/s : L.r. 5.4121e-05
+[2019-05-06 20:32:46] Ep. 5 : Up. 219000 : Sen. 40,004,449 : Cost 24.65538597 : Time 499.75s : 8586.67 words/s : L.r. 5.4059e-05
+[2019-05-06 20:41:33] Ep. 5 : Up. 219500 : Sen. 40,498,648 : Cost 23.58434677 : Time 526.78s : 8746.69 words/s : L.r. 5.3997e-05
+[2019-05-06 20:50:01] Ep. 5 : Up. 220000 : Sen. 40,959,596 : Cost 24.32551956 : Time 508.61s : 8595.87 words/s : L.r. 5.3936e-05
+[2019-05-06 20:50:01] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 20:50:05] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter220000.npz
+[2019-05-06 20:50:09] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 20:50:13] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 20:50:27] [valid] Ep. 5 : Up. 220000 : cross-entropy : 20.0221 : new best
+[2019-05-06 20:50:32] [valid] Ep. 5 : Up. 220000 : perplexity : 4.72781 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 20:51:54] [valid] Ep. 5 : Up. 220000 : translation : 34.14 : new best
+[2019-05-06 21:00:12] Ep. 5 : Up. 220500 : Sen. 41,394,311 : Cost 24.91485596 : Time 610.91s : 6933.33 words/s : L.r. 5.3875e-05
+[2019-05-06 21:05:53] Seen 41709169 samples
+[2019-05-06 21:05:53] Starting epoch 6
+[2019-05-06 21:05:53] [data] Shuffling data
+[2019-05-06 21:06:36] [data] Done reading 41736982 sentences
+[2019-05-06 21:10:08] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-06 21:13:34] Ep. 6 : Up. 221000 : Sen. 170,491 : Cost 22.97434616 : Time 801.68s : 5476.08 words/s : L.r. 5.3814e-05
+[2019-05-06 21:22:15] Ep. 6 : Up. 221500 : Sen. 632,585 : Cost 25.06472778 : Time 520.83s : 8702.73 words/s : L.r. 5.3753e-05
+[2019-05-06 21:30:48] Ep. 6 : Up. 222000 : Sen. 1,103,456 : Cost 23.88582993 : Time 512.87s : 8653.14 words/s : L.r. 5.3692e-05
+[2019-05-06 21:39:30] Ep. 6 : Up. 222500 : Sen. 1,598,991 : Cost 22.94569588 : Time 522.63s : 8629.45 words/s : L.r. 5.3632e-05
+[2019-05-06 21:47:54] Ep. 6 : Up. 223000 : Sen. 2,044,272 : Cost 25.21234894 : Time 503.72s : 8657.91 words/s : L.r. 5.3572e-05
+[2019-05-06 21:56:28] Ep. 6 : Up. 223500 : Sen. 2,519,354 : Cost 23.80825996 : Time 514.31s : 8625.61 words/s : L.r. 5.3512e-05
+[2019-05-06 22:05:12] Ep. 6 : Up. 224000 : Sen. 2,996,533 : Cost 24.13632011 : Time 523.51s : 8709.63 words/s : L.r. 5.3452e-05
+[2019-05-06 22:13:55] Ep. 6 : Up. 224500 : Sen. 3,475,687 : Cost 23.93011665 : Time 522.77s : 8637.46 words/s : L.r. 5.3393e-05
+[2019-05-06 22:22:29] Ep. 6 : Up. 225000 : Sen. 3,947,930 : Cost 24.05613899 : Time 514.05s : 8696.70 words/s : L.r. 5.3333e-05
+[2019-05-06 22:22:29] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 22:22:33] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter225000.npz
+[2019-05-06 22:22:36] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 22:22:41] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 22:22:54] [valid] Ep. 6 : Up. 225000 : cross-entropy : 20.0065 : new best
+[2019-05-06 22:23:00] [valid] Ep. 6 : Up. 225000 : perplexity : 4.7221 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 22:24:20] [valid] Ep. 6 : Up. 225000 : translation : 34.04 : stalled 1 times (last best: 34.14)
+[2019-05-06 22:33:00] Ep. 6 : Up. 225500 : Sen. 4,422,886 : Cost 24.17708588 : Time 630.85s : 7198.20 words/s : L.r. 5.3274e-05
+[2019-05-06 22:41:29] Ep. 6 : Up. 226000 : Sen. 4,891,354 : Cost 23.94115639 : Time 509.64s : 8616.50 words/s : L.r. 5.3215e-05
+[2019-05-06 22:50:04] Ep. 6 : Up. 226500 : Sen. 5,365,009 : Cost 23.90632439 : Time 514.33s : 8706.18 words/s : L.r. 5.3156e-05
+[2019-05-06 22:58:32] Ep. 6 : Up. 227000 : Sen. 5,836,218 : Cost 23.78819847 : Time 508.77s : 8647.71 words/s : L.r. 5.3098e-05
+[2019-05-06 23:07:13] Ep. 6 : Up. 227500 : Sen. 6,306,139 : Cost 24.48228073 : Time 520.66s : 8614.73 words/s : L.r. 5.3039e-05
+[2019-05-06 23:15:49] Ep. 6 : Up. 228000 : Sen. 6,775,093 : Cost 24.38034821 : Time 516.08s : 8688.89 words/s : L.r. 5.2981e-05
+[2019-05-06 23:24:26] Ep. 6 : Up. 228500 : Sen. 7,246,595 : Cost 23.80194664 : Time 517.31s : 8559.16 words/s : L.r. 5.2923e-05
+[2019-05-06 23:33:09] Ep. 6 : Up. 229000 : Sen. 7,738,836 : Cost 23.64450836 : Time 523.03s : 8812.58 words/s : L.r. 5.2865e-05
+[2019-05-06 23:41:45] Ep. 6 : Up. 229500 : Sen. 8,207,684 : Cost 24.22038078 : Time 515.67s : 8644.36 words/s : L.r. 5.2808e-05
+[2019-05-06 23:50:21] Ep. 6 : Up. 230000 : Sen. 8,680,373 : Cost 24.01513100 : Time 515.51s : 8712.64 words/s : L.r. 5.2750e-05
+[2019-05-06 23:50:21] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-06 23:50:25] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter230000.npz
+[2019-05-06 23:50:29] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-06 23:50:33] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-06 23:50:47] [valid] Ep. 6 : Up. 230000 : cross-entropy : 19.9938 : new best
+[2019-05-06 23:50:53] [valid] Ep. 6 : Up. 230000 : perplexity : 4.71743 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-06 23:52:07] [valid] Ep. 6 : Up. 230000 : translation : 34.05 : stalled 2 times (last best: 34.14)
+[2019-05-07 00:00:36] Ep. 6 : Up. 230500 : Sen. 9,150,425 : Cost 23.71556091 : Time 615.70s : 7077.37 words/s : L.r. 5.2693e-05
+[2019-05-07 00:09:14] Ep. 6 : Up. 231000 : Sen. 9,625,718 : Cost 23.90889549 : Time 517.48s : 8602.64 words/s : L.r. 5.2636e-05
+[2019-05-07 00:17:51] Ep. 6 : Up. 231500 : Sen. 10,094,232 : Cost 24.48052788 : Time 517.27s : 8759.39 words/s : L.r. 5.2579e-05
+[2019-05-07 00:26:33] Ep. 6 : Up. 232000 : Sen. 10,575,254 : Cost 24.18642235 : Time 521.88s : 8737.17 words/s : L.r. 5.2523e-05
+[2019-05-07 00:34:58] Ep. 6 : Up. 232500 : Sen. 11,025,527 : Cost 24.29107857 : Time 505.36s : 8492.03 words/s : L.r. 5.2466e-05
+[2019-05-07 00:43:37] Ep. 6 : Up. 233000 : Sen. 11,498,003 : Cost 23.93659592 : Time 518.31s : 8584.18 words/s : L.r. 5.2410e-05
+[2019-05-07 00:52:22] Ep. 6 : Up. 233500 : Sen. 11,980,393 : Cost 24.15271187 : Time 525.02s : 8739.46 words/s : L.r. 5.2354e-05
+[2019-05-07 01:00:47] Ep. 6 : Up. 234000 : Sen. 12,437,532 : Cost 24.16917610 : Time 505.04s : 8573.72 words/s : L.r. 5.2298e-05
+[2019-05-07 01:09:29] Ep. 6 : Up. 234500 : Sen. 12,925,221 : Cost 23.69807625 : Time 522.50s : 8763.08 words/s : L.r. 5.2242e-05
+[2019-05-07 01:17:53] Ep. 6 : Up. 235000 : Sen. 13,387,291 : Cost 23.61237335 : Time 504.04s : 8514.77 words/s : L.r. 5.2186e-05
+[2019-05-07 01:17:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 01:17:57] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter235000.npz
+[2019-05-07 01:18:02] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 01:18:06] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 01:18:19] [valid] Ep. 6 : Up. 235000 : cross-entropy : 19.9865 : new best
+[2019-05-07 01:18:25] [valid] Ep. 6 : Up. 235000 : perplexity : 4.71479 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 01:19:48] [valid] Ep. 6 : Up. 235000 : translation : 34.16 : new best
+[2019-05-07 01:28:28] Ep. 6 : Up. 235500 : Sen. 13,870,387 : Cost 23.96162224 : Time 634.76s : 7193.39 words/s : L.r. 5.2131e-05
+[2019-05-07 01:37:00] Ep. 6 : Up. 236000 : Sen. 14,330,266 : Cost 24.78910065 : Time 512.20s : 8684.51 words/s : L.r. 5.2076e-05
+[2019-05-07 01:45:33] Ep. 6 : Up. 236500 : Sen. 14,788,535 : Cost 24.71771622 : Time 512.44s : 8648.73 words/s : L.r. 5.2020e-05
+[2019-05-07 01:54:04] Ep. 6 : Up. 237000 : Sen. 15,278,025 : Cost 22.68026161 : Time 511.80s : 8615.08 words/s : L.r. 5.1966e-05
+[2019-05-07 02:02:47] Ep. 6 : Up. 237500 : Sen. 15,757,349 : Cost 23.92489243 : Time 522.45s : 8655.86 words/s : L.r. 5.1911e-05
+[2019-05-07 02:11:18] Ep. 6 : Up. 238000 : Sen. 16,209,074 : Cost 25.51266289 : Time 510.67s : 8745.48 words/s : L.r. 5.1856e-05
+[2019-05-07 02:20:01] Ep. 6 : Up. 238500 : Sen. 16,690,731 : Cost 23.96650124 : Time 523.02s : 8711.25 words/s : L.r. 5.1802e-05
+[2019-05-07 02:28:33] Ep. 6 : Up. 239000 : Sen. 17,164,518 : Cost 23.35333824 : Time 512.52s : 8605.53 words/s : L.r. 5.1748e-05
+[2019-05-07 02:37:13] Ep. 6 : Up. 239500 : Sen. 17,649,352 : Cost 23.65406227 : Time 519.92s : 8687.49 words/s : L.r. 5.1694e-05
+[2019-05-07 02:45:50] Ep. 6 : Up. 240000 : Sen. 18,117,409 : Cost 24.61706543 : Time 517.26s : 8673.45 words/s : L.r. 5.1640e-05
+[2019-05-07 02:45:50] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 02:45:54] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter240000.npz
+[2019-05-07 02:45:58] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 02:46:03] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 02:46:16] [valid] Ep. 6 : Up. 240000 : cross-entropy : 19.9716 : new best
+[2019-05-07 02:46:22] [valid] Ep. 6 : Up. 240000 : perplexity : 4.70933 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 02:47:43] [valid] Ep. 6 : Up. 240000 : translation : 34.13 : stalled 1 times (last best: 34.16)
+[2019-05-07 02:56:19] Ep. 6 : Up. 240500 : Sen. 18,584,567 : Cost 24.40259361 : Time 628.96s : 7112.22 words/s : L.r. 5.1586e-05
+[2019-05-07 03:04:50] Ep. 6 : Up. 241000 : Sen. 19,053,044 : Cost 23.71607971 : Time 510.86s : 8565.95 words/s : L.r. 5.1533e-05
+[2019-05-07 03:13:27] Ep. 6 : Up. 241500 : Sen. 19,532,679 : Cost 23.68751907 : Time 516.82s : 8653.42 words/s : L.r. 5.1479e-05
+[2019-05-07 03:22:05] Ep. 6 : Up. 242000 : Sen. 20,004,880 : Cost 24.26633644 : Time 518.04s : 8716.07 words/s : L.r. 5.1426e-05
+[2019-05-07 03:30:47] Ep. 6 : Up. 242500 : Sen. 20,489,445 : Cost 23.89114380 : Time 521.97s : 8726.63 words/s : L.r. 5.1373e-05
+[2019-05-07 03:39:16] Ep. 6 : Up. 243000 : Sen. 20,950,956 : Cost 24.20715523 : Time 508.95s : 8631.72 words/s : L.r. 5.1320e-05
+[2019-05-07 03:47:58] Ep. 6 : Up. 243500 : Sen. 21,426,923 : Cost 24.19343567 : Time 521.98s : 8693.22 words/s : L.r. 5.1267e-05
+[2019-05-07 03:56:33] Ep. 6 : Up. 244000 : Sen. 21,900,555 : Cost 23.93907356 : Time 514.72s : 8640.31 words/s : L.r. 5.1215e-05
+[2019-05-07 04:05:03] Ep. 6 : Up. 244500 : Sen. 22,371,137 : Cost 24.22477150 : Time 510.70s : 8762.84 words/s : L.r. 5.1162e-05
+[2019-05-07 04:13:41] Ep. 6 : Up. 245000 : Sen. 22,845,005 : Cost 23.98727417 : Time 517.41s : 8636.85 words/s : L.r. 5.1110e-05
+[2019-05-07 04:13:41] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 04:13:45] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter245000.npz
+[2019-05-07 04:13:48] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 04:13:52] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 04:14:06] [valid] Ep. 6 : Up. 245000 : cross-entropy : 19.9501 : new best
+[2019-05-07 04:14:11] [valid] Ep. 6 : Up. 245000 : perplexity : 4.70147 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 04:15:25] [valid] Ep. 6 : Up. 245000 : translation : 34.05 : stalled 2 times (last best: 34.16)
+[2019-05-07 04:23:53] Ep. 6 : Up. 245500 : Sen. 23,314,172 : Cost 23.86685562 : Time 612.79s : 7190.71 words/s : L.r. 5.1058e-05
+[2019-05-07 04:32:35] Ep. 6 : Up. 246000 : Sen. 23,803,795 : Cost 23.28622055 : Time 521.05s : 8678.45 words/s : L.r. 5.1006e-05
+[2019-05-07 04:41:08] Ep. 6 : Up. 246500 : Sen. 24,274,506 : Cost 24.27840042 : Time 513.36s : 8760.95 words/s : L.r. 5.0954e-05
+[2019-05-07 04:49:51] Ep. 6 : Up. 247000 : Sen. 24,749,140 : Cost 24.23146248 : Time 522.86s : 8647.92 words/s : L.r. 5.0903e-05
+[2019-05-07 04:58:16] Ep. 6 : Up. 247500 : Sen. 25,195,571 : Cost 24.92871475 : Time 505.06s : 8600.89 words/s : L.r. 5.0851e-05
+[2019-05-07 05:06:54] Ep. 6 : Up. 248000 : Sen. 25,667,171 : Cost 24.25885201 : Time 518.55s : 8711.05 words/s : L.r. 5.0800e-05
+[2019-05-07 05:15:27] Ep. 6 : Up. 248500 : Sen. 26,149,757 : Cost 23.38232613 : Time 512.68s : 8672.08 words/s : L.r. 5.0749e-05
+[2019-05-07 05:24:14] Ep. 6 : Up. 249000 : Sen. 26,628,897 : Cost 24.36153984 : Time 526.63s : 8732.87 words/s : L.r. 5.0698e-05
+[2019-05-07 05:32:33] Ep. 6 : Up. 249500 : Sen. 27,092,327 : Cost 23.37300491 : Time 499.00s : 8533.46 words/s : L.r. 5.0647e-05
+[2019-05-07 05:41:14] Ep. 6 : Up. 250000 : Sen. 27,568,246 : Cost 23.97247505 : Time 521.33s : 8622.08 words/s : L.r. 5.0596e-05
+[2019-05-07 05:41:14] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 05:41:18] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter250000.npz
+[2019-05-07 05:41:22] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 05:41:26] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 05:41:40] [valid] Ep. 6 : Up. 250000 : cross-entropy : 19.9401 : new best
+[2019-05-07 05:41:45] [valid] Ep. 6 : Up. 250000 : perplexity : 4.69784 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 05:42:54] [valid] Ep. 6 : Up. 250000 : translation : 33.96 : stalled 3 times (last best: 34.16)
+[2019-05-07 05:51:25] Ep. 6 : Up. 250500 : Sen. 28,034,820 : Cost 24.24274635 : Time 610.53s : 7268.69 words/s : L.r. 5.0546e-05
+[2019-05-07 06:00:02] Ep. 6 : Up. 251000 : Sen. 28,493,763 : Cost 24.97390747 : Time 517.79s : 8672.13 words/s : L.r. 5.0496e-05
+[2019-05-07 06:08:39] Ep. 6 : Up. 251500 : Sen. 28,985,922 : Cost 23.02577209 : Time 517.10s : 8662.88 words/s : L.r. 5.0445e-05
+[2019-05-07 06:17:12] Ep. 6 : Up. 252000 : Sen. 29,451,477 : Cost 24.16951942 : Time 512.82s : 8668.64 words/s : L.r. 5.0395e-05
+[2019-05-07 06:25:53] Ep. 6 : Up. 252500 : Sen. 29,933,682 : Cost 23.75496864 : Time 520.62s : 8669.15 words/s : L.r. 5.0345e-05
+[2019-05-07 06:34:26] Ep. 6 : Up. 253000 : Sen. 30,411,496 : Cost 23.70214844 : Time 513.18s : 8665.22 words/s : L.r. 5.0296e-05
+[2019-05-07 06:43:05] Ep. 6 : Up. 253500 : Sen. 30,880,066 : Cost 24.43521118 : Time 518.98s : 8696.33 words/s : L.r. 5.0246e-05
+[2019-05-07 06:51:35] Ep. 6 : Up. 254000 : Sen. 31,346,343 : Cost 24.05736542 : Time 510.40s : 8648.79 words/s : L.r. 5.0196e-05
+[2019-05-07 07:00:08] Ep. 6 : Up. 254500 : Sen. 31,803,459 : Cost 24.58078766 : Time 512.82s : 8585.89 words/s : L.r. 5.0147e-05
+[2019-05-07 07:08:45] Ep. 6 : Up. 255000 : Sen. 32,287,943 : Cost 23.45468140 : Time 516.65s : 8649.70 words/s : L.r. 5.0098e-05
+[2019-05-07 07:08:45] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 07:08:49] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter255000.npz
+[2019-05-07 07:08:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 07:08:58] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 07:09:11] [valid] Ep. 6 : Up. 255000 : cross-entropy : 19.92 : new best
+[2019-05-07 07:09:17] [valid] Ep. 6 : Up. 255000 : perplexity : 4.69053 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 07:10:31] [valid] Ep. 6 : Up. 255000 : translation : 34.05 : stalled 4 times (last best: 34.16)
+[2019-05-07 07:19:07] Ep. 6 : Up. 255500 : Sen. 32,765,208 : Cost 23.56689453 : Time 622.35s : 7165.38 words/s : L.r. 5.0049e-05
+[2019-05-07 07:28:01] Ep. 6 : Up. 256000 : Sen. 33,256,001 : Cost 24.35668564 : Time 533.24s : 8842.99 words/s : L.r. 5.0000e-05
+[2019-05-07 07:36:20] Ep. 6 : Up. 256500 : Sen. 33,698,475 : Cost 24.86942101 : Time 499.05s : 8580.80 words/s : L.r. 4.9951e-05
+[2019-05-07 07:44:50] Ep. 6 : Up. 257000 : Sen. 34,166,782 : Cost 23.83167839 : Time 510.32s : 8599.23 words/s : L.r. 4.9903e-05
+[2019-05-07 07:53:32] Ep. 6 : Up. 257500 : Sen. 34,646,762 : Cost 24.19919395 : Time 522.25s : 8771.08 words/s : L.r. 4.9854e-05
+[2019-05-07 08:02:04] Ep. 6 : Up. 258000 : Sen. 35,121,116 : Cost 23.55156708 : Time 511.94s : 8616.90 words/s : L.r. 4.9806e-05
+[2019-05-07 08:10:34] Ep. 6 : Up. 258500 : Sen. 35,585,565 : Cost 24.34606552 : Time 510.22s : 8677.93 words/s : L.r. 4.9758e-05
+[2019-05-07 08:19:13] Ep. 6 : Up. 259000 : Sen. 36,063,926 : Cost 23.79427910 : Time 519.05s : 8671.77 words/s : L.r. 4.9710e-05
+[2019-05-07 08:27:56] Ep. 6 : Up. 259500 : Sen. 36,547,339 : Cost 23.75251961 : Time 522.90s : 8670.90 words/s : L.r. 4.9662e-05
+[2019-05-07 08:36:30] Ep. 6 : Up. 260000 : Sen. 37,017,224 : Cost 24.11331749 : Time 513.29s : 8674.59 words/s : L.r. 4.9614e-05
+[2019-05-07 08:36:30] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 08:36:34] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter260000.npz
+[2019-05-07 08:36:37] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 08:36:42] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 08:36:55] [valid] Ep. 6 : Up. 260000 : cross-entropy : 19.896 : new best
+[2019-05-07 08:37:01] [valid] Ep. 6 : Up. 260000 : perplexity : 4.68181 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 08:38:17] [valid] Ep. 6 : Up. 260000 : translation : 34.11 : stalled 5 times (last best: 34.16)
+[2019-05-07 08:46:52] Ep. 6 : Up. 260500 : Sen. 37,488,134 : Cost 23.94898987 : Time 622.59s : 7096.02 words/s : L.r. 4.9566e-05
+[2019-05-07 08:55:35] Ep. 6 : Up. 261000 : Sen. 37,970,064 : Cost 23.77131462 : Time 522.57s : 8670.24 words/s : L.r. 4.9519e-05
+[2019-05-07 09:04:04] Ep. 6 : Up. 261500 : Sen. 38,432,504 : Cost 24.43411255 : Time 509.42s : 8727.01 words/s : L.r. 4.9471e-05
+[2019-05-07 09:12:44] Ep. 6 : Up. 262000 : Sen. 38,917,068 : Cost 23.40004921 : Time 519.83s : 8623.37 words/s : L.r. 4.9424e-05
+[2019-05-07 09:21:24] Ep. 6 : Up. 262500 : Sen. 39,386,693 : Cost 24.49642754 : Time 519.93s : 8685.23 words/s : L.r. 4.9377e-05
+[2019-05-07 09:29:46] Ep. 6 : Up. 263000 : Sen. 39,846,245 : Cost 24.08319664 : Time 502.39s : 8629.16 words/s : L.r. 4.9330e-05
+[2019-05-07 09:38:35] Ep. 6 : Up. 263500 : Sen. 40,343,729 : Cost 23.54603195 : Time 528.83s : 8797.06 words/s : L.r. 4.9283e-05
+[2019-05-07 09:47:00] Ep. 6 : Up. 264000 : Sen. 40,785,646 : Cost 25.10339355 : Time 504.57s : 8604.38 words/s : L.r. 4.9237e-05
+[2019-05-07 09:55:36] Ep. 6 : Up. 264500 : Sen. 41,254,174 : Cost 24.07690048 : Time 516.39s : 8576.11 words/s : L.r. 4.9190e-05
+[2019-05-07 10:03:50] Seen 41709169 samples
+[2019-05-07 10:03:50] Starting epoch 7
+[2019-05-07 10:03:50] [data] Shuffling data
+[2019-05-07 10:04:33] [data] Done reading 41736982 sentences
+[2019-05-07 10:08:05] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-07 10:08:40] Ep. 7 : Up. 265000 : Sen. 2,304 : Cost 23.33781624 : Time 784.25s : 5384.79 words/s : L.r. 4.9144e-05
+[2019-05-07 10:08:40] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 10:08:45] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter265000.npz
+[2019-05-07 10:08:48] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 10:08:52] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 10:09:06] [valid] Ep. 7 : Up. 265000 : cross-entropy : 19.8782 : new best
+[2019-05-07 10:09:12] [valid] Ep. 7 : Up. 265000 : perplexity : 4.67534 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 10:10:30] [valid] Ep. 7 : Up. 265000 : translation : 34.11 : stalled 6 times (last best: 34.16)
+[2019-05-07 10:18:58] Ep. 7 : Up. 265500 : Sen. 470,449 : Cost 23.54435349 : Time 617.33s : 7069.73 words/s : L.r. 4.9097e-05
+[2019-05-07 10:27:38] Ep. 7 : Up. 266000 : Sen. 943,403 : Cost 24.18616676 : Time 520.37s : 8688.33 words/s : L.r. 4.9051e-05
+[2019-05-07 10:36:05] Ep. 7 : Up. 266500 : Sen. 1,402,967 : Cost 24.05347061 : Time 507.42s : 8608.96 words/s : L.r. 4.9005e-05
+[2019-05-07 10:44:46] Ep. 7 : Up. 267000 : Sen. 1,874,606 : Cost 24.56795120 : Time 520.15s : 8772.79 words/s : L.r. 4.8959e-05
+[2019-05-07 10:53:19] Ep. 7 : Up. 267500 : Sen. 2,368,094 : Cost 22.42916870 : Time 513.60s : 8593.39 words/s : L.r. 4.8913e-05
+[2019-05-07 11:01:55] Ep. 7 : Up. 268000 : Sen. 2,839,702 : Cost 24.12100792 : Time 515.94s : 8702.20 words/s : L.r. 4.8868e-05
+[2019-05-07 11:10:28] Ep. 7 : Up. 268500 : Sen. 3,295,599 : Cost 24.95722198 : Time 512.61s : 8711.02 words/s : L.r. 4.8822e-05
+[2019-05-07 11:18:57] Ep. 7 : Up. 269000 : Sen. 3,769,495 : Cost 23.19548798 : Time 508.80s : 8556.49 words/s : L.r. 4.8777e-05
+[2019-05-07 11:27:43] Ep. 7 : Up. 269500 : Sen. 4,251,019 : Cost 24.08716583 : Time 526.04s : 8762.81 words/s : L.r. 4.8732e-05
+[2019-05-07 11:36:25] Ep. 7 : Up. 270000 : Sen. 4,734,423 : Cost 23.63286209 : Time 522.14s : 8664.44 words/s : L.r. 4.8686e-05
+[2019-05-07 11:36:25] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 11:36:29] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter270000.npz
+[2019-05-07 11:36:33] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 11:36:37] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 11:36:50] [valid] Ep. 7 : Up. 270000 : cross-entropy : 19.8687 : new best
+[2019-05-07 11:36:56] [valid] Ep. 7 : Up. 270000 : perplexity : 4.6719 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 11:38:16] [valid] Ep. 7 : Up. 270000 : translation : 34.06 : stalled 7 times (last best: 34.16)
+[2019-05-07 11:46:41] Ep. 7 : Up. 270500 : Sen. 5,188,110 : Cost 24.82183266 : Time 615.82s : 7167.82 words/s : L.r. 4.8641e-05
+[2019-05-07 11:55:18] Ep. 7 : Up. 271000 : Sen. 5,667,532 : Cost 23.30699539 : Time 517.63s : 8617.09 words/s : L.r. 4.8597e-05
+[2019-05-07 12:03:47] Ep. 7 : Up. 271500 : Sen. 6,124,591 : Cost 24.52422523 : Time 508.47s : 8592.22 words/s : L.r. 4.8552e-05
+[2019-05-07 12:12:34] Ep. 7 : Up. 272000 : Sen. 6,622,645 : Cost 23.18232155 : Time 527.63s : 8743.84 words/s : L.r. 4.8507e-05
+[2019-05-07 12:21:09] Ep. 7 : Up. 272500 : Sen. 7,081,954 : Cost 24.69816399 : Time 514.90s : 8642.26 words/s : L.r. 4.8463e-05
+[2019-05-07 12:29:40] Ep. 7 : Up. 273000 : Sen. 7,551,774 : Cost 23.75320816 : Time 510.88s : 8595.62 words/s : L.r. 4.8418e-05
+[2019-05-07 12:38:19] Ep. 7 : Up. 273500 : Sen. 8,028,754 : Cost 23.98021889 : Time 519.29s : 8760.57 words/s : L.r. 4.8374e-05
+[2019-05-07 12:46:48] Ep. 7 : Up. 274000 : Sen. 8,497,196 : Cost 23.64958000 : Time 508.95s : 8599.82 words/s : L.r. 4.8330e-05
+[2019-05-07 12:55:30] Ep. 7 : Up. 274500 : Sen. 8,980,055 : Cost 23.71298409 : Time 521.31s : 8701.43 words/s : L.r. 4.8286e-05
+[2019-05-07 13:04:07] Ep. 7 : Up. 275000 : Sen. 9,462,602 : Cost 23.41138649 : Time 517.25s : 8640.91 words/s : L.r. 4.8242e-05
+[2019-05-07 13:04:07] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 13:04:11] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter275000.npz
+[2019-05-07 13:04:14] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 13:04:19] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 13:04:32] [valid] Ep. 7 : Up. 275000 : cross-entropy : 19.8545 : new best
+[2019-05-07 13:04:38] [valid] Ep. 7 : Up. 275000 : perplexity : 4.66674 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 13:05:55] [valid] Ep. 7 : Up. 275000 : translation : 34.15 : stalled 8 times (last best: 34.16)
+[2019-05-07 13:14:24] Ep. 7 : Up. 275500 : Sen. 9,921,500 : Cost 24.44982910 : Time 617.51s : 7147.51 words/s : L.r. 4.8198e-05
+[2019-05-07 13:22:55] Ep. 7 : Up. 276000 : Sen. 10,362,932 : Cost 25.52737236 : Time 511.08s : 8680.90 words/s : L.r. 4.8154e-05
+[2019-05-07 13:31:38] Ep. 7 : Up. 276500 : Sen. 10,858,544 : Cost 23.14063454 : Time 522.59s : 8677.75 words/s : L.r. 4.8111e-05
+[2019-05-07 13:40:24] Ep. 7 : Up. 277000 : Sen. 11,343,489 : Cost 23.98548126 : Time 525.54s : 8732.93 words/s : L.r. 4.8067e-05
+[2019-05-07 13:48:44] Ep. 7 : Up. 277500 : Sen. 11,796,360 : Cost 24.14005661 : Time 500.03s : 8607.85 words/s : L.r. 4.8024e-05
+[2019-05-07 13:57:25] Ep. 7 : Up. 278000 : Sen. 12,274,095 : Cost 23.84197807 : Time 521.47s : 8699.28 words/s : L.r. 4.7981e-05
+[2019-05-07 14:05:57] Ep. 7 : Up. 278500 : Sen. 12,757,381 : Cost 23.21236992 : Time 512.12s : 8645.31 words/s : L.r. 4.7938e-05
+[2019-05-07 14:14:27] Ep. 7 : Up. 279000 : Sen. 13,222,302 : Cost 23.91541100 : Time 509.36s : 8648.36 words/s : L.r. 4.7895e-05
+[2019-05-07 14:23:09] Ep. 7 : Up. 279500 : Sen. 13,698,211 : Cost 24.48568153 : Time 522.73s : 8779.47 words/s : L.r. 4.7852e-05
+[2019-05-07 14:31:45] Ep. 7 : Up. 280000 : Sen. 14,165,653 : Cost 24.07238197 : Time 515.54s : 8622.89 words/s : L.r. 4.7809e-05
+[2019-05-07 14:31:45] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 14:31:49] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter280000.npz
+[2019-05-07 14:31:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 14:31:57] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 14:32:11] [valid] Ep. 7 : Up. 280000 : cross-entropy : 19.8377 : new best
+[2019-05-07 14:32:17] [valid] Ep. 7 : Up. 280000 : perplexity : 4.66066 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 14:33:26] [valid] Ep. 7 : Up. 280000 : translation : 34.16 : stalled 9 times (last best: 34.16)
+[2019-05-07 14:41:59] Ep. 7 : Up. 280500 : Sen. 14,636,595 : Cost 23.77207756 : Time 614.54s : 7213.54 words/s : L.r. 4.7767e-05
+[2019-05-07 14:50:22] Ep. 7 : Up. 281000 : Sen. 15,099,500 : Cost 23.66983986 : Time 502.79s : 8562.34 words/s : L.r. 4.7724e-05
+[2019-05-07 14:59:09] Ep. 7 : Up. 281500 : Sen. 15,582,806 : Cost 24.01724815 : Time 526.86s : 8704.31 words/s : L.r. 4.7682e-05
+[2019-05-07 15:07:49] Ep. 7 : Up. 282000 : Sen. 16,063,980 : Cost 23.82877541 : Time 520.44s : 8729.15 words/s : L.r. 4.7639e-05
+[2019-05-07 15:16:22] Ep. 7 : Up. 282500 : Sen. 16,529,558 : Cost 24.11493111 : Time 512.61s : 8618.32 words/s : L.r. 4.7597e-05
+[2019-05-07 15:24:56] Ep. 7 : Up. 283000 : Sen. 17,000,537 : Cost 23.85708618 : Time 514.04s : 8645.62 words/s : L.r. 4.7555e-05
+[2019-05-07 15:33:31] Ep. 7 : Up. 283500 : Sen. 17,455,991 : Cost 24.97766876 : Time 514.72s : 8647.00 words/s : L.r. 4.7513e-05
+[2019-05-07 15:42:04] Ep. 7 : Up. 284000 : Sen. 17,937,928 : Cost 23.27724457 : Time 513.60s : 8690.12 words/s : L.r. 4.7471e-05
+[2019-05-07 15:50:42] Ep. 7 : Up. 284500 : Sen. 18,427,923 : Cost 23.15041924 : Time 517.98s : 8667.77 words/s : L.r. 4.7430e-05
+[2019-05-07 15:59:12] Ep. 7 : Up. 285000 : Sen. 18,880,684 : Cost 24.87830734 : Time 509.32s : 8674.96 words/s : L.r. 4.7388e-05
+[2019-05-07 15:59:12] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 15:59:16] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter285000.npz
+[2019-05-07 15:59:19] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 15:59:23] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 15:59:37] [valid] Ep. 7 : Up. 285000 : cross-entropy : 19.8208 : new best
+[2019-05-07 15:59:43] [valid] Ep. 7 : Up. 285000 : perplexity : 4.65455 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 16:00:51] [valid] Ep. 7 : Up. 285000 : translation : 34.32 : new best
+[2019-05-07 16:09:32] Ep. 7 : Up. 285500 : Sen. 19,373,672 : Cost 23.00647354 : Time 620.52s : 7286.80 words/s : L.r. 4.7346e-05
+[2019-05-07 16:18:05] Ep. 7 : Up. 286000 : Sen. 19,846,182 : Cost 23.77220345 : Time 512.86s : 8652.82 words/s : L.r. 4.7305e-05
+[2019-05-07 16:26:45] Ep. 7 : Up. 286500 : Sen. 20,305,540 : Cost 25.02374268 : Time 520.20s : 8697.96 words/s : L.r. 4.7264e-05
+[2019-05-07 16:35:22] Ep. 7 : Up. 287000 : Sen. 20,775,913 : Cost 24.06243896 : Time 516.20s : 8662.32 words/s : L.r. 4.7223e-05
+[2019-05-07 16:43:59] Ep. 7 : Up. 287500 : Sen. 21,258,368 : Cost 23.67432785 : Time 517.44s : 8691.53 words/s : L.r. 4.7181e-05
+[2019-05-07 16:52:33] Ep. 7 : Up. 288000 : Sen. 21,730,751 : Cost 24.00997543 : Time 514.40s : 8692.67 words/s : L.r. 4.7140e-05
+[2019-05-07 17:01:09] Ep. 7 : Up. 288500 : Sen. 22,200,244 : Cost 23.99151039 : Time 515.43s : 8641.24 words/s : L.r. 4.7100e-05
+[2019-05-07 17:09:51] Ep. 7 : Up. 289000 : Sen. 22,679,161 : Cost 24.04854965 : Time 522.64s : 8738.08 words/s : L.r. 4.7059e-05
+[2019-05-07 17:18:18] Ep. 7 : Up. 289500 : Sen. 23,144,086 : Cost 23.57060623 : Time 506.99s : 8544.90 words/s : L.r. 4.7018e-05
+[2019-05-07 17:26:55] Ep. 7 : Up. 290000 : Sen. 23,636,575 : Cost 23.01670456 : Time 516.14s : 8757.13 words/s : L.r. 4.6978e-05
+[2019-05-07 17:26:55] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 17:26:59] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter290000.npz
+[2019-05-07 17:27:03] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 17:27:07] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 17:27:20] [valid] Ep. 7 : Up. 290000 : cross-entropy : 19.8068 : new best
+[2019-05-07 17:27:26] [valid] Ep. 7 : Up. 290000 : perplexity : 4.64948 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 17:28:36] [valid] Ep. 7 : Up. 290000 : translation : 34.3 : stalled 1 times (last best: 34.32)
+[2019-05-07 17:37:18] Ep. 7 : Up. 290500 : Sen. 24,099,404 : Cost 24.90277100 : Time 623.03s : 7218.66 words/s : L.r. 4.6937e-05
+[2019-05-07 17:45:47] Ep. 7 : Up. 291000 : Sen. 24,571,964 : Cost 23.57884407 : Time 509.55s : 8597.85 words/s : L.r. 4.6897e-05
+[2019-05-07 17:54:25] Ep. 7 : Up. 291500 : Sen. 25,035,986 : Cost 24.55057335 : Time 517.35s : 8748.34 words/s : L.r. 4.6857e-05
+[2019-05-07 18:03:01] Ep. 7 : Up. 292000 : Sen. 25,517,135 : Cost 23.57649040 : Time 516.79s : 8720.94 words/s : L.r. 4.6816e-05
+[2019-05-07 18:11:34] Ep. 7 : Up. 292500 : Sen. 25,984,573 : Cost 24.04190254 : Time 512.73s : 8615.99 words/s : L.r. 4.6776e-05
+[2019-05-07 18:20:05] Ep. 7 : Up. 293000 : Sen. 26,458,495 : Cost 23.61997795 : Time 510.50s : 8618.46 words/s : L.r. 4.6736e-05
+[2019-05-07 18:28:45] Ep. 7 : Up. 293500 : Sen. 26,932,669 : Cost 24.16529465 : Time 520.45s : 8746.47 words/s : L.r. 4.6697e-05
+[2019-05-07 18:37:20] Ep. 7 : Up. 294000 : Sen. 27,396,077 : Cost 24.30695915 : Time 515.20s : 8694.50 words/s : L.r. 4.6657e-05
+[2019-05-07 18:45:55] Ep. 7 : Up. 294500 : Sen. 27,875,931 : Cost 23.80946541 : Time 514.37s : 8721.06 words/s : L.r. 4.6617e-05
+[2019-05-07 18:54:32] Ep. 7 : Up. 295000 : Sen. 28,358,510 : Cost 23.52112007 : Time 517.44s : 8643.00 words/s : L.r. 4.6578e-05
+[2019-05-07 18:54:32] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 18:54:36] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter295000.npz
+[2019-05-07 18:54:40] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 18:54:44] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 18:54:57] [valid] Ep. 7 : Up. 295000 : cross-entropy : 19.7985 : new best
+[2019-05-07 18:55:03] [valid] Ep. 7 : Up. 295000 : perplexity : 4.6465 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 18:56:17] [valid] Ep. 7 : Up. 295000 : translation : 34.31 : stalled 2 times (last best: 34.32)
+[2019-05-07 19:04:47] Ep. 7 : Up. 295500 : Sen. 28,820,928 : Cost 23.92263794 : Time 614.69s : 7149.13 words/s : L.r. 4.6538e-05
+[2019-05-07 19:13:21] Ep. 7 : Up. 296000 : Sen. 29,303,947 : Cost 23.26389694 : Time 513.86s : 8610.09 words/s : L.r. 4.6499e-05
+[2019-05-07 19:21:58] Ep. 7 : Up. 296500 : Sen. 29,773,917 : Cost 24.28096199 : Time 517.60s : 8738.96 words/s : L.r. 4.6460e-05
+[2019-05-07 19:30:40] Ep. 7 : Up. 297000 : Sen. 30,234,692 : Cost 25.21573257 : Time 521.76s : 8729.85 words/s : L.r. 4.6421e-05
+[2019-05-07 19:38:55] Ep. 7 : Up. 297500 : Sen. 30,697,761 : Cost 23.09918213 : Time 495.12s : 8552.74 words/s : L.r. 4.6382e-05
+[2019-05-07 19:47:43] Ep. 7 : Up. 298000 : Sen. 31,182,801 : Cost 24.04562950 : Time 528.43s : 8747.62 words/s : L.r. 4.6343e-05
+[2019-05-07 19:56:26] Ep. 7 : Up. 298500 : Sen. 31,667,282 : Cost 23.68671799 : Time 522.88s : 8734.45 words/s : L.r. 4.6304e-05
+[2019-05-07 20:05:05] Ep. 7 : Up. 299000 : Sen. 32,137,624 : Cost 24.15338707 : Time 518.64s : 8625.28 words/s : L.r. 4.6265e-05
+[2019-05-07 20:13:39] Ep. 7 : Up. 299500 : Sen. 32,621,919 : Cost 23.03215981 : Time 514.00s : 8637.81 words/s : L.r. 4.6227e-05
+[2019-05-07 20:22:11] Ep. 7 : Up. 300000 : Sen. 33,070,369 : Cost 25.25035477 : Time 512.30s : 8640.34 words/s : L.r. 4.6188e-05
+[2019-05-07 20:22:11] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 20:22:15] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter300000.npz
+[2019-05-07 20:22:19] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 20:22:23] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 20:22:37] [valid] Ep. 7 : Up. 300000 : cross-entropy : 19.7854 : new best
+[2019-05-07 20:22:43] [valid] Ep. 7 : Up. 300000 : perplexity : 4.64181 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 20:24:00] [valid] Ep. 7 : Up. 300000 : translation : 34.24 : stalled 3 times (last best: 34.32)
+[2019-05-07 20:32:32] Ep. 7 : Up. 300500 : Sen. 33,549,666 : Cost 23.42036819 : Time 620.97s : 7132.89 words/s : L.r. 4.6150e-05
+[2019-05-07 20:41:08] Ep. 7 : Up. 301000 : Sen. 34,014,206 : Cost 24.42433548 : Time 515.48s : 8695.37 words/s : L.r. 4.6111e-05
+[2019-05-07 20:49:43] Ep. 7 : Up. 301500 : Sen. 34,496,879 : Cost 23.52910423 : Time 514.81s : 8697.82 words/s : L.r. 4.6073e-05
+[2019-05-07 20:58:18] Ep. 7 : Up. 302000 : Sen. 34,962,997 : Cost 23.89372444 : Time 515.18s : 8594.62 words/s : L.r. 4.6035e-05
+[2019-05-07 21:06:55] Ep. 7 : Up. 302500 : Sen. 35,414,353 : Cost 25.35380363 : Time 516.81s : 8691.91 words/s : L.r. 4.5997e-05
+[2019-05-07 21:15:27] Ep. 7 : Up. 303000 : Sen. 35,904,651 : Cost 22.89184761 : Time 512.59s : 8678.03 words/s : L.r. 4.5959e-05
+[2019-05-07 21:24:08] Ep. 7 : Up. 303500 : Sen. 36,371,844 : Cost 24.27202034 : Time 520.76s : 8669.38 words/s : L.r. 4.5921e-05
+[2019-05-07 21:32:39] Ep. 7 : Up. 304000 : Sen. 36,852,216 : Cost 23.38100052 : Time 511.33s : 8657.80 words/s : L.r. 4.5883e-05
+[2019-05-07 21:41:09] Ep. 7 : Up. 304500 : Sen. 37,315,901 : Cost 23.95180321 : Time 509.59s : 8555.50 words/s : L.r. 4.5845e-05
+[2019-05-07 21:49:41] Ep. 7 : Up. 305000 : Sen. 37,781,553 : Cost 24.22902298 : Time 512.63s : 8679.22 words/s : L.r. 4.5808e-05
+[2019-05-07 21:49:41] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 21:49:45] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter305000.npz
+[2019-05-07 21:49:49] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 21:49:53] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 21:50:06] [valid] Ep. 7 : Up. 305000 : cross-entropy : 19.7767 : new best
+[2019-05-07 21:50:12] [valid] Ep. 7 : Up. 305000 : perplexity : 4.63867 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 21:51:24] [valid] Ep. 7 : Up. 305000 : translation : 34.13 : stalled 4 times (last best: 34.32)
+[2019-05-07 22:00:02] Ep. 7 : Up. 305500 : Sen. 38,258,903 : Cost 23.66316032 : Time 620.66s : 7244.82 words/s : L.r. 4.5770e-05
+[2019-05-07 22:08:42] Ep. 7 : Up. 306000 : Sen. 38,727,369 : Cost 24.63679695 : Time 520.08s : 8699.97 words/s : L.r. 4.5733e-05
+[2019-05-07 22:17:23] Ep. 7 : Up. 306500 : Sen. 39,219,459 : Cost 23.04508972 : Time 520.92s : 8684.44 words/s : L.r. 4.5696e-05
+[2019-05-07 22:25:56] Ep. 7 : Up. 307000 : Sen. 39,678,884 : Cost 24.51481056 : Time 512.82s : 8650.76 words/s : L.r. 4.5658e-05
+[2019-05-07 22:34:34] Ep. 7 : Up. 307500 : Sen. 40,151,585 : Cost 24.19580078 : Time 517.75s : 8696.99 words/s : L.r. 4.5621e-05
+[2019-05-07 22:43:03] Ep. 7 : Up. 308000 : Sen. 40,616,375 : Cost 23.84589195 : Time 509.68s : 8590.97 words/s : L.r. 4.5584e-05
+[2019-05-07 22:51:45] Ep. 7 : Up. 308500 : Sen. 41,096,651 : Cost 23.74856377 : Time 522.00s : 8674.03 words/s : L.r. 4.5547e-05
+[2019-05-07 22:59:49] Ep. 7 : Up. 309000 : Sen. 41,529,703 : Cost 23.82467270 : Time 483.90s : 8387.79 words/s : L.r. 4.5510e-05
+[2019-05-07 23:03:03] Seen 41709169 samples
+[2019-05-07 23:03:03] Starting epoch 8
+[2019-05-07 23:03:03] [data] Shuffling data
+[2019-05-07 23:03:46] [data] Done reading 41736982 sentences
+[2019-05-07 23:07:15] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-07 23:13:17] Ep. 8 : Up. 309500 : Sen. 295,320 : Cost 23.94712639 : Time 807.93s : 5599.46 words/s : L.r. 4.5474e-05
+[2019-05-07 23:21:40] Ep. 8 : Up. 310000 : Sen. 760,766 : Cost 23.36614609 : Time 502.49s : 8587.23 words/s : L.r. 4.5437e-05
+[2019-05-07 23:21:40] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-07 23:21:44] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter310000.npz
+[2019-05-07 23:21:48] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-07 23:21:52] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-07 23:22:05] [valid] Ep. 8 : Up. 310000 : cross-entropy : 19.7735 : new best
+[2019-05-07 23:22:11] [valid] Ep. 8 : Up. 310000 : perplexity : 4.6375 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-07 23:23:26] [valid] Ep. 8 : Up. 310000 : translation : 34.16 : stalled 5 times (last best: 34.32)
+[2019-05-07 23:32:19] Ep. 8 : Up. 310500 : Sen. 1,255,346 : Cost 23.58492088 : Time 639.05s : 7298.05 words/s : L.r. 4.5400e-05
+[2019-05-07 23:40:50] Ep. 8 : Up. 311000 : Sen. 1,704,600 : Cost 24.93380165 : Time 511.05s : 8667.45 words/s : L.r. 4.5364e-05
+[2019-05-07 23:49:15] Ep. 8 : Up. 311500 : Sen. 2,185,632 : Cost 22.66328621 : Time 504.92s : 8519.78 words/s : L.r. 4.5327e-05
+[2019-05-07 23:57:55] Ep. 8 : Up. 312000 : Sen. 2,648,552 : Cost 24.64659691 : Time 520.54s : 8678.04 words/s : L.r. 4.5291e-05
+[2019-05-08 00:06:39] Ep. 8 : Up. 312500 : Sen. 3,132,167 : Cost 23.96939468 : Time 523.38s : 8833.89 words/s : L.r. 4.5255e-05
+[2019-05-08 00:15:12] Ep. 8 : Up. 313000 : Sen. 3,603,167 : Cost 23.42990112 : Time 512.86s : 8537.76 words/s : L.r. 4.5219e-05
+[2019-05-08 00:23:39] Ep. 8 : Up. 313500 : Sen. 4,067,904 : Cost 23.88443947 : Time 506.97s : 8687.25 words/s : L.r. 4.5183e-05
+[2019-05-08 00:32:14] Ep. 8 : Up. 314000 : Sen. 4,529,729 : Cost 24.54623413 : Time 515.77s : 8628.15 words/s : L.r. 4.5147e-05
+[2019-05-08 00:40:52] Ep. 8 : Up. 314500 : Sen. 5,013,843 : Cost 23.19878578 : Time 517.29s : 8700.57 words/s : L.r. 4.5111e-05
+[2019-05-08 00:49:26] Ep. 8 : Up. 315000 : Sen. 5,493,180 : Cost 23.46133804 : Time 514.88s : 8681.17 words/s : L.r. 4.5075e-05
+[2019-05-08 00:49:27] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 00:49:31] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter315000.npz
+[2019-05-08 00:49:34] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 00:49:39] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 00:49:52] [valid] Ep. 8 : Up. 315000 : cross-entropy : 19.7693 : new best
+[2019-05-08 00:49:58] [valid] Ep. 8 : Up. 315000 : perplexity : 4.63599 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 00:51:14] [valid] Ep. 8 : Up. 315000 : translation : 34.15 : stalled 6 times (last best: 34.32)
+[2019-05-08 00:59:56] Ep. 8 : Up. 315500 : Sen. 5,967,807 : Cost 24.02535820 : Time 629.33s : 7188.43 words/s : L.r. 4.5039e-05
+[2019-05-08 01:08:25] Ep. 8 : Up. 316000 : Sen. 6,438,060 : Cost 23.51660347 : Time 509.14s : 8604.56 words/s : L.r. 4.5004e-05
+[2019-05-08 01:17:04] Ep. 8 : Up. 316500 : Sen. 6,907,776 : Cost 23.93319130 : Time 518.90s : 8610.02 words/s : L.r. 4.4968e-05
+[2019-05-08 01:25:36] Ep. 8 : Up. 317000 : Sen. 7,381,361 : Cost 23.65481758 : Time 511.63s : 8636.37 words/s : L.r. 4.4932e-05
+[2019-05-08 01:34:11] Ep. 8 : Up. 317500 : Sen. 7,851,857 : Cost 24.09280968 : Time 515.01s : 8733.97 words/s : L.r. 4.4897e-05
+[2019-05-08 01:42:50] Ep. 8 : Up. 318000 : Sen. 8,325,334 : Cost 23.96679115 : Time 519.48s : 8691.11 words/s : L.r. 4.4862e-05
+[2019-05-08 01:51:29] Ep. 8 : Up. 318500 : Sen. 8,786,239 : Cost 24.74394989 : Time 518.53s : 8637.41 words/s : L.r. 4.4827e-05
+[2019-05-08 02:00:03] Ep. 8 : Up. 319000 : Sen. 9,273,719 : Cost 22.83827972 : Time 514.81s : 8669.06 words/s : L.r. 4.4791e-05
+[2019-05-08 02:08:39] Ep. 8 : Up. 319500 : Sen. 9,748,519 : Cost 23.84736824 : Time 515.79s : 8681.90 words/s : L.r. 4.4756e-05
+[2019-05-08 02:17:05] Ep. 8 : Up. 320000 : Sen. 10,199,530 : Cost 24.57569504 : Time 505.98s : 8664.62 words/s : L.r. 4.4721e-05
+[2019-05-08 02:17:05] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 02:17:09] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter320000.npz
+[2019-05-08 02:17:13] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 02:17:17] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 02:17:31] [valid] Ep. 8 : Up. 320000 : cross-entropy : 19.7606 : new best
+[2019-05-08 02:17:37] [valid] Ep. 8 : Up. 320000 : perplexity : 4.63286 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 02:18:50] [valid] Ep. 8 : Up. 320000 : translation : 34.19 : stalled 7 times (last best: 34.32)
+[2019-05-08 02:27:34] Ep. 8 : Up. 320500 : Sen. 10,680,646 : Cost 23.83586884 : Time 628.42s : 7237.48 words/s : L.r. 4.4686e-05
+[2019-05-08 02:36:08] Ep. 8 : Up. 321000 : Sen. 11,155,195 : Cost 23.62697792 : Time 514.66s : 8646.97 words/s : L.r. 4.4652e-05
+[2019-05-08 02:44:36] Ep. 8 : Up. 321500 : Sen. 11,619,132 : Cost 23.95357323 : Time 507.87s : 8661.30 words/s : L.r. 4.4617e-05
+[2019-05-08 02:53:17] Ep. 8 : Up. 322000 : Sen. 12,098,945 : Cost 23.76194191 : Time 521.19s : 8665.24 words/s : L.r. 4.4582e-05
+[2019-05-08 03:01:48] Ep. 8 : Up. 322500 : Sen. 12,578,427 : Cost 23.03348351 : Time 511.19s : 8575.94 words/s : L.r. 4.4548e-05
+[2019-05-08 03:10:21] Ep. 8 : Up. 323000 : Sen. 13,036,690 : Cost 24.44727325 : Time 512.08s : 8676.22 words/s : L.r. 4.4513e-05
+[2019-05-08 03:19:07] Ep. 8 : Up. 323500 : Sen. 13,509,071 : Cost 24.65758133 : Time 526.98s : 8732.60 words/s : L.r. 4.4479e-05
+[2019-05-08 03:27:37] Ep. 8 : Up. 324000 : Sen. 13,986,938 : Cost 23.01861763 : Time 509.60s : 8583.36 words/s : L.r. 4.4444e-05
+[2019-05-08 03:36:23] Ep. 8 : Up. 324500 : Sen. 14,461,085 : Cost 24.54836082 : Time 525.68s : 8815.78 words/s : L.r. 4.4410e-05
+[2019-05-08 03:44:55] Ep. 8 : Up. 325000 : Sen. 14,937,595 : Cost 23.21007538 : Time 512.36s : 8553.08 words/s : L.r. 4.4376e-05
+[2019-05-08 03:44:55] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 03:44:59] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter325000.npz
+[2019-05-08 03:45:02] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 03:45:06] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 03:45:20] [valid] Ep. 8 : Up. 325000 : cross-entropy : 19.7492 : new best
+[2019-05-08 03:45:26] [valid] Ep. 8 : Up. 325000 : perplexity : 4.62878 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 03:46:44] [valid] Ep. 8 : Up. 325000 : translation : 34.29 : stalled 8 times (last best: 34.32)
+[2019-05-08 03:55:15] Ep. 8 : Up. 325500 : Sen. 15,411,698 : Cost 23.41958237 : Time 619.80s : 7094.14 words/s : L.r. 4.4342e-05
+[2019-05-08 04:03:48] Ep. 8 : Up. 326000 : Sen. 15,874,436 : Cost 24.46737480 : Time 513.07s : 8705.93 words/s : L.r. 4.4308e-05
+[2019-05-08 04:12:33] Ep. 8 : Up. 326500 : Sen. 16,360,462 : Cost 23.71296692 : Time 525.38s : 8748.12 words/s : L.r. 4.4274e-05
+[2019-05-08 04:21:12] Ep. 8 : Up. 327000 : Sen. 16,844,668 : Cost 23.69166374 : Time 519.04s : 8722.05 words/s : L.r. 4.4240e-05
+[2019-05-08 04:29:44] Ep. 8 : Up. 327500 : Sen. 17,322,830 : Cost 23.25240898 : Time 511.85s : 8681.58 words/s : L.r. 4.4206e-05
+[2019-05-08 04:38:13] Ep. 8 : Up. 328000 : Sen. 17,787,863 : Cost 24.14530373 : Time 508.61s : 8753.93 words/s : L.r. 4.4173e-05
+[2019-05-08 04:46:47] Ep. 8 : Up. 328500 : Sen. 18,249,961 : Cost 24.15939903 : Time 514.00s : 8553.35 words/s : L.r. 4.4139e-05
+[2019-05-08 04:55:33] Ep. 8 : Up. 329000 : Sen. 18,737,939 : Cost 23.63122368 : Time 526.56s : 8753.28 words/s : L.r. 4.4105e-05
+[2019-05-08 05:03:54] Ep. 8 : Up. 329500 : Sen. 19,187,083 : Cost 24.44127274 : Time 500.53s : 8602.96 words/s : L.r. 4.4072e-05
+[2019-05-08 05:12:27] Ep. 8 : Up. 330000 : Sen. 19,668,955 : Cost 22.97108841 : Time 512.58s : 8616.57 words/s : L.r. 4.4039e-05
+[2019-05-08 05:12:27] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 05:12:30] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter330000.npz
+[2019-05-08 05:12:34] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 05:12:39] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 05:12:52] [valid] Ep. 8 : Up. 330000 : cross-entropy : 19.7364 : new best
+[2019-05-08 05:12:57] [valid] Ep. 8 : Up. 330000 : perplexity : 4.62417 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 05:14:10] [valid] Ep. 8 : Up. 330000 : translation : 34.27 : stalled 9 times (last best: 34.32)
+[2019-05-08 05:22:43] Ep. 8 : Up. 330500 : Sen. 20,127,691 : Cost 24.72020912 : Time 616.52s : 7236.02 words/s : L.r. 4.4005e-05
+[2019-05-08 05:31:30] Ep. 8 : Up. 331000 : Sen. 20,622,208 : Cost 23.33135033 : Time 526.72s : 8685.09 words/s : L.r. 4.3972e-05
+[2019-05-08 05:40:06] Ep. 8 : Up. 331500 : Sen. 21,083,600 : Cost 24.56485367 : Time 515.78s : 8709.04 words/s : L.r. 4.3939e-05
+[2019-05-08 05:48:44] Ep. 8 : Up. 332000 : Sen. 21,575,018 : Cost 23.08930779 : Time 518.58s : 8738.64 words/s : L.r. 4.3906e-05
+[2019-05-08 05:57:17] Ep. 8 : Up. 332500 : Sen. 22,034,816 : Cost 24.46193886 : Time 512.79s : 8626.94 words/s : L.r. 4.3873e-05
+[2019-05-08 06:05:50] Ep. 8 : Up. 333000 : Sen. 22,491,939 : Cost 24.67027664 : Time 512.68s : 8661.36 words/s : L.r. 4.3840e-05
+[2019-05-08 06:14:27] Ep. 8 : Up. 333500 : Sen. 22,983,261 : Cost 22.91823578 : Time 516.90s : 8693.18 words/s : L.r. 4.3807e-05
+[2019-05-08 06:23:06] Ep. 8 : Up. 334000 : Sen. 23,467,938 : Cost 23.31075668 : Time 519.95s : 8673.31 words/s : L.r. 4.3774e-05
+[2019-05-08 06:31:38] Ep. 8 : Up. 334500 : Sen. 23,928,211 : Cost 24.55066872 : Time 511.24s : 8698.11 words/s : L.r. 4.3741e-05
+[2019-05-08 06:40:10] Ep. 8 : Up. 335000 : Sen. 24,376,703 : Cost 25.09652328 : Time 511.89s : 8671.28 words/s : L.r. 4.3709e-05
+[2019-05-08 06:40:10] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 06:40:14] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter335000.npz
+[2019-05-08 06:40:17] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 06:40:21] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 06:40:35] [valid] Ep. 8 : Up. 335000 : cross-entropy : 19.7169 : new best
+[2019-05-08 06:40:41] [valid] Ep. 8 : Up. 335000 : perplexity : 4.61717 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 06:41:52] [valid] Ep. 8 : Up. 335000 : translation : 34.17 : stalled 10 times (last best: 34.32)
+[2019-05-08 06:50:29] Ep. 8 : Up. 335500 : Sen. 24,858,340 : Cost 23.46995926 : Time 619.54s : 7256.08 words/s : L.r. 4.3676e-05
+[2019-05-08 06:59:15] Ep. 8 : Up. 336000 : Sen. 25,352,299 : Cost 23.49164963 : Time 525.63s : 8743.39 words/s : L.r. 4.3644e-05
+[2019-05-08 07:07:47] Ep. 8 : Up. 336500 : Sen. 25,817,951 : Cost 24.02547455 : Time 512.01s : 8624.97 words/s : L.r. 4.3611e-05
+[2019-05-08 07:16:11] Ep. 8 : Up. 337000 : Sen. 26,290,560 : Cost 23.22454071 : Time 504.20s : 8716.45 words/s : L.r. 4.3579e-05
+[2019-05-08 07:24:55] Ep. 8 : Up. 337500 : Sen. 26,773,379 : Cost 23.92447281 : Time 523.73s : 8721.88 words/s : L.r. 4.3546e-05
+[2019-05-08 07:33:24] Ep. 8 : Up. 338000 : Sen. 27,233,750 : Cost 24.15480995 : Time 508.84s : 8617.63 words/s : L.r. 4.3514e-05
+[2019-05-08 07:41:54] Ep. 8 : Up. 338500 : Sen. 27,708,843 : Cost 23.38361359 : Time 510.39s : 8641.98 words/s : L.r. 4.3482e-05
+[2019-05-08 07:50:38] Ep. 8 : Up. 339000 : Sen. 28,190,006 : Cost 24.01525307 : Time 524.21s : 8759.16 words/s : L.r. 4.3450e-05
+[2019-05-08 07:59:08] Ep. 8 : Up. 339500 : Sen. 28,659,546 : Cost 23.65838242 : Time 509.73s : 8611.62 words/s : L.r. 4.3418e-05
+[2019-05-08 08:07:36] Ep. 8 : Up. 340000 : Sen. 29,124,444 : Cost 23.92946434 : Time 507.87s : 8648.75 words/s : L.r. 4.3386e-05
+[2019-05-08 08:07:36] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 08:07:40] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter340000.npz
+[2019-05-08 08:07:44] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 08:07:48] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 08:08:01] [valid] Ep. 8 : Up. 340000 : cross-entropy : 19.7076 : new best
+[2019-05-08 08:08:07] [valid] Ep. 8 : Up. 340000 : perplexity : 4.61386 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 08:09:17] [valid] Ep. 8 : Up. 340000 : translation : 34.31 : stalled 11 times (last best: 34.32)
+[2019-05-08 08:17:49] Ep. 8 : Up. 340500 : Sen. 29,592,005 : Cost 24.01157570 : Time 613.33s : 7265.87 words/s : L.r. 4.3354e-05
+[2019-05-08 08:26:35] Ep. 8 : Up. 341000 : Sen. 30,076,905 : Cost 23.82371330 : Time 525.48s : 8724.39 words/s : L.r. 4.3322e-05
+[2019-05-08 08:35:14] Ep. 8 : Up. 341500 : Sen. 30,548,978 : Cost 24.07900047 : Time 519.15s : 8676.07 words/s : L.r. 4.3291e-05
+[2019-05-08 08:43:43] Ep. 8 : Up. 342000 : Sen. 31,013,501 : Cost 24.04845619 : Time 509.02s : 8654.50 words/s : L.r. 4.3259e-05
+[2019-05-08 08:52:18] Ep. 8 : Up. 342500 : Sen. 31,481,085 : Cost 24.40589905 : Time 515.13s : 8735.07 words/s : L.r. 4.3227e-05
+[2019-05-08 09:01:01] Ep. 8 : Up. 343000 : Sen. 31,968,710 : Cost 23.31462479 : Time 522.89s : 8674.80 words/s : L.r. 4.3196e-05
+[2019-05-08 09:09:30] Ep. 8 : Up. 343500 : Sen. 32,424,636 : Cost 24.37506294 : Time 508.78s : 8633.22 words/s : L.r. 4.3164e-05
+[2019-05-08 09:18:15] Ep. 8 : Up. 344000 : Sen. 32,919,244 : Cost 23.22647285 : Time 525.07s : 8715.20 words/s : L.r. 4.3133e-05
+[2019-05-08 09:26:46] Ep. 8 : Up. 344500 : Sen. 33,386,368 : Cost 23.82637596 : Time 511.16s : 8634.23 words/s : L.r. 4.3102e-05
+[2019-05-08 09:35:30] Ep. 8 : Up. 345000 : Sen. 33,869,648 : Cost 23.77495003 : Time 523.69s : 8671.59 words/s : L.r. 4.3071e-05
+[2019-05-08 09:35:30] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 09:35:33] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter345000.npz
+[2019-05-08 09:35:37] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 09:35:41] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 09:35:54] [valid] Ep. 8 : Up. 345000 : cross-entropy : 19.7002 : new best
+[2019-05-08 09:36:00] [valid] Ep. 8 : Up. 345000 : perplexity : 4.61119 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 09:37:13] [valid] Ep. 8 : Up. 345000 : translation : 34.31 : stalled 12 times (last best: 34.32)
+[2019-05-08 09:45:41] Ep. 8 : Up. 345500 : Sen. 34,319,198 : Cost 24.76108742 : Time 611.48s : 7181.09 words/s : L.r. 4.3039e-05
+[2019-05-08 09:54:17] Ep. 8 : Up. 346000 : Sen. 34,807,865 : Cost 23.04193878 : Time 516.38s : 8672.35 words/s : L.r. 4.3008e-05
+[2019-05-08 10:02:50] Ep. 8 : Up. 346500 : Sen. 35,280,933 : Cost 23.71458054 : Time 512.74s : 8693.61 words/s : L.r. 4.2977e-05
+[2019-05-08 10:11:25] Ep. 8 : Up. 347000 : Sen. 35,738,324 : Cost 24.61474800 : Time 514.90s : 8637.67 words/s : L.r. 4.2946e-05
+[2019-05-08 10:20:11] Ep. 8 : Up. 347500 : Sen. 36,224,672 : Cost 23.89975166 : Time 525.80s : 8786.62 words/s : L.r. 4.2915e-05
+[2019-05-08 10:28:46] Ep. 8 : Up. 348000 : Sen. 36,694,541 : Cost 23.97004890 : Time 515.21s : 8650.88 words/s : L.r. 4.2885e-05
+[2019-05-08 10:37:21] Ep. 8 : Up. 348500 : Sen. 37,169,318 : Cost 23.54377937 : Time 514.49s : 8621.26 words/s : L.r. 4.2854e-05
+[2019-05-08 10:46:04] Ep. 8 : Up. 349000 : Sen. 37,655,455 : Cost 23.61439896 : Time 523.94s : 8743.16 words/s : L.r. 4.2823e-05
+[2019-05-08 10:54:31] Ep. 8 : Up. 349500 : Sen. 38,119,908 : Cost 23.64702606 : Time 506.87s : 8550.97 words/s : L.r. 4.2792e-05
+[2019-05-08 11:03:02] Ep. 8 : Up. 350000 : Sen. 38,581,584 : Cost 23.91398811 : Time 510.48s : 8545.58 words/s : L.r. 4.2762e-05
+[2019-05-08 11:03:02] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 11:03:06] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter350000.npz
+[2019-05-08 11:03:10] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 11:03:14] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 11:03:27] [valid] Ep. 8 : Up. 350000 : cross-entropy : 19.6916 : new best
+[2019-05-08 11:03:33] [valid] Ep. 8 : Up. 350000 : perplexity : 4.60814 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 11:04:51] [valid] Ep. 8 : Up. 350000 : translation : 34.36 : new best
+[2019-05-08 11:13:31] Ep. 8 : Up. 350500 : Sen. 39,059,895 : Cost 24.07629585 : Time 629.27s : 7237.59 words/s : L.r. 4.2731e-05
+[2019-05-08 11:22:11] Ep. 8 : Up. 351000 : Sen. 39,551,575 : Cost 22.99988747 : Time 519.84s : 8659.15 words/s : L.r. 4.2701e-05
+[2019-05-08 11:30:45] Ep. 8 : Up. 351500 : Sen. 40,014,748 : Cost 24.39117050 : Time 514.11s : 8709.34 words/s : L.r. 4.2670e-05
+[2019-05-08 11:39:25] Ep. 8 : Up. 352000 : Sen. 40,484,311 : Cost 24.74237251 : Time 520.01s : 8834.91 words/s : L.r. 4.2640e-05
+[2019-05-08 11:47:59] Ep. 8 : Up. 352500 : Sen. 40,966,356 : Cost 22.95812416 : Time 514.26s : 8557.32 words/s : L.r. 4.2610e-05
+[2019-05-08 11:56:10] Ep. 8 : Up. 353000 : Sen. 41,401,999 : Cost 24.38271523 : Time 490.35s : 8524.95 words/s : L.r. 4.2580e-05
+[2019-05-08 12:01:47] Seen 41709169 samples
+[2019-05-08 12:01:48] Starting epoch 9
+[2019-05-08 12:01:48] [data] Shuffling data
+[2019-05-08 12:02:31] [data] Done reading 41736982 sentences
+[2019-05-08 12:06:02] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-08 12:09:16] Ep. 9 : Up. 353500 : Sen. 150,879 : Cost 23.26432419 : Time 786.45s : 5390.86 words/s : L.r. 4.2550e-05
+[2019-05-08 12:18:02] Ep. 9 : Up. 354000 : Sen. 636,589 : Cost 23.52510071 : Time 525.53s : 8681.97 words/s : L.r. 4.2520e-05
+[2019-05-08 12:26:38] Ep. 9 : Up. 354500 : Sen. 1,099,763 : Cost 24.39529037 : Time 516.50s : 8703.06 words/s : L.r. 4.2490e-05
+[2019-05-08 12:35:11] Ep. 9 : Up. 355000 : Sen. 1,578,538 : Cost 23.39661217 : Time 512.57s : 8679.81 words/s : L.r. 4.2460e-05
+[2019-05-08 12:35:11] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 12:35:15] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter355000.npz
+[2019-05-08 12:35:19] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 12:35:23] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 12:35:37] [valid] Ep. 9 : Up. 355000 : cross-entropy : 19.6895 : new best
+[2019-05-08 12:35:43] [valid] Ep. 9 : Up. 355000 : perplexity : 4.60739 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 12:37:02] [valid] Ep. 9 : Up. 355000 : translation : 34.41 : new best
+[2019-05-08 12:45:32] Ep. 9 : Up. 355500 : Sen. 2,043,430 : Cost 23.89108658 : Time 620.96s : 7140.64 words/s : L.r. 4.2430e-05
+[2019-05-08 12:54:12] Ep. 9 : Up. 356000 : Sen. 2,518,415 : Cost 24.13321495 : Time 520.40s : 8726.35 words/s : L.r. 4.2400e-05
+[2019-05-08 13:02:41] Ep. 9 : Up. 356500 : Sen. 2,989,223 : Cost 23.53956032 : Time 508.78s : 8695.66 words/s : L.r. 4.2370e-05
+[2019-05-08 13:11:18] Ep. 9 : Up. 357000 : Sen. 3,458,607 : Cost 24.18388748 : Time 516.94s : 8738.41 words/s : L.r. 4.2340e-05
+[2019-05-08 13:19:51] Ep. 9 : Up. 357500 : Sen. 3,935,319 : Cost 23.30891800 : Time 512.97s : 8630.62 words/s : L.r. 4.2311e-05
+[2019-05-08 13:28:29] Ep. 9 : Up. 358000 : Sen. 4,412,824 : Cost 24.02017593 : Time 518.06s : 8826.27 words/s : L.r. 4.2281e-05
+[2019-05-08 13:36:58] Ep. 9 : Up. 358500 : Sen. 4,876,294 : Cost 23.71051025 : Time 508.74s : 8535.99 words/s : L.r. 4.2252e-05
+[2019-05-08 13:45:32] Ep. 9 : Up. 359000 : Sen. 5,347,706 : Cost 23.69447327 : Time 514.84s : 8685.93 words/s : L.r. 4.2222e-05
+[2019-05-08 13:54:08] Ep. 9 : Up. 359500 : Sen. 5,832,371 : Cost 23.19995117 : Time 515.91s : 8647.00 words/s : L.r. 4.2193e-05
+[2019-05-08 14:02:49] Ep. 9 : Up. 360000 : Sen. 6,317,608 : Cost 23.37009430 : Time 520.91s : 8676.24 words/s : L.r. 4.2164e-05
+[2019-05-08 14:02:49] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 14:02:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter360000.npz
+[2019-05-08 14:02:57] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 14:03:01] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 14:03:15] [valid] Ep. 9 : Up. 360000 : cross-entropy : 19.6808 : new best
+[2019-05-08 14:03:21] [valid] Ep. 9 : Up. 360000 : perplexity : 4.60426 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 14:04:35] [valid] Ep. 9 : Up. 360000 : translation : 34.45 : new best
+[2019-05-08 14:13:05] Ep. 9 : Up. 360500 : Sen. 6,769,877 : Cost 24.63557816 : Time 615.90s : 7149.41 words/s : L.r. 4.2134e-05
+[2019-05-08 14:21:45] Ep. 9 : Up. 361000 : Sen. 7,244,691 : Cost 23.87224770 : Time 519.81s : 8686.75 words/s : L.r. 4.2105e-05
+[2019-05-08 14:30:08] Ep. 9 : Up. 361500 : Sen. 7,695,442 : Cost 24.16594124 : Time 503.22s : 8584.98 words/s : L.r. 4.2076e-05
+[2019-05-08 14:38:58] Ep. 9 : Up. 362000 : Sen. 8,184,608 : Cost 23.84328079 : Time 530.04s : 8721.52 words/s : L.r. 4.2047e-05
+[2019-05-08 14:47:36] Ep. 9 : Up. 362500 : Sen. 8,656,194 : Cost 23.79264450 : Time 518.13s : 8615.21 words/s : L.r. 4.2018e-05
+[2019-05-08 14:56:14] Ep. 9 : Up. 363000 : Sen. 9,139,414 : Cost 23.19795799 : Time 517.57s : 8669.56 words/s : L.r. 4.1989e-05
+[2019-05-08 15:04:47] Ep. 9 : Up. 363500 : Sen. 9,598,577 : Cost 24.35966110 : Time 512.67s : 8649.72 words/s : L.r. 4.1960e-05
+[2019-05-08 15:13:26] Ep. 9 : Up. 364000 : Sen. 10,090,798 : Cost 22.82103920 : Time 519.87s : 8629.05 words/s : L.r. 4.1931e-05
+[2019-05-08 15:22:04] Ep. 9 : Up. 364500 : Sen. 10,560,254 : Cost 24.01187706 : Time 517.68s : 8647.65 words/s : L.r. 4.1903e-05
+[2019-05-08 15:30:41] Ep. 9 : Up. 365000 : Sen. 11,025,275 : Cost 24.31762314 : Time 516.71s : 8682.56 words/s : L.r. 4.1874e-05
+[2019-05-08 15:30:41] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 15:30:45] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter365000.npz
+[2019-05-08 15:30:49] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 15:30:54] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 15:31:07] [valid] Ep. 9 : Up. 365000 : cross-entropy : 19.6763 : new best
+[2019-05-08 15:31:13] [valid] Ep. 9 : Up. 365000 : perplexity : 4.60265 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 15:32:22] [valid] Ep. 9 : Up. 365000 : translation : 34.47 : new best
+[2019-05-08 15:41:05] Ep. 9 : Up. 365500 : Sen. 11,506,525 : Cost 23.61724281 : Time 623.87s : 7303.48 words/s : L.r. 4.1845e-05
+[2019-05-08 15:49:41] Ep. 9 : Up. 366000 : Sen. 11,981,244 : Cost 23.65869713 : Time 516.45s : 8591.17 words/s : L.r. 4.1817e-05
+[2019-05-08 15:58:21] Ep. 9 : Up. 366500 : Sen. 12,456,769 : Cost 23.84263420 : Time 519.64s : 8679.18 words/s : L.r. 4.1788e-05
+[2019-05-08 16:06:56] Ep. 9 : Up. 367000 : Sen. 12,926,032 : Cost 24.06789970 : Time 515.16s : 8663.23 words/s : L.r. 4.1760e-05
+[2019-05-08 16:15:46] Ep. 9 : Up. 367500 : Sen. 13,424,543 : Cost 23.25415802 : Time 530.50s : 8717.52 words/s : L.r. 4.1731e-05
+[2019-05-08 16:24:12] Ep. 9 : Up. 368000 : Sen. 13,876,929 : Cost 24.23719215 : Time 505.65s : 8618.32 words/s : L.r. 4.1703e-05
+[2019-05-08 16:32:58] Ep. 9 : Up. 368500 : Sen. 14,364,207 : Cost 23.85139656 : Time 526.31s : 8750.37 words/s : L.r. 4.1675e-05
+[2019-05-08 16:41:23] Ep. 9 : Up. 369000 : Sen. 14,826,945 : Cost 23.61996078 : Time 505.04s : 8622.64 words/s : L.r. 4.1646e-05
+[2019-05-08 16:49:56] Ep. 9 : Up. 369500 : Sen. 15,297,817 : Cost 23.66212463 : Time 512.84s : 8609.29 words/s : L.r. 4.1618e-05
+[2019-05-08 16:58:24] Ep. 9 : Up. 370000 : Sen. 15,762,900 : Cost 23.72903824 : Time 507.94s : 8652.79 words/s : L.r. 4.1590e-05
+[2019-05-08 16:58:24] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 16:58:28] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter370000.npz
+[2019-05-08 16:58:32] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 16:58:36] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 16:58:50] [valid] Ep. 9 : Up. 370000 : cross-entropy : 19.6767 : stalled 1 times (last best: 19.6763)
+[2019-05-08 16:58:56] [valid] Ep. 9 : Up. 370000 : perplexity : 4.60282 : stalled 1 times (last best: 4.60265)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 17:00:08] [valid] Ep. 9 : Up. 370000 : translation : 34.37 : stalled 1 times (last best: 34.47)
+[2019-05-08 17:08:51] Ep. 9 : Up. 370500 : Sen. 16,245,691 : Cost 23.64846420 : Time 626.76s : 7274.75 words/s : L.r. 4.1562e-05
+[2019-05-08 17:17:22] Ep. 9 : Up. 371000 : Sen. 16,704,647 : Cost 24.29371643 : Time 511.33s : 8651.33 words/s : L.r. 4.1534e-05
+[2019-05-08 17:25:50] Ep. 9 : Up. 371500 : Sen. 17,183,518 : Cost 23.14787102 : Time 508.01s : 8652.14 words/s : L.r. 4.1506e-05
+[2019-05-08 17:34:29] Ep. 9 : Up. 372000 : Sen. 17,662,517 : Cost 23.74764442 : Time 518.78s : 8691.19 words/s : L.r. 4.1478e-05
+[2019-05-08 17:43:07] Ep. 9 : Up. 372500 : Sen. 18,125,957 : Cost 24.40519524 : Time 517.41s : 8713.40 words/s : L.r. 4.1450e-05
+[2019-05-08 17:51:41] Ep. 9 : Up. 373000 : Sen. 18,590,522 : Cost 24.15536880 : Time 514.17s : 8632.81 words/s : L.r. 4.1422e-05
+[2019-05-08 18:00:25] Ep. 9 : Up. 373500 : Sen. 19,087,626 : Cost 23.05174446 : Time 524.13s : 8746.67 words/s : L.r. 4.1395e-05
+[2019-05-08 18:08:58] Ep. 9 : Up. 374000 : Sen. 19,548,722 : Cost 24.14451408 : Time 513.37s : 8588.55 words/s : L.r. 4.1367e-05
+[2019-05-08 18:17:32] Ep. 9 : Up. 374500 : Sen. 20,022,903 : Cost 23.67672729 : Time 513.46s : 8712.88 words/s : L.r. 4.1339e-05
+[2019-05-08 18:26:02] Ep. 9 : Up. 375000 : Sen. 20,484,798 : Cost 23.97611237 : Time 510.33s : 8643.73 words/s : L.r. 4.1312e-05
+[2019-05-08 18:26:02] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 18:26:06] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter375000.npz
+[2019-05-08 18:26:10] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 18:26:14] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 18:26:28] [valid] Ep. 9 : Up. 375000 : cross-entropy : 19.6651 : new best
+[2019-05-08 18:26:34] [valid] Ep. 9 : Up. 375000 : perplexity : 4.59866 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 18:27:47] [valid] Ep. 9 : Up. 375000 : translation : 34.41 : stalled 2 times (last best: 34.47)
+[2019-05-08 18:36:24] Ep. 9 : Up. 375500 : Sen. 20,970,971 : Cost 23.23499489 : Time 622.36s : 7208.25 words/s : L.r. 4.1284e-05
+[2019-05-08 18:44:57] Ep. 9 : Up. 376000 : Sen. 21,434,001 : Cost 23.92252159 : Time 512.43s : 8583.61 words/s : L.r. 4.1257e-05
+[2019-05-08 18:53:39] Ep. 9 : Up. 376500 : Sen. 21,915,333 : Cost 23.98152924 : Time 522.35s : 8791.13 words/s : L.r. 4.1229e-05
+[2019-05-08 19:02:18] Ep. 9 : Up. 377000 : Sen. 22,390,644 : Cost 23.87055779 : Time 518.48s : 8661.73 words/s : L.r. 4.1202e-05
+[2019-05-08 19:10:47] Ep. 9 : Up. 377500 : Sen. 22,861,226 : Cost 23.42682457 : Time 509.57s : 8623.45 words/s : L.r. 4.1175e-05
+[2019-05-08 19:19:14] Ep. 9 : Up. 378000 : Sen. 23,316,709 : Cost 23.85359955 : Time 506.37s : 8525.60 words/s : L.r. 4.1148e-05
+[2019-05-08 19:27:53] Ep. 9 : Up. 378500 : Sen. 23,790,412 : Cost 24.16156960 : Time 519.46s : 8706.43 words/s : L.r. 4.1120e-05
+[2019-05-08 19:36:35] Ep. 9 : Up. 379000 : Sen. 24,272,029 : Cost 23.86055946 : Time 522.43s : 8736.24 words/s : L.r. 4.1093e-05
+[2019-05-08 19:45:10] Ep. 9 : Up. 379500 : Sen. 24,730,418 : Cost 24.79581070 : Time 514.83s : 8728.70 words/s : L.r. 4.1066e-05
+[2019-05-08 19:53:53] Ep. 9 : Up. 380000 : Sen. 25,241,448 : Cost 21.70835686 : Time 522.56s : 8604.60 words/s : L.r. 4.1039e-05
+[2019-05-08 19:53:53] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 19:53:57] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter380000.npz
+[2019-05-08 19:54:01] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 19:54:05] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 19:54:19] [valid] Ep. 9 : Up. 380000 : cross-entropy : 19.6525 : new best
+[2019-05-08 19:54:25] [valid] Ep. 9 : Up. 380000 : perplexity : 4.59415 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 19:55:40] [valid] Ep. 9 : Up. 380000 : translation : 34.46 : stalled 3 times (last best: 34.47)
+[2019-05-08 20:04:13] Ep. 9 : Up. 380500 : Sen. 25,698,641 : Cost 24.59344673 : Time 620.08s : 7143.43 words/s : L.r. 4.1012e-05
+[2019-05-08 20:12:52] Ep. 9 : Up. 381000 : Sen. 26,177,060 : Cost 23.54148102 : Time 518.70s : 8658.77 words/s : L.r. 4.0985e-05
+[2019-05-08 20:21:27] Ep. 9 : Up. 381500 : Sen. 26,645,885 : Cost 24.18157387 : Time 515.18s : 8730.10 words/s : L.r. 4.0958e-05
+[2019-05-08 20:30:07] Ep. 9 : Up. 382000 : Sen. 27,121,176 : Cost 23.74273491 : Time 519.76s : 8639.35 words/s : L.r. 4.0932e-05
+[2019-05-08 20:38:42] Ep. 9 : Up. 382500 : Sen. 27,592,110 : Cost 23.89203835 : Time 515.14s : 8619.76 words/s : L.r. 4.0905e-05
+[2019-05-08 20:47:20] Ep. 9 : Up. 383000 : Sen. 28,058,342 : Cost 24.26629448 : Time 518.42s : 8680.74 words/s : L.r. 4.0878e-05
+[2019-05-08 20:55:58] Ep. 9 : Up. 383500 : Sen. 28,557,377 : Cost 22.36684036 : Time 518.22s : 8708.91 words/s : L.r. 4.0851e-05
+[2019-05-08 21:04:29] Ep. 9 : Up. 384000 : Sen. 29,006,526 : Cost 25.02403831 : Time 510.78s : 8610.58 words/s : L.r. 4.0825e-05
+[2019-05-08 21:12:57] Ep. 9 : Up. 384500 : Sen. 29,473,787 : Cost 23.39355469 : Time 507.78s : 8596.39 words/s : L.r. 4.0798e-05
+[2019-05-08 21:21:33] Ep. 9 : Up. 385000 : Sen. 29,948,748 : Cost 23.94846916 : Time 516.19s : 8732.84 words/s : L.r. 4.0772e-05
+[2019-05-08 21:21:33] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz.orig.npz
+[2019-05-08 21:21:37] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.iter385000.npz
+[2019-05-08 21:21:41] Saving model weights and runtime parameters to model/model.voita.gate2.nopre.npz
+[2019-05-08 21:21:46] Saving Adam parameters to model/model.voita.gate2.nopre.npz.optimizer.npz
+[2019-05-08 21:22:00] [valid] Ep. 9 : Up. 385000 : cross-entropy : 19.6479 : new best
+[2019-05-08 21:22:06] [valid] Ep. 9 : Up. 385000 : perplexity : 4.59251 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-08 21:23:19] [valid] Ep. 9 : Up. 385000 : translation : 34.36 : stalled 4 times (last best: 34.47)
+[2019-05-08 21:31:53] Ep. 9 : Up. 385500 : Sen. 30,397,454 : Cost 25.55885887 : Time 619.99s : 7281.78 words/s : L.r. 4.0745e-05
+[2019-05-08 21:40:33] Ep. 9 : Up. 386000 : Sen. 30,887,547 : Cost 22.95495796 : Time 519.84s : 8665.51 words/s : L.r. 4.0719e-05
+[2019-05-08 21:49:15] Ep. 9 : Up. 386500 : Sen. 31,377,824 : Cost 23.17314148 : Time 521.76s : 8648.52 words/s : L.r. 4.0693e-05
+[2019-05-08 21:58:37] Ep. 9 : Up. 387000 : Sen. 31,837,898 : Cost 23.94924545 : Time 562.49s : 7776.74 words/s : L.r. 4.0666e-05
+train_voita_gated_nopre.sh: line 30: 24339 Terminated              $marian_home/marian --model model/model.voita.gate2.nopre.npz --type transformer-context --train-sets corp/opensub.en-fr.docs.train.en.bpe.src_prev corp/opensub.en-fr.docs.train.en.bpe.src corp/opensub.en-fr.docs.train.fr.bpe --max-length 55 --dim-vocabs 30000 30000 --vocabs corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml --mini-batch-fit -w 9300 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe.src_prev corp/opensub.en-fr.docs.dev.en.bpe.src corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 6 --normalize 0.6 --log model/train_trans.gate.log --valid-log model/valid_trans.gate.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus

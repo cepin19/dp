@@ -1,0 +1,14 @@
+[2018-12-18 18:17:28] Error: There are option(s) in a config file that are not expected
+[2018-12-18 18:17:28] Error: Aborted from void marian::ConfigParser::parseOptions(int, char**, bool) in /home/big_maggie/usr/marian_cosmas/marian_1.7.3/marian-dev/src/common/config_parser.cpp:707
+
+[CALL STACK]
+[0x57c286]                                                            
+[0x5528ff]                                                            
+[0x554ced]                                                            
+[0x554d55]                                                            
+[0x43a752]                                                            
+[0x4191b9]                                                            
+[0x7f3b3fe0d830]    __libc_start_main                                  + 0xf0
+[0x436fa9]                                                            
+
+train_trans.sh: line 27: 31448 Aborted                 (core dumped) $marian_home/marian --model model/model.src1tgt0.2.npz --type transformer --train-sets corp/opensub.en-fr.docs.train.en.bpe corp/opensub.en-fr.docs.train.fr.bpe --max-length 160 --vocabs corp/vocab.encz.opensub.yml corp/vocab.encz.opensub.yml --mini-batch-fit -w 9000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 6 --normalize 0.6 --log model/train_trans.2.log --valid-log model/valid_trans2.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 2 --devices 0 1 2 3 --sync-sgd --seed 1111 --exponential-smoothing --no-nccl

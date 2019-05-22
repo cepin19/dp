@@ -1,0 +1,1012 @@
+[2019-01-21 14:17:54] [marian] Marian v1.7.5 4478901 2018-12-10 07:49:46 -0800
+[2019-01-21 14:17:54] [marian] Running on poseidon.lingea.cz as process 7452 with command line:
+[2019-01-21 14:17:54] [marian] /home/big_maggie/usr/marian_poseidon/marian-dev/build/marian --model model/model.src1tgt0.newvocab.npz --type transformer --train-sets corp/opensub.en-fr.docs.train.en.bpe corp/opensub.en-fr.docs.train.fr.bpe --max-length 160 --vocabs corp/vocab.encz.opensub.yml corp/vocab.encz.opensub.yml --mini-batch-fit -w 9800 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 6 --normalize 0.6 --log model/train_trans.newvocab.log --valid-log model/valid_trans.newvocab.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 1 --sync-sgd --seed 1111 --exponential-smoothing --no-nccl --no-restore-corpus
+[2019-01-21 14:17:56] [config] after-batches: 0
+[2019-01-21 14:17:56] [config] after-epochs: 0
+[2019-01-21 14:17:56] [config] allow-unk: false
+[2019-01-21 14:17:56] [config] beam-size: 6
+[2019-01-21 14:17:56] [config] best-deep: false
+[2019-01-21 14:17:56] [config] clip-gemm: 0
+[2019-01-21 14:17:56] [config] clip-norm: 5
+[2019-01-21 14:17:56] [config] cost-type: ce-mean
+[2019-01-21 14:17:56] [config] cpu-threads: 0
+[2019-01-21 14:17:56] [config] data-weighting-type: sentence
+[2019-01-21 14:17:56] [config] dec-cell: gru
+[2019-01-21 14:17:56] [config] dec-cell-base-depth: 2
+[2019-01-21 14:17:56] [config] dec-cell-high-depth: 1
+[2019-01-21 14:17:56] [config] dec-depth: 6
+[2019-01-21 14:17:56] [config] devices:
+[2019-01-21 14:17:56] [config]   - 0
+[2019-01-21 14:17:56] [config]   - 1
+[2019-01-21 14:17:56] [config] dim-emb: 512
+[2019-01-21 14:17:56] [config] dim-rnn: 1024
+[2019-01-21 14:17:56] [config] dim-vocabs:
+[2019-01-21 14:17:56] [config]   - 33552
+[2019-01-21 14:17:56] [config]   - 33552
+[2019-01-21 14:17:56] [config] disp-first: 0
+[2019-01-21 14:17:56] [config] disp-freq: 500
+[2019-01-21 14:17:56] [config] disp-label-counts: false
+[2019-01-21 14:17:56] [config] dropout-rnn: 0
+[2019-01-21 14:17:56] [config] dropout-src: 0
+[2019-01-21 14:17:56] [config] dropout-trg: 0
+[2019-01-21 14:17:56] [config] early-stopping: 10
+[2019-01-21 14:17:56] [config] embedding-fix-src: false
+[2019-01-21 14:17:56] [config] embedding-fix-trg: false
+[2019-01-21 14:17:56] [config] embedding-normalization: false
+[2019-01-21 14:17:56] [config] enc-cell: gru
+[2019-01-21 14:17:56] [config] enc-cell-depth: 1
+[2019-01-21 14:17:56] [config] enc-depth: 6
+[2019-01-21 14:17:56] [config] enc-type: bidirectional
+[2019-01-21 14:17:56] [config] exponential-smoothing: 0.0001
+[2019-01-21 14:17:56] [config] grad-dropping-momentum: 0
+[2019-01-21 14:17:56] [config] grad-dropping-rate: 0
+[2019-01-21 14:17:56] [config] grad-dropping-warmup: 100
+[2019-01-21 14:17:56] [config] guided-alignment: none
+[2019-01-21 14:17:56] [config] guided-alignment-cost: mse
+[2019-01-21 14:17:56] [config] guided-alignment-weight: 0.1
+[2019-01-21 14:17:56] [config] ignore-model-config: false
+[2019-01-21 14:17:56] [config] interpolate-env-vars: false
+[2019-01-21 14:17:56] [config] keep-best: false
+[2019-01-21 14:17:56] [config] label-smoothing: 0.1
+[2019-01-21 14:17:56] [config] layer-normalization: false
+[2019-01-21 14:17:56] [config] learn-rate: 0.0003
+[2019-01-21 14:17:56] [config] log: model/train_trans.newvocab.log
+[2019-01-21 14:17:56] [config] log-level: info
+[2019-01-21 14:17:56] [config] lr-decay: 0
+[2019-01-21 14:17:56] [config] lr-decay-freq: 50000
+[2019-01-21 14:17:56] [config] lr-decay-inv-sqrt: 16000
+[2019-01-21 14:17:56] [config] lr-decay-repeat-warmup: false
+[2019-01-21 14:17:56] [config] lr-decay-reset-optimizer: false
+[2019-01-21 14:17:56] [config] lr-decay-start:
+[2019-01-21 14:17:56] [config]   - 10
+[2019-01-21 14:17:56] [config]   - 1
+[2019-01-21 14:17:56] [config] lr-decay-strategy: epoch+stalled
+[2019-01-21 14:17:56] [config] lr-report: true
+[2019-01-21 14:17:56] [config] lr-warmup: 16000
+[2019-01-21 14:17:56] [config] lr-warmup-at-reload: false
+[2019-01-21 14:17:56] [config] lr-warmup-cycle: false
+[2019-01-21 14:17:56] [config] lr-warmup-start-rate: 0
+[2019-01-21 14:17:56] [config] max-length: 160
+[2019-01-21 14:17:56] [config] max-length-crop: false
+[2019-01-21 14:17:56] [config] max-length-factor: 3
+[2019-01-21 14:17:56] [config] maxi-batch: 1000
+[2019-01-21 14:17:56] [config] maxi-batch-sort: trg
+[2019-01-21 14:17:56] [config] mini-batch: 1000
+[2019-01-21 14:17:56] [config] mini-batch-fit: true
+[2019-01-21 14:17:56] [config] mini-batch-fit-step: 10
+[2019-01-21 14:17:56] [config] mini-batch-words: 0
+[2019-01-21 14:17:56] [config] model: model/model.src1tgt0.newvocab.npz
+[2019-01-21 14:17:56] [config] multi-node: false
+[2019-01-21 14:17:56] [config] multi-node-overlap: true
+[2019-01-21 14:17:56] [config] n-best: false
+[2019-01-21 14:17:56] [config] no-nccl: true
+[2019-01-21 14:17:56] [config] no-reload: false
+[2019-01-21 14:17:56] [config] no-restore-corpus: true
+[2019-01-21 14:17:56] [config] no-shuffle: false
+[2019-01-21 14:17:56] [config] normalize: 0.6
+[2019-01-21 14:17:56] [config] optimizer: adam
+[2019-01-21 14:17:56] [config] optimizer-delay: 4
+[2019-01-21 14:17:56] [config] optimizer-params:
+[2019-01-21 14:17:56] [config]   - 0.9
+[2019-01-21 14:17:56] [config]   - 0.98
+[2019-01-21 14:17:56] [config]   - 1e-09
+[2019-01-21 14:17:56] [config] overwrite: false
+[2019-01-21 14:17:56] [config] quiet: false
+[2019-01-21 14:17:56] [config] quiet-translation: true
+[2019-01-21 14:17:56] [config] relative-paths: false
+[2019-01-21 14:17:56] [config] right-left: false
+[2019-01-21 14:17:56] [config] save-freq: 5000
+[2019-01-21 14:17:56] [config] seed: 1111
+[2019-01-21 14:17:56] [config] sentencepiece-alphas:
+[2019-01-21 14:17:56] [config]   []
+[2019-01-21 14:17:56] [config] sentencepiece-max-lines: 10000000
+[2019-01-21 14:17:56] [config] sentencepiece-options: ""
+[2019-01-21 14:17:56] [config] shuffle-in-ram: false
+[2019-01-21 14:17:56] [config] skip: false
+[2019-01-21 14:17:56] [config] sqlite: ""
+[2019-01-21 14:17:56] [config] sqlite-drop: false
+[2019-01-21 14:17:56] [config] sync-sgd: true
+[2019-01-21 14:17:56] [config] tempdir: /tmp
+[2019-01-21 14:17:56] [config] tied-embeddings: false
+[2019-01-21 14:17:56] [config] tied-embeddings-all: true
+[2019-01-21 14:17:56] [config] tied-embeddings-src: false
+[2019-01-21 14:17:56] [config] train-sets:
+[2019-01-21 14:17:56] [config]   - corp/opensub.en-fr.docs.train.en.bpe
+[2019-01-21 14:17:56] [config]   - corp/opensub.en-fr.docs.train.fr.bpe
+[2019-01-21 14:17:56] [config] transformer-aan-activation: swish
+[2019-01-21 14:17:56] [config] transformer-aan-depth: 2
+[2019-01-21 14:17:56] [config] transformer-aan-nogate: false
+[2019-01-21 14:17:56] [config] transformer-decoder-autoreg: self-attention
+[2019-01-21 14:17:56] [config] transformer-dim-aan: 2048
+[2019-01-21 14:17:56] [config] transformer-dim-ffn: 2048
+[2019-01-21 14:17:56] [config] transformer-dropout: 0.1
+[2019-01-21 14:17:56] [config] transformer-dropout-attention: 0
+[2019-01-21 14:17:56] [config] transformer-dropout-ffn: 0
+[2019-01-21 14:17:56] [config] transformer-ffn-activation: swish
+[2019-01-21 14:17:56] [config] transformer-ffn-depth: 2
+[2019-01-21 14:17:56] [config] transformer-guided-alignment-layer: last
+[2019-01-21 14:17:56] [config] transformer-heads: 8
+[2019-01-21 14:17:56] [config] transformer-no-projection: false
+[2019-01-21 14:17:56] [config] transformer-postprocess: dan
+[2019-01-21 14:17:56] [config] transformer-postprocess-emb: d
+[2019-01-21 14:17:56] [config] transformer-preprocess: ""
+[2019-01-21 14:17:56] [config] transformer-tied-layers:
+[2019-01-21 14:17:56] [config]   []
+[2019-01-21 14:17:56] [config] type: transformer
+[2019-01-21 14:17:56] [config] ulr: false
+[2019-01-21 14:17:56] [config] ulr-dim-emb: 0
+[2019-01-21 14:17:56] [config] ulr-dropout: 0
+[2019-01-21 14:17:56] [config] ulr-keys-vectors: ""
+[2019-01-21 14:17:56] [config] ulr-query-vectors: ""
+[2019-01-21 14:17:56] [config] ulr-softmax-temperature: 1
+[2019-01-21 14:17:56] [config] ulr-trainable-transformation: false
+[2019-01-21 14:17:56] [config] valid-freq: 5000
+[2019-01-21 14:17:56] [config] valid-log: model/valid_trans.newvocab.log
+[2019-01-21 14:17:56] [config] valid-max-length: 1000
+[2019-01-21 14:17:56] [config] valid-metrics:
+[2019-01-21 14:17:56] [config]   - cross-entropy
+[2019-01-21 14:17:56] [config]   - perplexity
+[2019-01-21 14:17:56] [config]   - translation
+[2019-01-21 14:17:56] [config] valid-mini-batch: 64
+[2019-01-21 14:17:56] [config] valid-script-path: ./val.sh
+[2019-01-21 14:17:56] [config] valid-sets:
+[2019-01-21 14:17:56] [config]   - corp/opensub.en-fr.docs.dev.en.bpe
+[2019-01-21 14:17:56] [config]   - corp/opensub.en-fr.docs.dev.fr.bpe
+[2019-01-21 14:17:56] [config] valid-translation-output: data/valid.bpe.en.output
+[2019-01-21 14:17:56] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-01-21 14:17:56] [config] vocabs:
+[2019-01-21 14:17:56] [config]   - corp/vocab.encz.opensub.yml
+[2019-01-21 14:17:56] [config]   - corp/vocab.encz.opensub.yml
+[2019-01-21 14:17:56] [config] word-penalty: 0
+[2019-01-21 14:17:56] [config] workspace: 9800
+[2019-01-21 14:17:56] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800, will be overwritten with current version v1.7.5 4478901 2018-12-10 07:49:46 -0800 at saving
+[2019-01-21 14:17:56] Using synchronous training
+[2019-01-21 14:17:56] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.yml
+[2019-01-21 14:17:56] [data] Setting vocabulary size for input 0 to 33552
+[2019-01-21 14:17:56] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.yml
+[2019-01-21 14:17:56] [data] Setting vocabulary size for input 1 to 33552
+[2019-01-21 14:17:56] [batching] Collecting statistics for batch fitting with step size 10
+[2019-01-21 14:17:56] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-01-21 14:18:00] [memory] Extending reserved space to 9856 MB (device gpu0)
+[2019-01-21 14:18:02] [memory] Extending reserved space to 9856 MB (device gpu1)
+[2019-01-21 14:18:02] [comm] NCCL communicator overridden
+[2019-01-21 14:18:02] [memory] Reserving 234 MB, device gpu0
+[2019-01-21 14:18:02] [memory] Reserving 234 MB, device gpu0
+[2019-01-21 14:18:22] [batching] Done
+[2019-01-21 14:18:22] [memory] Extending reserved space to 9856 MB (device gpu0)
+[2019-01-21 14:18:23] [memory] Extending reserved space to 9856 MB (device gpu1)
+[2019-01-21 14:18:23] [comm] NCCL communicator overridden
+[2019-01-21 14:18:23] Loading model from model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-21 14:18:25] Loading model from model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-21 14:18:26] Loading Adam parameters from model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-21 14:18:31] [memory] Reserving 234 MB, device gpu0
+[2019-01-21 14:18:31] [memory] Reserving 234 MB, device gpu1
+[2019-01-21 14:18:32] Training started
+[2019-01-21 14:18:32] [data] Shuffling files
+[2019-01-21 14:19:16] [data] Done reading 41736982 sentences
+[2019-01-21 14:22:49] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-21 14:23:25] [memory] Reserving 234 MB, device gpu0
+[2019-01-21 14:23:25] [memory] Reserving 234 MB, device gpu1
+[2019-01-21 14:23:25] Loading model from model/model.src1tgt0.newvocab.npz
+[2019-01-21 14:23:29] [memory] Reserving 234 MB, device cpu0
+[2019-01-21 14:23:29] [memory] Reserving 117 MB, device gpu0
+[2019-01-21 14:23:29] [memory] Reserving 117 MB, device gpu1
+[2019-01-21 14:23:29] [memory] Reserving 234 MB, device gpu1
+[2019-01-21 14:23:29] [memory] Reserving 234 MB, device gpu0
+[2019-01-21 14:23:30] [memory] Reserving 117 MB, device gpu0
+[2019-01-21 14:23:30] [memory] Reserving 117 MB, device gpu1
+[2019-01-21 14:33:08] Ep. 11 : Up. 340500 : Sen. 1,058,920 : Cost 23.56651878 : Time 885.62s : 11292.73 words/s : L.r. 6.5031e-05
+[2019-01-21 14:42:53] Ep. 11 : Up. 341000 : Sen. 2,111,877 : Cost 23.70900345 : Time 584.85s : 17086.04 words/s : L.r. 6.4984e-05
+[2019-01-21 14:52:45] Ep. 11 : Up. 341500 : Sen. 3,204,787 : Cost 23.23823166 : Time 592.27s : 17259.05 words/s : L.r. 6.4936e-05
+[2019-01-21 15:02:31] Ep. 11 : Up. 342000 : Sen. 4,241,248 : Cost 24.29528236 : Time 586.35s : 17159.77 words/s : L.r. 6.4889e-05
+[2019-01-21 15:12:22] Ep. 11 : Up. 342500 : Sen. 5,302,797 : Cost 23.71851158 : Time 590.78s : 17086.31 words/s : L.r. 6.4841e-05
+[2019-01-21 15:22:01] Ep. 11 : Up. 343000 : Sen. 6,345,892 : Cost 23.51332092 : Time 578.63s : 16984.09 words/s : L.r. 6.4794e-05
+[2019-01-21 15:31:46] Ep. 11 : Up. 343500 : Sen. 7,397,145 : Cost 23.57696533 : Time 585.33s : 16953.55 words/s : L.r. 6.4747e-05
+[2019-01-21 15:41:34] Ep. 11 : Up. 344000 : Sen. 8,462,731 : Cost 23.55525398 : Time 588.26s : 17136.94 words/s : L.r. 6.4700e-05
+[2019-01-21 15:51:15] Ep. 11 : Up. 344500 : Sen. 9,506,908 : Cost 23.64519882 : Time 580.14s : 17067.84 words/s : L.r. 6.4653e-05
+[2019-01-21 16:01:04] Ep. 11 : Up. 345000 : Sen. 10,580,178 : Cost 23.11352921 : Time 589.24s : 16925.66 words/s : L.r. 6.4606e-05
+[2019-01-21 16:01:04] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-21 16:01:08] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter345000.npz
+[2019-01-21 16:01:12] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-21 16:01:17] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-21 16:01:28] [valid] Ep. 11 : Up. 345000 : cross-entropy : 18.9215 : new best
+[2019-01-21 16:01:31] [valid] Ep. 11 : Up. 345000 : perplexity : 4.34084 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-21 16:02:57] [valid] Ep. 11 : Up. 345000 : translation : 34.75 : stalled 14 times
+[2019-01-21 16:12:45] Ep. 11 : Up. 345500 : Sen. 11,642,017 : Cost 23.76186752 : Time 701.08s : 14423.46 words/s : L.r. 6.4559e-05
+[2019-01-21 16:22:28] Ep. 11 : Up. 346000 : Sen. 12,693,337 : Cost 23.46778297 : Time 583.31s : 16974.14 words/s : L.r. 6.4512e-05
+[2019-01-21 16:32:14] Ep. 11 : Up. 346500 : Sen. 13,738,241 : Cost 23.98643112 : Time 585.66s : 17159.59 words/s : L.r. 6.4466e-05
+[2019-01-21 16:42:06] Ep. 11 : Up. 347000 : Sen. 14,798,792 : Cost 23.94033623 : Time 591.90s : 17182.13 words/s : L.r. 6.4419e-05
+[2019-01-21 16:51:52] Ep. 11 : Up. 347500 : Sen. 15,848,585 : Cost 23.86805916 : Time 586.15s : 17130.76 words/s : L.r. 6.4373e-05
+[2019-01-21 17:01:34] Ep. 11 : Up. 348000 : Sen. 16,914,688 : Cost 23.10431290 : Time 582.07s : 16976.42 words/s : L.r. 6.4327e-05
+[2019-01-21 17:11:21] Ep. 11 : Up. 348500 : Sen. 17,969,869 : Cost 23.73047066 : Time 587.33s : 17110.90 words/s : L.r. 6.4281e-05
+[2019-01-21 17:21:08] Ep. 11 : Up. 349000 : Sen. 19,024,712 : Cost 23.67395401 : Time 586.86s : 17069.31 words/s : L.r. 6.4235e-05
+[2019-01-21 17:30:54] Ep. 11 : Up. 349500 : Sen. 20,074,219 : Cost 23.68895149 : Time 585.30s : 17038.73 words/s : L.r. 6.4189e-05
+[2019-01-21 17:40:39] Ep. 11 : Up. 350000 : Sen. 21,133,570 : Cost 23.53338432 : Time 585.00s : 17102.62 words/s : L.r. 6.4143e-05
+[2019-01-21 17:40:39] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-21 17:40:43] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter350000.npz
+[2019-01-21 17:40:46] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-21 17:40:50] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-21 17:41:01] [valid] Ep. 11 : Up. 350000 : cross-entropy : 18.9055 : new best
+[2019-01-21 17:41:03] [valid] Ep. 11 : Up. 350000 : perplexity : 4.33548 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-21 17:42:32] [valid] Ep. 11 : Up. 350000 : translation : 34.77 : stalled 15 times
+[2019-01-21 17:52:18] Ep. 11 : Up. 350500 : Sen. 22,197,009 : Cost 23.20881271 : Time 699.09s : 14181.58 words/s : L.r. 6.4097e-05
+[2019-01-21 18:02:03] Ep. 11 : Up. 351000 : Sen. 23,250,368 : Cost 23.55762482 : Time 585.67s : 17034.19 words/s : L.r. 6.4051e-05
+[2019-01-21 18:11:50] Ep. 11 : Up. 351500 : Sen. 24,289,869 : Cost 24.22027779 : Time 586.95s : 17163.52 words/s : L.r. 6.4006e-05
+[2019-01-21 18:21:29] Ep. 11 : Up. 352000 : Sen. 25,323,209 : Cost 23.67453957 : Time 578.49s : 16901.31 words/s : L.r. 6.3960e-05
+[2019-01-21 18:31:18] Ep. 11 : Up. 352500 : Sen. 26,396,668 : Cost 23.23494530 : Time 589.10s : 17059.42 words/s : L.r. 6.3915e-05
+[2019-01-21 18:41:11] Ep. 11 : Up. 353000 : Sen. 27,477,756 : Cost 23.45185280 : Time 593.39s : 17156.48 words/s : L.r. 6.3870e-05
+[2019-01-21 18:51:03] Ep. 11 : Up. 353500 : Sen. 28,533,330 : Cost 24.10981178 : Time 591.66s : 17230.20 words/s : L.r. 6.3824e-05
+[2019-01-21 19:00:43] Ep. 11 : Up. 354000 : Sen. 29,586,528 : Cost 23.21317863 : Time 580.54s : 16920.05 words/s : L.r. 6.3779e-05
+[2019-01-21 19:10:29] Ep. 11 : Up. 354500 : Sen. 30,637,367 : Cost 23.64533043 : Time 585.99s : 17013.44 words/s : L.r. 6.3734e-05
+[2019-01-21 19:20:20] Ep. 11 : Up. 355000 : Sen. 31,693,521 : Cost 23.88610268 : Time 590.44s : 17150.69 words/s : L.r. 6.3689e-05
+[2019-01-21 19:20:20] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-21 19:20:24] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter355000.npz
+[2019-01-21 19:20:27] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-21 19:20:32] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-21 19:20:42] [valid] Ep. 11 : Up. 355000 : cross-entropy : 18.8894 : new best
+[2019-01-21 19:20:45] [valid] Ep. 11 : Up. 355000 : perplexity : 4.33006 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-21 19:22:12] [valid] Ep. 11 : Up. 355000 : translation : 34.64 : stalled 16 times
+[2019-01-21 19:31:55] Ep. 11 : Up. 355500 : Sen. 32,751,871 : Cost 23.51179123 : Time 694.86s : 14337.48 words/s : L.r. 6.3645e-05
+[2019-01-21 19:41:48] Ep. 11 : Up. 356000 : Sen. 33,826,991 : Cost 23.46700859 : Time 593.21s : 17119.50 words/s : L.r. 6.3600e-05
+[2019-01-21 19:51:36] Ep. 11 : Up. 356500 : Sen. 34,875,082 : Cost 23.79268456 : Time 588.32s : 16985.33 words/s : L.r. 6.3555e-05
+[2019-01-21 20:01:23] Ep. 11 : Up. 357000 : Sen. 35,929,216 : Cost 23.74321175 : Time 586.50s : 17112.31 words/s : L.r. 6.3511e-05
+[2019-01-21 20:11:11] Ep. 11 : Up. 357500 : Sen. 36,995,680 : Cost 23.47329140 : Time 588.49s : 17088.38 words/s : L.r. 6.3466e-05
+[2019-01-21 20:20:57] Ep. 11 : Up. 358000 : Sen. 38,040,940 : Cost 23.87409210 : Time 585.45s : 17079.11 words/s : L.r. 6.3422e-05
+[2019-01-21 20:30:45] Ep. 11 : Up. 358500 : Sen. 39,119,619 : Cost 23.14113998 : Time 588.16s : 17074.14 words/s : L.r. 6.3378e-05
+[2019-01-21 20:40:32] Ep. 11 : Up. 359000 : Sen. 40,160,999 : Cost 24.09775352 : Time 587.13s : 17114.12 words/s : L.r. 6.3334e-05
+[2019-01-21 20:50:16] Ep. 11 : Up. 359500 : Sen. 41,223,875 : Cost 23.42439079 : Time 584.18s : 17110.67 words/s : L.r. 6.3290e-05
+[2019-01-21 20:55:07] Seen 41736931 samples
+[2019-01-21 20:55:07] Starting epoch 12
+[2019-01-21 20:55:07] [data] Shuffling files
+[2019-01-21 20:55:51] [data] Done reading 41736982 sentences
+[2019-01-21 20:59:26] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-21 21:04:42] Ep. 12 : Up. 360000 : Sen. 516,096 : Cost 23.35249138 : Time 866.01s : 11154.83 words/s : L.r. 6.3246e-05
+[2019-01-21 21:04:42] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-21 21:04:46] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter360000.npz
+[2019-01-21 21:04:50] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-21 21:04:54] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-21 21:05:04] [valid] Ep. 12 : Up. 360000 : cross-entropy : 18.8745 : new best
+[2019-01-21 21:05:07] [valid] Ep. 12 : Up. 360000 : perplexity : 4.32504 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-21 21:06:37] [valid] Ep. 12 : Up. 360000 : translation : 34.68 : stalled 17 times
+[2019-01-21 21:16:20] Ep. 12 : Up. 360500 : Sen. 1,570,220 : Cost 23.51255226 : Time 698.08s : 14302.57 words/s : L.r. 6.3202e-05
+[2019-01-21 21:26:11] Ep. 12 : Up. 361000 : Sen. 2,650,408 : Cost 23.19074059 : Time 590.96s : 17126.20 words/s : L.r. 6.3158e-05
+[2019-01-21 21:35:58] Ep. 12 : Up. 361500 : Sen. 3,704,507 : Cost 23.63340569 : Time 586.88s : 17120.37 words/s : L.r. 6.3114e-05
+[2019-01-21 21:45:40] Ep. 12 : Up. 362000 : Sen. 4,742,006 : Cost 23.88050461 : Time 582.27s : 17064.83 words/s : L.r. 6.3071e-05
+[2019-01-21 21:55:29] Ep. 12 : Up. 362500 : Sen. 5,792,802 : Cost 23.96033287 : Time 588.59s : 17195.45 words/s : L.r. 6.3027e-05
+[2019-01-21 22:05:19] Ep. 12 : Up. 363000 : Sen. 6,862,882 : Cost 23.44280243 : Time 590.05s : 17132.95 words/s : L.r. 6.2984e-05
+[2019-01-21 22:15:02] Ep. 12 : Up. 363500 : Sen. 7,911,055 : Cost 23.42160416 : Time 583.08s : 16954.56 words/s : L.r. 6.2940e-05
+[2019-01-21 22:24:45] Ep. 12 : Up. 364000 : Sen. 8,967,792 : Cost 23.26958466 : Time 582.46s : 16995.88 words/s : L.r. 6.2897e-05
+[2019-01-21 22:34:33] Ep. 12 : Up. 364500 : Sen. 10,025,104 : Cost 23.69538498 : Time 588.23s : 17133.64 words/s : L.r. 6.2854e-05
+[2019-01-21 22:44:20] Ep. 12 : Up. 365000 : Sen. 11,091,127 : Cost 23.32985306 : Time 587.47s : 17056.10 words/s : L.r. 6.2811e-05
+[2019-01-21 22:44:20] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-21 22:44:24] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter365000.npz
+[2019-01-21 22:44:28] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-21 22:44:32] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-21 22:44:43] [valid] Ep. 12 : Up. 365000 : cross-entropy : 18.8657 : new best
+[2019-01-21 22:44:46] [valid] Ep. 12 : Up. 365000 : perplexity : 4.32209 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-21 22:46:12] [valid] Ep. 12 : Up. 365000 : translation : 34.62 : stalled 18 times
+[2019-01-21 22:55:57] Ep. 12 : Up. 365500 : Sen. 12,137,638 : Cost 23.81348991 : Time 696.55s : 14364.88 words/s : L.r. 6.2768e-05
+[2019-01-21 23:05:37] Ep. 12 : Up. 366000 : Sen. 13,169,823 : Cost 23.80798912 : Time 580.15s : 17010.80 words/s : L.r. 6.2725e-05
+[2019-01-21 23:15:29] Ep. 12 : Up. 366500 : Sen. 14,254,199 : Cost 23.51398277 : Time 592.00s : 17372.89 words/s : L.r. 6.2682e-05
+[2019-01-21 23:25:15] Ep. 12 : Up. 367000 : Sen. 15,307,135 : Cost 23.47912407 : Time 585.71s : 16974.35 words/s : L.r. 6.2639e-05
+[2019-01-21 23:35:00] Ep. 12 : Up. 367500 : Sen. 16,340,879 : Cost 24.19790840 : Time 585.18s : 17140.23 words/s : L.r. 6.2597e-05
+[2019-01-21 23:44:45] Ep. 12 : Up. 368000 : Sen. 17,411,067 : Cost 23.04788780 : Time 585.35s : 16968.91 words/s : L.r. 6.2554e-05
+[2019-01-21 23:54:23] Ep. 12 : Up. 368500 : Sen. 18,473,752 : Cost 22.48350525 : Time 577.33s : 16716.52 words/s : L.r. 6.2512e-05
+[2019-01-22 00:04:12] Ep. 12 : Up. 369000 : Sen. 19,499,044 : Cost 25.09783554 : Time 589.38s : 17433.21 words/s : L.r. 6.2470e-05
+[2019-01-22 00:13:59] Ep. 12 : Up. 369500 : Sen. 20,580,332 : Cost 22.77709579 : Time 586.64s : 16988.89 words/s : L.r. 6.2427e-05
+[2019-01-22 00:23:45] Ep. 12 : Up. 370000 : Sen. 21,632,534 : Cost 23.75143623 : Time 586.11s : 17118.90 words/s : L.r. 6.2385e-05
+[2019-01-22 00:23:45] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 00:23:49] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter370000.npz
+[2019-01-22 00:23:52] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 00:23:56] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 00:24:07] [valid] Ep. 12 : Up. 370000 : cross-entropy : 18.8573 : new best
+[2019-01-22 00:24:10] [valid] Ep. 12 : Up. 370000 : perplexity : 4.31928 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 00:25:34] [valid] Ep. 12 : Up. 370000 : translation : 34.56 : stalled 19 times
+[2019-01-22 00:35:19] Ep. 12 : Up. 370500 : Sen. 22,697,479 : Cost 23.26440239 : Time 694.48s : 14360.31 words/s : L.r. 6.2343e-05
+[2019-01-22 00:45:00] Ep. 12 : Up. 371000 : Sen. 23,734,820 : Cost 23.60309601 : Time 581.16s : 16939.50 words/s : L.r. 6.2301e-05
+[2019-01-22 00:54:53] Ep. 12 : Up. 371500 : Sen. 24,806,841 : Cost 23.74198151 : Time 592.83s : 17290.25 words/s : L.r. 6.2259e-05
+[2019-01-22 01:04:38] Ep. 12 : Up. 372000 : Sen. 25,864,592 : Cost 23.30037689 : Time 584.98s : 16923.30 words/s : L.r. 6.2217e-05
+[2019-01-22 01:14:29] Ep. 12 : Up. 372500 : Sen. 26,921,397 : Cost 23.86300278 : Time 590.68s : 17192.38 words/s : L.r. 6.2175e-05
+[2019-01-22 01:24:15] Ep. 12 : Up. 373000 : Sen. 27,971,720 : Cost 23.68070793 : Time 586.60s : 17019.33 words/s : L.r. 6.2134e-05
+[2019-01-22 01:34:00] Ep. 12 : Up. 373500 : Sen. 29,024,664 : Cost 23.51712608 : Time 584.11s : 17056.40 words/s : L.r. 6.2092e-05
+[2019-01-22 01:43:47] Ep. 12 : Up. 374000 : Sen. 30,084,720 : Cost 23.58561516 : Time 587.33s : 17124.14 words/s : L.r. 6.2051e-05
+[2019-01-22 01:53:34] Ep. 12 : Up. 374500 : Sen. 31,136,468 : Cost 23.71186829 : Time 586.84s : 17043.27 words/s : L.r. 6.2009e-05
+[2019-01-22 02:03:12] Ep. 12 : Up. 375000 : Sen. 32,183,136 : Cost 23.10182190 : Time 577.88s : 16872.34 words/s : L.r. 6.1968e-05
+[2019-01-22 02:03:12] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 02:03:16] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter375000.npz
+[2019-01-22 02:03:19] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 02:03:23] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 02:03:34] [valid] Ep. 12 : Up. 375000 : cross-entropy : 18.8374 : new best
+[2019-01-22 02:03:37] [valid] Ep. 12 : Up. 375000 : perplexity : 4.31263 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 02:05:12] [valid] Ep. 12 : Up. 375000 : translation : 34.49 : stalled 20 times
+[2019-01-22 02:15:00] Ep. 12 : Up. 375500 : Sen. 33,249,427 : Cost 23.63833809 : Time 708.54s : 14297.29 words/s : L.r. 6.1926e-05
+[2019-01-22 02:24:50] Ep. 12 : Up. 376000 : Sen. 34,311,781 : Cost 23.63260269 : Time 589.93s : 17108.70 words/s : L.r. 6.1885e-05
+[2019-01-22 02:34:33] Ep. 12 : Up. 376500 : Sen. 35,356,655 : Cost 23.63336182 : Time 583.12s : 17031.04 words/s : L.r. 6.1844e-05
+[2019-01-22 02:44:21] Ep. 12 : Up. 377000 : Sen. 36,421,205 : Cost 23.64903450 : Time 587.89s : 17169.89 words/s : L.r. 6.1803e-05
+[2019-01-22 02:54:06] Ep. 12 : Up. 377500 : Sen. 37,462,165 : Cost 23.85988045 : Time 584.88s : 17079.02 words/s : L.r. 6.1762e-05
+[2019-01-22 03:03:53] Ep. 12 : Up. 378000 : Sen. 38,556,021 : Cost 22.68276787 : Time 586.95s : 17049.39 words/s : L.r. 6.1721e-05
+[2019-01-22 03:13:36] Ep. 12 : Up. 378500 : Sen. 39,573,629 : Cost 24.27635002 : Time 582.62s : 16974.42 words/s : L.r. 6.1681e-05
+[2019-01-22 03:23:25] Ep. 12 : Up. 379000 : Sen. 40,655,254 : Cost 23.19682503 : Time 589.79s : 17157.47 words/s : L.r. 6.1640e-05
+[2019-01-22 03:33:03] Ep. 12 : Up. 379500 : Sen. 41,683,587 : Cost 23.83954048 : Time 577.96s : 17021.10 words/s : L.r. 6.1599e-05
+[2019-01-22 03:33:35] Seen 41736931 samples
+[2019-01-22 03:33:35] Starting epoch 13
+[2019-01-22 03:33:35] [data] Shuffling files
+[2019-01-22 03:33:51] [data] Done reading 41736982 sentences
+[2019-01-22 03:37:20] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-22 03:47:03] Ep. 13 : Up. 380000 : Sen. 994,312 : Cost 23.53475761 : Time 839.49s : 11853.61 words/s : L.r. 6.1559e-05
+[2019-01-22 03:47:03] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 03:47:07] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter380000.npz
+[2019-01-22 03:47:11] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 03:47:15] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 03:47:26] [valid] Ep. 13 : Up. 380000 : cross-entropy : 18.8191 : new best
+[2019-01-22 03:47:29] [valid] Ep. 13 : Up. 380000 : perplexity : 4.30651 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 03:48:53] [valid] Ep. 13 : Up. 380000 : translation : 34.68 : stalled 21 times
+[2019-01-22 03:58:38] Ep. 13 : Up. 380500 : Sen. 2,050,954 : Cost 23.53417969 : Time 695.74s : 14410.74 words/s : L.r. 6.1518e-05
+[2019-01-22 04:08:23] Ep. 13 : Up. 381000 : Sen. 3,100,593 : Cost 23.47134972 : Time 584.85s : 16995.19 words/s : L.r. 6.1478e-05
+[2019-01-22 04:18:08] Ep. 13 : Up. 381500 : Sen. 4,161,098 : Cost 23.29742813 : Time 584.36s : 17071.34 words/s : L.r. 6.1438e-05
+[2019-01-22 04:27:54] Ep. 13 : Up. 382000 : Sen. 5,213,873 : Cost 23.79251671 : Time 586.53s : 17202.06 words/s : L.r. 6.1397e-05
+[2019-01-22 04:37:38] Ep. 13 : Up. 382500 : Sen. 6,256,769 : Cost 23.55973053 : Time 583.99s : 16967.70 words/s : L.r. 6.1357e-05
+[2019-01-22 04:47:31] Ep. 13 : Up. 383000 : Sen. 7,351,626 : Cost 23.07465172 : Time 592.74s : 17218.57 words/s : L.r. 6.1317e-05
+[2019-01-22 04:57:15] Ep. 13 : Up. 383500 : Sen. 8,390,182 : Cost 23.70259666 : Time 584.06s : 17012.33 words/s : L.r. 6.1277e-05
+[2019-01-22 05:06:53] Ep. 13 : Up. 384000 : Sen. 9,419,492 : Cost 23.68425941 : Time 578.28s : 16945.64 words/s : L.r. 6.1237e-05
+[2019-01-22 05:16:42] Ep. 13 : Up. 384500 : Sen. 10,473,672 : Cost 23.85862160 : Time 589.17s : 17172.89 words/s : L.r. 6.1197e-05
+[2019-01-22 05:26:29] Ep. 13 : Up. 385000 : Sen. 11,535,677 : Cost 23.28503036 : Time 586.84s : 16995.33 words/s : L.r. 6.1158e-05
+[2019-01-22 05:26:29] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 05:26:33] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter385000.npz
+[2019-01-22 05:26:37] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 05:26:41] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 05:26:51] [valid] Ep. 13 : Up. 385000 : cross-entropy : 18.8113 : new best
+[2019-01-22 05:26:54] [valid] Ep. 13 : Up. 385000 : perplexity : 4.30388 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 05:28:26] [valid] Ep. 13 : Up. 385000 : translation : 34.6 : stalled 22 times
+[2019-01-22 05:38:20] Ep. 13 : Up. 385500 : Sen. 12,619,107 : Cost 23.44068336 : Time 711.06s : 14420.86 words/s : L.r. 6.1118e-05
+[2019-01-22 05:48:05] Ep. 13 : Up. 386000 : Sen. 13,671,228 : Cost 23.57285500 : Time 584.85s : 17079.35 words/s : L.r. 6.1078e-05
+[2019-01-22 05:57:47] Ep. 13 : Up. 386500 : Sen. 14,713,346 : Cost 23.44479179 : Time 581.78s : 16887.12 words/s : L.r. 6.1039e-05
+[2019-01-22 06:07:32] Ep. 13 : Up. 387000 : Sen. 15,785,125 : Cost 22.94222832 : Time 584.64s : 16992.04 words/s : L.r. 6.0999e-05
+[2019-01-22 06:17:19] Ep. 13 : Up. 387500 : Sen. 16,846,322 : Cost 23.55492592 : Time 587.40s : 17128.11 words/s : L.r. 6.0960e-05
+[2019-01-22 06:27:03] Ep. 13 : Up. 388000 : Sen. 17,879,002 : Cost 24.00096130 : Time 583.59s : 17095.90 words/s : L.r. 6.0921e-05
+[2019-01-22 06:36:51] Ep. 13 : Up. 388500 : Sen. 18,937,957 : Cost 23.69864464 : Time 588.29s : 17160.60 words/s : L.r. 6.0882e-05
+[2019-01-22 06:46:38] Ep. 13 : Up. 389000 : Sen. 20,000,000 : Cost 23.40821648 : Time 586.71s : 17083.42 words/s : L.r. 6.0842e-05
+[2019-01-22 06:56:27] Ep. 13 : Up. 389500 : Sen. 21,063,064 : Cost 23.49783516 : Time 589.13s : 17101.73 words/s : L.r. 6.0803e-05
+[2019-01-22 07:06:11] Ep. 13 : Up. 390000 : Sen. 22,116,117 : Cost 23.47926331 : Time 583.85s : 17064.11 words/s : L.r. 6.0764e-05
+[2019-01-22 07:06:11] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 07:06:14] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter390000.npz
+[2019-01-22 07:06:18] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 07:06:22] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 07:06:33] [valid] Ep. 13 : Up. 390000 : cross-entropy : 18.7992 : new best
+[2019-01-22 07:06:35] [valid] Ep. 13 : Up. 390000 : perplexity : 4.29987 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 07:08:00] [valid] Ep. 13 : Up. 390000 : translation : 34.61 : stalled 23 times
+[2019-01-22 07:17:45] Ep. 13 : Up. 390500 : Sen. 23,160,881 : Cost 23.77629089 : Time 694.57s : 14378.76 words/s : L.r. 6.0725e-05
+[2019-01-22 07:27:34] Ep. 13 : Up. 391000 : Sen. 24,230,859 : Cost 23.19907951 : Time 588.49s : 17013.25 words/s : L.r. 6.0687e-05
+[2019-01-22 07:37:20] Ep. 13 : Up. 391500 : Sen. 25,289,124 : Cost 23.56617165 : Time 586.64s : 17109.15 words/s : L.r. 6.0648e-05
+[2019-01-22 07:47:05] Ep. 13 : Up. 392000 : Sen. 26,338,411 : Cost 23.87479401 : Time 584.75s : 17203.42 words/s : L.r. 6.0609e-05
+[2019-01-22 07:56:51] Ep. 13 : Up. 392500 : Sen. 27,393,311 : Cost 23.45350266 : Time 586.38s : 17033.65 words/s : L.r. 6.0571e-05
+[2019-01-22 08:06:36] Ep. 13 : Up. 393000 : Sen. 28,443,455 : Cost 23.56211281 : Time 585.00s : 17012.04 words/s : L.r. 6.0532e-05
+[2019-01-22 08:16:24] Ep. 13 : Up. 393500 : Sen. 29,519,471 : Cost 22.98403931 : Time 587.43s : 16991.26 words/s : L.r. 6.0494e-05
+[2019-01-22 08:26:08] Ep. 13 : Up. 394000 : Sen. 30,571,570 : Cost 23.52262115 : Time 584.20s : 17059.30 words/s : L.r. 6.0455e-05
+[2019-01-22 08:35:58] Ep. 13 : Up. 394500 : Sen. 31,609,227 : Cost 24.35403633 : Time 589.40s : 17230.44 words/s : L.r. 6.0417e-05
+[2019-01-22 08:45:36] Ep. 13 : Up. 395000 : Sen. 32,655,027 : Cost 23.08962822 : Time 578.53s : 16811.43 words/s : L.r. 6.0379e-05
+[2019-01-22 08:45:36] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 08:45:40] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter395000.npz
+[2019-01-22 08:45:44] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 08:45:48] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 08:45:58] [valid] Ep. 13 : Up. 395000 : cross-entropy : 18.7865 : new best
+[2019-01-22 08:46:01] [valid] Ep. 13 : Up. 395000 : perplexity : 4.29562 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 08:47:24] [valid] Ep. 13 : Up. 395000 : translation : 34.71 : stalled 24 times
+[2019-01-22 08:57:14] Ep. 13 : Up. 395500 : Sen. 33,746,334 : Cost 23.18792725 : Time 698.01s : 14633.41 words/s : L.r. 6.0340e-05
+[2019-01-22 09:07:03] Ep. 13 : Up. 396000 : Sen. 34,784,457 : Cost 24.46688080 : Time 589.05s : 17304.64 words/s : L.r. 6.0302e-05
+[2019-01-22 09:16:44] Ep. 13 : Up. 396500 : Sen. 35,840,806 : Cost 23.07944489 : Time 580.81s : 16942.89 words/s : L.r. 6.0264e-05
+[2019-01-22 09:26:30] Ep. 13 : Up. 397000 : Sen. 36,893,467 : Cost 23.49625397 : Time 585.98s : 17001.72 words/s : L.r. 6.0226e-05
+[2019-01-22 09:36:17] Ep. 13 : Up. 397500 : Sen. 37,950,055 : Cost 23.53359222 : Time 586.75s : 17046.16 words/s : L.r. 6.0188e-05
+[2019-01-22 09:46:03] Ep. 13 : Up. 398000 : Sen. 39,017,562 : Cost 23.30071259 : Time 586.84s : 17093.88 words/s : L.r. 6.0151e-05
+[2019-01-22 09:55:49] Ep. 13 : Up. 398500 : Sen. 40,066,668 : Cost 23.75475502 : Time 585.85s : 17108.80 words/s : L.r. 6.0113e-05
+[2019-01-22 10:05:35] Ep. 13 : Up. 399000 : Sen. 41,116,567 : Cost 23.58426094 : Time 585.55s : 17025.55 words/s : L.r. 6.0075e-05
+[2019-01-22 10:11:19] Seen 41736931 samples
+[2019-01-22 10:11:19] Starting epoch 14
+[2019-01-22 10:11:19] [data] Shuffling files
+[2019-01-22 10:11:35] [data] Done reading 41736982 sentences
+[2019-01-22 10:15:07] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-22 10:19:36] Ep. 14 : Up. 399500 : Sen. 437,940 : Cost 23.02828407 : Time 840.65s : 11717.10 words/s : L.r. 6.0038e-05
+[2019-01-22 10:29:19] Ep. 14 : Up. 400000 : Sen. 1,460,138 : Cost 24.07006073 : Time 583.05s : 16985.74 words/s : L.r. 6.0000e-05
+[2019-01-22 10:29:19] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 10:29:23] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter400000.npz
+[2019-01-22 10:29:26] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 10:29:31] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 10:29:41] [valid] Ep. 14 : Up. 400000 : cross-entropy : 18.7718 : new best
+[2019-01-22 10:29:44] [valid] Ep. 14 : Up. 400000 : perplexity : 4.29075 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 10:31:10] [valid] Ep. 14 : Up. 400000 : translation : 34.59 : stalled 25 times
+[2019-01-22 10:40:58] Ep. 14 : Up. 400500 : Sen. 2,535,546 : Cost 23.14530182 : Time 699.04s : 14421.39 words/s : L.r. 5.9963e-05
+[2019-01-22 10:50:45] Ep. 14 : Up. 401000 : Sen. 3,586,245 : Cost 23.91634560 : Time 587.50s : 17236.26 words/s : L.r. 5.9925e-05
+[2019-01-22 11:00:34] Ep. 14 : Up. 401500 : Sen. 4,655,689 : Cost 23.15816116 : Time 588.64s : 17019.45 words/s : L.r. 5.9888e-05
+[2019-01-22 11:10:16] Ep. 14 : Up. 402000 : Sen. 5,707,522 : Cost 23.21011353 : Time 582.70s : 16949.01 words/s : L.r. 5.9851e-05
+[2019-01-22 11:20:07] Ep. 14 : Up. 402500 : Sen. 6,761,500 : Cost 23.83053398 : Time 590.18s : 17138.76 words/s : L.r. 5.9813e-05
+[2019-01-22 11:29:50] Ep. 14 : Up. 403000 : Sen. 7,810,774 : Cost 23.28703117 : Time 583.83s : 16941.96 words/s : L.r. 5.9776e-05
+[2019-01-22 11:39:38] Ep. 14 : Up. 403500 : Sen. 8,873,569 : Cost 23.58263206 : Time 587.44s : 17199.35 words/s : L.r. 5.9739e-05
+[2019-01-22 11:49:25] Ep. 14 : Up. 404000 : Sen. 9,928,296 : Cost 23.50708771 : Time 586.61s : 17039.25 words/s : L.r. 5.9702e-05
+[2019-01-22 11:59:10] Ep. 14 : Up. 404500 : Sen. 10,979,555 : Cost 23.53122520 : Time 585.53s : 17058.75 words/s : L.r. 5.9665e-05
+[2019-01-22 12:08:54] Ep. 14 : Up. 405000 : Sen. 12,035,043 : Cost 23.32514000 : Time 583.79s : 17017.85 words/s : L.r. 5.9628e-05
+[2019-01-22 12:08:54] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 12:08:58] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter405000.npz
+[2019-01-22 12:09:02] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 12:09:06] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 12:09:16] [valid] Ep. 14 : Up. 405000 : cross-entropy : 18.7564 : new best
+[2019-01-22 12:09:19] [valid] Ep. 14 : Up. 405000 : perplexity : 4.28573 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 12:10:46] [valid] Ep. 14 : Up. 405000 : translation : 34.65 : stalled 26 times
+[2019-01-22 12:20:37] Ep. 14 : Up. 405500 : Sen. 13,103,239 : Cost 23.62925720 : Time 703.16s : 14482.01 words/s : L.r. 5.9592e-05
+[2019-01-22 12:30:20] Ep. 14 : Up. 406000 : Sen. 14,148,553 : Cost 23.55145454 : Time 583.35s : 17008.46 words/s : L.r. 5.9555e-05
+[2019-01-22 12:40:05] Ep. 14 : Up. 406500 : Sen. 15,214,567 : Cost 22.99825096 : Time 584.54s : 16976.01 words/s : L.r. 5.9518e-05
+[2019-01-22 12:49:54] Ep. 14 : Up. 407000 : Sen. 16,279,940 : Cost 23.54020309 : Time 589.20s : 17169.53 words/s : L.r. 5.9482e-05
+[2019-01-22 12:59:40] Ep. 14 : Up. 407500 : Sen. 17,323,156 : Cost 23.87795067 : Time 585.63s : 17120.76 words/s : L.r. 5.9445e-05
+[2019-01-22 13:09:27] Ep. 14 : Up. 408000 : Sen. 18,385,661 : Cost 23.20210838 : Time 587.24s : 16958.38 words/s : L.r. 5.9409e-05
+[2019-01-22 13:19:12] Ep. 14 : Up. 408500 : Sen. 19,442,597 : Cost 23.51706314 : Time 585.36s : 17141.17 words/s : L.r. 5.9372e-05
+[2019-01-22 13:28:58] Ep. 14 : Up. 409000 : Sen. 20,481,011 : Cost 23.90252113 : Time 585.67s : 17014.95 words/s : L.r. 5.9336e-05
+[2019-01-22 13:38:41] Ep. 14 : Up. 409500 : Sen. 21,538,445 : Cost 23.29701233 : Time 583.01s : 17085.45 words/s : L.r. 5.9300e-05
+[2019-01-22 13:48:29] Ep. 14 : Up. 410000 : Sen. 22,618,447 : Cost 22.94542694 : Time 588.47s : 17011.71 words/s : L.r. 5.9264e-05
+[2019-01-22 13:48:29] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 13:48:34] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter410000.npz
+[2019-01-22 13:48:37] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 13:48:42] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 13:48:52] [valid] Ep. 14 : Up. 410000 : cross-entropy : 18.7493 : new best
+[2019-01-22 13:48:55] [valid] Ep. 14 : Up. 410000 : perplexity : 4.28329 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 13:49:51] [valid] Ep. 14 : Up. 410000 : translation : 34.59 : stalled 27 times
+[2019-01-22 13:59:35] Ep. 14 : Up. 410500 : Sen. 23,638,494 : Cost 24.47775841 : Time 665.51s : 15053.15 words/s : L.r. 5.9228e-05
+[2019-01-22 14:09:24] Ep. 14 : Up. 411000 : Sen. 24,716,691 : Cost 23.38777542 : Time 589.07s : 17297.20 words/s : L.r. 5.9192e-05
+[2019-01-22 14:19:07] Ep. 14 : Up. 411500 : Sen. 25,766,902 : Cost 23.18913460 : Time 583.12s : 16854.94 words/s : L.r. 5.9156e-05
+[2019-01-22 14:28:52] Ep. 14 : Up. 412000 : Sen. 26,822,113 : Cost 23.39347076 : Time 584.74s : 17028.99 words/s : L.r. 5.9120e-05
+[2019-01-22 14:38:29] Ep. 14 : Up. 412500 : Sen. 27,864,452 : Cost 23.30303574 : Time 577.56s : 16937.78 words/s : L.r. 5.9084e-05
+[2019-01-22 14:48:21] Ep. 14 : Up. 413000 : Sen. 28,919,320 : Cost 23.85816956 : Time 591.43s : 17145.86 words/s : L.r. 5.9048e-05
+[2019-01-22 14:58:08] Ep. 14 : Up. 413500 : Sen. 29,982,861 : Cost 23.38091469 : Time 587.43s : 17077.34 words/s : L.r. 5.9012e-05
+[2019-01-22 15:07:56] Ep. 14 : Up. 414000 : Sen. 31,038,849 : Cost 23.62649536 : Time 587.54s : 17114.78 words/s : L.r. 5.8977e-05
+[2019-01-22 15:17:44] Ep. 14 : Up. 414500 : Sen. 32,086,914 : Cost 23.79544067 : Time 587.68s : 17075.94 words/s : L.r. 5.8941e-05
+[2019-01-22 15:27:29] Ep. 14 : Up. 415000 : Sen. 33,152,826 : Cost 23.23971748 : Time 585.89s : 17077.21 words/s : L.r. 5.8906e-05
+[2019-01-22 15:27:29] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 15:27:34] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter415000.npz
+[2019-01-22 15:27:37] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 15:27:41] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 15:27:52] [valid] Ep. 14 : Up. 415000 : cross-entropy : 18.7448 : new best
+[2019-01-22 15:27:55] [valid] Ep. 14 : Up. 415000 : perplexity : 4.28175 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 15:29:22] [valid] Ep. 14 : Up. 415000 : translation : 34.71 : stalled 28 times
+[2019-01-22 15:39:11] Ep. 14 : Up. 415500 : Sen. 34,238,536 : Cost 22.82363892 : Time 701.19s : 14288.44 words/s : L.r. 5.8870e-05
+[2019-01-22 15:48:56] Ep. 14 : Up. 416000 : Sen. 35,276,439 : Cost 23.90911102 : Time 585.22s : 17083.71 words/s : L.r. 5.8835e-05
+[2019-01-22 15:58:42] Ep. 14 : Up. 416500 : Sen. 36,329,073 : Cost 23.56125069 : Time 586.07s : 17018.25 words/s : L.r. 5.8800e-05
+[2019-01-22 16:08:28] Ep. 14 : Up. 417000 : Sen. 37,363,516 : Cost 24.21397591 : Time 586.06s : 17227.44 words/s : L.r. 5.8764e-05
+[2019-01-22 16:18:10] Ep. 14 : Up. 417500 : Sen. 38,425,554 : Cost 22.94244385 : Time 581.90s : 16904.84 words/s : L.r. 5.8729e-05
+[2019-01-22 16:27:55] Ep. 14 : Up. 418000 : Sen. 39,489,224 : Cost 23.14908600 : Time 585.25s : 16965.05 words/s : L.r. 5.8694e-05
+[2019-01-22 16:37:47] Ep. 14 : Up. 418500 : Sen. 40,553,322 : Cost 23.72605133 : Time 592.04s : 17201.77 words/s : L.r. 5.8659e-05
+[2019-01-22 16:47:22] Ep. 14 : Up. 419000 : Sen. 41,571,144 : Cost 23.72515869 : Time 574.36s : 16913.76 words/s : L.r. 5.8624e-05
+[2019-01-22 16:48:55] Seen 41736931 samples
+[2019-01-22 16:48:55] Starting epoch 15
+[2019-01-22 16:48:55] [data] Shuffling files
+[2019-01-22 16:49:12] [data] Done reading 41736982 sentences
+[2019-01-22 16:52:41] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-22 17:01:21] Ep. 15 : Up. 419500 : Sen. 876,008 : Cost 23.35833359 : Time 839.30s : 11728.70 words/s : L.r. 5.8589e-05
+[2019-01-22 17:11:07] Ep. 15 : Up. 420000 : Sen. 1,937,281 : Cost 23.28408813 : Time 586.36s : 17053.07 words/s : L.r. 5.8554e-05
+[2019-01-22 17:11:07] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 17:11:11] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter420000.npz
+[2019-01-22 17:11:15] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 17:11:19] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 17:11:30] [valid] Ep. 15 : Up. 420000 : cross-entropy : 18.7371 : new best
+[2019-01-22 17:11:32] [valid] Ep. 15 : Up. 420000 : perplexity : 4.27923 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 17:12:29] [valid] Ep. 15 : Up. 420000 : translation : 34.64 : stalled 29 times
+[2019-01-22 17:22:15] Ep. 15 : Up. 420500 : Sen. 2,990,896 : Cost 23.65484810 : Time 668.23s : 15055.15 words/s : L.r. 5.8519e-05
+[2019-01-22 17:32:01] Ep. 15 : Up. 421000 : Sen. 4,048,275 : Cost 23.33601952 : Time 585.21s : 17051.98 words/s : L.r. 5.8484e-05
+[2019-01-22 17:41:50] Ep. 15 : Up. 421500 : Sen. 5,108,424 : Cost 23.44606400 : Time 589.10s : 17094.65 words/s : L.r. 5.8450e-05
+[2019-01-22 17:51:31] Ep. 15 : Up. 422000 : Sen. 6,149,562 : Cost 23.55947113 : Time 581.11s : 17008.55 words/s : L.r. 5.8415e-05
+[2019-01-22 18:01:19] Ep. 15 : Up. 422500 : Sen. 7,213,754 : Cost 23.39205742 : Time 588.16s : 17132.33 words/s : L.r. 5.8381e-05
+[2019-01-22 18:11:01] Ep. 15 : Up. 423000 : Sen. 8,255,943 : Cost 23.40994453 : Time 581.79s : 16919.88 words/s : L.r. 5.8346e-05
+[2019-01-22 18:20:49] Ep. 15 : Up. 423500 : Sen. 9,324,257 : Cost 23.35648346 : Time 588.48s : 17131.61 words/s : L.r. 5.8312e-05
+[2019-01-22 18:30:40] Ep. 15 : Up. 424000 : Sen. 10,403,870 : Cost 23.11603928 : Time 590.48s : 17123.81 words/s : L.r. 5.8277e-05
+[2019-01-22 18:40:23] Ep. 15 : Up. 424500 : Sen. 11,425,109 : Cost 24.42840958 : Time 583.05s : 17206.82 words/s : L.r. 5.8243e-05
+[2019-01-22 18:50:04] Ep. 15 : Up. 425000 : Sen. 12,477,655 : Cost 23.06336975 : Time 581.15s : 16853.34 words/s : L.r. 5.8209e-05
+[2019-01-22 18:50:04] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 18:50:08] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter425000.npz
+[2019-01-22 18:50:12] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 18:50:16] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 18:50:27] [valid] Ep. 15 : Up. 425000 : cross-entropy : 18.7362 : new best
+[2019-01-22 18:50:30] [valid] Ep. 15 : Up. 425000 : perplexity : 4.27893 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 18:51:55] [valid] Ep. 15 : Up. 425000 : translation : 34.67 : stalled 30 times
+[2019-01-22 19:01:48] Ep. 15 : Up. 425500 : Sen. 13,556,984 : Cost 23.33473206 : Time 703.74s : 14489.33 words/s : L.r. 5.8174e-05
+[2019-01-22 19:11:33] Ep. 15 : Up. 426000 : Sen. 14,587,294 : Cost 23.89547920 : Time 585.18s : 16961.93 words/s : L.r. 5.8140e-05
+[2019-01-22 19:21:16] Ep. 15 : Up. 426500 : Sen. 15,658,903 : Cost 22.80342674 : Time 583.11s : 17010.85 words/s : L.r. 5.8106e-05
+[2019-01-22 19:31:04] Ep. 15 : Up. 427000 : Sen. 16,709,304 : Cost 23.67847252 : Time 588.04s : 17051.88 words/s : L.r. 5.8072e-05
+[2019-01-22 19:40:53] Ep. 15 : Up. 427500 : Sen. 17,782,092 : Cost 23.24578094 : Time 588.64s : 17130.30 words/s : L.r. 5.8038e-05
+[2019-01-22 19:50:37] Ep. 15 : Up. 428000 : Sen. 18,809,494 : Cost 24.10563660 : Time 584.51s : 17060.69 words/s : L.r. 5.8004e-05
+[2019-01-22 20:00:25] Ep. 15 : Up. 428500 : Sen. 19,876,589 : Cost 23.24203110 : Time 587.29s : 17052.87 words/s : L.r. 5.7970e-05
+[2019-01-22 20:10:14] Ep. 15 : Up. 429000 : Sen. 20,938,070 : Cost 23.51009560 : Time 589.81s : 17094.06 words/s : L.r. 5.7937e-05
+[2019-01-22 20:19:59] Ep. 15 : Up. 429500 : Sen. 21,993,355 : Cost 23.28315544 : Time 584.72s : 16980.16 words/s : L.r. 5.7903e-05
+[2019-01-22 20:29:46] Ep. 15 : Up. 430000 : Sen. 23,052,824 : Cost 23.44096565 : Time 587.40s : 17071.43 words/s : L.r. 5.7869e-05
+[2019-01-22 20:29:46] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 20:29:51] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter430000.npz
+[2019-01-22 20:29:54] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 20:29:59] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 20:30:09] [valid] Ep. 15 : Up. 430000 : cross-entropy : 18.7294 : new best
+[2019-01-22 20:30:12] [valid] Ep. 15 : Up. 430000 : perplexity : 4.27662 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 20:31:10] [valid] Ep. 15 : Up. 430000 : translation : 34.58 : stalled 31 times
+[2019-01-22 20:40:54] Ep. 15 : Up. 430500 : Sen. 24,107,876 : Cost 23.49197006 : Time 668.00s : 14958.65 words/s : L.r. 5.7836e-05
+[2019-01-22 20:50:43] Ep. 15 : Up. 431000 : Sen. 25,151,967 : Cost 23.98839569 : Time 588.45s : 17124.35 words/s : L.r. 5.7802e-05
+[2019-01-22 21:00:31] Ep. 15 : Up. 431500 : Sen. 26,226,452 : Cost 23.02281189 : Time 588.28s : 17020.92 words/s : L.r. 5.7768e-05
+[2019-01-22 21:10:18] Ep. 15 : Up. 432000 : Sen. 27,281,734 : Cost 23.38900948 : Time 586.94s : 16970.77 words/s : L.r. 5.7735e-05
+[2019-01-22 21:20:04] Ep. 15 : Up. 432500 : Sen. 28,343,517 : Cost 23.26855087 : Time 586.19s : 17036.22 words/s : L.r. 5.7702e-05
+[2019-01-22 21:29:51] Ep. 15 : Up. 433000 : Sen. 29,377,475 : Cost 24.09707069 : Time 586.87s : 17091.58 words/s : L.r. 5.7668e-05
+[2019-01-22 21:39:36] Ep. 15 : Up. 433500 : Sen. 30,430,807 : Cost 23.30686378 : Time 584.45s : 16919.92 words/s : L.r. 5.7635e-05
+[2019-01-22 21:49:26] Ep. 15 : Up. 434000 : Sen. 31,498,005 : Cost 23.35961342 : Time 590.51s : 17086.04 words/s : L.r. 5.7602e-05
+[2019-01-22 21:59:11] Ep. 15 : Up. 434500 : Sen. 32,551,781 : Cost 23.40699005 : Time 585.02s : 17023.08 words/s : L.r. 5.7569e-05
+[2019-01-22 22:08:58] Ep. 15 : Up. 435000 : Sen. 33,610,829 : Cost 23.33647919 : Time 587.01s : 16966.47 words/s : L.r. 5.7536e-05
+[2019-01-22 22:08:58] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 22:09:02] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter435000.npz
+[2019-01-22 22:09:06] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 22:09:10] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 22:09:21] [valid] Ep. 15 : Up. 435000 : cross-entropy : 18.7183 : new best
+[2019-01-22 22:09:24] [valid] Ep. 15 : Up. 435000 : perplexity : 4.27297 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 22:10:46] [valid] Ep. 15 : Up. 435000 : translation : 34.61 : stalled 32 times
+[2019-01-22 22:20:32] Ep. 15 : Up. 435500 : Sen. 34,666,318 : Cost 23.17059135 : Time 693.41s : 14273.23 words/s : L.r. 5.7503e-05
+[2019-01-22 22:30:24] Ep. 15 : Up. 436000 : Sen. 35,714,322 : Cost 24.15859985 : Time 592.78s : 17184.96 words/s : L.r. 5.7470e-05
+[2019-01-22 22:40:10] Ep. 15 : Up. 436500 : Sen. 36,778,931 : Cost 23.30485535 : Time 585.93s : 17102.45 words/s : L.r. 5.7437e-05
+[2019-01-22 22:49:55] Ep. 15 : Up. 437000 : Sen. 37,830,230 : Cost 23.48575211 : Time 585.11s : 17030.81 words/s : L.r. 5.7404e-05
+[2019-01-22 22:59:39] Ep. 15 : Up. 437500 : Sen. 38,870,210 : Cost 23.79246140 : Time 583.41s : 17057.20 words/s : L.r. 5.7371e-05
+[2019-01-22 23:09:28] Ep. 15 : Up. 438000 : Sen. 39,942,712 : Cost 23.19387245 : Time 588.99s : 17079.52 words/s : L.r. 5.7338e-05
+[2019-01-22 23:19:11] Ep. 15 : Up. 438500 : Sen. 40,985,320 : Cost 23.65247345 : Time 582.99s : 17053.61 words/s : L.r. 5.7306e-05
+[2019-01-22 23:26:12] Seen 41736931 samples
+[2019-01-22 23:26:12] Starting epoch 16
+[2019-01-22 23:26:12] [data] Shuffling files
+[2019-01-22 23:26:27] [data] Done reading 41736982 sentences
+[2019-01-22 23:29:52] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-22 23:32:59] Ep. 16 : Up. 439000 : Sen. 288,540 : Cost 23.16985130 : Time 828.24s : 11745.53 words/s : L.r. 5.7273e-05
+[2019-01-22 23:42:49] Ep. 16 : Up. 439500 : Sen. 1,326,771 : Cost 24.28609657 : Time 590.25s : 17278.39 words/s : L.r. 5.7240e-05
+[2019-01-22 23:52:30] Ep. 16 : Up. 440000 : Sen. 2,377,064 : Cost 23.13366508 : Time 580.33s : 16942.78 words/s : L.r. 5.7208e-05
+[2019-01-22 23:52:30] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-22 23:52:34] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter440000.npz
+[2019-01-22 23:52:37] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-22 23:52:42] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-22 23:52:52] [valid] Ep. 16 : Up. 440000 : cross-entropy : 18.7067 : new best
+[2019-01-22 23:52:55] [valid] Ep. 16 : Up. 440000 : perplexity : 4.26913 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-22 23:54:18] [valid] Ep. 16 : Up. 440000 : translation : 34.61 : stalled 33 times
+[2019-01-23 00:04:10] Ep. 16 : Up. 440500 : Sen. 3,446,516 : Cost 23.47706413 : Time 700.18s : 14531.32 words/s : L.r. 5.7175e-05
+[2019-01-23 00:13:52] Ep. 16 : Up. 441000 : Sen. 4,495,483 : Cost 23.17634964 : Time 582.04s : 16882.16 words/s : L.r. 5.7143e-05
+[2019-01-23 00:23:46] Ep. 16 : Up. 441500 : Sen. 5,581,272 : Cost 23.20385361 : Time 594.09s : 17211.92 words/s : L.r. 5.7110e-05
+[2019-01-23 00:33:25] Ep. 16 : Up. 442000 : Sen. 6,609,479 : Cost 23.51385689 : Time 578.95s : 16859.92 words/s : L.r. 5.7078e-05
+[2019-01-23 00:43:09] Ep. 16 : Up. 442500 : Sen. 7,671,475 : Cost 23.18311501 : Time 584.56s : 17042.21 words/s : L.r. 5.7046e-05
+[2019-01-23 00:52:55] Ep. 16 : Up. 443000 : Sen. 8,705,843 : Cost 24.03190041 : Time 585.78s : 17088.73 words/s : L.r. 5.7014e-05
+[2019-01-23 01:02:47] Ep. 16 : Up. 443500 : Sen. 9,786,885 : Cost 23.08800507 : Time 591.58s : 17119.22 words/s : L.r. 5.6982e-05
+[2019-01-23 01:12:27] Ep. 16 : Up. 444000 : Sen. 10,822,743 : Cost 23.59326172 : Time 580.68s : 16985.83 words/s : L.r. 5.6949e-05
+[2019-01-23 01:22:19] Ep. 16 : Up. 444500 : Sen. 11,902,330 : Cost 23.21964264 : Time 591.97s : 17133.82 words/s : L.r. 5.6917e-05
+[2019-01-23 01:32:05] Ep. 16 : Up. 445000 : Sen. 12,944,208 : Cost 23.71618080 : Time 585.75s : 17032.77 words/s : L.r. 5.6885e-05
+[2019-01-23 01:32:05] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 01:32:09] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter445000.npz
+[2019-01-23 01:32:13] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 01:32:17] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 01:32:28] [valid] Ep. 16 : Up. 445000 : cross-entropy : 18.7048 : new best
+[2019-01-23 01:32:31] [valid] Ep. 16 : Up. 445000 : perplexity : 4.2685 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 01:33:58] [valid] Ep. 16 : Up. 445000 : translation : 34.62 : stalled 34 times
+[2019-01-23 01:43:44] Ep. 16 : Up. 445500 : Sen. 14,002,976 : Cost 23.36878395 : Time 699.29s : 14320.48 words/s : L.r. 5.6854e-05
+[2019-01-23 01:53:28] Ep. 16 : Up. 446000 : Sen. 15,049,147 : Cost 23.50206947 : Time 583.97s : 17002.56 words/s : L.r. 5.6822e-05
+[2019-01-23 02:03:19] Ep. 16 : Up. 446500 : Sen. 16,111,928 : Cost 23.58670425 : Time 590.17s : 17179.09 words/s : L.r. 5.6790e-05
+[2019-01-23 02:12:55] Ep. 16 : Up. 447000 : Sen. 17,163,560 : Cost 22.76990700 : Time 576.19s : 16847.27 words/s : L.r. 5.6758e-05
+[2019-01-23 02:22:50] Ep. 16 : Up. 447500 : Sen. 18,226,365 : Cost 23.91251564 : Time 595.46s : 17178.70 words/s : L.r. 5.6726e-05
+[2019-01-23 02:32:36] Ep. 16 : Up. 448000 : Sen. 19,271,034 : Cost 23.62552643 : Time 585.26s : 17018.20 words/s : L.r. 5.6695e-05
+[2019-01-23 02:42:26] Ep. 16 : Up. 448500 : Sen. 20,338,459 : Cost 23.28006744 : Time 590.35s : 17039.53 words/s : L.r. 5.6663e-05
+[2019-01-23 02:52:23] Ep. 16 : Up. 449000 : Sen. 21,403,572 : Cost 23.97540474 : Time 597.03s : 17256.47 words/s : L.r. 5.6632e-05
+[2019-01-23 03:02:04] Ep. 16 : Up. 449500 : Sen. 22,441,553 : Cost 23.35279846 : Time 581.23s : 16871.09 words/s : L.r. 5.6600e-05
+[2019-01-23 03:11:49] Ep. 16 : Up. 450000 : Sen. 23,523,563 : Cost 22.67381477 : Time 584.90s : 16973.48 words/s : L.r. 5.6569e-05
+[2019-01-23 03:11:49] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 03:11:54] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter450000.npz
+[2019-01-23 03:11:58] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 03:12:03] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 03:12:14] [valid] Ep. 16 : Up. 450000 : cross-entropy : 18.7049 : stalled 1 times
+[2019-01-23 03:12:17] [valid] Ep. 16 : Up. 450000 : perplexity : 4.26851 : stalled 1 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 03:13:41] [valid] Ep. 16 : Up. 450000 : translation : 34.55 : stalled 35 times
+[2019-01-23 03:23:29] Ep. 16 : Up. 450500 : Sen. 24,576,209 : Cost 23.65073586 : Time 700.13s : 14361.83 words/s : L.r. 5.6537e-05
+[2019-01-23 03:33:16] Ep. 16 : Up. 451000 : Sen. 25,626,184 : Cost 23.64614296 : Time 586.87s : 17069.63 words/s : L.r. 5.6506e-05
+[2019-01-23 03:43:01] Ep. 16 : Up. 451500 : Sen. 26,675,816 : Cost 23.65765190 : Time 584.70s : 17143.41 words/s : L.r. 5.6474e-05
+[2019-01-23 03:52:51] Ep. 16 : Up. 452000 : Sen. 27,766,951 : Cost 22.85508347 : Time 590.28s : 17125.47 words/s : L.r. 5.6443e-05
+[2019-01-23 04:02:33] Ep. 16 : Up. 452500 : Sen. 28,781,588 : Cost 24.24240685 : Time 582.46s : 16980.91 words/s : L.r. 5.6412e-05
+[2019-01-23 04:12:21] Ep. 16 : Up. 453000 : Sen. 29,858,401 : Cost 22.85305595 : Time 587.22s : 16998.80 words/s : L.r. 5.6381e-05
+[2019-01-23 04:22:10] Ep. 16 : Up. 453500 : Sen. 30,901,737 : Cost 24.09720802 : Time 588.82s : 17192.90 words/s : L.r. 5.6350e-05
+[2019-01-23 04:31:54] Ep. 16 : Up. 454000 : Sen. 31,969,086 : Cost 22.92688751 : Time 584.25s : 16961.63 words/s : L.r. 5.6319e-05
+[2019-01-23 04:41:40] Ep. 16 : Up. 454500 : Sen. 33,016,752 : Cost 23.67081833 : Time 585.80s : 17082.72 words/s : L.r. 5.6288e-05
+[2019-01-23 04:51:28] Ep. 16 : Up. 455000 : Sen. 34,077,917 : Cost 23.47805977 : Time 588.27s : 17103.07 words/s : L.r. 5.6257e-05
+[2019-01-23 04:51:28] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 04:51:32] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter455000.npz
+[2019-01-23 04:51:36] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 04:51:40] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 04:51:50] [valid] Ep. 16 : Up. 455000 : cross-entropy : 18.6951 : new best
+[2019-01-23 04:51:53] [valid] Ep. 16 : Up. 455000 : perplexity : 4.26529 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 04:53:19] [valid] Ep. 16 : Up. 455000 : translation : 34.59 : stalled 36 times
+[2019-01-23 05:03:03] Ep. 16 : Up. 455500 : Sen. 35,118,780 : Cost 23.68308830 : Time 695.46s : 14291.75 words/s : L.r. 5.6226e-05
+[2019-01-23 05:12:58] Ep. 16 : Up. 456000 : Sen. 36,209,103 : Cost 23.19014359 : Time 594.23s : 17218.58 words/s : L.r. 5.6195e-05
+[2019-01-23 05:22:40] Ep. 16 : Up. 456500 : Sen. 37,222,884 : Cost 24.25011063 : Time 582.69s : 16954.55 words/s : L.r. 5.6164e-05
+[2019-01-23 05:32:28] Ep. 16 : Up. 457000 : Sen. 38,298,958 : Cost 22.89770508 : Time 587.39s : 16982.47 words/s : L.r. 5.6134e-05
+[2019-01-23 05:42:08] Ep. 16 : Up. 457500 : Sen. 39,340,957 : Cost 23.44071198 : Time 580.58s : 16985.86 words/s : L.r. 5.6103e-05
+[2019-01-23 05:52:02] Ep. 16 : Up. 458000 : Sen. 40,406,294 : Cost 23.83463287 : Time 594.02s : 17232.79 words/s : L.r. 5.6072e-05
+[2019-01-23 06:01:39] Ep. 16 : Up. 458500 : Sen. 41,448,577 : Cost 23.09445763 : Time 576.59s : 16870.63 words/s : L.r. 5.6042e-05
+[2019-01-23 06:04:20] Seen 41736931 samples
+[2019-01-23 06:04:20] Starting epoch 17
+[2019-01-23 06:04:20] [data] Shuffling files
+[2019-01-23 06:04:35] [data] Done reading 41736982 sentences
+[2019-01-23 06:07:58] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-23 06:15:30] Ep. 17 : Up. 459000 : Sen. 756,705 : Cost 23.23922157 : Time 831.44s : 11850.14 words/s : L.r. 5.6011e-05
+[2019-01-23 06:25:18] Ep. 17 : Up. 459500 : Sen. 1,811,007 : Cost 23.72951508 : Time 587.98s : 17217.88 words/s : L.r. 5.5981e-05
+[2019-01-23 06:35:08] Ep. 17 : Up. 460000 : Sen. 2,880,548 : Cost 23.13609123 : Time 589.71s : 17002.06 words/s : L.r. 5.5950e-05
+[2019-01-23 06:35:08] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 06:35:12] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter460000.npz
+[2019-01-23 06:35:15] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 06:35:20] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 06:35:30] [valid] Ep. 17 : Up. 460000 : cross-entropy : 18.6883 : new best
+[2019-01-23 06:35:33] [valid] Ep. 17 : Up. 460000 : perplexity : 4.26305 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 06:36:30] [valid] Ep. 17 : Up. 460000 : translation : 34.62 : stalled 37 times
+[2019-01-23 06:46:14] Ep. 17 : Up. 460500 : Sen. 3,939,591 : Cost 23.12616158 : Time 666.27s : 14884.65 words/s : L.r. 5.5920e-05
+[2019-01-23 06:55:59] Ep. 17 : Up. 461000 : Sen. 4,978,695 : Cost 23.75064468 : Time 584.58s : 17054.36 words/s : L.r. 5.5890e-05
+[2019-01-23 07:05:44] Ep. 17 : Up. 461500 : Sen. 6,028,312 : Cost 23.39020157 : Time 585.00s : 16999.04 words/s : L.r. 5.5859e-05
+[2019-01-23 07:15:28] Ep. 17 : Up. 462000 : Sen. 7,099,473 : Cost 22.74226761 : Time 584.12s : 16923.88 words/s : L.r. 5.5829e-05
+[2019-01-23 07:25:22] Ep. 17 : Up. 462500 : Sen. 8,150,734 : Cost 24.21659660 : Time 593.89s : 17326.07 words/s : L.r. 5.5799e-05
+[2019-01-23 07:34:58] Ep. 17 : Up. 463000 : Sen. 9,179,937 : Cost 23.40776443 : Time 576.39s : 16889.74 words/s : L.r. 5.5769e-05
+[2019-01-23 07:44:49] Ep. 17 : Up. 463500 : Sen. 10,263,593 : Cost 22.90103149 : Time 590.64s : 17031.06 words/s : L.r. 5.5739e-05
+[2019-01-23 07:54:41] Ep. 17 : Up. 464000 : Sen. 11,297,954 : Cost 24.35282707 : Time 591.66s : 17145.35 words/s : L.r. 5.5709e-05
+[2019-01-23 08:04:33] Ep. 17 : Up. 464500 : Sen. 12,392,037 : Cost 22.67234230 : Time 592.81s : 16995.81 words/s : L.r. 5.5679e-05
+[2019-01-23 08:14:15] Ep. 17 : Up. 465000 : Sen. 13,434,282 : Cost 23.59050751 : Time 582.12s : 17096.84 words/s : L.r. 5.5649e-05
+[2019-01-23 08:14:15] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 08:14:20] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter465000.npz
+[2019-01-23 08:14:23] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 08:14:28] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 08:14:39] [valid] Ep. 17 : Up. 465000 : cross-entropy : 18.6847 : new best
+[2019-01-23 08:14:42] [valid] Ep. 17 : Up. 465000 : perplexity : 4.26183 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 08:16:07] [valid] Ep. 17 : Up. 465000 : translation : 34.59 : stalled 38 times
+[2019-01-23 08:25:46] Ep. 17 : Up. 465500 : Sen. 14,471,116 : Cost 23.63499451 : Time 690.89s : 14298.94 words/s : L.r. 5.5619e-05
+[2019-01-23 08:35:29] Ep. 17 : Up. 466000 : Sen. 15,522,290 : Cost 22.93322945 : Time 583.00s : 16780.03 words/s : L.r. 5.5589e-05
+[2019-01-23 08:45:22] Ep. 17 : Up. 466500 : Sen. 16,601,425 : Cost 23.39483643 : Time 592.33s : 17238.32 words/s : L.r. 5.5559e-05
+[2019-01-23 08:55:11] Ep. 17 : Up. 467000 : Sen. 17,644,768 : Cost 23.95272064 : Time 589.06s : 17121.41 words/s : L.r. 5.5529e-05
+[2019-01-23 09:04:57] Ep. 17 : Up. 467500 : Sen. 18,717,308 : Cost 22.91793251 : Time 585.93s : 16976.78 words/s : L.r. 5.5500e-05
+[2019-01-23 09:14:51] Ep. 17 : Up. 468000 : Sen. 19,784,801 : Cost 23.55624199 : Time 594.04s : 17096.28 words/s : L.r. 5.5470e-05
+[2019-01-23 09:24:34] Ep. 17 : Up. 468500 : Sen. 20,821,342 : Cost 23.73023796 : Time 583.45s : 17002.05 words/s : L.r. 5.5440e-05
+[2019-01-23 09:34:25] Ep. 17 : Up. 469000 : Sen. 21,887,016 : Cost 23.46978378 : Time 590.83s : 17105.32 words/s : L.r. 5.5411e-05
+[2019-01-23 09:44:16] Ep. 17 : Up. 469500 : Sen. 22,948,034 : Cost 23.35171127 : Time 590.65s : 16970.17 words/s : L.r. 5.5381e-05
+[2019-01-23 09:54:03] Ep. 17 : Up. 470000 : Sen. 23,996,032 : Cost 23.68541527 : Time 587.03s : 17068.81 words/s : L.r. 5.5352e-05
+[2019-01-23 09:54:03] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 09:54:07] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter470000.npz
+[2019-01-23 09:54:10] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 09:54:15] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 09:54:25] [valid] Ep. 17 : Up. 470000 : cross-entropy : 18.681 : new best
+[2019-01-23 09:54:28] [valid] Ep. 17 : Up. 470000 : perplexity : 4.2606 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 09:55:53] [valid] Ep. 17 : Up. 470000 : translation : 34.6 : stalled 39 times
+[2019-01-23 10:05:39] Ep. 17 : Up. 470500 : Sen. 25,055,144 : Cost 23.32767868 : Time 696.56s : 14356.56 words/s : L.r. 5.5322e-05
+[2019-01-23 10:15:25] Ep. 17 : Up. 471000 : Sen. 26,113,464 : Cost 23.25271416 : Time 586.25s : 16990.16 words/s : L.r. 5.5293e-05
+[2019-01-23 10:25:13] Ep. 17 : Up. 471500 : Sen. 27,158,964 : Cost 23.84899139 : Time 588.02s : 17104.92 words/s : L.r. 5.5264e-05
+[2019-01-23 10:35:02] Ep. 17 : Up. 472000 : Sen. 28,220,086 : Cost 23.21064186 : Time 588.80s : 16928.25 words/s : L.r. 5.5234e-05
+[2019-01-23 10:44:50] Ep. 17 : Up. 472500 : Sen. 29,286,112 : Cost 23.31211662 : Time 587.63s : 17154.83 words/s : L.r. 5.5205e-05
+[2019-01-23 10:54:42] Ep. 17 : Up. 473000 : Sen. 30,336,806 : Cost 23.71985054 : Time 592.22s : 16965.01 words/s : L.r. 5.5176e-05
+[2019-01-23 11:04:24] Ep. 17 : Up. 473500 : Sen. 31,380,500 : Cost 23.37406921 : Time 581.74s : 16906.70 words/s : L.r. 5.5147e-05
+[2019-01-23 11:14:21] Ep. 17 : Up. 474000 : Sen. 32,452,699 : Cost 23.84464073 : Time 597.24s : 17275.24 words/s : L.r. 5.5118e-05
+[2019-01-23 11:24:07] Ep. 17 : Up. 474500 : Sen. 33,513,432 : Cost 23.06124878 : Time 586.34s : 16924.63 words/s : L.r. 5.5089e-05
+[2019-01-23 11:33:48] Ep. 17 : Up. 475000 : Sen. 34,556,947 : Cost 23.59091187 : Time 580.48s : 17069.25 words/s : L.r. 5.5060e-05
+[2019-01-23 11:33:48] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 11:33:52] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter475000.npz
+[2019-01-23 11:33:56] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 11:34:00] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 11:34:10] [valid] Ep. 17 : Up. 475000 : cross-entropy : 18.6795 : new best
+[2019-01-23 11:34:13] [valid] Ep. 17 : Up. 475000 : perplexity : 4.26002 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 11:35:36] [valid] Ep. 17 : Up. 475000 : translation : 34.47 : stalled 40 times
+[2019-01-23 11:45:24] Ep. 17 : Up. 475500 : Sen. 35,619,297 : Cost 23.31464577 : Time 696.29s : 14405.98 words/s : L.r. 5.5031e-05
+[2019-01-23 11:55:15] Ep. 17 : Up. 476000 : Sen. 36,683,363 : Cost 23.50067139 : Time 590.62s : 17100.90 words/s : L.r. 5.5002e-05
+[2019-01-23 12:04:55] Ep. 17 : Up. 476500 : Sen. 37,728,598 : Cost 23.08870506 : Time 580.10s : 16813.47 words/s : L.r. 5.4973e-05
+[2019-01-23 12:14:48] Ep. 17 : Up. 477000 : Sen. 38,793,059 : Cost 23.65244293 : Time 592.84s : 17161.49 words/s : L.r. 5.4944e-05
+[2019-01-23 12:24:36] Ep. 17 : Up. 477500 : Sen. 39,828,757 : Cost 23.96777153 : Time 587.86s : 17015.72 words/s : L.r. 5.4915e-05
+[2019-01-23 12:34:25] Ep. 17 : Up. 478000 : Sen. 40,894,070 : Cost 23.34601212 : Time 589.66s : 17050.00 words/s : L.r. 5.4887e-05
+[2019-01-23 12:42:13] Seen 41736931 samples
+[2019-01-23 12:42:13] Starting epoch 18
+[2019-01-23 12:42:13] [data] Shuffling files
+[2019-01-23 12:42:28] [data] Done reading 41736982 sentences
+[2019-01-23 12:45:56] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-23 12:48:23] Ep. 18 : Up. 478500 : Sen. 199,985 : Cost 23.40402603 : Time 837.49s : 11806.01 words/s : L.r. 5.4858e-05
+[2019-01-23 12:58:08] Ep. 18 : Up. 479000 : Sen. 1,279,574 : Cost 22.52709389 : Time 585.20s : 16874.26 words/s : L.r. 5.4829e-05
+[2019-01-23 13:08:03] Ep. 18 : Up. 479500 : Sen. 2,319,747 : Cost 24.31426048 : Time 594.90s : 17190.45 words/s : L.r. 5.4801e-05
+[2019-01-23 13:17:51] Ep. 18 : Up. 480000 : Sen. 3,382,534 : Cost 23.21037102 : Time 587.62s : 17077.40 words/s : L.r. 5.4772e-05
+[2019-01-23 13:17:51] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 13:17:54] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter480000.npz
+[2019-01-23 13:17:58] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 13:18:03] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 13:18:13] [valid] Ep. 18 : Up. 480000 : cross-entropy : 18.6811 : stalled 1 times
+[2019-01-23 13:18:16] [valid] Ep. 18 : Up. 480000 : perplexity : 4.26064 : stalled 1 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 13:19:43] [valid] Ep. 18 : Up. 480000 : translation : 34.39 : stalled 41 times
+[2019-01-23 13:29:27] Ep. 18 : Up. 480500 : Sen. 4,445,208 : Cost 22.98578644 : Time 696.16s : 14185.46 words/s : L.r. 5.4744e-05
+[2019-01-23 13:39:07] Ep. 18 : Up. 481000 : Sen. 5,460,975 : Cost 23.94568062 : Time 580.24s : 16956.12 words/s : L.r. 5.4715e-05
+[2019-01-23 13:48:59] Ep. 18 : Up. 481500 : Sen. 6,548,362 : Cost 22.81286812 : Time 591.93s : 17009.51 words/s : L.r. 5.4687e-05
+[2019-01-23 13:58:49] Ep. 18 : Up. 482000 : Sen. 7,602,801 : Cost 23.66044807 : Time 589.96s : 17127.97 words/s : L.r. 5.4659e-05
+[2019-01-23 14:08:42] Ep. 18 : Up. 482500 : Sen. 8,665,260 : Cost 23.62619019 : Time 593.54s : 17121.83 words/s : L.r. 5.4630e-05
+[2019-01-23 14:18:24] Ep. 18 : Up. 483000 : Sen. 9,702,001 : Cost 23.45489693 : Time 581.25s : 16887.01 words/s : L.r. 5.4602e-05
+[2019-01-23 14:28:15] Ep. 18 : Up. 483500 : Sen. 10,760,987 : Cost 23.62739372 : Time 591.37s : 17139.19 words/s : L.r. 5.4574e-05
+[2019-01-23 14:38:02] Ep. 18 : Up. 484000 : Sen. 11,823,477 : Cost 23.03766441 : Time 587.28s : 16896.44 words/s : L.r. 5.4545e-05
+[2019-01-23 14:47:55] Ep. 18 : Up. 484500 : Sen. 12,891,331 : Cost 23.35127258 : Time 592.53s : 17045.12 words/s : L.r. 5.4517e-05
+[2019-01-23 14:57:39] Ep. 18 : Up. 485000 : Sen. 13,939,856 : Cost 23.39232445 : Time 583.93s : 16998.97 words/s : L.r. 5.4489e-05
+[2019-01-23 14:57:39] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 14:57:43] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter485000.npz
+[2019-01-23 14:57:46] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 14:57:50] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 14:58:01] [valid] Ep. 18 : Up. 485000 : cross-entropy : 18.6845 : stalled 2 times
+[2019-01-23 14:58:04] [valid] Ep. 18 : Up. 485000 : perplexity : 4.26177 : stalled 2 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 14:59:28] [valid] Ep. 18 : Up. 485000 : translation : 34.46 : stalled 42 times
+[2019-01-23 15:09:14] Ep. 18 : Up. 485500 : Sen. 14,995,680 : Cost 23.37298393 : Time 695.60s : 14374.77 words/s : L.r. 5.4461e-05
+[2019-01-23 15:19:04] Ep. 18 : Up. 486000 : Sen. 16,057,637 : Cost 23.31004143 : Time 589.67s : 17014.67 words/s : L.r. 5.4433e-05
+[2019-01-23 15:28:50] Ep. 18 : Up. 486500 : Sen. 17,108,536 : Cost 23.47356224 : Time 586.16s : 16995.39 words/s : L.r. 5.4405e-05
+[2019-01-23 15:38:40] Ep. 18 : Up. 487000 : Sen. 18,147,874 : Cost 24.04143333 : Time 589.79s : 17124.89 words/s : L.r. 5.4377e-05
+[2019-01-23 15:48:23] Ep. 18 : Up. 487500 : Sen. 19,206,463 : Cost 22.78848648 : Time 582.71s : 16781.61 words/s : L.r. 5.4349e-05
+[2019-01-23 15:58:12] Ep. 18 : Up. 488000 : Sen. 20,264,221 : Cost 23.48848152 : Time 589.33s : 17046.09 words/s : L.r. 5.4321e-05
+[2019-01-23 16:08:05] Ep. 18 : Up. 488500 : Sen. 21,335,599 : Cost 23.37189674 : Time 592.98s : 17098.24 words/s : L.r. 5.4294e-05
+[2019-01-23 16:17:55] Ep. 18 : Up. 489000 : Sen. 22,394,519 : Cost 23.47205734 : Time 589.59s : 17036.67 words/s : L.r. 5.4266e-05
+[2019-01-23 16:27:41] Ep. 18 : Up. 489500 : Sen. 23,448,963 : Cost 23.32961273 : Time 586.60s : 16991.97 words/s : L.r. 5.4238e-05
+[2019-01-23 16:37:28] Ep. 18 : Up. 490000 : Sen. 24,492,465 : Cost 23.94088745 : Time 587.19s : 17141.61 words/s : L.r. 5.4210e-05
+[2019-01-23 16:37:28] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 16:37:33] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter490000.npz
+[2019-01-23 16:37:37] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 16:37:41] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 16:37:52] [valid] Ep. 18 : Up. 490000 : cross-entropy : 18.6872 : stalled 3 times
+[2019-01-23 16:37:54] [valid] Ep. 18 : Up. 490000 : perplexity : 4.26267 : stalled 3 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 16:39:21] [valid] Ep. 18 : Up. 490000 : translation : 34.44 : stalled 43 times
+[2019-01-23 16:49:09] Ep. 18 : Up. 490500 : Sen. 25,558,480 : Cost 23.11713219 : Time 700.34s : 14261.43 words/s : L.r. 5.4183e-05
+[2019-01-23 16:58:54] Ep. 18 : Up. 491000 : Sen. 26,595,614 : Cost 23.79991913 : Time 585.45s : 17004.77 words/s : L.r. 5.4155e-05
+[2019-01-23 17:08:43] Ep. 18 : Up. 491500 : Sen. 27,652,215 : Cost 23.36410332 : Time 588.91s : 16952.15 words/s : L.r. 5.4128e-05
+[2019-01-23 17:18:31] Ep. 18 : Up. 492000 : Sen. 28,712,094 : Cost 23.55951309 : Time 588.06s : 17166.76 words/s : L.r. 5.4100e-05
+[2019-01-23 17:28:20] Ep. 18 : Up. 492500 : Sen. 29,790,477 : Cost 22.81462288 : Time 588.80s : 16942.80 words/s : L.r. 5.4073e-05
+[2019-01-23 17:38:08] Ep. 18 : Up. 493000 : Sen. 30,848,775 : Cost 23.53709221 : Time 588.05s : 17115.98 words/s : L.r. 5.4045e-05
+[2019-01-23 17:47:52] Ep. 18 : Up. 493500 : Sen. 31,883,260 : Cost 23.72957420 : Time 583.69s : 16982.36 words/s : L.r. 5.4018e-05
+[2019-01-23 17:57:42] Ep. 18 : Up. 494000 : Sen. 32,952,717 : Cost 23.23910904 : Time 590.13s : 17050.13 words/s : L.r. 5.3991e-05
+[2019-01-23 18:07:26] Ep. 18 : Up. 494500 : Sen. 34,000,000 : Cost 23.50420570 : Time 584.54s : 17007.69 words/s : L.r. 5.3963e-05
+[2019-01-23 18:17:12] Ep. 18 : Up. 495000 : Sen. 35,059,201 : Cost 23.22555923 : Time 585.88s : 16988.60 words/s : L.r. 5.3936e-05
+[2019-01-23 18:17:12] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 18:17:16] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter495000.npz
+[2019-01-23 18:17:20] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 18:17:24] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 18:17:34] [valid] Ep. 18 : Up. 495000 : cross-entropy : 18.6865 : stalled 4 times
+[2019-01-23 18:17:37] [valid] Ep. 18 : Up. 495000 : perplexity : 4.26242 : stalled 4 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 18:19:02] [valid] Ep. 18 : Up. 495000 : translation : 34.51 : stalled 44 times
+[2019-01-23 18:28:54] Ep. 18 : Up. 495500 : Sen. 36,124,967 : Cost 23.54944992 : Time 701.88s : 14459.78 words/s : L.r. 5.3909e-05
+[2019-01-23 18:38:38] Ep. 18 : Up. 496000 : Sen. 37,170,999 : Cost 23.60843086 : Time 583.99s : 17062.52 words/s : L.r. 5.3882e-05
+[2019-01-23 18:48:24] Ep. 18 : Up. 496500 : Sen. 38,216,036 : Cost 23.53033829 : Time 585.96s : 16964.26 words/s : L.r. 5.3854e-05
+[2019-01-23 18:58:21] Ep. 18 : Up. 497000 : Sen. 39,309,099 : Cost 23.05272865 : Time 596.62s : 17126.95 words/s : L.r. 5.3827e-05
+[2019-01-23 19:08:03] Ep. 18 : Up. 497500 : Sen. 40,363,842 : Cost 22.93375969 : Time 582.57s : 16800.91 words/s : L.r. 5.3800e-05
+[2019-01-23 19:17:49] Ep. 18 : Up. 498000 : Sen. 41,389,412 : Cost 24.14444733 : Time 585.35s : 17049.91 words/s : L.r. 5.3773e-05
+[2019-01-23 19:21:04] Seen 41736931 samples
+[2019-01-23 19:21:04] Starting epoch 19
+[2019-01-23 19:21:04] [data] Shuffling files
+[2019-01-23 19:21:20] [data] Done reading 41736982 sentences
+[2019-01-23 19:24:46] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-23 19:31:51] Ep. 19 : Up. 498500 : Sen. 708,825 : Cost 23.67712021 : Time 842.09s : 12031.81 words/s : L.r. 5.3746e-05
+[2019-01-23 19:41:27] Ep. 19 : Up. 499000 : Sen. 1,736,108 : Cost 23.17400169 : Time 576.37s : 16727.71 words/s : L.r. 5.3719e-05
+[2019-01-23 19:51:18] Ep. 19 : Up. 499500 : Sen. 2,790,535 : Cost 23.80380821 : Time 590.55s : 17200.04 words/s : L.r. 5.3692e-05
+[2019-01-23 20:01:04] Ep. 19 : Up. 500000 : Sen. 3,860,635 : Cost 22.92073441 : Time 586.79s : 16990.48 words/s : L.r. 5.3666e-05
+[2019-01-23 20:01:04] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 20:01:09] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter500000.npz
+[2019-01-23 20:01:12] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 20:01:17] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 20:01:27] [valid] Ep. 19 : Up. 500000 : cross-entropy : 18.6788 : new best
+[2019-01-23 20:01:30] [valid] Ep. 19 : Up. 500000 : perplexity : 4.25985 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 20:02:58] [valid] Ep. 19 : Up. 500000 : translation : 34.62 : stalled 45 times
+[2019-01-23 20:12:43] Ep. 19 : Up. 500500 : Sen. 4,916,838 : Cost 23.20801353 : Time 698.21s : 14243.39 words/s : L.r. 5.3639e-05
+[2019-01-23 20:22:32] Ep. 19 : Up. 501000 : Sen. 5,963,361 : Cost 23.71423149 : Time 589.55s : 17026.31 words/s : L.r. 5.3612e-05
+[2019-01-23 20:32:22] Ep. 19 : Up. 501500 : Sen. 7,030,934 : Cost 23.18591881 : Time 589.67s : 17022.12 words/s : L.r. 5.3585e-05
+[2019-01-23 20:42:09] Ep. 19 : Up. 502000 : Sen. 8,078,548 : Cost 23.52445602 : Time 587.27s : 16972.70 words/s : L.r. 5.3559e-05
+[2019-01-23 20:52:01] Ep. 19 : Up. 502500 : Sen. 9,150,029 : Cost 23.24353600 : Time 591.95s : 17079.30 words/s : L.r. 5.3532e-05
+[2019-01-23 21:01:46] Ep. 19 : Up. 503000 : Sen. 10,181,422 : Cost 23.99380112 : Time 584.59s : 17086.66 words/s : L.r. 5.3505e-05
+[2019-01-23 21:11:35] Ep. 19 : Up. 503500 : Sen. 11,265,973 : Cost 22.53197289 : Time 589.32s : 16864.28 words/s : L.r. 5.3479e-05
+[2019-01-23 21:21:24] Ep. 19 : Up. 504000 : Sen. 12,311,130 : Cost 23.65314865 : Time 588.83s : 16970.49 words/s : L.r. 5.3452e-05
+[2019-01-23 21:31:15] Ep. 19 : Up. 504500 : Sen. 13,372,854 : Cost 23.47823143 : Time 591.02s : 17083.13 words/s : L.r. 5.3426e-05
+[2019-01-23 21:41:00] Ep. 19 : Up. 505000 : Sen. 14,406,558 : Cost 23.79581642 : Time 585.18s : 17009.65 words/s : L.r. 5.3399e-05
+[2019-01-23 21:41:00] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 21:41:04] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter505000.npz
+[2019-01-23 21:41:08] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 21:41:12] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 21:41:22] [valid] Ep. 19 : Up. 505000 : cross-entropy : 18.688 : stalled 1 times
+[2019-01-23 21:41:25] [valid] Ep. 19 : Up. 505000 : perplexity : 4.26291 : stalled 1 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 21:42:50] [valid] Ep. 19 : Up. 505000 : translation : 34.62 : stalled 46 times
+[2019-01-23 21:52:37] Ep. 19 : Up. 505500 : Sen. 15,480,276 : Cost 23.04287910 : Time 697.28s : 14381.20 words/s : L.r. 5.3373e-05
+[2019-01-23 22:02:21] Ep. 19 : Up. 506000 : Sen. 16,528,947 : Cost 23.22344780 : Time 584.02s : 16895.30 words/s : L.r. 5.3347e-05
+[2019-01-23 22:12:14] Ep. 19 : Up. 506500 : Sen. 17,588,945 : Cost 23.70611572 : Time 593.02s : 17116.94 words/s : L.r. 5.3320e-05
+[2019-01-23 22:22:06] Ep. 19 : Up. 507000 : Sen. 18,651,533 : Cost 23.56562424 : Time 591.50s : 17136.04 words/s : L.r. 5.3294e-05
+[2019-01-23 22:31:44] Ep. 19 : Up. 507500 : Sen. 19,694,307 : Cost 22.97086143 : Time 578.10s : 16788.75 words/s : L.r. 5.3268e-05
+[2019-01-23 22:41:37] Ep. 19 : Up. 508000 : Sen. 20,755,271 : Cost 23.56312180 : Time 592.70s : 17078.42 words/s : L.r. 5.3241e-05
+[2019-01-23 22:51:19] Ep. 19 : Up. 508500 : Sen. 21,798,178 : Cost 23.26988983 : Time 581.94s : 16873.40 words/s : L.r. 5.3215e-05
+[2019-01-23 23:01:02] Ep. 19 : Up. 509000 : Sen. 22,852,469 : Cost 23.34950638 : Time 583.76s : 17037.65 words/s : L.r. 5.3189e-05
+[2019-01-23 23:10:53] Ep. 19 : Up. 509500 : Sen. 23,899,429 : Cost 23.94194412 : Time 590.93s : 17157.32 words/s : L.r. 5.3163e-05
+[2019-01-23 23:20:41] Ep. 19 : Up. 510000 : Sen. 24,965,624 : Cost 23.10666466 : Time 588.09s : 16972.09 words/s : L.r. 5.3137e-05
+[2019-01-23 23:20:41] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-23 23:20:46] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter510000.npz
+[2019-01-23 23:20:50] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-23 23:20:54] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-23 23:21:05] [valid] Ep. 19 : Up. 510000 : cross-entropy : 18.6876 : stalled 2 times
+[2019-01-23 23:21:08] [valid] Ep. 19 : Up. 510000 : perplexity : 4.26278 : stalled 2 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-23 23:22:34] [valid] Ep. 19 : Up. 510000 : translation : 34.52 : stalled 47 times
+[2019-01-23 23:32:21] Ep. 19 : Up. 510500 : Sen. 26,019,688 : Cost 23.41286087 : Time 699.41s : 14294.69 words/s : L.r. 5.3111e-05
+[2019-01-23 23:42:09] Ep. 19 : Up. 511000 : Sen. 27,075,116 : Cost 23.39693832 : Time 587.80s : 16978.01 words/s : L.r. 5.3085e-05
+[2019-01-23 23:51:58] Ep. 19 : Up. 511500 : Sen. 28,129,303 : Cost 23.59509468 : Time 589.40s : 17079.81 words/s : L.r. 5.3059e-05
+[2019-01-24 00:01:48] Ep. 19 : Up. 512000 : Sen. 29,194,671 : Cost 23.27482796 : Time 590.22s : 16993.31 words/s : L.r. 5.3033e-05
+[2019-01-24 00:11:35] Ep. 19 : Up. 512500 : Sen. 30,263,771 : Cost 23.15576935 : Time 586.47s : 17086.62 words/s : L.r. 5.3007e-05
+[2019-01-24 00:21:28] Ep. 19 : Up. 513000 : Sen. 31,309,094 : Cost 23.83283424 : Time 593.52s : 16993.02 words/s : L.r. 5.2981e-05
+[2019-01-24 00:31:11] Ep. 19 : Up. 513500 : Sen. 32,381,597 : Cost 22.71565437 : Time 583.22s : 16906.55 words/s : L.r. 5.2955e-05
+[2019-01-24 00:40:58] Ep. 19 : Up. 514000 : Sen. 33,421,337 : Cost 23.77651405 : Time 586.34s : 17045.64 words/s : L.r. 5.2930e-05
+[2019-01-24 00:50:44] Ep. 19 : Up. 514500 : Sen. 34,451,973 : Cost 24.12178993 : Time 586.66s : 17080.56 words/s : L.r. 5.2904e-05
+[2019-01-24 01:00:36] Ep. 19 : Up. 515000 : Sen. 35,529,307 : Cost 23.10935020 : Time 591.18s : 17086.09 words/s : L.r. 5.2878e-05
+[2019-01-24 01:00:36] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-24 01:00:40] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter515000.npz
+[2019-01-24 01:00:44] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-24 01:00:48] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-24 01:00:59] [valid] Ep. 19 : Up. 515000 : cross-entropy : 18.6747 : new best
+[2019-01-24 01:01:02] [valid] Ep. 19 : Up. 515000 : perplexity : 4.25854 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-24 01:02:28] [valid] Ep. 19 : Up. 515000 : translation : 34.55 : stalled 48 times
+[2019-01-24 01:12:12] Ep. 19 : Up. 515500 : Sen. 36,588,731 : Cost 23.02546692 : Time 696.30s : 14182.24 words/s : L.r. 5.2853e-05
+[2019-01-24 01:22:03] Ep. 19 : Up. 516000 : Sen. 37,653,693 : Cost 23.45159149 : Time 590.99s : 17073.26 words/s : L.r. 5.2827e-05
+[2019-01-24 01:31:52] Ep. 19 : Up. 516500 : Sen. 38,684,914 : Cost 24.07375145 : Time 589.21s : 17009.34 words/s : L.r. 5.2801e-05
+[2019-01-24 01:41:41] Ep. 19 : Up. 517000 : Sen. 39,744,253 : Cost 23.42223549 : Time 589.20s : 17052.35 words/s : L.r. 5.2776e-05
+[2019-01-24 01:51:30] Ep. 19 : Up. 517500 : Sen. 40,807,660 : Cost 23.38271332 : Time 588.58s : 17089.49 words/s : L.r. 5.2750e-05
+[2019-01-24 02:00:08] Seen 41736931 samples
+[2019-01-24 02:00:08] Starting epoch 20
+[2019-01-24 02:00:08] [data] Shuffling files
+[2019-01-24 02:00:23] [data] Done reading 41736982 sentences
+[2019-01-24 02:03:49] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-24 02:05:26] Ep. 20 : Up. 518000 : Sen. 118,648 : Cost 23.16735840 : Time 836.36s : 11777.15 words/s : L.r. 5.2725e-05
+[2019-01-24 02:15:06] Ep. 20 : Up. 518500 : Sen. 1,155,100 : Cost 23.48626137 : Time 579.84s : 16984.68 words/s : L.r. 5.2700e-05
+[2019-01-24 02:24:54] Ep. 20 : Up. 519000 : Sen. 2,221,133 : Cost 23.02143097 : Time 587.95s : 16963.53 words/s : L.r. 5.2674e-05
+[2019-01-24 02:34:40] Ep. 20 : Up. 519500 : Sen. 3,270,664 : Cost 23.36293793 : Time 586.36s : 16962.86 words/s : L.r. 5.2649e-05
+[2019-01-24 02:44:34] Ep. 20 : Up. 520000 : Sen. 4,332,060 : Cost 23.61983490 : Time 594.05s : 17114.21 words/s : L.r. 5.2623e-05
+[2019-01-24 02:44:34] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-24 02:44:39] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter520000.npz
+[2019-01-24 02:44:42] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-24 02:44:47] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-24 02:44:58] [valid] Ep. 20 : Up. 520000 : cross-entropy : 18.6691 : new best
+[2019-01-24 02:45:01] [valid] Ep. 20 : Up. 520000 : perplexity : 4.25667 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-24 02:46:25] [valid] Ep. 20 : Up. 520000 : translation : 34.54 : stalled 49 times
+[2019-01-24 02:56:15] Ep. 20 : Up. 520500 : Sen. 5,408,771 : Cost 22.90307236 : Time 701.08s : 14274.30 words/s : L.r. 5.2598e-05
+[2019-01-24 03:06:03] Ep. 20 : Up. 521000 : Sen. 6,452,081 : Cost 23.66226578 : Time 587.12s : 17031.55 words/s : L.r. 5.2573e-05
+[2019-01-24 03:15:52] Ep. 20 : Up. 521500 : Sen. 7,498,975 : Cost 23.61085701 : Time 589.60s : 17005.18 words/s : L.r. 5.2548e-05
+[2019-01-24 03:25:39] Ep. 20 : Up. 522000 : Sen. 8,571,449 : Cost 22.91571617 : Time 587.29s : 17004.09 words/s : L.r. 5.2523e-05
+[2019-01-24 03:35:31] Ep. 20 : Up. 522500 : Sen. 9,635,797 : Cost 23.36628532 : Time 591.27s : 17020.58 words/s : L.r. 5.2497e-05
+[2019-01-24 03:45:16] Ep. 20 : Up. 523000 : Sen. 10,673,817 : Cost 23.53411102 : Time 585.00s : 16926.43 words/s : L.r. 5.2472e-05
+[2019-01-24 03:55:08] Ep. 20 : Up. 523500 : Sen. 11,717,811 : Cost 23.99463272 : Time 591.81s : 17118.33 words/s : L.r. 5.2447e-05
+[2019-01-24 04:04:55] Ep. 20 : Up. 524000 : Sen. 12,784,628 : Cost 23.03874588 : Time 587.49s : 16954.41 words/s : L.r. 5.2422e-05
+[2019-01-24 04:14:42] Ep. 20 : Up. 524500 : Sen. 13,830,170 : Cost 23.50272751 : Time 587.26s : 16968.59 words/s : L.r. 5.2397e-05
+[2019-01-24 04:24:33] Ep. 20 : Up. 525000 : Sen. 14,900,789 : Cost 23.12562180 : Time 591.06s : 16970.82 words/s : L.r. 5.2372e-05
+[2019-01-24 04:24:33] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-24 04:24:38] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter525000.npz
+[2019-01-24 04:24:42] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-24 04:24:46] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-24 04:24:57] [valid] Ep. 20 : Up. 525000 : cross-entropy : 18.6638 : new best
+[2019-01-24 04:25:00] [valid] Ep. 20 : Up. 525000 : perplexity : 4.25493 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-24 04:26:23] [valid] Ep. 20 : Up. 525000 : translation : 34.56 : stalled 50 times
+[2019-01-24 04:36:12] Ep. 20 : Up. 525500 : Sen. 15,956,610 : Cost 23.58591461 : Time 698.55s : 14444.18 words/s : L.r. 5.2347e-05
+[2019-01-24 04:46:01] Ep. 20 : Up. 526000 : Sen. 17,014,480 : Cost 23.39798164 : Time 589.40s : 17010.55 words/s : L.r. 5.2322e-05
+[2019-01-24 04:55:48] Ep. 20 : Up. 526500 : Sen. 18,065,232 : Cost 23.29873466 : Time 586.49s : 16897.05 words/s : L.r. 5.2298e-05
+[2019-01-24 05:05:40] Ep. 20 : Up. 527000 : Sen. 19,128,488 : Cost 23.56549263 : Time 591.85s : 17131.75 words/s : L.r. 5.2273e-05
+[2019-01-24 05:15:25] Ep. 20 : Up. 527500 : Sen. 20,176,309 : Cost 23.39285278 : Time 584.92s : 16971.71 words/s : L.r. 5.2248e-05
+[2019-01-24 05:25:17] Ep. 20 : Up. 528000 : Sen. 21,248,809 : Cost 23.17526817 : Time 592.09s : 17005.21 words/s : L.r. 5.2223e-05
+[2019-01-24 05:35:07] Ep. 20 : Up. 528500 : Sen. 22,317,442 : Cost 23.18215752 : Time 590.09s : 17048.81 words/s : L.r. 5.2199e-05
+[2019-01-24 05:44:49] Ep. 20 : Up. 529000 : Sen. 23,337,264 : Cost 24.08117104 : Time 582.00s : 17017.25 words/s : L.r. 5.2174e-05
+[2019-01-24 05:54:36] Ep. 20 : Up. 529500 : Sen. 24,394,031 : Cost 23.07074928 : Time 587.48s : 16817.10 words/s : L.r. 5.2149e-05
+[2019-01-24 06:04:29] Ep. 20 : Up. 530000 : Sen. 25,460,593 : Cost 23.56886292 : Time 592.51s : 17192.44 words/s : L.r. 5.2125e-05
+[2019-01-24 06:04:29] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-24 06:04:33] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter530000.npz
+[2019-01-24 06:04:37] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-24 06:04:42] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-24 06:04:53] [valid] Ep. 20 : Up. 530000 : cross-entropy : 18.6598 : new best
+[2019-01-24 06:04:56] [valid] Ep. 20 : Up. 530000 : perplexity : 4.25362 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-24 06:06:20] [valid] Ep. 20 : Up. 530000 : translation : 34.51 : stalled 51 times
+[2019-01-24 06:16:02] Ep. 20 : Up. 530500 : Sen. 26,511,300 : Cost 23.07082176 : Time 693.65s : 14172.28 words/s : L.r. 5.2100e-05
+[2019-01-24 06:25:51] Ep. 20 : Up. 531000 : Sen. 27,573,681 : Cost 23.29652405 : Time 588.27s : 17012.29 words/s : L.r. 5.2076e-05
+[2019-01-24 06:35:38] Ep. 20 : Up. 531500 : Sen. 28,618,531 : Cost 23.69850922 : Time 587.49s : 17081.06 words/s : L.r. 5.2051e-05
+[2019-01-24 06:45:26] Ep. 20 : Up. 532000 : Sen. 29,696,220 : Cost 22.72831726 : Time 587.45s : 16923.53 words/s : L.r. 5.2027e-05
+[2019-01-24 06:55:16] Ep. 20 : Up. 532500 : Sen. 30,748,429 : Cost 23.67143250 : Time 590.26s : 17071.95 words/s : L.r. 5.2002e-05
+[2019-01-24 07:05:00] Ep. 20 : Up. 533000 : Sen. 31,800,764 : Cost 23.38013458 : Time 584.49s : 16996.90 words/s : L.r. 5.1978e-05
+[2019-01-24 07:14:49] Ep. 20 : Up. 533500 : Sen. 32,835,288 : Cost 24.30231667 : Time 588.89s : 17269.76 words/s : L.r. 5.1953e-05
+[2019-01-24 07:24:37] Ep. 20 : Up. 534000 : Sen. 33,895,840 : Cost 23.29111099 : Time 587.74s : 16993.38 words/s : L.r. 5.1929e-05
+[2019-01-24 07:34:26] Ep. 20 : Up. 534500 : Sen. 34,958,850 : Cost 23.21987724 : Time 589.40s : 16966.37 words/s : L.r. 5.1905e-05
+[2019-01-24 07:44:15] Ep. 20 : Up. 535000 : Sen. 36,021,881 : Cost 23.25485992 : Time 588.96s : 17007.99 words/s : L.r. 5.1881e-05
+[2019-01-24 07:44:15] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-24 07:44:20] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter535000.npz
+[2019-01-24 07:44:24] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-24 07:44:29] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-24 07:44:39] [valid] Ep. 20 : Up. 535000 : cross-entropy : 18.6581 : new best
+[2019-01-24 07:44:42] [valid] Ep. 20 : Up. 535000 : perplexity : 4.25305 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-24 07:46:08] [valid] Ep. 20 : Up. 535000 : translation : 34.5 : stalled 52 times
+[2019-01-24 07:55:54] Ep. 20 : Up. 535500 : Sen. 37,079,756 : Cost 23.38228607 : Time 698.52s : 14321.69 words/s : L.r. 5.1856e-05
+[2019-01-24 08:05:45] Ep. 20 : Up. 536000 : Sen. 38,136,681 : Cost 23.67382622 : Time 590.73s : 17115.77 words/s : L.r. 5.1832e-05
+[2019-01-24 08:15:28] Ep. 20 : Up. 536500 : Sen. 39,184,790 : Cost 23.05558205 : Time 583.18s : 16797.48 words/s : L.r. 5.1808e-05
+[2019-01-24 08:25:21] Ep. 20 : Up. 537000 : Sen. 40,255,530 : Cost 23.42586517 : Time 593.30s : 17105.57 words/s : L.r. 5.1784e-05
+[2019-01-24 08:35:05] Ep. 20 : Up. 537500 : Sen. 41,305,299 : Cost 23.28339195 : Time 584.25s : 16946.22 words/s : L.r. 5.1760e-05
+[2019-01-24 08:39:13] Seen 41736931 samples
+[2019-01-24 08:39:13] Starting epoch 21
+[2019-01-24 08:39:13] [data] Shuffling files
+[2019-01-24 08:39:29] [data] Done reading 41736982 sentences
+[2019-01-24 08:42:53] [data] Done shuffling 41736982 sentences to temp files
+[2019-01-24 08:48:52] Ep. 21 : Up. 538000 : Sen. 595,632 : Cost 23.35635948 : Time 826.19s : 11754.42 words/s : L.r. 5.1736e-05
+[2019-01-24 08:58:46] Ep. 21 : Up. 538500 : Sen. 1,663,534 : Cost 23.43787003 : Time 594.62s : 17126.00 words/s : L.r. 5.1712e-05
+[2019-01-24 09:08:29] Ep. 21 : Up. 539000 : Sen. 2,714,814 : Cost 22.99703979 : Time 582.72s : 16871.15 words/s : L.r. 5.1688e-05
+[2019-01-24 09:18:26] Ep. 21 : Up. 539500 : Sen. 3,774,629 : Cost 24.00599098 : Time 596.72s : 17267.55 words/s : L.r. 5.1664e-05
+[2019-01-24 09:28:08] Ep. 21 : Up. 540000 : Sen. 4,817,127 : Cost 23.37990189 : Time 581.90s : 16978.73 words/s : L.r. 5.1640e-05
+[2019-01-24 09:28:08] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz.orig.npz
+[2019-01-24 09:28:12] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.iter540000.npz
+[2019-01-24 09:28:16] Saving model weights and runtime parameters to model/model.src1tgt0.newvocab.npz
+[2019-01-24 09:28:20] Saving Adam parameters to model/model.src1tgt0.newvocab.npz.optimizer.npz
+[2019-01-24 09:28:31] [valid] Ep. 21 : Up. 540000 : cross-entropy : 18.6518 : new best
+[2019-01-24 09:28:33] [valid] Ep. 21 : Up. 540000 : perplexity : 4.25096 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-01-24 09:29:58] [valid] Ep. 21 : Up. 540000 : translation : 34.43 : stalled 53 times
+[2019-01-24 09:39:45] Ep. 21 : Up. 540500 : Sen. 5,885,137 : Cost 23.02455521 : Time 697.85s : 14309.85 words/s : L.r. 5.1616e-05
+[2019-01-24 09:49:33] Ep. 21 : Up. 541000 : Sen. 6,917,302 : Cost 23.93283272 : Time 587.40s : 17020.53 words/s : L.r. 5.1592e-05
+[2019-01-24 09:59:20] Ep. 21 : Up. 541500 : Sen. 7,991,248 : Cost 22.91658592 : Time 587.65s : 17003.04 words/s : L.r. 5.1568e-05
+[2019-01-24 10:09:06] Ep. 21 : Up. 542000 : Sen. 9,043,028 : Cost 23.37819672 : Time 586.00s : 17028.39 words/s : L.r. 5.1544e-05
+train_trans.sh: line 27:  7452 Terminated              $marian_home/marian --model model/model.src1tgt0.newvocab.npz --type transformer --train-sets corp/opensub.en-fr.docs.train.en.bpe corp/opensub.en-fr.docs.train.fr.bpe --max-length 160 --vocabs corp/vocab.encz.opensub.yml corp/vocab.encz.opensub.yml --mini-batch-fit -w 9800 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 6 --normalize 0.6 --log model/train_trans.newvocab.log --valid-log model/valid_trans.newvocab.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 1 --sync-sgd --seed 1111 --exponential-smoothing --no-nccl --no-restore-corpus

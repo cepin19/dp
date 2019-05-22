@@ -1,0 +1,1222 @@
+[2019-05-18 00:52:10] [marian] Marian v1.7.8 1fb870a 2019-05-10 13:28:45 +0200
+[2019-05-18 00:52:10] [marian] Running on metis.lingea.cz as process 130236 with command line:
+[2019-05-18 00:52:10] [marian] /home/large/data/models/marian/marian-doc/doc-marian3_metis/build/marian --model model/model.src1tgt0.doc.new.spider.newgate.nogate.npz --pretrained-model ../src0tgt0_fr/model/model.src0tgt0.newvocab.iter630000.npz --type transformer-context --train-sets corp/opensub.en-fr.docs.train.en.bpe.src_prev corp/opensub.en-fr.docs.train.en.bpe.src corp/opensub.en-fr.docs.train.fr.bpe --max-length 55 --dim-vocabs 30000 30000 --freeze --embedding-fix-src --embedding-fix-trg --vocabs corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml --mini-batch-fit -w 8200 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe.src_prev corp/opensub.en-fr.docs.dev.en.bpe.src corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 6 --normalize 0.6 --log model/train_trans.gate.log --valid-log model/valid_trans.gate.log --enc-depth 6 --dec-depth 6 --context-enc-depth 1 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 8 --devices 1 --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus
+[2019-05-18 00:52:10] [config] after-batches: 0
+[2019-05-18 00:52:10] [config] after-epochs: 0
+[2019-05-18 00:52:10] [config] allow-unk: false
+[2019-05-18 00:52:10] [config] beam-size: 6
+[2019-05-18 00:52:10] [config] bert-class-symbol: "[CLS]"
+[2019-05-18 00:52:10] [config] bert-mask-symbol: "[MASK]"
+[2019-05-18 00:52:10] [config] bert-masking-fraction: 0.15
+[2019-05-18 00:52:10] [config] bert-sep-symbol: "[SEP]"
+[2019-05-18 00:52:10] [config] bert-train-type-embeddings: true
+[2019-05-18 00:52:10] [config] bert-type-vocab-size: 2
+[2019-05-18 00:52:10] [config] best-deep: false
+[2019-05-18 00:52:10] [config] clip-gemm: 0
+[2019-05-18 00:52:10] [config] clip-norm: 5
+[2019-05-18 00:52:10] [config] context-enc-depth: 1
+[2019-05-18 00:52:10] [config] context-gate: false
+[2019-05-18 00:52:10] [config] cost-type: ce-mean
+[2019-05-18 00:52:10] [config] cpu-threads: 0
+[2019-05-18 00:52:10] [config] data-weighting: ""
+[2019-05-18 00:52:10] [config] data-weighting-type: sentence
+[2019-05-18 00:52:10] [config] dec-cell: gru
+[2019-05-18 00:52:10] [config] dec-cell-base-depth: 2
+[2019-05-18 00:52:10] [config] dec-cell-high-depth: 1
+[2019-05-18 00:52:10] [config] dec-depth: 6
+[2019-05-18 00:52:10] [config] devices:
+[2019-05-18 00:52:10] [config]   - 1
+[2019-05-18 00:52:10] [config] dim-emb: 512
+[2019-05-18 00:52:10] [config] dim-rnn: 1024
+[2019-05-18 00:52:10] [config] dim-vocabs:
+[2019-05-18 00:52:10] [config]   - 30000
+[2019-05-18 00:52:10] [config]   - 30000
+[2019-05-18 00:52:10] [config] disp-first: 0
+[2019-05-18 00:52:10] [config] disp-freq: 500
+[2019-05-18 00:52:10] [config] disp-label-counts: false
+[2019-05-18 00:52:10] [config] dropout-rnn: 0
+[2019-05-18 00:52:10] [config] dropout-src: 0
+[2019-05-18 00:52:10] [config] dropout-trg: 0
+[2019-05-18 00:52:10] [config] dump-config: ""
+[2019-05-18 00:52:10] [config] early-stopping: 10
+[2019-05-18 00:52:10] [config] embedding-fix-src: true
+[2019-05-18 00:52:10] [config] embedding-fix-trg: true
+[2019-05-18 00:52:10] [config] embedding-normalization: false
+[2019-05-18 00:52:10] [config] embedding-vectors:
+[2019-05-18 00:52:10] [config]   []
+[2019-05-18 00:52:10] [config] enc-cell: gru
+[2019-05-18 00:52:10] [config] enc-cell-depth: 1
+[2019-05-18 00:52:10] [config] enc-depth: 6
+[2019-05-18 00:52:10] [config] enc-type: bidirectional
+[2019-05-18 00:52:10] [config] exponential-smoothing: 0.0001
+[2019-05-18 00:52:10] [config] freeze: true
+[2019-05-18 00:52:10] [config] grad-dropping-momentum: 0
+[2019-05-18 00:52:10] [config] grad-dropping-rate: 0
+[2019-05-18 00:52:10] [config] grad-dropping-warmup: 100
+[2019-05-18 00:52:10] [config] guided-alignment: none
+[2019-05-18 00:52:10] [config] guided-alignment-cost: mse
+[2019-05-18 00:52:10] [config] guided-alignment-weight: 0.1
+[2019-05-18 00:52:10] [config] ignore-model-config: false
+[2019-05-18 00:52:10] [config] input-types:
+[2019-05-18 00:52:10] [config]   []
+[2019-05-18 00:52:10] [config] interpolate-env-vars: false
+[2019-05-18 00:52:10] [config] keep-best: false
+[2019-05-18 00:52:10] [config] label-smoothing: 0.1
+[2019-05-18 00:52:10] [config] layer-normalization: false
+[2019-05-18 00:52:10] [config] learn-rate: 0.0002
+[2019-05-18 00:52:10] [config] log: model/train_trans.gate.log
+[2019-05-18 00:52:10] [config] log-level: info
+[2019-05-18 00:52:10] [config] log-time-zone: ""
+[2019-05-18 00:52:10] [config] lr-decay: 0
+[2019-05-18 00:52:10] [config] lr-decay-freq: 50000
+[2019-05-18 00:52:10] [config] lr-decay-inv-sqrt:
+[2019-05-18 00:52:10] [config]   - 16000
+[2019-05-18 00:52:10] [config] lr-decay-repeat-warmup: false
+[2019-05-18 00:52:10] [config] lr-decay-reset-optimizer: false
+[2019-05-18 00:52:10] [config] lr-decay-start:
+[2019-05-18 00:52:10] [config]   - 10
+[2019-05-18 00:52:10] [config]   - 1
+[2019-05-18 00:52:10] [config] lr-decay-strategy: epoch+stalled
+[2019-05-18 00:52:10] [config] lr-report: true
+[2019-05-18 00:52:10] [config] lr-warmup: 16000
+[2019-05-18 00:52:10] [config] lr-warmup-at-reload: false
+[2019-05-18 00:52:10] [config] lr-warmup-cycle: false
+[2019-05-18 00:52:10] [config] lr-warmup-start-rate: 0
+[2019-05-18 00:52:10] [config] max-length: 55
+[2019-05-18 00:52:10] [config] max-length-crop: false
+[2019-05-18 00:52:10] [config] max-length-factor: 3
+[2019-05-18 00:52:10] [config] maxi-batch: 1000
+[2019-05-18 00:52:10] [config] maxi-batch-sort: trg
+[2019-05-18 00:52:10] [config] mini-batch: 1000
+[2019-05-18 00:52:10] [config] mini-batch-fit: true
+[2019-05-18 00:52:10] [config] mini-batch-fit-step: 10
+[2019-05-18 00:52:10] [config] mini-batch-overstuff: 1
+[2019-05-18 00:52:10] [config] mini-batch-track-lr: false
+[2019-05-18 00:52:10] [config] mini-batch-understuff: 1
+[2019-05-18 00:52:10] [config] mini-batch-warmup: 0
+[2019-05-18 00:52:10] [config] mini-batch-words: 0
+[2019-05-18 00:52:10] [config] mini-batch-words-ref: 0
+[2019-05-18 00:52:10] [config] model: model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 00:52:10] [config] multi-loss-type: sum
+[2019-05-18 00:52:10] [config] multi-node: false
+[2019-05-18 00:52:10] [config] multi-node-overlap: true
+[2019-05-18 00:52:10] [config] n-best: false
+[2019-05-18 00:52:10] [config] no-nccl: false
+[2019-05-18 00:52:10] [config] no-reload: false
+[2019-05-18 00:52:10] [config] no-restore-corpus: true
+[2019-05-18 00:52:10] [config] no-shuffle: false
+[2019-05-18 00:52:10] [config] normalize: 0.6
+[2019-05-18 00:52:10] [config] num-devices: 0
+[2019-05-18 00:52:10] [config] optimizer: adam
+[2019-05-18 00:52:10] [config] optimizer-delay: 8
+[2019-05-18 00:52:10] [config] optimizer-params:
+[2019-05-18 00:52:10] [config]   - 0.9
+[2019-05-18 00:52:10] [config]   - 0.98
+[2019-05-18 00:52:10] [config]   - 1e-09
+[2019-05-18 00:52:10] [config] overwrite: false
+[2019-05-18 00:52:10] [config] pretrained-model: ../src0tgt0_fr/model/model.src0tgt0.newvocab.iter630000.npz
+[2019-05-18 00:52:10] [config] quiet: false
+[2019-05-18 00:52:10] [config] quiet-translation: true
+[2019-05-18 00:52:10] [config] relative-paths: false
+[2019-05-18 00:52:10] [config] right-left: false
+[2019-05-18 00:52:10] [config] save-freq: 5000
+[2019-05-18 00:52:10] [config] seed: 1111
+[2019-05-18 00:52:10] [config] shuffle-in-ram: false
+[2019-05-18 00:52:10] [config] skip: false
+[2019-05-18 00:52:10] [config] sqlite: ""
+[2019-05-18 00:52:10] [config] sqlite-drop: false
+[2019-05-18 00:52:10] [config] sync-sgd: true
+[2019-05-18 00:52:10] [config] tempdir: /tmp
+[2019-05-18 00:52:10] [config] tied-embeddings: false
+[2019-05-18 00:52:10] [config] tied-embeddings-all: true
+[2019-05-18 00:52:10] [config] tied-embeddings-src: false
+[2019-05-18 00:52:10] [config] train-sets:
+[2019-05-18 00:52:10] [config]   - corp/opensub.en-fr.docs.train.en.bpe.src_prev
+[2019-05-18 00:52:10] [config]   - corp/opensub.en-fr.docs.train.en.bpe.src
+[2019-05-18 00:52:10] [config]   - corp/opensub.en-fr.docs.train.fr.bpe
+[2019-05-18 00:52:10] [config] transformer-aan-activation: swish
+[2019-05-18 00:52:10] [config] transformer-aan-depth: 2
+[2019-05-18 00:52:10] [config] transformer-aan-nogate: false
+[2019-05-18 00:52:10] [config] transformer-decoder-autoreg: self-attention
+[2019-05-18 00:52:10] [config] transformer-dim-aan: 2048
+[2019-05-18 00:52:10] [config] transformer-dim-ffn: 2048
+[2019-05-18 00:52:10] [config] transformer-dropout: 0.1
+[2019-05-18 00:52:10] [config] transformer-dropout-attention: 0
+[2019-05-18 00:52:10] [config] transformer-dropout-ffn: 0
+[2019-05-18 00:52:10] [config] transformer-ffn-activation: swish
+[2019-05-18 00:52:10] [config] transformer-ffn-depth: 2
+[2019-05-18 00:52:10] [config] transformer-guided-alignment-layer: last
+[2019-05-18 00:52:10] [config] transformer-heads: 8
+[2019-05-18 00:52:10] [config] transformer-no-projection: false
+[2019-05-18 00:52:10] [config] transformer-postprocess: dan
+[2019-05-18 00:52:10] [config] transformer-postprocess-emb: d
+[2019-05-18 00:52:10] [config] transformer-preprocess: ""
+[2019-05-18 00:52:10] [config] transformer-tied-layers:
+[2019-05-18 00:52:10] [config]   []
+[2019-05-18 00:52:10] [config] transformer-train-position-embeddings: false
+[2019-05-18 00:52:10] [config] type: transformer-context
+[2019-05-18 00:52:10] [config] ulr: false
+[2019-05-18 00:52:10] [config] ulr-dim-emb: 0
+[2019-05-18 00:52:10] [config] ulr-dropout: 0
+[2019-05-18 00:52:10] [config] ulr-keys-vectors: ""
+[2019-05-18 00:52:10] [config] ulr-query-vectors: ""
+[2019-05-18 00:52:10] [config] ulr-softmax-temperature: 1
+[2019-05-18 00:52:10] [config] ulr-trainable-transformation: false
+[2019-05-18 00:52:10] [config] valid-freq: 5000
+[2019-05-18 00:52:10] [config] valid-log: model/valid_trans.gate.log
+[2019-05-18 00:52:10] [config] valid-max-length: 1000
+[2019-05-18 00:52:10] [config] valid-metrics:
+[2019-05-18 00:52:10] [config]   - cross-entropy
+[2019-05-18 00:52:10] [config]   - perplexity
+[2019-05-18 00:52:10] [config]   - translation
+[2019-05-18 00:52:10] [config] valid-mini-batch: 64
+[2019-05-18 00:52:10] [config] valid-script-path: ./val.sh
+[2019-05-18 00:52:10] [config] valid-sets:
+[2019-05-18 00:52:10] [config]   - corp/opensub.en-fr.docs.dev.en.bpe.src_prev
+[2019-05-18 00:52:10] [config]   - corp/opensub.en-fr.docs.dev.en.bpe.src
+[2019-05-18 00:52:10] [config]   - corp/opensub.en-fr.docs.dev.fr.bpe
+[2019-05-18 00:52:10] [config] valid-translation-output: data/valid.bpe.en.output
+[2019-05-18 00:52:10] [config] vocabs:
+[2019-05-18 00:52:10] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-05-18 00:52:10] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-05-18 00:52:10] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-05-18 00:52:10] [config] word-penalty: 0
+[2019-05-18 00:52:10] [config] workspace: 8200
+[2019-05-18 00:52:10] [config] Model is being created with Marian v1.7.8 1fb870a 2019-05-10 13:28:45 +0200
+[2019-05-18 00:52:10] Using synchronous training
+[2019-05-18 00:52:10] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-05-18 00:52:10] [data] Setting vocabulary size for input 0 to 30000
+[2019-05-18 00:52:10] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-05-18 00:52:10] [data] Setting vocabulary size for input 1 to 30000
+[2019-05-18 00:52:10] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-05-18 00:52:10] [data] Setting vocabulary size for input 2 to 30000
+[2019-05-18 00:52:10] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-05-18 00:52:10] [batching] Collecting statistics for batch fitting with step size 10
+[2019-05-18 00:52:11] [memory] Extending reserved space to 8320 MB (device gpu1)
+[2019-05-18 00:52:11] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-05-18 00:52:11] [comm] NCCLCommunicator constructed successfully.
+[2019-05-18 00:52:11] [training] Using 1 GPUs
+[2019-05-18 00:52:11] [memory] Reserving 287 MB, device gpu1
+[2019-05-18 00:52:11] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-05-18 00:52:11] [memory] Reserving 287 MB, device gpu1
+[2019-05-18 00:52:19] [batching] Done. Typical MB size is 36813 target words
+[2019-05-18 00:52:19] [memory] Extending reserved space to 8320 MB (device gpu1)
+[2019-05-18 00:52:19] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-05-18 00:52:19] [comm] NCCLCommunicator constructed successfully.
+[2019-05-18 00:52:19] [training] Using 1 GPUs
+[2019-05-18 00:52:19] [training] Initializing model weights with the pre-trained model ../src0tgt0_fr/model/model.src0tgt0.newvocab.iter630000.npz
+[2019-05-18 00:52:19] Loading model from ../src0tgt0_fr/model/model.src0tgt0.newvocab.iter630000.npz
+[2019-05-18 00:52:20] Training started
+[2019-05-18 00:52:20] [data] Shuffling data
+tcmalloc: large alloc 1073741824 bytes == 0x1123d4000 @ 
+tcmalloc: large alloc 2147483648 bytes == 0x7f4480000000 @ 
+tcmalloc: large alloc 2147483648 bytes == 0x7f4400000000 @ 
+tcmalloc: large alloc 2147483648 bytes == 0x1123d4000 @ 
+[2019-05-18 00:52:33] [data] Done reading 41736982 sentences
+[2019-05-18 01:01:35] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-18 01:01:56] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-05-18 01:01:56] [memory] Reserving 287 MB, device gpu1
+[2019-05-18 01:01:56] [memory] Reserving 287 MB, device gpu1
+[2019-05-18 01:01:56] [memory] Reserving 287 MB, device gpu1
+[2019-05-18 01:01:58] [memory] Reserving 574 MB, device gpu1
+[2019-05-18 01:13:56] Ep. 1 : Up. 500 : Sen. 717,265 : Cost 47.87030029 : Time 1305.39s : 5145.73 words/s : L.r. 6.2500e-06
+[2019-05-18 01:26:14] Ep. 1 : Up. 1000 : Sen. 1,446,350 : Cost 25.19147110 : Time 738.62s : 9441.24 words/s : L.r. 1.2500e-05
+[2019-05-18 01:38:08] Ep. 1 : Up. 1500 : Sen. 2,148,819 : Cost 23.89472008 : Time 713.45s : 9320.13 words/s : L.r. 1.8750e-05
+[2019-05-18 01:50:13] Ep. 1 : Up. 2000 : Sen. 2,864,024 : Cost 23.67281532 : Time 724.77s : 9350.83 words/s : L.r. 2.5000e-05
+[2019-05-18 02:02:15] Ep. 1 : Up. 2500 : Sen. 3,570,392 : Cost 23.80312157 : Time 722.01s : 9291.54 words/s : L.r. 3.1250e-05
+[2019-05-18 02:14:13] Ep. 1 : Up. 3000 : Sen. 4,277,100 : Cost 23.54734421 : Time 718.48s : 9329.07 words/s : L.r. 3.7500e-05
+[2019-05-18 02:26:17] Ep. 1 : Up. 3500 : Sen. 4,996,616 : Cost 23.43846512 : Time 724.40s : 9309.34 words/s : L.r. 4.3750e-05
+[2019-05-18 02:38:20] Ep. 1 : Up. 4000 : Sen. 5,709,990 : Cost 23.40862846 : Time 722.13s : 9332.78 words/s : L.r. 5.0000e-05
+[2019-05-18 02:50:39] Ep. 1 : Up. 4500 : Sen. 6,424,498 : Cost 23.20898819 : Time 738.99s : 9006.82 words/s : L.r. 5.6250e-05
+[2019-05-18 03:03:00] Ep. 1 : Up. 5000 : Sen. 7,121,368 : Cost 23.82080269 : Time 741.05s : 9045.46 words/s : L.r. 6.2500e-05
+[2019-05-18 03:03:00] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 03:03:05] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter5000.npz
+[2019-05-18 03:03:10] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 03:03:15] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 03:03:32] [valid] Ep. 1 : Up. 5000 : cross-entropy : 18.9933 : new best
+[2019-05-18 03:03:37] [valid] Ep. 1 : Up. 5000 : perplexity : 4.36509 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 03:05:14] [valid] Ep. 1 : Up. 5000 : translation : 34.18 : new best
+[2019-05-18 03:17:23] Ep. 1 : Up. 5500 : Sen. 7,835,821 : Cost 23.51157570 : Time 863.33s : 7884.93 words/s : L.r. 6.8750e-05
+[2019-05-18 03:29:28] Ep. 1 : Up. 6000 : Sen. 8,564,339 : Cost 22.68213081 : Time 725.50s : 9220.01 words/s : L.r. 7.5000e-05
+[2019-05-18 03:41:36] Ep. 1 : Up. 6500 : Sen. 9,274,641 : Cost 23.45216179 : Time 728.04s : 9323.33 words/s : L.r. 8.1250e-05
+[2019-05-18 03:53:32] Ep. 1 : Up. 7000 : Sen. 9,969,803 : Cost 23.51175499 : Time 715.60s : 9254.52 words/s : L.r. 8.7500e-05
+[2019-05-18 04:05:16] Ep. 1 : Up. 7500 : Sen. 10,666,493 : Cost 22.87153053 : Time 703.77s : 9146.76 words/s : L.r. 9.3750e-05
+[2019-05-18 04:17:29] Ep. 1 : Up. 8000 : Sen. 11,380,631 : Cost 23.69183350 : Time 733.14s : 9409.93 words/s : L.r. 1.0000e-04
+[2019-05-18 04:29:29] Ep. 1 : Up. 8500 : Sen. 12,080,905 : Cost 23.19458580 : Time 719.58s : 9231.35 words/s : L.r. 1.0625e-04
+[2019-05-18 04:41:41] Ep. 1 : Up. 9000 : Sen. 12,795,877 : Cost 23.41179848 : Time 732.41s : 9328.00 words/s : L.r. 1.1250e-04
+[2019-05-18 04:53:51] Ep. 1 : Up. 9500 : Sen. 13,525,140 : Cost 22.65113258 : Time 730.29s : 9233.13 words/s : L.r. 1.1875e-04
+[2019-05-18 05:05:45] Ep. 1 : Up. 10000 : Sen. 14,210,673 : Cost 23.63378716 : Time 713.91s : 9278.94 words/s : L.r. 1.2500e-04
+[2019-05-18 05:05:45] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 05:05:51] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter10000.npz
+[2019-05-18 05:05:55] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 05:06:01] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 05:06:17] [valid] Ep. 1 : Up. 10000 : cross-entropy : 18.8789 : new best
+[2019-05-18 05:06:23] [valid] Ep. 1 : Up. 10000 : perplexity : 4.32653 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 05:08:00] [valid] Ep. 1 : Up. 10000 : translation : 34.58 : new best
+[2019-05-18 05:20:10] Ep. 1 : Up. 10500 : Sen. 14,923,467 : Cost 23.01438713 : Time 865.08s : 7743.27 words/s : L.r. 1.3125e-04
+[2019-05-18 05:32:10] Ep. 1 : Up. 11000 : Sen. 15,637,478 : Cost 22.72815895 : Time 719.40s : 9216.80 words/s : L.r. 1.3750e-04
+[2019-05-18 05:44:15] Ep. 1 : Up. 11500 : Sen. 16,342,275 : Cost 23.21663857 : Time 725.33s : 9269.43 words/s : L.r. 1.4375e-04
+[2019-05-18 05:56:33] Ep. 1 : Up. 12000 : Sen. 17,075,303 : Cost 22.82279205 : Time 737.72s : 9295.20 words/s : L.r. 1.5000e-04
+[2019-05-18 06:08:47] Ep. 1 : Up. 12500 : Sen. 17,795,195 : Cost 22.99314690 : Time 734.02s : 9310.68 words/s : L.r. 1.5625e-04
+[2019-05-18 06:20:42] Ep. 1 : Up. 13000 : Sen. 18,501,393 : Cost 22.73271370 : Time 715.52s : 9154.92 words/s : L.r. 1.6250e-04
+[2019-05-18 06:32:51] Ep. 1 : Up. 13500 : Sen. 19,213,059 : Cost 23.42454720 : Time 728.52s : 9378.26 words/s : L.r. 1.6875e-04
+[2019-05-18 06:44:56] Ep. 1 : Up. 14000 : Sen. 19,916,562 : Cost 23.28868484 : Time 725.64s : 9267.21 words/s : L.r. 1.7500e-04
+[2019-05-18 06:57:11] Ep. 1 : Up. 14500 : Sen. 20,645,952 : Cost 22.67505264 : Time 735.09s : 9263.67 words/s : L.r. 1.8125e-04
+[2019-05-18 07:09:22] Ep. 1 : Up. 15000 : Sen. 21,342,273 : Cost 23.84952164 : Time 730.47s : 9373.78 words/s : L.r. 1.8750e-04
+[2019-05-18 07:09:22] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 07:09:27] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter15000.npz
+[2019-05-18 07:09:32] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 07:09:38] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 07:09:55] [valid] Ep. 1 : Up. 15000 : cross-entropy : 18.827 : new best
+[2019-05-18 07:10:01] [valid] Ep. 1 : Up. 15000 : perplexity : 4.30915 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 07:11:35] [valid] Ep. 1 : Up. 15000 : translation : 34.8 : new best
+[2019-05-18 07:23:41] Ep. 1 : Up. 15500 : Sen. 22,058,439 : Cost 22.74518585 : Time 858.90s : 7766.29 words/s : L.r. 1.9375e-04
+[2019-05-18 07:35:31] Ep. 1 : Up. 16000 : Sen. 22,746,046 : Cost 23.12227440 : Time 710.04s : 9187.76 words/s : L.r. 2.0000e-04
+[2019-05-18 07:47:53] Ep. 1 : Up. 16500 : Sen. 23,490,257 : Cost 22.44699287 : Time 741.82s : 9293.62 words/s : L.r. 1.9695e-04
+[2019-05-18 07:59:48] Ep. 1 : Up. 17000 : Sen. 24,185,060 : Cost 23.33104324 : Time 715.11s : 9285.69 words/s : L.r. 1.9403e-04
+[2019-05-18 08:11:58] Ep. 1 : Up. 17500 : Sen. 24,898,072 : Cost 23.10910416 : Time 730.58s : 9277.07 words/s : L.r. 1.9124e-04
+[2019-05-18 08:23:53] Ep. 1 : Up. 18000 : Sen. 25,591,497 : Cost 23.03347015 : Time 714.44s : 9219.11 words/s : L.r. 1.8856e-04
+[2019-05-18 08:36:07] Ep. 1 : Up. 18500 : Sen. 26,326,472 : Cost 22.40247536 : Time 734.39s : 9229.62 words/s : L.r. 1.8600e-04
+[2019-05-18 08:48:18] Ep. 1 : Up. 19000 : Sen. 27,038,905 : Cost 23.22172546 : Time 730.85s : 9325.17 words/s : L.r. 1.8353e-04
+[2019-05-18 09:00:20] Ep. 1 : Up. 19500 : Sen. 27,743,111 : Cost 23.10745621 : Time 721.96s : 9259.22 words/s : L.r. 1.8116e-04
+[2019-05-18 09:12:23] Ep. 1 : Up. 20000 : Sen. 28,461,497 : Cost 22.65132332 : Time 722.51s : 9300.06 words/s : L.r. 1.7889e-04
+[2019-05-18 09:12:23] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 09:12:28] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter20000.npz
+[2019-05-18 09:12:33] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 09:12:39] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 09:12:56] [valid] Ep. 1 : Up. 20000 : cross-entropy : 18.8119 : new best
+[2019-05-18 09:13:01] [valid] Ep. 1 : Up. 20000 : perplexity : 4.30408 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 09:14:36] [valid] Ep. 1 : Up. 20000 : translation : 34.78 : stalled 1 times (last best: 34.8)
+[2019-05-18 09:26:47] Ep. 1 : Up. 20500 : Sen. 29,178,789 : Cost 22.87274170 : Time 864.36s : 7837.70 words/s : L.r. 1.7669e-04
+[2019-05-18 09:38:55] Ep. 1 : Up. 21000 : Sen. 29,888,325 : Cost 22.97119331 : Time 728.56s : 9261.03 words/s : L.r. 1.7457e-04
+[2019-05-18 09:50:55] Ep. 1 : Up. 21500 : Sen. 30,581,489 : Cost 23.36451721 : Time 719.33s : 9173.96 words/s : L.r. 1.7253e-04
+[2019-05-18 10:03:20] Ep. 1 : Up. 22000 : Sen. 31,310,199 : Cost 23.31333733 : Time 745.14s : 9413.02 words/s : L.r. 1.7056e-04
+[2019-05-18 10:15:27] Ep. 1 : Up. 22500 : Sen. 32,031,865 : Cost 22.41507530 : Time 726.86s : 9196.73 words/s : L.r. 1.6865e-04
+[2019-05-18 10:27:30] Ep. 1 : Up. 23000 : Sen. 32,745,858 : Cost 22.80820656 : Time 723.48s : 9268.76 words/s : L.r. 1.6681e-04
+[2019-05-18 10:39:26] Ep. 1 : Up. 23500 : Sen. 33,446,262 : Cost 22.81915665 : Time 715.34s : 9215.13 words/s : L.r. 1.6503e-04
+[2019-05-18 10:51:40] Ep. 1 : Up. 24000 : Sen. 34,170,349 : Cost 22.96615028 : Time 734.43s : 9318.40 words/s : L.r. 1.6330e-04
+[2019-05-18 11:03:53] Ep. 1 : Up. 24500 : Sen. 34,890,230 : Cost 22.86732483 : Time 732.53s : 9302.15 words/s : L.r. 1.6162e-04
+[2019-05-18 11:16:05] Ep. 1 : Up. 25000 : Sen. 35,601,751 : Cost 23.35101700 : Time 732.34s : 9354.68 words/s : L.r. 1.6000e-04
+[2019-05-18 11:16:05] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 11:16:11] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter25000.npz
+[2019-05-18 11:16:16] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 11:16:22] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 11:16:38] [valid] Ep. 1 : Up. 25000 : cross-entropy : 18.8039 : new best
+[2019-05-18 11:16:44] [valid] Ep. 1 : Up. 25000 : perplexity : 4.30142 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 11:18:19] [valid] Ep. 1 : Up. 25000 : translation : 34.79 : stalled 2 times (last best: 34.8)
+[2019-05-18 11:30:10] Ep. 1 : Up. 25500 : Sen. 36,280,853 : Cost 23.27597046 : Time 844.80s : 7708.89 words/s : L.r. 1.5842e-04
+[2019-05-18 11:42:17] Ep. 1 : Up. 26000 : Sen. 37,007,475 : Cost 22.51466942 : Time 727.39s : 9246.78 words/s : L.r. 1.5689e-04
+[2019-05-18 11:54:16] Ep. 1 : Up. 26500 : Sen. 37,710,003 : Cost 22.88823700 : Time 718.66s : 9243.94 words/s : L.r. 1.5541e-04
+[2019-05-18 12:06:17] Ep. 1 : Up. 27000 : Sen. 38,424,051 : Cost 22.84957695 : Time 721.65s : 9317.48 words/s : L.r. 1.5396e-04
+[2019-05-18 12:18:31] Ep. 1 : Up. 27500 : Sen. 39,134,473 : Cost 23.06064796 : Time 733.57s : 9215.03 words/s : L.r. 1.5255e-04
+[2019-05-18 12:30:36] Ep. 1 : Up. 28000 : Sen. 39,841,545 : Cost 23.12913704 : Time 725.03s : 9285.24 words/s : L.r. 1.5119e-04
+[2019-05-18 12:42:30] Ep. 1 : Up. 28500 : Sen. 40,540,474 : Cost 23.13477135 : Time 713.51s : 9272.78 words/s : L.r. 1.4985e-04
+[2019-05-18 12:54:09] Ep. 1 : Up. 29000 : Sen. 41,223,897 : Cost 22.58349800 : Time 699.47s : 9147.66 words/s : L.r. 1.4856e-04
+[2019-05-18 13:02:26] Seen 41709169 samples
+[2019-05-18 13:02:26] Starting epoch 2
+[2019-05-18 13:02:26] [data] Shuffling data
+tcmalloc: large alloc 2147483648 bytes == 0x7f4480000000 @ 
+tcmalloc: large alloc 2147483648 bytes == 0x7f43117fe000 @ 
+[2019-05-18 13:02:40] [data] Done reading 41736982 sentences
+[2019-05-18 13:11:44] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-18 13:15:28] Ep. 2 : Up. 29500 : Sen. 197,897 : Cost 22.89119148 : Time 1279.03s : 5060.96 words/s : L.r. 1.4729e-04
+[2019-05-18 13:27:31] Ep. 2 : Up. 30000 : Sen. 904,396 : Cost 23.18801117 : Time 722.73s : 9312.59 words/s : L.r. 1.4606e-04
+[2019-05-18 13:27:31] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 13:27:37] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter30000.npz
+[2019-05-18 13:27:42] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 13:27:47] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 13:28:03] [valid] Ep. 2 : Up. 30000 : cross-entropy : 18.8036 : new best
+[2019-05-18 13:28:09] [valid] Ep. 2 : Up. 30000 : perplexity : 4.30134 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 13:29:44] [valid] Ep. 2 : Up. 30000 : translation : 34.74 : stalled 3 times (last best: 34.8)
+[2019-05-18 13:42:07] Ep. 2 : Up. 30500 : Sen. 1,646,048 : Cost 22.45746803 : Time 876.65s : 7880.20 words/s : L.r. 1.4486e-04
+[2019-05-18 13:54:05] Ep. 2 : Up. 31000 : Sen. 2,352,481 : Cost 22.81157112 : Time 717.63s : 9194.91 words/s : L.r. 1.4368e-04
+[2019-05-18 14:06:13] Ep. 2 : Up. 31500 : Sen. 3,052,218 : Cost 23.45589066 : Time 728.14s : 9345.09 words/s : L.r. 1.4254e-04
+[2019-05-18 14:18:13] Ep. 2 : Up. 32000 : Sen. 3,759,271 : Cost 22.74684906 : Time 719.35s : 9247.36 words/s : L.r. 1.4142e-04
+[2019-05-18 14:30:04] Ep. 2 : Up. 32500 : Sen. 4,441,945 : Cost 23.58001518 : Time 711.44s : 9266.42 words/s : L.r. 1.4033e-04
+[2019-05-18 14:42:10] Ep. 2 : Up. 33000 : Sen. 5,169,558 : Cost 22.12666702 : Time 725.47s : 9202.95 words/s : L.r. 1.3926e-04
+[2019-05-18 14:54:22] Ep. 2 : Up. 33500 : Sen. 5,894,648 : Cost 22.76042366 : Time 732.85s : 9299.80 words/s : L.r. 1.3822e-04
+[2019-05-18 15:06:14] Ep. 2 : Up. 34000 : Sen. 6,599,832 : Cost 22.46935081 : Time 711.87s : 9173.29 words/s : L.r. 1.3720e-04
+[2019-05-18 15:18:31] Ep. 2 : Up. 34500 : Sen. 7,301,648 : Cost 23.97214890 : Time 737.08s : 9389.54 words/s : L.r. 1.3620e-04
+[2019-05-18 15:30:44] Ep. 2 : Up. 35000 : Sen. 8,028,854 : Cost 22.50119972 : Time 733.05s : 9264.83 words/s : L.r. 1.3522e-04
+[2019-05-18 15:30:44] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 15:30:50] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter35000.npz
+[2019-05-18 15:30:55] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 15:31:01] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 15:31:21] [valid] Ep. 2 : Up. 35000 : cross-entropy : 18.8028 : new best
+[2019-05-18 15:31:27] [valid] Ep. 2 : Up. 35000 : perplexity : 4.30105 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 15:33:04] [valid] Ep. 2 : Up. 35000 : translation : 34.73 : stalled 4 times (last best: 34.8)
+[2019-05-18 15:45:07] Ep. 2 : Up. 35500 : Sen. 8,735,848 : Cost 22.92651367 : Time 862.80s : 7705.75 words/s : L.r. 1.3427e-04
+[2019-05-18 15:57:24] Ep. 2 : Up. 36000 : Sen. 9,461,431 : Cost 22.82534409 : Time 736.45s : 9328.45 words/s : L.r. 1.3333e-04
+[2019-05-18 16:09:12] Ep. 2 : Up. 36500 : Sen. 10,154,019 : Cost 22.92611122 : Time 707.90s : 9273.81 words/s : L.r. 1.3242e-04
+[2019-05-18 16:21:25] Ep. 2 : Up. 37000 : Sen. 10,892,493 : Cost 22.10060120 : Time 733.50s : 9217.09 words/s : L.r. 1.3152e-04
+[2019-05-18 16:33:27] Ep. 2 : Up. 37500 : Sen. 11,570,992 : Cost 24.42959976 : Time 722.18s : 9387.67 words/s : L.r. 1.3064e-04
+[2019-05-18 16:45:40] Ep. 2 : Up. 38000 : Sen. 12,305,099 : Cost 22.18764496 : Time 732.57s : 9295.14 words/s : L.r. 1.2978e-04
+[2019-05-18 16:57:40] Ep. 2 : Up. 38500 : Sen. 13,006,448 : Cost 23.01251221 : Time 720.33s : 9204.31 words/s : L.r. 1.2893e-04
+[2019-05-18 17:09:35] Ep. 2 : Up. 39000 : Sen. 13,691,142 : Cost 23.37280273 : Time 714.81s : 9232.57 words/s : L.r. 1.2810e-04
+[2019-05-18 17:22:20] Ep. 2 : Up. 39500 : Sen. 14,425,330 : Cost 22.38275146 : Time 764.89s : 8841.86 words/s : L.r. 1.2729e-04
+[2019-05-18 17:34:23] Ep. 2 : Up. 40000 : Sen. 15,139,118 : Cost 22.84526443 : Time 722.80s : 9330.93 words/s : L.r. 1.2649e-04
+[2019-05-18 17:34:23] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 17:34:28] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter40000.npz
+[2019-05-18 17:34:32] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 17:34:38] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 17:34:54] [valid] Ep. 2 : Up. 40000 : cross-entropy : 18.8018 : new best
+[2019-05-18 17:35:00] [valid] Ep. 2 : Up. 40000 : perplexity : 4.30074 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 17:36:35] [valid] Ep. 2 : Up. 40000 : translation : 34.74 : stalled 5 times (last best: 34.8)
+[2019-05-18 17:48:23] Ep. 2 : Up. 40500 : Sen. 15,840,245 : Cost 22.63648605 : Time 840.35s : 7760.67 words/s : L.r. 1.2571e-04
+[2019-05-18 18:00:40] Ep. 2 : Up. 41000 : Sen. 16,552,120 : Cost 23.48026848 : Time 736.73s : 9397.91 words/s : L.r. 1.2494e-04
+[2019-05-18 18:12:37] Ep. 2 : Up. 41500 : Sen. 17,246,932 : Cost 23.32138443 : Time 717.04s : 9303.28 words/s : L.r. 1.2418e-04
+[2019-05-18 18:24:50] Ep. 2 : Up. 42000 : Sen. 17,986,896 : Cost 22.27052307 : Time 732.96s : 9309.11 words/s : L.r. 1.2344e-04
+[2019-05-18 18:36:58] Ep. 2 : Up. 42500 : Sen. 18,692,014 : Cost 23.36670685 : Time 728.73s : 9312.43 words/s : L.r. 1.2271e-04
+[2019-05-18 18:48:54] Ep. 2 : Up. 43000 : Sen. 19,403,397 : Cost 22.46623039 : Time 715.54s : 9234.37 words/s : L.r. 1.2200e-04
+[2019-05-18 19:01:02] Ep. 2 : Up. 43500 : Sen. 20,115,167 : Cost 23.13230705 : Time 728.43s : 9316.18 words/s : L.r. 1.2130e-04
+[2019-05-18 19:13:05] Ep. 2 : Up. 44000 : Sen. 20,825,426 : Cost 22.81221008 : Time 723.04s : 9290.89 words/s : L.r. 1.2060e-04
+[2019-05-18 19:25:08] Ep. 2 : Up. 44500 : Sen. 21,530,467 : Cost 23.08148956 : Time 722.96s : 9327.24 words/s : L.r. 1.1993e-04
+[2019-05-18 19:37:29] Ep. 2 : Up. 45000 : Sen. 22,270,700 : Cost 22.66389847 : Time 740.76s : 9335.91 words/s : L.r. 1.1926e-04
+[2019-05-18 19:37:29] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 19:37:35] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter45000.npz
+[2019-05-18 19:37:40] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 19:37:46] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 19:38:02] [valid] Ep. 2 : Up. 45000 : cross-entropy : 18.7967 : new best
+[2019-05-18 19:38:08] [valid] Ep. 2 : Up. 45000 : perplexity : 4.29902 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 19:39:44] [valid] Ep. 2 : Up. 45000 : translation : 34.67 : stalled 6 times (last best: 34.8)
+[2019-05-18 19:51:39] Ep. 2 : Up. 45500 : Sen. 22,975,959 : Cost 22.57682419 : Time 849.78s : 7751.97 words/s : L.r. 1.1860e-04
+[2019-05-18 20:03:40] Ep. 2 : Up. 46000 : Sen. 23,672,350 : Cost 23.52545166 : Time 720.69s : 9338.78 words/s : L.r. 1.1795e-04
+[2019-05-18 20:15:53] Ep. 2 : Up. 46500 : Sen. 24,407,480 : Cost 22.30521202 : Time 733.47s : 9287.11 words/s : L.r. 1.1732e-04
+[2019-05-18 20:27:55] Ep. 2 : Up. 47000 : Sen. 25,110,742 : Cost 22.83734322 : Time 721.74s : 9201.93 words/s : L.r. 1.1669e-04
+[2019-05-18 20:39:58] Ep. 2 : Up. 47500 : Sen. 25,826,397 : Cost 22.82952118 : Time 723.55s : 9338.32 words/s : L.r. 1.1608e-04
+[2019-05-18 20:52:01] Ep. 2 : Up. 48000 : Sen. 26,534,237 : Cost 22.99673271 : Time 722.41s : 9319.43 words/s : L.r. 1.1547e-04
+[2019-05-18 21:04:05] Ep. 2 : Up. 48500 : Sen. 27,252,809 : Cost 22.72225571 : Time 723.86s : 9254.07 words/s : L.r. 1.1487e-04
+[2019-05-18 21:16:05] Ep. 2 : Up. 49000 : Sen. 27,956,678 : Cost 22.99869156 : Time 719.99s : 9322.08 words/s : L.r. 1.1429e-04
+[2019-05-18 21:28:10] Ep. 2 : Up. 49500 : Sen. 28,668,177 : Cost 23.00840950 : Time 725.30s : 9311.54 words/s : L.r. 1.1371e-04
+[2019-05-18 21:40:17] Ep. 2 : Up. 50000 : Sen. 29,399,355 : Cost 22.21978569 : Time 726.89s : 9280.40 words/s : L.r. 1.1314e-04
+[2019-05-18 21:40:17] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 21:40:22] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter50000.npz
+[2019-05-18 21:40:27] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 21:40:33] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 21:40:49] [valid] Ep. 2 : Up. 50000 : cross-entropy : 18.8032 : stalled 1 times (last best: 18.7967)
+[2019-05-18 21:40:55] [valid] Ep. 2 : Up. 50000 : perplexity : 4.30119 : stalled 1 times (last best: 4.29902)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 21:42:29] [valid] Ep. 2 : Up. 50000 : translation : 34.63 : stalled 7 times (last best: 34.8)
+[2019-05-18 21:54:15] Ep. 2 : Up. 50500 : Sen. 30,075,790 : Cost 23.42409897 : Time 838.38s : 7790.77 words/s : L.r. 1.1258e-04
+[2019-05-18 22:06:20] Ep. 2 : Up. 51000 : Sen. 30,803,308 : Cost 22.46841240 : Time 724.91s : 9282.31 words/s : L.r. 1.1202e-04
+[2019-05-18 22:18:21] Ep. 2 : Up. 51500 : Sen. 31,485,818 : Cost 24.10389328 : Time 721.33s : 9409.58 words/s : L.r. 1.1148e-04
+[2019-05-18 22:30:21] Ep. 2 : Up. 52000 : Sen. 32,205,334 : Cost 22.32763100 : Time 719.33s : 9277.40 words/s : L.r. 1.1094e-04
+[2019-05-18 22:42:24] Ep. 2 : Up. 52500 : Sen. 32,924,023 : Cost 22.50484085 : Time 722.92s : 9238.85 words/s : L.r. 1.1041e-04
+[2019-05-18 22:54:36] Ep. 2 : Up. 53000 : Sen. 33,636,589 : Cost 23.46088982 : Time 732.25s : 9394.00 words/s : L.r. 1.0989e-04
+[2019-05-18 23:06:36] Ep. 2 : Up. 53500 : Sen. 34,343,898 : Cost 22.78157997 : Time 720.20s : 9260.11 words/s : L.r. 1.0937e-04
+[2019-05-18 23:18:34] Ep. 2 : Up. 54000 : Sen. 35,055,330 : Cost 22.80338860 : Time 718.29s : 9303.39 words/s : L.r. 1.0887e-04
+[2019-05-18 23:30:34] Ep. 2 : Up. 54500 : Sen. 35,750,296 : Cost 23.40259361 : Time 719.36s : 9333.94 words/s : L.r. 1.0837e-04
+[2019-05-18 23:42:43] Ep. 2 : Up. 55000 : Sen. 36,479,246 : Cost 22.28187752 : Time 728.90s : 9190.85 words/s : L.r. 1.0787e-04
+[2019-05-18 23:42:43] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-18 23:42:49] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter55000.npz
+[2019-05-18 23:42:53] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-18 23:42:59] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-18 23:43:16] [valid] Ep. 2 : Up. 55000 : cross-entropy : 18.7991 : stalled 2 times (last best: 18.7967)
+[2019-05-18 23:43:22] [valid] Ep. 2 : Up. 55000 : perplexity : 4.29982 : stalled 2 times (last best: 4.29902)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-18 23:44:56] [valid] Ep. 2 : Up. 55000 : translation : 34.6 : stalled 8 times (last best: 34.8)
+[2019-05-18 23:56:53] Ep. 2 : Up. 55500 : Sen. 37,174,307 : Cost 23.30327034 : Time 850.78s : 7893.80 words/s : L.r. 1.0738e-04
+[2019-05-19 00:09:03] Ep. 2 : Up. 56000 : Sen. 37,892,803 : Cost 22.87689209 : Time 729.17s : 9320.08 words/s : L.r. 1.0690e-04
+[2019-05-19 00:21:09] Ep. 2 : Up. 56500 : Sen. 38,600,031 : Cost 23.28768539 : Time 726.41s : 9290.90 words/s : L.r. 1.0643e-04
+[2019-05-19 00:33:03] Ep. 2 : Up. 57000 : Sen. 39,299,191 : Cost 22.71399307 : Time 713.45s : 9249.94 words/s : L.r. 1.0596e-04
+[2019-05-19 00:45:19] Ep. 2 : Up. 57500 : Sen. 40,034,681 : Cost 22.49885559 : Time 736.26s : 9320.13 words/s : L.r. 1.0550e-04
+[2019-05-19 00:57:17] Ep. 2 : Up. 58000 : Sen. 40,727,017 : Cost 23.48663330 : Time 717.99s : 9333.57 words/s : L.r. 1.0505e-04
+[2019-05-19 01:09:01] Ep. 2 : Up. 58500 : Sen. 41,422,089 : Cost 22.24616432 : Time 703.76s : 9108.78 words/s : L.r. 1.0460e-04
+[2019-05-19 01:13:55] Seen 41709169 samples
+[2019-05-19 01:13:55] Starting epoch 3
+[2019-05-19 01:13:55] [data] Shuffling data
+[2019-05-19 01:14:08] [data] Done reading 41736982 sentences
+[2019-05-19 01:23:08] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-19 01:30:10] Ep. 3 : Up. 59000 : Sen. 376,871 : Cost 23.77672386 : Time 1269.94s : 5092.52 words/s : L.r. 1.0415e-04
+[2019-05-19 01:42:26] Ep. 3 : Up. 59500 : Sen. 1,120,518 : Cost 22.15716553 : Time 735.80s : 9337.44 words/s : L.r. 1.0371e-04
+[2019-05-19 01:54:18] Ep. 3 : Up. 60000 : Sen. 1,814,882 : Cost 23.04999733 : Time 712.12s : 9286.43 words/s : L.r. 1.0328e-04
+[2019-05-19 01:54:18] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 01:54:24] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter60000.npz
+[2019-05-19 01:54:29] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 01:54:35] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 01:54:51] [valid] Ep. 3 : Up. 60000 : cross-entropy : 18.7998 : stalled 3 times (last best: 18.7967)
+[2019-05-19 01:54:57] [valid] Ep. 3 : Up. 60000 : perplexity : 4.30007 : stalled 3 times (last best: 4.29902)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 01:56:31] [valid] Ep. 3 : Up. 60000 : translation : 34.6 : stalled 9 times (last best: 34.8)
+[2019-05-19 02:08:56] Ep. 3 : Up. 60500 : Sen. 2,561,204 : Cost 22.48206711 : Time 877.17s : 7916.83 words/s : L.r. 1.0285e-04
+[2019-05-19 02:20:49] Ep. 3 : Up. 61000 : Sen. 3,265,015 : Cost 22.57964325 : Time 713.03s : 9224.54 words/s : L.r. 1.0243e-04
+[2019-05-19 02:32:45] Ep. 3 : Up. 61500 : Sen. 3,956,607 : Cost 23.30732918 : Time 716.13s : 9290.61 words/s : L.r. 1.0201e-04
+[2019-05-19 02:44:54] Ep. 3 : Up. 62000 : Sen. 4,669,500 : Cost 23.19144058 : Time 729.05s : 9340.40 words/s : L.r. 1.0160e-04
+[2019-05-19 02:56:53] Ep. 3 : Up. 62500 : Sen. 5,388,943 : Cost 22.44048500 : Time 719.46s : 9254.16 words/s : L.r. 1.0119e-04
+[2019-05-19 03:08:50] Ep. 3 : Up. 63000 : Sen. 6,077,955 : Cost 23.36380386 : Time 716.57s : 9281.78 words/s : L.r. 1.0079e-04
+[2019-05-19 03:21:04] Ep. 3 : Up. 63500 : Sen. 6,805,497 : Cost 22.68010330 : Time 734.63s : 9326.65 words/s : L.r. 1.0039e-04
+[2019-05-19 03:32:48] Ep. 3 : Up. 64000 : Sen. 7,510,560 : Cost 22.34659576 : Time 703.11s : 9261.99 words/s : L.r. 1.0000e-04
+[2019-05-19 03:45:01] Ep. 3 : Up. 64500 : Sen. 8,209,176 : Cost 23.81645012 : Time 733.70s : 9328.73 words/s : L.r. 9.9612e-05
+[2019-05-19 03:57:01] Ep. 3 : Up. 65000 : Sen. 8,924,332 : Cost 22.50780296 : Time 719.46s : 9296.14 words/s : L.r. 9.9228e-05
+[2019-05-19 03:57:01] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 03:57:06] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter65000.npz
+[2019-05-19 03:57:11] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 03:57:16] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 03:57:32] [valid] Ep. 3 : Up. 65000 : cross-entropy : 18.8041 : stalled 4 times (last best: 18.7967)
+[2019-05-19 03:57:38] [valid] Ep. 3 : Up. 65000 : perplexity : 4.3015 : stalled 4 times (last best: 4.29902)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 03:59:12] [valid] Ep. 3 : Up. 65000 : translation : 34.7 : stalled 10 times (last best: 34.8)
+[2019-05-19 04:11:08] Ep. 3 : Up. 65500 : Sen. 9,616,679 : Cost 23.24134636 : Time 847.80s : 7828.46 words/s : L.r. 9.8848e-05
+[2019-05-19 04:23:19] Ep. 3 : Up. 66000 : Sen. 10,347,380 : Cost 22.54132462 : Time 730.68s : 9295.30 words/s : L.r. 9.8473e-05
+[2019-05-19 04:35:30] Ep. 3 : Up. 66500 : Sen. 11,068,784 : Cost 22.85470772 : Time 730.87s : 9395.16 words/s : L.r. 9.8102e-05
+[2019-05-19 04:47:32] Ep. 3 : Up. 67000 : Sen. 11,781,001 : Cost 22.68645287 : Time 722.30s : 9259.10 words/s : L.r. 9.7736e-05
+[2019-05-19 04:59:27] Ep. 3 : Up. 67500 : Sen. 12,491,440 : Cost 22.68266296 : Time 714.54s : 9274.55 words/s : L.r. 9.7373e-05
+[2019-05-19 05:11:35] Ep. 3 : Up. 68000 : Sen. 13,206,447 : Cost 22.76103973 : Time 728.01s : 9282.67 words/s : L.r. 9.7014e-05
+[2019-05-19 05:23:29] Ep. 3 : Up. 68500 : Sen. 13,893,810 : Cost 23.50942421 : Time 714.40s : 9336.29 words/s : L.r. 9.6660e-05
+[2019-05-19 05:35:33] Ep. 3 : Up. 69000 : Sen. 14,616,315 : Cost 22.64748764 : Time 723.71s : 9325.43 words/s : L.r. 9.6309e-05
+[2019-05-19 05:47:40] Ep. 3 : Up. 69500 : Sen. 15,324,971 : Cost 22.98151970 : Time 726.76s : 9268.27 words/s : L.r. 9.5962e-05
+[2019-05-19 05:59:37] Ep. 3 : Up. 70000 : Sen. 16,027,460 : Cost 22.95524597 : Time 716.83s : 9275.66 words/s : L.r. 9.5618e-05
+[2019-05-19 05:59:37] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 05:59:42] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter70000.npz
+[2019-05-19 05:59:46] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 05:59:52] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 06:00:08] [valid] Ep. 3 : Up. 70000 : cross-entropy : 18.7998 : stalled 5 times (last best: 18.7967)
+[2019-05-19 06:00:13] [valid] Ep. 3 : Up. 70000 : perplexity : 4.30006 : stalled 5 times (last best: 4.29902)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 06:01:46] [valid] Ep. 3 : Up. 70000 : translation : 34.7 : stalled 11 times (last best: 34.8)
+[2019-05-19 06:13:54] Ep. 3 : Up. 70500 : Sen. 16,744,340 : Cost 22.77309036 : Time 857.79s : 7914.75 words/s : L.r. 9.5279e-05
+[2019-05-19 06:25:47] Ep. 3 : Up. 71000 : Sen. 17,453,485 : Cost 22.48967934 : Time 712.75s : 9234.01 words/s : L.r. 9.4943e-05
+[2019-05-19 06:37:40] Ep. 3 : Up. 71500 : Sen. 18,137,556 : Cost 23.61174965 : Time 712.74s : 9329.37 words/s : L.r. 9.4610e-05
+[2019-05-19 06:49:59] Ep. 3 : Up. 72000 : Sen. 18,881,653 : Cost 22.27273750 : Time 738.66s : 9328.92 words/s : L.r. 9.4281e-05
+[2019-05-19 07:01:42] Ep. 3 : Up. 72500 : Sen. 19,569,082 : Cost 22.83807755 : Time 703.43s : 9173.76 words/s : L.r. 9.3955e-05
+[2019-05-19 07:13:59] Ep. 3 : Up. 73000 : Sen. 20,292,538 : Cost 23.21780396 : Time 737.21s : 9446.50 words/s : L.r. 9.3633e-05
+[2019-05-19 07:26:06] Ep. 3 : Up. 73500 : Sen. 21,008,280 : Cost 22.71285248 : Time 726.42s : 9271.22 words/s : L.r. 9.3314e-05
+[2019-05-19 07:38:15] Ep. 3 : Up. 74000 : Sen. 21,733,924 : Cost 22.72060204 : Time 729.55s : 9346.08 words/s : L.r. 9.2998e-05
+[2019-05-19 07:50:17] Ep. 3 : Up. 74500 : Sen. 22,427,462 : Cost 23.45206070 : Time 721.73s : 9271.49 words/s : L.r. 9.2686e-05
+[2019-05-19 08:02:17] Ep. 3 : Up. 75000 : Sen. 23,138,734 : Cost 22.63789749 : Time 720.43s : 9237.23 words/s : L.r. 9.2376e-05
+[2019-05-19 08:02:17] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 08:02:23] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter75000.npz
+[2019-05-19 08:02:28] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 08:02:34] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 08:02:49] [valid] Ep. 3 : Up. 75000 : cross-entropy : 18.795 : new best
+[2019-05-19 08:02:55] [valid] Ep. 3 : Up. 75000 : perplexity : 4.29846 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 08:04:32] [valid] Ep. 3 : Up. 75000 : translation : 34.6 : stalled 12 times (last best: 34.8)
+[2019-05-19 08:16:36] Ep. 3 : Up. 75500 : Sen. 23,852,437 : Cost 22.84816742 : Time 859.06s : 7851.10 words/s : L.r. 9.2070e-05
+[2019-05-19 08:28:38] Ep. 3 : Up. 76000 : Sen. 24,570,678 : Cost 22.54376030 : Time 721.86s : 9365.11 words/s : L.r. 9.1766e-05
+[2019-05-19 08:40:31] Ep. 3 : Up. 76500 : Sen. 25,263,240 : Cost 23.09596634 : Time 712.80s : 9206.09 words/s : L.r. 9.1466e-05
+[2019-05-19 08:52:38] Ep. 3 : Up. 77000 : Sen. 25,977,189 : Cost 22.93051529 : Time 727.24s : 9322.29 words/s : L.r. 9.1168e-05
+[2019-05-19 09:04:45] Ep. 3 : Up. 77500 : Sen. 26,704,299 : Cost 22.28214645 : Time 727.14s : 9248.04 words/s : L.r. 9.0874e-05
+[2019-05-19 09:16:37] Ep. 3 : Up. 78000 : Sen. 27,390,825 : Cost 23.49236488 : Time 711.36s : 9352.09 words/s : L.r. 9.0582e-05
+[2019-05-19 09:28:55] Ep. 3 : Up. 78500 : Sen. 28,127,984 : Cost 22.53160477 : Time 738.72s : 9310.72 words/s : L.r. 9.0293e-05
+[2019-05-19 09:40:41] Ep. 3 : Up. 79000 : Sen. 28,803,742 : Cost 23.63598061 : Time 705.24s : 9313.14 words/s : L.r. 9.0007e-05
+[2019-05-19 09:52:43] Ep. 3 : Up. 79500 : Sen. 29,520,270 : Cost 22.62554359 : Time 722.11s : 9290.90 words/s : L.r. 8.9724e-05
+[2019-05-19 10:04:40] Ep. 3 : Up. 80000 : Sen. 30,244,071 : Cost 21.95423698 : Time 717.17s : 9210.86 words/s : L.r. 8.9443e-05
+[2019-05-19 10:04:40] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 10:04:46] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter80000.npz
+[2019-05-19 10:04:50] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 10:04:56] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 10:05:12] [valid] Ep. 3 : Up. 80000 : cross-entropy : 18.7913 : new best
+[2019-05-19 10:05:18] [valid] Ep. 3 : Up. 80000 : perplexity : 4.29722 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 10:06:51] [valid] Ep. 3 : Up. 80000 : translation : 34.6 : stalled 13 times (last best: 34.8)
+[2019-05-19 10:19:06] Ep. 3 : Up. 80500 : Sen. 30,947,540 : Cost 23.82525444 : Time 865.95s : 7970.87 words/s : L.r. 8.9165e-05
+[2019-05-19 10:30:59] Ep. 3 : Up. 81000 : Sen. 31,667,601 : Cost 21.91943932 : Time 713.02s : 9201.92 words/s : L.r. 8.8889e-05
+[2019-05-19 10:43:06] Ep. 3 : Up. 81500 : Sen. 32,366,333 : Cost 23.71977043 : Time 726.55s : 9388.06 words/s : L.r. 8.8616e-05
+[2019-05-19 10:55:22] Ep. 3 : Up. 82000 : Sen. 33,107,807 : Cost 22.15764046 : Time 736.63s : 9257.34 words/s : L.r. 8.8345e-05
+[2019-05-19 11:07:13] Ep. 3 : Up. 82500 : Sen. 33,801,043 : Cost 22.97484779 : Time 711.27s : 9263.96 words/s : L.r. 8.8077e-05
+[2019-05-19 11:19:18] Ep. 3 : Up. 83000 : Sen. 34,505,105 : Cost 23.24799538 : Time 724.83s : 9350.80 words/s : L.r. 8.7811e-05
+[2019-05-19 11:31:23] Ep. 3 : Up. 83500 : Sen. 35,231,886 : Cost 22.28934669 : Time 724.68s : 9258.04 words/s : L.r. 8.7548e-05
+[2019-05-19 11:43:25] Ep. 3 : Up. 84000 : Sen. 35,928,603 : Cost 23.52551079 : Time 721.61s : 9356.97 words/s : L.r. 8.7287e-05
+[2019-05-19 11:55:22] Ep. 3 : Up. 84500 : Sen. 36,635,281 : Cost 22.68689346 : Time 717.08s : 9223.04 words/s : L.r. 8.7029e-05
+[2019-05-19 12:07:36] Ep. 3 : Up. 85000 : Sen. 37,357,474 : Cost 22.87437439 : Time 733.88s : 9373.40 words/s : L.r. 8.6772e-05
+[2019-05-19 12:07:36] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 12:07:41] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter85000.npz
+[2019-05-19 12:07:46] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 12:07:51] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 12:08:07] [valid] Ep. 3 : Up. 85000 : cross-entropy : 18.7867 : new best
+[2019-05-19 12:08:13] [valid] Ep. 3 : Up. 85000 : perplexity : 4.29569 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 12:09:45] [valid] Ep. 3 : Up. 85000 : translation : 34.6 : stalled 14 times (last best: 34.8)
+[2019-05-19 12:21:41] Ep. 3 : Up. 85500 : Sen. 38,054,472 : Cost 23.14607811 : Time 845.36s : 7871.16 words/s : L.r. 8.6518e-05
+[2019-05-19 12:33:35] Ep. 3 : Up. 86000 : Sen. 38,745,597 : Cost 23.09672737 : Time 713.71s : 9268.09 words/s : L.r. 8.6266e-05
+[2019-05-19 12:46:01] Ep. 3 : Up. 86500 : Sen. 39,499,691 : Cost 22.32920647 : Time 746.87s : 9371.69 words/s : L.r. 8.6017e-05
+[2019-05-19 12:57:58] Ep. 3 : Up. 87000 : Sen. 40,205,563 : Cost 22.86607933 : Time 716.98s : 9259.00 words/s : L.r. 8.5769e-05
+[2019-05-19 13:10:05] Ep. 3 : Up. 87500 : Sen. 40,925,252 : Cost 22.65874100 : Time 726.69s : 9329.53 words/s : L.r. 8.5524e-05
+[2019-05-19 13:21:31] Ep. 3 : Up. 88000 : Sen. 41,585,081 : Cost 23.03763962 : Time 686.14s : 9124.15 words/s : L.r. 8.5280e-05
+[2019-05-19 13:23:40] Seen 41709169 samples
+[2019-05-19 13:23:40] Starting epoch 4
+[2019-05-19 13:23:40] [data] Shuffling data
+[2019-05-19 13:23:53] [data] Done reading 41736982 sentences
+[2019-05-19 13:33:00] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-19 13:43:11] Ep. 4 : Up. 88500 : Sen. 594,946 : Cost 22.56511116 : Time 1299.26s : 5164.18 words/s : L.r. 8.5039e-05
+[2019-05-19 13:55:17] Ep. 4 : Up. 89000 : Sen. 1,295,776 : Cost 23.31700325 : Time 726.56s : 9299.63 words/s : L.r. 8.4800e-05
+[2019-05-19 14:07:19] Ep. 4 : Up. 89500 : Sen. 2,007,322 : Cost 22.72221947 : Time 721.86s : 9280.03 words/s : L.r. 8.4563e-05
+[2019-05-19 14:19:17] Ep. 4 : Up. 90000 : Sen. 2,716,348 : Cost 22.72479630 : Time 717.90s : 9306.88 words/s : L.r. 8.4327e-05
+[2019-05-19 14:19:17] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 14:19:22] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter90000.npz
+[2019-05-19 14:19:27] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 14:19:32] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 14:19:47] [valid] Ep. 4 : Up. 90000 : cross-entropy : 18.7829 : new best
+[2019-05-19 14:19:53] [valid] Ep. 4 : Up. 90000 : perplexity : 4.29444 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 14:21:27] [valid] Ep. 4 : Up. 90000 : translation : 34.7 : stalled 15 times (last best: 34.8)
+[2019-05-19 14:33:38] Ep. 4 : Up. 90500 : Sen. 3,452,448 : Cost 22.21576500 : Time 861.55s : 7863.44 words/s : L.r. 8.4094e-05
+[2019-05-19 14:45:47] Ep. 4 : Up. 91000 : Sen. 4,155,668 : Cost 23.50328064 : Time 728.55s : 9354.06 words/s : L.r. 8.3863e-05
+[2019-05-19 14:57:39] Ep. 4 : Up. 91500 : Sen. 4,845,469 : Cost 23.27296829 : Time 712.48s : 9286.63 words/s : L.r. 8.3633e-05
+[2019-05-19 15:09:49] Ep. 4 : Up. 92000 : Sen. 5,571,667 : Cost 22.32385445 : Time 729.97s : 9271.92 words/s : L.r. 8.3406e-05
+[2019-05-19 15:21:41] Ep. 4 : Up. 92500 : Sen. 6,256,832 : Cost 23.51456451 : Time 711.63s : 9282.90 words/s : L.r. 8.3180e-05
+[2019-05-19 15:33:54] Ep. 4 : Up. 93000 : Sen. 6,981,248 : Cost 22.63428688 : Time 733.45s : 9289.60 words/s : L.r. 8.2956e-05
+[2019-05-19 15:46:04] Ep. 4 : Up. 93500 : Sen. 7,707,418 : Cost 22.68581772 : Time 729.83s : 9331.66 words/s : L.r. 8.2734e-05
+[2019-05-19 15:58:16] Ep. 4 : Up. 94000 : Sen. 8,428,548 : Cost 22.70345688 : Time 731.41s : 9303.69 words/s : L.r. 8.2514e-05
+[2019-05-19 16:10:16] Ep. 4 : Up. 94500 : Sen. 9,126,386 : Cost 23.36370087 : Time 720.10s : 9314.62 words/s : L.r. 8.2295e-05
+[2019-05-19 16:22:21] Ep. 4 : Up. 95000 : Sen. 9,846,027 : Cost 22.46230888 : Time 725.08s : 9267.86 words/s : L.r. 8.2078e-05
+[2019-05-19 16:22:21] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 16:22:26] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter95000.npz
+[2019-05-19 16:22:30] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 16:22:36] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 16:22:51] [valid] Ep. 4 : Up. 95000 : cross-entropy : 18.7809 : new best
+[2019-05-19 16:22:57] [valid] Ep. 4 : Up. 95000 : perplexity : 4.29375 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 16:24:30] [valid] Ep. 4 : Up. 95000 : translation : 34.7 : stalled 16 times (last best: 34.8)
+[2019-05-19 16:36:37] Ep. 4 : Up. 95500 : Sen. 10,566,875 : Cost 22.54104424 : Time 856.04s : 7865.22 words/s : L.r. 8.1863e-05
+[2019-05-19 16:48:46] Ep. 4 : Up. 96000 : Sen. 11,271,265 : Cost 23.40536690 : Time 729.04s : 9352.53 words/s : L.r. 8.1650e-05
+[2019-05-19 17:00:33] Ep. 4 : Up. 96500 : Sen. 11,965,772 : Cost 22.76871872 : Time 707.41s : 9207.44 words/s : L.r. 8.1438e-05
+[2019-05-19 17:12:46] Ep. 4 : Up. 97000 : Sen. 12,697,232 : Cost 22.48344612 : Time 733.06s : 9295.82 words/s : L.r. 8.1228e-05
+[2019-05-19 17:24:42] Ep. 4 : Up. 97500 : Sen. 13,402,184 : Cost 22.51487160 : Time 715.71s : 9232.86 words/s : L.r. 8.1019e-05
+[2019-05-19 17:36:58] Ep. 4 : Up. 98000 : Sen. 14,118,804 : Cost 23.32366180 : Time 735.83s : 9378.26 words/s : L.r. 8.0812e-05
+[2019-05-19 17:48:57] Ep. 4 : Up. 98500 : Sen. 14,831,791 : Cost 22.47066689 : Time 719.50s : 9229.30 words/s : L.r. 8.0607e-05
+[2019-05-19 18:01:06] Ep. 4 : Up. 99000 : Sen. 15,550,871 : Cost 22.75066566 : Time 728.29s : 9284.34 words/s : L.r. 8.0403e-05
+[2019-05-19 18:12:57] Ep. 4 : Up. 99500 : Sen. 16,230,806 : Cost 23.51079369 : Time 711.36s : 9221.34 words/s : L.r. 8.0201e-05
+[2019-05-19 18:25:09] Ep. 4 : Up. 100000 : Sen. 16,951,924 : Cost 22.83971977 : Time 731.53s : 9340.88 words/s : L.r. 8.0000e-05
+[2019-05-19 18:25:09] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 18:25:14] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter100000.npz
+[2019-05-19 18:25:18] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 18:25:24] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 18:25:39] [valid] Ep. 4 : Up. 100000 : cross-entropy : 18.7787 : new best
+[2019-05-19 18:25:45] [valid] Ep. 4 : Up. 100000 : perplexity : 4.29302 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 18:27:17] [valid] Ep. 4 : Up. 100000 : translation : 34.7 : stalled 17 times (last best: 34.8)
+[2019-05-19 18:39:09] Ep. 4 : Up. 100500 : Sen. 17,634,999 : Cost 23.62196922 : Time 840.78s : 7891.51 words/s : L.r. 7.9801e-05
+[2019-05-19 18:51:17] Ep. 4 : Up. 101000 : Sen. 18,374,345 : Cost 21.64299583 : Time 727.05s : 9163.29 words/s : L.r. 7.9603e-05
+[2019-05-19 19:03:27] Ep. 4 : Up. 101500 : Sen. 19,092,468 : Cost 23.11630058 : Time 730.43s : 9444.96 words/s : L.r. 7.9407e-05
+[2019-05-19 19:15:18] Ep. 4 : Up. 102000 : Sen. 19,792,889 : Cost 22.83275223 : Time 710.75s : 9274.98 words/s : L.r. 7.9212e-05
+[2019-05-19 19:27:19] Ep. 4 : Up. 102500 : Sen. 20,489,674 : Cost 23.24716949 : Time 721.56s : 9326.35 words/s : L.r. 7.9018e-05
+[2019-05-19 19:39:22] Ep. 4 : Up. 103000 : Sen. 21,207,500 : Cost 22.59266853 : Time 722.70s : 9275.34 words/s : L.r. 7.8826e-05
+[2019-05-19 19:51:26] Ep. 4 : Up. 103500 : Sen. 21,913,595 : Cost 23.10975838 : Time 723.71s : 9327.70 words/s : L.r. 7.8636e-05
+[2019-05-19 20:03:28] Ep. 4 : Up. 104000 : Sen. 22,627,181 : Cost 22.52698898 : Time 722.09s : 9236.74 words/s : L.r. 7.8446e-05
+[2019-05-19 20:15:37] Ep. 4 : Up. 104500 : Sen. 23,330,452 : Cost 22.91725349 : Time 729.12s : 9090.80 words/s : L.r. 7.8259e-05
+[2019-05-19 20:27:57] Ep. 4 : Up. 105000 : Sen. 24,049,905 : Cost 22.99459076 : Time 739.78s : 9264.00 words/s : L.r. 7.8072e-05
+[2019-05-19 20:27:57] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 20:28:02] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter105000.npz
+[2019-05-19 20:28:06] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 20:28:12] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 20:28:27] [valid] Ep. 4 : Up. 105000 : cross-entropy : 18.7763 : new best
+[2019-05-19 20:28:33] [valid] Ep. 4 : Up. 105000 : perplexity : 4.29224 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 20:30:06] [valid] Ep. 4 : Up. 105000 : translation : 34.6 : stalled 18 times (last best: 34.8)
+[2019-05-19 20:42:15] Ep. 4 : Up. 105500 : Sen. 24,770,732 : Cost 22.58719826 : Time 858.45s : 7878.75 words/s : L.r. 7.7887e-05
+[2019-05-19 20:54:18] Ep. 4 : Up. 106000 : Sen. 25,466,244 : Cost 23.24026299 : Time 723.26s : 9242.01 words/s : L.r. 7.7703e-05
+[2019-05-19 21:06:27] Ep. 4 : Up. 106500 : Sen. 26,179,487 : Cost 23.14274406 : Time 728.82s : 9326.21 words/s : L.r. 7.7520e-05
+[2019-05-19 21:18:42] Ep. 4 : Up. 107000 : Sen. 26,915,775 : Cost 22.21252441 : Time 735.27s : 9287.43 words/s : L.r. 7.7339e-05
+[2019-05-19 21:30:35] Ep. 4 : Up. 107500 : Sen. 27,604,363 : Cost 23.06831551 : Time 712.70s : 9210.05 words/s : L.r. 7.7159e-05
+[2019-05-19 21:43:00] Ep. 4 : Up. 108000 : Sen. 28,356,306 : Cost 22.48065948 : Time 744.81s : 9378.74 words/s : L.r. 7.6980e-05
+[2019-05-19 21:54:58] Ep. 4 : Up. 108500 : Sen. 29,044,726 : Cost 23.29309082 : Time 717.61s : 9257.95 words/s : L.r. 7.6802e-05
+[2019-05-19 22:07:08] Ep. 4 : Up. 109000 : Sen. 29,755,214 : Cost 23.22019196 : Time 730.36s : 9321.47 words/s : L.r. 7.6626e-05
+[2019-05-19 22:19:17] Ep. 4 : Up. 109500 : Sen. 30,472,511 : Cost 22.68499947 : Time 728.86s : 9287.47 words/s : L.r. 7.6451e-05
+[2019-05-19 22:31:34] Ep. 4 : Up. 110000 : Sen. 31,220,061 : Cost 21.91718102 : Time 737.19s : 9222.90 words/s : L.r. 7.6277e-05
+[2019-05-19 22:31:34] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-19 22:31:39] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter110000.npz
+[2019-05-19 22:31:43] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-19 22:31:49] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-19 22:32:04] [valid] Ep. 4 : Up. 110000 : cross-entropy : 18.7755 : new best
+[2019-05-19 22:32:10] [valid] Ep. 4 : Up. 110000 : perplexity : 4.29197 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-19 22:33:44] [valid] Ep. 4 : Up. 110000 : translation : 34.6 : stalled 19 times (last best: 34.8)
+[2019-05-19 22:45:40] Ep. 4 : Up. 110500 : Sen. 31,910,555 : Cost 23.48591614 : Time 845.96s : 7909.29 words/s : L.r. 7.6104e-05
+[2019-05-19 22:57:38] Ep. 4 : Up. 111000 : Sen. 32,617,683 : Cost 22.54713631 : Time 718.32s : 9189.96 words/s : L.r. 7.5933e-05
+[2019-05-19 23:09:57] Ep. 4 : Up. 111500 : Sen. 33,339,328 : Cost 23.23466682 : Time 738.94s : 9401.48 words/s : L.r. 7.5762e-05
+[2019-05-19 23:21:54] Ep. 4 : Up. 112000 : Sen. 34,044,599 : Cost 22.57754898 : Time 717.18s : 9173.65 words/s : L.r. 7.5593e-05
+[2019-05-19 23:33:48] Ep. 4 : Up. 112500 : Sen. 34,743,022 : Cost 22.81089020 : Time 713.22s : 9229.42 words/s : L.r. 7.5425e-05
+[2019-05-19 23:45:59] Ep. 4 : Up. 113000 : Sen. 35,446,948 : Cost 23.62056732 : Time 731.58s : 9391.34 words/s : L.r. 7.5258e-05
+[2019-05-19 23:58:04] Ep. 4 : Up. 113500 : Sen. 36,167,072 : Cost 22.24970245 : Time 724.49s : 9178.62 words/s : L.r. 7.5092e-05
+[2019-05-20 00:10:12] Ep. 4 : Up. 114000 : Sen. 36,887,714 : Cost 22.69640923 : Time 728.64s : 9301.95 words/s : L.r. 7.4927e-05
+[2019-05-20 00:22:10] Ep. 4 : Up. 114500 : Sen. 37,585,355 : Cost 23.09540939 : Time 718.03s : 9292.14 words/s : L.r. 7.4763e-05
+[2019-05-20 00:34:16] Ep. 4 : Up. 115000 : Sen. 38,307,443 : Cost 22.29920006 : Time 725.40s : 9177.41 words/s : L.r. 7.4600e-05
+[2019-05-20 00:34:16] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 00:34:22] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter115000.npz
+[2019-05-20 00:34:26] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 00:34:32] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 00:34:48] [valid] Ep. 4 : Up. 115000 : cross-entropy : 18.774 : new best
+[2019-05-20 00:34:54] [valid] Ep. 4 : Up. 115000 : perplexity : 4.29145 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 00:36:28] [valid] Ep. 4 : Up. 115000 : translation : 34.6 : stalled 20 times (last best: 34.8)
+[2019-05-20 00:48:39] Ep. 4 : Up. 115500 : Sen. 39,017,104 : Cost 23.20764923 : Time 863.21s : 7914.68 words/s : L.r. 7.4439e-05
+[2019-05-20 01:00:43] Ep. 4 : Up. 116000 : Sen. 39,728,225 : Cost 22.91497803 : Time 724.48s : 9310.25 words/s : L.r. 7.4278e-05
+[2019-05-20 01:12:46] Ep. 4 : Up. 116500 : Sen. 40,425,349 : Cost 23.28754807 : Time 722.22s : 9286.50 words/s : L.r. 7.4119e-05
+[2019-05-20 01:24:31] Ep. 4 : Up. 117000 : Sen. 41,118,727 : Cost 22.59662056 : Time 705.55s : 9193.32 words/s : L.r. 7.3960e-05
+[2019-05-20 01:34:35] Seen 41709169 samples
+[2019-05-20 01:34:35] Starting epoch 5
+[2019-05-20 01:34:35] [data] Shuffling data
+[2019-05-20 01:34:49] [data] Done reading 41736982 sentences
+[2019-05-20 01:43:52] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-20 01:45:45] Ep. 5 : Up. 117500 : Sen. 78,376 : Cost 23.11188889 : Time 1273.30s : 5025.02 words/s : L.r. 7.3802e-05
+[2019-05-20 01:57:46] Ep. 5 : Up. 118000 : Sen. 800,176 : Cost 22.38097191 : Time 721.53s : 9278.62 words/s : L.r. 7.3646e-05
+[2019-05-20 02:09:53] Ep. 5 : Up. 118500 : Sen. 1,506,446 : Cost 23.01469994 : Time 726.98s : 9271.84 words/s : L.r. 7.3490e-05
+[2019-05-20 02:22:06] Ep. 5 : Up. 119000 : Sen. 2,247,292 : Cost 22.23845291 : Time 732.72s : 9318.77 words/s : L.r. 7.3336e-05
+[2019-05-20 02:34:02] Ep. 5 : Up. 119500 : Sen. 2,937,307 : Cost 23.13820457 : Time 716.00s : 9222.61 words/s : L.r. 7.3182e-05
+[2019-05-20 02:46:15] Ep. 5 : Up. 120000 : Sen. 3,657,961 : Cost 22.81979942 : Time 733.17s : 9306.97 words/s : L.r. 7.3030e-05
+[2019-05-20 02:46:15] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 02:46:21] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter120000.npz
+[2019-05-20 02:46:25] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 02:46:31] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 02:46:48] [valid] Ep. 5 : Up. 120000 : cross-entropy : 18.7733 : new best
+[2019-05-20 02:46:53] [valid] Ep. 5 : Up. 120000 : perplexity : 4.29123 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 02:48:26] [valid] Ep. 5 : Up. 120000 : translation : 34.7 : stalled 21 times (last best: 34.8)
+[2019-05-20 03:00:38] Ep. 5 : Up. 120500 : Sen. 4,371,835 : Cost 23.09930801 : Time 862.72s : 7918.22 words/s : L.r. 7.2878e-05
+[2019-05-20 03:12:27] Ep. 5 : Up. 121000 : Sen. 5,063,700 : Cost 22.76572990 : Time 709.13s : 9178.62 words/s : L.r. 7.2727e-05
+[2019-05-20 03:24:34] Ep. 5 : Up. 121500 : Sen. 5,788,654 : Cost 22.34735107 : Time 727.47s : 9255.96 words/s : L.r. 7.2577e-05
+[2019-05-20 03:36:59] Ep. 5 : Up. 122000 : Sen. 6,526,838 : Cost 22.71879578 : Time 744.62s : 9351.82 words/s : L.r. 7.2429e-05
+[2019-05-20 03:48:48] Ep. 5 : Up. 122500 : Sen. 7,203,374 : Cost 23.69442940 : Time 709.30s : 9268.30 words/s : L.r. 7.2281e-05
+[2019-05-20 04:00:45] Ep. 5 : Up. 123000 : Sen. 7,903,495 : Cost 22.82494545 : Time 716.93s : 9230.34 words/s : L.r. 7.2134e-05
+[2019-05-20 04:12:51] Ep. 5 : Up. 123500 : Sen. 8,615,936 : Cost 22.90272522 : Time 726.38s : 9293.31 words/s : L.r. 7.1987e-05
+[2019-05-20 04:24:53] Ep. 5 : Up. 124000 : Sen. 9,327,500 : Cost 22.45121574 : Time 721.13s : 9213.01 words/s : L.r. 7.1842e-05
+[2019-05-20 04:37:01] Ep. 5 : Up. 124500 : Sen. 10,055,046 : Cost 22.55559158 : Time 728.45s : 9335.46 words/s : L.r. 7.1698e-05
+[2019-05-20 04:49:01] Ep. 5 : Up. 125000 : Sen. 10,754,642 : Cost 22.95107269 : Time 719.77s : 9217.65 words/s : L.r. 7.1554e-05
+[2019-05-20 04:49:01] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 04:49:09] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter125000.npz
+[2019-05-20 04:49:16] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 04:49:23] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 04:49:39] [valid] Ep. 5 : Up. 125000 : cross-entropy : 18.7714 : new best
+[2019-05-20 04:49:45] [valid] Ep. 5 : Up. 125000 : perplexity : 4.29059 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 04:51:19] [valid] Ep. 5 : Up. 125000 : translation : 34.7 : stalled 22 times (last best: 34.8)
+[2019-05-20 05:03:23] Ep. 5 : Up. 125500 : Sen. 11,459,193 : Cost 23.14510918 : Time 861.74s : 7799.01 words/s : L.r. 7.1411e-05
+[2019-05-20 05:15:31] Ep. 5 : Up. 126000 : Sen. 12,174,497 : Cost 22.88659477 : Time 728.66s : 9323.84 words/s : L.r. 7.1270e-05
+[2019-05-20 05:27:34] Ep. 5 : Up. 126500 : Sen. 12,891,013 : Cost 22.52899551 : Time 722.36s : 9248.73 words/s : L.r. 7.1129e-05
+[2019-05-20 05:39:42] Ep. 5 : Up. 127000 : Sen. 13,595,393 : Cost 23.21084213 : Time 728.24s : 9260.58 words/s : L.r. 7.0989e-05
+[2019-05-20 05:51:38] Ep. 5 : Up. 127500 : Sen. 14,303,320 : Cost 22.68167686 : Time 716.59s : 9324.00 words/s : L.r. 7.0849e-05
+[2019-05-20 06:03:42] Ep. 5 : Up. 128000 : Sen. 15,009,916 : Cost 22.78017235 : Time 724.05s : 9219.90 words/s : L.r. 7.0711e-05
+[2019-05-20 06:16:12] Ep. 5 : Up. 128500 : Sen. 15,763,983 : Cost 22.21434212 : Time 749.93s : 9286.25 words/s : L.r. 7.0573e-05
+[2019-05-20 06:28:00] Ep. 5 : Up. 129000 : Sen. 16,436,822 : Cost 23.68783569 : Time 707.17s : 9295.65 words/s : L.r. 7.0436e-05
+[2019-05-20 06:39:59] Ep. 5 : Up. 129500 : Sen. 17,153,768 : Cost 22.33882332 : Time 719.89s : 9254.30 words/s : L.r. 7.0300e-05
+[2019-05-20 06:52:09] Ep. 5 : Up. 130000 : Sen. 17,869,238 : Cost 22.86881256 : Time 729.67s : 9264.04 words/s : L.r. 7.0165e-05
+[2019-05-20 06:52:09] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 06:52:15] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter130000.npz
+[2019-05-20 06:52:20] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 06:52:25] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 06:52:42] [valid] Ep. 5 : Up. 130000 : cross-entropy : 18.7703 : new best
+[2019-05-20 06:52:48] [valid] Ep. 5 : Up. 130000 : perplexity : 4.29025 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 06:54:22] [valid] Ep. 5 : Up. 130000 : translation : 34.7 : stalled 23 times (last best: 34.8)
+[2019-05-20 07:06:28] Ep. 5 : Up. 130500 : Sen. 18,584,610 : Cost 22.80087852 : Time 859.03s : 7823.42 words/s : L.r. 7.0030e-05
+[2019-05-20 07:18:19] Ep. 5 : Up. 131000 : Sen. 19,264,028 : Cost 23.51499748 : Time 710.95s : 9329.30 words/s : L.r. 6.9896e-05
+[2019-05-20 07:30:26] Ep. 5 : Up. 131500 : Sen. 19,987,075 : Cost 22.40070724 : Time 727.06s : 9236.98 words/s : L.r. 6.9763e-05
+[2019-05-20 07:42:22] Ep. 5 : Up. 132000 : Sen. 20,696,822 : Cost 22.61649513 : Time 716.14s : 9259.21 words/s : L.r. 6.9631e-05
+[2019-05-20 07:54:29] Ep. 5 : Up. 132500 : Sen. 21,388,722 : Cost 23.51610756 : Time 726.44s : 9302.22 words/s : L.r. 6.9500e-05
+[2019-05-20 08:06:49] Ep. 5 : Up. 133000 : Sen. 22,118,462 : Cost 22.80906677 : Time 739.98s : 9309.87 words/s : L.r. 6.9369e-05
+[2019-05-20 08:18:56] Ep. 5 : Up. 133500 : Sen. 22,847,431 : Cost 22.28134346 : Time 727.49s : 9252.46 words/s : L.r. 6.9239e-05
+[2019-05-20 08:30:58] Ep. 5 : Up. 134000 : Sen. 23,554,417 : Cost 22.86777687 : Time 722.19s : 9247.04 words/s : L.r. 6.9109e-05
+[2019-05-20 08:43:09] Ep. 5 : Up. 134500 : Sen. 24,260,838 : Cost 23.35100746 : Time 730.49s : 9360.10 words/s : L.r. 6.8981e-05
+[2019-05-20 08:55:08] Ep. 5 : Up. 135000 : Sen. 24,968,203 : Cost 22.61774254 : Time 719.21s : 9201.28 words/s : L.r. 6.8853e-05
+[2019-05-20 08:55:08] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 08:55:14] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter135000.npz
+[2019-05-20 08:55:18] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 08:55:25] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 08:55:41] [valid] Ep. 5 : Up. 135000 : cross-entropy : 18.773 : stalled 1 times (last best: 18.7703)
+[2019-05-20 08:55:47] [valid] Ep. 5 : Up. 135000 : perplexity : 4.29113 : stalled 1 times (last best: 4.29025)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 08:57:20] [valid] Ep. 5 : Up. 135000 : translation : 34.6 : stalled 24 times (last best: 34.8)
+[2019-05-20 09:09:33] Ep. 5 : Up. 135500 : Sen. 25,707,199 : Cost 22.13119507 : Time 865.26s : 7851.31 words/s : L.r. 6.8726e-05
+[2019-05-20 09:21:26] Ep. 5 : Up. 136000 : Sen. 26,386,301 : Cost 23.63253975 : Time 713.08s : 9312.80 words/s : L.r. 6.8599e-05
+[2019-05-20 09:33:34] Ep. 5 : Up. 136500 : Sen. 27,112,704 : Cost 22.19459534 : Time 727.29s : 9217.76 words/s : L.r. 6.8474e-05
+[2019-05-20 09:45:45] Ep. 5 : Up. 137000 : Sen. 27,831,489 : Cost 22.84793854 : Time 731.48s : 9299.79 words/s : L.r. 6.8349e-05
+[2019-05-20 09:58:00] Ep. 5 : Up. 137500 : Sen. 28,540,005 : Cost 23.61705399 : Time 735.07s : 9373.29 words/s : L.r. 6.8224e-05
+[2019-05-20 10:10:01] Ep. 5 : Up. 138000 : Sen. 29,268,615 : Cost 22.03508568 : Time 720.80s : 9250.78 words/s : L.r. 6.8101e-05
+[2019-05-20 10:22:02] Ep. 5 : Up. 138500 : Sen. 29,961,927 : Cost 23.40875244 : Time 721.24s : 9307.95 words/s : L.r. 6.7977e-05
+[2019-05-20 10:34:08] Ep. 5 : Up. 139000 : Sen. 30,681,001 : Cost 22.59236145 : Time 725.68s : 9284.02 words/s : L.r. 6.7855e-05
+[2019-05-20 10:46:12] Ep. 5 : Up. 139500 : Sen. 31,384,022 : Cost 22.95341873 : Time 724.26s : 9194.84 words/s : L.r. 6.7733e-05
+[2019-05-20 10:58:20] Ep. 5 : Up. 140000 : Sen. 32,102,877 : Cost 22.57346344 : Time 727.84s : 9272.57 words/s : L.r. 6.7612e-05
+[2019-05-20 10:58:20] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 10:58:26] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter140000.npz
+[2019-05-20 10:58:31] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 10:58:37] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 10:58:53] [valid] Ep. 5 : Up. 140000 : cross-entropy : 18.7704 : stalled 2 times (last best: 18.7703)
+[2019-05-20 10:58:59] [valid] Ep. 5 : Up. 140000 : perplexity : 4.29026 : stalled 2 times (last best: 4.29025)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 11:00:32] [valid] Ep. 5 : Up. 140000 : translation : 34.6 : stalled 25 times (last best: 34.8)
+[2019-05-20 11:12:34] Ep. 5 : Up. 140500 : Sen. 32,806,983 : Cost 23.18098450 : Time 854.23s : 7916.42 words/s : L.r. 6.7492e-05
+[2019-05-20 11:24:35] Ep. 5 : Up. 141000 : Sen. 33,497,022 : Cost 23.36797333 : Time 720.74s : 9251.09 words/s : L.r. 6.7372e-05
+[2019-05-20 11:36:51] Ep. 5 : Up. 141500 : Sen. 34,251,660 : Cost 21.54463768 : Time 735.91s : 9205.10 words/s : L.r. 6.7253e-05
+[2019-05-20 11:49:01] Ep. 5 : Up. 142000 : Sen. 34,952,963 : Cost 23.49515915 : Time 729.65s : 9331.60 words/s : L.r. 6.7135e-05
+[2019-05-20 12:00:47] Ep. 5 : Up. 142500 : Sen. 35,636,389 : Cost 22.95635986 : Time 706.64s : 9202.45 words/s : L.r. 6.7017e-05
+[2019-05-20 12:13:05] Ep. 5 : Up. 143000 : Sen. 36,358,650 : Cost 23.06077194 : Time 737.73s : 9326.46 words/s : L.r. 6.6899e-05
+[2019-05-20 12:25:21] Ep. 5 : Up. 143500 : Sen. 37,097,029 : Cost 22.15489578 : Time 735.58s : 9264.43 words/s : L.r. 6.6783e-05
+[2019-05-20 12:37:18] Ep. 5 : Up. 144000 : Sen. 37,797,532 : Cost 22.92712402 : Time 717.54s : 9252.25 words/s : L.r. 6.6667e-05
+[2019-05-20 12:49:38] Ep. 5 : Up. 144500 : Sen. 38,510,580 : Cost 23.80047417 : Time 739.94s : 9436.36 words/s : L.r. 6.6551e-05
+[2019-05-20 13:01:36] Ep. 5 : Up. 145000 : Sen. 39,232,155 : Cost 21.84367371 : Time 717.90s : 9146.53 words/s : L.r. 6.6436e-05
+[2019-05-20 13:01:36] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 13:01:42] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter145000.npz
+[2019-05-20 13:01:46] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 13:01:52] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 13:02:09] [valid] Ep. 5 : Up. 145000 : cross-entropy : 18.7691 : new best
+[2019-05-20 13:02:15] [valid] Ep. 5 : Up. 145000 : perplexity : 4.28983 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 13:03:49] [valid] Ep. 5 : Up. 145000 : translation : 34.6 : stalled 26 times (last best: 34.8)
+[2019-05-20 13:15:56] Ep. 5 : Up. 145500 : Sen. 39,939,277 : Cost 22.94744682 : Time 860.15s : 7812.99 words/s : L.r. 6.6322e-05
+[2019-05-20 13:28:03] Ep. 5 : Up. 146000 : Sen. 40,651,459 : Cost 22.93499374 : Time 726.60s : 9317.30 words/s : L.r. 6.6208e-05
+[2019-05-20 13:39:44] Ep. 5 : Up. 146500 : Sen. 41,337,368 : Cost 22.53282928 : Time 701.38s : 9153.20 words/s : L.r. 6.6095e-05
+[2019-05-20 13:46:17] Seen 41709169 samples
+[2019-05-20 13:46:17] Starting epoch 6
+[2019-05-20 13:46:17] [data] Shuffling data
+[2019-05-20 13:46:31] [data] Done reading 41736982 sentences
+[2019-05-20 13:55:51] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-20 14:01:20] Ep. 6 : Up. 147000 : Sen. 303,563 : Cost 23.42354393 : Time 1296.11s : 5015.37 words/s : L.r. 6.5983e-05
+[2019-05-20 14:13:28] Ep. 6 : Up. 147500 : Sen. 1,017,840 : Cost 22.68213081 : Time 727.99s : 9256.69 words/s : L.r. 6.5871e-05
+[2019-05-20 14:25:35] Ep. 6 : Up. 148000 : Sen. 1,735,931 : Cost 22.64673424 : Time 726.46s : 9294.97 words/s : L.r. 6.5760e-05
+[2019-05-20 14:37:34] Ep. 6 : Up. 148500 : Sen. 2,427,159 : Cost 23.42735291 : Time 718.97s : 9281.19 words/s : L.r. 6.5649e-05
+[2019-05-20 14:49:34] Ep. 6 : Up. 149000 : Sen. 3,153,202 : Cost 21.93314934 : Time 720.05s : 9187.78 words/s : L.r. 6.5539e-05
+[2019-05-20 15:01:48] Ep. 6 : Up. 149500 : Sen. 3,866,266 : Cost 23.34385681 : Time 734.15s : 9382.44 words/s : L.r. 6.5429e-05
+[2019-05-20 15:13:47] Ep. 6 : Up. 150000 : Sen. 4,576,019 : Cost 22.24427986 : Time 719.25s : 9146.52 words/s : L.r. 6.5320e-05
+[2019-05-20 15:13:47] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 15:13:53] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter150000.npz
+[2019-05-20 15:13:58] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 15:14:03] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 15:14:18] [valid] Ep. 6 : Up. 150000 : cross-entropy : 18.7697 : stalled 1 times (last best: 18.7691)
+[2019-05-20 15:14:24] [valid] Ep. 6 : Up. 150000 : perplexity : 4.29004 : stalled 1 times (last best: 4.28983)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 15:15:59] [valid] Ep. 6 : Up. 150000 : translation : 34.7 : stalled 27 times (last best: 34.8)
+[2019-05-20 15:28:08] Ep. 6 : Up. 150500 : Sen. 5,274,001 : Cost 23.89059258 : Time 860.80s : 7944.72 words/s : L.r. 6.5211e-05
+[2019-05-20 15:40:19] Ep. 6 : Up. 151000 : Sen. 5,998,344 : Cost 22.37409401 : Time 730.91s : 9230.37 words/s : L.r. 6.5103e-05
+[2019-05-20 15:52:10] Ep. 6 : Up. 151500 : Sen. 6,689,338 : Cost 23.03603745 : Time 710.99s : 9262.36 words/s : L.r. 6.4996e-05
+[2019-05-20 16:04:18] Ep. 6 : Up. 152000 : Sen. 7,401,832 : Cost 22.95635796 : Time 728.65s : 9331.04 words/s : L.r. 6.4889e-05
+[2019-05-20 16:16:17] Ep. 6 : Up. 152500 : Sen. 8,115,516 : Cost 22.31753731 : Time 718.60s : 9152.41 words/s : L.r. 6.4782e-05
+[2019-05-20 16:28:25] Ep. 6 : Up. 153000 : Sen. 8,832,168 : Cost 22.76426697 : Time 727.58s : 9326.12 words/s : L.r. 6.4676e-05
+[2019-05-20 16:40:28] Ep. 6 : Up. 153500 : Sen. 9,550,519 : Cost 22.14100456 : Time 723.29s : 9157.08 words/s : L.r. 6.4571e-05
+[2019-05-20 16:52:56] Ep. 6 : Up. 154000 : Sen. 10,285,550 : Cost 23.16759682 : Time 748.03s : 9393.40 words/s : L.r. 6.4466e-05
+[2019-05-20 17:04:50] Ep. 6 : Up. 154500 : Sen. 10,970,009 : Cost 23.33126450 : Time 713.66s : 9263.98 words/s : L.r. 6.4361e-05
+[2019-05-20 17:17:05] Ep. 6 : Up. 155000 : Sen. 11,696,311 : Cost 22.69931984 : Time 735.46s : 9321.01 words/s : L.r. 6.4258e-05
+[2019-05-20 17:17:05] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 17:17:10] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter155000.npz
+[2019-05-20 17:17:15] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 17:17:21] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 17:17:37] [valid] Ep. 6 : Up. 155000 : cross-entropy : 18.7703 : stalled 2 times (last best: 18.7691)
+[2019-05-20 17:17:42] [valid] Ep. 6 : Up. 155000 : perplexity : 4.29025 : stalled 2 times (last best: 4.28983)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 17:19:16] [valid] Ep. 6 : Up. 155000 : translation : 34.6 : stalled 28 times (last best: 34.8)
+[2019-05-20 17:31:18] Ep. 6 : Up. 155500 : Sen. 12,407,674 : Cost 22.43704224 : Time 852.79s : 7711.18 words/s : L.r. 6.4154e-05
+[2019-05-20 17:43:16] Ep. 6 : Up. 156000 : Sen. 13,084,963 : Cost 23.78902626 : Time 718.17s : 9282.39 words/s : L.r. 6.4051e-05
+[2019-05-20 17:55:21] Ep. 6 : Up. 156500 : Sen. 13,811,514 : Cost 22.07407761 : Time 725.04s : 9206.25 words/s : L.r. 6.3949e-05
+[2019-05-20 18:07:32] Ep. 6 : Up. 157000 : Sen. 14,525,092 : Cost 23.08398628 : Time 731.21s : 9331.64 words/s : L.r. 6.3847e-05
+[2019-05-20 18:19:33] Ep. 6 : Up. 157500 : Sen. 15,219,740 : Cost 23.16511154 : Time 720.79s : 9225.51 words/s : L.r. 6.3746e-05
+[2019-05-20 18:31:55] Ep. 6 : Up. 158000 : Sen. 15,951,331 : Cost 22.54712868 : Time 741.65s : 9245.39 words/s : L.r. 6.3645e-05
+[2019-05-20 18:44:01] Ep. 6 : Up. 158500 : Sen. 16,655,411 : Cost 23.04665565 : Time 726.54s : 9248.84 words/s : L.r. 6.3544e-05
+[2019-05-20 18:56:07] Ep. 6 : Up. 159000 : Sen. 17,358,114 : Cost 22.90126610 : Time 725.61s : 9148.94 words/s : L.r. 6.3444e-05
+[2019-05-20 19:08:17] Ep. 6 : Up. 159500 : Sen. 18,077,540 : Cost 22.30310822 : Time 729.71s : 9166.26 words/s : L.r. 6.3345e-05
+[2019-05-20 19:20:37] Ep. 6 : Up. 160000 : Sen. 18,794,734 : Cost 23.14836311 : Time 740.11s : 9258.80 words/s : L.r. 6.3246e-05
+[2019-05-20 19:20:37] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 19:20:42] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter160000.npz
+[2019-05-20 19:20:47] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 19:20:52] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 19:21:08] [valid] Ep. 6 : Up. 160000 : cross-entropy : 18.7699 : stalled 3 times (last best: 18.7691)
+[2019-05-20 19:21:14] [valid] Ep. 6 : Up. 160000 : perplexity : 4.2901 : stalled 3 times (last best: 4.28983)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 19:22:47] [valid] Ep. 6 : Up. 160000 : translation : 34.5 : stalled 29 times (last best: 34.8)
+[2019-05-20 19:34:55] Ep. 6 : Up. 160500 : Sen. 19,512,249 : Cost 22.09332848 : Time 858.76s : 7674.11 words/s : L.r. 6.3147e-05
+[2019-05-20 19:47:10] Ep. 6 : Up. 161000 : Sen. 20,229,594 : Cost 22.87883759 : Time 734.49s : 9257.12 words/s : L.r. 6.3049e-05
+[2019-05-20 19:59:48] Ep. 6 : Up. 161500 : Sen. 20,925,294 : Cost 23.29471016 : Time 757.84s : 8835.09 words/s : L.r. 6.2951e-05
+[2019-05-20 20:18:47] Ep. 6 : Up. 162000 : Sen. 21,652,364 : Cost 22.65053177 : Time 1139.22s : 6024.01 words/s : L.r. 6.2854e-05
+[2019-05-20 20:36:47] Ep. 6 : Up. 162500 : Sen. 22,349,891 : Cost 23.21472168 : Time 1080.14s : 6203.28 words/s : L.r. 6.2757e-05
+[2019-05-20 20:48:54] Ep. 6 : Up. 163000 : Sen. 23,054,119 : Cost 22.96238899 : Time 726.49s : 9187.51 words/s : L.r. 6.2661e-05
+[2019-05-20 21:00:59] Ep. 6 : Up. 163500 : Sen. 23,758,033 : Cost 22.81401253 : Time 725.57s : 9122.47 words/s : L.r. 6.2565e-05
+[2019-05-20 21:13:10] Ep. 6 : Up. 164000 : Sen. 24,465,070 : Cost 22.79693604 : Time 730.77s : 9216.91 words/s : L.r. 6.2470e-05
+[2019-05-20 21:25:30] Ep. 6 : Up. 164500 : Sen. 25,196,107 : Cost 22.48467636 : Time 740.25s : 9175.72 words/s : L.r. 6.2374e-05
+[2019-05-20 21:37:36] Ep. 6 : Up. 165000 : Sen. 25,906,028 : Cost 22.47479820 : Time 726.13s : 9152.06 words/s : L.r. 6.2280e-05
+[2019-05-20 21:37:36] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 21:37:42] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter165000.npz
+[2019-05-20 21:37:46] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 21:37:51] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 21:38:07] [valid] Ep. 6 : Up. 165000 : cross-entropy : 18.7725 : stalled 4 times (last best: 18.7691)
+[2019-05-20 21:38:13] [valid] Ep. 6 : Up. 165000 : perplexity : 4.29096 : stalled 4 times (last best: 4.28983)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 21:39:49] [valid] Ep. 6 : Up. 165000 : translation : 34.5 : stalled 30 times (last best: 34.8)
+[2019-05-20 21:52:08] Ep. 6 : Up. 165500 : Sen. 26,621,125 : Cost 22.89448357 : Time 871.29s : 7786.36 words/s : L.r. 6.2186e-05
+[2019-05-20 22:04:27] Ep. 6 : Up. 166000 : Sen. 27,340,604 : Cost 22.85423851 : Time 739.60s : 9217.90 words/s : L.r. 6.2092e-05
+[2019-05-20 22:16:44] Ep. 6 : Up. 166500 : Sen. 28,047,266 : Cost 23.06813812 : Time 736.53s : 9166.93 words/s : L.r. 6.1999e-05
+[2019-05-20 22:29:01] Ep. 6 : Up. 167000 : Sen. 28,774,830 : Cost 22.37525940 : Time 737.26s : 9159.89 words/s : L.r. 6.1906e-05
+[2019-05-20 22:41:21] Ep. 6 : Up. 167500 : Sen. 29,486,661 : Cost 23.15081024 : Time 740.14s : 9241.67 words/s : L.r. 6.1813e-05
+[2019-05-20 22:53:22] Ep. 6 : Up. 168000 : Sen. 30,178,264 : Cost 23.06946564 : Time 721.12s : 9136.47 words/s : L.r. 6.1721e-05
+[2019-05-20 23:05:27] Ep. 6 : Up. 168500 : Sen. 30,885,903 : Cost 22.49877357 : Time 724.50s : 9145.25 words/s : L.r. 6.1630e-05
+[2019-05-20 23:17:42] Ep. 6 : Up. 169000 : Sen. 31,607,722 : Cost 22.74490738 : Time 735.37s : 9209.70 words/s : L.r. 6.1538e-05
+[2019-05-20 23:29:47] Ep. 6 : Up. 169500 : Sen. 32,306,653 : Cost 22.98851585 : Time 724.54s : 9199.15 words/s : L.r. 6.1448e-05
+[2019-05-20 23:41:56] Ep. 6 : Up. 170000 : Sen. 33,015,606 : Cost 22.72433853 : Time 729.47s : 9155.86 words/s : L.r. 6.1357e-05
+[2019-05-20 23:41:56] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-20 23:42:02] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter170000.npz
+[2019-05-20 23:42:06] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-20 23:42:11] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-20 23:42:26] [valid] Ep. 6 : Up. 170000 : cross-entropy : 18.7681 : new best
+[2019-05-20 23:42:32] [valid] Ep. 6 : Up. 170000 : perplexity : 4.28951 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-20 23:44:09] [valid] Ep. 6 : Up. 170000 : translation : 34.6 : stalled 31 times (last best: 34.8)
+[2019-05-20 23:56:12] Ep. 6 : Up. 170500 : Sen. 33,714,344 : Cost 22.77809143 : Time 855.99s : 7702.27 words/s : L.r. 6.1267e-05
+[2019-05-21 00:08:19] Ep. 6 : Up. 171000 : Sen. 34,405,620 : Cost 23.50791550 : Time 726.38s : 9245.08 words/s : L.r. 6.1178e-05
+[2019-05-21 00:20:29] Ep. 6 : Up. 171500 : Sen. 35,121,109 : Cost 22.41061783 : Time 730.68s : 9124.78 words/s : L.r. 6.1088e-05
+[2019-05-21 00:32:58] Ep. 6 : Up. 172000 : Sen. 35,850,914 : Cost 22.90967751 : Time 749.03s : 9270.42 words/s : L.r. 6.0999e-05
+[2019-05-21 00:44:55] Ep. 6 : Up. 172500 : Sen. 36,554,032 : Cost 22.38762474 : Time 717.12s : 9044.95 words/s : L.r. 6.0911e-05
+[2019-05-21 00:57:13] Ep. 6 : Up. 173000 : Sen. 37,262,634 : Cost 23.23793983 : Time 737.52s : 9258.70 words/s : L.r. 6.0823e-05
+[2019-05-21 01:09:41] Ep. 6 : Up. 173500 : Sen. 37,982,443 : Cost 22.37535286 : Time 748.05s : 8947.39 words/s : L.r. 6.0735e-05
+[2019-05-21 01:21:34] Ep. 6 : Up. 174000 : Sen. 38,675,750 : Cost 22.92015457 : Time 712.58s : 9167.35 words/s : L.r. 6.0648e-05
+[2019-05-21 01:33:58] Ep. 6 : Up. 174500 : Sen. 39,412,853 : Cost 22.34736061 : Time 744.37s : 9262.65 words/s : L.r. 6.0561e-05
+[2019-05-21 01:46:08] Ep. 6 : Up. 175000 : Sen. 40,109,458 : Cost 23.25477219 : Time 729.62s : 9166.51 words/s : L.r. 6.0474e-05
+[2019-05-21 01:46:08] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 01:46:13] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter175000.npz
+[2019-05-21 01:46:17] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 01:46:23] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 01:46:39] [valid] Ep. 6 : Up. 175000 : cross-entropy : 18.7694 : stalled 1 times (last best: 18.7681)
+[2019-05-21 01:46:45] [valid] Ep. 6 : Up. 175000 : perplexity : 4.28992 : stalled 1 times (last best: 4.28951)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 01:48:22] [valid] Ep. 6 : Up. 175000 : translation : 34.6 : stalled 32 times (last best: 34.8)
+[2019-05-21 02:00:46] Ep. 6 : Up. 175500 : Sen. 40,825,281 : Cost 22.88260269 : Time 878.26s : 7713.84 words/s : L.r. 6.0388e-05
+[2019-05-21 02:12:36] Ep. 6 : Up. 176000 : Sen. 41,505,092 : Cost 22.99112320 : Time 710.11s : 9163.08 words/s : L.r. 6.0302e-05
+[2019-05-21 02:16:11] Seen 41709169 samples
+[2019-05-21 02:16:11] Starting epoch 7
+[2019-05-21 02:16:11] [data] Shuffling data
+[2019-05-21 02:16:25] [data] Done reading 41736982 sentences
+[2019-05-21 02:26:23] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-21 02:35:04] Ep. 7 : Up. 176500 : Sen. 491,176 : Cost 22.43844986 : Time 1347.58s : 4806.24 words/s : L.r. 6.0217e-05
+[2019-05-21 02:47:13] Ep. 7 : Up. 177000 : Sen. 1,181,987 : Cost 23.55898285 : Time 729.30s : 9194.55 words/s : L.r. 6.0132e-05
+[2019-05-21 02:59:27] Ep. 7 : Up. 177500 : Sen. 1,901,351 : Cost 22.46850204 : Time 734.06s : 9148.82 words/s : L.r. 6.0047e-05
+[2019-05-21 03:11:53] Ep. 7 : Up. 178000 : Sen. 2,639,926 : Cost 22.26258087 : Time 745.84s : 9210.22 words/s : L.r. 5.9963e-05
+[2019-05-21 03:23:56] Ep. 7 : Up. 178500 : Sen. 3,321,424 : Cost 23.81080055 : Time 723.59s : 9196.93 words/s : L.r. 5.9878e-05
+[2019-05-21 03:36:01] Ep. 7 : Up. 179000 : Sen. 4,028,558 : Cost 22.39591599 : Time 724.61s : 9068.77 words/s : L.r. 5.9795e-05
+[2019-05-21 03:48:21] Ep. 7 : Up. 179500 : Sen. 4,757,708 : Cost 22.42266273 : Time 739.92s : 9203.06 words/s : L.r. 5.9711e-05
+[2019-05-21 04:00:10] Ep. 7 : Up. 180000 : Sen. 5,423,321 : Cost 23.73974991 : Time 709.53s : 9113.09 words/s : L.r. 5.9628e-05
+[2019-05-21 04:00:10] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 04:00:16] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter180000.npz
+[2019-05-21 04:00:21] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 04:00:27] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 04:00:43] [valid] Ep. 7 : Up. 180000 : cross-entropy : 18.7684 : stalled 2 times (last best: 18.7681)
+[2019-05-21 04:00:49] [valid] Ep. 7 : Up. 180000 : perplexity : 4.28959 : stalled 2 times (last best: 4.28951)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 04:02:26] [valid] Ep. 7 : Up. 180000 : translation : 34.5 : stalled 33 times (last best: 34.8)
+[2019-05-21 04:15:02] Ep. 7 : Up. 180500 : Sen. 6,158,569 : Cost 22.75301743 : Time 892.08s : 7819.73 words/s : L.r. 5.9546e-05
+[2019-05-21 04:27:23] Ep. 7 : Up. 181000 : Sen. 6,900,986 : Cost 21.98281097 : Time 740.89s : 9180.56 words/s : L.r. 5.9464e-05
+[2019-05-21 04:39:26] Ep. 7 : Up. 181500 : Sen. 7,588,523 : Cost 23.46973419 : Time 722.80s : 9175.19 words/s : L.r. 5.9382e-05
+[2019-05-21 04:51:45] Ep. 7 : Up. 182000 : Sen. 8,300,279 : Cost 23.15939331 : Time 738.65s : 9299.58 words/s : L.r. 5.9300e-05
+[2019-05-21 05:03:50] Ep. 7 : Up. 182500 : Sen. 9,021,822 : Cost 22.09998894 : Time 724.84s : 9129.79 words/s : L.r. 5.9219e-05
+[2019-05-21 05:16:06] Ep. 7 : Up. 183000 : Sen. 9,743,882 : Cost 22.66335487 : Time 736.82s : 9209.63 words/s : L.r. 5.9138e-05
+[2019-05-21 05:27:53] Ep. 7 : Up. 183500 : Sen. 10,433,325 : Cost 22.66073608 : Time 706.48s : 9182.47 words/s : L.r. 5.9057e-05
+[2019-05-21 05:40:09] Ep. 7 : Up. 184000 : Sen. 11,144,864 : Cost 23.23781204 : Time 735.70s : 9250.45 words/s : L.r. 5.8977e-05
+[2019-05-21 05:52:27] Ep. 7 : Up. 184500 : Sen. 11,867,575 : Cost 22.54607964 : Time 737.87s : 9234.84 words/s : L.r. 5.8897e-05
+[2019-05-21 06:04:25] Ep. 7 : Up. 185000 : Sen. 12,548,723 : Cost 23.37306595 : Time 718.10s : 9168.18 words/s : L.r. 5.8817e-05
+[2019-05-21 06:04:25] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 06:04:30] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter185000.npz
+[2019-05-21 06:04:34] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 06:04:40] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 06:04:55] [valid] Ep. 7 : Up. 185000 : cross-entropy : 18.7684 : stalled 3 times (last best: 18.7681)
+[2019-05-21 06:05:01] [valid] Ep. 7 : Up. 185000 : perplexity : 4.28958 : stalled 3 times (last best: 4.28951)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 06:06:39] [valid] Ep. 7 : Up. 185000 : translation : 34.6 : stalled 34 times (last best: 34.8)
+[2019-05-21 06:19:08] Ep. 7 : Up. 185500 : Sen. 13,281,628 : Cost 22.72225189 : Time 883.86s : 7781.29 words/s : L.r. 5.8738e-05
+[2019-05-21 06:31:22] Ep. 7 : Up. 186000 : Sen. 13,996,144 : Cost 22.69865990 : Time 733.80s : 9175.35 words/s : L.r. 5.8659e-05
+[2019-05-21 06:43:32] Ep. 7 : Up. 186500 : Sen. 14,701,994 : Cost 23.10884666 : Time 730.21s : 9234.37 words/s : L.r. 5.8580e-05
+[2019-05-21 06:55:36] Ep. 7 : Up. 187000 : Sen. 15,413,564 : Cost 22.37954712 : Time 723.90s : 9147.97 words/s : L.r. 5.8502e-05
+[2019-05-21 07:07:47] Ep. 7 : Up. 187500 : Sen. 16,128,001 : Cost 22.53132248 : Time 730.56s : 9142.24 words/s : L.r. 5.8424e-05
+[2019-05-21 07:20:10] Ep. 7 : Up. 188000 : Sen. 16,841,159 : Cost 23.53677940 : Time 743.23s : 9334.48 words/s : L.r. 5.8346e-05
+[2019-05-21 07:32:13] Ep. 7 : Up. 188500 : Sen. 17,543,337 : Cost 22.59634018 : Time 722.74s : 9098.04 words/s : L.r. 5.8269e-05
+[2019-05-21 07:44:38] Ep. 7 : Up. 189000 : Sen. 18,271,211 : Cost 22.75330162 : Time 744.92s : 9273.09 words/s : L.r. 5.8191e-05
+[2019-05-21 07:56:37] Ep. 7 : Up. 189500 : Sen. 18,969,360 : Cost 22.72600746 : Time 719.34s : 9116.31 words/s : L.r. 5.8115e-05
+[2019-05-21 08:08:51] Ep. 7 : Up. 190000 : Sen. 19,667,192 : Cost 23.38963509 : Time 734.31s : 9179.53 words/s : L.r. 5.8038e-05
+[2019-05-21 08:08:51] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 08:08:57] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter190000.npz
+[2019-05-21 08:09:01] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 08:09:07] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 08:09:23] [valid] Ep. 7 : Up. 190000 : cross-entropy : 18.7637 : new best
+[2019-05-21 08:09:29] [valid] Ep. 7 : Up. 190000 : perplexity : 4.28803 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 08:11:07] [valid] Ep. 7 : Up. 190000 : translation : 34.6 : stalled 35 times (last best: 34.8)
+[2019-05-21 08:23:34] Ep. 7 : Up. 190500 : Sen. 20,403,253 : Cost 22.12814713 : Time 882.16s : 7680.80 words/s : L.r. 5.7962e-05
+[2019-05-21 08:35:44] Ep. 7 : Up. 191000 : Sen. 21,103,518 : Cost 23.15440559 : Time 730.51s : 9185.47 words/s : L.r. 5.7886e-05
+[2019-05-21 08:47:55] Ep. 7 : Up. 191500 : Sen. 21,817,761 : Cost 22.43910217 : Time 731.16s : 9093.98 words/s : L.r. 5.7810e-05
+[2019-05-21 09:00:27] Ep. 7 : Up. 192000 : Sen. 22,545,230 : Cost 23.04695129 : Time 751.38s : 9233.97 words/s : L.r. 5.7735e-05
+[2019-05-21 09:12:42] Ep. 7 : Up. 192500 : Sen. 23,264,904 : Cost 22.63432693 : Time 735.60s : 9189.88 words/s : L.r. 5.7660e-05
+[2019-05-21 09:24:44] Ep. 7 : Up. 193000 : Sen. 23,962,300 : Cost 22.69752121 : Time 722.19s : 9114.19 words/s : L.r. 5.7585e-05
+[2019-05-21 09:36:53] Ep. 7 : Up. 193500 : Sen. 24,658,775 : Cost 23.26748085 : Time 728.89s : 9187.74 words/s : L.r. 5.7511e-05
+[2019-05-21 09:49:12] Ep. 7 : Up. 194000 : Sen. 25,373,401 : Cost 22.61793518 : Time 739.04s : 9091.05 words/s : L.r. 5.7437e-05
+[2019-05-21 10:01:31] Ep. 7 : Up. 194500 : Sen. 26,088,244 : Cost 22.84640312 : Time 738.36s : 9170.57 words/s : L.r. 5.7363e-05
+[2019-05-21 10:13:47] Ep. 7 : Up. 195000 : Sen. 26,819,693 : Cost 22.13748550 : Time 736.26s : 9145.42 words/s : L.r. 5.7289e-05
+[2019-05-21 10:13:47] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 10:13:52] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter195000.npz
+[2019-05-21 10:13:57] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 10:14:03] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 10:14:19] [valid] Ep. 7 : Up. 195000 : cross-entropy : 18.7668 : stalled 1 times (last best: 18.7637)
+[2019-05-21 10:14:25] [valid] Ep. 7 : Up. 195000 : perplexity : 4.28907 : stalled 1 times (last best: 4.28803)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 10:16:04] [valid] Ep. 7 : Up. 195000 : translation : 34.6 : stalled 36 times (last best: 34.8)
+[2019-05-21 10:28:13] Ep. 7 : Up. 195500 : Sen. 27,499,453 : Cost 23.83488846 : Time 866.09s : 7710.76 words/s : L.r. 5.7216e-05
+[2019-05-21 10:40:30] Ep. 7 : Up. 196000 : Sen. 28,215,349 : Cost 22.31109619 : Time 737.00s : 9048.37 words/s : L.r. 5.7143e-05
+[2019-05-21 10:52:47] Ep. 7 : Up. 196500 : Sen. 28,928,614 : Cost 22.73624611 : Time 736.41s : 9105.08 words/s : L.r. 5.7070e-05
+[2019-05-21 11:04:50] Ep. 7 : Up. 197000 : Sen. 29,640,066 : Cost 21.97783279 : Time 723.35s : 8987.17 words/s : L.r. 5.6998e-05
+[2019-05-21 11:17:06] Ep. 7 : Up. 197500 : Sen. 30,326,729 : Cost 23.68583488 : Time 735.76s : 9154.83 words/s : L.r. 5.6925e-05
+[2019-05-21 11:29:26] Ep. 7 : Up. 198000 : Sen. 31,042,122 : Cost 22.74390221 : Time 740.78s : 9107.92 words/s : L.r. 5.6854e-05
+[2019-05-21 11:41:52] Ep. 7 : Up. 198500 : Sen. 31,758,918 : Cost 23.05031586 : Time 745.97s : 9172.15 words/s : L.r. 5.6782e-05
+[2019-05-21 11:54:00] Ep. 7 : Up. 199000 : Sen. 32,465,734 : Cost 22.14818192 : Time 727.95s : 8973.62 words/s : L.r. 5.6710e-05
+[2019-05-21 12:06:40] Ep. 7 : Up. 199500 : Sen. 33,185,757 : Cost 23.50051880 : Time 759.29s : 9172.70 words/s : L.r. 5.6639e-05
+[2019-05-21 12:19:03] Ep. 7 : Up. 200000 : Sen. 33,899,656 : Cost 22.68858337 : Time 743.74s : 9041.33 words/s : L.r. 5.6569e-05
+[2019-05-21 12:19:03] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 12:19:09] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter200000.npz
+[2019-05-21 12:19:13] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 12:19:19] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 12:19:35] [valid] Ep. 7 : Up. 200000 : cross-entropy : 18.7667 : stalled 2 times (last best: 18.7637)
+[2019-05-21 12:19:41] [valid] Ep. 7 : Up. 200000 : perplexity : 4.28904 : stalled 2 times (last best: 4.28803)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 12:21:18] [valid] Ep. 7 : Up. 200000 : translation : 34.6 : stalled 37 times (last best: 34.8)
+[2019-05-21 12:33:49] Ep. 7 : Up. 200500 : Sen. 34,614,562 : Cost 22.93065643 : Time 885.84s : 7697.76 words/s : L.r. 5.6498e-05
+[2019-05-21 12:46:10] Ep. 7 : Up. 201000 : Sen. 35,337,242 : Cost 22.33226204 : Time 740.86s : 9026.08 words/s : L.r. 5.6428e-05
+[2019-05-21 12:58:27] Ep. 7 : Up. 201500 : Sen. 36,033,434 : Cost 23.15297127 : Time 737.17s : 9035.35 words/s : L.r. 5.6358e-05
+[2019-05-21 13:11:00] Ep. 7 : Up. 202000 : Sen. 36,762,237 : Cost 22.44076920 : Time 752.34s : 9040.93 words/s : L.r. 5.6288e-05
+[2019-05-21 13:23:19] Ep. 7 : Up. 202500 : Sen. 37,459,522 : Cost 23.22147560 : Time 739.60s : 9086.03 words/s : L.r. 5.6218e-05
+[2019-05-21 13:35:35] Ep. 7 : Up. 203000 : Sen. 38,165,562 : Cost 22.75759506 : Time 735.96s : 9017.31 words/s : L.r. 5.6149e-05
+[2019-05-21 13:48:03] Ep. 7 : Up. 203500 : Sen. 38,888,461 : Cost 22.78030586 : Time 747.72s : 9125.37 words/s : L.r. 5.6080e-05
+[2019-05-21 14:00:24] Ep. 7 : Up. 204000 : Sen. 39,596,626 : Cost 22.99680901 : Time 740.79s : 9121.79 words/s : L.r. 5.6011e-05
+[2019-05-21 14:12:52] Ep. 7 : Up. 204500 : Sen. 40,307,611 : Cost 23.05700493 : Time 747.98s : 9103.03 words/s : L.r. 5.5943e-05
+[2019-05-21 14:25:00] Ep. 7 : Up. 205000 : Sen. 41,012,006 : Cost 22.45393944 : Time 728.43s : 8991.10 words/s : L.r. 5.5874e-05
+[2019-05-21 14:25:00] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 14:25:05] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter205000.npz
+[2019-05-21 14:25:10] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 14:25:16] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 14:25:32] [valid] Ep. 7 : Up. 205000 : cross-entropy : 18.7628 : new best
+[2019-05-21 14:25:38] [valid] Ep. 7 : Up. 205000 : perplexity : 4.28775 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 14:27:15] [valid] Ep. 7 : Up. 205000 : translation : 34.6 : stalled 38 times (last best: 34.8)
+[2019-05-21 14:39:03] Ep. 7 : Up. 205500 : Sen. 41,681,586 : Cost 22.58354568 : Time 843.17s : 7458.60 words/s : L.r. 5.5806e-05
+[2019-05-21 14:39:33] Seen 41709169 samples
+[2019-05-21 14:39:33] Starting epoch 8
+[2019-05-21 14:39:33] [data] Shuffling data
+[2019-05-21 14:39:47] [data] Done reading 41736982 sentences
+[2019-05-21 14:50:51] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-21 15:02:50] Ep. 8 : Up. 206000 : Sen. 671,937 : Cost 22.96895790 : Time 1426.37s : 4656.95 words/s : L.r. 5.5739e-05
+[2019-05-21 15:14:50] Ep. 8 : Up. 206500 : Sen. 1,365,846 : Cost 22.99262810 : Time 720.78s : 9168.73 words/s : L.r. 5.5671e-05
+[2019-05-21 15:27:18] Ep. 8 : Up. 207000 : Sen. 2,085,803 : Cost 22.71000290 : Time 747.23s : 9113.30 words/s : L.r. 5.5604e-05
+[2019-05-21 15:39:44] Ep. 8 : Up. 207500 : Sen. 2,818,067 : Cost 22.10364914 : Time 746.53s : 9023.07 words/s : L.r. 5.5537e-05
+[2019-05-21 15:52:05] Ep. 8 : Up. 208000 : Sen. 3,528,621 : Cost 22.78089142 : Time 740.98s : 9020.95 words/s : L.r. 5.5470e-05
+[2019-05-21 16:04:46] Ep. 8 : Up. 208500 : Sen. 4,245,823 : Cost 23.32302284 : Time 761.38s : 9155.79 words/s : L.r. 5.5403e-05
+[2019-05-21 16:17:01] Ep. 8 : Up. 209000 : Sen. 4,944,615 : Cost 22.97175407 : Time 734.72s : 9032.29 words/s : L.r. 5.5337e-05
+[2019-05-21 16:29:13] Ep. 8 : Up. 209500 : Sen. 5,645,617 : Cost 22.66853905 : Time 731.48s : 9023.22 words/s : L.r. 5.5271e-05
+[2019-05-21 16:41:36] Ep. 8 : Up. 210000 : Sen. 6,362,866 : Cost 22.32831573 : Time 742.86s : 8953.14 words/s : L.r. 5.5205e-05
+[2019-05-21 16:41:36] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 16:41:41] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter210000.npz
+[2019-05-21 16:41:46] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 16:41:51] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 16:42:07] [valid] Ep. 8 : Up. 210000 : cross-entropy : 18.7578 : new best
+[2019-05-21 16:42:13] [valid] Ep. 8 : Up. 210000 : perplexity : 4.28608 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 16:43:51] [valid] Ep. 8 : Up. 210000 : translation : 34.6 : stalled 39 times (last best: 34.8)
+[2019-05-21 16:56:33] Ep. 8 : Up. 210500 : Sen. 7,093,608 : Cost 22.65650940 : Time 897.08s : 7657.41 words/s : L.r. 5.5140e-05
+[2019-05-21 17:08:57] Ep. 8 : Up. 211000 : Sen. 7,795,865 : Cost 23.16928673 : Time 744.70s : 9059.72 words/s : L.r. 5.5074e-05
+[2019-05-21 17:21:16] Ep. 8 : Up. 211500 : Sen. 8,515,382 : Cost 22.41696548 : Time 738.88s : 9058.31 words/s : L.r. 5.5009e-05
+[2019-05-21 17:33:38] Ep. 8 : Up. 212000 : Sen. 9,226,307 : Cost 22.94022369 : Time 741.86s : 9138.55 words/s : L.r. 5.4944e-05
+[2019-05-21 17:46:00] Ep. 8 : Up. 212500 : Sen. 9,931,635 : Cost 23.15048981 : Time 742.41s : 9113.34 words/s : L.r. 5.4880e-05
+[2019-05-21 17:58:24] Ep. 8 : Up. 213000 : Sen. 10,642,547 : Cost 23.01709175 : Time 743.12s : 9108.44 words/s : L.r. 5.4815e-05
+[2019-05-21 18:10:44] Ep. 8 : Up. 213500 : Sen. 11,372,038 : Cost 21.98026276 : Time 740.24s : 9018.00 words/s : L.r. 5.4751e-05
+[2019-05-21 18:22:56] Ep. 8 : Up. 214000 : Sen. 12,063,508 : Cost 23.13909531 : Time 732.38s : 9031.77 words/s : L.r. 5.4687e-05
+[2019-05-21 18:35:08] Ep. 8 : Up. 214500 : Sen. 12,763,065 : Cost 22.99107933 : Time 731.41s : 9079.25 words/s : L.r. 5.4623e-05
+[2019-05-21 18:47:10] Ep. 8 : Up. 215000 : Sen. 13,462,664 : Cost 22.35255432 : Time 722.47s : 8988.92 words/s : L.r. 5.4560e-05
+[2019-05-21 18:47:10] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 18:47:15] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter215000.npz
+[2019-05-21 18:47:20] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 18:47:26] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 18:47:42] [valid] Ep. 8 : Up. 215000 : cross-entropy : 18.7568 : new best
+[2019-05-21 18:47:48] [valid] Ep. 8 : Up. 215000 : perplexity : 4.28575 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 18:49:25] [valid] Ep. 8 : Up. 215000 : translation : 34.6 : stalled 40 times (last best: 34.8)
+[2019-05-21 19:02:06] Ep. 8 : Up. 215500 : Sen. 14,186,130 : Cost 23.08117104 : Time 895.89s : 7753.41 words/s : L.r. 5.4496e-05
+[2019-05-21 19:14:33] Ep. 8 : Up. 216000 : Sen. 14,895,736 : Cost 23.02555275 : Time 746.92s : 9090.73 words/s : L.r. 5.4433e-05
+[2019-05-21 19:26:56] Ep. 8 : Up. 216500 : Sen. 15,617,322 : Cost 22.50307083 : Time 742.76s : 9088.09 words/s : L.r. 5.4370e-05
+[2019-05-21 19:39:14] Ep. 8 : Up. 217000 : Sen. 16,325,848 : Cost 22.70712662 : Time 738.84s : 9013.34 words/s : L.r. 5.4308e-05
+[2019-05-21 19:51:40] Ep. 8 : Up. 217500 : Sen. 17,029,538 : Cost 23.31937027 : Time 745.28s : 9123.65 words/s : L.r. 5.4245e-05
+[2019-05-21 20:04:03] Ep. 8 : Up. 218000 : Sen. 17,749,237 : Cost 22.55771446 : Time 743.61s : 9080.09 words/s : L.r. 5.4183e-05
+[2019-05-21 20:16:23] Ep. 8 : Up. 218500 : Sen. 18,466,061 : Cost 22.59816742 : Time 740.02s : 9072.03 words/s : L.r. 5.4121e-05
+[2019-05-21 20:28:35] Ep. 8 : Up. 219000 : Sen. 19,154,053 : Cost 23.34213829 : Time 731.67s : 9056.45 words/s : L.r. 5.4059e-05
+[2019-05-21 20:40:50] Ep. 8 : Up. 219500 : Sen. 19,862,927 : Cost 22.60952759 : Time 734.46s : 9078.21 words/s : L.r. 5.3997e-05
+[2019-05-21 20:53:31] Ep. 8 : Up. 220000 : Sen. 20,594,393 : Cost 23.08741379 : Time 761.19s : 9232.83 words/s : L.r. 5.3936e-05
+[2019-05-21 20:53:31] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 20:53:36] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter220000.npz
+[2019-05-21 20:53:41] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 20:53:47] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 20:54:03] [valid] Ep. 8 : Up. 220000 : cross-entropy : 18.7552 : new best
+[2019-05-21 20:54:09] [valid] Ep. 8 : Up. 220000 : perplexity : 4.28521 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 20:55:47] [valid] Ep. 8 : Up. 220000 : translation : 34.5 : stalled 41 times (last best: 34.8)
+[2019-05-21 21:08:10] Ep. 8 : Up. 220500 : Sen. 21,299,902 : Cost 22.84642601 : Time 879.01s : 7563.67 words/s : L.r. 5.3875e-05
+[2019-05-21 21:20:49] Ep. 8 : Up. 221000 : Sen. 22,011,799 : Cost 22.42750931 : Time 759.32s : 8755.35 words/s : L.r. 5.3814e-05
+[2019-05-21 21:33:03] Ep. 8 : Up. 221500 : Sen. 22,715,273 : Cost 23.04206276 : Time 733.53s : 9152.08 words/s : L.r. 5.3753e-05
+[2019-05-21 21:45:29] Ep. 8 : Up. 222000 : Sen. 23,444,560 : Cost 22.45614052 : Time 746.31s : 9131.85 words/s : L.r. 5.3692e-05
+[2019-05-21 21:57:48] Ep. 8 : Up. 222500 : Sen. 24,150,541 : Cost 22.77673531 : Time 739.37s : 9011.20 words/s : L.r. 5.3632e-05
+[2019-05-21 22:10:06] Ep. 8 : Up. 223000 : Sen. 24,850,667 : Cost 23.14144325 : Time 737.42s : 9080.33 words/s : L.r. 5.3572e-05
+[2019-05-21 22:22:39] Ep. 8 : Up. 223500 : Sen. 25,585,291 : Cost 22.46088791 : Time 753.05s : 9131.38 words/s : L.r. 5.3512e-05
+[2019-05-21 22:34:47] Ep. 8 : Up. 224000 : Sen. 26,287,393 : Cost 22.67882156 : Time 728.61s : 9055.04 words/s : L.r. 5.3452e-05
+[2019-05-21 22:47:16] Ep. 8 : Up. 224500 : Sen. 27,005,450 : Cost 23.06653976 : Time 748.44s : 9151.79 words/s : L.r. 5.3393e-05
+[2019-05-21 22:59:31] Ep. 8 : Up. 225000 : Sen. 27,703,743 : Cost 23.17170525 : Time 735.40s : 9104.14 words/s : L.r. 5.3333e-05
+[2019-05-21 22:59:31] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-21 22:59:36] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter225000.npz
+[2019-05-21 22:59:41] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-21 22:59:46] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-21 23:00:02] [valid] Ep. 8 : Up. 225000 : cross-entropy : 18.7542 : new best
+[2019-05-21 23:00:08] [valid] Ep. 8 : Up. 225000 : perplexity : 4.28486 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-21 23:01:46] [valid] Ep. 8 : Up. 225000 : translation : 34.6 : stalled 42 times (last best: 34.8)
+[2019-05-21 23:14:16] Ep. 8 : Up. 225500 : Sen. 28,443,939 : Cost 21.82401085 : Time 884.53s : 7600.08 words/s : L.r. 5.3274e-05
+[2019-05-21 23:26:46] Ep. 8 : Up. 226000 : Sen. 29,140,867 : Cost 23.95065308 : Time 750.29s : 9217.58 words/s : L.r. 5.3215e-05
+[2019-05-21 23:38:59] Ep. 8 : Up. 226500 : Sen. 29,865,190 : Cost 22.06402016 : Time 732.84s : 9048.07 words/s : L.r. 5.3156e-05
+[2019-05-21 23:51:06] Ep. 8 : Up. 227000 : Sen. 30,555,498 : Cost 23.05471802 : Time 727.58s : 9107.17 words/s : L.r. 5.3098e-05
+[2019-05-22 00:03:33] Ep. 8 : Up. 227500 : Sen. 31,269,047 : Cost 23.09039116 : Time 747.07s : 9084.18 words/s : L.r. 5.3039e-05
+[2019-05-22 00:15:56] Ep. 8 : Up. 228000 : Sen. 31,994,675 : Cost 22.39558792 : Time 742.60s : 9122.17 words/s : L.r. 5.2981e-05
+[2019-05-22 00:28:07] Ep. 8 : Up. 228500 : Sen. 32,707,509 : Cost 22.52246857 : Time 730.79s : 9092.82 words/s : L.r. 5.2923e-05
+[2019-05-22 00:40:31] Ep. 8 : Up. 229000 : Sen. 33,430,354 : Cost 22.46042252 : Time 743.92s : 9121.80 words/s : L.r. 5.2865e-05
+[2019-05-22 00:52:53] Ep. 8 : Up. 229500 : Sen. 34,140,327 : Cost 23.19278717 : Time 742.52s : 9167.96 words/s : L.r. 5.2808e-05
+[2019-05-22 01:04:59] Ep. 8 : Up. 230000 : Sen. 34,838,637 : Cost 22.77152824 : Time 726.13s : 9064.80 words/s : L.r. 5.2750e-05
+[2019-05-22 01:04:59] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-22 01:05:05] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter230000.npz
+[2019-05-22 01:05:10] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-22 01:05:15] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-22 01:05:31] [valid] Ep. 8 : Up. 230000 : cross-entropy : 18.7583 : stalled 1 times (last best: 18.7542)
+[2019-05-22 01:05:37] [valid] Ep. 8 : Up. 230000 : perplexity : 4.28624 : stalled 1 times (last best: 4.28486)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-22 01:07:14] [valid] Ep. 8 : Up. 230000 : translation : 34.5 : stalled 43 times (last best: 34.8)
+[2019-05-22 01:19:43] Ep. 8 : Up. 230500 : Sen. 35,542,403 : Cost 23.27690315 : Time 883.68s : 7689.94 words/s : L.r. 5.2693e-05
+[2019-05-22 01:31:50] Ep. 8 : Up. 231000 : Sen. 36,253,204 : Cost 22.40786552 : Time 726.54s : 9109.16 words/s : L.r. 5.2636e-05
+[2019-05-22 01:44:11] Ep. 8 : Up. 231500 : Sen. 36,959,940 : Cost 23.10203743 : Time 741.75s : 9081.69 words/s : L.r. 5.2579e-05
+[2019-05-22 01:56:25] Ep. 8 : Up. 232000 : Sen. 37,662,222 : Cost 22.80153656 : Time 734.05s : 9077.45 words/s : L.r. 5.2523e-05
+[2019-05-22 02:08:49] Ep. 8 : Up. 232500 : Sen. 38,374,078 : Cost 23.03758240 : Time 743.32s : 9162.59 words/s : L.r. 5.2466e-05
+[2019-05-22 02:21:08] Ep. 8 : Up. 233000 : Sen. 39,098,691 : Cost 22.19126892 : Time 739.40s : 9006.64 words/s : L.r. 5.2410e-05
+[2019-05-22 02:33:29] Ep. 8 : Up. 233500 : Sen. 39,811,671 : Cost 22.78301048 : Time 740.49s : 9087.72 words/s : L.r. 5.2354e-05
+[2019-05-22 02:45:49] Ep. 8 : Up. 234000 : Sen. 40,514,876 : Cost 23.38950157 : Time 740.04s : 9198.00 words/s : L.r. 5.2298e-05
+[2019-05-22 02:57:53] Ep. 8 : Up. 234500 : Sen. 41,191,093 : Cost 23.18389511 : Time 724.66s : 8970.48 words/s : L.r. 5.2242e-05
+[2019-05-22 03:06:42] Seen 41709169 samples
+[2019-05-22 03:06:42] Starting epoch 9
+[2019-05-22 03:06:42] [data] Shuffling data
+[2019-05-22 03:07:00] [data] Done reading 41736982 sentences
+[2019-05-22 03:17:03] [data] Done shuffling 41736982 sentences to temp files
+[2019-05-22 03:20:33] Ep. 9 : Up. 235000 : Sen. 180,173 : Cost 22.09622002 : Time 1359.24s : 4721.35 words/s : L.r. 5.2186e-05
+[2019-05-22 03:20:33] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-22 03:20:38] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter235000.npz
+[2019-05-22 03:20:42] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-22 03:20:48] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-22 03:21:04] [valid] Ep. 9 : Up. 235000 : cross-entropy : 18.7578 : stalled 2 times (last best: 18.7542)
+[2019-05-22 03:21:10] [valid] Ep. 9 : Up. 235000 : perplexity : 4.28609 : stalled 2 times (last best: 4.28486)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-22 03:22:48] [valid] Ep. 9 : Up. 235000 : translation : 34.6 : stalled 44 times (last best: 34.8)
+[2019-05-22 03:35:12] Ep. 9 : Up. 235500 : Sen. 893,932 : Cost 22.81756210 : Time 879.71s : 7708.93 words/s : L.r. 5.2131e-05
+[2019-05-22 03:47:35] Ep. 9 : Up. 236000 : Sen. 1,622,429 : Cost 22.18739891 : Time 742.26s : 9039.75 words/s : L.r. 5.2076e-05
+[2019-05-22 03:59:55] Ep. 9 : Up. 236500 : Sen. 2,313,745 : Cost 23.90489960 : Time 740.57s : 9228.06 words/s : L.r. 5.2020e-05
+[2019-05-22 04:12:20] Ep. 9 : Up. 237000 : Sen. 3,042,254 : Cost 22.23785782 : Time 744.35s : 9054.60 words/s : L.r. 5.1966e-05
+[2019-05-22 04:24:29] Ep. 9 : Up. 237500 : Sen. 3,743,709 : Cost 22.61950111 : Time 729.81s : 9012.59 words/s : L.r. 5.1911e-05
+[2019-05-22 04:36:55] Ep. 9 : Up. 238000 : Sen. 4,454,237 : Cost 23.15094757 : Time 745.33s : 9174.61 words/s : L.r. 5.1856e-05
+[2019-05-22 04:49:09] Ep. 9 : Up. 238500 : Sen. 5,154,831 : Cost 22.76469612 : Time 734.27s : 8999.58 words/s : L.r. 5.1802e-05
+[2019-05-22 05:01:40] Ep. 9 : Up. 239000 : Sen. 5,884,816 : Cost 22.68882942 : Time 751.49s : 9153.57 words/s : L.r. 5.1748e-05
+[2019-05-22 05:13:42] Ep. 9 : Up. 239500 : Sen. 6,589,014 : Cost 22.39078522 : Time 721.22s : 9073.86 words/s : L.r. 5.1694e-05
+[2019-05-22 05:26:05] Ep. 9 : Up. 240000 : Sen. 7,297,946 : Cost 23.35845184 : Time 743.30s : 9263.04 words/s : L.r. 5.1640e-05
+[2019-05-22 05:26:05] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-22 05:26:11] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter240000.npz
+[2019-05-22 05:26:15] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-22 05:26:21] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-22 05:26:36] [valid] Ep. 9 : Up. 240000 : cross-entropy : 18.7576 : stalled 3 times (last best: 18.7542)
+[2019-05-22 05:26:42] [valid] Ep. 9 : Up. 240000 : perplexity : 4.28601 : stalled 3 times (last best: 4.28486)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-22 05:28:19] [valid] Ep. 9 : Up. 240000 : translation : 34.5 : stalled 45 times (last best: 34.8)
+[2019-05-22 05:40:20] Ep. 9 : Up. 240500 : Sen. 8,000,552 : Cost 22.55861092 : Time 855.37s : 7651.33 words/s : L.r. 5.1586e-05
+[2019-05-22 05:52:38] Ep. 9 : Up. 241000 : Sen. 8,725,839 : Cost 22.47478867 : Time 738.01s : 9205.65 words/s : L.r. 5.1533e-05
+[2019-05-22 06:04:46] Ep. 9 : Up. 241500 : Sen. 9,424,428 : Cost 23.30194664 : Time 727.23s : 9226.72 words/s : L.r. 5.1479e-05
+[2019-05-22 06:16:58] Ep. 9 : Up. 242000 : Sen. 10,134,295 : Cost 22.65220261 : Time 732.89s : 9117.59 words/s : L.r. 5.1426e-05
+[2019-05-22 06:29:12] Ep. 9 : Up. 242500 : Sen. 10,841,528 : Cost 23.06552505 : Time 733.39s : 9206.52 words/s : L.r. 5.1373e-05
+[2019-05-22 06:41:18] Ep. 9 : Up. 243000 : Sen. 11,543,322 : Cost 22.85793495 : Time 726.32s : 9155.42 words/s : L.r. 5.1320e-05
+[2019-05-22 06:53:28] Ep. 9 : Up. 243500 : Sen. 12,270,293 : Cost 22.12270164 : Time 730.01s : 9193.54 words/s : L.r. 5.1267e-05
+[2019-05-22 07:05:49] Ep. 9 : Up. 244000 : Sen. 12,988,305 : Cost 23.02081490 : Time 740.61s : 9247.32 words/s : L.r. 5.1215e-05
+[2019-05-22 07:18:02] Ep. 9 : Up. 244500 : Sen. 13,704,127 : Cost 22.83339119 : Time 733.49s : 9240.46 words/s : L.r. 5.1162e-05
+[2019-05-22 07:29:50] Ep. 9 : Up. 245000 : Sen. 14,372,399 : Cost 23.43497276 : Time 707.25s : 9118.36 words/s : L.r. 5.1110e-05
+[2019-05-22 07:29:50] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-22 07:29:55] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter245000.npz
+[2019-05-22 07:29:59] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-22 07:30:05] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-22 07:30:21] [valid] Ep. 9 : Up. 245000 : cross-entropy : 18.7581 : stalled 4 times (last best: 18.7542)
+[2019-05-22 07:30:27] [valid] Ep. 9 : Up. 245000 : perplexity : 4.28616 : stalled 4 times (last best: 4.28486)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-22 07:32:03] [valid] Ep. 9 : Up. 245000 : translation : 34.5 : stalled 46 times (last best: 34.8)
+[2019-05-22 07:44:38] Ep. 9 : Up. 245500 : Sen. 15,118,735 : Cost 22.29104233 : Time 888.98s : 7817.37 words/s : L.r. 5.1058e-05
+[2019-05-22 07:56:46] Ep. 9 : Up. 246000 : Sen. 15,837,736 : Cost 22.26452065 : Time 727.29s : 9133.89 words/s : L.r. 5.1006e-05
+[2019-05-22 08:09:17] Ep. 9 : Up. 246500 : Sen. 16,573,888 : Cost 22.67196465 : Time 751.46s : 9248.09 words/s : L.r. 5.0954e-05
+[2019-05-22 08:21:25] Ep. 9 : Up. 247000 : Sen. 17,269,901 : Cost 23.25247002 : Time 727.65s : 9236.28 words/s : L.r. 5.0903e-05
+[2019-05-22 08:33:29] Ep. 9 : Up. 247500 : Sen. 17,973,846 : Cost 22.62494850 : Time 724.52s : 9112.08 words/s : L.r. 5.0851e-05
+[2019-05-22 08:45:42] Ep. 9 : Up. 248000 : Sen. 18,683,432 : Cost 22.82006836 : Time 732.24s : 9201.33 words/s : L.r. 5.0800e-05
+[2019-05-22 08:57:59] Ep. 9 : Up. 248500 : Sen. 19,400,001 : Cost 22.95658112 : Time 737.04s : 9215.07 words/s : L.r. 5.0749e-05
+[2019-05-22 09:10:05] Ep. 9 : Up. 249000 : Sen. 20,093,004 : Cost 23.17715073 : Time 726.67s : 9155.12 words/s : L.r. 5.0698e-05
+[2019-05-22 09:22:11] Ep. 9 : Up. 249500 : Sen. 20,802,879 : Cost 22.48791122 : Time 725.82s : 9155.85 words/s : L.r. 5.0647e-05
+[2019-05-22 09:34:29] Ep. 9 : Up. 250000 : Sen. 21,524,638 : Cost 22.48628807 : Time 737.89s : 9134.00 words/s : L.r. 5.0596e-05
+[2019-05-22 09:34:29] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.orig.npz
+[2019-05-22 09:34:36] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.iter250000.npz
+[2019-05-22 09:34:40] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz
+[2019-05-22 09:34:49] Saving Adam parameters to model/model.src1tgt0.doc.new.spider.newgate.nogate.npz.optimizer.npz
+[2019-05-22 09:35:04] [valid] Ep. 9 : Up. 250000 : cross-entropy : 18.7605 : stalled 5 times (last best: 18.7542)
+[2019-05-22 09:35:10] [valid] Ep. 9 : Up. 250000 : perplexity : 4.28697 : stalled 5 times (last best: 4.28486)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-05-22 09:36:49] [valid] Ep. 9 : Up. 250000 : translation : 34.5 : stalled 47 times (last best: 34.8)
+[2019-05-22 09:49:02] Ep. 9 : Up. 250500 : Sen. 22,227,011 : Cost 23.19910431 : Time 872.99s : 7732.01 words/s : L.r. 5.0546e-05
+[2019-05-22 10:01:14] Ep. 9 : Up. 251000 : Sen. 22,947,235 : Cost 22.21134758 : Time 731.54s : 9101.40 words/s : L.r. 5.0496e-05
+[2019-05-22 10:13:36] Ep. 9 : Up. 251500 : Sen. 23,643,332 : Cost 23.24046135 : Time 742.48s : 8979.04 words/s : L.r. 5.0445e-05
+[2019-05-22 10:26:07] Ep. 9 : Up. 252000 : Sen. 24,348,912 : Cost 23.28765869 : Time 751.13s : 9106.09 words/s : L.r. 5.0395e-05
+[2019-05-22 10:38:25] Ep. 9 : Up. 252500 : Sen. 25,062,427 : Cost 22.33797073 : Time 738.20s : 8976.92 words/s : L.r. 5.0345e-05
+[2019-05-22 10:50:48] Ep. 9 : Up. 253000 : Sen. 25,787,345 : Cost 22.71865845 : Time 742.10s : 9262.70 words/s : L.r. 5.0296e-05
+[2019-05-22 11:02:42] Ep. 9 : Up. 253500 : Sen. 26,488,138 : Cost 22.37174606 : Time 714.96s : 9032.58 words/s : L.r. 5.0246e-05
+[2019-05-22 11:14:57] Ep. 9 : Up. 254000 : Sen. 27,194,447 : Cost 22.98628235 : Time 734.74s : 9194.63 words/s : L.r. 5.0196e-05
+[2019-05-22 11:27:16] Ep. 9 : Up. 254500 : Sen. 27,914,512 : Cost 22.77730370 : Time 738.36s : 9211.30 words/s : L.r. 5.0147e-05

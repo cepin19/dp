@@ -1,0 +1,685 @@
+[2019-04-22 23:33:16] [marian] Marian v1.7.8 27b6420 2019-04-22 13:27:24 +0200
+[2019-04-22 23:33:16] [marian] Running on bakchus.lingea.cz as process 15088 with command line:
+[2019-04-22 23:33:16] [marian] /home/large/data/models/marian/marian-doc/marian-doc-new-bakchus/doc-marian/build/marian --model model/model.src1tgt0.doc.new.bakchus.npz --pretrained-model ../src0tgt0_fr/model/model.src0tgt0.newvocab.iter630000.npz --type transformer-context --train-sets corp/opensub.en-fr.docs.train.en.bpe.src_prev corp/opensub.en-fr.docs.train.en.bpe.src corp/opensub.en-fr.docs.train.fr.bpe --max-length 55 --dim-vocabs 30000 30000 --freeze --embedding-fix-src --embedding-fix-trg --vocabs corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml --mini-batch-fit -w 8200 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe.src_prev corp/opensub.en-fr.docs.dev.en.bpe.src corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 6 --normalize 0.6 --log model/train_trans.gate.log --valid-log model/valid_trans.gate.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus
+[2019-04-22 23:33:16] [config] after-batches: 0
+[2019-04-22 23:33:16] [config] after-epochs: 0
+[2019-04-22 23:33:16] [config] allow-unk: false
+[2019-04-22 23:33:16] [config] beam-size: 6
+[2019-04-22 23:33:16] [config] bert-class-symbol: "[CLS]"
+[2019-04-22 23:33:16] [config] bert-mask-symbol: "[MASK]"
+[2019-04-22 23:33:16] [config] bert-masking-fraction: 0.15
+[2019-04-22 23:33:16] [config] bert-sep-symbol: "[SEP]"
+[2019-04-22 23:33:16] [config] bert-train-type-embeddings: true
+[2019-04-22 23:33:16] [config] bert-type-vocab-size: 2
+[2019-04-22 23:33:16] [config] best-deep: false
+[2019-04-22 23:33:16] [config] clip-gemm: 0
+[2019-04-22 23:33:16] [config] clip-norm: 5
+[2019-04-22 23:33:16] [config] context-enc-depth: 1
+[2019-04-22 23:33:16] [config] cost-type: ce-mean
+[2019-04-22 23:33:16] [config] cpu-threads: 0
+[2019-04-22 23:33:16] [config] data-weighting: ""
+[2019-04-22 23:33:16] [config] data-weighting-type: sentence
+[2019-04-22 23:33:16] [config] dec-cell: gru
+[2019-04-22 23:33:16] [config] dec-cell-base-depth: 2
+[2019-04-22 23:33:16] [config] dec-cell-high-depth: 1
+[2019-04-22 23:33:16] [config] dec-depth: 6
+[2019-04-22 23:33:16] [config] devices:
+[2019-04-22 23:33:16] [config]   - 0
+[2019-04-22 23:33:16] [config] dim-emb: 512
+[2019-04-22 23:33:16] [config] dim-rnn: 1024
+[2019-04-22 23:33:16] [config] dim-vocabs:
+[2019-04-22 23:33:16] [config]   - 30000
+[2019-04-22 23:33:16] [config]   - 30000
+[2019-04-22 23:33:16] [config] disp-first: 0
+[2019-04-22 23:33:16] [config] disp-freq: 500
+[2019-04-22 23:33:16] [config] disp-label-counts: false
+[2019-04-22 23:33:16] [config] dropout-rnn: 0
+[2019-04-22 23:33:16] [config] dropout-src: 0
+[2019-04-22 23:33:16] [config] dropout-trg: 0
+[2019-04-22 23:33:16] [config] dump-config: ""
+[2019-04-22 23:33:16] [config] early-stopping: 10
+[2019-04-22 23:33:16] [config] embedding-fix-src: true
+[2019-04-22 23:33:16] [config] embedding-fix-trg: true
+[2019-04-22 23:33:16] [config] embedding-normalization: false
+[2019-04-22 23:33:16] [config] embedding-vectors:
+[2019-04-22 23:33:16] [config]   []
+[2019-04-22 23:33:16] [config] enc-cell: gru
+[2019-04-22 23:33:16] [config] enc-cell-depth: 1
+[2019-04-22 23:33:16] [config] enc-depth: 6
+[2019-04-22 23:33:16] [config] enc-type: bidirectional
+[2019-04-22 23:33:16] [config] exponential-smoothing: 0.0001
+[2019-04-22 23:33:16] [config] freeze: true
+[2019-04-22 23:33:16] [config] grad-dropping-momentum: 0
+[2019-04-22 23:33:16] [config] grad-dropping-rate: 0
+[2019-04-22 23:33:16] [config] grad-dropping-warmup: 100
+[2019-04-22 23:33:16] [config] guided-alignment: none
+[2019-04-22 23:33:16] [config] guided-alignment-cost: mse
+[2019-04-22 23:33:16] [config] guided-alignment-weight: 0.1
+[2019-04-22 23:33:16] [config] hier-att: false
+[2019-04-22 23:33:16] [config] ignore-model-config: false
+[2019-04-22 23:33:16] [config] input-types:
+[2019-04-22 23:33:16] [config]   []
+[2019-04-22 23:33:16] [config] interpolate-env-vars: false
+[2019-04-22 23:33:16] [config] keep-best: false
+[2019-04-22 23:33:16] [config] label-smoothing: 0.1
+[2019-04-22 23:33:16] [config] layer-normalization: false
+[2019-04-22 23:33:16] [config] learn-rate: 0.0002
+[2019-04-22 23:33:16] [config] log: model/train_trans.gate.log
+[2019-04-22 23:33:16] [config] log-level: info
+[2019-04-22 23:33:16] [config] log-time-zone: ""
+[2019-04-22 23:33:16] [config] lr-decay: 0
+[2019-04-22 23:33:16] [config] lr-decay-freq: 50000
+[2019-04-22 23:33:16] [config] lr-decay-inv-sqrt:
+[2019-04-22 23:33:16] [config]   - 16000
+[2019-04-22 23:33:16] [config] lr-decay-repeat-warmup: false
+[2019-04-22 23:33:16] [config] lr-decay-reset-optimizer: false
+[2019-04-22 23:33:16] [config] lr-decay-start:
+[2019-04-22 23:33:16] [config]   - 10
+[2019-04-22 23:33:16] [config]   - 1
+[2019-04-22 23:33:16] [config] lr-decay-strategy: epoch+stalled
+[2019-04-22 23:33:16] [config] lr-report: true
+[2019-04-22 23:33:16] [config] lr-warmup: 16000
+[2019-04-22 23:33:16] [config] lr-warmup-at-reload: false
+[2019-04-22 23:33:16] [config] lr-warmup-cycle: false
+[2019-04-22 23:33:16] [config] lr-warmup-start-rate: 0
+[2019-04-22 23:33:16] [config] max-length: 55
+[2019-04-22 23:33:16] [config] max-length-crop: false
+[2019-04-22 23:33:16] [config] max-length-factor: 3
+[2019-04-22 23:33:16] [config] maxi-batch: 1000
+[2019-04-22 23:33:16] [config] maxi-batch-sort: trg
+[2019-04-22 23:33:16] [config] mini-batch: 1000
+[2019-04-22 23:33:16] [config] mini-batch-fit: true
+[2019-04-22 23:33:16] [config] mini-batch-fit-step: 10
+[2019-04-22 23:33:16] [config] mini-batch-overstuff: 1
+[2019-04-22 23:33:16] [config] mini-batch-track-lr: false
+[2019-04-22 23:33:16] [config] mini-batch-understuff: 1
+[2019-04-22 23:33:16] [config] mini-batch-warmup: 0
+[2019-04-22 23:33:16] [config] mini-batch-words: 0
+[2019-04-22 23:33:16] [config] mini-batch-words-ref: 0
+[2019-04-22 23:33:16] [config] model: model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-22 23:33:16] [config] multi-loss-type: sum
+[2019-04-22 23:33:16] [config] multi-node: false
+[2019-04-22 23:33:16] [config] multi-node-overlap: true
+[2019-04-22 23:33:16] [config] n-best: false
+[2019-04-22 23:33:16] [config] no-nccl: false
+[2019-04-22 23:33:16] [config] no-reload: false
+[2019-04-22 23:33:16] [config] no-restore-corpus: true
+[2019-04-22 23:33:16] [config] no-shuffle: false
+[2019-04-22 23:33:16] [config] normalize: 0.6
+[2019-04-22 23:33:16] [config] num-devices: 0
+[2019-04-22 23:33:16] [config] optimizer: adam
+[2019-04-22 23:33:16] [config] optimizer-delay: 4
+[2019-04-22 23:33:16] [config] optimizer-params:
+[2019-04-22 23:33:16] [config]   - 0.9
+[2019-04-22 23:33:16] [config]   - 0.98
+[2019-04-22 23:33:16] [config]   - 1e-09
+[2019-04-22 23:33:16] [config] overwrite: false
+[2019-04-22 23:33:16] [config] pretrained-model: ../src0tgt0_fr/model/model.src0tgt0.newvocab.iter630000.npz
+[2019-04-22 23:33:16] [config] quiet: false
+[2019-04-22 23:33:16] [config] quiet-translation: true
+[2019-04-22 23:33:16] [config] relative-paths: false
+[2019-04-22 23:33:16] [config] right-left: false
+[2019-04-22 23:33:16] [config] save-freq: 5000
+[2019-04-22 23:33:16] [config] seed: 1111
+[2019-04-22 23:33:16] [config] shuffle-in-ram: false
+[2019-04-22 23:33:16] [config] skip: false
+[2019-04-22 23:33:16] [config] sqlite: ""
+[2019-04-22 23:33:16] [config] sqlite-drop: false
+[2019-04-22 23:33:16] [config] sync-sgd: true
+[2019-04-22 23:33:16] [config] tempdir: /tmp
+[2019-04-22 23:33:16] [config] tied-embeddings: false
+[2019-04-22 23:33:16] [config] tied-embeddings-all: true
+[2019-04-22 23:33:16] [config] tied-embeddings-src: false
+[2019-04-22 23:33:16] [config] train-sets:
+[2019-04-22 23:33:16] [config]   - corp/opensub.en-fr.docs.train.en.bpe.src_prev
+[2019-04-22 23:33:16] [config]   - corp/opensub.en-fr.docs.train.en.bpe.src
+[2019-04-22 23:33:16] [config]   - corp/opensub.en-fr.docs.train.fr.bpe
+[2019-04-22 23:33:16] [config] transformer-aan-activation: swish
+[2019-04-22 23:33:16] [config] transformer-aan-depth: 2
+[2019-04-22 23:33:16] [config] transformer-aan-nogate: false
+[2019-04-22 23:33:16] [config] transformer-decoder-autoreg: self-attention
+[2019-04-22 23:33:16] [config] transformer-dim-aan: 2048
+[2019-04-22 23:33:16] [config] transformer-dim-ffn: 2048
+[2019-04-22 23:33:16] [config] transformer-dropout: 0.1
+[2019-04-22 23:33:16] [config] transformer-dropout-attention: 0
+[2019-04-22 23:33:16] [config] transformer-dropout-ffn: 0
+[2019-04-22 23:33:16] [config] transformer-ffn-activation: swish
+[2019-04-22 23:33:16] [config] transformer-ffn-depth: 2
+[2019-04-22 23:33:16] [config] transformer-guided-alignment-layer: last
+[2019-04-22 23:33:16] [config] transformer-heads: 8
+[2019-04-22 23:33:16] [config] transformer-no-projection: false
+[2019-04-22 23:33:16] [config] transformer-postprocess: dan
+[2019-04-22 23:33:16] [config] transformer-postprocess-emb: d
+[2019-04-22 23:33:16] [config] transformer-preprocess: ""
+[2019-04-22 23:33:16] [config] transformer-tied-layers:
+[2019-04-22 23:33:16] [config]   []
+[2019-04-22 23:33:16] [config] transformer-train-position-embeddings: false
+[2019-04-22 23:33:16] [config] type: transformer-context
+[2019-04-22 23:33:16] [config] ulr: false
+[2019-04-22 23:33:16] [config] ulr-dim-emb: 0
+[2019-04-22 23:33:16] [config] ulr-dropout: 0
+[2019-04-22 23:33:16] [config] ulr-keys-vectors: ""
+[2019-04-22 23:33:16] [config] ulr-query-vectors: ""
+[2019-04-22 23:33:16] [config] ulr-softmax-temperature: 1
+[2019-04-22 23:33:16] [config] ulr-trainable-transformation: false
+[2019-04-22 23:33:16] [config] valid-freq: 5000
+[2019-04-22 23:33:16] [config] valid-log: model/valid_trans.gate.log
+[2019-04-22 23:33:16] [config] valid-max-length: 1000
+[2019-04-22 23:33:16] [config] valid-metrics:
+[2019-04-22 23:33:16] [config]   - cross-entropy
+[2019-04-22 23:33:16] [config]   - perplexity
+[2019-04-22 23:33:16] [config]   - translation
+[2019-04-22 23:33:16] [config] valid-mini-batch: 64
+[2019-04-22 23:33:16] [config] valid-script-path: ./val.sh
+[2019-04-22 23:33:16] [config] valid-sets:
+[2019-04-22 23:33:16] [config]   - corp/opensub.en-fr.docs.dev.en.bpe.src_prev
+[2019-04-22 23:33:16] [config]   - corp/opensub.en-fr.docs.dev.en.bpe.src
+[2019-04-22 23:33:16] [config]   - corp/opensub.en-fr.docs.dev.fr.bpe
+[2019-04-22 23:33:16] [config] valid-translation-output: data/valid.bpe.en.output
+[2019-04-22 23:33:16] [config] vocabs:
+[2019-04-22 23:33:16] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-04-22 23:33:16] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-04-22 23:33:16] [config]   - corp/vocab.encz.opensub.new.yml
+[2019-04-22 23:33:16] [config] word-penalty: 0
+[2019-04-22 23:33:16] [config] workspace: 8200
+[2019-04-22 23:33:16] [config] Model is being created with Marian v1.7.8 27b6420 2019-04-22 13:27:24 +0200
+[2019-04-22 23:33:16] Using synchronous training
+[2019-04-22 23:33:16] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-04-22 23:33:16] [data] Setting vocabulary size for input 0 to 30000
+[2019-04-22 23:33:16] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-04-22 23:33:17] [data] Setting vocabulary size for input 1 to 30000
+[2019-04-22 23:33:17] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encz.opensub.new.yml
+[2019-04-22 23:33:17] [data] Setting vocabulary size for input 2 to 30000
+[2019-04-22 23:33:17] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-04-22 23:33:17] [batching] Collecting statistics for batch fitting with step size 10
+[2019-04-22 23:33:20] [memory] Extending reserved space to 8320 MB (device gpu0)
+[2019-04-22 23:33:20] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-04-22 23:33:20] [comm] NCCLCommunicator constructed successfully.
+[2019-04-22 23:33:20] [training] Using 1 GPUs
+[2019-04-22 23:33:20] [memory] Reserving 311 MB, device gpu0
+[2019-04-22 23:33:20] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-04-22 23:33:21] [memory] Reserving 311 MB, device gpu0
+[2019-04-22 23:33:28] [batching] Done. Typical MB size is 16873 target words
+[2019-04-22 23:33:28] [memory] Extending reserved space to 8320 MB (device gpu0)
+[2019-04-22 23:33:28] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-04-22 23:33:28] [comm] NCCLCommunicator constructed successfully.
+[2019-04-22 23:33:28] [training] Using 1 GPUs
+[2019-04-22 23:33:28] [training] Initializing model weights with the pre-trained model ../src0tgt0_fr/model/model.src0tgt0.newvocab.iter630000.npz
+[2019-04-22 23:33:28] Loading model from ../src0tgt0_fr/model/model.src0tgt0.newvocab.iter630000.npz
+[2019-04-22 23:33:31] Training started
+[2019-04-22 23:33:31] [data] Shuffling data
+[2019-04-22 23:34:12] [data] Done reading 41736982 sentences
+[2019-04-22 23:37:38] [data] Done shuffling 41736982 sentences to temp files
+[2019-04-22 23:38:15] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-04-22 23:38:15] [memory] Reserving 311 MB, device gpu0
+[2019-04-22 23:38:16] [memory] Reserving 311 MB, device gpu0
+[2019-04-22 23:38:16] [memory] Reserving 311 MB, device gpu0
+[2019-04-22 23:38:17] [memory] Reserving 622 MB, device gpu0
+[2019-04-22 23:44:42] Ep. 1 : Up. 500 : Sen. 388,692 : Cost 77.64413452 : Time 685.13s : 5331.52 words/s : L.r. 6.2500e-06
+[2019-04-22 23:51:05] Ep. 1 : Up. 1000 : Sen. 778,905 : Cost 60.53550339 : Time 382.54s : 9387.61 words/s : L.r. 1.2500e-05
+[2019-04-22 23:57:32] Ep. 1 : Up. 1500 : Sen. 1,145,232 : Cost 41.66760254 : Time 387.60s : 9406.64 words/s : L.r. 1.8750e-05
+[2019-04-23 00:04:04] Ep. 1 : Up. 2000 : Sen. 1,545,899 : Cost 25.71679306 : Time 392.20s : 9355.02 words/s : L.r. 2.5000e-05
+[2019-04-23 00:10:29] Ep. 1 : Up. 2500 : Sen. 1,920,598 : Cost 25.94213676 : Time 384.76s : 9470.65 words/s : L.r. 3.1250e-05
+[2019-04-23 00:16:49] Ep. 1 : Up. 3000 : Sen. 2,304,068 : Cost 24.23042488 : Time 379.34s : 9320.21 words/s : L.r. 3.7500e-05
+[2019-04-23 00:23:24] Ep. 1 : Up. 3500 : Sen. 2,686,060 : Cost 25.56015587 : Time 395.00s : 9530.98 words/s : L.r. 4.3750e-05
+[2019-04-23 00:29:54] Ep. 1 : Up. 4000 : Sen. 3,086,234 : Cost 23.14609909 : Time 390.79s : 9296.70 words/s : L.r. 5.0000e-05
+[2019-04-23 00:36:07] Ep. 1 : Up. 4500 : Sen. 3,448,561 : Cost 24.50616455 : Time 372.33s : 9207.93 words/s : L.r. 5.6250e-05
+[2019-04-23 00:42:48] Ep. 1 : Up. 5000 : Sen. 3,837,081 : Cost 25.01006889 : Time 400.88s : 9548.97 words/s : L.r. 6.2500e-05
+[2019-04-23 00:42:48] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 00:42:53] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter5000.npz
+[2019-04-23 00:42:57] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 00:43:03] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 00:43:18] [valid] Ep. 1 : Up. 5000 : cross-entropy : 19.9428 : new best
+[2019-04-23 00:43:24] [valid] Ep. 1 : Up. 5000 : perplexity : 4.69882 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 00:44:41] [valid] Ep. 1 : Up. 5000 : translation : 33.1 : new best
+[2019-04-23 00:51:03] Ep. 1 : Up. 5500 : Sen. 4,225,016 : Cost 23.43426514 : Time 495.80s : 7187.91 words/s : L.r. 6.8750e-05
+[2019-04-23 00:57:36] Ep. 1 : Up. 6000 : Sen. 4,620,216 : Cost 23.76998901 : Time 392.48s : 9481.73 words/s : L.r. 7.5000e-05
+[2019-04-23 01:03:57] Ep. 1 : Up. 6500 : Sen. 4,994,158 : Cost 23.99714470 : Time 381.29s : 9355.68 words/s : L.r. 8.1250e-05
+[2019-04-23 01:10:22] Ep. 1 : Up. 7000 : Sen. 5,381,146 : Cost 23.63907433 : Time 385.20s : 9434.65 words/s : L.r. 8.7500e-05
+[2019-04-23 01:16:50] Ep. 1 : Up. 7500 : Sen. 5,763,276 : Cost 23.77218056 : Time 387.20s : 9351.98 words/s : L.r. 9.3750e-05
+[2019-04-23 01:23:16] Ep. 1 : Up. 8000 : Sen. 6,146,448 : Cost 23.39859390 : Time 386.52s : 9396.42 words/s : L.r. 1.0000e-04
+[2019-04-23 01:29:39] Ep. 1 : Up. 8500 : Sen. 6,534,221 : Cost 23.04586792 : Time 382.72s : 9381.86 words/s : L.r. 1.0625e-04
+[2019-04-23 01:36:11] Ep. 1 : Up. 9000 : Sen. 6,918,739 : Cost 23.97536850 : Time 392.02s : 9442.92 words/s : L.r. 1.1250e-04
+[2019-04-23 01:42:30] Ep. 1 : Up. 9500 : Sen. 7,285,427 : Cost 24.20614433 : Time 379.55s : 9330.77 words/s : L.r. 1.1875e-04
+[2019-04-23 01:48:51] Ep. 1 : Up. 10000 : Sen. 7,674,959 : Cost 22.46169281 : Time 380.29s : 9321.55 words/s : L.r. 1.2500e-04
+[2019-04-23 01:48:51] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 01:48:56] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter10000.npz
+[2019-04-23 01:49:00] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 01:49:05] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 01:49:21] [valid] Ep. 1 : Up. 10000 : cross-entropy : 19.3827 : new best
+[2019-04-23 01:49:27] [valid] Ep. 1 : Up. 10000 : perplexity : 4.49902 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 01:50:42] [valid] Ep. 1 : Up. 10000 : translation : 34.08 : new best
+[2019-04-23 01:57:16] Ep. 1 : Up. 10500 : Sen. 8,061,928 : Cost 23.79224205 : Time 504.96s : 7365.79 words/s : L.r. 1.3125e-04
+[2019-04-23 02:03:42] Ep. 1 : Up. 11000 : Sen. 8,449,523 : Cost 23.16360855 : Time 386.41s : 9373.48 words/s : L.r. 1.3750e-04
+[2019-04-23 02:10:14] Ep. 1 : Up. 11500 : Sen. 8,839,819 : Cost 23.35778236 : Time 391.80s : 9457.75 words/s : L.r. 1.4375e-04
+[2019-04-23 02:16:34] Ep. 1 : Up. 12000 : Sen. 9,213,986 : Cost 23.86946297 : Time 380.67s : 9410.76 words/s : L.r. 1.5000e-04
+[2019-04-23 02:23:00] Ep. 1 : Up. 12500 : Sen. 9,585,250 : Cost 24.30463409 : Time 385.75s : 9468.15 words/s : L.r. 1.5625e-04
+[2019-04-23 02:29:19] Ep. 1 : Up. 13000 : Sen. 9,974,446 : Cost 22.20928001 : Time 379.05s : 9338.24 words/s : L.r. 1.6250e-04
+[2019-04-23 02:35:50] Ep. 1 : Up. 13500 : Sen. 10,369,378 : Cost 23.13878059 : Time 390.89s : 9488.85 words/s : L.r. 1.6875e-04
+[2019-04-23 02:42:10] Ep. 1 : Up. 14000 : Sen. 10,750,663 : Cost 22.67130089 : Time 379.85s : 9307.19 words/s : L.r. 1.7500e-04
+[2019-04-23 02:48:33] Ep. 1 : Up. 14500 : Sen. 11,123,372 : Cost 23.84030724 : Time 382.70s : 9413.62 words/s : L.r. 1.8125e-04
+[2019-04-23 02:55:00] Ep. 1 : Up. 15000 : Sen. 11,511,002 : Cost 23.16634178 : Time 387.77s : 9475.45 words/s : L.r. 1.8750e-04
+[2019-04-23 02:55:00] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 02:55:05] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter15000.npz
+[2019-04-23 02:55:10] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 02:55:15] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 02:55:31] [valid] Ep. 1 : Up. 15000 : cross-entropy : 19.1612 : new best
+[2019-04-23 02:55:37] [valid] Ep. 1 : Up. 15000 : perplexity : 4.42234 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 02:56:51] [valid] Ep. 1 : Up. 15000 : translation : 34.31 : new best
+[2019-04-23 03:03:14] Ep. 1 : Up. 15500 : Sen. 11,895,275 : Cost 22.76730347 : Time 493.15s : 7228.82 words/s : L.r. 1.9375e-04
+[2019-04-23 03:09:46] Ep. 1 : Up. 16000 : Sen. 12,275,390 : Cost 24.07685089 : Time 391.88s : 9459.83 words/s : L.r. 2.0000e-04
+[2019-04-23 03:16:09] Ep. 1 : Up. 16500 : Sen. 12,653,823 : Cost 23.44617844 : Time 383.85s : 9409.53 words/s : L.r. 1.9695e-04
+[2019-04-23 03:22:30] Ep. 1 : Up. 17000 : Sen. 13,040,049 : Cost 22.37724495 : Time 380.49s : 9331.46 words/s : L.r. 1.9403e-04
+[2019-04-23 03:28:58] Ep. 1 : Up. 17500 : Sen. 13,430,859 : Cost 22.99751854 : Time 388.64s : 9412.32 words/s : L.r. 1.9124e-04
+[2019-04-23 03:35:22] Ep. 1 : Up. 18000 : Sen. 13,805,419 : Cost 23.50011444 : Time 383.34s : 9384.62 words/s : L.r. 1.8856e-04
+[2019-04-23 03:41:52] Ep. 1 : Up. 18500 : Sen. 14,191,888 : Cost 23.28779793 : Time 390.29s : 9434.25 words/s : L.r. 1.8600e-04
+[2019-04-23 03:48:14] Ep. 1 : Up. 19000 : Sen. 14,571,909 : Cost 22.96439171 : Time 382.05s : 9402.38 words/s : L.r. 1.8353e-04
+[2019-04-23 03:54:42] Ep. 1 : Up. 19500 : Sen. 14,962,147 : Cost 22.86462021 : Time 387.81s : 9372.55 words/s : L.r. 1.8116e-04
+[2019-04-23 04:01:05] Ep. 1 : Up. 20000 : Sen. 15,339,759 : Cost 23.25803757 : Time 382.58s : 9382.83 words/s : L.r. 1.7889e-04
+[2019-04-23 04:01:05] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 04:01:09] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter20000.npz
+[2019-04-23 04:01:14] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 04:01:19] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 04:01:33] [valid] Ep. 1 : Up. 20000 : cross-entropy : 19.0959 : new best
+[2019-04-23 04:01:39] [valid] Ep. 1 : Up. 20000 : perplexity : 4.4 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 04:02:53] [valid] Ep. 1 : Up. 20000 : translation : 34.46 : new best
+[2019-04-23 04:09:19] Ep. 1 : Up. 20500 : Sen. 15,736,684 : Cost 22.22220993 : Time 494.05s : 7337.47 words/s : L.r. 1.7669e-04
+[2019-04-23 04:15:47] Ep. 1 : Up. 21000 : Sen. 16,104,453 : Cost 24.43551254 : Time 388.03s : 9465.80 words/s : L.r. 1.7457e-04
+[2019-04-23 04:22:12] Ep. 1 : Up. 21500 : Sen. 16,504,152 : Cost 22.13129807 : Time 385.12s : 9410.68 words/s : L.r. 1.7253e-04
+[2019-04-23 04:28:37] Ep. 1 : Up. 22000 : Sen. 16,880,578 : Cost 23.49413872 : Time 385.29s : 9385.78 words/s : L.r. 1.7056e-04
+[2019-04-23 04:35:05] Ep. 1 : Up. 22500 : Sen. 17,259,676 : Cost 23.35614204 : Time 387.60s : 9389.35 words/s : L.r. 1.6865e-04
+[2019-04-23 04:41:36] Ep. 1 : Up. 23000 : Sen. 17,638,145 : Cost 24.07379532 : Time 391.67s : 9480.44 words/s : L.r. 1.6681e-04
+[2019-04-23 04:47:54] Ep. 1 : Up. 23500 : Sen. 18,026,836 : Cost 21.96220589 : Time 377.72s : 9282.63 words/s : L.r. 1.6503e-04
+[2019-04-23 04:54:21] Ep. 1 : Up. 24000 : Sen. 18,407,324 : Cost 23.61176872 : Time 387.07s : 9428.18 words/s : L.r. 1.6330e-04
+[2019-04-23 05:00:53] Ep. 1 : Up. 24500 : Sen. 18,794,912 : Cost 22.93839645 : Time 391.54s : 9412.94 words/s : L.r. 1.6162e-04
+[2019-04-23 05:07:26] Ep. 1 : Up. 25000 : Sen. 19,181,356 : Cost 23.37997246 : Time 393.12s : 9449.51 words/s : L.r. 1.6000e-04
+[2019-04-23 05:07:26] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 05:07:31] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter25000.npz
+[2019-04-23 05:07:35] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 05:07:41] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 05:07:56] [valid] Ep. 1 : Up. 25000 : cross-entropy : 19.0528 : new best
+[2019-04-23 05:08:02] [valid] Ep. 1 : Up. 25000 : perplexity : 4.38531 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 05:09:16] [valid] Ep. 1 : Up. 25000 : translation : 34.44 : stalled 1 times (last best: 34.46)
+[2019-04-23 05:15:37] Ep. 1 : Up. 25500 : Sen. 19,563,686 : Cost 22.64382553 : Time 490.99s : 7224.35 words/s : L.r. 1.5842e-04
+[2019-04-23 05:21:57] Ep. 1 : Up. 26000 : Sen. 19,946,847 : Cost 22.64630890 : Time 380.32s : 9313.26 words/s : L.r. 1.5689e-04
+[2019-04-23 05:28:33] Ep. 1 : Up. 26500 : Sen. 20,321,345 : Cost 24.66357803 : Time 396.33s : 9548.72 words/s : L.r. 1.5541e-04
+[2019-04-23 05:34:50] Ep. 1 : Up. 27000 : Sen. 20,710,495 : Cost 21.74891663 : Time 376.27s : 9251.51 words/s : L.r. 1.5396e-04
+[2019-04-23 05:41:22] Ep. 1 : Up. 27500 : Sen. 21,106,813 : Cost 22.79582214 : Time 392.38s : 9448.88 words/s : L.r. 1.5255e-04
+[2019-04-23 05:47:46] Ep. 1 : Up. 28000 : Sen. 21,495,530 : Cost 22.61481667 : Time 383.59s : 9406.85 words/s : L.r. 1.5119e-04
+[2019-04-23 05:54:12] Ep. 1 : Up. 28500 : Sen. 21,872,686 : Cost 23.34426117 : Time 386.06s : 9397.03 words/s : L.r. 1.4985e-04
+[2019-04-23 06:00:39] Ep. 1 : Up. 29000 : Sen. 22,257,421 : Cost 22.83729362 : Time 387.03s : 9353.65 words/s : L.r. 1.4856e-04
+[2019-04-23 06:07:07] Ep. 1 : Up. 29500 : Sen. 22,644,358 : Cost 23.13690376 : Time 388.68s : 9442.96 words/s : L.r. 1.4729e-04
+[2019-04-23 06:13:32] Ep. 1 : Up. 30000 : Sen. 23,019,355 : Cost 23.40042114 : Time 384.58s : 9346.36 words/s : L.r. 1.4606e-04
+[2019-04-23 06:13:32] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 06:13:37] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter30000.npz
+[2019-04-23 06:13:42] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 06:13:47] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 06:14:02] [valid] Ep. 1 : Up. 30000 : cross-entropy : 19.0255 : new best
+[2019-04-23 06:14:08] [valid] Ep. 1 : Up. 30000 : perplexity : 4.37602 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 06:15:23] [valid] Ep. 1 : Up. 30000 : translation : 34.49 : new best
+[2019-04-23 06:21:51] Ep. 1 : Up. 30500 : Sen. 23,405,386 : Cost 23.14795113 : Time 499.44s : 7345.61 words/s : L.r. 1.4486e-04
+[2019-04-23 06:28:14] Ep. 1 : Up. 31000 : Sen. 23,783,748 : Cost 23.20857811 : Time 382.83s : 9432.30 words/s : L.r. 1.4368e-04
+[2019-04-23 06:34:39] Ep. 1 : Up. 31500 : Sen. 24,167,827 : Cost 22.77932358 : Time 384.35s : 9305.56 words/s : L.r. 1.4254e-04
+[2019-04-23 06:41:00] Ep. 1 : Up. 32000 : Sen. 24,547,555 : Cost 22.77936745 : Time 380.92s : 9353.97 words/s : L.r. 1.4142e-04
+[2019-04-23 06:47:29] Ep. 1 : Up. 32500 : Sen. 24,936,029 : Cost 23.10822105 : Time 389.70s : 9471.14 words/s : L.r. 1.4033e-04
+[2019-04-23 06:53:56] Ep. 1 : Up. 33000 : Sen. 25,323,143 : Cost 22.50906372 : Time 386.37s : 9324.52 words/s : L.r. 1.3926e-04
+[2019-04-23 07:00:19] Ep. 1 : Up. 33500 : Sen. 25,712,564 : Cost 22.53750229 : Time 383.68s : 9402.68 words/s : L.r. 1.3822e-04
+[2019-04-23 07:06:47] Ep. 1 : Up. 34000 : Sen. 26,086,675 : Cost 23.73961830 : Time 387.74s : 9406.01 words/s : L.r. 1.3720e-04
+[2019-04-23 07:13:13] Ep. 1 : Up. 34500 : Sen. 26,475,745 : Cost 22.77734566 : Time 385.71s : 9389.84 words/s : L.r. 1.3620e-04
+[2019-04-23 07:19:42] Ep. 1 : Up. 35000 : Sen. 26,855,018 : Cost 23.39466095 : Time 388.91s : 9424.08 words/s : L.r. 1.3522e-04
+[2019-04-23 07:19:42] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 07:19:47] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter35000.npz
+[2019-04-23 07:19:51] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 07:19:56] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 07:20:12] [valid] Ep. 1 : Up. 35000 : cross-entropy : 19.0051 : new best
+[2019-04-23 07:20:18] [valid] Ep. 1 : Up. 35000 : perplexity : 4.36909 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 07:21:32] [valid] Ep. 1 : Up. 35000 : translation : 34.44 : stalled 1 times (last best: 34.49)
+[2019-04-23 07:28:01] Ep. 1 : Up. 35500 : Sen. 27,240,211 : Cost 23.16820908 : Time 499.49s : 7328.18 words/s : L.r. 1.3427e-04
+[2019-04-23 07:34:32] Ep. 1 : Up. 36000 : Sen. 27,637,143 : Cost 22.35123825 : Time 391.13s : 9403.73 words/s : L.r. 1.3333e-04
+[2019-04-23 07:40:58] Ep. 1 : Up. 36500 : Sen. 28,015,901 : Cost 23.51716423 : Time 385.38s : 9449.81 words/s : L.r. 1.3242e-04
+[2019-04-23 07:47:19] Ep. 1 : Up. 37000 : Sen. 28,395,736 : Cost 23.20775604 : Time 380.83s : 9439.89 words/s : L.r. 1.3152e-04
+[2019-04-23 07:53:50] Ep. 1 : Up. 37500 : Sen. 28,776,554 : Cost 23.50610733 : Time 391.05s : 9432.25 words/s : L.r. 1.3064e-04
+[2019-04-23 08:00:14] Ep. 1 : Up. 38000 : Sen. 29,159,327 : Cost 22.57179260 : Time 384.05s : 9301.98 words/s : L.r. 1.2978e-04
+[2019-04-23 08:06:43] Ep. 1 : Up. 38500 : Sen. 29,541,775 : Cost 23.20587921 : Time 389.79s : 9425.21 words/s : L.r. 1.2893e-04
+[2019-04-23 08:13:13] Ep. 1 : Up. 39000 : Sen. 29,937,926 : Cost 22.63945389 : Time 389.48s : 9436.25 words/s : L.r. 1.2810e-04
+[2019-04-23 08:19:37] Ep. 1 : Up. 39500 : Sen. 30,313,630 : Cost 23.56218529 : Time 383.99s : 9420.11 words/s : L.r. 1.2729e-04
+[2019-04-23 08:25:57] Ep. 1 : Up. 40000 : Sen. 30,696,366 : Cost 22.47104454 : Time 380.25s : 9351.96 words/s : L.r. 1.2649e-04
+[2019-04-23 08:25:57] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 08:26:02] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter40000.npz
+[2019-04-23 08:26:07] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 08:26:12] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 08:26:27] [valid] Ep. 1 : Up. 40000 : cross-entropy : 18.9753 : new best
+[2019-04-23 08:26:33] [valid] Ep. 1 : Up. 40000 : perplexity : 4.35901 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 08:27:49] [valid] Ep. 1 : Up. 40000 : translation : 34.37 : stalled 2 times (last best: 34.49)
+[2019-04-23 08:34:17] Ep. 1 : Up. 40500 : Sen. 31,085,520 : Cost 22.58307266 : Time 499.93s : 7282.45 words/s : L.r. 1.2571e-04
+[2019-04-23 08:40:48] Ep. 1 : Up. 41000 : Sen. 31,462,069 : Cost 23.76301956 : Time 390.79s : 9405.26 words/s : L.r. 1.2494e-04
+[2019-04-23 08:47:17] Ep. 1 : Up. 41500 : Sen. 31,857,098 : Cost 22.68081093 : Time 389.55s : 9438.63 words/s : L.r. 1.2418e-04
+[2019-04-23 08:53:33] Ep. 1 : Up. 42000 : Sen. 32,237,201 : Cost 22.32231331 : Time 375.64s : 9319.09 words/s : L.r. 1.2344e-04
+[2019-04-23 09:00:05] Ep. 1 : Up. 42500 : Sen. 32,617,632 : Cost 23.71798897 : Time 391.61s : 9439.62 words/s : L.r. 1.2271e-04
+[2019-04-23 09:06:33] Ep. 1 : Up. 43000 : Sen. 33,011,881 : Cost 22.37856102 : Time 388.36s : 9379.15 words/s : L.r. 1.2200e-04
+[2019-04-23 09:13:01] Ep. 1 : Up. 43500 : Sen. 33,390,806 : Cost 23.77445602 : Time 387.87s : 9536.74 words/s : L.r. 1.2130e-04
+[2019-04-23 09:19:30] Ep. 1 : Up. 44000 : Sen. 33,785,342 : Cost 22.29853058 : Time 389.01s : 9396.57 words/s : L.r. 1.2060e-04
+[2019-04-23 09:25:50] Ep. 1 : Up. 44500 : Sen. 34,158,821 : Cost 23.08941269 : Time 380.13s : 9294.18 words/s : L.r. 1.1993e-04
+[2019-04-23 09:32:25] Ep. 1 : Up. 45000 : Sen. 34,549,202 : Cost 23.26322937 : Time 394.56s : 9476.71 words/s : L.r. 1.1926e-04
+[2019-04-23 09:32:25] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 09:32:29] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter45000.npz
+[2019-04-23 09:32:34] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 09:32:39] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 09:32:55] [valid] Ep. 1 : Up. 45000 : cross-entropy : 18.9718 : new best
+[2019-04-23 09:33:01] [valid] Ep. 1 : Up. 45000 : perplexity : 4.35783 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 09:34:15] [valid] Ep. 1 : Up. 45000 : translation : 34.48 : stalled 3 times (last best: 34.49)
+[2019-04-23 09:40:38] Ep. 1 : Up. 45500 : Sen. 34,937,733 : Cost 22.34198570 : Time 493.86s : 7219.48 words/s : L.r. 1.1860e-04
+[2019-04-23 09:47:04] Ep. 1 : Up. 46000 : Sen. 35,325,521 : Cost 22.63425827 : Time 385.29s : 9391.00 words/s : L.r. 1.1795e-04
+[2019-04-23 09:53:36] Ep. 1 : Up. 46500 : Sen. 35,715,036 : Cost 23.07569122 : Time 392.00s : 9485.27 words/s : L.r. 1.1732e-04
+[2019-04-23 09:59:55] Ep. 1 : Up. 47000 : Sen. 36,083,393 : Cost 23.34678841 : Time 379.36s : 9307.85 words/s : L.r. 1.1669e-04
+[2019-04-23 10:06:21] Ep. 1 : Up. 47500 : Sen. 36,461,346 : Cost 23.09508133 : Time 385.72s : 9346.86 words/s : L.r. 1.1608e-04
+[2019-04-23 10:12:44] Ep. 1 : Up. 48000 : Sen. 36,854,412 : Cost 22.08862877 : Time 383.12s : 9338.10 words/s : L.r. 1.1547e-04
+[2019-04-23 10:19:09] Ep. 1 : Up. 48500 : Sen. 37,241,334 : Cost 22.83449173 : Time 385.19s : 9446.07 words/s : L.r. 1.1487e-04
+[2019-04-23 10:25:41] Ep. 1 : Up. 49000 : Sen. 37,636,465 : Cost 22.77451515 : Time 392.03s : 9446.02 words/s : L.r. 1.1429e-04
+[2019-04-23 10:32:05] Ep. 1 : Up. 49500 : Sen. 38,005,604 : Cost 23.86645317 : Time 383.95s : 9442.52 words/s : L.r. 1.1371e-04
+[2019-04-23 10:38:30] Ep. 1 : Up. 50000 : Sen. 38,394,656 : Cost 22.39867592 : Time 384.70s : 9381.40 words/s : L.r. 1.1314e-04
+[2019-04-23 10:38:30] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 10:38:36] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter50000.npz
+[2019-04-23 10:38:41] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 10:38:48] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 10:39:03] [valid] Ep. 1 : Up. 50000 : cross-entropy : 18.9656 : new best
+[2019-04-23 10:39:09] [valid] Ep. 1 : Up. 50000 : perplexity : 4.35574 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 10:40:25] [valid] Ep. 1 : Up. 50000 : translation : 34.36 : stalled 4 times (last best: 34.49)
+[2019-04-23 10:46:52] Ep. 1 : Up. 50500 : Sen. 38,772,106 : Cost 23.31950760 : Time 502.00s : 7252.94 words/s : L.r. 1.1258e-04
+[2019-04-23 10:53:19] Ep. 1 : Up. 51000 : Sen. 39,162,704 : Cost 22.73094749 : Time 387.64s : 9395.06 words/s : L.r. 1.1202e-04
+[2019-04-23 10:59:37] Ep. 1 : Up. 51500 : Sen. 39,520,691 : Cost 24.18085861 : Time 377.96s : 9336.56 words/s : L.r. 1.1148e-04
+[2019-04-23 11:06:10] Ep. 1 : Up. 52000 : Sen. 39,923,237 : Cost 22.20170593 : Time 392.25s : 9440.57 words/s : L.r. 1.1094e-04
+[2019-04-23 11:12:31] Ep. 1 : Up. 52500 : Sen. 40,305,631 : Cost 22.42956734 : Time 381.10s : 9279.44 words/s : L.r. 1.1041e-04
+[2019-04-23 11:19:00] Ep. 1 : Up. 53000 : Sen. 40,690,325 : Cost 23.20542336 : Time 388.79s : 9458.68 words/s : L.r. 1.0989e-04
+[2019-04-23 11:25:19] Ep. 1 : Up. 53500 : Sen. 41,067,106 : Cost 22.94399071 : Time 379.95s : 9350.03 words/s : L.r. 1.0937e-04
+[2019-04-23 11:31:25] Ep. 1 : Up. 54000 : Sen. 41,413,947 : Cost 23.69000816 : Time 365.40s : 9236.16 words/s : L.r. 1.0887e-04
+[2019-04-23 11:36:22] Seen 41709169 samples
+[2019-04-23 11:36:22] Starting epoch 2
+[2019-04-23 11:36:22] [data] Shuffling data
+[2019-04-23 11:37:03] [data] Done reading 41736982 sentences
+[2019-04-23 11:40:32] [data] Done shuffling 41736982 sentences to temp files
+[2019-04-23 11:42:34] Ep. 2 : Up. 54500 : Sen. 75,825 : Cost 23.49370766 : Time 669.29s : 5353.59 words/s : L.r. 1.0837e-04
+[2019-04-23 11:48:58] Ep. 2 : Up. 55000 : Sen. 457,838 : Cost 22.61011887 : Time 383.57s : 9377.85 words/s : L.r. 1.0787e-04
+[2019-04-23 11:48:58] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 11:49:03] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter55000.npz
+[2019-04-23 11:49:07] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 11:49:12] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 11:49:28] [valid] Ep. 2 : Up. 55000 : cross-entropy : 18.9603 : new best
+[2019-04-23 11:49:34] [valid] Ep. 2 : Up. 55000 : perplexity : 4.35394 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 11:50:49] [valid] Ep. 2 : Up. 55000 : translation : 34.35 : stalled 5 times (last best: 34.49)
+[2019-04-23 11:57:15] Ep. 2 : Up. 55500 : Sen. 836,042 : Cost 23.36068153 : Time 497.46s : 7273.78 words/s : L.r. 1.0738e-04
+[2019-04-23 12:03:46] Ep. 2 : Up. 56000 : Sen. 1,238,794 : Cost 21.76584053 : Time 390.65s : 9325.87 words/s : L.r. 1.0690e-04
+[2019-04-23 12:10:18] Ep. 2 : Up. 56500 : Sen. 1,627,809 : Cost 23.22098541 : Time 392.40s : 9495.01 words/s : L.r. 1.0643e-04
+[2019-04-23 12:16:42] Ep. 2 : Up. 57000 : Sen. 2,008,676 : Cost 22.86632919 : Time 383.90s : 9343.89 words/s : L.r. 1.0596e-04
+[2019-04-23 12:23:20] Ep. 2 : Up. 57500 : Sen. 2,403,360 : Cost 23.02939224 : Time 398.01s : 9494.75 words/s : L.r. 1.0550e-04
+[2019-04-23 12:29:41] Ep. 2 : Up. 58000 : Sen. 2,791,215 : Cost 22.38328552 : Time 380.98s : 9355.77 words/s : L.r. 1.0505e-04
+[2019-04-23 12:36:06] Ep. 2 : Up. 58500 : Sen. 3,162,831 : Cost 23.39446831 : Time 384.92s : 9270.24 words/s : L.r. 1.0460e-04
+[2019-04-23 12:42:37] Ep. 2 : Up. 59000 : Sen. 3,555,706 : Cost 22.59634972 : Time 391.05s : 9415.78 words/s : L.r. 1.0415e-04
+[2019-04-23 12:49:01] Ep. 2 : Up. 59500 : Sen. 3,924,594 : Cost 23.98566246 : Time 383.41s : 9403.16 words/s : L.r. 1.0371e-04
+[2019-04-23 12:55:22] Ep. 2 : Up. 60000 : Sen. 4,308,300 : Cost 22.22503090 : Time 381.62s : 9341.05 words/s : L.r. 1.0328e-04
+[2019-04-23 12:55:22] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 12:55:28] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter60000.npz
+[2019-04-23 12:55:32] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 12:55:38] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 12:55:54] [valid] Ep. 2 : Up. 60000 : cross-entropy : 18.9652 : stalled 1 times (last best: 18.9603)
+[2019-04-23 12:56:00] [valid] Ep. 2 : Up. 60000 : perplexity : 4.35559 : stalled 1 times (last best: 4.35394)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 12:57:16] [valid] Ep. 2 : Up. 60000 : translation : 34.39 : stalled 6 times (last best: 34.49)
+[2019-04-23 13:03:47] Ep. 2 : Up. 60500 : Sen. 4,698,227 : Cost 23.03777695 : Time 504.72s : 7320.00 words/s : L.r. 1.0285e-04
+[2019-04-23 13:10:13] Ep. 2 : Up. 61000 : Sen. 5,087,016 : Cost 22.52285767 : Time 386.06s : 9358.65 words/s : L.r. 1.0243e-04
+[2019-04-23 13:16:37] Ep. 2 : Up. 61500 : Sen. 5,467,427 : Cost 23.17081451 : Time 383.75s : 9446.24 words/s : L.r. 1.0201e-04
+[2019-04-23 13:23:02] Ep. 2 : Up. 62000 : Sen. 5,851,290 : Cost 22.68984032 : Time 384.96s : 9350.79 words/s : L.r. 1.0160e-04
+[2019-04-23 13:29:29] Ep. 2 : Up. 62500 : Sen. 6,234,524 : Cost 22.94199562 : Time 386.97s : 9408.28 words/s : L.r. 1.0119e-04
+[2019-04-23 13:35:54] Ep. 2 : Up. 63000 : Sen. 6,619,076 : Cost 22.92625618 : Time 385.77s : 9413.99 words/s : L.r. 1.0079e-04
+[2019-04-23 13:42:20] Ep. 2 : Up. 63500 : Sen. 7,000,000 : Cost 23.17214966 : Time 385.50s : 9435.38 words/s : L.r. 1.0039e-04
+[2019-04-23 13:48:37] Ep. 2 : Up. 64000 : Sen. 7,378,550 : Cost 22.60063934 : Time 377.56s : 9334.98 words/s : L.r. 1.0000e-04
+[2019-04-23 13:55:15] Ep. 2 : Up. 64500 : Sen. 7,772,664 : Cost 23.05289078 : Time 397.91s : 9440.97 words/s : L.r. 9.9612e-05
+[2019-04-23 14:01:41] Ep. 2 : Up. 65000 : Sen. 8,148,008 : Cost 23.43742561 : Time 385.23s : 9412.84 words/s : L.r. 9.9228e-05
+[2019-04-23 14:01:41] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 14:01:46] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter65000.npz
+[2019-04-23 14:01:50] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 14:01:56] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 14:02:11] [valid] Ep. 2 : Up. 65000 : cross-entropy : 18.9705 : stalled 2 times (last best: 18.9603)
+[2019-04-23 14:02:17] [valid] Ep. 2 : Up. 65000 : perplexity : 4.35739 : stalled 2 times (last best: 4.35394)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 14:03:31] [valid] Ep. 2 : Up. 65000 : translation : 34.32 : stalled 7 times (last best: 34.49)
+[2019-04-23 14:10:07] Ep. 2 : Up. 65500 : Sen. 8,541,683 : Cost 23.06011391 : Time 506.84s : 7420.47 words/s : L.r. 9.8848e-05
+[2019-04-23 14:16:21] Ep. 2 : Up. 66000 : Sen. 8,917,109 : Cost 22.27968979 : Time 373.47s : 9246.17 words/s : L.r. 9.8473e-05
+[2019-04-23 14:22:52] Ep. 2 : Up. 66500 : Sen. 9,296,218 : Cost 23.31256485 : Time 391.53s : 9307.84 words/s : L.r. 9.8102e-05
+[2019-04-23 14:29:15] Ep. 2 : Up. 67000 : Sen. 9,675,656 : Cost 23.12948608 : Time 383.04s : 9464.88 words/s : L.r. 9.7736e-05
+[2019-04-23 14:35:42] Ep. 2 : Up. 67500 : Sen. 10,066,313 : Cost 22.42741394 : Time 386.16s : 9375.26 words/s : L.r. 9.7373e-05
+[2019-04-23 14:41:58] Ep. 2 : Up. 68000 : Sen. 10,440,385 : Cost 22.67676353 : Time 375.92s : 9318.52 words/s : L.r. 9.7014e-05
+[2019-04-23 14:48:21] Ep. 2 : Up. 68500 : Sen. 10,822,352 : Cost 22.88850403 : Time 383.13s : 9396.70 words/s : L.r. 9.6660e-05
+[2019-04-23 14:54:51] Ep. 2 : Up. 69000 : Sen. 11,196,808 : Cost 23.71471214 : Time 390.75s : 9366.14 words/s : L.r. 9.6309e-05
+[2019-04-23 15:01:11] Ep. 2 : Up. 69500 : Sen. 11,581,336 : Cost 22.26911163 : Time 379.24s : 9367.60 words/s : L.r. 9.5962e-05
+[2019-04-23 15:07:47] Ep. 2 : Up. 70000 : Sen. 11,981,321 : Cost 22.73344803 : Time 396.66s : 9454.62 words/s : L.r. 9.5618e-05
+[2019-04-23 15:07:47] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 15:07:52] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter70000.npz
+[2019-04-23 15:07:57] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 15:08:02] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 15:08:18] [valid] Ep. 2 : Up. 70000 : cross-entropy : 18.9659 : stalled 3 times (last best: 18.9603)
+[2019-04-23 15:08:24] [valid] Ep. 2 : Up. 70000 : perplexity : 4.35583 : stalled 3 times (last best: 4.35394)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 15:09:39] [valid] Ep. 2 : Up. 70000 : translation : 34.32 : stalled 8 times (last best: 34.49)
+[2019-04-23 15:15:57] Ep. 2 : Up. 70500 : Sen. 12,348,637 : Cost 23.23802757 : Time 489.75s : 7135.28 words/s : L.r. 9.5279e-05
+[2019-04-23 15:22:26] Ep. 2 : Up. 71000 : Sen. 12,744,891 : Cost 22.37248802 : Time 389.05s : 9460.49 words/s : L.r. 9.4943e-05
+[2019-04-23 15:28:55] Ep. 2 : Up. 71500 : Sen. 13,134,095 : Cost 22.78639030 : Time 388.41s : 9484.33 words/s : L.r. 9.4610e-05
+[2019-04-23 15:35:21] Ep. 2 : Up. 72000 : Sen. 13,519,663 : Cost 22.70495796 : Time 385.96s : 9341.88 words/s : L.r. 9.4281e-05
+[2019-04-23 15:41:48] Ep. 2 : Up. 72500 : Sen. 13,895,864 : Cost 23.52975655 : Time 387.21s : 9429.21 words/s : L.r. 9.3955e-05
+[2019-04-23 15:48:21] Ep. 2 : Up. 73000 : Sen. 14,280,760 : Cost 23.40079117 : Time 393.41s : 9446.50 words/s : L.r. 9.3633e-05
+[2019-04-23 15:54:48] Ep. 2 : Up. 73500 : Sen. 14,663,920 : Cost 23.05382347 : Time 386.75s : 9441.97 words/s : L.r. 9.3314e-05
+[2019-04-23 16:01:11] Ep. 2 : Up. 74000 : Sen. 15,048,977 : Cost 22.35967636 : Time 383.39s : 9268.01 words/s : L.r. 9.2998e-05
+[2019-04-23 16:07:45] Ep. 2 : Up. 74500 : Sen. 15,441,066 : Cost 22.82650185 : Time 394.19s : 9459.65 words/s : L.r. 9.2686e-05
+[2019-04-23 16:14:06] Ep. 2 : Up. 75000 : Sen. 15,820,383 : Cost 22.77782249 : Time 380.25s : 9305.62 words/s : L.r. 9.2376e-05
+[2019-04-23 16:14:06] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 16:14:11] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter75000.npz
+[2019-04-23 16:14:15] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 16:14:20] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 16:14:36] [valid] Ep. 2 : Up. 75000 : cross-entropy : 18.9606 : stalled 4 times (last best: 18.9603)
+[2019-04-23 16:14:42] [valid] Ep. 2 : Up. 75000 : perplexity : 4.35404 : stalled 4 times (last best: 4.35394)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 16:15:58] [valid] Ep. 2 : Up. 75000 : translation : 34.27 : stalled 9 times (last best: 34.49)
+[2019-04-23 16:22:17] Ep. 2 : Up. 75500 : Sen. 16,204,947 : Cost 22.29836845 : Time 491.21s : 7225.73 words/s : L.r. 9.2070e-05
+[2019-04-23 16:28:47] Ep. 2 : Up. 76000 : Sen. 16,584,036 : Cost 23.44357300 : Time 390.48s : 9387.27 words/s : L.r. 9.1766e-05
+[2019-04-23 16:35:08] Ep. 2 : Up. 76500 : Sen. 16,960,215 : Cost 23.05032730 : Time 380.39s : 9370.73 words/s : L.r. 9.1466e-05
+[2019-04-23 16:41:32] Ep. 2 : Up. 77000 : Sen. 17,348,349 : Cost 22.44488525 : Time 384.45s : 9326.38 words/s : L.r. 9.1168e-05
+[2019-04-23 16:48:10] Ep. 2 : Up. 77500 : Sen. 17,735,756 : Cost 23.63778687 : Time 397.51s : 9479.20 words/s : L.r. 9.0874e-05
+[2019-04-23 16:54:39] Ep. 2 : Up. 78000 : Sen. 18,127,037 : Cost 22.61791420 : Time 389.68s : 9436.86 words/s : L.r. 9.0582e-05
+[2019-04-23 17:01:03] Ep. 2 : Up. 78500 : Sen. 18,498,462 : Cost 23.62917137 : Time 383.61s : 9429.41 words/s : L.r. 9.0293e-05
+[2019-04-23 17:07:29] Ep. 2 : Up. 79000 : Sen. 18,892,101 : Cost 22.07253265 : Time 385.86s : 9313.49 words/s : L.r. 9.0007e-05
+[2019-04-23 17:13:51] Ep. 2 : Up. 79500 : Sen. 19,265,351 : Cost 23.11747360 : Time 381.97s : 9307.71 words/s : L.r. 8.9724e-05
+[2019-04-23 17:20:20] Ep. 2 : Up. 80000 : Sen. 19,652,166 : Cost 22.88450241 : Time 389.16s : 9407.38 words/s : L.r. 8.9443e-05
+[2019-04-23 17:20:20] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 17:20:25] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter80000.npz
+[2019-04-23 17:20:30] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 17:20:35] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 17:20:50] [valid] Ep. 2 : Up. 80000 : cross-entropy : 18.9568 : new best
+[2019-04-23 17:20:56] [valid] Ep. 2 : Up. 80000 : perplexity : 4.35278 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 17:22:12] [valid] Ep. 2 : Up. 80000 : translation : 34.29 : stalled 10 times (last best: 34.49)
+[2019-04-23 17:28:42] Ep. 2 : Up. 80500 : Sen. 20,044,103 : Cost 22.77588463 : Time 502.34s : 7331.12 words/s : L.r. 8.9165e-05
+[2019-04-23 17:35:14] Ep. 2 : Up. 81000 : Sen. 20,452,464 : Cost 21.85947418 : Time 391.70s : 9441.37 words/s : L.r. 8.8889e-05
+[2019-04-23 17:41:38] Ep. 2 : Up. 81500 : Sen. 20,820,222 : Cost 23.53379440 : Time 383.62s : 9307.49 words/s : L.r. 8.8616e-05
+[2019-04-23 17:48:02] Ep. 2 : Up. 82000 : Sen. 21,188,432 : Cost 23.99369049 : Time 384.49s : 9451.56 words/s : L.r. 8.8345e-05
+[2019-04-23 17:54:29] Ep. 2 : Up. 82500 : Sen. 21,576,490 : Cost 22.63397980 : Time 386.61s : 9405.28 words/s : L.r. 8.8077e-05
+[2019-04-23 18:00:52] Ep. 2 : Up. 83000 : Sen. 21,955,626 : Cost 22.91609383 : Time 382.81s : 9341.77 words/s : L.r. 8.7811e-05
+[2019-04-23 18:07:15] Ep. 2 : Up. 83500 : Sen. 22,348,443 : Cost 21.74067879 : Time 383.25s : 9281.37 words/s : L.r. 8.7548e-05
+[2019-04-23 18:13:36] Ep. 2 : Up. 84000 : Sen. 22,726,466 : Cost 22.78792572 : Time 381.29s : 9298.79 words/s : L.r. 8.7287e-05
+[2019-04-23 18:20:09] Ep. 2 : Up. 84500 : Sen. 23,113,228 : Cost 23.35281181 : Time 392.99s : 9476.71 words/s : L.r. 8.7029e-05
+[2019-04-23 18:26:35] Ep. 2 : Up. 85000 : Sen. 23,500,590 : Cost 22.53248215 : Time 385.92s : 9395.76 words/s : L.r. 8.6772e-05
+[2019-04-23 18:26:35] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 18:26:40] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter85000.npz
+[2019-04-23 18:26:44] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 18:26:50] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 18:27:06] [valid] Ep. 2 : Up. 85000 : cross-entropy : 18.9539 : new best
+[2019-04-23 18:27:12] [valid] Ep. 2 : Up. 85000 : perplexity : 4.35179 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 18:28:27] [valid] Ep. 2 : Up. 85000 : translation : 34.24 : stalled 11 times (last best: 34.49)
+[2019-04-23 18:35:02] Ep. 2 : Up. 85500 : Sen. 23,892,999 : Cost 23.14987946 : Time 506.65s : 7416.16 words/s : L.r. 8.6518e-05
+[2019-04-23 18:41:21] Ep. 2 : Up. 86000 : Sen. 24,264,093 : Cost 23.39474869 : Time 379.76s : 9344.36 words/s : L.r. 8.6266e-05
+[2019-04-23 18:47:53] Ep. 2 : Up. 86500 : Sen. 24,662,161 : Cost 22.46078300 : Time 391.29s : 9488.85 words/s : L.r. 8.6017e-05
+[2019-04-23 18:54:20] Ep. 2 : Up. 87000 : Sen. 25,036,117 : Cost 23.53540230 : Time 387.44s : 9382.99 words/s : L.r. 8.5769e-05
+[2019-04-23 19:00:48] Ep. 2 : Up. 87500 : Sen. 25,422,973 : Cost 22.92412949 : Time 387.88s : 9383.92 words/s : L.r. 8.5524e-05
+[2019-04-23 19:07:15] Ep. 2 : Up. 88000 : Sen. 25,807,979 : Cost 22.72027397 : Time 386.78s : 9421.33 words/s : L.r. 8.5280e-05
+[2019-04-23 19:13:35] Ep. 2 : Up. 88500 : Sen. 26,178,848 : Cost 23.32267380 : Time 379.85s : 9383.18 words/s : L.r. 8.5039e-05
+[2019-04-23 19:20:00] Ep. 2 : Up. 89000 : Sen. 26,561,260 : Cost 22.83045959 : Time 385.08s : 9372.90 words/s : L.r. 8.4800e-05
+[2019-04-23 19:26:20] Ep. 2 : Up. 89500 : Sen. 26,944,373 : Cost 22.65539169 : Time 380.43s : 9375.72 words/s : L.r. 8.4563e-05
+[2019-04-23 19:32:51] Ep. 2 : Up. 90000 : Sen. 27,335,897 : Cost 22.54777908 : Time 390.69s : 9409.75 words/s : L.r. 8.4327e-05
+[2019-04-23 19:32:51] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 19:32:56] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter90000.npz
+[2019-04-23 19:33:00] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 19:33:06] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 19:33:21] [valid] Ep. 2 : Up. 90000 : cross-entropy : 18.9467 : new best
+[2019-04-23 19:33:27] [valid] Ep. 2 : Up. 90000 : perplexity : 4.34935 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 19:34:42] [valid] Ep. 2 : Up. 90000 : translation : 34.36 : stalled 12 times (last best: 34.49)
+[2019-04-23 19:41:03] Ep. 2 : Up. 90500 : Sen. 27,717,008 : Cost 22.64192390 : Time 492.46s : 7218.25 words/s : L.r. 8.4094e-05
+[2019-04-23 19:47:33] Ep. 2 : Up. 91000 : Sen. 28,103,913 : Cost 22.95305634 : Time 389.14s : 9482.94 words/s : L.r. 8.3863e-05
+[2019-04-23 19:53:51] Ep. 2 : Up. 91500 : Sen. 28,484,812 : Cost 22.59367752 : Time 378.51s : 9325.33 words/s : L.r. 8.3633e-05
+[2019-04-23 20:00:18] Ep. 2 : Up. 92000 : Sen. 28,863,125 : Cost 23.42917442 : Time 386.95s : 9455.03 words/s : L.r. 8.3406e-05
+[2019-04-23 20:06:45] Ep. 2 : Up. 92500 : Sen. 29,245,937 : Cost 23.07254982 : Time 387.40s : 9426.90 words/s : L.r. 8.3180e-05
+[2019-04-23 20:13:20] Ep. 2 : Up. 93000 : Sen. 29,637,412 : Cost 23.27325439 : Time 394.38s : 9490.10 words/s : L.r. 8.2956e-05
+[2019-04-23 20:19:45] Ep. 2 : Up. 93500 : Sen. 30,024,216 : Cost 22.39534187 : Time 385.51s : 9363.17 words/s : L.r. 8.2734e-05
+[2019-04-23 20:26:08] Ep. 2 : Up. 94000 : Sen. 30,412,248 : Cost 22.48387337 : Time 382.62s : 9382.62 words/s : L.r. 8.2514e-05
+[2019-04-23 20:32:40] Ep. 2 : Up. 94500 : Sen. 30,801,010 : Cost 22.93608665 : Time 391.81s : 9441.69 words/s : L.r. 8.2295e-05
+[2019-04-23 20:39:02] Ep. 2 : Up. 95000 : Sen. 31,171,762 : Cost 23.34278488 : Time 382.08s : 9347.55 words/s : L.r. 8.2078e-05
+[2019-04-23 20:39:02] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 20:39:07] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter95000.npz
+[2019-04-23 20:39:11] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 20:39:16] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 20:39:32] [valid] Ep. 2 : Up. 95000 : cross-entropy : 18.9421 : new best
+[2019-04-23 20:39:38] [valid] Ep. 2 : Up. 95000 : perplexity : 4.34779 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 20:40:53] [valid] Ep. 2 : Up. 95000 : translation : 34.33 : stalled 13 times (last best: 34.49)
+[2019-04-23 20:47:28] Ep. 2 : Up. 95500 : Sen. 31,560,964 : Cost 23.32112885 : Time 506.56s : 7401.14 words/s : L.r. 8.1863e-05
+[2019-04-23 20:53:44] Ep. 2 : Up. 96000 : Sen. 31,933,668 : Cost 22.72946167 : Time 375.92s : 9269.09 words/s : L.r. 8.1650e-05
+[2019-04-23 21:00:00] Ep. 2 : Up. 96500 : Sen. 32,297,557 : Cost 23.28809547 : Time 375.28s : 9289.98 words/s : L.r. 8.1438e-05
+[2019-04-23 21:06:37] Ep. 2 : Up. 97000 : Sen. 32,693,385 : Cost 23.06661797 : Time 397.65s : 9506.55 words/s : L.r. 8.1228e-05
+[2019-04-23 21:13:08] Ep. 2 : Up. 97500 : Sen. 33,096,033 : Cost 21.98953247 : Time 391.03s : 9414.47 words/s : L.r. 8.1019e-05
+[2019-04-23 21:19:31] Ep. 2 : Up. 98000 : Sen. 33,482,648 : Cost 22.53285789 : Time 383.09s : 9391.19 words/s : L.r. 8.0812e-05
+[2019-04-23 21:26:02] Ep. 2 : Up. 98500 : Sen. 33,860,533 : Cost 23.62723351 : Time 390.24s : 9409.71 words/s : L.r. 8.0607e-05
+[2019-04-23 21:32:24] Ep. 2 : Up. 99000 : Sen. 34,236,671 : Cost 23.05089378 : Time 382.30s : 9325.67 words/s : L.r. 8.0403e-05
+[2019-04-23 21:38:47] Ep. 2 : Up. 99500 : Sen. 34,623,197 : Cost 22.17782021 : Time 383.35s : 9262.69 words/s : L.r. 8.0201e-05
+[2019-04-23 21:45:22] Ep. 2 : Up. 100000 : Sen. 35,011,356 : Cost 23.36854744 : Time 394.47s : 9500.57 words/s : L.r. 8.0000e-05
+[2019-04-23 21:45:22] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 21:45:27] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter100000.npz
+[2019-04-23 21:45:31] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 21:45:37] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 21:45:53] [valid] Ep. 2 : Up. 100000 : cross-entropy : 18.9406 : new best
+[2019-04-23 21:45:59] [valid] Ep. 2 : Up. 100000 : perplexity : 4.34729 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 21:47:14] [valid] Ep. 2 : Up. 100000 : translation : 34.34 : stalled 14 times (last best: 34.49)
+[2019-04-23 21:53:41] Ep. 2 : Up. 100500 : Sen. 35,404,342 : Cost 22.51897049 : Time 498.90s : 7326.48 words/s : L.r. 7.9801e-05
+[2019-04-23 22:00:05] Ep. 2 : Up. 101000 : Sen. 35,779,880 : Cost 23.20338249 : Time 384.75s : 9365.36 words/s : L.r. 7.9603e-05
+[2019-04-23 22:06:33] Ep. 2 : Up. 101500 : Sen. 36,167,483 : Cost 22.76027489 : Time 387.51s : 9369.70 words/s : L.r. 7.9407e-05
+[2019-04-23 22:12:56] Ep. 2 : Up. 102000 : Sen. 36,549,569 : Cost 22.72179031 : Time 383.53s : 9386.85 words/s : L.r. 7.9212e-05
+[2019-04-23 22:19:30] Ep. 2 : Up. 102500 : Sen. 36,929,459 : Cost 23.62076569 : Time 393.58s : 9425.27 words/s : L.r. 7.9018e-05
+[2019-04-23 22:26:03] Ep. 2 : Up. 103000 : Sen. 37,323,582 : Cost 22.51382637 : Time 392.59s : 9405.08 words/s : L.r. 7.8826e-05
+[2019-04-23 22:32:33] Ep. 2 : Up. 103500 : Sen. 37,714,026 : Cost 22.75357246 : Time 390.06s : 9418.77 words/s : L.r. 7.8636e-05
+[2019-04-23 22:38:47] Ep. 2 : Up. 104000 : Sen. 38,083,303 : Cost 22.99981117 : Time 374.61s : 9297.76 words/s : L.r. 7.8446e-05
+[2019-04-23 22:45:16] Ep. 2 : Up. 104500 : Sen. 38,460,462 : Cost 23.39678001 : Time 388.44s : 9408.58 words/s : L.r. 7.8259e-05
+[2019-04-23 22:51:44] Ep. 2 : Up. 105000 : Sen. 38,858,068 : Cost 22.33081818 : Time 387.93s : 9423.66 words/s : L.r. 7.8072e-05
+[2019-04-23 22:51:44] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-23 22:51:49] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter105000.npz
+[2019-04-23 22:51:53] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-23 22:51:58] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-23 22:52:14] [valid] Ep. 2 : Up. 105000 : cross-entropy : 18.938 : new best
+[2019-04-23 22:52:20] [valid] Ep. 2 : Up. 105000 : perplexity : 4.34642 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-23 22:53:35] [valid] Ep. 2 : Up. 105000 : translation : 34.46 : stalled 15 times (last best: 34.49)
+[2019-04-23 23:00:08] Ep. 2 : Up. 105500 : Sen. 39,257,591 : Cost 22.15654755 : Time 504.54s : 7285.35 words/s : L.r. 7.7887e-05
+[2019-04-23 23:06:35] Ep. 2 : Up. 106000 : Sen. 39,632,823 : Cost 23.61005402 : Time 387.06s : 9441.67 words/s : L.r. 7.7703e-05
+[2019-04-23 23:12:54] Ep. 2 : Up. 106500 : Sen. 40,004,376 : Cost 23.13424492 : Time 378.93s : 9342.67 words/s : L.r. 7.7520e-05
+[2019-04-23 23:19:30] Ep. 2 : Up. 107000 : Sen. 40,397,452 : Cost 22.99256134 : Time 395.45s : 9462.50 words/s : L.r. 7.7339e-05
+[2019-04-23 23:25:50] Ep. 2 : Up. 107500 : Sen. 40,779,257 : Cost 22.43718147 : Time 380.49s : 9309.35 words/s : L.r. 7.7159e-05
+[2019-04-23 23:32:07] Ep. 2 : Up. 108000 : Sen. 41,145,067 : Cost 23.29057503 : Time 377.10s : 9336.18 words/s : L.r. 7.6980e-05
+[2019-04-23 23:38:26] Ep. 2 : Up. 108500 : Sen. 41,509,793 : Cost 23.40865707 : Time 378.76s : 9324.93 words/s : L.r. 7.6802e-05
+[2019-04-23 23:41:39] Seen 41709169 samples
+[2019-04-23 23:41:39] Starting epoch 3
+[2019-04-23 23:41:39] [data] Shuffling data
+[2019-04-23 23:42:20] [data] Done reading 41736982 sentences
+[2019-04-23 23:45:50] [data] Done shuffling 41736982 sentences to temp files
+[2019-04-23 23:49:32] Ep. 3 : Up. 109000 : Sen. 190,689 : Cost 21.83617020 : Time 665.99s : 5315.37 words/s : L.r. 7.6626e-05
+[2019-04-23 23:55:49] Ep. 3 : Up. 109500 : Sen. 564,352 : Cost 22.77313423 : Time 376.83s : 9287.15 words/s : L.r. 7.6451e-05
+[2019-04-24 00:02:25] Ep. 3 : Up. 110000 : Sen. 953,122 : Cost 23.35217285 : Time 396.23s : 9444.66 words/s : L.r. 7.6277e-05
+[2019-04-24 00:02:25] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-24 00:02:30] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter110000.npz
+[2019-04-24 00:02:34] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-24 00:02:40] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-24 00:02:55] [valid] Ep. 3 : Up. 110000 : cross-entropy : 18.934 : new best
+[2019-04-24 00:03:01] [valid] Ep. 3 : Up. 110000 : perplexity : 4.34506 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-24 00:04:17] [valid] Ep. 3 : Up. 110000 : translation : 34.41 : stalled 16 times (last best: 34.49)
+[2019-04-24 00:10:41] Ep. 3 : Up. 110500 : Sen. 1,335,590 : Cost 22.55829430 : Time 496.04s : 7255.49 words/s : L.r. 7.6104e-05
+[2019-04-24 00:17:00] Ep. 3 : Up. 111000 : Sen. 1,711,986 : Cost 22.70326996 : Time 378.63s : 9300.93 words/s : L.r. 7.5933e-05
+[2019-04-24 00:23:26] Ep. 3 : Up. 111500 : Sen. 2,086,096 : Cost 23.49868202 : Time 386.17s : 9350.99 words/s : L.r. 7.5762e-05
+[2019-04-24 00:29:56] Ep. 3 : Up. 112000 : Sen. 2,486,833 : Cost 22.03347778 : Time 389.62s : 9439.35 words/s : L.r. 7.5593e-05
+[2019-04-24 00:36:21] Ep. 3 : Up. 112500 : Sen. 2,873,849 : Cost 22.62100601 : Time 385.14s : 9404.85 words/s : L.r. 7.5425e-05
+[2019-04-24 00:42:46] Ep. 3 : Up. 113000 : Sen. 3,245,684 : Cost 23.61504173 : Time 385.61s : 9389.74 words/s : L.r. 7.5258e-05
+[2019-04-24 00:49:20] Ep. 3 : Up. 113500 : Sen. 3,637,892 : Cost 22.68181610 : Time 393.65s : 9391.57 words/s : L.r. 7.5092e-05
+[2019-04-24 00:55:47] Ep. 3 : Up. 114000 : Sen. 4,020,444 : Cost 23.20284081 : Time 387.22s : 9464.28 words/s : L.r. 7.4927e-05
+[2019-04-24 01:02:14] Ep. 3 : Up. 114500 : Sen. 4,402,132 : Cost 22.92626953 : Time 386.75s : 9351.73 words/s : L.r. 7.4763e-05
+[2019-04-24 01:08:34] Ep. 3 : Up. 115000 : Sen. 4,777,746 : Cost 22.89662552 : Time 379.85s : 9330.28 words/s : L.r. 7.4600e-05
+[2019-04-24 01:08:34] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-24 01:08:39] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter115000.npz
+[2019-04-24 01:08:43] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-24 01:08:48] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-24 01:09:03] [valid] Ep. 3 : Up. 115000 : cross-entropy : 18.9368 : stalled 1 times (last best: 18.934)
+[2019-04-24 01:09:09] [valid] Ep. 3 : Up. 115000 : perplexity : 4.34602 : stalled 1 times (last best: 4.34506)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-24 01:10:25] [valid] Ep. 3 : Up. 115000 : translation : 34.32 : stalled 17 times (last best: 34.49)
+[2019-04-24 01:17:03] Ep. 3 : Up. 115500 : Sen. 5,181,252 : Cost 22.82234955 : Time 509.48s : 7510.95 words/s : L.r. 7.4439e-05
+[2019-04-24 01:23:29] Ep. 3 : Up. 116000 : Sen. 5,559,784 : Cost 23.30890656 : Time 386.05s : 9442.60 words/s : L.r. 7.4278e-05
+[2019-04-24 01:29:43] Ep. 3 : Up. 116500 : Sen. 5,935,268 : Cost 22.47781563 : Time 373.46s : 9355.33 words/s : L.r. 7.4119e-05
+[2019-04-24 01:36:16] Ep. 3 : Up. 117000 : Sen. 6,334,267 : Cost 22.31598854 : Time 392.78s : 9422.22 words/s : L.r. 7.3960e-05
+[2019-04-24 01:42:37] Ep. 3 : Up. 117500 : Sen. 6,718,610 : Cost 22.56842995 : Time 381.79s : 9357.32 words/s : L.r. 7.3802e-05
+[2019-04-24 01:49:05] Ep. 3 : Up. 118000 : Sen. 7,093,830 : Cost 23.85038376 : Time 388.00s : 9522.31 words/s : L.r. 7.3646e-05
+[2019-04-24 01:55:35] Ep. 3 : Up. 118500 : Sen. 7,483,493 : Cost 22.34230042 : Time 389.87s : 9265.73 words/s : L.r. 7.3490e-05
+[2019-04-24 02:02:05] Ep. 3 : Up. 119000 : Sen. 7,860,237 : Cost 23.19081879 : Time 389.67s : 9293.99 words/s : L.r. 7.3336e-05
+[2019-04-24 02:08:38] Ep. 3 : Up. 119500 : Sen. 8,243,713 : Cost 23.12378883 : Time 392.30s : 9319.35 words/s : L.r. 7.3182e-05
+[2019-04-24 02:15:05] Ep. 3 : Up. 120000 : Sen. 8,635,719 : Cost 21.90949631 : Time 386.93s : 9226.51 words/s : L.r. 7.3030e-05
+[2019-04-24 02:15:05] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz.orig.npz
+[2019-04-24 02:15:11] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.iter120000.npz
+[2019-04-24 02:15:17] Saving model weights and runtime parameters to model/model.src1tgt0.doc.new.bakchus.npz
+[2019-04-24 02:15:24] Saving Adam parameters to model/model.src1tgt0.doc.new.bakchus.npz.optimizer.npz
+[2019-04-24 02:15:41] [valid] Ep. 3 : Up. 120000 : cross-entropy : 18.939 : stalled 2 times (last best: 18.934)
+[2019-04-24 02:15:48] [valid] Ep. 3 : Up. 120000 : perplexity : 4.34675 : stalled 2 times (last best: 4.34506)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-24 02:17:10] [valid] Ep. 3 : Up. 120000 : translation : 34.33 : stalled 18 times (last best: 34.49)
+[2019-04-24 02:23:38] Ep. 3 : Up. 120500 : Sen. 9,013,969 : Cost 23.50123024 : Time 513.54s : 7133.66 words/s : L.r. 7.2878e-05
+train_doc_new_bakchus.sh: line 30: 15088 Terminated              $marian_home/marian --model model/model.src1tgt0.doc.new.bakchus.npz --pretrained-model ../src0tgt0_fr/model/model.src0tgt0.newvocab.iter630000.npz --type transformer-context --train-sets corp/opensub.en-fr.docs.train.en.bpe.src_prev corp/opensub.en-fr.docs.train.en.bpe.src corp/opensub.en-fr.docs.train.fr.bpe --max-length 55 --dim-vocabs 30000 30000 --freeze --embedding-fix-src --embedding-fix-trg --vocabs corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml corp/vocab.encz.opensub.new.yml --mini-batch-fit -w 8200 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/opensub.en-fr.docs.dev.en.bpe.src_prev corp/opensub.en-fr.docs.dev.en.bpe.src corp/opensub.en-fr.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 6 --normalize 0.6 --log model/train_trans.gate.log --valid-log model/valid_trans.gate.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus
