@@ -1,6 +1,6 @@
 # dp
 
-If you are reading this file offline (on an attached CD), it is possible that some stuff was updated, please move the repository to a writeable medium and do git pull to get the most recent version (or git clone https://github.com/cepin19/dp).
+This is a repository containing stuff related to my diploma thesis. If you are reading this file offline (on an attached CD), it is possible that some stuff was updated, please move the repository to a writeable medium and do git pull to get the most recent version (or git clone https://github.com/cepin19/dp).
 This repository contains:
 * report/: pdf and LaTex source files of my report
 * poster/: pdf and LaTex source files of a poster presnting my work
