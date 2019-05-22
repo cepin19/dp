@@ -1,0 +1,1264 @@
+[2019-04-13 16:23:58] [marian] Marian v1.7.8 1e91cce 2019-04-04 17:46:39 +0200
+[2019-04-13 16:23:58] [marian] Running on bakchus.lingea.cz as process 28426 with command line:
+[2019-04-13 16:23:58] [marian] /home/large/data/models/marian/marian-doc/doc-marian-bakchus/build/marian --model model/model_bt_noise_encz_bicleaner_bakchus_doc.npz --pretrained-model model/model_bt_noise_encz_bicleaner.npz --type transformer-context --train-sets corpus.docs.en.bpe.src_prev corpus.docs.en.bpe.src corpus.docs.cs.bpe -e 1 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 3500 --mini-batch 1000 --maxi-batch 1000 --freeze --valid-freq 5000 --save-freq 1000 --disp-freq 100 --valid-metrics ce-mean-words perplexity translation --valid-sets newstest2016.docs.src_prev newstest2016.docs.src newstest2016.docs.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 8 --early-stopping 15 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 --no-nccl --sync-sgd --seed 0 --exponential-smoothing --sqlite -T /tmp
+[2019-04-13 16:23:58] [config] after-batches: 0
+[2019-04-13 16:23:58] [config] after-epochs: 1
+[2019-04-13 16:23:58] [config] allow-unk: false
+[2019-04-13 16:23:58] [config] beam-size: 6
+[2019-04-13 16:23:58] [config] bert-class-symbol: "[CLS]"
+[2019-04-13 16:23:58] [config] bert-mask-symbol: "[MASK]"
+[2019-04-13 16:23:58] [config] bert-masking-fraction: 0.15
+[2019-04-13 16:23:58] [config] bert-sep-symbol: "[SEP]"
+[2019-04-13 16:23:58] [config] bert-train-type-embeddings: true
+[2019-04-13 16:23:58] [config] bert-type-vocab-size: 2
+[2019-04-13 16:23:58] [config] best-deep: false
+[2019-04-13 16:23:58] [config] clip-gemm: 0
+[2019-04-13 16:23:58] [config] clip-norm: 5
+[2019-04-13 16:23:58] [config] context-enc-depth: 1
+[2019-04-13 16:23:58] [config] cost-type: ce-mean-words
+[2019-04-13 16:23:58] [config] cpu-threads: 0
+[2019-04-13 16:23:58] [config] data-weighting: ""
+[2019-04-13 16:23:58] [config] data-weighting-type: sentence
+[2019-04-13 16:23:58] [config] dec-cell: gru
+[2019-04-13 16:23:58] [config] dec-cell-base-depth: 2
+[2019-04-13 16:23:58] [config] dec-cell-high-depth: 1
+[2019-04-13 16:23:58] [config] dec-depth: 6
+[2019-04-13 16:23:58] [config] devices:
+[2019-04-13 16:23:58] [config]   - 0
+[2019-04-13 16:23:58] [config] dim-emb: 1024
+[2019-04-13 16:23:58] [config] dim-rnn: 1024
+[2019-04-13 16:23:58] [config] dim-vocabs:
+[2019-04-13 16:23:58] [config]   - 0
+[2019-04-13 16:23:58] [config]   - 0
+[2019-04-13 16:23:58] [config] disp-first: 0
+[2019-04-13 16:23:58] [config] disp-freq: 100
+[2019-04-13 16:23:58] [config] disp-label-counts: false
+[2019-04-13 16:23:58] [config] dropout-rnn: 0
+[2019-04-13 16:23:58] [config] dropout-src: 0
+[2019-04-13 16:23:58] [config] dropout-trg: 0
+[2019-04-13 16:23:58] [config] dump-config: ""
+[2019-04-13 16:23:58] [config] early-stopping: 15
+[2019-04-13 16:23:58] [config] embedding-fix-src: false
+[2019-04-13 16:23:58] [config] embedding-fix-trg: false
+[2019-04-13 16:23:58] [config] embedding-normalization: false
+[2019-04-13 16:23:58] [config] embedding-vectors:
+[2019-04-13 16:23:58] [config]   []
+[2019-04-13 16:23:58] [config] enc-cell: gru
+[2019-04-13 16:23:58] [config] enc-cell-depth: 1
+[2019-04-13 16:23:58] [config] enc-depth: 6
+[2019-04-13 16:23:58] [config] enc-type: bidirectional
+[2019-04-13 16:23:58] [config] exponential-smoothing: 0.0001
+[2019-04-13 16:23:58] [config] freeze: true
+[2019-04-13 16:23:58] [config] grad-dropping-momentum: 0
+[2019-04-13 16:23:58] [config] grad-dropping-rate: 0
+[2019-04-13 16:23:58] [config] grad-dropping-warmup: 100
+[2019-04-13 16:23:58] [config] guided-alignment: none
+[2019-04-13 16:23:58] [config] guided-alignment-cost: mse
+[2019-04-13 16:23:58] [config] guided-alignment-weight: 0.1
+[2019-04-13 16:23:58] [config] hier-att: false
+[2019-04-13 16:23:58] [config] ignore-model-config: false
+[2019-04-13 16:23:58] [config] input-types:
+[2019-04-13 16:23:58] [config]   []
+[2019-04-13 16:23:58] [config] interpolate-env-vars: false
+[2019-04-13 16:23:58] [config] keep-best: true
+[2019-04-13 16:23:58] [config] label-smoothing: 0.1
+[2019-04-13 16:23:58] [config] layer-normalization: false
+[2019-04-13 16:23:58] [config] learn-rate: 0.0002
+[2019-04-13 16:23:58] [config] log: model/bt_encz.log
+[2019-04-13 16:23:58] [config] log-level: info
+[2019-04-13 16:23:58] [config] log-time-zone: ""
+[2019-04-13 16:23:58] [config] lr-decay: 0
+[2019-04-13 16:23:58] [config] lr-decay-freq: 50000
+[2019-04-13 16:23:58] [config] lr-decay-inv-sqrt:
+[2019-04-13 16:23:58] [config]   - 8000
+[2019-04-13 16:23:58] [config] lr-decay-repeat-warmup: false
+[2019-04-13 16:23:58] [config] lr-decay-reset-optimizer: false
+[2019-04-13 16:23:58] [config] lr-decay-start:
+[2019-04-13 16:23:58] [config]   - 10
+[2019-04-13 16:23:58] [config]   - 1
+[2019-04-13 16:23:58] [config] lr-decay-strategy: epoch+stalled
+[2019-04-13 16:23:58] [config] lr-report: true
+[2019-04-13 16:23:58] [config] lr-warmup: 8000
+[2019-04-13 16:23:58] [config] lr-warmup-at-reload: false
+[2019-04-13 16:23:58] [config] lr-warmup-cycle: false
+[2019-04-13 16:23:58] [config] lr-warmup-start-rate: 0
+[2019-04-13 16:23:58] [config] max-length: 100
+[2019-04-13 16:23:58] [config] max-length-crop: false
+[2019-04-13 16:23:58] [config] max-length-factor: 3
+[2019-04-13 16:23:58] [config] maxi-batch: 1000
+[2019-04-13 16:23:58] [config] maxi-batch-sort: trg
+[2019-04-13 16:23:58] [config] mini-batch: 1000
+[2019-04-13 16:23:58] [config] mini-batch-fit: true
+[2019-04-13 16:23:58] [config] mini-batch-fit-step: 10
+[2019-04-13 16:23:58] [config] mini-batch-overstuff: 1
+[2019-04-13 16:23:58] [config] mini-batch-track-lr: false
+[2019-04-13 16:23:58] [config] mini-batch-understuff: 1
+[2019-04-13 16:23:58] [config] mini-batch-warmup: 0
+[2019-04-13 16:23:58] [config] mini-batch-words: 0
+[2019-04-13 16:23:58] [config] mini-batch-words-ref: 0
+[2019-04-13 16:23:58] [config] model: model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 16:23:58] [config] multi-loss-type: sum
+[2019-04-13 16:23:58] [config] multi-node: false
+[2019-04-13 16:23:58] [config] multi-node-overlap: true
+[2019-04-13 16:23:58] [config] n-best: false
+[2019-04-13 16:23:58] [config] no-nccl: true
+[2019-04-13 16:23:58] [config] no-reload: false
+[2019-04-13 16:23:58] [config] no-restore-corpus: false
+[2019-04-13 16:23:58] [config] no-shuffle: false
+[2019-04-13 16:23:58] [config] normalize: 0.6
+[2019-04-13 16:23:58] [config] num-devices: 0
+[2019-04-13 16:23:58] [config] optimizer: adam
+[2019-04-13 16:23:58] [config] optimizer-delay: 8
+[2019-04-13 16:23:58] [config] optimizer-params:
+[2019-04-13 16:23:58] [config]   - 0.9
+[2019-04-13 16:23:58] [config]   - 0.98
+[2019-04-13 16:23:58] [config]   - 1e-09
+[2019-04-13 16:23:58] [config] overwrite: true
+[2019-04-13 16:23:58] [config] pretrained-model: model/model_bt_noise_encz_bicleaner.npz
+[2019-04-13 16:23:58] [config] quiet: false
+[2019-04-13 16:23:58] [config] quiet-translation: true
+[2019-04-13 16:23:58] [config] relative-paths: false
+[2019-04-13 16:23:58] [config] right-left: false
+[2019-04-13 16:23:58] [config] save-freq: 1000
+[2019-04-13 16:23:58] [config] seed: 0
+[2019-04-13 16:23:58] [config] shuffle-in-ram: false
+[2019-04-13 16:23:58] [config] skip: false
+[2019-04-13 16:23:58] [config] sqlite: temporary
+[2019-04-13 16:23:58] [config] sqlite-drop: false
+[2019-04-13 16:23:58] [config] sync-sgd: true
+[2019-04-13 16:23:58] [config] tempdir: /tmp
+[2019-04-13 16:23:58] [config] tied-embeddings: false
+[2019-04-13 16:23:58] [config] tied-embeddings-all: true
+[2019-04-13 16:23:58] [config] tied-embeddings-src: false
+[2019-04-13 16:23:58] [config] train-sets:
+[2019-04-13 16:23:58] [config]   - corpus.docs.en.bpe.src_prev
+[2019-04-13 16:23:58] [config]   - corpus.docs.en.bpe.src
+[2019-04-13 16:23:58] [config]   - corpus.docs.cs.bpe
+[2019-04-13 16:23:58] [config] transformer-aan-activation: swish
+[2019-04-13 16:23:58] [config] transformer-aan-depth: 2
+[2019-04-13 16:23:58] [config] transformer-aan-nogate: false
+[2019-04-13 16:23:58] [config] transformer-decoder-autoreg: self-attention
+[2019-04-13 16:23:58] [config] transformer-dim-aan: 2048
+[2019-04-13 16:23:58] [config] transformer-dim-ffn: 4096
+[2019-04-13 16:23:58] [config] transformer-dropout: 0.1
+[2019-04-13 16:23:58] [config] transformer-dropout-attention: 0.1
+[2019-04-13 16:23:58] [config] transformer-dropout-ffn: 0.1
+[2019-04-13 16:23:58] [config] transformer-ffn-activation: swish
+[2019-04-13 16:23:58] [config] transformer-ffn-depth: 2
+[2019-04-13 16:23:58] [config] transformer-guided-alignment-layer: last
+[2019-04-13 16:23:58] [config] transformer-heads: 16
+[2019-04-13 16:23:58] [config] transformer-no-projection: false
+[2019-04-13 16:23:58] [config] transformer-postprocess: da
+[2019-04-13 16:23:58] [config] transformer-postprocess-emb: d
+[2019-04-13 16:23:58] [config] transformer-preprocess: n
+[2019-04-13 16:23:58] [config] transformer-tied-layers:
+[2019-04-13 16:23:58] [config]   []
+[2019-04-13 16:23:58] [config] transformer-train-position-embeddings: false
+[2019-04-13 16:23:58] [config] type: transformer-context
+[2019-04-13 16:23:58] [config] ulr: false
+[2019-04-13 16:23:58] [config] ulr-dim-emb: 0
+[2019-04-13 16:23:58] [config] ulr-dropout: 0
+[2019-04-13 16:23:58] [config] ulr-keys-vectors: ""
+[2019-04-13 16:23:58] [config] ulr-query-vectors: ""
+[2019-04-13 16:23:58] [config] ulr-softmax-temperature: 1
+[2019-04-13 16:23:58] [config] ulr-trainable-transformation: false
+[2019-04-13 16:23:58] [config] valid-freq: 5000
+[2019-04-13 16:23:58] [config] valid-log: model/valid.log
+[2019-04-13 16:23:58] [config] valid-max-length: 1000
+[2019-04-13 16:23:58] [config] valid-metrics:
+[2019-04-13 16:23:58] [config]   - ce-mean-words
+[2019-04-13 16:23:58] [config]   - perplexity
+[2019-04-13 16:23:58] [config]   - translation
+[2019-04-13 16:23:58] [config] valid-mini-batch: 16
+[2019-04-13 16:23:58] [config] valid-script-path: ./val.sh
+[2019-04-13 16:23:58] [config] valid-sets:
+[2019-04-13 16:23:58] [config]   - newstest2016.docs.src_prev
+[2019-04-13 16:23:58] [config]   - newstest2016.docs.src
+[2019-04-13 16:23:58] [config]   - newstest2016.docs.cs.bpe
+[2019-04-13 16:23:58] [config] valid-translation-output: ""
+[2019-04-13 16:23:58] [config] vocabs:
+[2019-04-13 16:23:58] [config]   - corp/vocab.encs.yml
+[2019-04-13 16:23:58] [config]   - corp/vocab.encs.yml
+[2019-04-13 16:23:58] [config]   - corp/vocab.encs.yml
+[2019-04-13 16:23:58] [config] word-penalty: 0
+[2019-04-13 16:23:58] [config] workspace: 3500
+[2019-04-13 16:23:58] [config] Model is being created with Marian v1.7.8 1e91cce 2019-04-04 17:46:39 +0200
+[2019-04-13 16:23:58] Using synchronous training
+[2019-04-13 16:23:58] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-04-13 16:23:58] [data] Setting vocabulary size for input 0 to 34028
+[2019-04-13 16:23:58] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-04-13 16:23:59] [data] Setting vocabulary size for input 1 to 34028
+[2019-04-13 16:23:59] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-04-13 16:23:59] [data] Setting vocabulary size for input 2 to 34028
+[2019-04-13 16:23:59] [sqlite] Creating temporary database in /tmp
+[2019-04-13 16:24:02] [sqlite] Inserted 1000000 lines
+[2019-04-13 16:24:05] [sqlite] Inserted 2000000 lines
+[2019-04-13 16:24:12] [sqlite] Inserted 4000000 lines
+[2019-04-13 16:24:25] [sqlite] Inserted 8000000 lines
+[2019-04-13 16:24:55] [sqlite] Inserted 16000000 lines
+[2019-04-13 16:25:50] [sqlite] Inserted 32000000 lines
+[2019-04-13 16:27:22] [sqlite] Inserted 57951104 lines
+[2019-04-13 16:27:22] [sqlite] Creating primary index
+[2019-04-13 16:29:49] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-04-13 16:29:49] [batching] Collecting statistics for batch fitting with step size 10
+[2019-04-13 16:29:50] [memory] Extending reserved space to 3584 MB (device gpu0)
+[2019-04-13 16:29:51] [comm] NCCL communicator overridden
+[2019-04-13 16:29:51] [training] Using 1 GPUs
+[2019-04-13 16:29:51] [memory] Reserving 1142 MB, device gpu0
+[2019-04-13 16:29:51] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-04-13 16:29:54] [memory] Reserving 1142 MB, device gpu0
+[2019-04-13 16:29:56] [batching] Done. Typical MB size is 3424 target words
+[2019-04-13 16:29:56] [memory] Extending reserved space to 3584 MB (device gpu0)
+[2019-04-13 16:29:56] [comm] NCCL communicator overridden
+[2019-04-13 16:29:56] [training] Using 1 GPUs
+[2019-04-13 16:29:56] [training] Initializing model weights with the pre-trained model model/model_bt_noise_encz_bicleaner.npz
+[2019-04-13 16:29:56] Loading model from model/model_bt_noise_encz_bicleaner.npz
+[2019-04-13 16:30:05] Training started
+[2019-04-13 16:30:05] [sqlite] Selecting shuffled data
+[2019-04-13 16:34:57] [training] Batches are processed as 1 process(es) x 1 devices/process
+[2019-04-13 16:34:57] [memory] Reserving 1142 MB, device gpu0
+[2019-04-13 16:34:58] [memory] Reserving 1142 MB, device gpu0
+[2019-04-13 16:34:58] [memory] Reserving 1142 MB, device gpu0
+[2019-04-13 16:34:58] [memory] Reserving 1142 MB, device gpu0
+[2019-04-13 16:34:58] [memory] Reserving 2284 MB, device gpu0
+[2019-04-13 16:36:14] Ep. 1 : Up. 100 : Sen. 12,020 : Cost 9.05404758 : Time 384.13s : 473.61 words/s : L.r. 2.5000e-06
+[2019-04-13 16:37:34] Ep. 1 : Up. 200 : Sen. 23,963 : Cost 8.17705441 : Time 80.26s : 2486.61 words/s : L.r. 5.0000e-06
+[2019-04-13 16:38:53] Ep. 1 : Up. 300 : Sen. 36,387 : Cost 7.67226124 : Time 78.94s : 2535.30 words/s : L.r. 7.5000e-06
+[2019-04-13 16:40:12] Ep. 1 : Up. 400 : Sen. 49,064 : Cost 7.07137966 : Time 78.98s : 2466.56 words/s : L.r. 1.0000e-05
+[2019-04-13 16:41:37] Ep. 1 : Up. 500 : Sen. 65,723 : Cost 6.69977951 : Time 85.18s : 2659.45 words/s : L.r. 1.2500e-05
+[2019-04-13 16:42:54] Ep. 1 : Up. 600 : Sen. 77,176 : Cost 6.49566269 : Time 77.39s : 2421.17 words/s : L.r. 1.5000e-05
+[2019-04-13 16:44:10] Ep. 1 : Up. 700 : Sen. 88,801 : Cost 6.23051500 : Time 75.25s : 2355.67 words/s : L.r. 1.7500e-05
+[2019-04-13 16:45:24] Ep. 1 : Up. 800 : Sen. 98,902 : Cost 6.10291195 : Time 74.82s : 2315.07 words/s : L.r. 2.0000e-05
+[2019-04-13 16:46:37] Ep. 1 : Up. 900 : Sen. 109,234 : Cost 6.03537989 : Time 72.93s : 2302.22 words/s : L.r. 2.2500e-05
+[2019-04-13 16:48:03] Ep. 1 : Up. 1000 : Sen. 122,066 : Cost 5.93990850 : Time 86.10s : 2633.01 words/s : L.r. 2.5000e-05
+[2019-04-13 16:48:03] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 16:48:18] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 16:48:34] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 16:50:22] Ep. 1 : Up. 1100 : Sen. 135,429 : Cost 5.75184298 : Time 138.11s : 1221.04 words/s : L.r. 2.7500e-05
+[2019-04-13 16:51:41] Ep. 1 : Up. 1200 : Sen. 150,896 : Cost 5.65139627 : Time 79.01s : 2437.10 words/s : L.r. 3.0000e-05
+[2019-04-13 16:52:56] Ep. 1 : Up. 1300 : Sen. 163,508 : Cost 5.72451162 : Time 75.52s : 2417.96 words/s : L.r. 3.2500e-05
+[2019-04-13 16:54:17] Ep. 1 : Up. 1400 : Sen. 177,213 : Cost 5.30098057 : Time 81.26s : 2491.98 words/s : L.r. 3.5000e-05
+[2019-04-13 16:55:33] Ep. 1 : Up. 1500 : Sen. 190,695 : Cost 4.35294247 : Time 75.88s : 2331.98 words/s : L.r. 3.7500e-05
+[2019-04-13 16:56:51] Ep. 1 : Up. 1600 : Sen. 203,510 : Cost 4.20192337 : Time 77.81s : 2479.69 words/s : L.r. 4.0000e-05
+[2019-04-13 16:58:06] Ep. 1 : Up. 1700 : Sen. 214,068 : Cost 3.95391321 : Time 74.62s : 2294.86 words/s : L.r. 4.2500e-05
+[2019-04-13 16:59:20] Ep. 1 : Up. 1800 : Sen. 222,886 : Cost 3.98627996 : Time 74.23s : 2350.89 words/s : L.r. 4.5000e-05
+[2019-04-13 17:00:34] Ep. 1 : Up. 1900 : Sen. 233,431 : Cost 3.85594797 : Time 73.68s : 2293.46 words/s : L.r. 4.7500e-05
+[2019-04-13 17:01:57] Ep. 1 : Up. 2000 : Sen. 249,915 : Cost 3.67882943 : Time 82.97s : 2561.14 words/s : L.r. 5.0000e-05
+[2019-04-13 17:01:57] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 17:02:12] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 17:02:28] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 17:04:18] Ep. 1 : Up. 2100 : Sen. 262,189 : Cost 3.71700311 : Time 141.58s : 1259.74 words/s : L.r. 5.2500e-05
+[2019-04-13 17:05:31] Ep. 1 : Up. 2200 : Sen. 274,712 : Cost 3.60982823 : Time 72.51s : 2262.96 words/s : L.r. 5.5000e-05
+[2019-04-13 17:06:43] Ep. 1 : Up. 2300 : Sen. 285,763 : Cost 3.63523483 : Time 72.19s : 2234.23 words/s : L.r. 5.7500e-05
+[2019-04-13 17:08:02] Ep. 1 : Up. 2400 : Sen. 299,100 : Cost 3.48906755 : Time 78.83s : 2441.16 words/s : L.r. 6.0000e-05
+[2019-04-13 17:09:21] Ep. 1 : Up. 2500 : Sen. 313,050 : Cost 3.52003241 : Time 79.21s : 2492.88 words/s : L.r. 6.2500e-05
+[2019-04-13 17:10:40] Ep. 1 : Up. 2600 : Sen. 325,262 : Cost 3.52435350 : Time 78.92s : 2473.93 words/s : L.r. 6.5000e-05
+[2019-04-13 17:11:55] Ep. 1 : Up. 2700 : Sen. 337,178 : Cost 3.58908439 : Time 75.56s : 2411.31 words/s : L.r. 6.7500e-05
+[2019-04-13 17:13:11] Ep. 1 : Up. 2800 : Sen. 348,224 : Cost 3.48375869 : Time 75.48s : 2375.55 words/s : L.r. 7.0000e-05
+[2019-04-13 17:14:28] Ep. 1 : Up. 2900 : Sen. 359,531 : Cost 3.42716527 : Time 77.70s : 2406.66 words/s : L.r. 7.2500e-05
+[2019-04-13 17:15:43] Ep. 1 : Up. 3000 : Sen. 369,641 : Cost 3.37964201 : Time 74.40s : 2368.61 words/s : L.r. 7.5000e-05
+[2019-04-13 17:15:43] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 17:15:57] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 17:16:14] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 17:18:02] Ep. 1 : Up. 3100 : Sen. 383,007 : Cost 3.28835368 : Time 139.37s : 1279.60 words/s : L.r. 7.7500e-05
+[2019-04-13 17:19:21] Ep. 1 : Up. 3200 : Sen. 395,876 : Cost 3.37969327 : Time 78.36s : 2481.37 words/s : L.r. 8.0000e-05
+[2019-04-13 17:20:40] Ep. 1 : Up. 3300 : Sen. 408,791 : Cost 3.31895900 : Time 79.57s : 2479.60 words/s : L.r. 8.2500e-05
+[2019-04-13 17:22:01] Ep. 1 : Up. 3400 : Sen. 421,541 : Cost 3.36170173 : Time 81.00s : 2493.72 words/s : L.r. 8.5000e-05
+[2019-04-13 17:23:20] Ep. 1 : Up. 3500 : Sen. 433,054 : Cost 3.36142588 : Time 78.33s : 2478.71 words/s : L.r. 8.7500e-05
+[2019-04-13 17:24:36] Ep. 1 : Up. 3600 : Sen. 445,127 : Cost 3.21123886 : Time 76.09s : 2320.42 words/s : L.r. 9.0000e-05
+[2019-04-13 17:25:57] Ep. 1 : Up. 3700 : Sen. 457,168 : Cost 3.26941299 : Time 81.24s : 2550.70 words/s : L.r. 9.2500e-05
+[2019-04-13 17:27:17] Ep. 1 : Up. 3800 : Sen. 472,328 : Cost 3.23422623 : Time 80.41s : 2460.83 words/s : L.r. 9.5000e-05
+[2019-04-13 17:28:41] Ep. 1 : Up. 3900 : Sen. 487,287 : Cost 3.20850492 : Time 83.34s : 2549.92 words/s : L.r. 9.7500e-05
+[2019-04-13 17:29:54] Ep. 1 : Up. 4000 : Sen. 497,150 : Cost 3.25365901 : Time 72.92s : 2327.44 words/s : L.r. 1.0000e-04
+[2019-04-13 17:29:54] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 17:30:08] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 17:30:24] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 17:32:17] Ep. 1 : Up. 4100 : Sen. 513,099 : Cost 3.17600560 : Time 143.22s : 1440.21 words/s : L.r. 1.0250e-04
+[2019-04-13 17:33:41] Ep. 1 : Up. 4200 : Sen. 526,003 : Cost 3.18396664 : Time 84.10s : 2592.41 words/s : L.r. 1.0500e-04
+[2019-04-13 17:34:57] Ep. 1 : Up. 4300 : Sen. 537,160 : Cost 3.19051981 : Time 76.64s : 2329.47 words/s : L.r. 1.0750e-04
+[2019-04-13 17:36:17] Ep. 1 : Up. 4400 : Sen. 551,088 : Cost 3.19120908 : Time 79.05s : 2420.23 words/s : L.r. 1.1000e-04
+[2019-04-13 17:37:34] Ep. 1 : Up. 4500 : Sen. 562,478 : Cost 3.15708780 : Time 77.16s : 2400.01 words/s : L.r. 1.1250e-04
+[2019-04-13 17:38:50] Ep. 1 : Up. 4600 : Sen. 573,675 : Cost 3.19131470 : Time 76.36s : 2399.47 words/s : L.r. 1.1500e-04
+[2019-04-13 17:40:09] Ep. 1 : Up. 4700 : Sen. 587,329 : Cost 3.13142467 : Time 79.23s : 2426.55 words/s : L.r. 1.1750e-04
+[2019-04-13 17:41:30] Ep. 1 : Up. 4800 : Sen. 601,329 : Cost 3.17309928 : Time 80.27s : 2476.80 words/s : L.r. 1.2000e-04
+[2019-04-13 17:42:42] Ep. 1 : Up. 4900 : Sen. 611,374 : Cost 3.10862875 : Time 72.11s : 2244.76 words/s : L.r. 1.2250e-04
+[2019-04-13 17:43:57] Ep. 1 : Up. 5000 : Sen. 621,530 : Cost 3.21604657 : Time 74.90s : 2378.49 words/s : L.r. 1.2500e-04
+[2019-04-13 17:43:57] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 17:44:13] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 17:44:30] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 17:45:15] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-ce-mean-words.npz
+[2019-04-13 17:45:31] [valid] Ep. 1 : Up. 5000 : ce-mean-words : 1.69531 : new best
+[2019-04-13 17:45:43] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-perplexity.npz
+[2019-04-13 17:46:00] [valid] Ep. 1 : Up. 5000 : perplexity : 5.44836 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-13 17:48:41] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-translation.npz
+[2019-04-13 17:48:56] [valid] Ep. 1 : Up. 5000 : translation : 25.19 : new best
+[2019-04-13 17:50:14] Ep. 1 : Up. 5100 : Sen. 633,194 : Cost 3.17880678 : Time 377.51s : 513.28 words/s : L.r. 1.2750e-04
+[2019-04-13 17:51:34] Ep. 1 : Up. 5200 : Sen. 645,653 : Cost 3.09230781 : Time 80.10s : 2486.58 words/s : L.r. 1.3000e-04
+[2019-04-13 17:52:56] Ep. 1 : Up. 5300 : Sen. 660,577 : Cost 3.09933758 : Time 81.86s : 2563.02 words/s : L.r. 1.3250e-04
+[2019-04-13 17:54:15] Ep. 1 : Up. 5400 : Sen. 673,841 : Cost 3.16242576 : Time 78.47s : 2463.78 words/s : L.r. 1.3500e-04
+[2019-04-13 17:55:29] Ep. 1 : Up. 5500 : Sen. 685,549 : Cost 3.08032441 : Time 74.97s : 2343.73 words/s : L.r. 1.3750e-04
+[2019-04-13 17:56:44] Ep. 1 : Up. 5600 : Sen. 696,948 : Cost 3.08885288 : Time 74.69s : 2309.66 words/s : L.r. 1.4000e-04
+[2019-04-13 17:58:04] Ep. 1 : Up. 5700 : Sen. 710,571 : Cost 3.14863801 : Time 79.60s : 2396.77 words/s : L.r. 1.4250e-04
+[2019-04-13 17:59:20] Ep. 1 : Up. 5800 : Sen. 722,427 : Cost 3.10465097 : Time 76.24s : 2391.56 words/s : L.r. 1.4500e-04
+[2019-04-13 18:00:34] Ep. 1 : Up. 5900 : Sen. 732,539 : Cost 3.14650321 : Time 74.22s : 2312.75 words/s : L.r. 1.4750e-04
+[2019-04-13 18:01:55] Ep. 1 : Up. 6000 : Sen. 745,919 : Cost 3.09810257 : Time 80.85s : 2538.91 words/s : L.r. 1.5000e-04
+[2019-04-13 18:01:55] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 18:02:22] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 18:02:38] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 18:04:29] Ep. 1 : Up. 6100 : Sen. 758,103 : Cost 3.10612607 : Time 154.37s : 1256.28 words/s : L.r. 1.5250e-04
+[2019-04-13 18:05:50] Ep. 1 : Up. 6200 : Sen. 770,711 : Cost 3.18891954 : Time 80.29s : 2549.48 words/s : L.r. 1.5500e-04
+[2019-04-13 18:07:06] Ep. 1 : Up. 6300 : Sen. 781,484 : Cost 3.07620525 : Time 75.89s : 2384.14 words/s : L.r. 1.5750e-04
+[2019-04-13 18:08:25] Ep. 1 : Up. 6400 : Sen. 793,729 : Cost 3.02334762 : Time 79.54s : 2457.87 words/s : L.r. 1.6000e-04
+[2019-04-13 18:09:40] Ep. 1 : Up. 6500 : Sen. 803,885 : Cost 3.11260104 : Time 74.90s : 2370.86 words/s : L.r. 1.6250e-04
+[2019-04-13 18:10:57] Ep. 1 : Up. 6600 : Sen. 815,065 : Cost 3.16311717 : Time 76.66s : 2389.61 words/s : L.r. 1.6500e-04
+[2019-04-13 18:12:15] Ep. 1 : Up. 6700 : Sen. 827,043 : Cost 3.08502245 : Time 78.38s : 2415.63 words/s : L.r. 1.6750e-04
+[2019-04-13 18:13:31] Ep. 1 : Up. 6800 : Sen. 838,964 : Cost 3.00249290 : Time 76.21s : 2352.30 words/s : L.r. 1.7000e-04
+[2019-04-13 18:14:57] Ep. 1 : Up. 6900 : Sen. 855,616 : Cost 3.04519033 : Time 85.35s : 2540.14 words/s : L.r. 1.7250e-04
+[2019-04-13 18:16:20] Ep. 1 : Up. 7000 : Sen. 869,482 : Cost 3.12125063 : Time 83.17s : 2633.54 words/s : L.r. 1.7500e-04
+[2019-04-13 18:16:20] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 18:16:36] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 18:16:53] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 18:18:42] Ep. 1 : Up. 7100 : Sen. 881,383 : Cost 3.08553219 : Time 142.42s : 1265.92 words/s : L.r. 1.7750e-04
+[2019-04-13 18:20:04] Ep. 1 : Up. 7200 : Sen. 895,806 : Cost 3.08356571 : Time 82.22s : 2530.68 words/s : L.r. 1.8000e-04
+[2019-04-13 18:21:21] Ep. 1 : Up. 7300 : Sen. 908,288 : Cost 2.97758269 : Time 76.75s : 2376.80 words/s : L.r. 1.8250e-04
+[2019-04-13 18:22:41] Ep. 1 : Up. 7400 : Sen. 919,688 : Cost 3.05452132 : Time 79.70s : 2437.84 words/s : L.r. 1.8500e-04
+[2019-04-13 18:23:58] Ep. 1 : Up. 7500 : Sen. 932,544 : Cost 3.05103922 : Time 77.28s : 2390.16 words/s : L.r. 1.8750e-04
+[2019-04-13 18:25:10] Ep. 1 : Up. 7600 : Sen. 942,361 : Cost 3.00611305 : Time 72.00s : 2198.29 words/s : L.r. 1.9000e-04
+[2019-04-13 18:26:26] Ep. 1 : Up. 7700 : Sen. 953,940 : Cost 3.14617419 : Time 75.75s : 2386.02 words/s : L.r. 1.9250e-04
+[2019-04-13 18:27:45] Ep. 1 : Up. 7800 : Sen. 965,035 : Cost 3.05093551 : Time 78.82s : 2446.17 words/s : L.r. 1.9500e-04
+[2019-04-13 18:28:58] Ep. 1 : Up. 7900 : Sen. 977,953 : Cost 2.96140599 : Time 73.25s : 2297.09 words/s : L.r. 1.9750e-04
+[2019-04-13 18:30:21] Ep. 1 : Up. 8000 : Sen. 992,624 : Cost 3.09389210 : Time 83.29s : 2610.05 words/s : L.r. 2.0000e-04
+[2019-04-13 18:30:21] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 18:30:38] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 18:30:54] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 18:32:41] Ep. 1 : Up. 8100 : Sen. 1,003,190 : Cost 3.09942627 : Time 139.80s : 1212.17 words/s : L.r. 1.9876e-04
+[2019-04-13 18:34:04] Ep. 1 : Up. 8200 : Sen. 1,018,434 : Cost 3.08032799 : Time 82.53s : 2535.38 words/s : L.r. 1.9755e-04
+[2019-04-13 18:35:21] Ep. 1 : Up. 8300 : Sen. 1,031,005 : Cost 3.04470539 : Time 77.64s : 2392.25 words/s : L.r. 1.9635e-04
+[2019-04-13 18:36:37] Ep. 1 : Up. 8400 : Sen. 1,043,414 : Cost 2.97736812 : Time 75.71s : 2309.07 words/s : L.r. 1.9518e-04
+[2019-04-13 18:37:55] Ep. 1 : Up. 8500 : Sen. 1,056,897 : Cost 3.10029936 : Time 78.27s : 2467.99 words/s : L.r. 1.9403e-04
+[2019-04-13 18:39:11] Ep. 1 : Up. 8600 : Sen. 1,067,445 : Cost 3.07517552 : Time 75.56s : 2373.83 words/s : L.r. 1.9290e-04
+[2019-04-13 18:40:30] Ep. 1 : Up. 8700 : Sen. 1,082,219 : Cost 3.13635087 : Time 78.91s : 2510.88 words/s : L.r. 1.9179e-04
+[2019-04-13 18:41:47] Ep. 1 : Up. 8800 : Sen. 1,095,401 : Cost 2.96841812 : Time 77.18s : 2371.96 words/s : L.r. 1.9069e-04
+[2019-04-13 18:43:04] Ep. 1 : Up. 8900 : Sen. 1,107,798 : Cost 3.01163411 : Time 77.04s : 2340.05 words/s : L.r. 1.8962e-04
+[2019-04-13 18:44:24] Ep. 1 : Up. 9000 : Sen. 1,120,518 : Cost 3.10553479 : Time 79.88s : 2479.15 words/s : L.r. 1.8856e-04
+[2019-04-13 18:44:24] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 18:44:39] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 18:44:56] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 18:46:55] Ep. 1 : Up. 9100 : Sen. 1,135,247 : Cost 2.96539140 : Time 151.20s : 1359.88 words/s : L.r. 1.8752e-04
+[2019-04-13 18:48:11] Ep. 1 : Up. 9200 : Sen. 1,144,861 : Cost 3.01495600 : Time 75.76s : 2419.69 words/s : L.r. 1.8650e-04
+[2019-04-13 18:49:26] Ep. 1 : Up. 9300 : Sen. 1,155,752 : Cost 3.08178782 : Time 75.55s : 2433.12 words/s : L.r. 1.8550e-04
+[2019-04-13 18:50:43] Ep. 1 : Up. 9400 : Sen. 1,168,133 : Cost 3.01371336 : Time 76.30s : 2391.46 words/s : L.r. 1.8451e-04
+[2019-04-13 18:51:57] Ep. 1 : Up. 9500 : Sen. 1,180,139 : Cost 3.01301146 : Time 74.15s : 2269.06 words/s : L.r. 1.8353e-04
+[2019-04-13 18:53:16] Ep. 1 : Up. 9600 : Sen. 1,194,499 : Cost 3.05676627 : Time 78.87s : 2439.70 words/s : L.r. 1.8257e-04
+[2019-04-13 18:54:31] Ep. 1 : Up. 9700 : Sen. 1,207,751 : Cost 2.92182088 : Time 75.28s : 2344.87 words/s : L.r. 1.8163e-04
+[2019-04-13 18:55:56] Ep. 1 : Up. 9800 : Sen. 1,224,147 : Cost 3.04394770 : Time 85.27s : 2605.16 words/s : L.r. 1.8070e-04
+[2019-04-13 18:57:16] Ep. 1 : Up. 9900 : Sen. 1,236,604 : Cost 3.09230185 : Time 79.98s : 2595.69 words/s : L.r. 1.7979e-04
+[2019-04-13 18:58:42] Ep. 1 : Up. 10000 : Sen. 1,251,444 : Cost 3.01409721 : Time 85.85s : 2608.77 words/s : L.r. 1.7889e-04
+[2019-04-13 18:58:42] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 18:58:59] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 18:59:17] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 19:00:02] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-ce-mean-words.npz
+[2019-04-13 19:00:18] [valid] Ep. 1 : Up. 10000 : ce-mean-words : 1.61316 : new best
+[2019-04-13 19:00:31] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-perplexity.npz
+[2019-04-13 19:00:47] [valid] Ep. 1 : Up. 10000 : perplexity : 5.01864 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-13 19:03:32] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-translation.npz
+[2019-04-13 19:03:47] [valid] Ep. 1 : Up. 10000 : translation : 25.95 : new best
+[2019-04-13 19:04:59] Ep. 1 : Up. 10100 : Sen. 1,263,445 : Cost 3.03141522 : Time 376.92s : 431.94 words/s : L.r. 1.7800e-04
+[2019-04-13 19:06:14] Ep. 1 : Up. 10200 : Sen. 1,272,738 : Cost 3.01880097 : Time 75.47s : 2308.69 words/s : L.r. 1.7712e-04
+[2019-04-13 19:07:33] Ep. 1 : Up. 10300 : Sen. 1,284,732 : Cost 3.04970884 : Time 78.89s : 2445.08 words/s : L.r. 1.7626e-04
+[2019-04-13 19:08:47] Ep. 1 : Up. 10400 : Sen. 1,295,906 : Cost 3.02191210 : Time 73.81s : 2300.69 words/s : L.r. 1.7541e-04
+[2019-04-13 19:10:09] Ep. 1 : Up. 10500 : Sen. 1,308,920 : Cost 2.99300075 : Time 81.40s : 2523.50 words/s : L.r. 1.7457e-04
+[2019-04-13 19:11:36] Ep. 1 : Up. 10600 : Sen. 1,326,422 : Cost 2.99791431 : Time 87.13s : 2621.35 words/s : L.r. 1.7375e-04
+[2019-04-13 19:12:57] Ep. 1 : Up. 10700 : Sen. 1,340,656 : Cost 2.99048328 : Time 81.11s : 2479.86 words/s : L.r. 1.7294e-04
+[2019-04-13 19:14:17] Ep. 1 : Up. 10800 : Sen. 1,355,733 : Cost 2.94623637 : Time 80.40s : 2490.10 words/s : L.r. 1.7213e-04
+[2019-04-13 19:15:33] Ep. 1 : Up. 10900 : Sen. 1,365,771 : Cost 2.96528316 : Time 75.90s : 2372.16 words/s : L.r. 1.7134e-04
+[2019-04-13 19:16:48] Ep. 1 : Up. 11000 : Sen. 1,375,846 : Cost 2.97064471 : Time 74.76s : 2277.19 words/s : L.r. 1.7056e-04
+[2019-04-13 19:16:48] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 19:17:03] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 19:17:20] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 19:19:15] Ep. 1 : Up. 11100 : Sen. 1,388,290 : Cost 3.01499319 : Time 146.83s : 1370.69 words/s : L.r. 1.6979e-04
+[2019-04-13 19:20:30] Ep. 1 : Up. 11200 : Sen. 1,399,226 : Cost 2.99495339 : Time 75.61s : 2310.63 words/s : L.r. 1.6903e-04
+[2019-04-13 19:21:55] Ep. 1 : Up. 11300 : Sen. 1,413,285 : Cost 2.98975754 : Time 84.34s : 2554.95 words/s : L.r. 1.6828e-04
+[2019-04-13 19:23:07] Ep. 1 : Up. 11400 : Sen. 1,424,081 : Cost 2.97841072 : Time 72.32s : 2293.62 words/s : L.r. 1.6754e-04
+[2019-04-13 19:24:28] Ep. 1 : Up. 11500 : Sen. 1,437,271 : Cost 2.96663523 : Time 81.05s : 2440.73 words/s : L.r. 1.6681e-04
+[2019-04-13 19:25:47] Ep. 1 : Up. 11600 : Sen. 1,450,560 : Cost 2.92608571 : Time 79.18s : 2354.75 words/s : L.r. 1.6609e-04
+[2019-04-13 19:27:03] Ep. 1 : Up. 11700 : Sen. 1,462,687 : Cost 2.99126887 : Time 76.18s : 2371.04 words/s : L.r. 1.6538e-04
+[2019-04-13 19:28:21] Ep. 1 : Up. 11800 : Sen. 1,473,853 : Cost 3.05213857 : Time 77.50s : 2438.06 words/s : L.r. 1.6468e-04
+[2019-04-13 19:29:39] Ep. 1 : Up. 11900 : Sen. 1,486,060 : Cost 2.93821526 : Time 78.56s : 2425.98 words/s : L.r. 1.6398e-04
+[2019-04-13 19:30:54] Ep. 1 : Up. 12000 : Sen. 1,495,712 : Cost 3.05613422 : Time 74.88s : 2359.80 words/s : L.r. 1.6330e-04
+[2019-04-13 19:30:54] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 19:31:11] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 19:31:28] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 19:33:16] Ep. 1 : Up. 12100 : Sen. 1,507,651 : Cost 3.02742982 : Time 141.65s : 1315.28 words/s : L.r. 1.6262e-04
+[2019-04-13 19:34:39] Ep. 1 : Up. 12200 : Sen. 1,524,866 : Cost 2.89547086 : Time 83.30s : 2496.03 words/s : L.r. 1.6196e-04
+[2019-04-13 19:35:53] Ep. 1 : Up. 12300 : Sen. 1,535,847 : Cost 3.04813576 : Time 73.57s : 2331.06 words/s : L.r. 1.6130e-04
+[2019-04-13 19:37:10] Ep. 1 : Up. 12400 : Sen. 1,548,269 : Cost 2.98761296 : Time 76.88s : 2374.59 words/s : L.r. 1.6064e-04
+[2019-04-13 19:38:24] Ep. 1 : Up. 12500 : Sen. 1,559,442 : Cost 2.99537373 : Time 74.78s : 2368.41 words/s : L.r. 1.6000e-04
+[2019-04-13 19:39:44] Ep. 1 : Up. 12600 : Sen. 1,571,242 : Cost 3.00514507 : Time 79.32s : 2434.99 words/s : L.r. 1.5936e-04
+[2019-04-13 19:41:01] Ep. 1 : Up. 12700 : Sen. 1,582,960 : Cost 2.99627352 : Time 76.76s : 2363.61 words/s : L.r. 1.5874e-04
+[2019-04-13 19:42:17] Ep. 1 : Up. 12800 : Sen. 1,593,329 : Cost 2.98014188 : Time 76.35s : 2414.80 words/s : L.r. 1.5811e-04
+[2019-04-13 19:43:34] Ep. 1 : Up. 12900 : Sen. 1,605,376 : Cost 2.97116494 : Time 77.22s : 2391.57 words/s : L.r. 1.5750e-04
+[2019-04-13 19:44:54] Ep. 1 : Up. 13000 : Sen. 1,617,871 : Cost 2.98553419 : Time 80.35s : 2491.42 words/s : L.r. 1.5689e-04
+[2019-04-13 19:44:54] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 19:45:09] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 19:45:26] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 19:47:22] Ep. 1 : Up. 13100 : Sen. 1,631,585 : Cost 3.04171991 : Time 147.65s : 1380.63 words/s : L.r. 1.5629e-04
+[2019-04-13 19:48:37] Ep. 1 : Up. 13200 : Sen. 1,643,227 : Cost 2.93269968 : Time 74.97s : 2276.62 words/s : L.r. 1.5570e-04
+[2019-04-13 19:50:00] Ep. 1 : Up. 13300 : Sen. 1,657,990 : Cost 2.96801424 : Time 82.43s : 2535.76 words/s : L.r. 1.5511e-04
+[2019-04-13 19:51:23] Ep. 1 : Up. 13400 : Sen. 1,674,292 : Cost 2.93567872 : Time 83.72s : 2542.58 words/s : L.r. 1.5453e-04
+[2019-04-13 19:52:38] Ep. 1 : Up. 13500 : Sen. 1,685,673 : Cost 2.94053078 : Time 74.59s : 2268.84 words/s : L.r. 1.5396e-04
+[2019-04-13 19:53:53] Ep. 1 : Up. 13600 : Sen. 1,699,611 : Cost 2.91669488 : Time 75.45s : 2309.29 words/s : L.r. 1.5339e-04
+[2019-04-13 19:55:12] Ep. 1 : Up. 13700 : Sen. 1,710,707 : Cost 2.94454241 : Time 79.16s : 2402.69 words/s : L.r. 1.5283e-04
+[2019-04-13 19:56:32] Ep. 1 : Up. 13800 : Sen. 1,723,516 : Cost 3.03155279 : Time 79.63s : 2464.27 words/s : L.r. 1.5228e-04
+[2019-04-13 19:57:53] Ep. 1 : Up. 13900 : Sen. 1,736,599 : Cost 3.01439977 : Time 81.30s : 2491.07 words/s : L.r. 1.5173e-04
+[2019-04-13 19:59:10] Ep. 1 : Up. 14000 : Sen. 1,747,469 : Cost 3.06278515 : Time 76.41s : 2447.60 words/s : L.r. 1.5119e-04
+[2019-04-13 19:59:10] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 19:59:26] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 19:59:43] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 20:01:30] Ep. 1 : Up. 14100 : Sen. 1,758,052 : Cost 2.92277765 : Time 140.32s : 1211.80 words/s : L.r. 1.5065e-04
+[2019-04-13 20:02:42] Ep. 1 : Up. 14200 : Sen. 1,767,560 : Cost 3.01239181 : Time 71.51s : 2259.23 words/s : L.r. 1.5012e-04
+[2019-04-13 20:03:59] Ep. 1 : Up. 14300 : Sen. 1,777,496 : Cost 3.02839780 : Time 77.17s : 2488.24 words/s : L.r. 1.4959e-04
+[2019-04-13 20:05:18] Ep. 1 : Up. 14400 : Sen. 1,791,034 : Cost 2.94834995 : Time 79.35s : 2430.88 words/s : L.r. 1.4907e-04
+[2019-04-13 20:06:35] Ep. 1 : Up. 14500 : Sen. 1,802,674 : Cost 2.95689726 : Time 76.69s : 2395.47 words/s : L.r. 1.4856e-04
+[2019-04-13 20:07:49] Ep. 1 : Up. 14600 : Sen. 1,812,042 : Cost 2.92995191 : Time 74.00s : 2317.82 words/s : L.r. 1.4805e-04
+[2019-04-13 20:09:03] Ep. 1 : Up. 14700 : Sen. 1,822,430 : Cost 3.00504446 : Time 74.22s : 2381.70 words/s : L.r. 1.4754e-04
+[2019-04-13 20:10:17] Ep. 1 : Up. 14800 : Sen. 1,832,662 : Cost 2.97094369 : Time 73.86s : 2304.81 words/s : L.r. 1.4704e-04
+[2019-04-13 20:11:32] Ep. 1 : Up. 14900 : Sen. 1,843,327 : Cost 2.92259502 : Time 75.00s : 2397.07 words/s : L.r. 1.4655e-04
+[2019-04-13 20:12:53] Ep. 1 : Up. 15000 : Sen. 1,857,855 : Cost 3.00243855 : Time 81.16s : 2447.62 words/s : L.r. 1.4606e-04
+[2019-04-13 20:12:53] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 20:13:08] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 20:13:25] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 20:14:12] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-ce-mean-words.npz
+[2019-04-13 20:14:28] [valid] Ep. 1 : Up. 15000 : ce-mean-words : 1.59126 : new best
+[2019-04-13 20:14:40] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-perplexity.npz
+[2019-04-13 20:14:57] [valid] Ep. 1 : Up. 15000 : perplexity : 4.90995 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-13 20:17:41] [valid] Ep. 1 : Up. 15000 : translation : 25.93 : stalled 1 times (last best: 25.95)
+[2019-04-13 20:19:03] Ep. 1 : Up. 15100 : Sen. 1,872,357 : Cost 3.02119589 : Time 369.45s : 556.48 words/s : L.r. 1.4557e-04
+[2019-04-13 20:20:22] Ep. 1 : Up. 15200 : Sen. 1,884,696 : Cost 3.01533771 : Time 79.89s : 2510.10 words/s : L.r. 1.4510e-04
+[2019-04-13 20:21:43] Ep. 1 : Up. 15300 : Sen. 1,899,581 : Cost 3.01311779 : Time 80.32s : 2508.17 words/s : L.r. 1.4462e-04
+[2019-04-13 20:23:02] Ep. 1 : Up. 15400 : Sen. 1,913,822 : Cost 2.94988084 : Time 79.57s : 2457.35 words/s : L.r. 1.4415e-04
+[2019-04-13 20:24:17] Ep. 1 : Up. 15500 : Sen. 1,924,424 : Cost 2.96602321 : Time 74.65s : 2313.79 words/s : L.r. 1.4368e-04
+[2019-04-13 20:25:39] Ep. 1 : Up. 15600 : Sen. 1,939,099 : Cost 2.96334243 : Time 81.99s : 2509.79 words/s : L.r. 1.4322e-04
+[2019-04-13 20:26:56] Ep. 1 : Up. 15700 : Sen. 1,950,341 : Cost 2.92477107 : Time 77.32s : 2386.57 words/s : L.r. 1.4277e-04
+[2019-04-13 20:28:10] Ep. 1 : Up. 15800 : Sen. 1,958,586 : Cost 2.88472199 : Time 73.56s : 2331.12 words/s : L.r. 1.4231e-04
+[2019-04-13 20:29:29] Ep. 1 : Up. 15900 : Sen. 1,972,091 : Cost 2.96312594 : Time 79.42s : 2500.97 words/s : L.r. 1.4187e-04
+[2019-04-13 20:30:47] Ep. 1 : Up. 16000 : Sen. 1,985,054 : Cost 3.02392316 : Time 77.59s : 2419.94 words/s : L.r. 1.4142e-04
+[2019-04-13 20:30:47] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 20:31:03] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 20:31:20] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 20:33:14] Ep. 1 : Up. 16100 : Sen. 2,000,348 : Cost 2.90327096 : Time 147.30s : 1372.37 words/s : L.r. 1.4098e-04
+[2019-04-13 20:34:32] Ep. 1 : Up. 16200 : Sen. 2,011,824 : Cost 2.89355302 : Time 77.92s : 2420.32 words/s : L.r. 1.4055e-04
+[2019-04-13 20:35:52] Ep. 1 : Up. 16300 : Sen. 2,027,286 : Cost 2.89829755 : Time 79.47s : 2403.41 words/s : L.r. 1.4011e-04
+[2019-04-13 20:37:10] Ep. 1 : Up. 16400 : Sen. 2,040,171 : Cost 3.02034736 : Time 78.16s : 2438.05 words/s : L.r. 1.3969e-04
+[2019-04-13 20:38:27] Ep. 1 : Up. 16500 : Sen. 2,050,165 : Cost 3.01866961 : Time 77.05s : 2403.77 words/s : L.r. 1.3926e-04
+[2019-04-13 20:39:44] Ep. 1 : Up. 16600 : Sen. 2,062,566 : Cost 3.01377773 : Time 77.22s : 2362.35 words/s : L.r. 1.3884e-04
+[2019-04-13 20:40:57] Ep. 1 : Up. 16700 : Sen. 2,073,538 : Cost 2.90090752 : Time 72.65s : 2231.90 words/s : L.r. 1.3843e-04
+[2019-04-13 20:42:12] Ep. 1 : Up. 16800 : Sen. 2,083,148 : Cost 2.97735429 : Time 75.57s : 2344.35 words/s : L.r. 1.3801e-04
+[2019-04-13 20:43:32] Ep. 1 : Up. 16900 : Sen. 2,098,045 : Cost 2.90057540 : Time 80.22s : 2388.68 words/s : L.r. 1.3760e-04
+[2019-04-13 20:44:50] Ep. 1 : Up. 17000 : Sen. 2,108,771 : Cost 2.92254686 : Time 77.74s : 2386.70 words/s : L.r. 1.3720e-04
+[2019-04-13 20:44:50] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 20:45:04] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 20:45:21] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 20:47:09] Ep. 1 : Up. 17100 : Sen. 2,120,671 : Cost 2.94912004 : Time 139.04s : 1226.63 words/s : L.r. 1.3680e-04
+[2019-04-13 20:48:25] Ep. 1 : Up. 17200 : Sen. 2,133,420 : Cost 2.94305897 : Time 75.47s : 2338.15 words/s : L.r. 1.3640e-04
+[2019-04-13 20:49:42] Ep. 1 : Up. 17300 : Sen. 2,146,071 : Cost 2.95716000 : Time 77.64s : 2419.59 words/s : L.r. 1.3600e-04
+[2019-04-13 20:51:01] Ep. 1 : Up. 17400 : Sen. 2,158,799 : Cost 2.88052344 : Time 78.66s : 2449.20 words/s : L.r. 1.3561e-04
+[2019-04-13 20:52:16] Ep. 1 : Up. 17500 : Sen. 2,169,397 : Cost 2.94481015 : Time 74.64s : 2277.67 words/s : L.r. 1.3522e-04
+[2019-04-13 20:53:40] Ep. 1 : Up. 17600 : Sen. 2,183,769 : Cost 3.05129814 : Time 84.14s : 2656.45 words/s : L.r. 1.3484e-04
+[2019-04-13 20:54:59] Ep. 1 : Up. 17700 : Sen. 2,195,961 : Cost 3.02162576 : Time 79.36s : 2453.03 words/s : L.r. 1.3446e-04
+[2019-04-13 20:56:15] Ep. 1 : Up. 17800 : Sen. 2,206,968 : Cost 2.97876358 : Time 75.94s : 2311.01 words/s : L.r. 1.3408e-04
+[2019-04-13 20:57:31] Ep. 1 : Up. 17900 : Sen. 2,219,057 : Cost 2.91221762 : Time 76.03s : 2356.91 words/s : L.r. 1.3371e-04
+[2019-04-13 20:58:56] Ep. 1 : Up. 18000 : Sen. 2,235,367 : Cost 2.96978354 : Time 85.01s : 2646.26 words/s : L.r. 1.3333e-04
+[2019-04-13 20:58:56] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 20:59:10] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 20:59:28] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 21:01:25] Ep. 1 : Up. 18100 : Sen. 2,249,679 : Cost 2.96186471 : Time 148.82s : 1404.33 words/s : L.r. 1.3296e-04
+[2019-04-13 21:02:44] Ep. 1 : Up. 18200 : Sen. 2,262,769 : Cost 2.97069120 : Time 78.85s : 2447.29 words/s : L.r. 1.3260e-04
+[2019-04-13 21:04:03] Ep. 1 : Up. 18300 : Sen. 2,274,448 : Cost 3.02195883 : Time 78.75s : 2483.57 words/s : L.r. 1.3224e-04
+[2019-04-13 21:05:23] Ep. 1 : Up. 18400 : Sen. 2,287,698 : Cost 2.98804331 : Time 80.69s : 2415.19 words/s : L.r. 1.3188e-04
+[2019-04-13 21:06:48] Ep. 1 : Up. 18500 : Sen. 2,304,205 : Cost 2.87890577 : Time 84.55s : 2498.79 words/s : L.r. 1.3152e-04
+[2019-04-13 21:08:04] Ep. 1 : Up. 18600 : Sen. 2,314,261 : Cost 2.93131495 : Time 75.83s : 2354.06 words/s : L.r. 1.3117e-04
+[2019-04-13 21:09:21] Ep. 1 : Up. 18700 : Sen. 2,327,572 : Cost 2.93711066 : Time 77.25s : 2377.91 words/s : L.r. 1.3081e-04
+[2019-04-13 21:10:35] Ep. 1 : Up. 18800 : Sen. 2,339,689 : Cost 2.93236637 : Time 74.46s : 2263.81 words/s : L.r. 1.3047e-04
+[2019-04-13 21:11:52] Ep. 1 : Up. 18900 : Sen. 2,351,007 : Cost 3.01619697 : Time 76.42s : 2351.14 words/s : L.r. 1.3012e-04
+[2019-04-13 21:13:07] Ep. 1 : Up. 19000 : Sen. 2,361,215 : Cost 2.99425077 : Time 75.59s : 2304.28 words/s : L.r. 1.2978e-04
+[2019-04-13 21:13:07] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 21:13:24] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 21:13:41] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 21:15:27] Ep. 1 : Up. 19100 : Sen. 2,371,278 : Cost 2.95725751 : Time 139.33s : 1225.55 words/s : L.r. 1.2944e-04
+[2019-04-13 21:16:48] Ep. 1 : Up. 19200 : Sen. 2,385,815 : Cost 2.91333818 : Time 80.87s : 2454.65 words/s : L.r. 1.2910e-04
+[2019-04-13 21:18:03] Ep. 1 : Up. 19300 : Sen. 2,397,284 : Cost 2.97907186 : Time 75.82s : 2367.39 words/s : L.r. 1.2876e-04
+[2019-04-13 21:19:21] Ep. 1 : Up. 19400 : Sen. 2,409,222 : Cost 2.94545889 : Time 77.41s : 2458.37 words/s : L.r. 1.2843e-04
+[2019-04-13 21:20:41] Ep. 1 : Up. 19500 : Sen. 2,423,575 : Cost 2.91747141 : Time 80.66s : 2490.42 words/s : L.r. 1.2810e-04
+[2019-04-13 21:22:04] Ep. 1 : Up. 19600 : Sen. 2,437,591 : Cost 2.96078897 : Time 82.13s : 2523.75 words/s : L.r. 1.2778e-04
+[2019-04-13 21:23:21] Ep. 1 : Up. 19700 : Sen. 2,448,733 : Cost 2.93732786 : Time 77.36s : 2398.48 words/s : L.r. 1.2745e-04
+[2019-04-13 21:24:38] Ep. 1 : Up. 19800 : Sen. 2,460,126 : Cost 2.93953061 : Time 77.48s : 2485.57 words/s : L.r. 1.2713e-04
+[2019-04-13 21:25:59] Ep. 1 : Up. 19900 : Sen. 2,473,246 : Cost 2.96166611 : Time 80.52s : 2528.15 words/s : L.r. 1.2681e-04
+[2019-04-13 21:27:17] Ep. 1 : Up. 20000 : Sen. 2,486,523 : Cost 2.95723581 : Time 78.35s : 2450.12 words/s : L.r. 1.2649e-04
+[2019-04-13 21:27:17] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 21:27:34] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 21:27:51] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 21:28:37] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-ce-mean-words.npz
+[2019-04-13 21:28:53] [valid] Ep. 1 : Up. 20000 : ce-mean-words : 1.58903 : new best
+[2019-04-13 21:29:06] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-perplexity.npz
+[2019-04-13 21:29:23] [valid] Ep. 1 : Up. 20000 : perplexity : 4.89901 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-13 21:32:05] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-translation.npz
+[2019-04-13 21:32:19] [valid] Ep. 1 : Up. 20000 : translation : 26.15 : new best
+[2019-04-13 21:33:41] Ep. 1 : Up. 20100 : Sen. 2,498,467 : Cost 2.94576454 : Time 383.41s : 523.96 words/s : L.r. 1.2618e-04
+[2019-04-13 21:34:57] Ep. 1 : Up. 20200 : Sen. 2,508,460 : Cost 2.97876334 : Time 76.10s : 2402.50 words/s : L.r. 1.2586e-04
+[2019-04-13 21:36:11] Ep. 1 : Up. 20300 : Sen. 2,519,870 : Cost 2.87403870 : Time 73.95s : 2263.21 words/s : L.r. 1.2555e-04
+[2019-04-13 21:37:29] Ep. 1 : Up. 20400 : Sen. 2,531,454 : Cost 3.01105881 : Time 78.05s : 2501.50 words/s : L.r. 1.2524e-04
+[2019-04-13 21:38:45] Ep. 1 : Up. 20500 : Sen. 2,543,287 : Cost 2.91251230 : Time 76.15s : 2346.92 words/s : L.r. 1.2494e-04
+[2019-04-13 21:39:58] Ep. 1 : Up. 20600 : Sen. 2,552,211 : Cost 2.96219277 : Time 73.24s : 2272.70 words/s : L.r. 1.2464e-04
+[2019-04-13 21:41:16] Ep. 1 : Up. 20700 : Sen. 2,564,312 : Cost 3.02720261 : Time 77.82s : 2438.06 words/s : L.r. 1.2433e-04
+[2019-04-13 21:42:34] Ep. 1 : Up. 20800 : Sen. 2,575,786 : Cost 2.91628599 : Time 77.58s : 2366.61 words/s : L.r. 1.2403e-04
+[2019-04-13 21:43:52] Ep. 1 : Up. 20900 : Sen. 2,587,173 : Cost 2.97463799 : Time 78.33s : 2484.96 words/s : L.r. 1.2374e-04
+[2019-04-13 21:45:07] Ep. 1 : Up. 21000 : Sen. 2,599,664 : Cost 2.98490071 : Time 75.35s : 2381.18 words/s : L.r. 1.2344e-04
+[2019-04-13 21:45:07] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 21:45:21] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 21:45:38] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 21:47:27] Ep. 1 : Up. 21100 : Sen. 2,612,701 : Cost 2.98835802 : Time 140.18s : 1386.09 words/s : L.r. 1.2315e-04
+[2019-04-13 21:48:44] Ep. 1 : Up. 21200 : Sen. 2,623,324 : Cost 2.97867537 : Time 76.92s : 2396.48 words/s : L.r. 1.2286e-04
+[2019-04-13 21:50:02] Ep. 1 : Up. 21300 : Sen. 2,637,025 : Cost 2.92211819 : Time 77.78s : 2476.07 words/s : L.r. 1.2257e-04
+[2019-04-13 21:51:18] Ep. 1 : Up. 21400 : Sen. 2,649,957 : Cost 2.96239710 : Time 76.03s : 2375.69 words/s : L.r. 1.2228e-04
+[2019-04-13 21:52:40] Ep. 1 : Up. 21500 : Sen. 2,663,808 : Cost 2.97825694 : Time 82.04s : 2503.14 words/s : L.r. 1.2200e-04
+[2019-04-13 21:54:00] Ep. 1 : Up. 21600 : Sen. 2,675,349 : Cost 2.99692321 : Time 79.65s : 2476.60 words/s : L.r. 1.2172e-04
+[2019-04-13 21:55:21] Ep. 1 : Up. 21700 : Sen. 2,690,497 : Cost 2.93776274 : Time 81.29s : 2539.86 words/s : L.r. 1.2144e-04
+[2019-04-13 21:56:38] Ep. 1 : Up. 21800 : Sen. 2,701,888 : Cost 2.94040632 : Time 76.72s : 2347.36 words/s : L.r. 1.2116e-04
+[2019-04-13 21:57:59] Ep. 1 : Up. 21900 : Sen. 2,715,804 : Cost 2.93271971 : Time 80.75s : 2492.81 words/s : L.r. 1.2088e-04
+[2019-04-13 21:59:14] Ep. 1 : Up. 22000 : Sen. 2,726,504 : Cost 3.02311659 : Time 74.97s : 2368.53 words/s : L.r. 1.2060e-04
+[2019-04-13 21:59:14] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 21:59:30] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 21:59:46] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 22:01:30] Ep. 1 : Up. 22100 : Sen. 2,735,934 : Cost 2.94357562 : Time 136.65s : 1167.58 words/s : L.r. 1.2033e-04
+[2019-04-13 22:02:42] Ep. 1 : Up. 22200 : Sen. 2,745,146 : Cost 2.91210294 : Time 72.23s : 2247.19 words/s : L.r. 1.2006e-04
+[2019-04-13 22:04:00] Ep. 1 : Up. 22300 : Sen. 2,757,311 : Cost 2.96513414 : Time 77.41s : 2369.88 words/s : L.r. 1.1979e-04
+[2019-04-13 22:05:20] Ep. 1 : Up. 22400 : Sen. 2,771,123 : Cost 2.99491048 : Time 80.22s : 2422.39 words/s : L.r. 1.1952e-04
+[2019-04-13 22:06:38] Ep. 1 : Up. 22500 : Sen. 2,784,056 : Cost 2.97189808 : Time 78.33s : 2464.76 words/s : L.r. 1.1926e-04
+[2019-04-13 22:07:59] Ep. 1 : Up. 22600 : Sen. 2,797,574 : Cost 2.93810868 : Time 80.13s : 2494.90 words/s : L.r. 1.1899e-04
+[2019-04-13 22:09:13] Ep. 1 : Up. 22700 : Sen. 2,810,057 : Cost 2.83297849 : Time 74.90s : 2316.21 words/s : L.r. 1.1873e-04
+[2019-04-13 22:10:29] Ep. 1 : Up. 22800 : Sen. 2,821,704 : Cost 2.92033625 : Time 75.86s : 2300.89 words/s : L.r. 1.1847e-04
+[2019-04-13 22:11:46] Ep. 1 : Up. 22900 : Sen. 2,832,992 : Cost 2.92458534 : Time 76.58s : 2357.48 words/s : L.r. 1.1821e-04
+[2019-04-13 22:13:11] Ep. 1 : Up. 23000 : Sen. 2,849,687 : Cost 3.03377366 : Time 85.41s : 2635.98 words/s : L.r. 1.1795e-04
+[2019-04-13 22:13:11] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 22:13:28] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 22:13:45] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 22:15:41] Ep. 1 : Up. 23100 : Sen. 2,863,435 : Cost 3.00843358 : Time 149.38s : 1400.59 words/s : L.r. 1.1770e-04
+[2019-04-13 22:16:55] Ep. 1 : Up. 23200 : Sen. 2,875,426 : Cost 2.96050143 : Time 74.41s : 2324.64 words/s : L.r. 1.1744e-04
+[2019-04-13 22:18:14] Ep. 1 : Up. 23300 : Sen. 2,889,038 : Cost 3.01035047 : Time 78.97s : 2405.08 words/s : L.r. 1.1719e-04
+[2019-04-13 22:19:28] Ep. 1 : Up. 23400 : Sen. 2,898,358 : Cost 3.05789351 : Time 74.10s : 2313.98 words/s : L.r. 1.1694e-04
+[2019-04-13 22:20:47] Ep. 1 : Up. 23500 : Sen. 2,910,142 : Cost 2.94755054 : Time 78.92s : 2476.75 words/s : L.r. 1.1669e-04
+[2019-04-13 22:22:07] Ep. 1 : Up. 23600 : Sen. 2,925,338 : Cost 2.95361543 : Time 80.24s : 2494.67 words/s : L.r. 1.1644e-04
+[2019-04-13 22:23:28] Ep. 1 : Up. 23700 : Sen. 2,939,234 : Cost 2.89752269 : Time 81.08s : 2481.01 words/s : L.r. 1.1620e-04
+[2019-04-13 22:24:49] Ep. 1 : Up. 23800 : Sen. 2,954,478 : Cost 2.90229440 : Time 80.85s : 2443.24 words/s : L.r. 1.1595e-04
+[2019-04-13 22:26:05] Ep. 1 : Up. 23900 : Sen. 2,964,710 : Cost 2.97652841 : Time 75.36s : 2362.63 words/s : L.r. 1.1571e-04
+[2019-04-13 22:27:21] Ep. 1 : Up. 24000 : Sen. 2,977,206 : Cost 2.90303731 : Time 76.75s : 2380.47 words/s : L.r. 1.1547e-04
+[2019-04-13 22:27:21] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 22:27:38] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 22:27:55] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 22:29:45] Ep. 1 : Up. 24100 : Sen. 2,991,384 : Cost 2.91304016 : Time 143.74s : 1347.20 words/s : L.r. 1.1523e-04
+[2019-04-13 22:31:08] Ep. 1 : Up. 24200 : Sen. 3,005,379 : Cost 2.88375783 : Time 83.02s : 2487.71 words/s : L.r. 1.1499e-04
+[2019-04-13 22:32:27] Ep. 1 : Up. 24300 : Sen. 3,019,717 : Cost 2.96604609 : Time 79.28s : 2442.35 words/s : L.r. 1.1476e-04
+[2019-04-13 22:33:43] Ep. 1 : Up. 24400 : Sen. 3,029,721 : Cost 2.95625830 : Time 75.18s : 2372.43 words/s : L.r. 1.1452e-04
+[2019-04-13 22:35:02] Ep. 1 : Up. 24500 : Sen. 3,044,674 : Cost 2.91727495 : Time 79.14s : 2348.07 words/s : L.r. 1.1429e-04
+[2019-04-13 22:36:13] Ep. 1 : Up. 24600 : Sen. 3,055,659 : Cost 2.90362382 : Time 71.58s : 2232.88 words/s : L.r. 1.1405e-04
+[2019-04-13 22:37:30] Ep. 1 : Up. 24700 : Sen. 3,068,814 : Cost 2.91854858 : Time 76.89s : 2330.62 words/s : L.r. 1.1382e-04
+[2019-04-13 22:38:48] Ep. 1 : Up. 24800 : Sen. 3,080,034 : Cost 2.96886969 : Time 77.61s : 2431.12 words/s : L.r. 1.1359e-04
+[2019-04-13 22:40:06] Ep. 1 : Up. 24900 : Sen. 3,092,952 : Cost 2.96362710 : Time 78.00s : 2432.90 words/s : L.r. 1.1336e-04
+[2019-04-13 22:41:19] Ep. 1 : Up. 25000 : Sen. 3,101,875 : Cost 2.95960832 : Time 73.46s : 2314.13 words/s : L.r. 1.1314e-04
+[2019-04-13 22:41:19] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 22:41:36] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 22:41:53] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 22:42:38] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-ce-mean-words.npz
+[2019-04-13 22:42:55] [valid] Ep. 1 : Up. 25000 : ce-mean-words : 1.58888 : new best
+[2019-04-13 22:43:07] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-perplexity.npz
+[2019-04-13 22:43:24] [valid] Ep. 1 : Up. 25000 : perplexity : 4.89828 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-13 22:46:07] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-translation.npz
+[2019-04-13 22:46:22] [valid] Ep. 1 : Up. 25000 : translation : 26.18 : new best
+[2019-04-13 22:47:48] Ep. 1 : Up. 25100 : Sen. 3,118,497 : Cost 2.92581153 : Time 388.75s : 571.57 words/s : L.r. 1.1291e-04
+[2019-04-13 22:49:08] Ep. 1 : Up. 25200 : Sen. 3,132,259 : Cost 2.93306398 : Time 80.11s : 2430.34 words/s : L.r. 1.1269e-04
+[2019-04-13 22:50:24] Ep. 1 : Up. 25300 : Sen. 3,144,706 : Cost 2.88845897 : Time 75.52s : 2348.98 words/s : L.r. 1.1246e-04
+[2019-04-13 22:51:40] Ep. 1 : Up. 25400 : Sen. 3,154,517 : Cost 2.94197059 : Time 75.95s : 2348.13 words/s : L.r. 1.1224e-04
+[2019-04-13 22:52:53] Ep. 1 : Up. 25500 : Sen. 3,165,271 : Cost 2.98139882 : Time 73.59s : 2316.22 words/s : L.r. 1.1202e-04
+[2019-04-13 22:54:13] Ep. 1 : Up. 25600 : Sen. 3,176,261 : Cost 3.01187253 : Time 80.13s : 2503.15 words/s : L.r. 1.1180e-04
+[2019-04-13 22:55:33] Ep. 1 : Up. 25700 : Sen. 3,188,504 : Cost 2.95659232 : Time 79.22s : 2466.05 words/s : L.r. 1.1159e-04
+[2019-04-13 22:56:48] Ep. 1 : Up. 25800 : Sen. 3,199,670 : Cost 2.93929362 : Time 75.55s : 2454.50 words/s : L.r. 1.1137e-04
+[2019-04-13 22:58:06] Ep. 1 : Up. 25900 : Sen. 3,212,174 : Cost 2.87076235 : Time 78.15s : 2445.50 words/s : L.r. 1.1115e-04
+[2019-04-13 22:59:28] Ep. 1 : Up. 26000 : Sen. 3,224,910 : Cost 2.96946979 : Time 82.06s : 2521.61 words/s : L.r. 1.1094e-04
+[2019-04-13 22:59:28] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 22:59:43] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 23:00:00] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 23:01:56] Ep. 1 : Up. 26100 : Sen. 3,240,818 : Cost 2.88789415 : Time 147.79s : 1390.43 words/s : L.r. 1.1073e-04
+[2019-04-13 23:03:19] Ep. 1 : Up. 26200 : Sen. 3,256,504 : Cost 2.92212009 : Time 82.93s : 2552.09 words/s : L.r. 1.1052e-04
+[2019-04-13 23:04:35] Ep. 1 : Up. 26300 : Sen. 3,268,294 : Cost 2.95759726 : Time 76.41s : 2434.71 words/s : L.r. 1.1031e-04
+[2019-04-13 23:05:52] Ep. 1 : Up. 26400 : Sen. 3,279,937 : Cost 2.93073773 : Time 76.54s : 2361.13 words/s : L.r. 1.1010e-04
+[2019-04-13 23:07:14] Ep. 1 : Up. 26500 : Sen. 3,294,966 : Cost 2.98196912 : Time 82.02s : 2574.78 words/s : L.r. 1.0989e-04
+[2019-04-13 23:08:33] Ep. 1 : Up. 26600 : Sen. 3,307,321 : Cost 2.89659023 : Time 78.79s : 2437.26 words/s : L.r. 1.0968e-04
+[2019-04-13 23:09:48] Ep. 1 : Up. 26700 : Sen. 3,317,819 : Cost 2.99574494 : Time 74.91s : 2417.38 words/s : L.r. 1.0948e-04
+[2019-04-13 23:11:16] Ep. 1 : Up. 26800 : Sen. 3,335,463 : Cost 2.92017388 : Time 88.01s : 2590.73 words/s : L.r. 1.0927e-04
+[2019-04-13 23:12:34] Ep. 1 : Up. 26900 : Sen. 3,349,451 : Cost 2.89139938 : Time 78.56s : 2418.79 words/s : L.r. 1.0907e-04
+[2019-04-13 23:13:52] Ep. 1 : Up. 27000 : Sen. 3,360,662 : Cost 3.01429152 : Time 78.11s : 2461.83 words/s : L.r. 1.0887e-04
+[2019-04-13 23:13:52] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 23:14:08] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 23:14:25] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 23:16:25] Ep. 1 : Up. 27100 : Sen. 3,374,802 : Cost 2.93865848 : Time 152.25s : 1462.76 words/s : L.r. 1.0867e-04
+[2019-04-13 23:17:42] Ep. 1 : Up. 27200 : Sen. 3,388,546 : Cost 2.83705878 : Time 77.02s : 2321.53 words/s : L.r. 1.0847e-04
+[2019-04-13 23:19:00] Ep. 1 : Up. 27300 : Sen. 3,399,855 : Cost 2.94634390 : Time 78.20s : 2448.47 words/s : L.r. 1.0827e-04
+[2019-04-13 23:20:21] Ep. 1 : Up. 27400 : Sen. 3,412,946 : Cost 2.96463084 : Time 81.39s : 2523.76 words/s : L.r. 1.0807e-04
+[2019-04-13 23:21:42] Ep. 1 : Up. 27500 : Sen. 3,425,141 : Cost 2.91498232 : Time 80.66s : 2442.66 words/s : L.r. 1.0787e-04
+[2019-04-13 23:23:00] Ep. 1 : Up. 27600 : Sen. 3,437,038 : Cost 2.88824058 : Time 78.38s : 2416.24 words/s : L.r. 1.0768e-04
+[2019-04-13 23:24:24] Ep. 1 : Up. 27700 : Sen. 3,451,360 : Cost 2.92251277 : Time 84.02s : 2507.24 words/s : L.r. 1.0748e-04
+[2019-04-13 23:25:46] Ep. 1 : Up. 27800 : Sen. 3,466,038 : Cost 2.85560274 : Time 81.71s : 2463.76 words/s : L.r. 1.0729e-04
+[2019-04-13 23:27:03] Ep. 1 : Up. 27900 : Sen. 3,477,284 : Cost 2.99322820 : Time 76.67s : 2415.01 words/s : L.r. 1.0710e-04
+[2019-04-13 23:28:26] Ep. 1 : Up. 28000 : Sen. 3,492,058 : Cost 3.01096964 : Time 83.74s : 2598.98 words/s : L.r. 1.0690e-04
+[2019-04-13 23:28:26] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 23:28:43] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 23:29:00] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 23:30:55] Ep. 1 : Up. 28100 : Sen. 3,504,509 : Cost 2.98217487 : Time 148.34s : 1300.58 words/s : L.r. 1.0671e-04
+[2019-04-13 23:32:16] Ep. 1 : Up. 28200 : Sen. 3,518,126 : Cost 2.97010303 : Time 81.17s : 2505.58 words/s : L.r. 1.0652e-04
+[2019-04-13 23:33:35] Ep. 1 : Up. 28300 : Sen. 3,528,536 : Cost 2.93156958 : Time 78.57s : 2464.65 words/s : L.r. 1.0634e-04
+[2019-04-13 23:34:49] Ep. 1 : Up. 28400 : Sen. 3,537,735 : Cost 3.00638294 : Time 74.00s : 2270.73 words/s : L.r. 1.0615e-04
+[2019-04-13 23:36:05] Ep. 1 : Up. 28500 : Sen. 3,548,240 : Cost 2.98345566 : Time 76.41s : 2374.30 words/s : L.r. 1.0596e-04
+[2019-04-13 23:37:20] Ep. 1 : Up. 28600 : Sen. 3,557,623 : Cost 2.95228219 : Time 75.37s : 2347.20 words/s : L.r. 1.0578e-04
+[2019-04-13 23:38:39] Ep. 1 : Up. 28700 : Sen. 3,571,227 : Cost 2.98169184 : Time 78.34s : 2419.19 words/s : L.r. 1.0559e-04
+[2019-04-13 23:39:58] Ep. 1 : Up. 28800 : Sen. 3,584,590 : Cost 2.97881722 : Time 79.80s : 2479.70 words/s : L.r. 1.0541e-04
+[2019-04-13 23:41:10] Ep. 1 : Up. 28900 : Sen. 3,594,265 : Cost 3.00748634 : Time 71.42s : 2250.24 words/s : L.r. 1.0523e-04
+[2019-04-13 23:42:29] Ep. 1 : Up. 29000 : Sen. 3,609,784 : Cost 2.92709541 : Time 79.43s : 2449.89 words/s : L.r. 1.0505e-04
+[2019-04-13 23:42:29] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 23:42:45] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 23:43:01] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 23:44:50] Ep. 1 : Up. 29100 : Sen. 3,621,590 : Cost 2.94571161 : Time 141.12s : 1189.86 words/s : L.r. 1.0486e-04
+[2019-04-13 23:46:16] Ep. 1 : Up. 29200 : Sen. 3,636,453 : Cost 2.91717410 : Time 85.31s : 2586.79 words/s : L.r. 1.0468e-04
+[2019-04-13 23:47:37] Ep. 1 : Up. 29300 : Sen. 3,650,521 : Cost 2.98781109 : Time 80.92s : 2520.19 words/s : L.r. 1.0451e-04
+[2019-04-13 23:48:52] Ep. 1 : Up. 29400 : Sen. 3,661,042 : Cost 2.93254089 : Time 75.58s : 2352.76 words/s : L.r. 1.0433e-04
+[2019-04-13 23:50:10] Ep. 1 : Up. 29500 : Sen. 3,673,414 : Cost 2.90522218 : Time 77.92s : 2392.76 words/s : L.r. 1.0415e-04
+[2019-04-13 23:51:26] Ep. 1 : Up. 29600 : Sen. 3,685,860 : Cost 3.00036693 : Time 75.82s : 2396.71 words/s : L.r. 1.0398e-04
+[2019-04-13 23:52:45] Ep. 1 : Up. 29700 : Sen. 3,698,055 : Cost 2.92921758 : Time 78.63s : 2396.89 words/s : L.r. 1.0380e-04
+[2019-04-13 23:54:06] Ep. 1 : Up. 29800 : Sen. 3,711,655 : Cost 2.90288782 : Time 81.71s : 2504.68 words/s : L.r. 1.0363e-04
+[2019-04-13 23:55:19] Ep. 1 : Up. 29900 : Sen. 3,722,989 : Cost 2.90557933 : Time 73.12s : 2253.47 words/s : L.r. 1.0345e-04
+[2019-04-13 23:56:39] Ep. 1 : Up. 30000 : Sen. 3,737,033 : Cost 2.92596126 : Time 79.10s : 2440.54 words/s : L.r. 1.0328e-04
+[2019-04-13 23:56:39] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-13 23:56:55] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-13 23:57:13] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-13 23:57:58] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-ce-mean-words.npz
+[2019-04-13 23:58:14] [valid] Ep. 1 : Up. 30000 : ce-mean-words : 1.58847 : new best
+[2019-04-13 23:58:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.best-perplexity.npz
+[2019-04-13 23:58:43] [valid] Ep. 1 : Up. 30000 : perplexity : 4.89625 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-14 00:01:26] [valid] Ep. 1 : Up. 30000 : translation : 25.92 : stalled 1 times (last best: 26.18)
+[2019-04-14 00:02:44] Ep. 1 : Up. 30100 : Sen. 3,749,719 : Cost 3.00413489 : Time 365.37s : 528.32 words/s : L.r. 1.0311e-04
+[2019-04-14 00:03:59] Ep. 1 : Up. 30200 : Sen. 3,761,347 : Cost 2.98765540 : Time 75.54s : 2365.52 words/s : L.r. 1.0294e-04
+[2019-04-14 00:05:22] Ep. 1 : Up. 30300 : Sen. 3,775,675 : Cost 2.95920944 : Time 82.45s : 2558.16 words/s : L.r. 1.0277e-04
+[2019-04-14 00:06:38] Ep. 1 : Up. 30400 : Sen. 3,786,031 : Cost 2.99174476 : Time 76.11s : 2361.16 words/s : L.r. 1.0260e-04
+[2019-04-14 00:07:51] Ep. 1 : Up. 30500 : Sen. 3,797,276 : Cost 2.96979070 : Time 73.00s : 2315.80 words/s : L.r. 1.0243e-04
+[2019-04-14 00:09:09] Ep. 1 : Up. 30600 : Sen. 3,808,776 : Cost 2.98541451 : Time 77.49s : 2383.75 words/s : L.r. 1.0226e-04
+[2019-04-14 00:10:21] Ep. 1 : Up. 30700 : Sen. 3,817,209 : Cost 2.97965860 : Time 72.42s : 2213.54 words/s : L.r. 1.0210e-04
+[2019-04-14 00:11:37] Ep. 1 : Up. 30800 : Sen. 3,828,539 : Cost 2.98065829 : Time 75.76s : 2351.71 words/s : L.r. 1.0193e-04
+[2019-04-14 00:12:51] Ep. 1 : Up. 30900 : Sen. 3,839,315 : Cost 2.97143722 : Time 74.02s : 2301.47 words/s : L.r. 1.0176e-04
+[2019-04-14 00:14:08] Ep. 1 : Up. 31000 : Sen. 3,853,052 : Cost 3.04997158 : Time 77.70s : 2430.17 words/s : L.r. 1.0160e-04
+[2019-04-14 00:14:08] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 00:14:23] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 00:14:40] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 00:16:29] Ep. 1 : Up. 31100 : Sen. 3,864,797 : Cost 2.92846251 : Time 140.58s : 1307.07 words/s : L.r. 1.0144e-04
+[2019-04-14 00:17:51] Ep. 1 : Up. 31200 : Sen. 3,879,259 : Cost 2.91806459 : Time 82.08s : 2528.78 words/s : L.r. 1.0127e-04
+[2019-04-14 00:19:10] Ep. 1 : Up. 31300 : Sen. 3,892,681 : Cost 2.91583896 : Time 79.10s : 2451.84 words/s : L.r. 1.0111e-04
+[2019-04-14 00:20:26] Ep. 1 : Up. 31400 : Sen. 3,903,718 : Cost 2.94242668 : Time 75.29s : 2310.10 words/s : L.r. 1.0095e-04
+[2019-04-14 00:21:43] Ep. 1 : Up. 31500 : Sen. 3,915,644 : Cost 2.90028119 : Time 77.91s : 2395.85 words/s : L.r. 1.0079e-04
+[2019-04-14 00:23:02] Ep. 1 : Up. 31600 : Sen. 3,929,248 : Cost 2.97053218 : Time 79.04s : 2410.70 words/s : L.r. 1.0063e-04
+[2019-04-14 00:24:16] Ep. 1 : Up. 31700 : Sen. 3,938,376 : Cost 2.92366576 : Time 73.81s : 2325.09 words/s : L.r. 1.0047e-04
+[2019-04-14 00:25:35] Ep. 1 : Up. 31800 : Sen. 3,950,295 : Cost 2.91485238 : Time 78.48s : 2369.11 words/s : L.r. 1.0031e-04
+[2019-04-14 00:26:53] Ep. 1 : Up. 31900 : Sen. 3,963,482 : Cost 2.95934057 : Time 78.57s : 2445.63 words/s : L.r. 1.0016e-04
+[2019-04-14 00:28:10] Ep. 1 : Up. 32000 : Sen. 3,975,763 : Cost 2.94551229 : Time 77.11s : 2416.58 words/s : L.r. 1.0000e-04
+[2019-04-14 00:28:10] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 00:28:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 00:28:45] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 00:30:36] Ep. 1 : Up. 32100 : Sen. 3,987,554 : Cost 2.99247074 : Time 145.13s : 1247.29 words/s : L.r. 9.9844e-05
+[2019-04-14 00:31:52] Ep. 1 : Up. 32200 : Sen. 3,999,808 : Cost 2.93174767 : Time 76.49s : 2370.92 words/s : L.r. 9.9689e-05
+[2019-04-14 00:33:13] Ep. 1 : Up. 32300 : Sen. 4,012,834 : Cost 2.94967747 : Time 81.42s : 2425.95 words/s : L.r. 9.9535e-05
+[2019-04-14 00:34:37] Ep. 1 : Up. 32400 : Sen. 4,029,222 : Cost 2.93532991 : Time 83.35s : 2528.03 words/s : L.r. 9.9381e-05
+[2019-04-14 00:35:49] Ep. 1 : Up. 32500 : Sen. 4,039,671 : Cost 2.90740728 : Time 71.94s : 2161.77 words/s : L.r. 9.9228e-05
+[2019-04-14 00:37:09] Ep. 1 : Up. 32600 : Sen. 4,053,198 : Cost 2.99196982 : Time 79.99s : 2479.22 words/s : L.r. 9.9075e-05
+[2019-04-14 00:38:24] Ep. 1 : Up. 32700 : Sen. 4,064,443 : Cost 2.87084031 : Time 74.91s : 2310.48 words/s : L.r. 9.8924e-05
+[2019-04-14 00:39:42] Ep. 1 : Up. 32800 : Sen. 4,075,764 : Cost 2.93043160 : Time 78.26s : 2401.04 words/s : L.r. 9.8773e-05
+[2019-04-14 00:41:07] Ep. 1 : Up. 32900 : Sen. 4,092,277 : Cost 2.90636134 : Time 84.70s : 2526.31 words/s : L.r. 9.8623e-05
+[2019-04-14 00:42:27] Ep. 1 : Up. 33000 : Sen. 4,105,205 : Cost 2.93482304 : Time 80.70s : 2435.80 words/s : L.r. 9.8473e-05
+[2019-04-14 00:42:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 00:42:44] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 00:43:01] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 00:44:55] Ep. 1 : Up. 33100 : Sen. 4,116,915 : Cost 2.92198777 : Time 147.38s : 1325.83 words/s : L.r. 9.8324e-05
+[2019-04-14 00:46:18] Ep. 1 : Up. 33200 : Sen. 4,131,962 : Cost 2.90197062 : Time 83.03s : 2575.03 words/s : L.r. 9.8176e-05
+[2019-04-14 00:47:36] Ep. 1 : Up. 33300 : Sen. 4,144,509 : Cost 2.85646772 : Time 78.53s : 2380.66 words/s : L.r. 9.8029e-05
+[2019-04-14 00:48:56] Ep. 1 : Up. 33400 : Sen. 4,158,214 : Cost 3.00704551 : Time 79.96s : 2502.31 words/s : L.r. 9.7882e-05
+[2019-04-14 00:50:11] Ep. 1 : Up. 33500 : Sen. 4,170,235 : Cost 2.94671750 : Time 74.27s : 2248.73 words/s : L.r. 9.7736e-05
+[2019-04-14 00:51:32] Ep. 1 : Up. 33600 : Sen. 4,187,293 : Cost 2.92869663 : Time 81.14s : 2482.34 words/s : L.r. 9.7590e-05
+[2019-04-14 00:52:54] Ep. 1 : Up. 33700 : Sen. 4,200,573 : Cost 2.92055893 : Time 82.19s : 2551.60 words/s : L.r. 9.7445e-05
+[2019-04-14 00:54:12] Ep. 1 : Up. 33800 : Sen. 4,211,740 : Cost 2.94767976 : Time 78.09s : 2427.66 words/s : L.r. 9.7301e-05
+[2019-04-14 00:55:27] Ep. 1 : Up. 33900 : Sen. 4,222,159 : Cost 2.92056274 : Time 75.20s : 2302.26 words/s : L.r. 9.7157e-05
+[2019-04-14 00:56:47] Ep. 1 : Up. 34000 : Sen. 4,235,013 : Cost 2.95781493 : Time 80.22s : 2482.13 words/s : L.r. 9.7014e-05
+[2019-04-14 00:56:47] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 00:57:02] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 00:57:19] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 00:59:10] Ep. 1 : Up. 34100 : Sen. 4,246,068 : Cost 2.87483501 : Time 142.43s : 1304.01 words/s : L.r. 9.6872e-05
+[2019-04-14 01:00:29] Ep. 1 : Up. 34200 : Sen. 4,258,401 : Cost 2.94747090 : Time 79.71s : 2503.98 words/s : L.r. 9.6730e-05
+[2019-04-14 01:01:42] Ep. 1 : Up. 34300 : Sen. 4,268,988 : Cost 2.92688870 : Time 72.91s : 2221.25 words/s : L.r. 9.6589e-05
+[2019-04-14 01:02:59] Ep. 1 : Up. 34400 : Sen. 4,280,145 : Cost 2.96664834 : Time 76.85s : 2298.47 words/s : L.r. 9.6449e-05
+[2019-04-14 01:04:23] Ep. 1 : Up. 34500 : Sen. 4,293,158 : Cost 2.98584175 : Time 83.52s : 2485.63 words/s : L.r. 9.6309e-05
+[2019-04-14 01:05:39] Ep. 1 : Up. 34600 : Sen. 4,305,873 : Cost 2.96766305 : Time 76.71s : 2253.58 words/s : L.r. 9.6169e-05
+[2019-04-14 01:06:56] Ep. 1 : Up. 34700 : Sen. 4,318,701 : Cost 3.00203562 : Time 76.86s : 2378.47 words/s : L.r. 9.6031e-05
+[2019-04-14 01:08:15] Ep. 1 : Up. 34800 : Sen. 4,331,277 : Cost 2.88307834 : Time 78.91s : 2401.79 words/s : L.r. 9.5893e-05
+[2019-04-14 01:09:34] Ep. 1 : Up. 34900 : Sen. 4,343,463 : Cost 2.93983746 : Time 78.98s : 2355.88 words/s : L.r. 9.5755e-05
+[2019-04-14 01:10:56] Ep. 1 : Up. 35000 : Sen. 4,356,985 : Cost 2.96724319 : Time 81.68s : 2444.54 words/s : L.r. 9.5618e-05
+[2019-04-14 01:10:56] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 01:11:12] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 01:11:29] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 01:12:19] [valid] Ep. 1 : Up. 35000 : ce-mean-words : 1.59645 : stalled 1 times (last best: 1.58847)
+[2019-04-14 01:12:31] [valid] Ep. 1 : Up. 35000 : perplexity : 4.93548 : stalled 1 times (last best: 4.89625)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-14 01:15:19] [valid] Ep. 1 : Up. 35000 : translation : 25.84 : stalled 2 times (last best: 26.18)
+[2019-04-14 01:16:33] Ep. 1 : Up. 35100 : Sen. 4,364,981 : Cost 2.98640990 : Time 336.64s : 474.90 words/s : L.r. 9.5482e-05
+[2019-04-14 01:17:53] Ep. 1 : Up. 35200 : Sen. 4,378,701 : Cost 2.98053026 : Time 80.03s : 2417.06 words/s : L.r. 9.5346e-05
+[2019-04-14 01:19:16] Ep. 1 : Up. 35300 : Sen. 4,393,287 : Cost 2.97130060 : Time 83.86s : 2476.07 words/s : L.r. 9.5211e-05
+[2019-04-14 01:20:37] Ep. 1 : Up. 35400 : Sen. 4,407,592 : Cost 2.94994807 : Time 80.98s : 2459.24 words/s : L.r. 9.5077e-05
+[2019-04-14 01:21:57] Ep. 1 : Up. 35500 : Sen. 4,419,273 : Cost 2.93937421 : Time 79.18s : 2402.73 words/s : L.r. 9.4943e-05
+[2019-04-14 01:23:17] Ep. 1 : Up. 35600 : Sen. 4,429,900 : Cost 2.96729994 : Time 80.60s : 2454.95 words/s : L.r. 9.4809e-05
+[2019-04-14 01:24:31] Ep. 1 : Up. 35700 : Sen. 4,439,290 : Cost 2.87440920 : Time 74.16s : 2227.11 words/s : L.r. 9.4676e-05
+[2019-04-14 01:25:51] Ep. 1 : Up. 35800 : Sen. 4,450,550 : Cost 3.00086117 : Time 79.54s : 2383.26 words/s : L.r. 9.4544e-05
+[2019-04-14 01:27:12] Ep. 1 : Up. 35900 : Sen. 4,464,629 : Cost 2.93191409 : Time 81.00s : 2386.43 words/s : L.r. 9.4412e-05
+[2019-04-14 01:28:23] Ep. 1 : Up. 36000 : Sen. 4,472,514 : Cost 2.94905639 : Time 71.55s : 2216.33 words/s : L.r. 9.4281e-05
+[2019-04-14 01:28:23] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 01:28:40] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 01:28:56] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 01:30:48] Ep. 1 : Up. 36100 : Sen. 4,486,555 : Cost 2.95981884 : Time 145.04s : 1332.79 words/s : L.r. 9.4150e-05
+[2019-04-14 01:32:08] Ep. 1 : Up. 36200 : Sen. 4,500,088 : Cost 3.02262187 : Time 79.90s : 2377.32 words/s : L.r. 9.4020e-05
+[2019-04-14 01:33:28] Ep. 1 : Up. 36300 : Sen. 4,511,231 : Cost 2.98443794 : Time 79.96s : 2405.80 words/s : L.r. 9.3891e-05
+[2019-04-14 01:34:53] Ep. 1 : Up. 36400 : Sen. 4,524,290 : Cost 2.93529630 : Time 84.91s : 2552.34 words/s : L.r. 9.3761e-05
+[2019-04-14 01:36:17] Ep. 1 : Up. 36500 : Sen. 4,536,923 : Cost 3.01806355 : Time 83.62s : 2501.34 words/s : L.r. 9.3633e-05
+[2019-04-14 01:37:32] Ep. 1 : Up. 36600 : Sen. 4,547,580 : Cost 3.01115680 : Time 75.38s : 2236.84 words/s : L.r. 9.3505e-05
+[2019-04-14 01:38:54] Ep. 1 : Up. 36700 : Sen. 4,563,035 : Cost 2.93776512 : Time 81.97s : 2449.69 words/s : L.r. 9.3377e-05
+[2019-04-14 01:40:16] Ep. 1 : Up. 36800 : Sen. 4,576,720 : Cost 3.03024220 : Time 82.08s : 2511.49 words/s : L.r. 9.3250e-05
+[2019-04-14 01:41:35] Ep. 1 : Up. 36900 : Sen. 4,589,130 : Cost 2.96821189 : Time 79.10s : 2376.04 words/s : L.r. 9.3124e-05
+[2019-04-14 01:42:56] Ep. 1 : Up. 37000 : Sen. 4,602,641 : Cost 2.86109424 : Time 80.91s : 2298.76 words/s : L.r. 9.2998e-05
+[2019-04-14 01:42:56] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 01:43:11] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 01:43:28] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 01:45:27] Ep. 1 : Up. 37100 : Sen. 4,616,740 : Cost 2.99769926 : Time 151.15s : 1399.85 words/s : L.r. 9.2873e-05
+[2019-04-14 01:46:48] Ep. 1 : Up. 37200 : Sen. 4,630,365 : Cost 2.90848112 : Time 80.47s : 2360.08 words/s : L.r. 9.2748e-05
+[2019-04-14 01:48:07] Ep. 1 : Up. 37300 : Sen. 4,642,694 : Cost 2.99233937 : Time 79.28s : 2445.41 words/s : L.r. 9.2623e-05
+[2019-04-14 01:49:27] Ep. 1 : Up. 37400 : Sen. 4,655,124 : Cost 3.01479149 : Time 79.59s : 2460.76 words/s : L.r. 9.2499e-05
+[2019-04-14 01:50:42] Ep. 1 : Up. 37500 : Sen. 4,665,638 : Cost 2.96312070 : Time 75.19s : 2315.58 words/s : L.r. 9.2376e-05
+[2019-04-14 01:52:01] Ep. 1 : Up. 37600 : Sen. 4,678,886 : Cost 3.00174737 : Time 78.70s : 2371.36 words/s : L.r. 9.2253e-05
+[2019-04-14 01:53:22] Ep. 1 : Up. 37700 : Sen. 4,692,877 : Cost 2.97081113 : Time 81.21s : 2446.22 words/s : L.r. 9.2131e-05
+[2019-04-14 01:54:42] Ep. 1 : Up. 37800 : Sen. 4,705,858 : Cost 2.94689202 : Time 80.47s : 2410.07 words/s : L.r. 9.2009e-05
+[2019-04-14 01:55:56] Ep. 1 : Up. 37900 : Sen. 4,717,286 : Cost 2.87014198 : Time 73.90s : 2227.24 words/s : L.r. 9.1887e-05
+[2019-04-14 01:57:13] Ep. 1 : Up. 38000 : Sen. 4,728,995 : Cost 2.95936298 : Time 77.18s : 2348.08 words/s : L.r. 9.1766e-05
+[2019-04-14 01:57:13] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 01:57:30] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 01:57:47] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 01:59:45] Ep. 1 : Up. 38100 : Sen. 4,743,053 : Cost 3.03881264 : Time 151.01s : 1370.04 words/s : L.r. 9.1646e-05
+[2019-04-14 02:01:06] Ep. 1 : Up. 38200 : Sen. 4,755,344 : Cost 2.93942523 : Time 81.11s : 2376.19 words/s : L.r. 9.1526e-05
+[2019-04-14 02:02:21] Ep. 1 : Up. 38300 : Sen. 4,766,798 : Cost 2.91577077 : Time 75.34s : 2116.60 words/s : L.r. 9.1406e-05
+[2019-04-14 02:03:42] Ep. 1 : Up. 38400 : Sen. 4,777,051 : Cost 3.04397702 : Time 80.58s : 2420.41 words/s : L.r. 9.1287e-05
+[2019-04-14 02:05:00] Ep. 1 : Up. 38500 : Sen. 4,788,179 : Cost 2.92382598 : Time 78.34s : 2343.63 words/s : L.r. 9.1168e-05
+[2019-04-14 02:06:23] Ep. 1 : Up. 38600 : Sen. 4,800,679 : Cost 2.98690057 : Time 82.63s : 2500.46 words/s : L.r. 9.1050e-05
+[2019-04-14 02:07:39] Ep. 1 : Up. 38700 : Sen. 4,815,313 : Cost 2.88168716 : Time 76.72s : 2290.98 words/s : L.r. 9.0933e-05
+[2019-04-14 02:08:56] Ep. 1 : Up. 38800 : Sen. 4,826,163 : Cost 2.96042180 : Time 76.28s : 2344.14 words/s : L.r. 9.0815e-05
+[2019-04-14 02:10:14] Ep. 1 : Up. 38900 : Sen. 4,837,645 : Cost 2.99474454 : Time 78.89s : 2402.58 words/s : L.r. 9.0699e-05
+[2019-04-14 02:11:31] Ep. 1 : Up. 39000 : Sen. 4,848,992 : Cost 2.91878080 : Time 76.78s : 2279.85 words/s : L.r. 9.0582e-05
+[2019-04-14 02:11:31] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 02:11:47] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 02:12:04] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 02:14:01] Ep. 1 : Up. 39100 : Sen. 4,863,631 : Cost 2.94716692 : Time 149.42s : 1347.74 words/s : L.r. 9.0466e-05
+[2019-04-14 02:15:19] Ep. 1 : Up. 39200 : Sen. 4,874,885 : Cost 2.92776108 : Time 78.07s : 2265.32 words/s : L.r. 9.0351e-05
+[2019-04-14 02:16:40] Ep. 1 : Up. 39300 : Sen. 4,887,089 : Cost 2.99563003 : Time 81.65s : 2340.67 words/s : L.r. 9.0236e-05
+[2019-04-14 02:17:58] Ep. 1 : Up. 39400 : Sen. 4,898,445 : Cost 2.91860604 : Time 77.42s : 2342.06 words/s : L.r. 9.0121e-05
+[2019-04-14 02:19:18] Ep. 1 : Up. 39500 : Sen. 4,909,003 : Cost 2.95584965 : Time 79.87s : 2432.62 words/s : L.r. 9.0007e-05
+[2019-04-14 02:20:35] Ep. 1 : Up. 39600 : Sen. 4,921,633 : Cost 2.96346140 : Time 77.56s : 2355.77 words/s : L.r. 8.9893e-05
+[2019-04-14 02:21:53] Ep. 1 : Up. 39700 : Sen. 4,934,493 : Cost 2.87704706 : Time 77.82s : 2351.37 words/s : L.r. 8.9780e-05
+[2019-04-14 02:23:09] Ep. 1 : Up. 39800 : Sen. 4,946,269 : Cost 2.90631938 : Time 75.66s : 2282.10 words/s : L.r. 8.9667e-05
+[2019-04-14 02:24:30] Ep. 1 : Up. 39900 : Sen. 4,959,160 : Cost 2.95815229 : Time 81.10s : 2430.26 words/s : L.r. 8.9555e-05
+[2019-04-14 02:25:52] Ep. 1 : Up. 40000 : Sen. 4,971,843 : Cost 2.94887400 : Time 82.12s : 2413.64 words/s : L.r. 8.9443e-05
+[2019-04-14 02:25:52] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 02:26:06] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 02:26:23] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 02:27:09] [valid] Ep. 1 : Up. 40000 : ce-mean-words : 1.59819 : stalled 2 times (last best: 1.58847)
+[2019-04-14 02:27:22] [valid] Ep. 1 : Up. 40000 : perplexity : 4.94409 : stalled 2 times (last best: 4.89625)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-14 02:30:12] [valid] Ep. 1 : Up. 40000 : translation : 26.03 : stalled 3 times (last best: 26.18)
+[2019-04-14 02:31:31] Ep. 1 : Up. 40100 : Sen. 4,983,626 : Cost 2.92402697 : Time 339.58s : 540.52 words/s : L.r. 8.9331e-05
+[2019-04-14 02:33:00] Ep. 1 : Up. 40200 : Sen. 4,998,866 : Cost 2.95799541 : Time 89.00s : 2520.01 words/s : L.r. 8.9220e-05
+[2019-04-14 02:34:23] Ep. 1 : Up. 40300 : Sen. 5,012,086 : Cost 2.88683748 : Time 82.07s : 2399.12 words/s : L.r. 8.9109e-05
+[2019-04-14 02:35:40] Ep. 1 : Up. 40400 : Sen. 5,024,622 : Cost 2.98403740 : Time 77.04s : 2338.59 words/s : L.r. 8.8999e-05
+[2019-04-14 02:36:58] Ep. 1 : Up. 40500 : Sen. 5,037,104 : Cost 2.91621709 : Time 78.20s : 2332.08 words/s : L.r. 8.8889e-05
+[2019-04-14 02:38:21] Ep. 1 : Up. 40600 : Sen. 5,050,036 : Cost 2.98339200 : Time 82.73s : 2475.89 words/s : L.r. 8.8779e-05
+[2019-04-14 02:39:41] Ep. 1 : Up. 40700 : Sen. 5,064,830 : Cost 2.96556330 : Time 80.61s : 2458.92 words/s : L.r. 8.8670e-05
+[2019-04-14 02:41:05] Ep. 1 : Up. 40800 : Sen. 5,080,130 : Cost 3.00445843 : Time 84.28s : 2570.68 words/s : L.r. 8.8561e-05
+[2019-04-14 02:42:21] Ep. 1 : Up. 40900 : Sen. 5,092,622 : Cost 2.93603182 : Time 75.80s : 2271.11 words/s : L.r. 8.8453e-05
+[2019-04-14 02:43:39] Ep. 1 : Up. 41000 : Sen. 5,104,423 : Cost 2.90909100 : Time 77.30s : 2369.26 words/s : L.r. 8.8345e-05
+[2019-04-14 02:43:39] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 02:43:55] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 02:44:12] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 02:46:12] Ep. 1 : Up. 41100 : Sen. 5,117,446 : Cost 2.95178628 : Time 153.43s : 1321.41 words/s : L.r. 8.8238e-05
+[2019-04-14 02:47:29] Ep. 1 : Up. 41200 : Sen. 5,127,701 : Cost 2.98749900 : Time 77.54s : 2345.43 words/s : L.r. 8.8131e-05
+[2019-04-14 02:48:49] Ep. 1 : Up. 41300 : Sen. 5,139,552 : Cost 3.01164222 : Time 79.78s : 2474.52 words/s : L.r. 8.8024e-05
+[2019-04-14 02:50:18] Ep. 1 : Up. 41400 : Sen. 5,157,052 : Cost 2.94534683 : Time 89.07s : 2612.27 words/s : L.r. 8.7917e-05
+[2019-04-14 02:51:36] Ep. 1 : Up. 41500 : Sen. 5,169,111 : Cost 2.91719270 : Time 77.33s : 2341.75 words/s : L.r. 8.7811e-05
+[2019-04-14 02:52:57] Ep. 1 : Up. 41600 : Sen. 5,183,693 : Cost 2.93521237 : Time 81.69s : 2468.34 words/s : L.r. 8.7706e-05
+[2019-04-14 02:54:15] Ep. 1 : Up. 41700 : Sen. 5,194,166 : Cost 2.91600490 : Time 77.46s : 2373.48 words/s : L.r. 8.7601e-05
+[2019-04-14 02:55:31] Ep. 1 : Up. 41800 : Sen. 5,205,568 : Cost 2.98837638 : Time 76.27s : 2332.21 words/s : L.r. 8.7496e-05
+[2019-04-14 02:56:57] Ep. 1 : Up. 41900 : Sen. 5,219,765 : Cost 2.99161792 : Time 85.48s : 2594.39 words/s : L.r. 8.7391e-05
+[2019-04-14 02:58:15] Ep. 1 : Up. 42000 : Sen. 5,230,164 : Cost 2.93416953 : Time 78.82s : 2398.47 words/s : L.r. 8.7287e-05
+[2019-04-14 02:58:15] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 02:58:31] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 02:58:48] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 03:00:43] Ep. 1 : Up. 42100 : Sen. 5,241,549 : Cost 2.99616933 : Time 147.28s : 1223.00 words/s : L.r. 8.7183e-05
+[2019-04-14 03:02:07] Ep. 1 : Up. 42200 : Sen. 5,255,325 : Cost 2.97279048 : Time 84.21s : 2459.91 words/s : L.r. 8.7080e-05
+[2019-04-14 03:03:22] Ep. 1 : Up. 42300 : Sen. 5,265,964 : Cost 2.97415996 : Time 75.42s : 2318.87 words/s : L.r. 8.6977e-05
+[2019-04-14 03:04:45] Ep. 1 : Up. 42400 : Sen. 5,279,649 : Cost 2.97823024 : Time 82.22s : 2464.81 words/s : L.r. 8.6874e-05
+[2019-04-14 03:06:01] Ep. 1 : Up. 42500 : Sen. 5,290,917 : Cost 2.92276835 : Time 76.73s : 2309.67 words/s : L.r. 8.6772e-05
+[2019-04-14 03:07:20] Ep. 1 : Up. 42600 : Sen. 5,304,254 : Cost 2.89645529 : Time 78.35s : 2317.17 words/s : L.r. 8.6670e-05
+[2019-04-14 03:08:37] Ep. 1 : Up. 42700 : Sen. 5,316,697 : Cost 2.92376041 : Time 77.35s : 2319.38 words/s : L.r. 8.6569e-05
+[2019-04-14 03:10:03] Ep. 1 : Up. 42800 : Sen. 5,331,951 : Cost 2.95055747 : Time 85.91s : 2561.06 words/s : L.r. 8.6468e-05
+[2019-04-14 03:11:20] Ep. 1 : Up. 42900 : Sen. 5,343,582 : Cost 2.91154099 : Time 76.62s : 2287.09 words/s : L.r. 8.6367e-05
+[2019-04-14 03:12:36] Ep. 1 : Up. 43000 : Sen. 5,354,182 : Cost 2.98276830 : Time 76.69s : 2351.84 words/s : L.r. 8.6266e-05
+[2019-04-14 03:12:36] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 03:12:50] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 03:13:07] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 03:15:02] Ep. 1 : Up. 43100 : Sen. 5,368,506 : Cost 2.99846816 : Time 146.26s : 1375.85 words/s : L.r. 8.6166e-05
+[2019-04-14 03:16:24] Ep. 1 : Up. 43200 : Sen. 5,381,658 : Cost 2.94988275 : Time 81.20s : 2484.84 words/s : L.r. 8.6066e-05
+[2019-04-14 03:17:41] Ep. 1 : Up. 43300 : Sen. 5,393,388 : Cost 2.98594475 : Time 77.55s : 2357.96 words/s : L.r. 8.5967e-05
+[2019-04-14 03:18:55] Ep. 1 : Up. 43400 : Sen. 5,403,387 : Cost 2.93128324 : Time 73.87s : 2259.67 words/s : L.r. 8.5868e-05
+[2019-04-14 03:20:07] Ep. 1 : Up. 43500 : Sen. 5,412,073 : Cost 2.88803887 : Time 71.86s : 2141.04 words/s : L.r. 8.5769e-05
+[2019-04-14 03:21:24] Ep. 1 : Up. 43600 : Sen. 5,423,483 : Cost 2.98201871 : Time 76.91s : 2373.05 words/s : L.r. 8.5671e-05
+[2019-04-14 03:22:43] Ep. 1 : Up. 43700 : Sen. 5,435,617 : Cost 2.94572806 : Time 79.45s : 2348.07 words/s : L.r. 8.5573e-05
+[2019-04-14 03:24:02] Ep. 1 : Up. 43800 : Sen. 5,448,051 : Cost 2.95683694 : Time 78.89s : 2412.71 words/s : L.r. 8.5475e-05
+[2019-04-14 03:25:21] Ep. 1 : Up. 43900 : Sen. 5,460,891 : Cost 2.90665960 : Time 79.12s : 2405.30 words/s : L.r. 8.5377e-05
+[2019-04-14 03:26:41] Ep. 1 : Up. 44000 : Sen. 5,474,971 : Cost 2.92186832 : Time 79.85s : 2388.19 words/s : L.r. 8.5280e-05
+[2019-04-14 03:26:41] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 03:26:57] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 03:27:13] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 03:29:05] Ep. 1 : Up. 44100 : Sen. 5,487,083 : Cost 2.94082737 : Time 144.07s : 1314.18 words/s : L.r. 8.5184e-05
+[2019-04-14 03:30:27] Ep. 1 : Up. 44200 : Sen. 5,500,672 : Cost 2.92406559 : Time 81.56s : 2402.73 words/s : L.r. 8.5087e-05
+[2019-04-14 03:31:47] Ep. 1 : Up. 44300 : Sen. 5,515,367 : Cost 2.94640303 : Time 79.84s : 2332.83 words/s : L.r. 8.4991e-05
+[2019-04-14 03:33:05] Ep. 1 : Up. 44400 : Sen. 5,525,794 : Cost 2.96500516 : Time 78.14s : 2327.13 words/s : L.r. 8.4895e-05
+[2019-04-14 03:34:26] Ep. 1 : Up. 44500 : Sen. 5,539,152 : Cost 2.96085525 : Time 80.89s : 2440.69 words/s : L.r. 8.4800e-05
+[2019-04-14 03:35:43] Ep. 1 : Up. 44600 : Sen. 5,551,968 : Cost 2.93883109 : Time 77.69s : 2318.38 words/s : L.r. 8.4705e-05
+[2019-04-14 03:37:03] Ep. 1 : Up. 44700 : Sen. 5,567,532 : Cost 2.87185574 : Time 80.08s : 2365.98 words/s : L.r. 8.4610e-05
+[2019-04-14 03:38:26] Ep. 1 : Up. 44800 : Sen. 5,581,612 : Cost 2.95146203 : Time 82.83s : 2443.85 words/s : L.r. 8.4515e-05
+[2019-04-14 03:39:49] Ep. 1 : Up. 44900 : Sen. 5,597,543 : Cost 2.85656619 : Time 82.84s : 2390.92 words/s : L.r. 8.4421e-05
+[2019-04-14 03:41:10] Ep. 1 : Up. 45000 : Sen. 5,608,387 : Cost 2.98809791 : Time 81.35s : 2368.04 words/s : L.r. 8.4327e-05
+[2019-04-14 03:41:10] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 03:41:24] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 03:41:39] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 03:42:23] [valid] Ep. 1 : Up. 45000 : ce-mean-words : 1.60113 : stalled 3 times (last best: 1.58847)
+[2019-04-14 03:42:35] [valid] Ep. 1 : Up. 45000 : perplexity : 4.95863 : stalled 3 times (last best: 4.89625)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-14 03:45:25] [valid] Ep. 1 : Up. 45000 : translation : 26.17 : stalled 4 times (last best: 26.18)
+[2019-04-14 03:46:44] Ep. 1 : Up. 45100 : Sen. 5,618,893 : Cost 3.03600502 : Time 333.09s : 571.17 words/s : L.r. 8.4234e-05
+[2019-04-14 03:47:58] Ep. 1 : Up. 45200 : Sen. 5,628,482 : Cost 2.93248081 : Time 74.04s : 2201.59 words/s : L.r. 8.4141e-05
+[2019-04-14 03:49:17] Ep. 1 : Up. 45300 : Sen. 5,640,169 : Cost 2.99196410 : Time 79.76s : 2411.52 words/s : L.r. 8.4048e-05
+[2019-04-14 03:50:31] Ep. 1 : Up. 45400 : Sen. 5,649,715 : Cost 2.93091154 : Time 74.08s : 2253.20 words/s : L.r. 8.3955e-05
+[2019-04-14 03:51:55] Ep. 1 : Up. 45500 : Sen. 5,666,799 : Cost 2.92754078 : Time 83.22s : 2435.10 words/s : L.r. 8.3863e-05
+[2019-04-14 03:53:11] Ep. 1 : Up. 45600 : Sen. 5,678,938 : Cost 2.90603304 : Time 76.07s : 2273.30 words/s : L.r. 8.3771e-05
+[2019-04-14 03:54:27] Ep. 1 : Up. 45700 : Sen. 5,691,266 : Cost 2.98508692 : Time 76.09s : 2293.10 words/s : L.r. 8.3679e-05
+[2019-04-14 03:55:45] Ep. 1 : Up. 45800 : Sen. 5,702,019 : Cost 2.92200232 : Time 77.78s : 2321.96 words/s : L.r. 8.3588e-05
+[2019-04-14 03:57:08] Ep. 1 : Up. 45900 : Sen. 5,715,040 : Cost 3.01369810 : Time 82.92s : 2507.04 words/s : L.r. 8.3497e-05
+[2019-04-14 03:58:25] Ep. 1 : Up. 46000 : Sen. 5,727,298 : Cost 2.98030305 : Time 77.76s : 2354.92 words/s : L.r. 8.3406e-05
+[2019-04-14 03:58:25] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 03:58:40] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 03:58:55] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 04:00:44] Ep. 1 : Up. 46100 : Sen. 5,736,979 : Cost 3.01027703 : Time 138.68s : 1145.31 words/s : L.r. 8.3315e-05
+[2019-04-14 04:02:02] Ep. 1 : Up. 46200 : Sen. 5,748,534 : Cost 2.92812395 : Time 77.81s : 2284.14 words/s : L.r. 8.3225e-05
+[2019-04-14 04:03:21] Ep. 1 : Up. 46300 : Sen. 5,760,106 : Cost 2.95254016 : Time 79.56s : 2398.77 words/s : L.r. 8.3135e-05
+[2019-04-14 04:04:41] Ep. 1 : Up. 46400 : Sen. 5,773,549 : Cost 2.93231702 : Time 79.29s : 2351.17 words/s : L.r. 8.3045e-05
+[2019-04-14 04:06:01] Ep. 1 : Up. 46500 : Sen. 5,787,294 : Cost 2.98720622 : Time 80.19s : 2370.39 words/s : L.r. 8.2956e-05
+[2019-04-14 04:07:22] Ep. 1 : Up. 46600 : Sen. 5,799,415 : Cost 2.98194599 : Time 81.63s : 2447.44 words/s : L.r. 8.2867e-05
+[2019-04-14 04:08:45] Ep. 1 : Up. 46700 : Sen. 5,811,221 : Cost 3.06579089 : Time 82.22s : 2515.60 words/s : L.r. 8.2778e-05
+[2019-04-14 04:10:09] Ep. 1 : Up. 46800 : Sen. 5,825,549 : Cost 2.98028779 : Time 84.79s : 2552.19 words/s : L.r. 8.2690e-05
+[2019-04-14 04:11:28] Ep. 1 : Up. 46900 : Sen. 5,837,601 : Cost 2.92445493 : Time 78.27s : 2372.82 words/s : L.r. 8.2602e-05
+[2019-04-14 04:12:46] Ep. 1 : Up. 47000 : Sen. 5,850,484 : Cost 3.00746870 : Time 78.46s : 2374.15 words/s : L.r. 8.2514e-05
+[2019-04-14 04:12:46] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 04:13:01] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 04:13:16] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 04:15:12] Ep. 1 : Up. 47100 : Sen. 5,862,860 : Cost 2.99406791 : Time 145.44s : 1341.06 words/s : L.r. 8.2426e-05
+[2019-04-14 04:16:29] Ep. 1 : Up. 47200 : Sen. 5,874,632 : Cost 2.94772029 : Time 77.48s : 2344.73 words/s : L.r. 8.2339e-05
+[2019-04-14 04:17:48] Ep. 1 : Up. 47300 : Sen. 5,886,617 : Cost 2.94506502 : Time 78.56s : 2411.86 words/s : L.r. 8.2252e-05
+[2019-04-14 04:19:07] Ep. 1 : Up. 47400 : Sen. 5,897,840 : Cost 2.98579621 : Time 78.84s : 2429.52 words/s : L.r. 8.2165e-05
+[2019-04-14 04:20:24] Ep. 1 : Up. 47500 : Sen. 5,909,184 : Cost 2.96909690 : Time 77.60s : 2337.69 words/s : L.r. 8.2078e-05
+[2019-04-14 04:21:41] Ep. 1 : Up. 47600 : Sen. 5,919,614 : Cost 2.96601081 : Time 77.24s : 2417.29 words/s : L.r. 8.1992e-05
+[2019-04-14 04:23:02] Ep. 1 : Up. 47700 : Sen. 5,934,837 : Cost 2.91305375 : Time 81.04s : 2384.62 words/s : L.r. 8.1906e-05
+[2019-04-14 04:24:26] Ep. 1 : Up. 47800 : Sen. 5,949,352 : Cost 2.96752238 : Time 83.85s : 2515.51 words/s : L.r. 8.1820e-05
+[2019-04-14 04:25:40] Ep. 1 : Up. 47900 : Sen. 5,959,585 : Cost 3.03051662 : Time 73.51s : 2326.40 words/s : L.r. 8.1735e-05
+[2019-04-14 04:26:58] Ep. 1 : Up. 48000 : Sen. 5,971,106 : Cost 2.94377804 : Time 78.03s : 2358.48 words/s : L.r. 8.1650e-05
+[2019-04-14 04:26:58] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 04:27:14] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 04:27:29] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 04:29:21] Ep. 1 : Up. 48100 : Sen. 5,982,532 : Cost 2.87192464 : Time 142.93s : 1221.28 words/s : L.r. 8.1565e-05
+[2019-04-14 04:30:43] Ep. 1 : Up. 48200 : Sen. 5,995,576 : Cost 2.95189643 : Time 82.45s : 2392.00 words/s : L.r. 8.1480e-05
+[2019-04-14 04:32:02] Ep. 1 : Up. 48300 : Sen. 6,006,676 : Cost 2.91180563 : Time 79.11s : 2426.98 words/s : L.r. 8.1396e-05
+[2019-04-14 04:33:20] Ep. 1 : Up. 48400 : Sen. 6,019,340 : Cost 2.98540616 : Time 77.89s : 2388.10 words/s : L.r. 8.1312e-05
+[2019-04-14 04:34:41] Ep. 1 : Up. 48500 : Sen. 6,032,092 : Cost 2.96917534 : Time 81.03s : 2460.40 words/s : L.r. 8.1228e-05
+[2019-04-14 04:36:01] Ep. 1 : Up. 48600 : Sen. 6,043,705 : Cost 2.98297787 : Time 79.94s : 2454.28 words/s : L.r. 8.1144e-05
+[2019-04-14 04:37:19] Ep. 1 : Up. 48700 : Sen. 6,055,329 : Cost 3.00790215 : Time 78.30s : 2387.86 words/s : L.r. 8.1061e-05
+[2019-04-14 04:38:34] Ep. 1 : Up. 48800 : Sen. 6,065,948 : Cost 2.91703296 : Time 74.07s : 2244.09 words/s : L.r. 8.0978e-05
+[2019-04-14 04:39:52] Ep. 1 : Up. 48900 : Sen. 6,076,106 : Cost 2.98162913 : Time 78.13s : 2359.07 words/s : L.r. 8.0895e-05
+[2019-04-14 04:41:13] Ep. 1 : Up. 49000 : Sen. 6,089,844 : Cost 2.93700027 : Time 81.75s : 2449.73 words/s : L.r. 8.0812e-05
+[2019-04-14 04:41:13] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 04:41:29] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 04:41:46] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 04:43:42] Ep. 1 : Up. 49100 : Sen. 6,104,865 : Cost 2.89558578 : Time 148.27s : 1270.82 words/s : L.r. 8.0730e-05
+[2019-04-14 04:45:01] Ep. 1 : Up. 49200 : Sen. 6,116,352 : Cost 2.89113522 : Time 79.47s : 2301.03 words/s : L.r. 8.0648e-05
+[2019-04-14 04:46:18] Ep. 1 : Up. 49300 : Sen. 6,127,337 : Cost 2.95011544 : Time 76.39s : 2298.35 words/s : L.r. 8.0566e-05
+[2019-04-14 04:47:38] Ep. 1 : Up. 49400 : Sen. 6,137,445 : Cost 3.00481915 : Time 80.47s : 2417.87 words/s : L.r. 8.0484e-05
+[2019-04-14 04:48:54] Ep. 1 : Up. 49500 : Sen. 6,147,963 : Cost 3.06857157 : Time 75.57s : 2335.91 words/s : L.r. 8.0403e-05
+[2019-04-14 04:50:11] Ep. 1 : Up. 49600 : Sen. 6,158,844 : Cost 2.96508789 : Time 77.66s : 2400.27 words/s : L.r. 8.0322e-05
+[2019-04-14 04:51:27] Ep. 1 : Up. 49700 : Sen. 6,169,113 : Cost 2.91462421 : Time 76.07s : 2237.12 words/s : L.r. 8.0241e-05
+[2019-04-14 04:52:45] Ep. 1 : Up. 49800 : Sen. 6,178,842 : Cost 3.04213834 : Time 77.51s : 2473.65 words/s : L.r. 8.0160e-05
+[2019-04-14 04:54:03] Ep. 1 : Up. 49900 : Sen. 6,191,007 : Cost 2.90184283 : Time 78.08s : 2359.76 words/s : L.r. 8.0080e-05
+[2019-04-14 04:55:20] Ep. 1 : Up. 50000 : Sen. 6,203,050 : Cost 2.96258354 : Time 76.77s : 2346.18 words/s : L.r. 8.0000e-05
+[2019-04-14 04:55:20] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 04:55:34] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 04:55:51] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 04:56:37] [valid] Ep. 1 : Up. 50000 : ce-mean-words : 1.60456 : stalled 4 times (last best: 1.58847)
+[2019-04-14 04:56:50] [valid] Ep. 1 : Up. 50000 : perplexity : 4.97568 : stalled 4 times (last best: 4.89625)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-14 04:59:37] [valid] Ep. 1 : Up. 50000 : translation : 26.08 : stalled 5 times (last best: 26.18)
+[2019-04-14 05:00:58] Ep. 1 : Up. 50100 : Sen. 6,217,902 : Cost 2.90000534 : Time 338.57s : 577.81 words/s : L.r. 7.9920e-05
+[2019-04-14 05:02:19] Ep. 1 : Up. 50200 : Sen. 6,231,582 : Cost 2.93876171 : Time 80.82s : 2418.02 words/s : L.r. 7.9840e-05
+[2019-04-14 05:03:40] Ep. 1 : Up. 50300 : Sen. 6,243,180 : Cost 2.96118045 : Time 81.02s : 2425.17 words/s : L.r. 7.9761e-05
+[2019-04-14 05:04:57] Ep. 1 : Up. 50400 : Sen. 6,256,970 : Cost 2.94468284 : Time 76.92s : 2363.17 words/s : L.r. 7.9682e-05
+[2019-04-14 05:06:14] Ep. 1 : Up. 50500 : Sen. 6,270,518 : Cost 2.87524772 : Time 76.64s : 2298.41 words/s : L.r. 7.9603e-05
+[2019-04-14 05:07:34] Ep. 1 : Up. 50600 : Sen. 6,285,036 : Cost 2.97492576 : Time 80.27s : 2443.16 words/s : L.r. 7.9524e-05
+[2019-04-14 05:08:54] Ep. 1 : Up. 50700 : Sen. 6,298,365 : Cost 2.94455194 : Time 79.84s : 2441.92 words/s : L.r. 7.9446e-05
+[2019-04-14 05:10:18] Ep. 1 : Up. 50800 : Sen. 6,314,103 : Cost 2.93891287 : Time 84.19s : 2536.21 words/s : L.r. 7.9368e-05
+[2019-04-14 05:11:38] Ep. 1 : Up. 50900 : Sen. 6,327,984 : Cost 2.92214417 : Time 79.86s : 2393.81 words/s : L.r. 7.9290e-05
+[2019-04-14 05:12:56] Ep. 1 : Up. 51000 : Sen. 6,338,507 : Cost 3.02542639 : Time 78.62s : 2403.54 words/s : L.r. 7.9212e-05
+[2019-04-14 05:12:56] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 05:13:11] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 05:13:27] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 05:15:21] Ep. 1 : Up. 51100 : Sen. 6,352,590 : Cost 2.93249941 : Time 144.83s : 1251.33 words/s : L.r. 7.9134e-05
+[2019-04-14 05:16:41] Ep. 1 : Up. 51200 : Sen. 6,364,267 : Cost 3.00016284 : Time 79.80s : 2471.49 words/s : L.r. 7.9057e-05
+[2019-04-14 05:17:59] Ep. 1 : Up. 51300 : Sen. 6,377,374 : Cost 2.93515563 : Time 78.26s : 2355.96 words/s : L.r. 7.8980e-05
+[2019-04-14 05:19:14] Ep. 1 : Up. 51400 : Sen. 6,387,804 : Cost 2.95577812 : Time 74.98s : 2240.92 words/s : L.r. 7.8903e-05
+[2019-04-14 05:20:33] Ep. 1 : Up. 51500 : Sen. 6,401,340 : Cost 2.94330788 : Time 79.12s : 2432.65 words/s : L.r. 7.8826e-05
+[2019-04-14 05:21:54] Ep. 1 : Up. 51600 : Sen. 6,413,946 : Cost 2.98548198 : Time 80.57s : 2409.23 words/s : L.r. 7.8750e-05
+[2019-04-14 05:23:03] Ep. 1 : Up. 51700 : Sen. 6,422,445 : Cost 2.99935651 : Time 68.72s : 2113.77 words/s : L.r. 7.8674e-05
+[2019-04-14 05:24:18] Ep. 1 : Up. 51800 : Sen. 6,434,579 : Cost 2.95528865 : Time 75.62s : 2289.35 words/s : L.r. 7.8598e-05
+[2019-04-14 05:25:41] Ep. 1 : Up. 51900 : Sen. 6,449,446 : Cost 2.95061135 : Time 82.63s : 2481.63 words/s : L.r. 7.8522e-05
+[2019-04-14 05:27:00] Ep. 1 : Up. 52000 : Sen. 6,462,053 : Cost 3.01600480 : Time 79.43s : 2419.89 words/s : L.r. 7.8446e-05
+[2019-04-14 05:27:00] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 05:27:17] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 05:27:33] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 05:29:27] Ep. 1 : Up. 52100 : Sen. 6,472,277 : Cost 3.02920628 : Time 146.39s : 1268.12 words/s : L.r. 7.8371e-05
+[2019-04-14 05:30:50] Ep. 1 : Up. 52200 : Sen. 6,485,601 : Cost 2.93259478 : Time 82.75s : 2479.09 words/s : L.r. 7.8296e-05
+[2019-04-14 05:32:11] Ep. 1 : Up. 52300 : Sen. 6,499,320 : Cost 3.00925851 : Time 81.20s : 2507.82 words/s : L.r. 7.8221e-05
+[2019-04-14 05:33:31] Ep. 1 : Up. 52400 : Sen. 6,511,826 : Cost 3.01521873 : Time 80.72s : 2467.42 words/s : L.r. 7.8146e-05
+[2019-04-14 05:34:44] Ep. 1 : Up. 52500 : Sen. 6,520,284 : Cost 2.95710182 : Time 72.26s : 2164.77 words/s : L.r. 7.8072e-05
+[2019-04-14 05:36:07] Ep. 1 : Up. 52600 : Sen. 6,532,321 : Cost 2.98480797 : Time 83.36s : 2426.22 words/s : L.r. 7.7998e-05
+[2019-04-14 05:37:25] Ep. 1 : Up. 52700 : Sen. 6,544,831 : Cost 2.93240571 : Time 77.74s : 2335.14 words/s : L.r. 7.7924e-05
+[2019-04-14 05:38:42] Ep. 1 : Up. 52800 : Sen. 6,556,574 : Cost 2.98277998 : Time 76.81s : 2318.69 words/s : L.r. 7.7850e-05
+[2019-04-14 05:40:04] Ep. 1 : Up. 52900 : Sen. 6,572,792 : Cost 2.92427206 : Time 81.88s : 2433.40 words/s : L.r. 7.7776e-05
+[2019-04-14 05:41:24] Ep. 1 : Up. 53000 : Sen. 6,585,301 : Cost 2.94686770 : Time 80.23s : 2440.67 words/s : L.r. 7.7703e-05
+[2019-04-14 05:41:24] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 05:41:40] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 05:41:57] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 05:43:52] Ep. 1 : Up. 53100 : Sen. 6,597,994 : Cost 2.90678358 : Time 148.43s : 1370.69 words/s : L.r. 7.7630e-05
+[2019-04-14 05:45:12] Ep. 1 : Up. 53200 : Sen. 6,611,259 : Cost 2.88736820 : Time 79.99s : 2437.65 words/s : L.r. 7.7557e-05
+[2019-04-14 05:46:28] Ep. 1 : Up. 53300 : Sen. 6,622,739 : Cost 2.90479660 : Time 76.24s : 2275.87 words/s : L.r. 7.7484e-05
+[2019-04-14 05:47:45] Ep. 1 : Up. 53400 : Sen. 6,634,750 : Cost 3.02876568 : Time 76.59s : 2302.35 words/s : L.r. 7.7411e-05
+[2019-04-14 05:49:08] Ep. 1 : Up. 53500 : Sen. 6,650,104 : Cost 2.97276616 : Time 83.09s : 2478.93 words/s : L.r. 7.7339e-05
+[2019-04-14 05:50:28] Ep. 1 : Up. 53600 : Sen. 6,661,488 : Cost 2.93566489 : Time 80.36s : 2402.49 words/s : L.r. 7.7267e-05
+[2019-04-14 05:51:45] Ep. 1 : Up. 53700 : Sen. 6,673,005 : Cost 2.92333150 : Time 76.22s : 2301.96 words/s : L.r. 7.7195e-05
+[2019-04-14 05:53:01] Ep. 1 : Up. 53800 : Sen. 6,683,774 : Cost 2.97140646 : Time 76.68s : 2366.77 words/s : L.r. 7.7123e-05
+[2019-04-14 05:54:23] Ep. 1 : Up. 53900 : Sen. 6,696,220 : Cost 3.04906821 : Time 81.44s : 2512.70 words/s : L.r. 7.7051e-05
+[2019-04-14 05:55:41] Ep. 1 : Up. 54000 : Sen. 6,708,988 : Cost 2.93808913 : Time 78.55s : 2374.09 words/s : L.r. 7.6980e-05
+[2019-04-14 05:55:41] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 05:55:57] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 05:56:14] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 05:58:12] Ep. 1 : Up. 54100 : Sen. 6,721,065 : Cost 3.03479862 : Time 150.95s : 1320.20 words/s : L.r. 7.6909e-05
+[2019-04-14 05:59:32] Ep. 1 : Up. 54200 : Sen. 6,734,014 : Cost 2.91007209 : Time 79.45s : 2329.96 words/s : L.r. 7.6838e-05
+[2019-04-14 06:00:53] Ep. 1 : Up. 54300 : Sen. 6,748,569 : Cost 2.95686173 : Time 81.73s : 2428.90 words/s : L.r. 7.6767e-05
+[2019-04-14 06:02:07] Ep. 1 : Up. 54400 : Sen. 6,757,728 : Cost 3.05453658 : Time 73.91s : 2240.41 words/s : L.r. 7.6696e-05
+[2019-04-14 06:03:36] Ep. 1 : Up. 54500 : Sen. 6,775,294 : Cost 2.91801262 : Time 88.26s : 2561.68 words/s : L.r. 7.6626e-05
+[2019-04-14 06:04:52] Ep. 1 : Up. 54600 : Sen. 6,784,337 : Cost 2.99170732 : Time 76.02s : 2320.30 words/s : L.r. 7.6556e-05
+[2019-04-14 06:06:11] Ep. 1 : Up. 54700 : Sen. 6,795,522 : Cost 2.95265627 : Time 79.00s : 2339.72 words/s : L.r. 7.6486e-05
+[2019-04-14 06:07:29] Ep. 1 : Up. 54800 : Sen. 6,807,895 : Cost 2.89652538 : Time 78.01s : 2338.58 words/s : L.r. 7.6416e-05
+[2019-04-14 06:08:51] Ep. 1 : Up. 54900 : Sen. 6,819,776 : Cost 2.93972015 : Time 81.87s : 2433.29 words/s : L.r. 7.6346e-05
+[2019-04-14 06:10:12] Ep. 1 : Up. 55000 : Sen. 6,833,282 : Cost 2.93264699 : Time 81.04s : 2401.69 words/s : L.r. 7.6277e-05
+[2019-04-14 06:10:12] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 06:10:28] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 06:10:44] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 06:11:30] [valid] Ep. 1 : Up. 55000 : ce-mean-words : 1.60985 : stalled 5 times (last best: 1.58847)
+[2019-04-14 06:11:42] [valid] Ep. 1 : Up. 55000 : perplexity : 5.00204 : stalled 5 times (last best: 4.89625)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-14 06:14:29] [valid] Ep. 1 : Up. 55000 : translation : 26.1 : stalled 6 times (last best: 26.18)
+[2019-04-14 06:15:51] Ep. 1 : Up. 55100 : Sen. 6,846,408 : Cost 2.98926425 : Time 339.76s : 598.91 words/s : L.r. 7.6208e-05
+[2019-04-14 06:17:08] Ep. 1 : Up. 55200 : Sen. 6,858,095 : Cost 2.92208242 : Time 77.13s : 2278.26 words/s : L.r. 7.6139e-05
+[2019-04-14 06:18:30] Ep. 1 : Up. 55300 : Sen. 6,871,899 : Cost 2.93512130 : Time 81.12s : 2449.45 words/s : L.r. 7.6070e-05
+[2019-04-14 06:19:50] Ep. 1 : Up. 55400 : Sen. 6,884,469 : Cost 3.01272535 : Time 80.43s : 2436.81 words/s : L.r. 7.6001e-05
+[2019-04-14 06:21:09] Ep. 1 : Up. 55500 : Sen. 6,896,737 : Cost 3.01138854 : Time 79.36s : 2453.68 words/s : L.r. 7.5933e-05
+[2019-04-14 06:22:27] Ep. 1 : Up. 55600 : Sen. 6,909,606 : Cost 2.87520075 : Time 77.13s : 2279.42 words/s : L.r. 7.5864e-05
+[2019-04-14 06:23:47] Ep. 1 : Up. 55700 : Sen. 6,924,338 : Cost 3.01086760 : Time 80.66s : 2436.51 words/s : L.r. 7.5796e-05
+[2019-04-14 06:25:01] Ep. 1 : Up. 55800 : Sen. 6,935,352 : Cost 2.83519292 : Time 74.17s : 2126.57 words/s : L.r. 7.5728e-05
+[2019-04-14 06:26:21] Ep. 1 : Up. 55900 : Sen. 6,946,806 : Cost 2.96302819 : Time 80.01s : 2383.12 words/s : L.r. 7.5660e-05
+[2019-04-14 06:27:45] Ep. 1 : Up. 56000 : Sen. 6,962,284 : Cost 2.93776464 : Time 83.20s : 2485.69 words/s : L.r. 7.5593e-05
+[2019-04-14 06:27:45] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 06:27:59] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 06:28:15] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 06:30:09] Ep. 1 : Up. 56100 : Sen. 6,976,378 : Cost 2.93792915 : Time 144.39s : 1332.17 words/s : L.r. 7.5525e-05
+[2019-04-14 06:31:27] Ep. 1 : Up. 56200 : Sen. 6,987,094 : Cost 3.00370526 : Time 78.46s : 2405.55 words/s : L.r. 7.5458e-05
+[2019-04-14 06:32:50] Ep. 1 : Up. 56300 : Sen. 7,000,856 : Cost 2.97942352 : Time 82.61s : 2499.07 words/s : L.r. 7.5391e-05
+[2019-04-14 06:34:16] Ep. 1 : Up. 56400 : Sen. 7,015,933 : Cost 2.97749043 : Time 85.95s : 2608.66 words/s : L.r. 7.5324e-05
+[2019-04-14 06:35:35] Ep. 1 : Up. 56500 : Sen. 7,027,986 : Cost 2.93257928 : Time 78.80s : 2293.64 words/s : L.r. 7.5258e-05
+[2019-04-14 06:36:55] Ep. 1 : Up. 56600 : Sen. 7,041,233 : Cost 2.94136238 : Time 80.16s : 2450.53 words/s : L.r. 7.5191e-05
+[2019-04-14 06:38:10] Ep. 1 : Up. 56700 : Sen. 7,053,211 : Cost 2.97125936 : Time 74.70s : 2278.61 words/s : L.r. 7.5125e-05
+[2019-04-14 06:39:26] Ep. 1 : Up. 56800 : Sen. 7,064,981 : Cost 2.94115043 : Time 76.14s : 2308.85 words/s : L.r. 7.5059e-05
+[2019-04-14 06:40:45] Ep. 1 : Up. 56900 : Sen. 7,075,896 : Cost 2.93094707 : Time 78.99s : 2365.64 words/s : L.r. 7.4993e-05
+[2019-04-14 06:42:10] Ep. 1 : Up. 57000 : Sen. 7,090,896 : Cost 2.92047882 : Time 85.08s : 2566.24 words/s : L.r. 7.4927e-05
+[2019-04-14 06:42:10] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 06:42:26] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 06:42:42] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 06:44:33] Ep. 1 : Up. 57100 : Sen. 7,101,591 : Cost 2.94304132 : Time 143.11s : 1207.54 words/s : L.r. 7.4861e-05
+[2019-04-14 06:45:54] Ep. 1 : Up. 57200 : Sen. 7,113,988 : Cost 2.94824052 : Time 81.05s : 2353.79 words/s : L.r. 7.4796e-05
+[2019-04-14 06:47:15] Ep. 1 : Up. 57300 : Sen. 7,126,526 : Cost 2.96337819 : Time 81.08s : 2378.77 words/s : L.r. 7.4730e-05
+[2019-04-14 06:48:32] Ep. 1 : Up. 57400 : Sen. 7,138,193 : Cost 2.96508336 : Time 77.04s : 2316.55 words/s : L.r. 7.4665e-05
+[2019-04-14 06:49:52] Ep. 1 : Up. 57500 : Sen. 7,151,399 : Cost 2.95570517 : Time 79.80s : 2396.98 words/s : L.r. 7.4600e-05
+[2019-04-14 06:51:05] Ep. 1 : Up. 57600 : Sen. 7,160,078 : Cost 2.97068667 : Time 73.36s : 2209.79 words/s : L.r. 7.4536e-05
+[2019-04-14 06:52:23] Ep. 1 : Up. 57700 : Sen. 7,174,578 : Cost 2.91040897 : Time 77.75s : 2334.25 words/s : L.r. 7.4471e-05
+[2019-04-14 06:53:44] Ep. 1 : Up. 57800 : Sen. 7,188,364 : Cost 2.90720606 : Time 80.92s : 2479.37 words/s : L.r. 7.4407e-05
+[2019-04-14 06:55:04] Ep. 1 : Up. 57900 : Sen. 7,200,371 : Cost 3.02525282 : Time 79.70s : 2431.66 words/s : L.r. 7.4342e-05
+[2019-04-14 06:56:27] Ep. 1 : Up. 58000 : Sen. 7,216,822 : Cost 2.95523334 : Time 83.52s : 2539.82 words/s : L.r. 7.4278e-05
+[2019-04-14 06:56:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 06:56:44] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 06:57:00] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 06:58:53] Ep. 1 : Up. 58100 : Sen. 7,226,332 : Cost 3.02367735 : Time 145.59s : 1253.98 words/s : L.r. 7.4214e-05
+[2019-04-14 07:00:17] Ep. 1 : Up. 58200 : Sen. 7,240,605 : Cost 2.93675733 : Time 84.66s : 2548.75 words/s : L.r. 7.4150e-05
+[2019-04-14 07:01:41] Ep. 1 : Up. 58300 : Sen. 7,254,756 : Cost 2.94959068 : Time 83.59s : 2513.54 words/s : L.r. 7.4087e-05
+[2019-04-14 07:03:02] Ep. 1 : Up. 58400 : Sen. 7,265,831 : Cost 3.01440024 : Time 81.08s : 2425.50 words/s : L.r. 7.4023e-05
+[2019-04-14 07:04:26] Ep. 1 : Up. 58500 : Sen. 7,279,959 : Cost 2.99595284 : Time 84.25s : 2529.84 words/s : L.r. 7.3960e-05
+[2019-04-14 07:05:42] Ep. 1 : Up. 58600 : Sen. 7,290,002 : Cost 3.00377178 : Time 75.95s : 2343.47 words/s : L.r. 7.3897e-05
+[2019-04-14 07:06:57] Ep. 1 : Up. 58700 : Sen. 7,300,667 : Cost 2.95928073 : Time 74.94s : 2321.75 words/s : L.r. 7.3834e-05
+[2019-04-14 07:08:16] Ep. 1 : Up. 58800 : Sen. 7,312,417 : Cost 2.92046189 : Time 79.15s : 2453.34 words/s : L.r. 7.3771e-05
+[2019-04-14 07:09:32] Ep. 1 : Up. 58900 : Sen. 7,322,992 : Cost 2.91864157 : Time 75.65s : 2304.37 words/s : L.r. 7.3708e-05
+[2019-04-14 07:10:48] Ep. 1 : Up. 59000 : Sen. 7,334,726 : Cost 3.01719546 : Time 76.03s : 2313.80 words/s : L.r. 7.3646e-05
+[2019-04-14 07:10:48] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 07:11:02] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 07:11:19] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 07:13:08] Ep. 1 : Up. 59100 : Sen. 7,345,832 : Cost 3.04944253 : Time 139.59s : 1200.81 words/s : L.r. 7.3584e-05
+[2019-04-14 07:14:25] Ep. 1 : Up. 59200 : Sen. 7,356,908 : Cost 2.95123243 : Time 77.52s : 2211.80 words/s : L.r. 7.3521e-05
+[2019-04-14 07:15:42] Ep. 1 : Up. 59300 : Sen. 7,368,543 : Cost 2.93714881 : Time 76.49s : 2172.05 words/s : L.r. 7.3459e-05
+[2019-04-14 07:17:04] Ep. 1 : Up. 59400 : Sen. 7,382,380 : Cost 2.91858840 : Time 82.18s : 2331.99 words/s : L.r. 7.3398e-05
+[2019-04-14 07:18:35] Ep. 1 : Up. 59500 : Sen. 7,401,186 : Cost 2.99799109 : Time 91.50s : 2612.67 words/s : L.r. 7.3336e-05
+[2019-04-14 07:19:55] Ep. 1 : Up. 59600 : Sen. 7,412,678 : Cost 2.91299677 : Time 79.38s : 2268.11 words/s : L.r. 7.3274e-05
+[2019-04-14 07:21:17] Ep. 1 : Up. 59700 : Sen. 7,425,947 : Cost 2.91496539 : Time 82.22s : 2419.56 words/s : L.r. 7.3213e-05
+[2019-04-14 07:22:31] Ep. 1 : Up. 59800 : Sen. 7,435,693 : Cost 3.00549555 : Time 74.47s : 2275.91 words/s : L.r. 7.3152e-05
+[2019-04-14 07:23:52] Ep. 1 : Up. 59900 : Sen. 7,449,857 : Cost 2.91352201 : Time 80.86s : 2423.30 words/s : L.r. 7.3091e-05
+[2019-04-14 07:25:13] Ep. 1 : Up. 60000 : Sen. 7,462,157 : Cost 2.95530391 : Time 80.36s : 2406.07 words/s : L.r. 7.3030e-05
+[2019-04-14 07:25:13] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 07:25:29] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 07:25:45] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 07:26:32] [valid] Ep. 1 : Up. 60000 : ce-mean-words : 1.61358 : stalled 6 times (last best: 1.58847)
+[2019-04-14 07:26:44] [valid] Ep. 1 : Up. 60000 : perplexity : 5.02074 : stalled 6 times (last best: 4.89625)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-14 07:29:33] [valid] Ep. 1 : Up. 60000 : translation : 25.97 : stalled 7 times (last best: 26.18)
+[2019-04-14 07:30:53] Ep. 1 : Up. 60100 : Sen. 7,476,607 : Cost 2.99012709 : Time 340.58s : 578.68 words/s : L.r. 7.2969e-05
+[2019-04-14 07:32:15] Ep. 1 : Up. 60200 : Sen. 7,490,635 : Cost 2.98115635 : Time 82.01s : 2459.62 words/s : L.r. 7.2908e-05
+[2019-04-14 07:33:34] Ep. 1 : Up. 60300 : Sen. 7,502,798 : Cost 2.94486475 : Time 78.60s : 2260.48 words/s : L.r. 7.2848e-05
+[2019-04-14 07:34:53] Ep. 1 : Up. 60400 : Sen. 7,513,980 : Cost 2.90662718 : Time 79.17s : 2417.13 words/s : L.r. 7.2787e-05
+[2019-04-14 07:36:15] Ep. 1 : Up. 60500 : Sen. 7,526,590 : Cost 2.98558354 : Time 81.52s : 2466.34 words/s : L.r. 7.2727e-05
+[2019-04-14 07:37:37] Ep. 1 : Up. 60600 : Sen. 7,541,521 : Cost 2.95891452 : Time 81.96s : 2488.01 words/s : L.r. 7.2667e-05
+[2019-04-14 07:38:58] Ep. 1 : Up. 60700 : Sen. 7,554,643 : Cost 3.03247619 : Time 81.31s : 2500.19 words/s : L.r. 7.2607e-05
+[2019-04-14 07:40:18] Ep. 1 : Up. 60800 : Sen. 7,568,007 : Cost 2.89987087 : Time 79.82s : 2361.06 words/s : L.r. 7.2548e-05
+[2019-04-14 07:41:36] Ep. 1 : Up. 60900 : Sen. 7,580,066 : Cost 2.99273968 : Time 78.64s : 2415.37 words/s : L.r. 7.2488e-05
+[2019-04-14 07:42:54] Ep. 1 : Up. 61000 : Sen. 7,592,317 : Cost 2.98627853 : Time 78.18s : 2424.74 words/s : L.r. 7.2429e-05
+[2019-04-14 07:42:54] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 07:43:11] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 07:43:28] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 07:45:21] Ep. 1 : Up. 61100 : Sen. 7,604,202 : Cost 2.91047645 : Time 146.74s : 1251.74 words/s : L.r. 7.2369e-05
+[2019-04-14 07:46:41] Ep. 1 : Up. 61200 : Sen. 7,618,188 : Cost 2.96208620 : Time 79.71s : 2446.57 words/s : L.r. 7.2310e-05
+[2019-04-14 07:48:01] Ep. 1 : Up. 61300 : Sen. 7,631,047 : Cost 2.95566797 : Time 80.03s : 2416.47 words/s : L.r. 7.2251e-05
+[2019-04-14 07:49:17] Ep. 1 : Up. 61400 : Sen. 7,641,873 : Cost 2.99741983 : Time 75.64s : 2250.55 words/s : L.r. 7.2192e-05
+[2019-04-14 07:50:31] Ep. 1 : Up. 61500 : Sen. 7,653,936 : Cost 2.97034168 : Time 74.77s : 2254.52 words/s : L.r. 7.2134e-05
+[2019-04-14 07:51:54] Ep. 1 : Up. 61600 : Sen. 7,667,801 : Cost 3.00646186 : Time 82.68s : 2532.19 words/s : L.r. 7.2075e-05
+[2019-04-14 07:53:12] Ep. 1 : Up. 61700 : Sen. 7,678,721 : Cost 3.02351713 : Time 78.38s : 2461.32 words/s : L.r. 7.2017e-05
+[2019-04-14 07:54:33] Ep. 1 : Up. 61800 : Sen. 7,693,831 : Cost 2.92151308 : Time 80.69s : 2393.80 words/s : L.r. 7.1958e-05
+[2019-04-14 07:55:50] Ep. 1 : Up. 61900 : Sen. 7,704,931 : Cost 3.10255122 : Time 77.12s : 2424.95 words/s : L.r. 7.1900e-05
+[2019-04-14 07:57:07] Ep. 1 : Up. 62000 : Sen. 7,714,778 : Cost 2.98550320 : Time 76.57s : 2325.35 words/s : L.r. 7.1842e-05
+[2019-04-14 07:57:07] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 07:57:23] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 07:57:40] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 07:59:33] Ep. 1 : Up. 62100 : Sen. 7,727,804 : Cost 2.89906073 : Time 146.57s : 1249.70 words/s : L.r. 7.1784e-05
+[2019-04-14 08:00:51] Ep. 1 : Up. 62200 : Sen. 7,738,835 : Cost 2.98968554 : Time 77.30s : 2288.04 words/s : L.r. 7.1727e-05
+[2019-04-14 08:02:11] Ep. 1 : Up. 62300 : Sen. 7,752,096 : Cost 2.92112732 : Time 80.33s : 2351.91 words/s : L.r. 7.1669e-05
+[2019-04-14 08:03:28] Ep. 1 : Up. 62400 : Sen. 7,764,499 : Cost 2.98684812 : Time 76.69s : 2317.86 words/s : L.r. 7.1611e-05
+[2019-04-14 08:04:45] Ep. 1 : Up. 62500 : Sen. 7,774,630 : Cost 2.96867108 : Time 77.59s : 2385.05 words/s : L.r. 7.1554e-05
+[2019-04-14 08:06:05] Ep. 1 : Up. 62600 : Sen. 7,785,914 : Cost 3.01376033 : Time 79.44s : 2467.77 words/s : L.r. 7.1497e-05
+[2019-04-14 08:07:23] Ep. 1 : Up. 62700 : Sen. 7,797,851 : Cost 3.02860641 : Time 78.64s : 2389.66 words/s : L.r. 7.1440e-05
+[2019-04-14 08:08:46] Ep. 1 : Up. 62800 : Sen. 7,812,075 : Cost 2.98187232 : Time 82.51s : 2498.55 words/s : L.r. 7.1383e-05
+[2019-04-14 08:10:01] Ep. 1 : Up. 62900 : Sen. 7,822,138 : Cost 3.00138903 : Time 75.63s : 2298.09 words/s : L.r. 7.1326e-05
+[2019-04-14 08:11:18] Ep. 1 : Up. 63000 : Sen. 7,833,722 : Cost 2.95946050 : Time 76.61s : 2331.32 words/s : L.r. 7.1270e-05
+[2019-04-14 08:11:18] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 08:11:33] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 08:11:50] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 08:13:41] Ep. 1 : Up. 63100 : Sen. 7,846,863 : Cost 2.91568422 : Time 142.81s : 1268.33 words/s : L.r. 7.1213e-05
+[2019-04-14 08:15:01] Ep. 1 : Up. 63200 : Sen. 7,860,385 : Cost 3.02817607 : Time 80.40s : 2459.29 words/s : L.r. 7.1157e-05
+[2019-04-14 08:16:26] Ep. 1 : Up. 63300 : Sen. 7,875,916 : Cost 2.97450304 : Time 84.41s : 2537.88 words/s : L.r. 7.1101e-05
+[2019-04-14 08:17:45] Ep. 1 : Up. 63400 : Sen. 7,889,528 : Cost 2.87071323 : Time 79.53s : 2321.04 words/s : L.r. 7.1044e-05
+[2019-04-14 08:19:05] Ep. 1 : Up. 63500 : Sen. 7,903,069 : Cost 2.97741699 : Time 79.65s : 2289.40 words/s : L.r. 7.0989e-05
+[2019-04-14 08:20:27] Ep. 1 : Up. 63600 : Sen. 7,915,174 : Cost 3.02284265 : Time 82.24s : 2507.10 words/s : L.r. 7.0933e-05
+[2019-04-14 08:21:44] Ep. 1 : Up. 63700 : Sen. 7,927,546 : Cost 2.91300678 : Time 76.43s : 2306.23 words/s : L.r. 7.0877e-05
+[2019-04-14 08:23:04] Ep. 1 : Up. 63800 : Sen. 7,939,794 : Cost 2.98311400 : Time 79.93s : 2452.94 words/s : L.r. 7.0821e-05
+[2019-04-14 08:24:13] Ep. 1 : Up. 63900 : Sen. 7,949,794 : Cost 2.95564318 : Time 69.95s : 2123.47 words/s : L.r. 7.0766e-05
+[2019-04-14 08:25:32] Ep. 1 : Up. 64000 : Sen. 7,961,055 : Cost 2.99625206 : Time 78.89s : 2371.19 words/s : L.r. 7.0711e-05
+[2019-04-14 08:25:32] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 08:25:46] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 08:26:03] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 08:27:54] Ep. 1 : Up. 64100 : Sen. 7,971,296 : Cost 2.91607332 : Time 141.15s : 1216.08 words/s : L.r. 7.0656e-05
+[2019-04-14 08:29:15] Ep. 1 : Up. 64200 : Sen. 7,983,431 : Cost 2.93692684 : Time 81.25s : 2465.71 words/s : L.r. 7.0600e-05
+[2019-04-14 08:30:33] Ep. 1 : Up. 64300 : Sen. 7,995,808 : Cost 3.02124500 : Time 78.34s : 2401.73 words/s : L.r. 7.0546e-05
+[2019-04-14 08:31:50] Ep. 1 : Up. 64400 : Sen. 8,006,795 : Cost 3.04443383 : Time 76.69s : 2382.25 words/s : L.r. 7.0491e-05
+[2019-04-14 08:33:10] Ep. 1 : Up. 64500 : Sen. 8,018,841 : Cost 2.97980165 : Time 79.79s : 2426.14 words/s : L.r. 7.0436e-05
+[2019-04-14 08:34:27] Ep. 1 : Up. 64600 : Sen. 8,029,535 : Cost 2.94597960 : Time 77.39s : 2298.23 words/s : L.r. 7.0382e-05
+[2019-04-14 08:35:53] Ep. 1 : Up. 64700 : Sen. 8,045,184 : Cost 2.97148728 : Time 85.97s : 2584.49 words/s : L.r. 7.0327e-05
+[2019-04-14 08:37:11] Ep. 1 : Up. 64800 : Sen. 8,056,431 : Cost 3.00503826 : Time 78.03s : 2391.76 words/s : L.r. 7.0273e-05
+[2019-04-14 08:38:27] Ep. 1 : Up. 64900 : Sen. 8,066,647 : Cost 2.96382356 : Time 76.48s : 2341.34 words/s : L.r. 7.0219e-05
+[2019-04-14 08:39:49] Ep. 1 : Up. 65000 : Sen. 8,082,142 : Cost 2.92233896 : Time 81.66s : 2410.55 words/s : L.r. 7.0165e-05
+[2019-04-14 08:39:49] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 08:40:05] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 08:40:22] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 08:41:07] [valid] Ep. 1 : Up. 65000 : ce-mean-words : 1.61787 : stalled 7 times (last best: 1.58847)
+[2019-04-14 08:41:19] [valid] Ep. 1 : Up. 65000 : perplexity : 5.04232 : stalled 7 times (last best: 4.89625)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-14 08:44:09] [valid] Ep. 1 : Up. 65000 : translation : 25.91 : stalled 8 times (last best: 26.18)
+[2019-04-14 08:45:26] Ep. 1 : Up. 65100 : Sen. 8,094,874 : Cost 2.89220715 : Time 336.62s : 533.81 words/s : L.r. 7.0111e-05
+[2019-04-14 08:46:42] Ep. 1 : Up. 65200 : Sen. 8,105,233 : Cost 3.06983900 : Time 76.36s : 2338.05 words/s : L.r. 7.0057e-05
+[2019-04-14 08:48:01] Ep. 1 : Up. 65300 : Sen. 8,117,507 : Cost 2.99149227 : Time 78.66s : 2375.27 words/s : L.r. 7.0003e-05
+[2019-04-14 08:49:23] Ep. 1 : Up. 65400 : Sen. 8,130,544 : Cost 2.99125123 : Time 82.21s : 2498.83 words/s : L.r. 6.9950e-05
+[2019-04-14 08:50:42] Ep. 1 : Up. 65500 : Sen. 8,142,978 : Cost 2.91662693 : Time 78.63s : 2401.83 words/s : L.r. 6.9896e-05
+[2019-04-14 08:52:00] Ep. 1 : Up. 65600 : Sen. 8,155,707 : Cost 3.00433779 : Time 78.75s : 2434.34 words/s : L.r. 6.9843e-05
+[2019-04-14 08:53:20] Ep. 1 : Up. 65700 : Sen. 8,169,941 : Cost 2.94468069 : Time 79.46s : 2404.59 words/s : L.r. 6.9790e-05
+[2019-04-14 08:54:32] Ep. 1 : Up. 65800 : Sen. 8,179,849 : Cost 2.94044590 : Time 72.41s : 2139.05 words/s : L.r. 6.9737e-05
+[2019-04-14 08:55:52] Ep. 1 : Up. 65900 : Sen. 8,192,818 : Cost 2.92946696 : Time 79.29s : 2218.52 words/s : L.r. 6.9684e-05
+[2019-04-14 08:57:15] Ep. 1 : Up. 66000 : Sen. 8,205,713 : Cost 2.91477346 : Time 83.45s : 2412.68 words/s : L.r. 6.9631e-05
+[2019-04-14 08:57:15] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 08:57:29] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 08:57:46] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 08:59:43] Ep. 1 : Up. 66100 : Sen. 8,219,874 : Cost 2.95295644 : Time 148.41s : 1374.44 words/s : L.r. 6.9578e-05
+[2019-04-14 09:01:07] Ep. 1 : Up. 66200 : Sen. 8,232,950 : Cost 2.97098827 : Time 83.72s : 2447.28 words/s : L.r. 6.9526e-05
+[2019-04-14 09:02:27] Ep. 1 : Up. 66300 : Sen. 8,244,993 : Cost 3.05243850 : Time 79.85s : 2356.99 words/s : L.r. 6.9473e-05
+[2019-04-14 09:03:45] Ep. 1 : Up. 66400 : Sen. 8,257,729 : Cost 3.01465392 : Time 78.53s : 2457.58 words/s : L.r. 6.9421e-05
+[2019-04-14 09:04:59] Ep. 1 : Up. 66500 : Sen. 8,269,776 : Cost 2.94958377 : Time 73.69s : 2225.31 words/s : L.r. 6.9369e-05
+[2019-04-14 09:06:15] Ep. 1 : Up. 66600 : Sen. 8,279,695 : Cost 2.93773794 : Time 75.96s : 2284.71 words/s : L.r. 6.9317e-05
+[2019-04-14 09:07:35] Ep. 1 : Up. 66700 : Sen. 8,293,059 : Cost 3.00543714 : Time 79.67s : 2394.09 words/s : L.r. 6.9265e-05
+[2019-04-14 09:08:50] Ep. 1 : Up. 66800 : Sen. 8,304,985 : Cost 2.99101734 : Time 75.05s : 2280.12 words/s : L.r. 6.9213e-05
+[2019-04-14 09:10:10] Ep. 1 : Up. 66900 : Sen. 8,316,413 : Cost 3.01997948 : Time 79.99s : 2444.71 words/s : L.r. 6.9161e-05
+[2019-04-14 09:11:22] Ep. 1 : Up. 67000 : Sen. 8,326,358 : Cost 2.96279049 : Time 71.68s : 2230.60 words/s : L.r. 6.9109e-05
+[2019-04-14 09:11:22] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 09:11:38] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 09:11:54] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 09:13:48] Ep. 1 : Up. 67100 : Sen. 8,338,473 : Cost 2.89623404 : Time 146.22s : 1318.49 words/s : L.r. 6.9058e-05
+[2019-04-14 09:15:05] Ep. 1 : Up. 67200 : Sen. 8,351,250 : Cost 2.94273162 : Time 77.54s : 2315.97 words/s : L.r. 6.9007e-05
+[2019-04-14 09:16:25] Ep. 1 : Up. 67300 : Sen. 8,364,732 : Cost 2.89212775 : Time 79.81s : 2332.97 words/s : L.r. 6.8955e-05
+[2019-04-14 09:17:40] Ep. 1 : Up. 67400 : Sen. 8,374,916 : Cost 2.98238850 : Time 75.38s : 2264.64 words/s : L.r. 6.8904e-05
+[2019-04-14 09:19:01] Ep. 1 : Up. 67500 : Sen. 8,389,260 : Cost 2.95093298 : Time 80.97s : 2440.41 words/s : L.r. 6.8853e-05
+[2019-04-14 09:20:19] Ep. 1 : Up. 67600 : Sen. 8,401,373 : Cost 2.90956545 : Time 77.29s : 2294.93 words/s : L.r. 6.8802e-05
+[2019-04-14 09:21:42] Ep. 1 : Up. 67700 : Sen. 8,413,574 : Cost 3.05124760 : Time 83.32s : 2463.75 words/s : L.r. 6.8751e-05
+[2019-04-14 09:22:57] Ep. 1 : Up. 67800 : Sen. 8,422,780 : Cost 2.94870543 : Time 74.60s : 2211.43 words/s : L.r. 6.8701e-05
+[2019-04-14 09:24:14] Ep. 1 : Up. 67900 : Sen. 8,435,655 : Cost 3.01843262 : Time 77.53s : 2360.14 words/s : L.r. 6.8650e-05
+[2019-04-14 09:25:37] Ep. 1 : Up. 68000 : Sen. 8,450,221 : Cost 2.98977304 : Time 82.98s : 2428.64 words/s : L.r. 6.8599e-05
+[2019-04-14 09:25:37] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 09:25:53] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 09:26:10] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 09:28:03] Ep. 1 : Up. 68100 : Sen. 8,465,230 : Cost 2.86065364 : Time 145.87s : 1285.22 words/s : L.r. 6.8549e-05
+[2019-04-14 09:29:28] Ep. 1 : Up. 68200 : Sen. 8,478,745 : Cost 2.99743724 : Time 85.14s : 2545.21 words/s : L.r. 6.8499e-05
+[2019-04-14 09:30:38] Ep. 1 : Up. 68300 : Sen. 8,487,091 : Cost 3.06665730 : Time 69.38s : 2098.42 words/s : L.r. 6.8449e-05
+[2019-04-14 09:31:59] Ep. 1 : Up. 68400 : Sen. 8,500,158 : Cost 2.95265484 : Time 81.77s : 2429.03 words/s : L.r. 6.8399e-05
+[2019-04-14 09:33:20] Ep. 1 : Up. 68500 : Sen. 8,511,287 : Cost 2.99937367 : Time 80.46s : 2484.35 words/s : L.r. 6.8349e-05
+[2019-04-14 09:34:40] Ep. 1 : Up. 68600 : Sen. 8,523,736 : Cost 3.03643489 : Time 79.69s : 2414.75 words/s : L.r. 6.8299e-05
+[2019-04-14 09:35:55] Ep. 1 : Up. 68700 : Sen. 8,535,549 : Cost 2.96025610 : Time 75.23s : 2293.40 words/s : L.r. 6.8249e-05
+[2019-04-14 09:37:14] Ep. 1 : Up. 68800 : Sen. 8,547,577 : Cost 2.96667218 : Time 79.12s : 2420.95 words/s : L.r. 6.8199e-05
+[2019-04-14 09:38:35] Ep. 1 : Up. 68900 : Sen. 8,560,876 : Cost 2.98880434 : Time 80.82s : 2502.12 words/s : L.r. 6.8150e-05
+[2019-04-14 09:39:51] Ep. 1 : Up. 69000 : Sen. 8,571,856 : Cost 2.93999815 : Time 76.27s : 2312.98 words/s : L.r. 6.8101e-05
+[2019-04-14 09:39:51] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 09:40:07] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 09:40:23] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 09:42:11] Ep. 1 : Up. 69100 : Sen. 8,580,837 : Cost 2.97205186 : Time 140.15s : 1208.76 words/s : L.r. 6.8051e-05
+[2019-04-14 09:43:38] Ep. 1 : Up. 69200 : Sen. 8,593,888 : Cost 3.02792645 : Time 87.07s : 2504.69 words/s : L.r. 6.8002e-05
+[2019-04-14 09:45:01] Ep. 1 : Up. 69300 : Sen. 8,607,454 : Cost 3.01941442 : Time 83.22s : 2400.57 words/s : L.r. 6.7953e-05
+[2019-04-14 09:46:18] Ep. 1 : Up. 69400 : Sen. 8,617,617 : Cost 3.07072711 : Time 76.73s : 2279.85 words/s : L.r. 6.7904e-05
+[2019-04-14 09:47:38] Ep. 1 : Up. 69500 : Sen. 8,631,117 : Cost 2.98820043 : Time 80.22s : 2429.00 words/s : L.r. 6.7855e-05
+[2019-04-14 09:48:55] Ep. 1 : Up. 69600 : Sen. 8,643,350 : Cost 2.97658014 : Time 76.75s : 2328.56 words/s : L.r. 6.7806e-05
+[2019-04-14 09:50:14] Ep. 1 : Up. 69700 : Sen. 8,655,150 : Cost 2.98486948 : Time 78.91s : 2340.17 words/s : L.r. 6.7758e-05
+[2019-04-14 09:51:34] Ep. 1 : Up. 69800 : Sen. 8,667,636 : Cost 2.87522650 : Time 79.73s : 2343.55 words/s : L.r. 6.7709e-05
+[2019-04-14 09:52:52] Ep. 1 : Up. 69900 : Sen. 8,678,399 : Cost 2.95414853 : Time 78.57s : 2343.74 words/s : L.r. 6.7661e-05
+[2019-04-14 09:54:11] Ep. 1 : Up. 70000 : Sen. 8,690,309 : Cost 2.96419072 : Time 79.04s : 2379.75 words/s : L.r. 6.7612e-05
+[2019-04-14 09:54:11] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 09:54:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 09:54:44] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 09:55:31] [valid] Ep. 1 : Up. 70000 : ce-mean-words : 1.6227 : stalled 8 times (last best: 1.58847)
+[2019-04-14 09:55:43] [valid] Ep. 1 : Up. 70000 : perplexity : 5.06675 : stalled 8 times (last best: 4.89625)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-14 09:58:31] [valid] Ep. 1 : Up. 70000 : translation : 25.56 : stalled 9 times (last best: 26.18)
+[2019-04-14 09:59:52] Ep. 1 : Up. 70100 : Sen. 8,702,968 : Cost 2.98174644 : Time 340.55s : 593.23 words/s : L.r. 6.7564e-05
+[2019-04-14 10:01:09] Ep. 1 : Up. 70200 : Sen. 8,715,445 : Cost 2.98924255 : Time 76.72s : 2308.46 words/s : L.r. 6.7516e-05
+[2019-04-14 10:02:32] Ep. 1 : Up. 70300 : Sen. 8,733,467 : Cost 2.97971082 : Time 83.82s : 2498.42 words/s : L.r. 6.7468e-05
+[2019-04-14 10:03:49] Ep. 1 : Up. 70400 : Sen. 8,745,849 : Cost 2.87982845 : Time 76.36s : 2313.79 words/s : L.r. 6.7420e-05
+[2019-04-14 10:05:07] Ep. 1 : Up. 70500 : Sen. 8,758,408 : Cost 2.98965979 : Time 77.90s : 2402.80 words/s : L.r. 6.7372e-05
+[2019-04-14 10:06:27] Ep. 1 : Up. 70600 : Sen. 8,771,859 : Cost 2.92481780 : Time 79.99s : 2451.21 words/s : L.r. 6.7324e-05
+[2019-04-14 10:07:48] Ep. 1 : Up. 70700 : Sen. 8,785,861 : Cost 2.96455789 : Time 81.50s : 2451.99 words/s : L.r. 6.7277e-05
+[2019-04-14 10:09:05] Ep. 1 : Up. 70800 : Sen. 8,797,786 : Cost 2.99524403 : Time 77.12s : 2353.87 words/s : L.r. 6.7229e-05
+[2019-04-14 10:10:27] Ep. 1 : Up. 70900 : Sen. 8,809,401 : Cost 2.96799588 : Time 81.63s : 2498.66 words/s : L.r. 6.7182e-05
+[2019-04-14 10:11:47] Ep. 1 : Up. 71000 : Sen. 8,820,079 : Cost 3.00103545 : Time 80.09s : 2427.32 words/s : L.r. 6.7135e-05
+[2019-04-14 10:11:47] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 10:12:03] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 10:12:20] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 10:14:15] Ep. 1 : Up. 71100 : Sen. 8,832,651 : Cost 2.92952251 : Time 148.29s : 1328.37 words/s : L.r. 6.7087e-05
+[2019-04-14 10:15:32] Ep. 1 : Up. 71200 : Sen. 8,846,044 : Cost 2.98383021 : Time 76.94s : 2175.66 words/s : L.r. 6.7040e-05
+[2019-04-14 10:16:49] Ep. 1 : Up. 71300 : Sen. 8,855,724 : Cost 2.98048544 : Time 76.59s : 2321.39 words/s : L.r. 6.6993e-05
+[2019-04-14 10:18:09] Ep. 1 : Up. 71400 : Sen. 8,868,799 : Cost 3.02753115 : Time 79.93s : 2376.87 words/s : L.r. 6.6946e-05
+[2019-04-14 10:19:30] Ep. 1 : Up. 71500 : Sen. 8,882,784 : Cost 2.94763279 : Time 81.09s : 2405.83 words/s : L.r. 6.6899e-05
+[2019-04-14 10:20:53] Ep. 1 : Up. 71600 : Sen. 8,896,901 : Cost 2.91982889 : Time 83.06s : 2473.04 words/s : L.r. 6.6853e-05
+[2019-04-14 10:22:13] Ep. 1 : Up. 71700 : Sen. 8,909,680 : Cost 2.92264009 : Time 79.76s : 2406.03 words/s : L.r. 6.6806e-05
+[2019-04-14 10:23:35] Ep. 1 : Up. 71800 : Sen. 8,923,526 : Cost 2.95882535 : Time 82.04s : 2482.35 words/s : L.r. 6.6759e-05
+[2019-04-14 10:24:58] Ep. 1 : Up. 71900 : Sen. 8,938,675 : Cost 2.96540999 : Time 83.09s : 2486.09 words/s : L.r. 6.6713e-05
+[2019-04-14 10:26:19] Ep. 1 : Up. 72000 : Sen. 8,951,093 : Cost 2.98986149 : Time 81.58s : 2459.45 words/s : L.r. 6.6667e-05
+[2019-04-14 10:26:19] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 10:26:36] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 10:26:52] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 10:28:45] Ep. 1 : Up. 72100 : Sen. 8,963,363 : Cost 2.96365595 : Time 145.70s : 1264.75 words/s : L.r. 6.6620e-05
+[2019-04-14 10:30:04] Ep. 1 : Up. 72200 : Sen. 8,974,894 : Cost 3.00286937 : Time 78.79s : 2374.40 words/s : L.r. 6.6574e-05
+[2019-04-14 10:31:27] Ep. 1 : Up. 72300 : Sen. 8,990,449 : Cost 2.93569326 : Time 83.08s : 2324.69 words/s : L.r. 6.6528e-05
+[2019-04-14 10:32:45] Ep. 1 : Up. 72400 : Sen. 9,001,198 : Cost 2.99969435 : Time 77.91s : 2273.55 words/s : L.r. 6.6482e-05
+[2019-04-14 10:34:05] Ep. 1 : Up. 72500 : Sen. 9,011,197 : Cost 3.06527448 : Time 79.82s : 2334.46 words/s : L.r. 6.6436e-05
+[2019-04-14 10:35:25] Ep. 1 : Up. 72600 : Sen. 9,023,888 : Cost 2.96688557 : Time 80.28s : 2462.34 words/s : L.r. 6.6391e-05
+[2019-04-14 10:36:42] Ep. 1 : Up. 72700 : Sen. 9,035,838 : Cost 2.91337991 : Time 76.79s : 2363.37 words/s : L.r. 6.6345e-05
+[2019-04-14 10:38:03] Ep. 1 : Up. 72800 : Sen. 9,048,577 : Cost 2.96820164 : Time 81.13s : 2419.99 words/s : L.r. 6.6299e-05
+[2019-04-14 10:39:20] Ep. 1 : Up. 72900 : Sen. 9,060,993 : Cost 2.95350957 : Time 77.16s : 2335.40 words/s : L.r. 6.6254e-05
+[2019-04-14 10:40:39] Ep. 1 : Up. 73000 : Sen. 9,072,565 : Cost 3.00486493 : Time 78.91s : 2437.09 words/s : L.r. 6.6208e-05
+[2019-04-14 10:40:39] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.orig.npz
+[2019-04-14 10:40:55] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz
+[2019-04-14 10:41:12] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_bakchus_doc.npz.optimizer.npz
+[2019-04-14 10:43:06] Ep. 1 : Up. 73100 : Sen. 9,084,370 : Cost 3.00904870 : Time 146.96s : 1318.99 words/s : L.r. 6.6163e-05
+[2019-04-14 10:44:23] Ep. 1 : Up. 73200 : Sen. 9,095,551 : Cost 3.01888347 : Time 77.16s : 2302.29 words/s : L.r. 6.6118e-05
+[2019-04-14 10:45:45] Ep. 1 : Up. 73300 : Sen. 9,108,904 : Cost 2.92699075 : Time 81.83s : 2369.33 words/s : L.r. 6.6073e-05
+[2019-04-14 10:47:03] Ep. 1 : Up. 73400 : Sen. 9,120,568 : Cost 2.98399830 : Time 78.56s : 2352.96 words/s : L.r. 6.6028e-05
+[2019-04-14 10:48:21] Ep. 1 : Up. 73500 : Sen. 9,132,130 : Cost 2.99489808 : Time 77.43s : 2383.47 words/s : L.r. 6.5983e-05
+[2019-04-14 10:49:40] Ep. 1 : Up. 73600 : Sen. 9,144,959 : Cost 2.97405624 : Time 79.33s : 2355.87 words/s : L.r. 6.5938e-05

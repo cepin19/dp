@@ -1,0 +1,14 @@
+[2018-12-12 14:33:35] Error: There are option(s) in a config file that are not expected
+[2018-12-12 14:33:35] Error: Aborted from void marian::ConfigParser::parseOptions(int, char**, bool) in /home/big_maggie/usr/marian_prometheus/marian_1.7.3/marian-dev/src/common/config_parser.cpp:707
+
+[CALL STACK]
+[0x54ea46]                                                            
+[0x52dd3d]                                                            
+[0x53005d]                                                            
+[0x5300cd]                                                            
+[0x447912]                                                            
+[0x41d8bf]                                                            
+[0x7f9076fa9b35]    __libc_start_main                                  + 0xf5
+[0x4447bc]                                                            
+
+train_trans.sh: line 27: 22784 Aborted                 (core dumped) $marian_home/marian --model model/model.src0tgt0.npz --type transformer --train-sets corp/europarl.cs-en.docs.train.en.bpe corp/europarl.cs-en.docs.train.cz.bpe --max-length 80 --vocabs corp/vocab.encs.europarl.yml corp/vocab.encs.europarl.yml --mini-batch-fit -w 9400 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 1000 --valid-metrics cross-entropy perplexity translation --valid-sets corp/europarl.cs-en.docs.dev.en.bpe corp/europarl.cs-en.docs.dev.cz.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 6 --normalize 0.6 --log model/train_trans.log --valid-log model/valid_trans.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 1 2 --sync-sgd --seed 1111 --exponential-smoothing

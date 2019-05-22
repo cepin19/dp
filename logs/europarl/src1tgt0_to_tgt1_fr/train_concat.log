@@ -1,0 +1,840 @@
+[2019-03-11 23:26:12] [marian] Marian v1.7.5 4478901 2018-12-10 07:49:46 -0800
+[2019-03-11 23:26:12] [marian] Running on poseidon.lingea.cz as process 25585 with command line:
+[2019-03-11 23:26:12] [marian] /home/big_maggie/usr/marian_poseidon/marian-dev/build/marian --model model/model.src1tgt0_to_tgt1.concat.npz --type transformer --train-sets corp/europarl.fr-en.docs.train.en.bpe corp/europarl.fr-en.docs.train.fr.bpe --max-length 80 --dim-vocabs 30000 30000 --vocabs corp/vocab.enfr.europarl.yml corp/vocab.enfr.europarl.yml --mini-batch-fit -w 8900 --mini-batch 1000 --maxi-batch 1000 --early-stopping 10 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics cross-entropy perplexity translation --valid-sets corp/europarl.fr-en.docs.dev.en.bpe corp/europarl.fr-en.docs.dev.fr.bpe --valid-script-path ./val.sh --valid-translation-output data/valid.bpe.en.output --quiet-translation --valid-mini-batch 64 --beam-size 3 --normalize 0.6 --log model/train_trans.doc.log --valid-log model/valid_trans.doc.log --enc-depth 6 --dec-depth 6 --transformer-heads 8 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 0 1 --sync-sgd --seed 1111 --exponential-smoothing --no-restore-corpus --no-nccl
+[2019-03-11 23:26:12] [config] after-batches: 0
+[2019-03-11 23:26:12] [config] after-epochs: 0
+[2019-03-11 23:26:12] [config] allow-unk: false
+[2019-03-11 23:26:12] [config] beam-size: 3
+[2019-03-11 23:26:12] [config] best-deep: false
+[2019-03-11 23:26:12] [config] clip-gemm: 0
+[2019-03-11 23:26:12] [config] clip-norm: 5
+[2019-03-11 23:26:12] [config] cost-type: ce-mean
+[2019-03-11 23:26:12] [config] cpu-threads: 0
+[2019-03-11 23:26:12] [config] data-weighting-type: sentence
+[2019-03-11 23:26:12] [config] dec-cell: gru
+[2019-03-11 23:26:12] [config] dec-cell-base-depth: 2
+[2019-03-11 23:26:12] [config] dec-cell-high-depth: 1
+[2019-03-11 23:26:12] [config] dec-depth: 6
+[2019-03-11 23:26:12] [config] devices:
+[2019-03-11 23:26:12] [config]   - 0
+[2019-03-11 23:26:12] [config]   - 1
+[2019-03-11 23:26:12] [config] dim-emb: 512
+[2019-03-11 23:26:12] [config] dim-rnn: 1024
+[2019-03-11 23:26:12] [config] dim-vocabs:
+[2019-03-11 23:26:12] [config]   - 30000
+[2019-03-11 23:26:12] [config]   - 30000
+[2019-03-11 23:26:12] [config] disp-first: 0
+[2019-03-11 23:26:12] [config] disp-freq: 500
+[2019-03-11 23:26:12] [config] disp-label-counts: false
+[2019-03-11 23:26:12] [config] dropout-rnn: 0
+[2019-03-11 23:26:12] [config] dropout-src: 0
+[2019-03-11 23:26:12] [config] dropout-trg: 0
+[2019-03-11 23:26:12] [config] early-stopping: 10
+[2019-03-11 23:26:12] [config] embedding-fix-src: false
+[2019-03-11 23:26:12] [config] embedding-fix-trg: false
+[2019-03-11 23:26:12] [config] embedding-normalization: false
+[2019-03-11 23:26:12] [config] enc-cell: gru
+[2019-03-11 23:26:12] [config] enc-cell-depth: 1
+[2019-03-11 23:26:12] [config] enc-depth: 6
+[2019-03-11 23:26:12] [config] enc-type: bidirectional
+[2019-03-11 23:26:12] [config] exponential-smoothing: 0.0001
+[2019-03-11 23:26:12] [config] grad-dropping-momentum: 0
+[2019-03-11 23:26:12] [config] grad-dropping-rate: 0
+[2019-03-11 23:26:12] [config] grad-dropping-warmup: 100
+[2019-03-11 23:26:12] [config] guided-alignment: none
+[2019-03-11 23:26:12] [config] guided-alignment-cost: mse
+[2019-03-11 23:26:12] [config] guided-alignment-weight: 0.1
+[2019-03-11 23:26:12] [config] ignore-model-config: false
+[2019-03-11 23:26:12] [config] interpolate-env-vars: false
+[2019-03-11 23:26:12] [config] keep-best: false
+[2019-03-11 23:26:12] [config] label-smoothing: 0.1
+[2019-03-11 23:26:12] [config] layer-normalization: false
+[2019-03-11 23:26:12] [config] learn-rate: 0.0003
+[2019-03-11 23:26:12] [config] log: model/train_trans.doc.log
+[2019-03-11 23:26:12] [config] log-level: info
+[2019-03-11 23:26:12] [config] lr-decay: 0
+[2019-03-11 23:26:12] [config] lr-decay-freq: 50000
+[2019-03-11 23:26:12] [config] lr-decay-inv-sqrt: 16000
+[2019-03-11 23:26:12] [config] lr-decay-repeat-warmup: false
+[2019-03-11 23:26:12] [config] lr-decay-reset-optimizer: false
+[2019-03-11 23:26:12] [config] lr-decay-start:
+[2019-03-11 23:26:12] [config]   - 10
+[2019-03-11 23:26:12] [config]   - 1
+[2019-03-11 23:26:12] [config] lr-decay-strategy: epoch+stalled
+[2019-03-11 23:26:12] [config] lr-report: true
+[2019-03-11 23:26:12] [config] lr-warmup: 16000
+[2019-03-11 23:26:12] [config] lr-warmup-at-reload: false
+[2019-03-11 23:26:12] [config] lr-warmup-cycle: false
+[2019-03-11 23:26:12] [config] lr-warmup-start-rate: 0
+[2019-03-11 23:26:12] [config] max-length: 80
+[2019-03-11 23:26:12] [config] max-length-crop: false
+[2019-03-11 23:26:12] [config] max-length-factor: 3
+[2019-03-11 23:26:12] [config] maxi-batch: 1000
+[2019-03-11 23:26:12] [config] maxi-batch-sort: trg
+[2019-03-11 23:26:12] [config] mini-batch: 1000
+[2019-03-11 23:26:12] [config] mini-batch-fit: true
+[2019-03-11 23:26:12] [config] mini-batch-fit-step: 10
+[2019-03-11 23:26:12] [config] mini-batch-words: 0
+[2019-03-11 23:26:12] [config] model: model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-11 23:26:12] [config] multi-node: false
+[2019-03-11 23:26:12] [config] multi-node-overlap: true
+[2019-03-11 23:26:12] [config] n-best: false
+[2019-03-11 23:26:12] [config] no-nccl: true
+[2019-03-11 23:26:12] [config] no-reload: false
+[2019-03-11 23:26:12] [config] no-restore-corpus: true
+[2019-03-11 23:26:12] [config] no-shuffle: false
+[2019-03-11 23:26:12] [config] normalize: 0.6
+[2019-03-11 23:26:12] [config] optimizer: adam
+[2019-03-11 23:26:12] [config] optimizer-delay: 4
+[2019-03-11 23:26:12] [config] optimizer-params:
+[2019-03-11 23:26:12] [config]   - 0.9
+[2019-03-11 23:26:12] [config]   - 0.98
+[2019-03-11 23:26:12] [config]   - 1e-09
+[2019-03-11 23:26:12] [config] overwrite: false
+[2019-03-11 23:26:12] [config] quiet: false
+[2019-03-11 23:26:12] [config] quiet-translation: true
+[2019-03-11 23:26:12] [config] relative-paths: false
+[2019-03-11 23:26:12] [config] right-left: false
+[2019-03-11 23:26:12] [config] save-freq: 5000
+[2019-03-11 23:26:12] [config] seed: 1111
+[2019-03-11 23:26:12] [config] sentencepiece-alphas:
+[2019-03-11 23:26:12] [config]   []
+[2019-03-11 23:26:12] [config] sentencepiece-max-lines: 10000000
+[2019-03-11 23:26:12] [config] sentencepiece-options: ""
+[2019-03-11 23:26:12] [config] shuffle-in-ram: false
+[2019-03-11 23:26:12] [config] skip: false
+[2019-03-11 23:26:12] [config] sqlite: ""
+[2019-03-11 23:26:12] [config] sqlite-drop: false
+[2019-03-11 23:26:12] [config] sync-sgd: true
+[2019-03-11 23:26:12] [config] tempdir: /tmp
+[2019-03-11 23:26:12] [config] tied-embeddings: false
+[2019-03-11 23:26:12] [config] tied-embeddings-all: true
+[2019-03-11 23:26:12] [config] tied-embeddings-src: false
+[2019-03-11 23:26:12] [config] train-sets:
+[2019-03-11 23:26:12] [config]   - corp/europarl.fr-en.docs.train.en.bpe
+[2019-03-11 23:26:12] [config]   - corp/europarl.fr-en.docs.train.fr.bpe
+[2019-03-11 23:26:12] [config] transformer-aan-activation: swish
+[2019-03-11 23:26:12] [config] transformer-aan-depth: 2
+[2019-03-11 23:26:12] [config] transformer-aan-nogate: false
+[2019-03-11 23:26:12] [config] transformer-decoder-autoreg: self-attention
+[2019-03-11 23:26:12] [config] transformer-dim-aan: 2048
+[2019-03-11 23:26:12] [config] transformer-dim-ffn: 2048
+[2019-03-11 23:26:12] [config] transformer-dropout: 0.1
+[2019-03-11 23:26:12] [config] transformer-dropout-attention: 0
+[2019-03-11 23:26:12] [config] transformer-dropout-ffn: 0
+[2019-03-11 23:26:12] [config] transformer-ffn-activation: swish
+[2019-03-11 23:26:12] [config] transformer-ffn-depth: 2
+[2019-03-11 23:26:12] [config] transformer-guided-alignment-layer: last
+[2019-03-11 23:26:12] [config] transformer-heads: 8
+[2019-03-11 23:26:12] [config] transformer-no-projection: false
+[2019-03-11 23:26:12] [config] transformer-postprocess: dan
+[2019-03-11 23:26:12] [config] transformer-postprocess-emb: d
+[2019-03-11 23:26:12] [config] transformer-preprocess: ""
+[2019-03-11 23:26:12] [config] transformer-tied-layers:
+[2019-03-11 23:26:12] [config]   []
+[2019-03-11 23:26:12] [config] type: transformer
+[2019-03-11 23:26:12] [config] ulr: false
+[2019-03-11 23:26:12] [config] ulr-dim-emb: 0
+[2019-03-11 23:26:12] [config] ulr-dropout: 0
+[2019-03-11 23:26:12] [config] ulr-keys-vectors: ""
+[2019-03-11 23:26:12] [config] ulr-query-vectors: ""
+[2019-03-11 23:26:12] [config] ulr-softmax-temperature: 1
+[2019-03-11 23:26:12] [config] ulr-trainable-transformation: false
+[2019-03-11 23:26:12] [config] valid-freq: 5000
+[2019-03-11 23:26:12] [config] valid-log: model/valid_trans.doc.log
+[2019-03-11 23:26:12] [config] valid-max-length: 1000
+[2019-03-11 23:26:12] [config] valid-metrics:
+[2019-03-11 23:26:12] [config]   - cross-entropy
+[2019-03-11 23:26:12] [config]   - perplexity
+[2019-03-11 23:26:12] [config]   - translation
+[2019-03-11 23:26:12] [config] valid-mini-batch: 64
+[2019-03-11 23:26:12] [config] valid-script-path: ./val.sh
+[2019-03-11 23:26:12] [config] valid-sets:
+[2019-03-11 23:26:12] [config]   - corp/europarl.fr-en.docs.dev.en.bpe
+[2019-03-11 23:26:12] [config]   - corp/europarl.fr-en.docs.dev.fr.bpe
+[2019-03-11 23:26:12] [config] valid-translation-output: data/valid.bpe.en.output
+[2019-03-11 23:26:12] [config] vocabs:
+[2019-03-11 23:26:12] [config]   - corp/vocab.enfr.europarl.yml
+[2019-03-11 23:26:12] [config]   - corp/vocab.enfr.europarl.yml
+[2019-03-11 23:26:12] [config] word-penalty: 0
+[2019-03-11 23:26:12] [config] workspace: 8900
+[2019-03-11 23:26:12] [config] Model is being created with Marian v1.7.5 4478901 2018-12-10 07:49:46 -0800
+[2019-03-11 23:26:12] Using synchronous training
+[2019-03-11 23:26:12] [data] Loading vocabulary from JSON/Yaml file corp/vocab.enfr.europarl.yml
+[2019-03-11 23:26:13] [data] Setting vocabulary size for input 0 to 30000
+[2019-03-11 23:26:13] [data] Loading vocabulary from JSON/Yaml file corp/vocab.enfr.europarl.yml
+[2019-03-11 23:26:13] [data] Setting vocabulary size for input 1 to 30000
+[2019-03-11 23:26:13] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-11 23:26:13] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-11 23:26:14] [memory] Extending reserved space to 8960 MB (device gpu0)
+[2019-03-11 23:26:15] [memory] Extending reserved space to 8960 MB (device gpu1)
+[2019-03-11 23:26:15] [comm] NCCL communicator overridden
+[2019-03-11 23:26:15] [memory] Reserving 227 MB, device gpu0
+[2019-03-11 23:26:16] [memory] Reserving 227 MB, device gpu0
+[2019-03-11 23:26:29] [batching] Done
+[2019-03-11 23:26:29] [memory] Extending reserved space to 8960 MB (device gpu0)
+[2019-03-11 23:26:30] [memory] Extending reserved space to 8960 MB (device gpu1)
+[2019-03-11 23:26:30] [comm] NCCL communicator overridden
+[2019-03-11 23:26:30] Training started
+[2019-03-11 23:26:30] [data] Shuffling files
+[2019-03-11 23:26:32] [data] Done reading 1954143 sentences
+[2019-03-11 23:26:40] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-11 23:28:56] [memory] Reserving 227 MB, device gpu0
+[2019-03-11 23:28:56] [memory] Reserving 227 MB, device gpu1
+[2019-03-11 23:28:56] [memory] Reserving 113 MB, device gpu0
+[2019-03-11 23:28:56] [memory] Reserving 113 MB, device gpu1
+[2019-03-11 23:28:57] [memory] Reserving 227 MB, device gpu0
+[2019-03-11 23:28:57] [memory] Reserving 227 MB, device gpu1
+[2019-03-11 23:28:58] [memory] Reserving 113 MB, device gpu0
+[2019-03-11 23:28:58] [memory] Reserving 113 MB, device gpu1
+[2019-03-11 23:28:58] [memory] Reserving 227 MB, device gpu0
+[2019-03-11 23:28:58] [memory] Reserving 227 MB, device gpu1
+[2019-03-11 23:42:20] Ep. 1 : Up. 500 : Sen. 416,512 : Cost 508.25894165 : Time 950.30s : 23219.51 words/s : L.r. 9.3750e-06
+[2019-03-11 23:55:54] Ep. 1 : Up. 1000 : Sen. 841,527 : Cost 399.31887817 : Time 814.53s : 27133.54 words/s : L.r. 1.8750e-05
+[2019-03-12 00:09:20] Ep. 1 : Up. 1500 : Sen. 1,250,947 : Cost 366.82742310 : Time 806.06s : 26953.93 words/s : L.r. 2.8125e-05
+[2019-03-12 00:15:39] Seen 1448451 samples
+[2019-03-12 00:15:39] Starting epoch 2
+[2019-03-12 00:15:39] [data] Shuffling files
+[2019-03-12 00:15:40] [data] Done reading 1954143 sentences
+[2019-03-12 00:15:48] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 00:24:58] Ep. 2 : Up. 2000 : Sen. 224,725 : Cost 328.11798096 : Time 937.40s : 23493.85 words/s : L.r. 3.7500e-05
+[2019-03-12 00:38:32] Ep. 2 : Up. 2500 : Sen. 646,836 : Cost 303.52627563 : Time 814.86s : 27088.84 words/s : L.r. 4.6875e-05
+[2019-03-12 00:52:02] Ep. 2 : Up. 3000 : Sen. 1,060,642 : Cost 288.16763306 : Time 809.57s : 26962.25 words/s : L.r. 5.6250e-05
+[2019-03-12 01:04:39] Seen 1448451 samples
+[2019-03-12 01:04:39] Starting epoch 3
+[2019-03-12 01:04:39] [data] Shuffling files
+[2019-03-12 01:04:40] [data] Done reading 1954143 sentences
+[2019-03-12 01:04:50] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 01:07:33] Ep. 3 : Up. 3500 : Sen. 24,747 : Cost 271.19094849 : Time 930.67s : 23185.51 words/s : L.r. 6.5625e-05
+[2019-03-12 01:21:13] Ep. 3 : Up. 4000 : Sen. 441,308 : Cost 266.16140747 : Time 820.39s : 27254.39 words/s : L.r. 7.5000e-05
+[2019-03-12 01:34:46] Ep. 3 : Up. 4500 : Sen. 870,464 : Cost 242.57215881 : Time 812.87s : 26955.64 words/s : L.r. 8.4375e-05
+[2019-03-12 01:48:13] Ep. 3 : Up. 5000 : Sen. 1,282,245 : Cost 235.68840027 : Time 806.64s : 26816.33 words/s : L.r. 9.3750e-05
+[2019-03-12 01:48:13] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-12 01:48:17] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter5000.npz
+[2019-03-12 01:48:21] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-12 01:48:25] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-12 01:49:10] [valid] Ep. 3 : Up. 5000 : cross-entropy : 255.358 : new best
+[2019-03-12 01:49:47] [valid] Ep. 3 : Up. 5000 : perplexity : 47.649 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+Traceback (most recent call last):
+  File "gettgt.py", line 3, in <module>
+    print (s.split("<context>")[-1])
+NameError: name 's' is not defined
+Traceback (most recent call last):
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1336, in <module>
+    main()
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1292, in main
+    refs = [smart_open(x, encoding=args.encoding).readlines() for x in refs]
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1292, in <listcomp>
+    refs = [smart_open(x, encoding=args.encoding).readlines() for x in refs]
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 699, in smart_open
+    return open(file, mode=mode, encoding=encoding)
+FileNotFoundError: [Errno 2] No such file or directory: 'corp/europarl.en-fr.docs.dev.bpe'
+[2019-03-12 02:29:13] [valid] Ep. 3 : Up. 5000 : translation : 0 : new best
+[2019-03-12 02:34:45] Seen 1448451 samples
+[2019-03-12 02:34:45] Starting epoch 4
+[2019-03-12 02:34:45] [data] Shuffling files
+[2019-03-12 02:34:47] [data] Done reading 1954143 sentences
+[2019-03-12 02:34:55] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 02:44:51] Ep. 4 : Up. 5500 : Sen. 248,237 : Cost 216.33926392 : Time 3398.69s : 6446.46 words/s : L.r. 1.0313e-04
+[2019-03-12 02:58:29] Ep. 4 : Up. 6000 : Sen. 667,009 : Cost 194.25747681 : Time 817.73s : 27100.49 words/s : L.r. 1.1250e-04
+[2019-03-12 03:12:07] Ep. 4 : Up. 6500 : Sen. 1,086,767 : Cost 176.38238525 : Time 817.58s : 26932.40 words/s : L.r. 1.2188e-04
+[2019-03-12 03:23:54] Seen 1448451 samples
+[2019-03-12 03:23:54] Starting epoch 5
+[2019-03-12 03:23:54] [data] Shuffling files
+[2019-03-12 03:23:55] [data] Done reading 1954143 sentences
+[2019-03-12 03:24:03] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 03:27:42] Ep. 5 : Up. 7000 : Sen. 52,128 : Cost 164.69691467 : Time 935.08s : 23177.41 words/s : L.r. 1.3125e-04
+[2019-03-12 03:41:15] Ep. 5 : Up. 7500 : Sen. 465,224 : Cost 159.88244629 : Time 813.11s : 27057.84 words/s : L.r. 1.4063e-04
+[2019-03-12 03:54:57] Ep. 5 : Up. 8000 : Sen. 890,878 : Cost 150.75598145 : Time 822.36s : 26962.24 words/s : L.r. 1.5000e-04
+[2019-03-12 04:08:24] Ep. 5 : Up. 8500 : Sen. 1,305,817 : Cost 146.82351685 : Time 806.98s : 26834.15 words/s : L.r. 1.5938e-04
+[2019-03-12 04:13:06] Seen 1448451 samples
+[2019-03-12 04:13:06] Starting epoch 6
+[2019-03-12 04:13:06] [data] Shuffling files
+[2019-03-12 04:13:07] [data] Done reading 1954143 sentences
+[2019-03-12 04:13:16] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 04:24:11] Ep. 6 : Up. 9000 : Sen. 271,341 : Cost 146.43823242 : Time 947.20s : 23310.18 words/s : L.r. 1.6875e-04
+[2019-03-12 04:37:48] Ep. 6 : Up. 9500 : Sen. 685,963 : Cost 142.66137695 : Time 816.64s : 26898.54 words/s : L.r. 1.7813e-04
+[2019-03-12 04:51:18] Ep. 6 : Up. 10000 : Sen. 1,110,857 : Cost 135.99980164 : Time 810.13s : 26874.71 words/s : L.r. 1.8750e-04
+[2019-03-12 04:51:18] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-12 04:51:23] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter10000.npz
+[2019-03-12 04:51:27] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-12 04:51:31] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-12 04:52:16] [valid] Ep. 6 : Up. 10000 : cross-entropy : 128.501 : new best
+[2019-03-12 04:52:53] [valid] Ep. 6 : Up. 10000 : perplexity : 6.98917 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+Traceback (most recent call last):
+  File "gettgt.py", line 3, in <module>
+    print (s.split("<context>")[-1])
+NameError: name 's' is not defined
+Traceback (most recent call last):
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1336, in <module>
+    main()
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1292, in main
+    refs = [smart_open(x, encoding=args.encoding).readlines() for x in refs]
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1292, in <listcomp>
+    refs = [smart_open(x, encoding=args.encoding).readlines() for x in refs]
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 699, in smart_open
+    return open(file, mode=mode, encoding=encoding)
+FileNotFoundError: [Errno 2] No such file or directory: 'corp/europarl.en-fr.docs.dev.bpe'
+[2019-03-12 05:25:36] [valid] Ep. 6 : Up. 10000 : translation : 0 : stalled 1 times
+[2019-03-12 05:36:39] Seen 1448451 samples
+[2019-03-12 05:36:39] Starting epoch 7
+[2019-03-12 05:36:39] [data] Shuffling files
+[2019-03-12 05:36:40] [data] Done reading 1954143 sentences
+[2019-03-12 05:36:48] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 05:41:08] Ep. 7 : Up. 10500 : Sen. 72,244 : Cost 138.66032410 : Time 2990.04s : 7258.81 words/s : L.r. 1.9688e-04
+[2019-03-12 05:54:40] Ep. 7 : Up. 11000 : Sen. 494,951 : Cost 133.88064575 : Time 811.62s : 27105.65 words/s : L.r. 2.0625e-04
+[2019-03-12 06:08:21] Ep. 7 : Up. 11500 : Sen. 916,908 : Cost 134.25410461 : Time 821.17s : 26997.55 words/s : L.r. 2.1563e-04
+[2019-03-12 06:21:50] Ep. 7 : Up. 12000 : Sen. 1,330,389 : Cost 133.19479370 : Time 808.82s : 26899.80 words/s : L.r. 2.2500e-04
+[2019-03-12 06:25:46] Seen 1448451 samples
+[2019-03-12 06:25:46] Starting epoch 8
+[2019-03-12 06:25:46] [data] Shuffling files
+[2019-03-12 06:25:47] [data] Done reading 1954143 sentences
+[2019-03-12 06:25:56] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 06:37:25] Ep. 8 : Up. 12500 : Sen. 298,371 : Cost 130.60292053 : Time 934.84s : 23235.15 words/s : L.r. 2.3438e-04
+[2019-03-12 06:51:11] Ep. 8 : Up. 13000 : Sen. 718,003 : Cost 132.03346252 : Time 825.93s : 27011.67 words/s : L.r. 2.4375e-04
+[2019-03-12 07:04:42] Ep. 8 : Up. 13500 : Sen. 1,132,109 : Cost 130.50822449 : Time 811.08s : 26949.09 words/s : L.r. 2.5313e-04
+[2019-03-12 07:14:58] Seen 1448451 samples
+[2019-03-12 07:14:58] Starting epoch 9
+[2019-03-12 07:14:58] [data] Shuffling files
+[2019-03-12 07:14:59] [data] Done reading 1954143 sentences
+[2019-03-12 07:15:08] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 07:20:18] Ep. 9 : Up. 14000 : Sen. 97,568 : Cost 128.84362793 : Time 936.04s : 23266.85 words/s : L.r. 2.6250e-04
+[2019-03-12 07:33:58] Ep. 9 : Up. 14500 : Sen. 526,456 : Cost 125.51757812 : Time 820.69s : 27090.78 words/s : L.r. 2.7188e-04
+[2019-03-12 07:47:31] Ep. 9 : Up. 15000 : Sen. 940,788 : Cost 128.88479614 : Time 812.79s : 26989.40 words/s : L.r. 2.8125e-04
+[2019-03-12 07:47:31] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-12 07:47:35] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter15000.npz
+[2019-03-12 07:47:39] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-12 07:47:44] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-12 07:48:29] [valid] Ep. 9 : Up. 15000 : cross-entropy : 110.539 : new best
+[2019-03-12 07:49:06] [valid] Ep. 9 : Up. 15000 : perplexity : 5.32587 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+Traceback (most recent call last):
+  File "gettgt.py", line 3, in <module>
+    print (s.split("<context>")[-1])
+NameError: name 's' is not defined
+Traceback (most recent call last):
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1336, in <module>
+    main()
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1292, in main
+    refs = [smart_open(x, encoding=args.encoding).readlines() for x in refs]
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1292, in <listcomp>
+    refs = [smart_open(x, encoding=args.encoding).readlines() for x in refs]
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 699, in smart_open
+    return open(file, mode=mode, encoding=encoding)
+FileNotFoundError: [Errno 2] No such file or directory: 'corp/europarl.en-fr.docs.dev.bpe'
+[2019-03-12 08:21:07] [valid] Ep. 9 : Up. 15000 : translation : 0 : stalled 2 times
+[2019-03-12 08:34:28] Ep. 9 : Up. 15500 : Sen. 1,353,572 : Cost 126.31339264 : Time 2817.28s : 7661.59 words/s : L.r. 2.9063e-04
+[2019-03-12 08:37:40] Seen 1448451 samples
+[2019-03-12 08:37:40] Starting epoch 10
+[2019-03-12 08:37:40] [data] Shuffling files
+[2019-03-12 08:37:41] [data] Done reading 1954143 sentences
+[2019-03-12 08:37:49] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 08:50:06] Ep. 10 : Up. 16000 : Sen. 325,225 : Cost 123.97342682 : Time 937.39s : 23199.28 words/s : L.r. 3.0000e-04
+[2019-03-12 09:03:45] Ep. 10 : Up. 16500 : Sen. 742,254 : Cost 127.12001038 : Time 819.22s : 27090.61 words/s : L.r. 2.9542e-04
+[2019-03-12 09:17:23] Ep. 10 : Up. 17000 : Sen. 1,158,630 : Cost 125.62324524 : Time 818.23s : 26920.79 words/s : L.r. 2.9104e-04
+[2019-03-12 09:26:51] Seen 1448451 samples
+[2019-03-12 09:26:51] Starting epoch 11
+[2019-03-12 09:26:51] [data] Shuffling files
+[2019-03-12 09:26:53] [data] Done reading 1954143 sentences
+[2019-03-12 09:27:01] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 09:32:58] Ep. 11 : Up. 17500 : Sen. 123,812 : Cost 123.81742096 : Time 934.64s : 23234.08 words/s : L.r. 2.8685e-04
+[2019-03-12 09:46:32] Ep. 11 : Up. 18000 : Sen. 546,049 : Cost 122.04375458 : Time 814.37s : 26967.71 words/s : L.r. 2.8284e-04
+[2019-03-12 10:00:15] Ep. 11 : Up. 18500 : Sen. 965,266 : Cost 124.07392120 : Time 822.42s : 27079.10 words/s : L.r. 2.7899e-04
+[2019-03-12 10:13:41] Ep. 11 : Up. 19000 : Sen. 1,374,599 : Cost 123.51849365 : Time 806.05s : 26855.55 words/s : L.r. 2.7530e-04
+[2019-03-12 10:16:01] Seen 1448451 samples
+[2019-03-12 10:16:01] Starting epoch 12
+[2019-03-12 10:16:01] [data] Shuffling files
+[2019-03-12 10:16:03] [data] Done reading 1954143 sentences
+[2019-03-12 10:16:11] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 10:29:21] Ep. 12 : Up. 19500 : Sen. 347,229 : Cost 120.33903503 : Time 940.68s : 23307.82 words/s : L.r. 2.7175e-04
+[2019-03-12 10:43:03] Ep. 12 : Up. 20000 : Sen. 769,342 : Cost 120.90006256 : Time 821.43s : 26943.20 words/s : L.r. 2.6833e-04
+[2019-03-12 10:43:03] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-12 10:43:07] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter20000.npz
+[2019-03-12 10:43:11] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-12 10:43:15] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-12 10:44:01] [valid] Ep. 12 : Up. 20000 : cross-entropy : 103.953 : new best
+[2019-03-12 10:44:38] [valid] Ep. 12 : Up. 20000 : perplexity : 4.82074 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+Traceback (most recent call last):
+  File "gettgt.py", line 3, in <module>
+    print (s.split("<context>")[-1])
+NameError: name 's' is not defined
+Traceback (most recent call last):
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1336, in <module>
+    main()
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1292, in main
+    refs = [smart_open(x, encoding=args.encoding).readlines() for x in refs]
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 1292, in <listcomp>
+    refs = [smart_open(x, encoding=args.encoding).readlines() for x in refs]
+  File "/home/big_maggie/usr/sacrebleu/sacrebleu.py", line 699, in smart_open
+    return open(file, mode=mode, encoding=encoding)
+FileNotFoundError: [Errno 2] No such file or directory: 'corp/europarl.en-fr.docs.dev.bpe'
+[2019-03-12 11:18:08] [valid] Ep. 12 : Up. 20000 : translation : 0 : stalled 3 times
+[2019-03-12 11:31:35] Ep. 12 : Up. 20500 : Sen. 1,178,965 : Cost 122.67134094 : Time 2912.61s : 7484.54 words/s : L.r. 2.6504e-04
+[2019-03-12 11:40:15] Seen 1448451 samples
+[2019-03-12 11:40:15] Starting epoch 13
+[2019-03-12 11:40:15] [data] Shuffling files
+[2019-03-12 11:40:17] [data] Done reading 1954143 sentences
+[2019-03-12 11:40:25] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 11:47:13] Ep. 13 : Up. 21000 : Sen. 147,486 : Cost 119.39366913 : Time 937.01s : 23169.08 words/s : L.r. 2.6186e-04
+[2019-03-12 12:00:56] Ep. 13 : Up. 21500 : Sen. 573,484 : Cost 118.63449860 : Time 823.03s : 27001.06 words/s : L.r. 2.5880e-04
+[2019-03-12 12:14:30] Ep. 13 : Up. 22000 : Sen. 988,408 : Cost 120.82956696 : Time 814.18s : 27000.40 words/s : L.r. 2.5584e-04
+[2019-03-12 12:27:51] Ep. 13 : Up. 22500 : Sen. 1,398,707 : Cost 119.63687897 : Time 801.73s : 26875.68 words/s : L.r. 2.5298e-04
+[2019-03-12 12:29:28] Seen 1448451 samples
+[2019-03-12 12:29:28] Starting epoch 14
+[2019-03-12 12:29:28] [data] Shuffling files
+[2019-03-12 12:29:30] [data] Done reading 1954143 sentences
+[2019-03-12 12:29:38] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 12:43:32] Ep. 14 : Up. 23000 : Sen. 368,693 : Cost 118.02630615 : Time 940.96s : 23241.52 words/s : L.r. 2.5022e-04
+[2019-03-12 12:57:13] Ep. 14 : Up. 23500 : Sen. 789,418 : Cost 118.86902618 : Time 820.54s : 27027.24 words/s : L.r. 2.4754e-04
+[2019-03-12 13:10:50] Ep. 14 : Up. 24000 : Sen. 1,202,290 : Cost 120.46981812 : Time 817.28s : 26954.90 words/s : L.r. 2.4495e-04
+[2019-03-12 13:18:40] Seen 1448451 samples
+[2019-03-12 13:18:40] Starting epoch 15
+[2019-03-12 13:18:40] [data] Shuffling files
+[2019-03-12 13:18:42] [data] Done reading 1954143 sentences
+[2019-03-12 13:18:50] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 13:26:27] Ep. 15 : Up. 24500 : Sen. 180,440 : Cost 114.31579590 : Time 936.90s : 23227.99 words/s : L.r. 2.4244e-04
+[2019-03-12 13:40:04] Ep. 15 : Up. 25000 : Sen. 601,920 : Cost 116.71788788 : Time 817.10s : 26995.36 words/s : L.r. 2.4000e-04
+[2019-03-12 13:40:04] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-12 13:40:09] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter25000.npz
+[2019-03-12 13:40:12] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-12 13:40:17] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-12 13:41:02] [valid] Ep. 15 : Up. 25000 : cross-entropy : 101.521 : new best
+[2019-03-12 13:41:39] [valid] Ep. 15 : Up. 25000 : perplexity : 4.64656 : new best
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-12 14:17:00] [valid] Ep. 15 : Up. 25000 : translation : 10.76 : new best
+[2019-03-12 14:30:33] Ep. 15 : Up. 25500 : Sen. 1,016,184 : Cost 119.89411926 : Time 3029.14s : 7307.87 words/s : L.r. 2.3764e-04
+[2019-03-12 14:43:55] Ep. 15 : Up. 26000 : Sen. 1,424,043 : Cost 117.95812988 : Time 801.91s : 26791.53 words/s : L.r. 2.3534e-04
+[2019-03-12 14:44:44] Seen 1448451 samples
+[2019-03-12 14:44:44] Starting epoch 16
+[2019-03-12 14:44:44] [data] Shuffling files
+[2019-03-12 14:44:45] [data] Done reading 1954143 sentences
+[2019-03-12 14:44:53] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 14:59:35] Ep. 16 : Up. 26500 : Sen. 392,765 : Cost 116.78129578 : Time 939.57s : 23382.04 words/s : L.r. 2.3311e-04
+[2019-03-12 15:13:16] Ep. 16 : Up. 27000 : Sen. 816,790 : Cost 115.90537262 : Time 820.89s : 27000.36 words/s : L.r. 2.3094e-04
+[2019-03-12 15:26:51] Ep. 16 : Up. 27500 : Sen. 1,231,912 : Cost 117.26226044 : Time 815.17s : 26891.51 words/s : L.r. 2.2883e-04
+[2019-03-12 15:33:54] Seen 1448451 samples
+[2019-03-12 15:33:54] Starting epoch 17
+[2019-03-12 15:33:54] [data] Shuffling files
+[2019-03-12 15:33:55] [data] Done reading 1954143 sentences
+[2019-03-12 15:34:04] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 15:42:27] Ep. 17 : Up. 28000 : Sen. 196,266 : Cost 116.47588348 : Time 935.76s : 23240.93 words/s : L.r. 2.2678e-04
+[2019-03-12 15:56:03] Ep. 17 : Up. 28500 : Sen. 614,404 : Cost 116.42799377 : Time 816.50s : 27081.50 words/s : L.r. 2.2478e-04
+[2019-03-12 16:09:41] Ep. 17 : Up. 29000 : Sen. 1,037,430 : Cost 114.88812256 : Time 817.58s : 26939.73 words/s : L.r. 2.2283e-04
+[2019-03-12 16:22:59] Ep. 17 : Up. 29500 : Sen. 1,446,299 : Cost 115.55917358 : Time 798.68s : 26779.32 words/s : L.r. 2.2094e-04
+[2019-03-12 16:23:05] Seen 1448451 samples
+[2019-03-12 16:23:05] Starting epoch 18
+[2019-03-12 16:23:05] [data] Shuffling files
+[2019-03-12 16:23:06] [data] Done reading 1954143 sentences
+[2019-03-12 16:23:14] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 16:38:45] Ep. 18 : Up. 30000 : Sen. 418,486 : Cost 114.49933624 : Time 945.71s : 23328.09 words/s : L.r. 2.1909e-04
+[2019-03-12 16:38:45] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-12 16:38:49] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter30000.npz
+[2019-03-12 16:38:53] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-12 16:38:57] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-12 16:39:42] [valid] Ep. 18 : Up. 30000 : cross-entropy : 100.688 : new best
+[2019-03-12 16:40:20] [valid] Ep. 18 : Up. 30000 : perplexity : 4.58835 : new best
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-12 17:15:53] [valid] Ep. 18 : Up. 30000 : translation : 10.98 : new best
+[2019-03-12 17:29:26] Ep. 18 : Up. 30500 : Sen. 841,064 : Cost 114.27056122 : Time 3040.59s : 7248.32 words/s : L.r. 2.1729e-04
+[2019-03-12 17:42:55] Ep. 18 : Up. 31000 : Sen. 1,251,622 : Cost 116.41188812 : Time 809.31s : 26893.72 words/s : L.r. 2.1553e-04
+[2019-03-12 17:49:21] Seen 1448451 samples
+[2019-03-12 17:49:21] Starting epoch 19
+[2019-03-12 17:49:21] [data] Shuffling files
+[2019-03-12 17:49:23] [data] Done reading 1954143 sentences
+[2019-03-12 17:49:31] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 17:58:24] Ep. 19 : Up. 31500 : Sen. 210,053 : Cost 116.08928680 : Time 928.87s : 23272.48 words/s : L.r. 2.1381e-04
+[2019-03-12 18:12:09] Ep. 19 : Up. 32000 : Sen. 637,069 : Cost 113.38539124 : Time 824.94s : 26983.12 words/s : L.r. 2.1213e-04
+[2019-03-12 18:25:45] Ep. 19 : Up. 32500 : Sen. 1,059,030 : Cost 113.72352600 : Time 816.25s : 26974.63 words/s : L.r. 2.1049e-04
+[2019-03-12 18:38:33] Seen 1448451 samples
+[2019-03-12 18:38:33] Starting epoch 20
+[2019-03-12 18:38:33] [data] Shuffling files
+[2019-03-12 18:38:34] [data] Done reading 1954143 sentences
+[2019-03-12 18:38:43] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 18:41:18] Ep. 20 : Up. 33000 : Sen. 21,378 : Cost 114.62854767 : Time 932.61s : 23128.37 words/s : L.r. 2.0889e-04
+[2019-03-12 18:54:54] Ep. 20 : Up. 33500 : Sen. 446,059 : Cost 112.48242950 : Time 816.17s : 27130.29 words/s : L.r. 2.0733e-04
+[2019-03-12 19:08:32] Ep. 20 : Up. 34000 : Sen. 860,216 : Cost 115.76363373 : Time 817.67s : 26980.29 words/s : L.r. 2.0580e-04
+[2019-03-12 19:22:03] Ep. 20 : Up. 34500 : Sen. 1,278,136 : Cost 113.51698303 : Time 811.53s : 26938.07 words/s : L.r. 2.0430e-04
+[2019-03-12 19:27:41] Seen 1448451 samples
+[2019-03-12 19:27:41] Starting epoch 21
+[2019-03-12 19:27:41] [data] Shuffling files
+[2019-03-12 19:27:42] [data] Done reading 1954143 sentences
+[2019-03-12 19:27:51] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 19:37:45] Ep. 21 : Up. 35000 : Sen. 242,607 : Cost 114.63336182 : Time 941.80s : 23294.80 words/s : L.r. 2.0284e-04
+[2019-03-12 19:37:45] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-12 19:37:49] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter35000.npz
+[2019-03-12 19:37:53] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-12 19:37:57] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-12 19:38:42] [valid] Ep. 21 : Up. 35000 : cross-entropy : 100.531 : new best
+[2019-03-12 19:39:19] [valid] Ep. 21 : Up. 35000 : perplexity : 4.57745 : new best
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-12 20:14:54] [valid] Ep. 21 : Up. 35000 : translation : 10.82 : stalled 1 times
+[2019-03-12 20:28:23] Ep. 21 : Up. 35500 : Sen. 657,197 : Cost 114.01525116 : Time 3038.54s : 7205.53 words/s : L.r. 2.0140e-04
+[2019-03-12 20:41:54] Ep. 21 : Up. 36000 : Sen. 1,077,467 : Cost 112.35615540 : Time 811.00s : 26981.92 words/s : L.r. 2.0000e-04
+[2019-03-12 20:53:56] Seen 1448451 samples
+[2019-03-12 20:53:56] Starting epoch 22
+[2019-03-12 20:53:56] [data] Shuffling files
+[2019-03-12 20:53:57] [data] Done reading 1954143 sentences
+[2019-03-12 20:54:06] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 20:57:23] Ep. 22 : Up. 36500 : Sen. 40,945 : Cost 113.16897583 : Time 928.58s : 23247.45 words/s : L.r. 1.9863e-04
+[2019-03-12 21:11:01] Ep. 22 : Up. 37000 : Sen. 464,256 : Cost 112.09871674 : Time 818.03s : 27078.59 words/s : L.r. 1.9728e-04
+[2019-03-12 21:24:41] Ep. 22 : Up. 37500 : Sen. 886,517 : Cost 112.90184021 : Time 820.05s : 27095.70 words/s : L.r. 1.9596e-04
+[2019-03-12 21:38:07] Ep. 22 : Up. 38000 : Sen. 1,301,009 : Cost 112.38285065 : Time 806.14s : 26849.19 words/s : L.r. 1.9467e-04
+[2019-03-12 21:43:01] Seen 1448451 samples
+[2019-03-12 21:43:01] Starting epoch 23
+[2019-03-12 21:43:01] [data] Shuffling files
+[2019-03-12 21:43:03] [data] Done reading 1954143 sentences
+[2019-03-12 21:43:11] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 21:53:43] Ep. 23 : Up. 38500 : Sen. 261,485 : Cost 114.59069824 : Time 936.03s : 23360.34 words/s : L.r. 1.9340e-04
+[2019-03-12 22:07:21] Ep. 23 : Up. 39000 : Sen. 689,630 : Cost 109.97729492 : Time 818.05s : 26921.01 words/s : L.r. 1.9215e-04
+[2019-03-12 22:20:56] Ep. 23 : Up. 39500 : Sen. 1,098,565 : Cost 114.59757996 : Time 814.25s : 26876.80 words/s : L.r. 1.9093e-04
+[2019-03-12 22:32:14] Seen 1448451 samples
+[2019-03-12 22:32:14] Starting epoch 24
+[2019-03-12 22:32:14] [data] Shuffling files
+[2019-03-12 22:32:15] [data] Done reading 1954143 sentences
+[2019-03-12 22:32:23] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-12 22:36:30] Ep. 24 : Up. 40000 : Sen. 64,526 : Cost 112.40949249 : Time 934.38s : 23285.19 words/s : L.r. 1.8974e-04
+[2019-03-12 22:36:30] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-12 22:36:34] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter40000.npz
+[2019-03-12 22:36:38] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-12 22:36:42] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-12 22:37:27] [valid] Ep. 24 : Up. 40000 : cross-entropy : 100.838 : stalled 1 times
+[2019-03-12 22:38:04] [valid] Ep. 24 : Up. 40000 : perplexity : 4.5988 : stalled 1 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-12 23:13:14] [valid] Ep. 24 : Up. 40000 : translation : 10.58 : stalled 2 times
+[2019-03-12 23:26:52] Ep. 24 : Up. 40500 : Sen. 483,004 : Cost 112.47034454 : Time 3022.23s : 7339.44 words/s : L.r. 1.8856e-04
+[2019-03-12 23:40:27] Ep. 24 : Up. 41000 : Sen. 907,576 : Cost 110.76711273 : Time 814.80s : 27020.97 words/s : L.r. 1.8741e-04
+[2019-03-12 23:53:50] Ep. 24 : Up. 41500 : Sen. 1,319,301 : Cost 111.79408264 : Time 802.64s : 26839.20 words/s : L.r. 1.8628e-04
+[2019-03-12 23:58:05] Seen 1448451 samples
+[2019-03-12 23:58:05] Starting epoch 25
+[2019-03-12 23:58:05] [data] Shuffling files
+[2019-03-12 23:58:06] [data] Done reading 1954143 sentences
+[2019-03-12 23:58:15] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 00:09:32] Ep. 25 : Up. 42000 : Sen. 288,044 : Cost 111.58323669 : Time 942.24s : 23306.74 words/s : L.r. 1.8516e-04
+[2019-03-13 00:23:11] Ep. 25 : Up. 42500 : Sen. 701,708 : Cost 113.65501404 : Time 819.31s : 27031.53 words/s : L.r. 1.8407e-04
+[2019-03-13 00:36:42] Ep. 25 : Up. 43000 : Sen. 1,128,221 : Cost 108.80748749 : Time 810.90s : 26920.66 words/s : L.r. 1.8300e-04
+[2019-03-13 00:47:15] Seen 1448451 samples
+[2019-03-13 00:47:15] Starting epoch 26
+[2019-03-13 00:47:15] [data] Shuffling files
+[2019-03-13 00:47:16] [data] Done reading 1954143 sentences
+[2019-03-13 00:47:25] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 00:52:17] Ep. 26 : Up. 43500 : Sen. 87,741 : Cost 112.59803009 : Time 934.64s : 23109.26 words/s : L.r. 1.8194e-04
+[2019-03-13 01:05:51] Ep. 26 : Up. 44000 : Sen. 509,544 : Cost 109.84928894 : Time 814.03s : 27012.84 words/s : L.r. 1.8091e-04
+[2019-03-13 01:19:37] Ep. 26 : Up. 44500 : Sen. 932,697 : Cost 111.32850647 : Time 826.29s : 26934.48 words/s : L.r. 1.7989e-04
+[2019-03-13 01:33:03] Ep. 26 : Up. 45000 : Sen. 1,341,026 : Cost 112.46419525 : Time 806.29s : 26776.76 words/s : L.r. 1.7889e-04
+[2019-03-13 01:33:03] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-13 01:33:07] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter45000.npz
+[2019-03-13 01:33:11] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-13 01:33:15] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-13 01:34:00] [valid] Ep. 26 : Up. 45000 : cross-entropy : 101.331 : stalled 2 times
+[2019-03-13 01:34:38] [valid] Ep. 26 : Up. 45000 : perplexity : 4.63322 : stalled 2 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-13 02:09:26] [valid] Ep. 26 : Up. 45000 : translation : 10.29 : stalled 3 times
+[2019-03-13 02:12:53] Seen 1448451 samples
+[2019-03-13 02:12:53] Starting epoch 27
+[2019-03-13 02:12:53] [data] Shuffling files
+[2019-03-13 02:12:55] [data] Done reading 1954143 sentences
+[2019-03-13 02:13:03] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 02:25:07] Ep. 27 : Up. 45500 : Sen. 314,123 : Cost 109.64593506 : Time 3124.12s : 7032.23 words/s : L.r. 1.7790e-04
+[2019-03-13 02:38:48] Ep. 27 : Up. 46000 : Sen. 733,064 : Cost 111.79408264 : Time 820.76s : 27029.23 words/s : L.r. 1.7693e-04
+[2019-03-13 02:52:24] Ep. 27 : Up. 46500 : Sen. 1,150,490 : Cost 111.24305725 : Time 816.15s : 26938.57 words/s : L.r. 1.7598e-04
+[2019-03-13 03:02:10] Seen 1448451 samples
+[2019-03-13 03:02:10] Starting epoch 28
+[2019-03-13 03:02:10] [data] Shuffling files
+[2019-03-13 03:02:11] [data] Done reading 1954143 sentences
+[2019-03-13 03:02:20] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 03:07:59] Ep. 28 : Up. 47000 : Sen. 110,718 : Cost 111.33364868 : Time 934.53s : 23048.70 words/s : L.r. 1.7504e-04
+[2019-03-13 03:21:37] Ep. 28 : Up. 47500 : Sen. 526,527 : Cost 111.45098114 : Time 817.67s : 26978.76 words/s : L.r. 1.7411e-04
+[2019-03-13 03:35:18] Ep. 28 : Up. 48000 : Sen. 955,607 : Cost 108.57681274 : Time 821.61s : 26975.68 words/s : L.r. 1.7321e-04
+[2019-03-13 03:48:42] Ep. 28 : Up. 48500 : Sen. 1,367,366 : Cost 110.25893402 : Time 803.76s : 26796.48 words/s : L.r. 1.7231e-04
+[2019-03-13 03:51:26] Seen 1448451 samples
+[2019-03-13 03:51:26] Starting epoch 29
+[2019-03-13 03:51:26] [data] Shuffling files
+[2019-03-13 03:51:27] [data] Done reading 1954143 sentences
+[2019-03-13 03:51:36] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 04:04:28] Ep. 29 : Up. 49000 : Sen. 336,133 : Cost 110.68479156 : Time 946.05s : 23305.33 words/s : L.r. 1.7143e-04
+[2019-03-13 04:18:07] Ep. 29 : Up. 49500 : Sen. 757,317 : Cost 109.83612061 : Time 818.73s : 26976.18 words/s : L.r. 1.7056e-04
+[2019-03-13 04:31:40] Ep. 29 : Up. 50000 : Sen. 1,173,489 : Cost 110.39976501 : Time 813.51s : 26879.97 words/s : L.r. 1.6971e-04
+[2019-03-13 04:31:40] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-13 04:31:44] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter50000.npz
+[2019-03-13 04:31:48] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-13 04:31:52] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-13 04:32:37] [valid] Ep. 29 : Up. 50000 : cross-entropy : 101.834 : stalled 3 times
+[2019-03-13 04:33:14] [valid] Ep. 29 : Up. 50000 : perplexity : 4.66862 : stalled 3 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-13 05:07:41] [valid] Ep. 29 : Up. 50000 : translation : 10.17 : stalled 4 times
+[2019-03-13 05:16:38] Seen 1448451 samples
+[2019-03-13 05:16:38] Starting epoch 30
+[2019-03-13 05:16:38] [data] Shuffling files
+[2019-03-13 05:16:40] [data] Done reading 1954143 sentences
+[2019-03-13 05:16:48] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 05:23:08] Ep. 30 : Up. 50500 : Sen. 138,479 : Cost 109.64393616 : Time 3087.36s : 7002.74 words/s : L.r. 1.6886e-04
+[2019-03-13 05:36:43] Ep. 30 : Up. 51000 : Sen. 561,078 : Cost 108.34897614 : Time 815.74s : 26873.97 words/s : L.r. 1.6803e-04
+[2019-03-13 05:50:28] Ep. 30 : Up. 51500 : Sen. 976,738 : Cost 112.20745087 : Time 824.28s : 27015.21 words/s : L.r. 1.6722e-04
+[2019-03-13 06:03:53] Ep. 30 : Up. 52000 : Sen. 1,386,672 : Cost 110.44615173 : Time 805.28s : 26776.66 words/s : L.r. 1.6641e-04
+[2019-03-13 06:05:51] Seen 1448451 samples
+[2019-03-13 06:05:51] Starting epoch 31
+[2019-03-13 06:05:51] [data] Shuffling files
+[2019-03-13 06:05:53] [data] Done reading 1954143 sentences
+[2019-03-13 06:06:01] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 06:19:41] Ep. 31 : Up. 52500 : Sen. 356,135 : Cost 110.17189026 : Time 948.10s : 23376.51 words/s : L.r. 1.6562e-04
+[2019-03-13 06:33:16] Ep. 31 : Up. 53000 : Sen. 776,886 : Cost 109.09134674 : Time 815.36s : 26972.68 words/s : L.r. 1.6483e-04
+[2019-03-13 06:46:48] Ep. 31 : Up. 53500 : Sen. 1,200,381 : Cost 107.83959198 : Time 811.45s : 26949.86 words/s : L.r. 1.6406e-04
+[2019-03-13 06:55:04] Seen 1448451 samples
+[2019-03-13 06:55:04] Starting epoch 32
+[2019-03-13 06:55:04] [data] Shuffling files
+[2019-03-13 06:55:05] [data] Done reading 1954143 sentences
+[2019-03-13 06:55:14] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 07:02:26] Ep. 32 : Up. 54000 : Sen. 161,408 : Cost 110.97709656 : Time 937.76s : 23219.31 words/s : L.r. 1.6330e-04
+[2019-03-13 07:16:08] Ep. 32 : Up. 54500 : Sen. 584,158 : Cost 109.26310730 : Time 822.37s : 27032.25 words/s : L.r. 1.6255e-04
+[2019-03-13 07:29:43] Ep. 32 : Up. 55000 : Sen. 1,003,744 : Cost 109.43809509 : Time 814.77s : 27043.69 words/s : L.r. 1.6181e-04
+[2019-03-13 07:29:43] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-13 07:29:47] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter55000.npz
+[2019-03-13 07:29:51] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-13 07:29:55] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-13 07:30:41] [valid] Ep. 32 : Up. 55000 : cross-entropy : 102.305 : stalled 4 times
+[2019-03-13 07:31:18] [valid] Ep. 32 : Up. 55000 : perplexity : 4.702 : stalled 4 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-13 08:05:20] [valid] Ep. 32 : Up. 55000 : translation : 10.02 : stalled 5 times
+[2019-03-13 08:18:34] Ep. 32 : Up. 55500 : Sen. 1,409,995 : Cost 110.05273438 : Time 2931.73s : 7300.22 words/s : L.r. 1.6108e-04
+[2019-03-13 08:19:46] Seen 1448451 samples
+[2019-03-13 08:19:46] Starting epoch 33
+[2019-03-13 08:19:46] [data] Shuffling files
+[2019-03-13 08:19:47] [data] Done reading 1954143 sentences
+[2019-03-13 08:19:56] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 08:34:17] Ep. 33 : Up. 56000 : Sen. 385,534 : Cost 107.82216644 : Time 942.76s : 23456.43 words/s : L.r. 1.6036e-04
+[2019-03-13 08:47:57] Ep. 33 : Up. 56500 : Sen. 801,419 : Cost 110.87384033 : Time 819.43s : 27048.39 words/s : L.r. 1.5965e-04
+[2019-03-13 09:01:29] Ep. 33 : Up. 57000 : Sen. 1,226,241 : Cost 106.70609283 : Time 812.47s : 26851.60 words/s : L.r. 1.5894e-04
+[2019-03-13 09:08:55] Seen 1448451 samples
+[2019-03-13 09:08:55] Starting epoch 34
+[2019-03-13 09:08:55] [data] Shuffling files
+[2019-03-13 09:08:57] [data] Done reading 1954143 sentences
+[2019-03-13 09:09:05] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 09:17:10] Ep. 34 : Up. 57500 : Sen. 184,776 : Cost 111.47062683 : Time 941.22s : 23220.78 words/s : L.r. 1.5825e-04
+[2019-03-13 09:30:53] Ep. 34 : Up. 58000 : Sen. 606,576 : Cost 108.75115967 : Time 822.79s : 26988.36 words/s : L.r. 1.5757e-04
+[2019-03-13 09:44:24] Ep. 34 : Up. 58500 : Sen. 1,028,493 : Cost 107.72386932 : Time 811.28s : 26976.73 words/s : L.r. 1.5689e-04
+[2019-03-13 09:57:45] Ep. 34 : Up. 59000 : Sen. 1,436,691 : Cost 109.20861053 : Time 800.31s : 26803.00 words/s : L.r. 1.5623e-04
+[2019-03-13 09:58:08] Seen 1448451 samples
+[2019-03-13 09:58:08] Starting epoch 35
+[2019-03-13 09:58:08] [data] Shuffling files
+[2019-03-13 09:58:10] [data] Done reading 1954143 sentences
+[2019-03-13 09:58:18] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 10:13:35] Ep. 35 : Up. 59500 : Sen. 419,681 : Cost 106.27198029 : Time 950.34s : 23500.19 words/s : L.r. 1.5557e-04
+[2019-03-13 10:27:04] Ep. 35 : Up. 60000 : Sen. 825,944 : Cost 110.98449707 : Time 809.40s : 26859.17 words/s : L.r. 1.5492e-04
+[2019-03-13 10:27:04] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-13 10:27:08] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter60000.npz
+[2019-03-13 10:27:12] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-13 10:27:16] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-13 10:28:01] [valid] Ep. 35 : Up. 60000 : cross-entropy : 102.809 : stalled 5 times
+[2019-03-13 10:28:39] [valid] Ep. 35 : Up. 60000 : perplexity : 4.73799 : stalled 5 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-13 11:02:53] [valid] Ep. 35 : Up. 60000 : translation : 33.91 : new best
+[2019-03-13 11:16:26] Ep. 35 : Up. 60500 : Sen. 1,243,854 : Cost 109.06086731 : Time 2961.20s : 7423.40 words/s : L.r. 1.5428e-04
+[2019-03-13 11:23:04] Seen 1448451 samples
+[2019-03-13 11:23:04] Starting epoch 36
+[2019-03-13 11:23:04] [data] Shuffling files
+[2019-03-13 11:23:05] [data] Done reading 1954143 sentences
+[2019-03-13 11:23:14] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 11:32:07] Ep. 36 : Up. 61000 : Sen. 209,205 : Cost 109.07334137 : Time 941.35s : 23214.43 words/s : L.r. 1.5364e-04
+[2019-03-13 11:45:47] Ep. 36 : Up. 61500 : Sen. 626,361 : Cost 109.12572479 : Time 820.48s : 26947.55 words/s : L.r. 1.5302e-04
+[2019-03-13 11:59:24] Ep. 36 : Up. 62000 : Sen. 1,050,576 : Cost 107.03497314 : Time 816.10s : 26941.25 words/s : L.r. 1.5240e-04
+[2019-03-13 12:12:21] Seen 1448451 samples
+[2019-03-13 12:12:21] Starting epoch 37
+[2019-03-13 12:12:21] [data] Shuffling files
+[2019-03-13 12:12:23] [data] Done reading 1954143 sentences
+[2019-03-13 12:12:31] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 12:14:53] Ep. 37 : Up. 62500 : Sen. 12,742 : Cost 108.25214386 : Time 929.69s : 23098.52 words/s : L.r. 1.5179e-04
+[2019-03-13 12:28:26] Ep. 37 : Up. 63000 : Sen. 437,387 : Cost 106.19935608 : Time 813.15s : 27089.15 words/s : L.r. 1.5119e-04
+[2019-03-13 12:42:10] Ep. 37 : Up. 63500 : Sen. 851,590 : Cost 110.44567871 : Time 823.16s : 26921.91 words/s : L.r. 1.5059e-04
+[2019-03-13 12:55:36] Ep. 37 : Up. 64000 : Sen. 1,271,067 : Cost 106.33090210 : Time 806.13s : 26823.98 words/s : L.r. 1.5000e-04
+[2019-03-13 13:01:35] Seen 1448451 samples
+[2019-03-13 13:01:35] Starting epoch 38
+[2019-03-13 13:01:35] [data] Shuffling files
+[2019-03-13 13:01:36] [data] Done reading 1954143 sentences
+[2019-03-13 13:01:44] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 13:11:17] Ep. 38 : Up. 64500 : Sen. 236,996 : Cost 108.40026855 : Time 940.83s : 23247.92 words/s : L.r. 1.4942e-04
+[2019-03-13 13:24:52] Ep. 38 : Up. 65000 : Sen. 654,259 : Cost 108.28576660 : Time 815.07s : 26989.80 words/s : L.r. 1.4884e-04
+[2019-03-13 13:24:52] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-13 13:24:55] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter65000.npz
+[2019-03-13 13:24:59] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-13 13:25:03] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-13 13:25:48] [valid] Ep. 38 : Up. 65000 : cross-entropy : 103.279 : stalled 6 times
+[2019-03-13 13:26:25] [valid] Ep. 38 : Up. 65000 : perplexity : 4.77185 : stalled 6 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-13 14:00:33] [valid] Ep. 38 : Up. 65000 : translation : 33.89 : stalled 1 times
+[2019-03-13 14:14:12] Ep. 38 : Up. 65500 : Sen. 1,074,415 : Cost 108.60433960 : Time 2960.22s : 7485.35 words/s : L.r. 1.4827e-04
+[2019-03-13 14:26:29] Seen 1448451 samples
+[2019-03-13 14:26:29] Starting epoch 39
+[2019-03-13 14:26:29] [data] Shuffling files
+[2019-03-13 14:26:30] [data] Done reading 1954143 sentences
+[2019-03-13 14:26:39] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 14:29:52] Ep. 39 : Up. 66000 : Sen. 33,464 : Cost 109.41302490 : Time 940.45s : 22990.35 words/s : L.r. 1.4771e-04
+[2019-03-13 14:43:27] Ep. 39 : Up. 66500 : Sen. 459,014 : Cost 105.45420074 : Time 814.94s : 26974.15 words/s : L.r. 1.4715e-04
+[2019-03-13 14:57:14] Ep. 39 : Up. 67000 : Sen. 879,890 : Cost 108.98792267 : Time 826.47s : 27026.88 words/s : L.r. 1.4660e-04
+[2019-03-13 15:10:45] Ep. 39 : Up. 67500 : Sen. 1,296,175 : Cost 107.51302338 : Time 811.30s : 26825.49 words/s : L.r. 1.4606e-04
+[2019-03-13 15:15:48] Seen 1448451 samples
+[2019-03-13 15:15:48] Starting epoch 40
+[2019-03-13 15:15:48] [data] Shuffling files
+[2019-03-13 15:15:50] [data] Done reading 1954143 sentences
+[2019-03-13 15:15:58] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 15:26:19] Ep. 40 : Up. 68000 : Sen. 259,521 : Cost 108.23634338 : Time 934.28s : 23262.74 words/s : L.r. 1.4552e-04
+[2019-03-13 15:40:02] Ep. 40 : Up. 68500 : Sen. 681,068 : Cost 107.73023224 : Time 822.66s : 26987.20 words/s : L.r. 1.4499e-04
+[2019-03-13 15:53:40] Ep. 40 : Up. 69000 : Sen. 1,103,763 : Cost 106.73445129 : Time 818.55s : 26923.74 words/s : L.r. 1.4446e-04
+[2019-03-13 16:04:58] Seen 1448451 samples
+[2019-03-13 16:04:58] Starting epoch 41
+[2019-03-13 16:04:58] [data] Shuffling files
+[2019-03-13 16:05:00] [data] Done reading 1954143 sentences
+[2019-03-13 16:05:08] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 16:09:13] Ep. 41 : Up. 69500 : Sen. 63,119 : Cost 108.88543701 : Time 932.32s : 23217.32 words/s : L.r. 1.4394e-04
+[2019-03-13 16:22:52] Ep. 41 : Up. 70000 : Sen. 486,727 : Cost 106.72351074 : Time 819.60s : 27033.36 words/s : L.r. 1.4343e-04
+[2019-03-13 16:22:52] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-13 16:22:56] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter70000.npz
+[2019-03-13 16:23:00] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-13 16:23:05] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-13 16:23:50] [valid] Ep. 41 : Up. 70000 : cross-entropy : 103.741 : stalled 7 times
+[2019-03-13 16:24:27] [valid] Ep. 41 : Up. 70000 : perplexity : 4.80531 : stalled 7 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-13 16:58:52] [valid] Ep. 41 : Up. 70000 : translation : 33.84 : stalled 2 times
+[2019-03-13 17:12:29] Ep. 41 : Up. 70500 : Sen. 908,717 : Cost 107.40439606 : Time 2976.57s : 7464.44 words/s : L.r. 1.4292e-04
+[2019-03-13 17:25:51] Ep. 41 : Up. 71000 : Sen. 1,316,902 : Cost 108.03106689 : Time 802.22s : 26750.06 words/s : L.r. 1.4241e-04
+[2019-03-13 17:30:08] Seen 1448451 samples
+[2019-03-13 17:30:08] Starting epoch 42
+[2019-03-13 17:30:08] [data] Shuffling files
+[2019-03-13 17:30:09] [data] Done reading 1954143 sentences
+[2019-03-13 17:30:17] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 17:41:32] Ep. 42 : Up. 71500 : Sen. 288,197 : Cost 105.77759552 : Time 940.59s : 23156.68 words/s : L.r. 1.4191e-04
+[2019-03-13 17:55:15] Ep. 42 : Up. 72000 : Sen. 714,475 : Cost 105.91394043 : Time 823.27s : 26908.86 words/s : L.r. 1.4142e-04
+[2019-03-13 18:08:48] Ep. 42 : Up. 72500 : Sen. 1,121,011 : Cost 109.85685730 : Time 813.33s : 26824.88 words/s : L.r. 1.4093e-04
+[2019-03-13 18:19:29] Seen 1448451 samples
+[2019-03-13 18:19:29] Starting epoch 43
+[2019-03-13 18:19:29] [data] Shuffling files
+[2019-03-13 18:19:30] [data] Done reading 1954143 sentences
+[2019-03-13 18:19:39] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 18:24:31] Ep. 43 : Up. 73000 : Sen. 88,152 : Cost 107.35710144 : Time 942.22s : 23185.24 words/s : L.r. 1.4045e-04
+[2019-03-13 18:38:11] Ep. 43 : Up. 73500 : Sen. 506,236 : Cost 107.68363953 : Time 820.38s : 27007.82 words/s : L.r. 1.3997e-04
+[2019-03-13 18:51:51] Ep. 43 : Up. 74000 : Sen. 928,501 : Cost 106.71080017 : Time 819.85s : 26917.17 words/s : L.r. 1.3950e-04
+[2019-03-13 19:05:19] Ep. 43 : Up. 74500 : Sen. 1,345,734 : Cost 105.91433716 : Time 808.11s : 26801.57 words/s : L.r. 1.3903e-04
+[2019-03-13 19:08:47] Seen 1448451 samples
+[2019-03-13 19:08:47] Starting epoch 44
+[2019-03-13 19:08:47] [data] Shuffling files
+[2019-03-13 19:08:48] [data] Done reading 1954143 sentences
+[2019-03-13 19:08:56] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 19:20:59] Ep. 44 : Up. 75000 : Sen. 308,392 : Cost 107.78790283 : Time 940.14s : 23154.32 words/s : L.r. 1.3856e-04
+[2019-03-13 19:20:59] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-13 19:21:03] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter75000.npz
+[2019-03-13 19:21:07] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-13 19:21:11] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-13 19:21:56] [valid] Ep. 44 : Up. 75000 : cross-entropy : 104.228 : stalled 8 times
+[2019-03-13 19:22:34] [valid] Ep. 44 : Up. 75000 : perplexity : 4.84083 : stalled 8 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-13 19:56:35] [valid] Ep. 44 : Up. 75000 : translation : 33.82 : stalled 3 times
+[2019-03-13 20:10:10] Ep. 44 : Up. 75500 : Sen. 728,287 : Cost 106.70014191 : Time 2951.14s : 7459.57 words/s : L.r. 1.3810e-04
+[2019-03-13 20:23:53] Ep. 44 : Up. 76000 : Sen. 1,148,417 : Cost 107.13336945 : Time 823.23s : 26873.88 words/s : L.r. 1.3765e-04
+[2019-03-13 20:33:43] Seen 1448451 samples
+[2019-03-13 20:33:43] Starting epoch 45
+[2019-03-13 20:33:43] [data] Shuffling files
+[2019-03-13 20:33:45] [data] Done reading 1954143 sentences
+[2019-03-13 20:33:53] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 20:39:37] Ep. 45 : Up. 76500 : Sen. 113,162 : Cost 106.70257568 : Time 943.84s : 22937.26 words/s : L.r. 1.3720e-04
+[2019-03-13 20:53:17] Ep. 45 : Up. 77000 : Sen. 529,815 : Cost 107.40036774 : Time 819.92s : 26927.14 words/s : L.r. 1.3675e-04
+[2019-03-13 21:07:04] Ep. 45 : Up. 77500 : Sen. 956,604 : Cost 106.09863281 : Time 826.49s : 26960.95 words/s : L.r. 1.3631e-04
+[2019-03-13 21:20:36] Ep. 45 : Up. 78000 : Sen. 1,372,128 : Cost 106.67627716 : Time 812.19s : 26782.20 words/s : L.r. 1.3587e-04
+[2019-03-13 21:23:09] Seen 1448451 samples
+[2019-03-13 21:23:09] Starting epoch 46
+[2019-03-13 21:23:09] [data] Shuffling files
+[2019-03-13 21:23:10] [data] Done reading 1954143 sentences
+[2019-03-13 21:23:19] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 21:36:05] Ep. 46 : Up. 78500 : Sen. 331,871 : Cost 106.35507965 : Time 929.50s : 23062.27 words/s : L.r. 1.3544e-04
+[2019-03-13 21:49:51] Ep. 46 : Up. 79000 : Sen. 751,631 : Cost 107.54531860 : Time 825.24s : 26983.65 words/s : L.r. 1.3501e-04
+[2019-03-13 22:03:34] Ep. 46 : Up. 79500 : Sen. 1,176,033 : Cost 105.86077118 : Time 822.90s : 26846.03 words/s : L.r. 1.3459e-04
+[2019-03-13 22:12:31] Seen 1448451 samples
+[2019-03-13 22:12:31] Starting epoch 47
+[2019-03-13 22:12:31] [data] Shuffling files
+[2019-03-13 22:12:32] [data] Done reading 1954143 sentences
+[2019-03-13 22:12:41] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 22:19:16] Ep. 47 : Up. 80000 : Sen. 143,391 : Cost 106.64526367 : Time 942.03s : 23245.70 words/s : L.r. 1.3416e-04
+[2019-03-13 22:19:16] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-13 22:19:20] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter80000.npz
+[2019-03-13 22:19:23] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-13 22:19:28] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-13 22:20:13] [valid] Ep. 47 : Up. 80000 : cross-entropy : 104.712 : stalled 9 times
+[2019-03-13 22:20:50] [valid] Ep. 47 : Up. 80000 : perplexity : 4.87644 : stalled 9 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-13 22:54:02] [valid] Ep. 47 : Up. 80000 : translation : 33.81 : stalled 4 times
+[2019-03-13 23:07:42] Ep. 47 : Up. 80500 : Sen. 564,314 : Cost 106.39427948 : Time 2906.87s : 7617.48 words/s : L.r. 1.3375e-04
+[2019-03-13 23:21:15] Ep. 47 : Up. 81000 : Sen. 979,432 : Cost 106.63142395 : Time 812.99s : 26810.17 words/s : L.r. 1.3333e-04
+[2019-03-13 23:34:42] Ep. 47 : Up. 81500 : Sen. 1,393,131 : Cost 106.03176117 : Time 806.96s : 26737.31 words/s : L.r. 1.3292e-04
+[2019-03-13 23:36:36] Seen 1448451 samples
+[2019-03-13 23:36:36] Starting epoch 48
+[2019-03-13 23:36:36] [data] Shuffling files
+[2019-03-13 23:36:37] [data] Done reading 1954143 sentences
+[2019-03-13 23:36:45] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-13 23:50:33] Ep. 48 : Up. 82000 : Sen. 367,300 : Cost 105.85631561 : Time 950.86s : 23317.82 words/s : L.r. 1.3252e-04
+[2019-03-14 00:04:10] Ep. 48 : Up. 82500 : Sen. 780,585 : Cost 107.38074493 : Time 816.40s : 26865.26 words/s : L.r. 1.3212e-04
+[2019-03-14 00:17:44] Ep. 48 : Up. 83000 : Sen. 1,197,353 : Cost 106.15351105 : Time 814.05s : 26842.53 words/s : L.r. 1.3172e-04
+[2019-03-14 00:25:56] Seen 1448451 samples
+[2019-03-14 00:25:56] Starting epoch 49
+[2019-03-14 00:25:56] [data] Shuffling files
+[2019-03-14 00:25:58] [data] Done reading 1954143 sentences
+[2019-03-14 00:26:06] [data] Done shuffling 1954143 sentences to temp files
+[2019-03-14 00:33:22] Ep. 49 : Up. 83500 : Sen. 169,266 : Cost 104.78596497 : Time 938.00s : 23195.41 words/s : L.r. 1.3132e-04
+[2019-03-14 00:46:58] Ep. 49 : Up. 84000 : Sen. 585,041 : Cost 106.64415741 : Time 816.56s : 26902.08 words/s : L.r. 1.3093e-04
+[2019-03-14 01:00:44] Ep. 49 : Up. 84500 : Sen. 1,004,912 : Cost 107.08242035 : Time 825.99s : 26931.88 words/s : L.r. 1.3054e-04
+[2019-03-14 01:14:09] Ep. 49 : Up. 85000 : Sen. 1,415,202 : Cost 106.40847015 : Time 804.89s : 26738.78 words/s : L.r. 1.3016e-04
+[2019-03-14 01:14:09] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-14 01:14:13] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.iter85000.npz
+[2019-03-14 01:14:17] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-14 01:14:21] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz
+[2019-03-14 01:15:06] [valid] Ep. 49 : Up. 85000 : cross-entropy : 105.133 : stalled 10 times
+[2019-03-14 01:15:43] [valid] Ep. 49 : Up. 85000 : perplexity : 4.90757 : stalled 10 times
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: No such file or directory
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-14 01:49:18] [valid] Ep. 49 : Up. 85000 : translation : 33.74 : stalled 5 times
+[2019-03-14 01:49:18] Training finished
+[2019-03-14 01:49:19] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz.orig.npz
+[2019-03-14 01:49:23] Saving model weights and runtime parameters to model/model.src1tgt0_to_tgt1.concat.npz
+[2019-03-14 01:49:27] Saving Adam parameters to model/model.src1tgt0_to_tgt1.concat.npz.optimizer.npz

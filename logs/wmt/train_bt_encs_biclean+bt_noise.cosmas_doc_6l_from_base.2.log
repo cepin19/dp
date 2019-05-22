@@ -1,0 +1,1033 @@
+[2019-04-17 14:25:12] [marian] Marian v1.7.8 1e91cce 2019-04-04 17:46:39 +0200
+[2019-04-17 14:25:12] [marian] Running on cosmas.lingea.cz as process 114663 with command line:
+[2019-04-17 14:25:12] [marian] /home/large/data/models/marian/marian-doc/doc-marian-cosmas/build/marian --model model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz --pretrained-model model/model_base_encz2.npz --type transformer-context --train-sets corpus.docs.en.bpe.src_prev corpus.docs.en.bpe.src corpus.docs.cs.bpe -e 1 --max-length 95 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 9200 --mini-batch 1000 --maxi-batch 1000 --freeze --valid-freq 2000 --save-freq 2000 --disp-freq 100 --embedding-fix-src --embedding-fix-trg --valid-metrics ce-mean-words perplexity translation --valid-sets newstest2016.docs.src_prev newstest2016.docs.src newstest2016.docs.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 15 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --transformer-heads 8 --enc-depth 6 --dec-depth 6 --context-enc-depth 6 --transformer-postprocess-emb d --transformer-postprocess dan --transformer-dropout 0.1 --label-smoothing 0.1 --learn-rate 0.0003 --lr-warmup 16000 --lr-decay-inv-sqrt 16000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --tied-embeddings-all --optimizer-delay 4 --devices 2 3 --sync-sgd --seed 1111 --exponential-smoothing
+[2019-04-17 14:25:12] [config] after-batches: 0
+[2019-04-17 14:25:12] [config] after-epochs: 1
+[2019-04-17 14:25:12] [config] allow-unk: false
+[2019-04-17 14:25:12] [config] beam-size: 6
+[2019-04-17 14:25:12] [config] bert-class-symbol: "[CLS]"
+[2019-04-17 14:25:12] [config] bert-mask-symbol: "[MASK]"
+[2019-04-17 14:25:12] [config] bert-masking-fraction: 0.15
+[2019-04-17 14:25:12] [config] bert-sep-symbol: "[SEP]"
+[2019-04-17 14:25:12] [config] bert-train-type-embeddings: true
+[2019-04-17 14:25:12] [config] bert-type-vocab-size: 2
+[2019-04-17 14:25:12] [config] best-deep: false
+[2019-04-17 14:25:12] [config] clip-gemm: 0
+[2019-04-17 14:25:12] [config] clip-norm: 5
+[2019-04-17 14:25:12] [config] context-enc-depth: 6
+[2019-04-17 14:25:12] [config] cost-type: ce-mean-words
+[2019-04-17 14:25:12] [config] cpu-threads: 0
+[2019-04-17 14:25:12] [config] data-weighting: ""
+[2019-04-17 14:25:12] [config] data-weighting-type: sentence
+[2019-04-17 14:25:12] [config] dec-cell: gru
+[2019-04-17 14:25:12] [config] dec-cell-base-depth: 2
+[2019-04-17 14:25:12] [config] dec-cell-high-depth: 1
+[2019-04-17 14:25:12] [config] dec-depth: 6
+[2019-04-17 14:25:12] [config] devices:
+[2019-04-17 14:25:12] [config]   - 2
+[2019-04-17 14:25:12] [config]   - 3
+[2019-04-17 14:25:12] [config] dim-emb: 512
+[2019-04-17 14:25:12] [config] dim-rnn: 1024
+[2019-04-17 14:25:12] [config] dim-vocabs:
+[2019-04-17 14:25:12] [config]   - 34028
+[2019-04-17 14:25:12] [config]   - 34028
+[2019-04-17 14:25:12] [config]   - 34028
+[2019-04-17 14:25:12] [config] disp-first: 0
+[2019-04-17 14:25:12] [config] disp-freq: 100
+[2019-04-17 14:25:12] [config] disp-label-counts: false
+[2019-04-17 14:25:12] [config] dropout-rnn: 0
+[2019-04-17 14:25:12] [config] dropout-src: 0
+[2019-04-17 14:25:12] [config] dropout-trg: 0
+[2019-04-17 14:25:12] [config] dump-config: ""
+[2019-04-17 14:25:12] [config] early-stopping: 15
+[2019-04-17 14:25:12] [config] embedding-fix-src: true
+[2019-04-17 14:25:12] [config] embedding-fix-trg: true
+[2019-04-17 14:25:12] [config] embedding-normalization: false
+[2019-04-17 14:25:12] [config] embedding-vectors:
+[2019-04-17 14:25:12] [config]   []
+[2019-04-17 14:25:12] [config] enc-cell: gru
+[2019-04-17 14:25:12] [config] enc-cell-depth: 1
+[2019-04-17 14:25:12] [config] enc-depth: 6
+[2019-04-17 14:25:12] [config] enc-type: bidirectional
+[2019-04-17 14:25:12] [config] exponential-smoothing: 0.0001
+[2019-04-17 14:25:12] [config] freeze: true
+[2019-04-17 14:25:12] [config] grad-dropping-momentum: 0
+[2019-04-17 14:25:12] [config] grad-dropping-rate: 0
+[2019-04-17 14:25:12] [config] grad-dropping-warmup: 100
+[2019-04-17 14:25:12] [config] guided-alignment: none
+[2019-04-17 14:25:12] [config] guided-alignment-cost: mse
+[2019-04-17 14:25:12] [config] guided-alignment-weight: 0.1
+[2019-04-17 14:25:12] [config] hier-att: false
+[2019-04-17 14:25:12] [config] ignore-model-config: false
+[2019-04-17 14:25:12] [config] input-types:
+[2019-04-17 14:25:12] [config]   []
+[2019-04-17 14:25:12] [config] interpolate-env-vars: false
+[2019-04-17 14:25:12] [config] keep-best: true
+[2019-04-17 14:25:12] [config] label-smoothing: 0.1
+[2019-04-17 14:25:12] [config] layer-normalization: false
+[2019-04-17 14:25:12] [config] learn-rate: 0.0003
+[2019-04-17 14:25:12] [config] log: model/bt_encz.log
+[2019-04-17 14:25:12] [config] log-level: info
+[2019-04-17 14:25:12] [config] log-time-zone: ""
+[2019-04-17 14:25:12] [config] lr-decay: 0
+[2019-04-17 14:25:12] [config] lr-decay-freq: 50000
+[2019-04-17 14:25:12] [config] lr-decay-inv-sqrt:
+[2019-04-17 14:25:12] [config]   - 16000
+[2019-04-17 14:25:12] [config] lr-decay-repeat-warmup: false
+[2019-04-17 14:25:12] [config] lr-decay-reset-optimizer: false
+[2019-04-17 14:25:12] [config] lr-decay-start:
+[2019-04-17 14:25:12] [config]   - 10
+[2019-04-17 14:25:12] [config]   - 1
+[2019-04-17 14:25:12] [config] lr-decay-strategy: epoch+stalled
+[2019-04-17 14:25:12] [config] lr-report: true
+[2019-04-17 14:25:12] [config] lr-warmup: 16000
+[2019-04-17 14:25:12] [config] lr-warmup-at-reload: false
+[2019-04-17 14:25:12] [config] lr-warmup-cycle: false
+[2019-04-17 14:25:12] [config] lr-warmup-start-rate: 0
+[2019-04-17 14:25:12] [config] max-length: 95
+[2019-04-17 14:25:12] [config] max-length-crop: false
+[2019-04-17 14:25:12] [config] max-length-factor: 3
+[2019-04-17 14:25:12] [config] maxi-batch: 1000
+[2019-04-17 14:25:12] [config] maxi-batch-sort: trg
+[2019-04-17 14:25:12] [config] mini-batch: 1000
+[2019-04-17 14:25:12] [config] mini-batch-fit: true
+[2019-04-17 14:25:12] [config] mini-batch-fit-step: 10
+[2019-04-17 14:25:12] [config] mini-batch-overstuff: 1
+[2019-04-17 14:25:12] [config] mini-batch-track-lr: false
+[2019-04-17 14:25:12] [config] mini-batch-understuff: 1
+[2019-04-17 14:25:12] [config] mini-batch-warmup: 0
+[2019-04-17 14:25:12] [config] mini-batch-words: 0
+[2019-04-17 14:25:12] [config] mini-batch-words-ref: 0
+[2019-04-17 14:25:12] [config] model: model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 14:25:12] [config] multi-loss-type: sum
+[2019-04-17 14:25:12] [config] multi-node: false
+[2019-04-17 14:25:12] [config] multi-node-overlap: true
+[2019-04-17 14:25:12] [config] n-best: false
+[2019-04-17 14:25:12] [config] no-nccl: false
+[2019-04-17 14:25:12] [config] no-reload: false
+[2019-04-17 14:25:12] [config] no-restore-corpus: false
+[2019-04-17 14:25:12] [config] no-shuffle: false
+[2019-04-17 14:25:12] [config] normalize: 0.6
+[2019-04-17 14:25:12] [config] num-devices: 0
+[2019-04-17 14:25:12] [config] optimizer: adam
+[2019-04-17 14:25:12] [config] optimizer-delay: 4
+[2019-04-17 14:25:12] [config] optimizer-params:
+[2019-04-17 14:25:12] [config]   - 0.9
+[2019-04-17 14:25:12] [config]   - 0.98
+[2019-04-17 14:25:12] [config]   - 1e-09
+[2019-04-17 14:25:12] [config] overwrite: true
+[2019-04-17 14:25:12] [config] pretrained-model: model/model_base_encz2.npz
+[2019-04-17 14:25:12] [config] quiet: false
+[2019-04-17 14:25:12] [config] quiet-translation: true
+[2019-04-17 14:25:12] [config] relative-paths: false
+[2019-04-17 14:25:12] [config] right-left: false
+[2019-04-17 14:25:12] [config] save-freq: 2000
+[2019-04-17 14:25:12] [config] seed: 1111
+[2019-04-17 14:25:12] [config] shuffle-in-ram: false
+[2019-04-17 14:25:12] [config] skip: false
+[2019-04-17 14:25:12] [config] sqlite: ""
+[2019-04-17 14:25:12] [config] sqlite-drop: false
+[2019-04-17 14:25:12] [config] sync-sgd: true
+[2019-04-17 14:25:12] [config] tempdir: /tmp
+[2019-04-17 14:25:12] [config] tied-embeddings: false
+[2019-04-17 14:25:12] [config] tied-embeddings-all: true
+[2019-04-17 14:25:12] [config] tied-embeddings-src: false
+[2019-04-17 14:25:12] [config] train-sets:
+[2019-04-17 14:25:12] [config]   - corpus.docs.en.bpe.src_prev
+[2019-04-17 14:25:12] [config]   - corpus.docs.en.bpe.src
+[2019-04-17 14:25:12] [config]   - corpus.docs.cs.bpe
+[2019-04-17 14:25:12] [config] transformer-aan-activation: swish
+[2019-04-17 14:25:12] [config] transformer-aan-depth: 2
+[2019-04-17 14:25:12] [config] transformer-aan-nogate: false
+[2019-04-17 14:25:12] [config] transformer-decoder-autoreg: self-attention
+[2019-04-17 14:25:12] [config] transformer-dim-aan: 2048
+[2019-04-17 14:25:12] [config] transformer-dim-ffn: 2048
+[2019-04-17 14:25:12] [config] transformer-dropout: 0.1
+[2019-04-17 14:25:12] [config] transformer-dropout-attention: 0
+[2019-04-17 14:25:12] [config] transformer-dropout-ffn: 0
+[2019-04-17 14:25:12] [config] transformer-ffn-activation: swish
+[2019-04-17 14:25:12] [config] transformer-ffn-depth: 2
+[2019-04-17 14:25:12] [config] transformer-guided-alignment-layer: last
+[2019-04-17 14:25:12] [config] transformer-heads: 8
+[2019-04-17 14:25:12] [config] transformer-no-projection: false
+[2019-04-17 14:25:12] [config] transformer-postprocess: dan
+[2019-04-17 14:25:12] [config] transformer-postprocess-emb: d
+[2019-04-17 14:25:12] [config] transformer-preprocess: ""
+[2019-04-17 14:25:12] [config] transformer-tied-layers:
+[2019-04-17 14:25:12] [config]   []
+[2019-04-17 14:25:12] [config] transformer-train-position-embeddings: false
+[2019-04-17 14:25:12] [config] type: transformer-context
+[2019-04-17 14:25:12] [config] ulr: false
+[2019-04-17 14:25:12] [config] ulr-dim-emb: 0
+[2019-04-17 14:25:12] [config] ulr-dropout: 0
+[2019-04-17 14:25:12] [config] ulr-keys-vectors: ""
+[2019-04-17 14:25:12] [config] ulr-query-vectors: ""
+[2019-04-17 14:25:12] [config] ulr-softmax-temperature: 1
+[2019-04-17 14:25:12] [config] ulr-trainable-transformation: false
+[2019-04-17 14:25:12] [config] valid-freq: 2000
+[2019-04-17 14:25:12] [config] valid-log: model/valid.log
+[2019-04-17 14:25:12] [config] valid-max-length: 1000
+[2019-04-17 14:25:12] [config] valid-metrics:
+[2019-04-17 14:25:12] [config]   - ce-mean-words
+[2019-04-17 14:25:12] [config]   - perplexity
+[2019-04-17 14:25:12] [config]   - translation
+[2019-04-17 14:25:12] [config] valid-mini-batch: 16
+[2019-04-17 14:25:12] [config] valid-script-path: ./val.sh
+[2019-04-17 14:25:12] [config] valid-sets:
+[2019-04-17 14:25:12] [config]   - newstest2016.docs.src_prev
+[2019-04-17 14:25:12] [config]   - newstest2016.docs.src
+[2019-04-17 14:25:12] [config]   - newstest2016.docs.cs.bpe
+[2019-04-17 14:25:12] [config] valid-translation-output: ""
+[2019-04-17 14:25:12] [config] version: v1.7.8 1e91cce 2019-04-04 17:46:39 +0200
+[2019-04-17 14:25:12] [config] vocabs:
+[2019-04-17 14:25:12] [config]   - corp/vocab.encs.yml
+[2019-04-17 14:25:12] [config]   - corp/vocab.encs.yml
+[2019-04-17 14:25:12] [config]   - corp/vocab.encs.yml
+[2019-04-17 14:25:12] [config] word-penalty: 0
+[2019-04-17 14:25:12] [config] workspace: 9200
+[2019-04-17 14:25:12] [config] Loaded model has been created with Marian v1.7.8 1e91cce 2019-04-04 17:46:39 +0200
+[2019-04-17 14:25:12] Using synchronous training
+[2019-04-17 14:25:12] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-04-17 14:25:12] [data] Setting vocabulary size for input 0 to 34028
+[2019-04-17 14:25:12] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-04-17 14:25:13] [data] Setting vocabulary size for input 1 to 34028
+[2019-04-17 14:25:13] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-04-17 14:25:13] [data] Setting vocabulary size for input 2 to 34028
+[2019-04-17 14:25:13] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-04-17 14:25:13] [batching] Collecting statistics for batch fitting with step size 10
+[2019-04-17 14:25:15] [memory] Extending reserved space to 9216 MB (device gpu2)
+[2019-04-17 14:25:16] [memory] Extending reserved space to 9216 MB (device gpu3)
+[2019-04-17 14:25:16] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-04-17 14:25:16] [comm] NCCLCommunicator constructed successfully.
+[2019-04-17 14:25:16] [training] Using 2 GPUs
+[2019-04-17 14:25:16] [memory] Reserving 379 MB, device gpu2
+[2019-04-17 14:25:16] [gpu] 16-bit TensorCores enabled for float32 matrix operations
+[2019-04-17 14:25:17] [memory] Reserving 379 MB, device gpu2
+[2019-04-17 14:25:29] [batching] Done. Typical MB size is 29600 target words
+[2019-04-17 14:25:29] [memory] Extending reserved space to 9216 MB (device gpu2)
+[2019-04-17 14:25:29] [memory] Extending reserved space to 9216 MB (device gpu3)
+[2019-04-17 14:25:29] [comm] Using NCCL 2.4.2 for GPU communication
+[2019-04-17 14:25:29] [comm] NCCLCommunicator constructed successfully.
+[2019-04-17 14:25:29] [training] Using 2 GPUs
+[2019-04-17 14:25:29] Loading model from model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 14:25:31] Loading model from model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 14:25:32] Loading Adam parameters from model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 14:25:35] [memory] Reserving 379 MB, device gpu2
+[2019-04-17 14:25:35] [memory] Reserving 379 MB, device gpu3
+[2019-04-17 14:25:36] [training] Model reloaded from model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 14:25:36] [data] Restoring the corpus state to epoch 1, batch 32000
+[2019-04-17 14:25:36] [data] Shuffling data
+tcmalloc: large alloc 1073741824 bytes == 0x1bbf0c000 @ 
+tcmalloc: large alloc 2147483648 bytes == 0x7fed52100000 @ 
+tcmalloc: large alloc 2147483648 bytes == 0x7fecd2100000 @ 
+tcmalloc: large alloc 2147483648 bytes == 0x7fec38000000 @ 
+[2019-04-17 14:26:04] [data] Done reading 57951104 sentences
+[2019-04-17 14:30:48] [data] Done shuffling 57951104 sentences to temp files
+[2019-04-17 14:41:26] Training started
+[2019-04-17 14:41:26] [training] Batches are processed as 1 process(es) x 2 devices/process
+[2019-04-17 14:41:26] [memory] Reserving 379 MB, device gpu2
+[2019-04-17 14:41:26] [memory] Reserving 379 MB, device gpu3
+[2019-04-17 14:41:26] [memory] Reserving 379 MB, device gpu3
+[2019-04-17 14:41:26] [memory] Reserving 379 MB, device gpu2
+[2019-04-17 14:41:26] Loading model from model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 14:41:28] [memory] Reserving 379 MB, device cpu0
+[2019-04-17 14:41:28] [memory] Reserving 189 MB, device gpu2
+[2019-04-17 14:41:28] [memory] Reserving 189 MB, device gpu3
+[2019-04-17 14:42:48] Ep. 1 : Up. 32100 : Sen. 17,189,023 : Cost 2.62941909 : Time 1054.73s : 987.66 words/s : L.r. 2.1180e-04
+[2019-04-17 14:44:09] Ep. 1 : Up. 32200 : Sen. 17,254,092 : Cost 2.67627811 : Time 81.31s : 11693.40 words/s : L.r. 2.1147e-04
+[2019-04-17 14:45:30] Ep. 1 : Up. 32300 : Sen. 17,322,872 : Cost 2.67411017 : Time 81.11s : 12070.29 words/s : L.r. 2.1114e-04
+[2019-04-17 14:46:54] Ep. 1 : Up. 32400 : Sen. 17,389,623 : Cost 2.64278650 : Time 84.11s : 12571.14 words/s : L.r. 2.1082e-04
+[2019-04-17 14:48:19] Ep. 1 : Up. 32500 : Sen. 17,459,342 : Cost 2.64687991 : Time 84.29s : 12325.35 words/s : L.r. 2.1049e-04
+[2019-04-17 14:49:41] Ep. 1 : Up. 32600 : Sen. 17,521,783 : Cost 2.64909244 : Time 82.29s : 11652.18 words/s : L.r. 2.1017e-04
+[2019-04-17 14:51:06] Ep. 1 : Up. 32700 : Sen. 17,591,684 : Cost 2.65808010 : Time 85.28s : 12169.41 words/s : L.r. 2.0985e-04
+[2019-04-17 14:52:28] Ep. 1 : Up. 32800 : Sen. 17,658,519 : Cost 2.69879150 : Time 81.60s : 12007.70 words/s : L.r. 2.0953e-04
+[2019-04-17 14:53:55] Ep. 1 : Up. 32900 : Sen. 17,727,194 : Cost 2.65810657 : Time 87.66s : 12690.99 words/s : L.r. 2.0921e-04
+[2019-04-17 14:55:20] Ep. 1 : Up. 33000 : Sen. 17,795,019 : Cost 2.70607638 : Time 84.35s : 12176.13 words/s : L.r. 2.0889e-04
+[2019-04-17 14:56:44] Ep. 1 : Up. 33100 : Sen. 17,865,832 : Cost 2.67455292 : Time 83.85s : 12215.93 words/s : L.r. 2.0858e-04
+[2019-04-17 14:58:08] Ep. 1 : Up. 33200 : Sen. 17,933,498 : Cost 2.64241552 : Time 84.08s : 12603.09 words/s : L.r. 2.0826e-04
+[2019-04-17 14:59:32] Ep. 1 : Up. 33300 : Sen. 18,008,164 : Cost 2.63989067 : Time 84.13s : 12471.35 words/s : L.r. 2.0795e-04
+[2019-04-17 15:00:52] Ep. 1 : Up. 33400 : Sen. 18,078,247 : Cost 2.71592283 : Time 80.14s : 11892.58 words/s : L.r. 2.0764e-04
+[2019-04-17 15:02:14] Ep. 1 : Up. 33500 : Sen. 18,154,590 : Cost 2.67366672 : Time 82.04s : 11968.89 words/s : L.r. 2.0733e-04
+[2019-04-17 15:03:38] Ep. 1 : Up. 33600 : Sen. 18,218,489 : Cost 2.64853835 : Time 83.68s : 12341.87 words/s : L.r. 2.0702e-04
+[2019-04-17 15:05:08] Ep. 1 : Up. 33700 : Sen. 18,291,614 : Cost 2.63513494 : Time 90.47s : 12602.09 words/s : L.r. 2.0671e-04
+[2019-04-17 15:06:27] Ep. 1 : Up. 33800 : Sen. 18,347,827 : Cost 2.69012928 : Time 78.87s : 12321.98 words/s : L.r. 2.0641e-04
+[2019-04-17 15:07:46] Ep. 1 : Up. 33900 : Sen. 18,410,082 : Cost 2.63758349 : Time 79.38s : 11731.26 words/s : L.r. 2.0610e-04
+[2019-04-17 15:09:06] Ep. 1 : Up. 34000 : Sen. 18,465,789 : Cost 2.66594672 : Time 79.89s : 12018.83 words/s : L.r. 2.0580e-04
+[2019-04-17 15:09:06] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 15:09:10] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 15:09:13] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 15:09:23] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 15:09:26] [valid] Ep. 1 : Up. 34000 : ce-mean-words : 1.54023 : new best
+[2019-04-17 15:09:29] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 15:09:31] [valid] Ep. 1 : Up. 34000 : perplexity : 4.66567 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 15:10:15] [valid] Ep. 1 : Up. 34000 : translation : 26.31 : stalled 3 times (last best: 26.31)
+[2019-04-17 15:11:40] Ep. 1 : Up. 34100 : Sen. 18,530,538 : Cost 2.67459989 : Time 153.36s : 6616.15 words/s : L.r. 2.0550e-04
+[2019-04-17 15:13:04] Ep. 1 : Up. 34200 : Sen. 18,607,406 : Cost 2.68379807 : Time 84.06s : 12216.74 words/s : L.r. 2.0520e-04
+[2019-04-17 15:14:31] Ep. 1 : Up. 34300 : Sen. 18,693,129 : Cost 2.71304941 : Time 87.69s : 12482.22 words/s : L.r. 2.0490e-04
+[2019-04-17 15:15:50] Ep. 1 : Up. 34400 : Sen. 18,748,729 : Cost 2.65001225 : Time 78.56s : 11977.62 words/s : L.r. 2.0460e-04
+[2019-04-17 15:17:14] Ep. 1 : Up. 34500 : Sen. 18,813,896 : Cost 2.69442654 : Time 84.20s : 12082.09 words/s : L.r. 2.0430e-04
+[2019-04-17 15:18:32] Ep. 1 : Up. 34600 : Sen. 18,863,817 : Cost 2.63591528 : Time 78.30s : 11921.13 words/s : L.r. 2.0401e-04
+[2019-04-17 15:19:53] Ep. 1 : Up. 34700 : Sen. 18,927,574 : Cost 2.60755873 : Time 81.07s : 12112.98 words/s : L.r. 2.0371e-04
+[2019-04-17 15:21:20] Ep. 1 : Up. 34800 : Sen. 19,005,576 : Cost 2.66282582 : Time 86.10s : 12407.89 words/s : L.r. 2.0342e-04
+[2019-04-17 15:22:46] Ep. 1 : Up. 34900 : Sen. 19,079,659 : Cost 2.70996475 : Time 86.27s : 12578.82 words/s : L.r. 2.0313e-04
+[2019-04-17 15:24:07] Ep. 1 : Up. 35000 : Sen. 19,148,864 : Cost 2.65282154 : Time 81.06s : 11914.93 words/s : L.r. 2.0284e-04
+[2019-04-17 15:25:25] Ep. 1 : Up. 35100 : Sen. 19,202,905 : Cost 2.62214375 : Time 78.04s : 11849.75 words/s : L.r. 2.0255e-04
+[2019-04-17 15:26:51] Ep. 1 : Up. 35200 : Sen. 19,269,253 : Cost 2.67695928 : Time 86.36s : 12447.60 words/s : L.r. 2.0226e-04
+[2019-04-17 15:28:18] Ep. 1 : Up. 35300 : Sen. 19,339,598 : Cost 2.69372630 : Time 86.72s : 12356.78 words/s : L.r. 2.0197e-04
+[2019-04-17 15:29:39] Ep. 1 : Up. 35400 : Sen. 19,403,509 : Cost 2.66246176 : Time 81.18s : 11973.55 words/s : L.r. 2.0169e-04
+[2019-04-17 15:31:02] Ep. 1 : Up. 35500 : Sen. 19,473,957 : Cost 2.64014125 : Time 82.61s : 12607.69 words/s : L.r. 2.0140e-04
+[2019-04-17 15:32:28] Ep. 1 : Up. 35600 : Sen. 19,547,316 : Cost 2.63362503 : Time 86.36s : 12620.53 words/s : L.r. 2.0112e-04
+[2019-04-17 15:33:52] Ep. 1 : Up. 35700 : Sen. 19,619,444 : Cost 2.65199637 : Time 84.02s : 12006.39 words/s : L.r. 2.0084e-04
+[2019-04-17 15:35:14] Ep. 1 : Up. 35800 : Sen. 19,677,353 : Cost 2.66548419 : Time 81.34s : 11783.16 words/s : L.r. 2.0056e-04
+[2019-04-17 15:36:37] Ep. 1 : Up. 35900 : Sen. 19,745,782 : Cost 2.67853308 : Time 83.35s : 12317.68 words/s : L.r. 2.0028e-04
+[2019-04-17 15:38:04] Ep. 1 : Up. 36000 : Sen. 19,812,041 : Cost 2.62519670 : Time 87.39s : 12675.54 words/s : L.r. 2.0000e-04
+[2019-04-17 15:38:04] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 15:38:08] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 15:38:11] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 15:38:22] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 15:38:24] [valid] Ep. 1 : Up. 36000 : ce-mean-words : 1.53981 : new best
+[2019-04-17 15:38:28] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 15:38:30] [valid] Ep. 1 : Up. 36000 : perplexity : 4.66372 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 15:39:14] [valid] Ep. 1 : Up. 36000 : translation : 26.29 : stalled 4 times (last best: 26.31)
+[2019-04-17 15:40:41] Ep. 1 : Up. 36100 : Sen. 19,886,095 : Cost 2.66913724 : Time 156.56s : 6643.39 words/s : L.r. 1.9972e-04
+[2019-04-17 15:42:01] Ep. 1 : Up. 36200 : Sen. 19,947,301 : Cost 2.67965412 : Time 79.57s : 11589.31 words/s : L.r. 1.9945e-04
+[2019-04-17 15:43:24] Ep. 1 : Up. 36300 : Sen. 20,007,513 : Cost 2.67226148 : Time 83.84s : 12379.73 words/s : L.r. 1.9917e-04
+[2019-04-17 15:44:49] Ep. 1 : Up. 36400 : Sen. 20,070,982 : Cost 2.66211390 : Time 84.83s : 12149.97 words/s : L.r. 1.9890e-04
+[2019-04-17 15:46:20] Ep. 1 : Up. 36500 : Sen. 20,151,627 : Cost 2.67866755 : Time 90.69s : 12671.03 words/s : L.r. 1.9863e-04
+[2019-04-17 15:47:42] Ep. 1 : Up. 36600 : Sen. 20,204,426 : Cost 2.66101027 : Time 82.24s : 12141.31 words/s : L.r. 1.9835e-04
+[2019-04-17 15:48:59] Ep. 1 : Up. 36700 : Sen. 20,270,152 : Cost 2.70226455 : Time 76.30s : 11763.29 words/s : L.r. 1.9808e-04
+[2019-04-17 15:50:20] Ep. 1 : Up. 36800 : Sen. 20,336,636 : Cost 2.69388437 : Time 81.61s : 11832.09 words/s : L.r. 1.9781e-04
+[2019-04-17 15:51:46] Ep. 1 : Up. 36900 : Sen. 20,417,922 : Cost 2.70978642 : Time 85.48s : 12406.59 words/s : L.r. 1.9755e-04
+[2019-04-17 15:53:06] Ep. 1 : Up. 37000 : Sen. 20,484,803 : Cost 2.59857917 : Time 80.68s : 12176.13 words/s : L.r. 1.9728e-04
+[2019-04-17 15:54:33] Ep. 1 : Up. 37100 : Sen. 20,554,225 : Cost 2.63952208 : Time 86.53s : 12299.48 words/s : L.r. 1.9701e-04
+[2019-04-17 15:55:56] Ep. 1 : Up. 37200 : Sen. 20,625,315 : Cost 2.66091585 : Time 83.11s : 12332.80 words/s : L.r. 1.9675e-04
+[2019-04-17 15:57:19] Ep. 1 : Up. 37300 : Sen. 20,684,472 : Cost 2.65936685 : Time 83.44s : 12495.18 words/s : L.r. 1.9648e-04
+[2019-04-17 15:58:43] Ep. 1 : Up. 37400 : Sen. 20,750,230 : Cost 2.67821980 : Time 83.19s : 12431.31 words/s : L.r. 1.9622e-04
+[2019-04-17 16:00:06] Ep. 1 : Up. 37500 : Sen. 20,824,711 : Cost 2.70933652 : Time 83.87s : 12214.31 words/s : L.r. 1.9596e-04
+[2019-04-17 16:01:30] Ep. 1 : Up. 37600 : Sen. 20,885,986 : Cost 2.67334509 : Time 83.23s : 12088.96 words/s : L.r. 1.9570e-04
+[2019-04-17 16:02:56] Ep. 1 : Up. 37700 : Sen. 20,953,448 : Cost 2.63455725 : Time 85.85s : 12046.03 words/s : L.r. 1.9544e-04
+[2019-04-17 16:04:21] Ep. 1 : Up. 37800 : Sen. 21,027,795 : Cost 2.66930294 : Time 85.64s : 12313.29 words/s : L.r. 1.9518e-04
+[2019-04-17 16:05:43] Ep. 1 : Up. 37900 : Sen. 21,098,988 : Cost 2.64434433 : Time 81.67s : 12306.32 words/s : L.r. 1.9492e-04
+[2019-04-17 16:07:07] Ep. 1 : Up. 38000 : Sen. 21,163,890 : Cost 2.62607718 : Time 83.95s : 11840.26 words/s : L.r. 1.9467e-04
+[2019-04-17 16:07:07] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 16:07:10] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 16:07:13] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 16:07:23] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 16:07:25] [valid] Ep. 1 : Up. 38000 : ce-mean-words : 1.53952 : new best
+[2019-04-17 16:07:28] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 16:07:30] [valid] Ep. 1 : Up. 38000 : perplexity : 4.66237 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 16:08:14] [valid] Ep. 1 : Up. 38000 : translation : 26.17 : stalled 5 times (last best: 26.31)
+[2019-04-17 16:09:34] Ep. 1 : Up. 38100 : Sen. 21,223,949 : Cost 2.67509484 : Time 147.50s : 6528.68 words/s : L.r. 1.9441e-04
+[2019-04-17 16:11:00] Ep. 1 : Up. 38200 : Sen. 21,287,880 : Cost 2.67677379 : Time 85.50s : 11993.01 words/s : L.r. 1.9416e-04
+[2019-04-17 16:12:26] Ep. 1 : Up. 38300 : Sen. 21,366,043 : Cost 2.66036534 : Time 86.07s : 12567.75 words/s : L.r. 1.9390e-04
+[2019-04-17 16:13:51] Ep. 1 : Up. 38400 : Sen. 21,433,995 : Cost 2.64151502 : Time 85.48s : 12210.21 words/s : L.r. 1.9365e-04
+[2019-04-17 16:15:14] Ep. 1 : Up. 38500 : Sen. 21,499,609 : Cost 2.66478062 : Time 82.35s : 11994.31 words/s : L.r. 1.9340e-04
+[2019-04-17 16:16:33] Ep. 1 : Up. 38600 : Sen. 21,559,108 : Cost 2.68411446 : Time 78.97s : 11628.16 words/s : L.r. 1.9315e-04
+[2019-04-17 16:17:57] Ep. 1 : Up. 38700 : Sen. 21,631,774 : Cost 2.66018105 : Time 83.87s : 12466.46 words/s : L.r. 1.9290e-04
+[2019-04-17 16:19:15] Ep. 1 : Up. 38800 : Sen. 21,691,460 : Cost 2.64658976 : Time 78.36s : 11866.21 words/s : L.r. 1.9265e-04
+[2019-04-17 16:20:38] Ep. 1 : Up. 38900 : Sen. 21,762,868 : Cost 2.74731159 : Time 83.43s : 12232.29 words/s : L.r. 1.9240e-04
+[2019-04-17 16:22:03] Ep. 1 : Up. 39000 : Sen. 21,829,237 : Cost 2.62651253 : Time 84.22s : 12127.16 words/s : L.r. 1.9215e-04
+[2019-04-17 16:23:24] Ep. 1 : Up. 39100 : Sen. 21,892,552 : Cost 2.68942475 : Time 81.12s : 12219.38 words/s : L.r. 1.9191e-04
+[2019-04-17 16:24:46] Ep. 1 : Up. 39200 : Sen. 21,958,121 : Cost 2.65377617 : Time 82.34s : 12448.46 words/s : L.r. 1.9166e-04
+[2019-04-17 16:26:08] Ep. 1 : Up. 39300 : Sen. 22,020,176 : Cost 2.64011431 : Time 81.71s : 11963.43 words/s : L.r. 1.9142e-04
+[2019-04-17 16:27:34] Ep. 1 : Up. 39400 : Sen. 22,085,152 : Cost 2.58941889 : Time 86.35s : 12715.60 words/s : L.r. 1.9118e-04
+[2019-04-17 16:29:02] Ep. 1 : Up. 39500 : Sen. 22,162,152 : Cost 2.72384262 : Time 87.73s : 12669.11 words/s : L.r. 1.9093e-04
+[2019-04-17 16:30:32] Ep. 1 : Up. 39600 : Sen. 22,245,136 : Cost 2.66078210 : Time 89.74s : 12611.45 words/s : L.r. 1.9069e-04
+[2019-04-17 16:31:55] Ep. 1 : Up. 39700 : Sen. 22,309,707 : Cost 2.63949585 : Time 83.12s : 12238.95 words/s : L.r. 1.9045e-04
+[2019-04-17 16:33:14] Ep. 1 : Up. 39800 : Sen. 22,371,857 : Cost 2.66599512 : Time 79.33s : 12224.49 words/s : L.r. 1.9021e-04
+[2019-04-17 16:34:31] Ep. 1 : Up. 39900 : Sen. 22,434,338 : Cost 2.63919759 : Time 76.97s : 11629.28 words/s : L.r. 1.8997e-04
+[2019-04-17 16:35:58] Ep. 1 : Up. 40000 : Sen. 22,507,822 : Cost 2.63406849 : Time 86.85s : 12293.41 words/s : L.r. 1.8974e-04
+[2019-04-17 16:35:58] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 16:36:01] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 16:36:04] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 16:36:14] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 16:36:16] [valid] Ep. 1 : Up. 40000 : ce-mean-words : 1.53921 : new best
+[2019-04-17 16:36:20] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 16:36:22] [valid] Ep. 1 : Up. 40000 : perplexity : 4.66091 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 16:37:07] [valid] Ep. 1 : Up. 40000 : translation : 26.19 : stalled 6 times (last best: 26.31)
+[2019-04-17 16:38:36] Ep. 1 : Up. 40100 : Sen. 22,581,336 : Cost 2.63818455 : Time 157.77s : 6929.41 words/s : L.r. 1.8950e-04
+[2019-04-17 16:39:57] Ep. 1 : Up. 40200 : Sen. 22,641,915 : Cost 2.68555260 : Time 81.25s : 11753.72 words/s : L.r. 1.8926e-04
+[2019-04-17 16:41:20] Ep. 1 : Up. 40300 : Sen. 22,704,929 : Cost 2.62560177 : Time 83.10s : 11980.40 words/s : L.r. 1.8903e-04
+[2019-04-17 16:42:41] Ep. 1 : Up. 40400 : Sen. 22,769,070 : Cost 2.65096736 : Time 81.45s : 11679.59 words/s : L.r. 1.8880e-04
+[2019-04-17 16:44:00] Ep. 1 : Up. 40500 : Sen. 22,815,406 : Cost 2.60754228 : Time 78.44s : 11956.47 words/s : L.r. 1.8856e-04
+[2019-04-17 16:45:26] Ep. 1 : Up. 40600 : Sen. 22,884,952 : Cost 2.65163255 : Time 86.20s : 12216.13 words/s : L.r. 1.8833e-04
+[2019-04-17 16:46:45] Ep. 1 : Up. 40700 : Sen. 22,948,388 : Cost 2.67449737 : Time 78.77s : 11950.03 words/s : L.r. 1.8810e-04
+[2019-04-17 16:48:06] Ep. 1 : Up. 40800 : Sen. 23,014,370 : Cost 2.68735194 : Time 81.59s : 12637.46 words/s : L.r. 1.8787e-04
+[2019-04-17 16:49:26] Ep. 1 : Up. 40900 : Sen. 23,079,573 : Cost 2.66578484 : Time 79.27s : 12245.63 words/s : L.r. 1.8764e-04
+[2019-04-17 16:50:53] Ep. 1 : Up. 41000 : Sen. 23,152,313 : Cost 2.66331720 : Time 87.26s : 12996.51 words/s : L.r. 1.8741e-04
+[2019-04-17 16:52:17] Ep. 1 : Up. 41100 : Sen. 23,237,292 : Cost 2.67267966 : Time 84.56s : 12525.49 words/s : L.r. 1.8718e-04
+[2019-04-17 16:53:44] Ep. 1 : Up. 41200 : Sen. 23,311,159 : Cost 2.70326924 : Time 86.44s : 12330.12 words/s : L.r. 1.8695e-04
+[2019-04-17 16:55:06] Ep. 1 : Up. 41300 : Sen. 23,378,501 : Cost 2.66676426 : Time 81.69s : 12081.95 words/s : L.r. 1.8673e-04
+[2019-04-17 16:56:33] Ep. 1 : Up. 41400 : Sen. 23,452,974 : Cost 2.63443518 : Time 87.78s : 12658.77 words/s : L.r. 1.8650e-04
+[2019-04-17 16:57:57] Ep. 1 : Up. 41500 : Sen. 23,517,497 : Cost 2.68309712 : Time 83.47s : 12271.24 words/s : L.r. 1.8628e-04
+[2019-04-17 16:59:22] Ep. 1 : Up. 41600 : Sen. 23,589,006 : Cost 2.65376782 : Time 85.32s : 12208.85 words/s : L.r. 1.8605e-04
+[2019-04-17 17:00:47] Ep. 1 : Up. 41700 : Sen. 23,653,943 : Cost 2.67074323 : Time 84.35s : 12120.78 words/s : L.r. 1.8583e-04
+[2019-04-17 17:02:04] Ep. 1 : Up. 41800 : Sen. 23,716,946 : Cost 2.65907431 : Time 77.01s : 11950.95 words/s : L.r. 1.8561e-04
+[2019-04-17 17:03:23] Ep. 1 : Up. 41900 : Sen. 23,780,183 : Cost 2.70435762 : Time 79.95s : 12182.55 words/s : L.r. 1.8538e-04
+[2019-04-17 17:04:45] Ep. 1 : Up. 42000 : Sen. 23,852,637 : Cost 2.59012890 : Time 81.16s : 12613.86 words/s : L.r. 1.8516e-04
+[2019-04-17 17:04:45] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 17:04:48] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 17:04:52] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 17:05:02] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 17:05:04] [valid] Ep. 1 : Up. 42000 : ce-mean-words : 1.53904 : new best
+[2019-04-17 17:05:08] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 17:05:10] [valid] Ep. 1 : Up. 42000 : perplexity : 4.66009 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 17:05:55] [valid] Ep. 1 : Up. 42000 : translation : 26.17 : stalled 7 times (last best: 26.31)
+[2019-04-17 17:07:15] Ep. 1 : Up. 42100 : Sen. 23,910,720 : Cost 2.65958190 : Time 150.22s : 6348.11 words/s : L.r. 1.8494e-04
+[2019-04-17 17:08:38] Ep. 1 : Up. 42200 : Sen. 23,975,276 : Cost 2.63982415 : Time 83.39s : 11954.09 words/s : L.r. 1.8472e-04
+[2019-04-17 17:10:06] Ep. 1 : Up. 42300 : Sen. 24,044,184 : Cost 2.64182711 : Time 88.00s : 12571.09 words/s : L.r. 1.8451e-04
+[2019-04-17 17:11:29] Ep. 1 : Up. 42400 : Sen. 24,112,806 : Cost 2.67912555 : Time 83.11s : 12187.25 words/s : L.r. 1.8429e-04
+[2019-04-17 17:12:55] Ep. 1 : Up. 42500 : Sen. 24,191,304 : Cost 2.64484644 : Time 85.68s : 12227.27 words/s : L.r. 1.8407e-04
+[2019-04-17 17:14:21] Ep. 1 : Up. 42600 : Sen. 24,266,348 : Cost 2.64780092 : Time 85.52s : 12350.53 words/s : L.r. 1.8386e-04
+[2019-04-17 17:15:46] Ep. 1 : Up. 42700 : Sen. 24,334,710 : Cost 2.65647340 : Time 85.88s : 12499.51 words/s : L.r. 1.8364e-04
+[2019-04-17 17:17:06] Ep. 1 : Up. 42800 : Sen. 24,399,343 : Cost 2.68771577 : Time 79.62s : 11950.72 words/s : L.r. 1.8343e-04
+[2019-04-17 17:18:28] Ep. 1 : Up. 42900 : Sen. 24,459,406 : Cost 2.64323068 : Time 82.24s : 12187.45 words/s : L.r. 1.8321e-04
+[2019-04-17 17:19:52] Ep. 1 : Up. 43000 : Sen. 24,529,762 : Cost 2.70645738 : Time 83.82s : 12673.83 words/s : L.r. 1.8300e-04
+[2019-04-17 17:21:16] Ep. 1 : Up. 43100 : Sen. 24,601,882 : Cost 2.65838957 : Time 83.84s : 12338.17 words/s : L.r. 1.8279e-04
+[2019-04-17 17:22:42] Ep. 1 : Up. 43200 : Sen. 24,669,246 : Cost 2.61583328 : Time 86.30s : 12297.44 words/s : L.r. 1.8257e-04
+[2019-04-17 17:24:02] Ep. 1 : Up. 43300 : Sen. 24,736,532 : Cost 2.70949960 : Time 80.08s : 12216.54 words/s : L.r. 1.8236e-04
+[2019-04-17 17:25:21] Ep. 1 : Up. 43400 : Sen. 24,791,872 : Cost 2.64315224 : Time 79.17s : 12046.08 words/s : L.r. 1.8215e-04
+[2019-04-17 17:26:50] Ep. 1 : Up. 43500 : Sen. 24,873,039 : Cost 2.65474272 : Time 88.17s : 12458.20 words/s : L.r. 1.8194e-04
+[2019-04-17 17:28:14] Ep. 1 : Up. 43600 : Sen. 24,934,917 : Cost 2.61744666 : Time 84.37s : 12416.06 words/s : L.r. 1.8173e-04
+[2019-04-17 17:29:35] Ep. 1 : Up. 43700 : Sen. 25,000,465 : Cost 2.58531642 : Time 81.16s : 12169.56 words/s : L.r. 1.8153e-04
+[2019-04-17 17:30:57] Ep. 1 : Up. 43800 : Sen. 25,071,815 : Cost 2.67235947 : Time 81.83s : 12171.61 words/s : L.r. 1.8132e-04
+[2019-04-17 17:32:18] Ep. 1 : Up. 43900 : Sen. 25,137,121 : Cost 2.66391826 : Time 80.54s : 12203.14 words/s : L.r. 1.8111e-04
+[2019-04-17 17:33:44] Ep. 1 : Up. 44000 : Sen. 25,205,626 : Cost 2.67186594 : Time 85.95s : 12431.41 words/s : L.r. 1.8091e-04
+[2019-04-17 17:33:44] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 17:33:47] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 17:33:50] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 17:34:00] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 17:34:02] [valid] Ep. 1 : Up. 44000 : ce-mean-words : 1.53889 : new best
+[2019-04-17 17:34:06] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 17:34:08] [valid] Ep. 1 : Up. 44000 : perplexity : 4.65939 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 17:34:53] [valid] Ep. 1 : Up. 44000 : translation : 26.18 : stalled 8 times (last best: 26.31)
+[2019-04-17 17:36:17] Ep. 1 : Up. 44100 : Sen. 25,272,130 : Cost 2.64874530 : Time 153.75s : 6261.04 words/s : L.r. 1.8070e-04
+[2019-04-17 17:37:40] Ep. 1 : Up. 44200 : Sen. 25,339,616 : Cost 2.68169069 : Time 82.24s : 12317.14 words/s : L.r. 1.8050e-04
+[2019-04-17 17:39:06] Ep. 1 : Up. 44300 : Sen. 25,400,155 : Cost 2.69626904 : Time 86.26s : 12225.67 words/s : L.r. 1.8029e-04
+[2019-04-17 17:40:31] Ep. 1 : Up. 44400 : Sen. 25,475,010 : Cost 2.63330865 : Time 85.49s : 12381.51 words/s : L.r. 1.8009e-04
+[2019-04-17 17:41:54] Ep. 1 : Up. 44500 : Sen. 25,538,110 : Cost 2.67078400 : Time 82.41s : 12277.01 words/s : L.r. 1.7989e-04
+[2019-04-17 17:43:13] Ep. 1 : Up. 44600 : Sen. 25,596,002 : Cost 2.62753010 : Time 79.72s : 12049.92 words/s : L.r. 1.7969e-04
+[2019-04-17 17:44:36] Ep. 1 : Up. 44700 : Sen. 25,652,910 : Cost 2.67422152 : Time 82.73s : 12295.79 words/s : L.r. 1.7948e-04
+[2019-04-17 17:45:56] Ep. 1 : Up. 44800 : Sen. 25,720,577 : Cost 2.69554377 : Time 80.23s : 11995.20 words/s : L.r. 1.7928e-04
+[2019-04-17 17:47:16] Ep. 1 : Up. 44900 : Sen. 25,786,258 : Cost 2.62095404 : Time 80.02s : 12023.62 words/s : L.r. 1.7908e-04
+[2019-04-17 17:48:42] Ep. 1 : Up. 45000 : Sen. 25,851,804 : Cost 2.70175791 : Time 85.29s : 12430.42 words/s : L.r. 1.7889e-04
+[2019-04-17 17:50:08] Ep. 1 : Up. 45100 : Sen. 25,920,192 : Cost 2.70206165 : Time 86.07s : 11786.77 words/s : L.r. 1.7869e-04
+[2019-04-17 17:51:34] Ep. 1 : Up. 45200 : Sen. 25,997,044 : Cost 2.66162252 : Time 86.65s : 12267.44 words/s : L.r. 1.7849e-04
+[2019-04-17 17:52:55] Ep. 1 : Up. 45300 : Sen. 26,062,701 : Cost 2.67554021 : Time 80.17s : 12045.14 words/s : L.r. 1.7829e-04
+[2019-04-17 17:54:13] Ep. 1 : Up. 45400 : Sen. 26,126,838 : Cost 2.62614059 : Time 78.02s : 12138.69 words/s : L.r. 1.7810e-04
+[2019-04-17 17:55:40] Ep. 1 : Up. 45500 : Sen. 26,199,442 : Cost 2.66193891 : Time 87.64s : 12453.69 words/s : L.r. 1.7790e-04
+[2019-04-17 17:56:59] Ep. 1 : Up. 45600 : Sen. 26,257,157 : Cost 2.67038059 : Time 78.46s : 11817.96 words/s : L.r. 1.7770e-04
+[2019-04-17 17:58:26] Ep. 1 : Up. 45700 : Sen. 26,325,870 : Cost 2.62366581 : Time 87.39s : 12739.54 words/s : L.r. 1.7751e-04
+[2019-04-17 17:59:56] Ep. 1 : Up. 45800 : Sen. 26,403,032 : Cost 2.64889145 : Time 89.91s : 12815.91 words/s : L.r. 1.7732e-04
+[2019-04-17 18:01:26] Ep. 1 : Up. 45900 : Sen. 26,488,413 : Cost 2.58818221 : Time 90.42s : 12854.71 words/s : L.r. 1.7712e-04
+[2019-04-17 18:02:46] Ep. 1 : Up. 46000 : Sen. 26,561,982 : Cost 2.65428162 : Time 79.37s : 11544.88 words/s : L.r. 1.7693e-04
+[2019-04-17 18:02:46] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 18:02:49] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 18:02:52] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 18:03:02] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 18:03:04] [valid] Ep. 1 : Up. 46000 : ce-mean-words : 1.53877 : new best
+[2019-04-17 18:03:08] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 18:03:10] [valid] Ep. 1 : Up. 46000 : perplexity : 4.65887 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 18:03:55] [valid] Ep. 1 : Up. 46000 : translation : 26.18 : stalled 9 times (last best: 26.31)
+[2019-04-17 18:05:16] Ep. 1 : Up. 46100 : Sen. 26,617,854 : Cost 2.62802815 : Time 150.09s : 6160.88 words/s : L.r. 1.7674e-04
+[2019-04-17 18:06:40] Ep. 1 : Up. 46200 : Sen. 26,681,215 : Cost 2.58115244 : Time 83.67s : 12582.87 words/s : L.r. 1.7655e-04
+[2019-04-17 18:08:07] Ep. 1 : Up. 46300 : Sen. 26,761,908 : Cost 2.63338280 : Time 87.33s : 12233.55 words/s : L.r. 1.7636e-04
+[2019-04-17 18:09:27] Ep. 1 : Up. 46400 : Sen. 26,824,675 : Cost 2.67506027 : Time 80.32s : 12331.06 words/s : L.r. 1.7617e-04
+[2019-04-17 18:10:50] Ep. 1 : Up. 46500 : Sen. 26,889,438 : Cost 2.69247842 : Time 82.56s : 12167.14 words/s : L.r. 1.7598e-04
+[2019-04-17 18:12:14] Ep. 1 : Up. 46600 : Sen. 26,959,889 : Cost 2.69649482 : Time 84.46s : 12484.66 words/s : L.r. 1.7579e-04
+[2019-04-17 18:13:36] Ep. 1 : Up. 46700 : Sen. 27,020,646 : Cost 2.66991067 : Time 81.91s : 12119.30 words/s : L.r. 1.7560e-04
+[2019-04-17 18:15:01] Ep. 1 : Up. 46800 : Sen. 27,100,623 : Cost 2.67536092 : Time 85.24s : 12522.16 words/s : L.r. 1.7541e-04
+[2019-04-17 18:16:27] Ep. 1 : Up. 46900 : Sen. 27,167,778 : Cost 2.61791706 : Time 85.19s : 12329.74 words/s : L.r. 1.7522e-04
+[2019-04-17 18:17:50] Ep. 1 : Up. 47000 : Sen. 27,231,621 : Cost 2.67967463 : Time 83.71s : 12519.96 words/s : L.r. 1.7504e-04
+[2019-04-17 18:19:19] Ep. 1 : Up. 47100 : Sen. 27,312,459 : Cost 2.65257144 : Time 88.33s : 12592.53 words/s : L.r. 1.7485e-04
+[2019-04-17 18:20:38] Ep. 1 : Up. 47200 : Sen. 27,386,046 : Cost 2.67677307 : Time 79.77s : 12057.76 words/s : L.r. 1.7467e-04
+[2019-04-17 18:21:59] Ep. 1 : Up. 47300 : Sen. 27,454,330 : Cost 2.68197584 : Time 80.99s : 12160.90 words/s : L.r. 1.7448e-04
+[2019-04-17 18:23:22] Ep. 1 : Up. 47400 : Sen. 27,506,803 : Cost 2.67905378 : Time 83.02s : 11867.82 words/s : L.r. 1.7430e-04
+[2019-04-17 18:24:49] Ep. 1 : Up. 47500 : Sen. 27,570,693 : Cost 2.61712265 : Time 86.38s : 12271.38 words/s : L.r. 1.7411e-04
+[2019-04-17 18:26:11] Ep. 1 : Up. 47600 : Sen. 27,634,617 : Cost 2.64308500 : Time 82.50s : 12119.35 words/s : L.r. 1.7393e-04
+[2019-04-17 18:27:31] Ep. 1 : Up. 47700 : Sen. 27,710,726 : Cost 2.67521453 : Time 79.95s : 12051.94 words/s : L.r. 1.7375e-04
+[2019-04-17 18:28:56] Ep. 1 : Up. 47800 : Sen. 27,777,009 : Cost 2.70451617 : Time 84.58s : 12399.10 words/s : L.r. 1.7357e-04
+[2019-04-17 18:30:20] Ep. 1 : Up. 47900 : Sen. 27,846,709 : Cost 2.67591166 : Time 83.73s : 12736.53 words/s : L.r. 1.7339e-04
+[2019-04-17 18:31:39] Ep. 1 : Up. 48000 : Sen. 27,902,284 : Cost 2.65934753 : Time 79.51s : 11817.60 words/s : L.r. 1.7321e-04
+[2019-04-17 18:31:39] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 18:31:42] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 18:31:46] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 18:31:55] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 18:31:58] [valid] Ep. 1 : Up. 48000 : ce-mean-words : 1.53826 : new best
+[2019-04-17 18:32:01] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 18:32:03] [valid] Ep. 1 : Up. 48000 : perplexity : 4.65649 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 18:32:48] [valid] Ep. 1 : Up. 48000 : translation : 26.25 : stalled 10 times (last best: 26.31)
+[2019-04-17 18:34:11] Ep. 1 : Up. 48100 : Sen. 27,960,271 : Cost 2.66083169 : Time 152.20s : 6667.70 words/s : L.r. 1.7302e-04
+[2019-04-17 18:35:37] Ep. 1 : Up. 48200 : Sen. 28,027,940 : Cost 2.68773055 : Time 85.48s : 12780.41 words/s : L.r. 1.7285e-04
+[2019-04-17 18:37:01] Ep. 1 : Up. 48300 : Sen. 28,103,508 : Cost 2.58096218 : Time 84.81s : 12575.51 words/s : L.r. 1.7267e-04
+[2019-04-17 18:38:29] Ep. 1 : Up. 48400 : Sen. 28,184,990 : Cost 2.65583181 : Time 87.14s : 13096.40 words/s : L.r. 1.7249e-04
+[2019-04-17 18:39:52] Ep. 1 : Up. 48500 : Sen. 28,250,423 : Cost 2.64653182 : Time 83.59s : 11961.14 words/s : L.r. 1.7231e-04
+[2019-04-17 18:41:14] Ep. 1 : Up. 48600 : Sen. 28,315,858 : Cost 2.62098312 : Time 81.44s : 12256.93 words/s : L.r. 1.7213e-04
+[2019-04-17 18:42:31] Ep. 1 : Up. 48700 : Sen. 28,379,139 : Cost 2.66561460 : Time 77.55s : 11579.61 words/s : L.r. 1.7196e-04
+[2019-04-17 18:43:53] Ep. 1 : Up. 48800 : Sen. 28,437,977 : Cost 2.67325997 : Time 81.48s : 12284.09 words/s : L.r. 1.7178e-04
+[2019-04-17 18:45:11] Ep. 1 : Up. 48900 : Sen. 28,498,506 : Cost 2.67734551 : Time 77.99s : 11898.66 words/s : L.r. 1.7160e-04
+[2019-04-17 18:46:31] Ep. 1 : Up. 49000 : Sen. 28,579,452 : Cost 2.61563206 : Time 79.84s : 11827.98 words/s : L.r. 1.7143e-04
+[2019-04-17 18:47:53] Ep. 1 : Up. 49100 : Sen. 28,647,645 : Cost 2.63514733 : Time 82.15s : 12656.10 words/s : L.r. 1.7125e-04
+[2019-04-17 18:49:14] Ep. 1 : Up. 49200 : Sen. 28,701,743 : Cost 2.66726255 : Time 81.14s : 12651.05 words/s : L.r. 1.7108e-04
+[2019-04-17 18:50:39] Ep. 1 : Up. 49300 : Sen. 28,776,505 : Cost 2.66465330 : Time 84.79s : 12293.82 words/s : L.r. 1.7091e-04
+[2019-04-17 18:52:04] Ep. 1 : Up. 49400 : Sen. 28,846,871 : Cost 2.67204380 : Time 85.48s : 12695.55 words/s : L.r. 1.7073e-04
+[2019-04-17 18:53:24] Ep. 1 : Up. 49500 : Sen. 28,913,354 : Cost 2.64470172 : Time 80.14s : 12092.68 words/s : L.r. 1.7056e-04
+[2019-04-17 18:54:45] Ep. 1 : Up. 49600 : Sen. 28,980,744 : Cost 2.66448927 : Time 80.93s : 12268.82 words/s : L.r. 1.7039e-04
+[2019-04-17 18:56:05] Ep. 1 : Up. 49700 : Sen. 29,054,307 : Cost 2.71948123 : Time 79.83s : 12104.23 words/s : L.r. 1.7022e-04
+[2019-04-17 18:57:30] Ep. 1 : Up. 49800 : Sen. 29,123,381 : Cost 2.69834447 : Time 84.71s : 12970.19 words/s : L.r. 1.7005e-04
+[2019-04-17 18:58:55] Ep. 1 : Up. 49900 : Sen. 29,196,994 : Cost 2.63541460 : Time 85.32s : 12326.19 words/s : L.r. 1.6988e-04
+[2019-04-17 19:00:20] Ep. 1 : Up. 50000 : Sen. 29,261,798 : Cost 2.63769889 : Time 84.63s : 12177.58 words/s : L.r. 1.6971e-04
+[2019-04-17 19:00:20] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 19:00:23] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 19:00:26] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 19:00:36] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 19:00:38] [valid] Ep. 1 : Up. 50000 : ce-mean-words : 1.53797 : new best
+[2019-04-17 19:00:41] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 19:00:43] [valid] Ep. 1 : Up. 50000 : perplexity : 4.65511 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 19:01:27] [valid] Ep. 1 : Up. 50000 : translation : 26.29 : stalled 11 times (last best: 26.31)
+[2019-04-17 19:02:51] Ep. 1 : Up. 50100 : Sen. 29,331,203 : Cost 2.70530272 : Time 151.81s : 6654.20 words/s : L.r. 1.6954e-04
+[2019-04-17 19:04:15] Ep. 1 : Up. 50200 : Sen. 29,398,168 : Cost 2.62912750 : Time 83.77s : 12118.82 words/s : L.r. 1.6937e-04
+[2019-04-17 19:05:43] Ep. 1 : Up. 50300 : Sen. 29,460,225 : Cost 2.59412074 : Time 87.66s : 12270.49 words/s : L.r. 1.6920e-04
+[2019-04-17 19:07:04] Ep. 1 : Up. 50400 : Sen. 29,525,483 : Cost 2.68251586 : Time 81.49s : 12016.39 words/s : L.r. 1.6903e-04
+[2019-04-17 19:08:25] Ep. 1 : Up. 50500 : Sen. 29,586,644 : Cost 2.67340374 : Time 80.68s : 11817.86 words/s : L.r. 1.6886e-04
+[2019-04-17 19:09:47] Ep. 1 : Up. 50600 : Sen. 29,657,040 : Cost 2.68367171 : Time 82.31s : 12606.38 words/s : L.r. 1.6870e-04
+[2019-04-17 19:11:11] Ep. 1 : Up. 50700 : Sen. 29,730,405 : Cost 2.64826417 : Time 84.13s : 12213.56 words/s : L.r. 1.6853e-04
+[2019-04-17 19:12:38] Ep. 1 : Up. 50800 : Sen. 29,800,068 : Cost 2.60116863 : Time 86.70s : 12236.98 words/s : L.r. 1.6836e-04
+[2019-04-17 19:14:05] Ep. 1 : Up. 50900 : Sen. 29,878,144 : Cost 2.67226624 : Time 87.13s : 12792.09 words/s : L.r. 1.6820e-04
+[2019-04-17 19:15:26] Ep. 1 : Up. 51000 : Sen. 29,938,921 : Cost 2.64286447 : Time 80.88s : 12812.22 words/s : L.r. 1.6803e-04
+[2019-04-17 19:16:46] Ep. 1 : Up. 51100 : Sen. 29,998,133 : Cost 2.64662313 : Time 79.63s : 11751.02 words/s : L.r. 1.6787e-04
+[2019-04-17 19:18:09] Ep. 1 : Up. 51200 : Sen. 30,058,034 : Cost 2.63134003 : Time 83.10s : 12200.29 words/s : L.r. 1.6771e-04
+[2019-04-17 19:19:32] Ep. 1 : Up. 51300 : Sen. 30,137,202 : Cost 2.65695643 : Time 83.08s : 12566.11 words/s : L.r. 1.6754e-04
+[2019-04-17 19:20:51] Ep. 1 : Up. 51400 : Sen. 30,189,840 : Cost 2.68663359 : Time 78.59s : 12166.06 words/s : L.r. 1.6738e-04
+[2019-04-17 19:22:15] Ep. 1 : Up. 51500 : Sen. 30,260,038 : Cost 2.70462942 : Time 84.22s : 12199.69 words/s : L.r. 1.6722e-04
+[2019-04-17 19:23:39] Ep. 1 : Up. 51600 : Sen. 30,338,734 : Cost 2.65659833 : Time 83.98s : 12304.90 words/s : L.r. 1.6705e-04
+[2019-04-17 19:25:02] Ep. 1 : Up. 51700 : Sen. 30,394,278 : Cost 2.66304159 : Time 83.56s : 12471.03 words/s : L.r. 1.6689e-04
+[2019-04-17 19:26:27] Ep. 1 : Up. 51800 : Sen. 30,470,583 : Cost 2.65991235 : Time 84.31s : 12379.20 words/s : L.r. 1.6673e-04
+[2019-04-17 19:27:49] Ep. 1 : Up. 51900 : Sen. 30,537,827 : Cost 2.61492777 : Time 82.11s : 12307.19 words/s : L.r. 1.6657e-04
+[2019-04-17 19:29:15] Ep. 1 : Up. 52000 : Sen. 30,615,333 : Cost 2.67293072 : Time 86.17s : 12702.54 words/s : L.r. 1.6641e-04
+[2019-04-17 19:29:15] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 19:29:18] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 19:29:21] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 19:29:30] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 19:29:33] [valid] Ep. 1 : Up. 52000 : ce-mean-words : 1.5377 : new best
+[2019-04-17 19:29:36] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 19:29:38] [valid] Ep. 1 : Up. 52000 : perplexity : 4.65388 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 19:30:22] [valid] Ep. 1 : Up. 52000 : translation : 26.21 : stalled 12 times (last best: 26.31)
+[2019-04-17 19:31:45] Ep. 1 : Up. 52100 : Sen. 30,673,332 : Cost 2.63465953 : Time 150.36s : 6850.51 words/s : L.r. 1.6625e-04
+[2019-04-17 19:33:05] Ep. 1 : Up. 52200 : Sen. 30,730,649 : Cost 2.62796712 : Time 79.53s : 11965.47 words/s : L.r. 1.6609e-04
+[2019-04-17 19:34:26] Ep. 1 : Up. 52300 : Sen. 30,802,896 : Cost 2.70360756 : Time 81.03s : 12059.35 words/s : L.r. 1.6593e-04
+[2019-04-17 19:35:46] Ep. 1 : Up. 52400 : Sen. 30,879,352 : Cost 2.65554357 : Time 79.82s : 11879.49 words/s : L.r. 1.6577e-04
+[2019-04-17 19:37:08] Ep. 1 : Up. 52500 : Sen. 30,947,277 : Cost 2.72815585 : Time 82.05s : 12251.10 words/s : L.r. 1.6562e-04
+[2019-04-17 19:38:29] Ep. 1 : Up. 52600 : Sen. 31,008,854 : Cost 2.63761473 : Time 81.35s : 12148.35 words/s : L.r. 1.6546e-04
+[2019-04-17 19:39:54] Ep. 1 : Up. 52700 : Sen. 31,070,365 : Cost 2.60824823 : Time 84.98s : 12050.85 words/s : L.r. 1.6530e-04
+[2019-04-17 19:41:20] Ep. 1 : Up. 52800 : Sen. 31,144,411 : Cost 2.67989254 : Time 85.75s : 12381.56 words/s : L.r. 1.6514e-04
+[2019-04-17 19:42:38] Ep. 1 : Up. 52900 : Sen. 31,207,158 : Cost 2.65411854 : Time 78.51s : 12078.88 words/s : L.r. 1.6499e-04
+[2019-04-17 19:43:59] Ep. 1 : Up. 53000 : Sen. 31,267,422 : Cost 2.61295605 : Time 80.47s : 12862.42 words/s : L.r. 1.6483e-04
+[2019-04-17 19:45:21] Ep. 1 : Up. 53100 : Sen. 31,330,374 : Cost 2.62996411 : Time 82.63s : 12301.21 words/s : L.r. 1.6468e-04
+[2019-04-17 19:46:46] Ep. 1 : Up. 53200 : Sen. 31,403,679 : Cost 2.66068459 : Time 84.48s : 12669.82 words/s : L.r. 1.6452e-04
+[2019-04-17 19:48:06] Ep. 1 : Up. 53300 : Sen. 31,470,838 : Cost 2.65827632 : Time 80.11s : 11914.85 words/s : L.r. 1.6437e-04
+[2019-04-17 19:49:31] Ep. 1 : Up. 53400 : Sen. 31,544,884 : Cost 2.66347980 : Time 85.43s : 12907.30 words/s : L.r. 1.6421e-04
+[2019-04-17 19:50:55] Ep. 1 : Up. 53500 : Sen. 31,612,862 : Cost 2.66456032 : Time 83.52s : 12332.20 words/s : L.r. 1.6406e-04
+[2019-04-17 19:52:17] Ep. 1 : Up. 53600 : Sen. 31,675,379 : Cost 2.63523245 : Time 82.49s : 12172.72 words/s : L.r. 1.6391e-04
+[2019-04-17 19:53:38] Ep. 1 : Up. 53700 : Sen. 31,740,793 : Cost 2.68380904 : Time 80.47s : 12058.58 words/s : L.r. 1.6375e-04
+[2019-04-17 19:54:55] Ep. 1 : Up. 53800 : Sen. 31,803,754 : Cost 2.65669155 : Time 77.57s : 12229.21 words/s : L.r. 1.6360e-04
+[2019-04-17 19:56:18] Ep. 1 : Up. 53900 : Sen. 31,875,153 : Cost 2.67657304 : Time 82.64s : 12689.41 words/s : L.r. 1.6345e-04
+[2019-04-17 19:57:40] Ep. 1 : Up. 54000 : Sen. 31,935,696 : Cost 2.61836576 : Time 81.91s : 12251.46 words/s : L.r. 1.6330e-04
+[2019-04-17 19:57:40] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 19:57:43] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 19:57:47] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 19:57:56] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 19:57:58] [valid] Ep. 1 : Up. 54000 : ce-mean-words : 1.53761 : new best
+[2019-04-17 19:58:01] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 19:58:04] [valid] Ep. 1 : Up. 54000 : perplexity : 4.65344 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 19:58:48] [valid] Ep. 1 : Up. 54000 : translation : 26.21 : stalled 13 times (last best: 26.31)
+[2019-04-17 20:00:13] Ep. 1 : Up. 54100 : Sen. 32,008,994 : Cost 2.66066027 : Time 152.86s : 6879.50 words/s : L.r. 1.6315e-04
+[2019-04-17 20:01:37] Ep. 1 : Up. 54200 : Sen. 32,087,221 : Cost 2.68856120 : Time 83.91s : 12225.63 words/s : L.r. 1.6300e-04
+[2019-04-17 20:03:03] Ep. 1 : Up. 54300 : Sen. 32,148,675 : Cost 2.60137391 : Time 86.11s : 12378.77 words/s : L.r. 1.6285e-04
+[2019-04-17 20:04:25] Ep. 1 : Up. 54400 : Sen. 32,209,587 : Cost 2.57230592 : Time 81.58s : 11990.21 words/s : L.r. 1.6270e-04
+[2019-04-17 20:05:44] Ep. 1 : Up. 54500 : Sen. 32,275,967 : Cost 2.62642884 : Time 79.24s : 11880.31 words/s : L.r. 1.6255e-04
+[2019-04-17 20:07:06] Ep. 1 : Up. 54600 : Sen. 32,340,311 : Cost 2.60942554 : Time 82.12s : 12633.18 words/s : L.r. 1.6240e-04
+[2019-04-17 20:08:31] Ep. 1 : Up. 54700 : Sen. 32,415,157 : Cost 2.64982104 : Time 84.72s : 12603.49 words/s : L.r. 1.6225e-04
+[2019-04-17 20:09:57] Ep. 1 : Up. 54800 : Sen. 32,492,037 : Cost 2.73159385 : Time 86.49s : 12538.48 words/s : L.r. 1.6210e-04
+[2019-04-17 20:11:15] Ep. 1 : Up. 54900 : Sen. 32,550,714 : Cost 2.73908162 : Time 78.14s : 11797.79 words/s : L.r. 1.6196e-04
+[2019-04-17 20:12:37] Ep. 1 : Up. 55000 : Sen. 32,620,606 : Cost 2.62855864 : Time 81.99s : 12177.76 words/s : L.r. 1.6181e-04
+[2019-04-17 20:13:59] Ep. 1 : Up. 55100 : Sen. 32,686,297 : Cost 2.67384410 : Time 81.54s : 12270.72 words/s : L.r. 1.6166e-04
+[2019-04-17 20:15:24] Ep. 1 : Up. 55200 : Sen. 32,756,836 : Cost 2.63948035 : Time 85.66s : 12573.24 words/s : L.r. 1.6151e-04
+[2019-04-17 20:16:47] Ep. 1 : Up. 55300 : Sen. 32,810,225 : Cost 2.65357614 : Time 82.25s : 12154.36 words/s : L.r. 1.6137e-04
+[2019-04-17 20:18:07] Ep. 1 : Up. 55400 : Sen. 32,877,746 : Cost 2.64128995 : Time 80.45s : 12422.70 words/s : L.r. 1.6122e-04
+[2019-04-17 20:19:32] Ep. 1 : Up. 55500 : Sen. 32,958,692 : Cost 2.69694972 : Time 84.50s : 12429.90 words/s : L.r. 1.6108e-04
+[2019-04-17 20:20:55] Ep. 1 : Up. 55600 : Sen. 33,025,169 : Cost 2.63673925 : Time 83.23s : 12400.74 words/s : L.r. 1.6093e-04
+[2019-04-17 20:22:18] Ep. 1 : Up. 55700 : Sen. 33,086,106 : Cost 2.69197750 : Time 83.00s : 12546.45 words/s : L.r. 1.6079e-04
+[2019-04-17 20:23:38] Ep. 1 : Up. 55800 : Sen. 33,147,326 : Cost 2.63084888 : Time 80.10s : 12693.20 words/s : L.r. 1.6064e-04
+[2019-04-17 20:24:59] Ep. 1 : Up. 55900 : Sen. 33,209,848 : Cost 2.63461828 : Time 80.99s : 12577.35 words/s : L.r. 1.6050e-04
+[2019-04-17 20:26:19] Ep. 1 : Up. 56000 : Sen. 33,271,896 : Cost 2.62627625 : Time 79.96s : 12124.42 words/s : L.r. 1.6036e-04
+[2019-04-17 20:26:19] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 20:26:22] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 20:26:26] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 20:26:35] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 20:26:37] [valid] Ep. 1 : Up. 56000 : ce-mean-words : 1.53743 : new best
+[2019-04-17 20:26:40] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 20:26:43] [valid] Ep. 1 : Up. 56000 : perplexity : 4.65261 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 20:27:26] [valid] Ep. 1 : Up. 56000 : translation : 26.18 : stalled 14 times (last best: 26.31)
+[2019-04-17 20:28:47] Ep. 1 : Up. 56100 : Sen. 33,342,546 : Cost 2.63791060 : Time 148.28s : 6367.93 words/s : L.r. 1.6021e-04
+[2019-04-17 20:30:12] Ep. 1 : Up. 56200 : Sen. 33,414,738 : Cost 2.66599369 : Time 84.71s : 12509.75 words/s : L.r. 1.6007e-04
+[2019-04-17 20:31:39] Ep. 1 : Up. 56300 : Sen. 33,496,950 : Cost 2.65502906 : Time 86.92s : 12640.01 words/s : L.r. 1.5993e-04
+[2019-04-17 20:33:03] Ep. 1 : Up. 56400 : Sen. 33,562,832 : Cost 2.66608667 : Time 84.03s : 12293.89 words/s : L.r. 1.5979e-04
+[2019-04-17 20:34:21] Ep. 1 : Up. 56500 : Sen. 33,628,178 : Cost 2.67686439 : Time 78.61s : 11892.11 words/s : L.r. 1.5965e-04
+[2019-04-17 20:35:41] Ep. 1 : Up. 56600 : Sen. 33,688,466 : Cost 2.65814686 : Time 79.66s : 12441.13 words/s : L.r. 1.5950e-04
+[2019-04-17 20:37:05] Ep. 1 : Up. 56700 : Sen. 33,758,099 : Cost 2.72994232 : Time 83.38s : 12193.72 words/s : L.r. 1.5936e-04
+[2019-04-17 20:38:27] Ep. 1 : Up. 56800 : Sen. 33,820,510 : Cost 2.65906620 : Time 82.24s : 12377.95 words/s : L.r. 1.5922e-04
+[2019-04-17 20:39:49] Ep. 1 : Up. 56900 : Sen. 33,888,975 : Cost 2.64778280 : Time 81.78s : 12001.89 words/s : L.r. 1.5908e-04
+[2019-04-17 20:41:13] Ep. 1 : Up. 57000 : Sen. 33,960,126 : Cost 2.66754222 : Time 84.32s : 12662.38 words/s : L.r. 1.5894e-04
+[2019-04-17 20:42:36] Ep. 1 : Up. 57100 : Sen. 34,026,174 : Cost 2.71875048 : Time 82.68s : 12192.38 words/s : L.r. 1.5880e-04
+[2019-04-17 20:44:04] Ep. 1 : Up. 57200 : Sen. 34,099,546 : Cost 2.65577650 : Time 88.75s : 12442.34 words/s : L.r. 1.5867e-04
+[2019-04-17 20:45:26] Ep. 1 : Up. 57300 : Sen. 34,168,439 : Cost 2.68962455 : Time 81.83s : 12458.35 words/s : L.r. 1.5853e-04
+[2019-04-17 20:46:50] Ep. 1 : Up. 57400 : Sen. 34,241,286 : Cost 2.62839127 : Time 83.78s : 12535.48 words/s : L.r. 1.5839e-04
+[2019-04-17 20:48:10] Ep. 1 : Up. 57500 : Sen. 34,305,916 : Cost 2.59715986 : Time 79.97s : 12226.68 words/s : L.r. 1.5825e-04
+[2019-04-17 20:49:32] Ep. 1 : Up. 57600 : Sen. 34,376,688 : Cost 2.64242649 : Time 82.35s : 11942.41 words/s : L.r. 1.5811e-04
+[2019-04-17 20:50:55] Ep. 1 : Up. 57700 : Sen. 34,447,589 : Cost 2.59714794 : Time 82.38s : 12255.49 words/s : L.r. 1.5798e-04
+[2019-04-17 20:52:17] Ep. 1 : Up. 57800 : Sen. 34,505,828 : Cost 2.60179758 : Time 82.38s : 12348.95 words/s : L.r. 1.5784e-04
+[2019-04-17 20:53:46] Ep. 1 : Up. 57900 : Sen. 34,583,187 : Cost 2.60593486 : Time 89.41s : 12896.39 words/s : L.r. 1.5770e-04
+[2019-04-17 20:55:12] Ep. 1 : Up. 58000 : Sen. 34,653,715 : Cost 2.69531822 : Time 85.78s : 12708.31 words/s : L.r. 1.5757e-04
+[2019-04-17 20:55:12] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 20:55:17] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 20:55:20] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 20:55:30] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 20:55:35] [valid] Ep. 1 : Up. 58000 : ce-mean-words : 1.53737 : new best
+[2019-04-17 20:55:39] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 20:55:41] [valid] Ep. 1 : Up. 58000 : perplexity : 4.65234 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 20:56:25] [valid] Ep. 1 : Up. 58000 : translation : 26.2 : stalled 15 times (last best: 26.31)
+[2019-04-17 20:57:48] Ep. 1 : Up. 58100 : Sen. 34,725,720 : Cost 2.62910604 : Time 155.73s : 6610.59 words/s : L.r. 1.5743e-04
+[2019-04-17 20:59:09] Ep. 1 : Up. 58200 : Sen. 34,788,877 : Cost 2.59923935 : Time 81.35s : 12133.07 words/s : L.r. 1.5730e-04
+[2019-04-17 21:00:33] Ep. 1 : Up. 58300 : Sen. 34,852,265 : Cost 2.61579227 : Time 83.61s : 12045.00 words/s : L.r. 1.5716e-04
+[2019-04-17 21:01:57] Ep. 1 : Up. 58400 : Sen. 34,915,063 : Cost 2.73777342 : Time 84.03s : 12612.75 words/s : L.r. 1.5703e-04
+[2019-04-17 21:03:14] Ep. 1 : Up. 58500 : Sen. 34,963,122 : Cost 2.67177844 : Time 76.82s : 11936.14 words/s : L.r. 1.5689e-04
+[2019-04-17 21:04:38] Ep. 1 : Up. 58600 : Sen. 35,034,883 : Cost 2.66568589 : Time 83.93s : 12326.58 words/s : L.r. 1.5676e-04
+[2019-04-17 21:06:03] Ep. 1 : Up. 58700 : Sen. 35,116,604 : Cost 2.69041538 : Time 85.11s : 12607.74 words/s : L.r. 1.5663e-04
+[2019-04-17 21:07:23] Ep. 1 : Up. 58800 : Sen. 35,183,700 : Cost 2.61908388 : Time 80.20s : 12528.79 words/s : L.r. 1.5649e-04
+[2019-04-17 21:08:51] Ep. 1 : Up. 58900 : Sen. 35,258,659 : Cost 2.65753293 : Time 88.08s : 12493.03 words/s : L.r. 1.5636e-04
+[2019-04-17 21:10:08] Ep. 1 : Up. 59000 : Sen. 35,315,965 : Cost 2.63982844 : Time 77.32s : 11763.38 words/s : L.r. 1.5623e-04
+[2019-04-17 21:11:29] Ep. 1 : Up. 59100 : Sen. 35,379,383 : Cost 2.61327052 : Time 80.33s : 12353.35 words/s : L.r. 1.5609e-04
+[2019-04-17 21:12:50] Ep. 1 : Up. 59200 : Sen. 35,452,834 : Cost 2.70095849 : Time 81.78s : 12242.38 words/s : L.r. 1.5596e-04
+[2019-04-17 21:14:14] Ep. 1 : Up. 59300 : Sen. 35,520,649 : Cost 2.66170192 : Time 83.27s : 12042.20 words/s : L.r. 1.5583e-04
+[2019-04-17 21:15:33] Ep. 1 : Up. 59400 : Sen. 35,583,296 : Cost 2.69519544 : Time 79.07s : 12065.21 words/s : L.r. 1.5570e-04
+[2019-04-17 21:16:53] Ep. 1 : Up. 59500 : Sen. 35,644,187 : Cost 2.70750046 : Time 80.10s : 12175.35 words/s : L.r. 1.5557e-04
+[2019-04-17 21:18:17] Ep. 1 : Up. 59600 : Sen. 35,713,143 : Cost 2.68875933 : Time 84.20s : 12374.68 words/s : L.r. 1.5544e-04
+[2019-04-17 21:19:36] Ep. 1 : Up. 59700 : Sen. 35,781,686 : Cost 2.67413354 : Time 79.37s : 12203.91 words/s : L.r. 1.5531e-04
+[2019-04-17 21:21:00] Ep. 1 : Up. 59800 : Sen. 35,860,788 : Cost 2.65025878 : Time 84.01s : 12450.11 words/s : L.r. 1.5518e-04
+[2019-04-17 21:22:24] Ep. 1 : Up. 59900 : Sen. 35,919,415 : Cost 2.59799886 : Time 83.34s : 12358.46 words/s : L.r. 1.5505e-04
+[2019-04-17 21:23:46] Ep. 1 : Up. 60000 : Sen. 35,983,303 : Cost 2.64295506 : Time 81.70s : 12363.80 words/s : L.r. 1.5492e-04
+[2019-04-17 21:23:46] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 21:23:49] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 21:23:52] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 21:24:02] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 21:24:04] [valid] Ep. 1 : Up. 60000 : ce-mean-words : 1.53725 : new best
+[2019-04-17 21:24:07] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 21:24:09] [valid] Ep. 1 : Up. 60000 : perplexity : 4.65177 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 21:24:53] [valid] Ep. 1 : Up. 60000 : translation : 26.12 : stalled 16 times (last best: 26.31)
+[2019-04-17 21:26:17] Ep. 1 : Up. 60100 : Sen. 36,046,027 : Cost 2.59161901 : Time 151.24s : 6814.76 words/s : L.r. 1.5479e-04
+[2019-04-17 21:27:40] Ep. 1 : Up. 60200 : Sen. 36,118,830 : Cost 2.68984771 : Time 82.93s : 12217.15 words/s : L.r. 1.5466e-04
+[2019-04-17 21:29:05] Ep. 1 : Up. 60300 : Sen. 36,189,035 : Cost 2.61307120 : Time 85.37s : 12324.47 words/s : L.r. 1.5453e-04
+[2019-04-17 21:30:26] Ep. 1 : Up. 60400 : Sen. 36,250,220 : Cost 2.67204523 : Time 80.46s : 12188.72 words/s : L.r. 1.5441e-04
+[2019-04-17 21:31:52] Ep. 1 : Up. 60500 : Sen. 36,321,223 : Cost 2.67746878 : Time 86.46s : 12562.68 words/s : L.r. 1.5428e-04
+[2019-04-17 21:33:14] Ep. 1 : Up. 60600 : Sen. 36,390,387 : Cost 2.70546579 : Time 82.03s : 12240.68 words/s : L.r. 1.5415e-04
+[2019-04-17 21:34:39] Ep. 1 : Up. 60700 : Sen. 36,464,731 : Cost 2.60930586 : Time 85.42s : 12759.02 words/s : L.r. 1.5402e-04
+[2019-04-17 21:36:03] Ep. 1 : Up. 60800 : Sen. 36,533,146 : Cost 2.64985871 : Time 84.04s : 12359.01 words/s : L.r. 1.5390e-04
+[2019-04-17 21:37:29] Ep. 1 : Up. 60900 : Sen. 36,609,150 : Cost 2.66019511 : Time 85.76s : 12896.17 words/s : L.r. 1.5377e-04
+[2019-04-17 21:38:58] Ep. 1 : Up. 61000 : Sen. 36,680,565 : Cost 2.63545704 : Time 88.60s : 12532.38 words/s : L.r. 1.5364e-04
+[2019-04-17 21:40:20] Ep. 1 : Up. 61100 : Sen. 36,758,005 : Cost 2.62610650 : Time 82.18s : 12118.68 words/s : L.r. 1.5352e-04
+[2019-04-17 21:41:42] Ep. 1 : Up. 61200 : Sen. 36,822,489 : Cost 2.70831299 : Time 82.26s : 12534.70 words/s : L.r. 1.5339e-04
+[2019-04-17 21:42:59] Ep. 1 : Up. 61300 : Sen. 36,876,171 : Cost 2.66644168 : Time 77.07s : 11908.91 words/s : L.r. 1.5327e-04
+[2019-04-17 21:44:21] Ep. 1 : Up. 61400 : Sen. 36,937,514 : Cost 2.66109848 : Time 81.99s : 12213.14 words/s : L.r. 1.5314e-04
+[2019-04-17 21:45:46] Ep. 1 : Up. 61500 : Sen. 37,011,084 : Cost 2.64520645 : Time 84.58s : 12138.47 words/s : L.r. 1.5302e-04
+[2019-04-17 21:47:09] Ep. 1 : Up. 61600 : Sen. 37,084,146 : Cost 2.70662117 : Time 83.52s : 12499.84 words/s : L.r. 1.5289e-04
+[2019-04-17 21:48:34] Ep. 1 : Up. 61700 : Sen. 37,152,016 : Cost 2.66275454 : Time 84.73s : 12892.52 words/s : L.r. 1.5277e-04
+[2019-04-17 21:49:57] Ep. 1 : Up. 61800 : Sen. 37,210,641 : Cost 2.63415837 : Time 83.07s : 12167.92 words/s : L.r. 1.5265e-04
+[2019-04-17 21:51:19] Ep. 1 : Up. 61900 : Sen. 37,284,943 : Cost 2.59529114 : Time 81.33s : 12119.04 words/s : L.r. 1.5252e-04
+[2019-04-17 21:52:41] Ep. 1 : Up. 62000 : Sen. 37,346,719 : Cost 2.62455702 : Time 82.39s : 12634.19 words/s : L.r. 1.5240e-04
+[2019-04-17 21:52:41] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 21:52:44] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 21:52:47] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 21:52:57] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 21:52:59] [valid] Ep. 1 : Up. 62000 : ce-mean-words : 1.53719 : new best
+[2019-04-17 21:53:02] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 21:53:04] [valid] Ep. 1 : Up. 62000 : perplexity : 4.6515 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 21:53:48] [valid] Ep. 1 : Up. 62000 : translation : 26.17 : stalled 17 times (last best: 26.31)
+[2019-04-17 21:55:11] Ep. 1 : Up. 62100 : Sen. 37,413,574 : Cost 2.63953400 : Time 149.84s : 6811.34 words/s : L.r. 1.5228e-04
+[2019-04-17 21:56:29] Ep. 1 : Up. 62200 : Sen. 37,477,935 : Cost 2.71199226 : Time 78.46s : 11887.43 words/s : L.r. 1.5215e-04
+[2019-04-17 21:57:55] Ep. 1 : Up. 62300 : Sen. 37,551,840 : Cost 2.61313772 : Time 85.45s : 12352.94 words/s : L.r. 1.5203e-04
+[2019-04-17 21:59:15] Ep. 1 : Up. 62400 : Sen. 37,617,060 : Cost 2.70615959 : Time 80.07s : 12643.63 words/s : L.r. 1.5191e-04
+[2019-04-17 22:00:32] Ep. 1 : Up. 62500 : Sen. 37,682,528 : Cost 2.66730070 : Time 76.85s : 12169.09 words/s : L.r. 1.5179e-04
+[2019-04-17 22:01:53] Ep. 1 : Up. 62600 : Sen. 37,750,020 : Cost 2.64390683 : Time 81.79s : 12392.70 words/s : L.r. 1.5167e-04
+[2019-04-17 22:03:19] Ep. 1 : Up. 62700 : Sen. 37,811,767 : Cost 2.60474348 : Time 85.17s : 12432.23 words/s : L.r. 1.5155e-04
+[2019-04-17 22:04:43] Ep. 1 : Up. 62800 : Sen. 37,883,114 : Cost 2.72193837 : Time 84.31s : 12555.65 words/s : L.r. 1.5143e-04
+[2019-04-17 22:06:06] Ep. 1 : Up. 62900 : Sen. 37,951,591 : Cost 2.65228486 : Time 82.78s : 12608.39 words/s : L.r. 1.5131e-04
+[2019-04-17 22:07:28] Ep. 1 : Up. 63000 : Sen. 38,016,086 : Cost 2.65118814 : Time 82.06s : 12184.97 words/s : L.r. 1.5119e-04
+[2019-04-17 22:08:51] Ep. 1 : Up. 63100 : Sen. 38,086,707 : Cost 2.62789583 : Time 82.94s : 12303.39 words/s : L.r. 1.5107e-04
+[2019-04-17 22:10:13] Ep. 1 : Up. 63200 : Sen. 38,168,045 : Cost 2.62884021 : Time 82.28s : 11886.25 words/s : L.r. 1.5095e-04
+[2019-04-17 22:11:35] Ep. 1 : Up. 63300 : Sen. 38,226,901 : Cost 2.61261535 : Time 82.34s : 12441.89 words/s : L.r. 1.5083e-04
+[2019-04-17 22:13:04] Ep. 1 : Up. 63400 : Sen. 38,292,113 : Cost 2.60891771 : Time 88.53s : 12323.69 words/s : L.r. 1.5071e-04
+[2019-04-17 22:14:27] Ep. 1 : Up. 63500 : Sen. 38,355,998 : Cost 2.63339353 : Time 83.61s : 12242.67 words/s : L.r. 1.5059e-04
+[2019-04-17 22:15:46] Ep. 1 : Up. 63600 : Sen. 38,427,643 : Cost 2.77604866 : Time 78.73s : 12783.53 words/s : L.r. 1.5047e-04
+[2019-04-17 22:17:07] Ep. 1 : Up. 63700 : Sen. 38,492,724 : Cost 2.66592646 : Time 80.54s : 11832.65 words/s : L.r. 1.5035e-04
+[2019-04-17 22:18:29] Ep. 1 : Up. 63800 : Sen. 38,559,571 : Cost 2.59364080 : Time 82.31s : 12499.29 words/s : L.r. 1.5023e-04
+[2019-04-17 22:19:50] Ep. 1 : Up. 63900 : Sen. 38,616,552 : Cost 2.70562482 : Time 80.52s : 12461.07 words/s : L.r. 1.5012e-04
+[2019-04-17 22:21:11] Ep. 1 : Up. 64000 : Sen. 38,679,521 : Cost 2.59138823 : Time 81.81s : 12230.82 words/s : L.r. 1.5000e-04
+[2019-04-17 22:21:11] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 22:21:14] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 22:21:17] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 22:21:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 22:21:29] [valid] Ep. 1 : Up. 64000 : ce-mean-words : 1.53718 : new best
+[2019-04-17 22:21:32] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 22:21:34] [valid] Ep. 1 : Up. 64000 : perplexity : 4.65146 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 22:22:18] [valid] Ep. 1 : Up. 64000 : translation : 26.21 : stalled 18 times (last best: 26.31)
+[2019-04-17 22:23:47] Ep. 1 : Up. 64100 : Sen. 38,751,450 : Cost 2.64489818 : Time 155.84s : 7030.03 words/s : L.r. 1.4988e-04
+[2019-04-17 22:25:12] Ep. 1 : Up. 64200 : Sen. 38,820,503 : Cost 2.62547016 : Time 84.75s : 12033.32 words/s : L.r. 1.4977e-04
+[2019-04-17 22:26:32] Ep. 1 : Up. 64300 : Sen. 38,886,634 : Cost 2.67905784 : Time 79.77s : 12181.41 words/s : L.r. 1.4965e-04
+[2019-04-17 22:27:59] Ep. 1 : Up. 64400 : Sen. 38,955,841 : Cost 2.59359217 : Time 87.58s : 12122.58 words/s : L.r. 1.4953e-04
+[2019-04-17 22:29:21] Ep. 1 : Up. 64500 : Sen. 39,017,618 : Cost 2.72649837 : Time 81.30s : 12939.12 words/s : L.r. 1.4942e-04
+[2019-04-17 22:30:44] Ep. 1 : Up. 64600 : Sen. 39,078,484 : Cost 2.70360732 : Time 83.70s : 12545.27 words/s : L.r. 1.4930e-04
+[2019-04-17 22:32:04] Ep. 1 : Up. 64700 : Sen. 39,154,208 : Cost 2.66866255 : Time 80.13s : 12182.54 words/s : L.r. 1.4919e-04
+[2019-04-17 22:33:24] Ep. 1 : Up. 64800 : Sen. 39,218,853 : Cost 2.62038970 : Time 79.38s : 12273.86 words/s : L.r. 1.4907e-04
+[2019-04-17 22:34:44] Ep. 1 : Up. 64900 : Sen. 39,289,140 : Cost 2.63503408 : Time 80.26s : 12412.46 words/s : L.r. 1.4896e-04
+[2019-04-17 22:36:06] Ep. 1 : Up. 65000 : Sen. 39,354,567 : Cost 2.64457059 : Time 81.62s : 12502.23 words/s : L.r. 1.4884e-04
+[2019-04-17 22:37:31] Ep. 1 : Up. 65100 : Sen. 39,436,822 : Cost 2.65094304 : Time 85.82s : 13037.66 words/s : L.r. 1.4873e-04
+[2019-04-17 22:38:51] Ep. 1 : Up. 65200 : Sen. 39,509,153 : Cost 2.65698838 : Time 79.24s : 12056.53 words/s : L.r. 1.4861e-04
+[2019-04-17 22:40:15] Ep. 1 : Up. 65300 : Sen. 39,572,456 : Cost 2.61518264 : Time 84.06s : 12447.96 words/s : L.r. 1.4850e-04
+[2019-04-17 22:41:37] Ep. 1 : Up. 65400 : Sen. 39,636,506 : Cost 2.66904926 : Time 82.21s : 12497.03 words/s : L.r. 1.4839e-04
+[2019-04-17 22:42:59] Ep. 1 : Up. 65500 : Sen. 39,701,125 : Cost 2.61222529 : Time 82.32s : 12294.82 words/s : L.r. 1.4827e-04
+[2019-04-17 22:44:22] Ep. 1 : Up. 65600 : Sen. 39,772,579 : Cost 2.61039376 : Time 82.60s : 12090.11 words/s : L.r. 1.4816e-04
+[2019-04-17 22:45:48] Ep. 1 : Up. 65700 : Sen. 39,857,444 : Cost 2.65937114 : Time 85.98s : 13192.07 words/s : L.r. 1.4805e-04
+[2019-04-17 22:47:09] Ep. 1 : Up. 65800 : Sen. 39,930,733 : Cost 2.59095097 : Time 80.83s : 11726.07 words/s : L.r. 1.4793e-04
+[2019-04-17 22:48:34] Ep. 1 : Up. 65900 : Sen. 40,008,120 : Cost 2.65661192 : Time 85.30s : 12457.41 words/s : L.r. 1.4782e-04
+[2019-04-17 22:49:56] Ep. 1 : Up. 66000 : Sen. 40,078,516 : Cost 2.63791633 : Time 82.20s : 12734.25 words/s : L.r. 1.4771e-04
+[2019-04-17 22:49:56] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 22:49:59] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 22:50:03] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 22:50:12] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 22:50:15] [valid] Ep. 1 : Up. 66000 : ce-mean-words : 1.53696 : new best
+[2019-04-17 22:50:18] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 22:50:20] [valid] Ep. 1 : Up. 66000 : perplexity : 4.65044 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 22:51:04] [valid] Ep. 1 : Up. 66000 : translation : 26.23 : stalled 19 times (last best: 26.31)
+[2019-04-17 22:52:30] Ep. 1 : Up. 66100 : Sen. 40,140,387 : Cost 2.70917416 : Time 153.53s : 6817.92 words/s : L.r. 1.4760e-04
+[2019-04-17 22:53:51] Ep. 1 : Up. 66200 : Sen. 40,207,287 : Cost 2.68316841 : Time 80.91s : 12454.03 words/s : L.r. 1.4749e-04
+[2019-04-17 22:55:14] Ep. 1 : Up. 66300 : Sen. 40,278,233 : Cost 2.69516444 : Time 83.34s : 12322.38 words/s : L.r. 1.4738e-04
+[2019-04-17 22:56:34] Ep. 1 : Up. 66400 : Sen. 40,337,516 : Cost 2.71185756 : Time 79.98s : 12526.52 words/s : L.r. 1.4726e-04
+[2019-04-17 22:57:56] Ep. 1 : Up. 66500 : Sen. 40,392,083 : Cost 2.62377501 : Time 82.18s : 12421.57 words/s : L.r. 1.4715e-04
+[2019-04-17 22:59:15] Ep. 1 : Up. 66600 : Sen. 40,453,794 : Cost 2.65153742 : Time 79.01s : 12093.47 words/s : L.r. 1.4704e-04
+[2019-04-17 23:00:39] Ep. 1 : Up. 66700 : Sen. 40,526,144 : Cost 2.61315441 : Time 83.69s : 12180.43 words/s : L.r. 1.4693e-04
+[2019-04-17 23:02:00] Ep. 1 : Up. 66800 : Sen. 40,602,467 : Cost 2.66079426 : Time 81.32s : 12274.33 words/s : L.r. 1.4682e-04
+[2019-04-17 23:03:19] Ep. 1 : Up. 66900 : Sen. 40,668,735 : Cost 2.65161729 : Time 78.80s : 12401.39 words/s : L.r. 1.4671e-04
+[2019-04-17 23:04:40] Ep. 1 : Up. 67000 : Sen. 40,729,036 : Cost 2.70486569 : Time 80.80s : 12087.86 words/s : L.r. 1.4660e-04
+[2019-04-17 23:06:02] Ep. 1 : Up. 67100 : Sen. 40,797,276 : Cost 2.65847135 : Time 81.92s : 12340.14 words/s : L.r. 1.4649e-04
+[2019-04-17 23:07:23] Ep. 1 : Up. 67200 : Sen. 40,857,303 : Cost 2.64057255 : Time 81.04s : 12362.92 words/s : L.r. 1.4639e-04
+[2019-04-17 23:08:48] Ep. 1 : Up. 67300 : Sen. 40,923,330 : Cost 2.63391542 : Time 85.32s : 12541.99 words/s : L.r. 1.4628e-04
+[2019-04-17 23:10:16] Ep. 1 : Up. 67400 : Sen. 41,000,204 : Cost 2.65189934 : Time 88.34s : 12980.10 words/s : L.r. 1.4617e-04
+[2019-04-17 23:11:43] Ep. 1 : Up. 67500 : Sen. 41,081,961 : Cost 2.63274527 : Time 86.32s : 12427.82 words/s : L.r. 1.4606e-04
+[2019-04-17 23:13:01] Ep. 1 : Up. 67600 : Sen. 41,141,548 : Cost 2.68244267 : Time 78.36s : 11985.45 words/s : L.r. 1.4595e-04
+[2019-04-17 23:14:26] Ep. 1 : Up. 67700 : Sen. 41,213,370 : Cost 2.62208843 : Time 84.74s : 12315.58 words/s : L.r. 1.4584e-04
+[2019-04-17 23:15:53] Ep. 1 : Up. 67800 : Sen. 41,285,711 : Cost 2.63614511 : Time 87.22s : 12448.53 words/s : L.r. 1.4574e-04
+[2019-04-17 23:17:16] Ep. 1 : Up. 67900 : Sen. 41,347,079 : Cost 2.63421869 : Time 83.21s : 12669.01 words/s : L.r. 1.4563e-04
+[2019-04-17 23:18:36] Ep. 1 : Up. 68000 : Sen. 41,410,672 : Cost 2.62093997 : Time 79.39s : 12375.84 words/s : L.r. 1.4552e-04
+[2019-04-17 23:18:36] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 23:18:39] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 23:18:42] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 23:18:52] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 23:18:54] [valid] Ep. 1 : Up. 68000 : ce-mean-words : 1.5369 : new best
+[2019-04-17 23:18:57] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 23:18:59] [valid] Ep. 1 : Up. 68000 : perplexity : 4.65017 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 23:19:44] [valid] Ep. 1 : Up. 68000 : translation : 26.17 : stalled 20 times (last best: 26.31)
+[2019-04-17 23:21:02] Ep. 1 : Up. 68100 : Sen. 41,467,872 : Cost 2.71246934 : Time 146.42s : 6361.37 words/s : L.r. 1.4541e-04
+[2019-04-17 23:22:25] Ep. 1 : Up. 68200 : Sen. 41,534,855 : Cost 2.64932466 : Time 82.68s : 12179.95 words/s : L.r. 1.4531e-04
+[2019-04-17 23:23:50] Ep. 1 : Up. 68300 : Sen. 41,602,249 : Cost 2.65184450 : Time 85.57s : 12715.35 words/s : L.r. 1.4520e-04
+[2019-04-17 23:25:17] Ep. 1 : Up. 68400 : Sen. 41,683,571 : Cost 2.64907837 : Time 86.29s : 12358.17 words/s : L.r. 1.4510e-04
+[2019-04-17 23:26:40] Ep. 1 : Up. 68500 : Sen. 41,745,063 : Cost 2.60147309 : Time 83.07s : 12254.76 words/s : L.r. 1.4499e-04
+[2019-04-17 23:28:06] Ep. 1 : Up. 68600 : Sen. 41,820,219 : Cost 2.63619590 : Time 86.71s : 12399.91 words/s : L.r. 1.4488e-04
+[2019-04-17 23:29:24] Ep. 1 : Up. 68700 : Sen. 41,882,871 : Cost 2.68059254 : Time 77.72s : 12118.86 words/s : L.r. 1.4478e-04
+[2019-04-17 23:30:49] Ep. 1 : Up. 68800 : Sen. 41,960,983 : Cost 2.65338230 : Time 84.69s : 12642.75 words/s : L.r. 1.4467e-04
+[2019-04-17 23:32:10] Ep. 1 : Up. 68900 : Sen. 42,036,830 : Cost 2.65171552 : Time 81.49s : 11888.43 words/s : L.r. 1.4457e-04
+[2019-04-17 23:33:38] Ep. 1 : Up. 69000 : Sen. 42,103,328 : Cost 2.65294361 : Time 88.14s : 12735.83 words/s : L.r. 1.4446e-04
+[2019-04-17 23:34:58] Ep. 1 : Up. 69100 : Sen. 42,166,723 : Cost 2.65015864 : Time 79.24s : 11925.78 words/s : L.r. 1.4436e-04
+[2019-04-17 23:36:15] Ep. 1 : Up. 69200 : Sen. 42,218,841 : Cost 2.63236880 : Time 77.00s : 12180.52 words/s : L.r. 1.4425e-04
+[2019-04-17 23:37:44] Ep. 1 : Up. 69300 : Sen. 42,295,412 : Cost 2.64021850 : Time 89.22s : 12565.59 words/s : L.r. 1.4415e-04
+[2019-04-17 23:39:03] Ep. 1 : Up. 69400 : Sen. 42,353,661 : Cost 2.65063596 : Time 79.41s : 11994.81 words/s : L.r. 1.4405e-04
+[2019-04-17 23:40:21] Ep. 1 : Up. 69500 : Sen. 42,418,551 : Cost 2.70757103 : Time 78.03s : 12421.38 words/s : L.r. 1.4394e-04
+[2019-04-17 23:41:42] Ep. 1 : Up. 69600 : Sen. 42,482,087 : Cost 2.67017865 : Time 81.11s : 12528.63 words/s : L.r. 1.4384e-04
+[2019-04-17 23:43:04] Ep. 1 : Up. 69700 : Sen. 42,542,522 : Cost 2.63196135 : Time 81.84s : 12065.31 words/s : L.r. 1.4374e-04
+[2019-04-17 23:44:27] Ep. 1 : Up. 69800 : Sen. 42,605,200 : Cost 2.69566488 : Time 82.66s : 12837.45 words/s : L.r. 1.4363e-04
+[2019-04-17 23:45:45] Ep. 1 : Up. 69900 : Sen. 42,674,374 : Cost 2.65212655 : Time 78.08s : 12378.04 words/s : L.r. 1.4353e-04
+[2019-04-17 23:47:06] Ep. 1 : Up. 70000 : Sen. 42,740,462 : Cost 2.66861081 : Time 81.13s : 12205.62 words/s : L.r. 1.4343e-04
+[2019-04-17 23:47:06] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-17 23:47:09] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-17 23:47:12] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-17 23:47:22] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-17 23:47:24] [valid] Ep. 1 : Up. 70000 : ce-mean-words : 1.53688 : new best
+[2019-04-17 23:47:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-17 23:47:29] [valid] Ep. 1 : Up. 70000 : perplexity : 4.65006 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-17 23:48:13] [valid] Ep. 1 : Up. 70000 : translation : 26.2 : stalled 21 times (last best: 26.31)
+[2019-04-17 23:49:36] Ep. 1 : Up. 70100 : Sen. 42,795,828 : Cost 2.63732409 : Time 150.15s : 6753.49 words/s : L.r. 1.4333e-04
+[2019-04-17 23:51:02] Ep. 1 : Up. 70200 : Sen. 42,866,346 : Cost 2.66856456 : Time 85.53s : 12714.61 words/s : L.r. 1.4322e-04
+[2019-04-17 23:52:28] Ep. 1 : Up. 70300 : Sen. 42,946,713 : Cost 2.65948296 : Time 85.73s : 12517.58 words/s : L.r. 1.4312e-04
+[2019-04-17 23:53:49] Ep. 1 : Up. 70400 : Sen. 43,017,140 : Cost 2.68281317 : Time 81.08s : 12335.65 words/s : L.r. 1.4302e-04
+[2019-04-17 23:55:13] Ep. 1 : Up. 70500 : Sen. 43,080,232 : Cost 2.63694096 : Time 84.11s : 12152.94 words/s : L.r. 1.4292e-04
+[2019-04-17 23:56:34] Ep. 1 : Up. 70600 : Sen. 43,146,234 : Cost 2.61860943 : Time 81.04s : 12239.15 words/s : L.r. 1.4282e-04
+[2019-04-17 23:57:54] Ep. 1 : Up. 70700 : Sen. 43,213,869 : Cost 2.59022141 : Time 80.08s : 11984.73 words/s : L.r. 1.4272e-04
+[2019-04-17 23:59:21] Ep. 1 : Up. 70800 : Sen. 43,281,750 : Cost 2.63951898 : Time 87.54s : 12788.36 words/s : L.r. 1.4261e-04
+[2019-04-18 00:00:44] Ep. 1 : Up. 70900 : Sen. 43,357,343 : Cost 2.67455816 : Time 82.92s : 12509.34 words/s : L.r. 1.4251e-04
+[2019-04-18 00:02:07] Ep. 1 : Up. 71000 : Sen. 43,424,228 : Cost 2.64577222 : Time 82.31s : 12058.23 words/s : L.r. 1.4241e-04
+[2019-04-18 00:03:31] Ep. 1 : Up. 71100 : Sen. 43,490,724 : Cost 2.64674187 : Time 84.05s : 12425.38 words/s : L.r. 1.4231e-04
+[2019-04-18 00:04:54] Ep. 1 : Up. 71200 : Sen. 43,563,142 : Cost 2.64196277 : Time 83.47s : 12609.86 words/s : L.r. 1.4221e-04
+[2019-04-18 00:06:21] Ep. 1 : Up. 71300 : Sen. 43,644,421 : Cost 2.59756207 : Time 86.44s : 12432.25 words/s : L.r. 1.4211e-04
+[2019-04-18 00:07:45] Ep. 1 : Up. 71400 : Sen. 43,718,102 : Cost 2.68326378 : Time 83.90s : 12312.79 words/s : L.r. 1.4201e-04
+[2019-04-18 00:09:13] Ep. 1 : Up. 71500 : Sen. 43,795,798 : Cost 2.65497994 : Time 88.92s : 12619.08 words/s : L.r. 1.4191e-04
+[2019-04-18 00:10:30] Ep. 1 : Up. 71600 : Sen. 43,855,622 : Cost 2.67560911 : Time 76.55s : 12316.28 words/s : L.r. 1.4182e-04
+[2019-04-18 00:11:54] Ep. 1 : Up. 71700 : Sen. 43,919,278 : Cost 2.67186260 : Time 83.70s : 11877.70 words/s : L.r. 1.4172e-04
+[2019-04-18 00:13:15] Ep. 1 : Up. 71800 : Sen. 43,975,962 : Cost 2.66892815 : Time 81.09s : 12258.93 words/s : L.r. 1.4162e-04
+[2019-04-18 00:14:34] Ep. 1 : Up. 71900 : Sen. 44,039,162 : Cost 2.65022707 : Time 79.56s : 12327.52 words/s : L.r. 1.4152e-04
+[2019-04-18 00:15:50] Ep. 1 : Up. 72000 : Sen. 44,101,882 : Cost 2.73121810 : Time 75.85s : 11787.92 words/s : L.r. 1.4142e-04
+[2019-04-18 00:15:50] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-18 00:15:53] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-18 00:15:57] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-18 00:16:06] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-18 00:16:08] [valid] Ep. 1 : Up. 72000 : ce-mean-words : 1.53681 : new best
+[2019-04-18 00:16:11] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-18 00:16:13] [valid] Ep. 1 : Up. 72000 : perplexity : 4.64972 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-18 00:16:57] [valid] Ep. 1 : Up. 72000 : translation : 26.21 : stalled 22 times (last best: 26.31)
+[2019-04-18 00:18:20] Ep. 1 : Up. 72100 : Sen. 44,163,550 : Cost 2.61335874 : Time 149.68s : 6712.79 words/s : L.r. 1.4132e-04
+[2019-04-18 00:19:43] Ep. 1 : Up. 72200 : Sen. 44,235,896 : Cost 2.70693326 : Time 82.70s : 12027.28 words/s : L.r. 1.4123e-04
+[2019-04-18 00:21:05] Ep. 1 : Up. 72300 : Sen. 44,303,503 : Cost 2.62306523 : Time 82.08s : 12680.76 words/s : L.r. 1.4113e-04
+[2019-04-18 00:22:29] Ep. 1 : Up. 72400 : Sen. 44,369,886 : Cost 2.62063766 : Time 84.46s : 12841.13 words/s : L.r. 1.4103e-04
+[2019-04-18 00:23:54] Ep. 1 : Up. 72500 : Sen. 44,445,102 : Cost 2.63629866 : Time 85.07s : 12399.37 words/s : L.r. 1.4093e-04
+[2019-04-18 00:25:16] Ep. 1 : Up. 72600 : Sen. 44,505,566 : Cost 2.62164855 : Time 82.10s : 12411.18 words/s : L.r. 1.4084e-04
+[2019-04-18 00:26:35] Ep. 1 : Up. 72700 : Sen. 44,566,255 : Cost 2.64333224 : Time 78.60s : 11977.94 words/s : L.r. 1.4074e-04
+[2019-04-18 00:27:55] Ep. 1 : Up. 72800 : Sen. 44,615,547 : Cost 2.64804292 : Time 79.77s : 11941.12 words/s : L.r. 1.4064e-04
+[2019-04-18 00:29:14] Ep. 1 : Up. 72900 : Sen. 44,688,798 : Cost 2.67859888 : Time 79.76s : 12282.35 words/s : L.r. 1.4055e-04
+[2019-04-18 00:30:35] Ep. 1 : Up. 73000 : Sen. 44,763,593 : Cost 2.67699075 : Time 80.90s : 12470.55 words/s : L.r. 1.4045e-04
+[2019-04-18 00:31:58] Ep. 1 : Up. 73100 : Sen. 44,826,075 : Cost 2.63894606 : Time 82.95s : 12725.73 words/s : L.r. 1.4035e-04
+[2019-04-18 00:33:21] Ep. 1 : Up. 73200 : Sen. 44,890,764 : Cost 2.63849092 : Time 82.39s : 12346.95 words/s : L.r. 1.4026e-04
+[2019-04-18 00:34:39] Ep. 1 : Up. 73300 : Sen. 44,959,173 : Cost 2.62391925 : Time 78.45s : 11591.40 words/s : L.r. 1.4016e-04
+[2019-04-18 00:36:01] Ep. 1 : Up. 73400 : Sen. 45,033,977 : Cost 2.62597728 : Time 82.37s : 11832.52 words/s : L.r. 1.4007e-04
+[2019-04-18 00:37:27] Ep. 1 : Up. 73500 : Sen. 45,103,800 : Cost 2.62783432 : Time 85.41s : 12339.76 words/s : L.r. 1.3997e-04
+[2019-04-18 00:38:53] Ep. 1 : Up. 73600 : Sen. 45,182,532 : Cost 2.65372109 : Time 86.18s : 12785.03 words/s : L.r. 1.3988e-04
+[2019-04-18 00:40:15] Ep. 1 : Up. 73700 : Sen. 45,245,745 : Cost 2.70661831 : Time 82.44s : 12289.36 words/s : L.r. 1.3978e-04
+[2019-04-18 00:41:34] Ep. 1 : Up. 73800 : Sen. 45,307,521 : Cost 2.60398602 : Time 78.58s : 12186.30 words/s : L.r. 1.3969e-04
+[2019-04-18 00:42:59] Ep. 1 : Up. 73900 : Sen. 45,371,316 : Cost 2.64355016 : Time 85.04s : 12786.08 words/s : L.r. 1.3959e-04
+[2019-04-18 00:44:24] Ep. 1 : Up. 74000 : Sen. 45,443,412 : Cost 2.66536832 : Time 84.73s : 12473.74 words/s : L.r. 1.3950e-04
+[2019-04-18 00:44:24] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-18 00:44:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-18 00:44:30] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-18 00:44:39] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-18 00:44:41] [valid] Ep. 1 : Up. 74000 : ce-mean-words : 1.53678 : new best
+[2019-04-18 00:44:45] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-18 00:44:47] [valid] Ep. 1 : Up. 74000 : perplexity : 4.64958 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-18 00:45:31] [valid] Ep. 1 : Up. 74000 : translation : 26.16 : stalled 23 times (last best: 26.31)
+[2019-04-18 00:46:57] Ep. 1 : Up. 74100 : Sen. 45,513,484 : Cost 2.66546464 : Time 153.09s : 7094.40 words/s : L.r. 1.3940e-04
+[2019-04-18 00:48:29] Ep. 1 : Up. 74200 : Sen. 45,596,521 : Cost 2.61758375 : Time 92.18s : 12618.28 words/s : L.r. 1.3931e-04
+[2019-04-18 00:49:51] Ep. 1 : Up. 74300 : Sen. 45,664,954 : Cost 2.66861916 : Time 82.15s : 12134.08 words/s : L.r. 1.3922e-04
+[2019-04-18 00:51:15] Ep. 1 : Up. 74400 : Sen. 45,722,802 : Cost 2.65488267 : Time 83.83s : 12722.97 words/s : L.r. 1.3912e-04
+[2019-04-18 00:52:41] Ep. 1 : Up. 74500 : Sen. 45,792,387 : Cost 2.63272262 : Time 85.61s : 12489.98 words/s : L.r. 1.3903e-04
+[2019-04-18 00:54:02] Ep. 1 : Up. 74600 : Sen. 45,860,850 : Cost 2.63426328 : Time 81.13s : 11600.85 words/s : L.r. 1.3894e-04
+[2019-04-18 00:55:25] Ep. 1 : Up. 74700 : Sen. 45,925,474 : Cost 2.62349916 : Time 82.90s : 12198.70 words/s : L.r. 1.3884e-04
+[2019-04-18 00:56:50] Ep. 1 : Up. 74800 : Sen. 45,984,867 : Cost 2.68829918 : Time 84.97s : 12973.07 words/s : L.r. 1.3875e-04
+[2019-04-18 00:58:10] Ep. 1 : Up. 74900 : Sen. 46,052,290 : Cost 2.63759494 : Time 80.80s : 12091.83 words/s : L.r. 1.3866e-04
+[2019-04-18 00:59:33] Ep. 1 : Up. 75000 : Sen. 46,110,615 : Cost 2.64287233 : Time 82.15s : 12527.13 words/s : L.r. 1.3856e-04
+[2019-04-18 01:00:52] Ep. 1 : Up. 75100 : Sen. 46,174,115 : Cost 2.63849640 : Time 79.38s : 12351.65 words/s : L.r. 1.3847e-04
+[2019-04-18 01:02:13] Ep. 1 : Up. 75200 : Sen. 46,244,262 : Cost 2.68502760 : Time 81.06s : 12038.90 words/s : L.r. 1.3838e-04
+[2019-04-18 01:03:38] Ep. 1 : Up. 75300 : Sen. 46,327,362 : Cost 2.64677262 : Time 84.50s : 12563.17 words/s : L.r. 1.3829e-04
+[2019-04-18 01:05:02] Ep. 1 : Up. 75400 : Sen. 46,389,245 : Cost 2.67203569 : Time 84.54s : 12373.24 words/s : L.r. 1.3820e-04
+[2019-04-18 01:06:23] Ep. 1 : Up. 75500 : Sen. 46,459,405 : Cost 2.67303467 : Time 80.59s : 12324.48 words/s : L.r. 1.3810e-04
+[2019-04-18 01:07:41] Ep. 1 : Up. 75600 : Sen. 46,528,146 : Cost 2.65254021 : Time 78.28s : 12182.67 words/s : L.r. 1.3801e-04
+[2019-04-18 01:09:00] Ep. 1 : Up. 75700 : Sen. 46,581,975 : Cost 2.64347100 : Time 78.68s : 12088.36 words/s : L.r. 1.3792e-04
+[2019-04-18 01:10:20] Ep. 1 : Up. 75800 : Sen. 46,653,902 : Cost 2.68957376 : Time 80.71s : 12060.83 words/s : L.r. 1.3783e-04
+[2019-04-18 01:11:48] Ep. 1 : Up. 75900 : Sen. 46,736,576 : Cost 2.65280628 : Time 87.44s : 12774.59 words/s : L.r. 1.3774e-04
+[2019-04-18 01:13:12] Ep. 1 : Up. 76000 : Sen. 46,803,087 : Cost 2.68506885 : Time 83.91s : 12545.28 words/s : L.r. 1.3765e-04
+[2019-04-18 01:13:12] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-18 01:13:15] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-18 01:13:18] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-18 01:13:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-18 01:13:29] [valid] Ep. 1 : Up. 76000 : ce-mean-words : 1.53673 : new best
+[2019-04-18 01:13:33] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-18 01:13:35] [valid] Ep. 1 : Up. 76000 : perplexity : 4.64935 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-18 01:14:21] [valid] Ep. 1 : Up. 76000 : translation : 26.16 : stalled 24 times (last best: 26.31)
+[2019-04-18 01:15:49] Ep. 1 : Up. 76100 : Sen. 46,883,930 : Cost 2.63416553 : Time 157.08s : 7040.86 words/s : L.r. 1.3756e-04
+[2019-04-18 01:17:11] Ep. 1 : Up. 76200 : Sen. 46,953,271 : Cost 2.60542345 : Time 81.94s : 12448.30 words/s : L.r. 1.3747e-04
+[2019-04-18 01:18:25] Ep. 1 : Up. 76300 : Sen. 47,004,001 : Cost 2.64554143 : Time 74.61s : 11754.69 words/s : L.r. 1.3738e-04
+[2019-04-18 01:19:45] Ep. 1 : Up. 76400 : Sen. 47,064,559 : Cost 2.62805963 : Time 79.81s : 12031.89 words/s : L.r. 1.3729e-04
+[2019-04-18 01:21:10] Ep. 1 : Up. 76500 : Sen. 47,134,109 : Cost 2.63764811 : Time 84.65s : 12711.10 words/s : L.r. 1.3720e-04
+[2019-04-18 01:22:31] Ep. 1 : Up. 76600 : Sen. 47,205,743 : Cost 2.67222238 : Time 80.87s : 12323.81 words/s : L.r. 1.3711e-04
+[2019-04-18 01:23:50] Ep. 1 : Up. 76700 : Sen. 47,267,793 : Cost 2.64529634 : Time 79.61s : 11531.75 words/s : L.r. 1.3702e-04
+[2019-04-18 01:25:17] Ep. 1 : Up. 76800 : Sen. 47,329,546 : Cost 2.62052178 : Time 86.96s : 12727.77 words/s : L.r. 1.3693e-04
+[2019-04-18 01:26:35] Ep. 1 : Up. 76900 : Sen. 47,387,099 : Cost 2.66129303 : Time 77.76s : 12176.15 words/s : L.r. 1.3684e-04
+[2019-04-18 01:27:59] Ep. 1 : Up. 77000 : Sen. 47,453,047 : Cost 2.67056394 : Time 84.37s : 12077.80 words/s : L.r. 1.3675e-04
+[2019-04-18 01:29:25] Ep. 1 : Up. 77100 : Sen. 47,533,769 : Cost 2.68982673 : Time 85.47s : 12751.59 words/s : L.r. 1.3666e-04
+[2019-04-18 01:30:47] Ep. 1 : Up. 77200 : Sen. 47,597,405 : Cost 2.65383744 : Time 82.43s : 12610.00 words/s : L.r. 1.3658e-04
+[2019-04-18 01:32:09] Ep. 1 : Up. 77300 : Sen. 47,653,848 : Cost 2.62736559 : Time 81.98s : 12425.56 words/s : L.r. 1.3649e-04
+[2019-04-18 01:33:31] Ep. 1 : Up. 77400 : Sen. 47,726,880 : Cost 2.63646865 : Time 81.80s : 12365.09 words/s : L.r. 1.3640e-04
+[2019-04-18 01:34:52] Ep. 1 : Up. 77500 : Sen. 47,794,066 : Cost 2.62082887 : Time 81.21s : 12252.77 words/s : L.r. 1.3631e-04
+[2019-04-18 01:36:17] Ep. 1 : Up. 77600 : Sen. 47,865,599 : Cost 2.65456867 : Time 84.65s : 12636.77 words/s : L.r. 1.3622e-04
+[2019-04-18 01:37:34] Ep. 1 : Up. 77700 : Sen. 47,927,658 : Cost 2.66820836 : Time 77.04s : 11658.64 words/s : L.r. 1.3614e-04
+[2019-04-18 01:38:56] Ep. 1 : Up. 77800 : Sen. 47,998,182 : Cost 2.57280278 : Time 82.13s : 11860.81 words/s : L.r. 1.3605e-04
+[2019-04-18 01:40:21] Ep. 1 : Up. 77900 : Sen. 48,070,988 : Cost 2.63755178 : Time 84.76s : 12160.13 words/s : L.r. 1.3596e-04
+[2019-04-18 01:41:46] Ep. 1 : Up. 78000 : Sen. 48,131,997 : Cost 2.67460370 : Time 84.75s : 12554.87 words/s : L.r. 1.3587e-04
+[2019-04-18 01:41:46] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-18 01:41:49] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-18 01:41:52] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-18 01:42:01] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-18 01:42:03] [valid] Ep. 1 : Up. 78000 : ce-mean-words : 1.53668 : new best
+[2019-04-18 01:42:07] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-18 01:42:09] [valid] Ep. 1 : Up. 78000 : perplexity : 4.64911 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-18 01:42:53] [valid] Ep. 1 : Up. 78000 : translation : 26.18 : stalled 25 times (last best: 26.31)
+[2019-04-18 01:44:20] Ep. 1 : Up. 78100 : Sen. 48,207,707 : Cost 2.68109012 : Time 154.51s : 7151.51 words/s : L.r. 1.3579e-04
+[2019-04-18 01:45:46] Ep. 1 : Up. 78200 : Sen. 48,277,358 : Cost 2.66284490 : Time 85.73s : 12578.29 words/s : L.r. 1.3570e-04
+[2019-04-18 01:47:06] Ep. 1 : Up. 78300 : Sen. 48,339,826 : Cost 2.65577912 : Time 80.07s : 12003.02 words/s : L.r. 1.3561e-04
+[2019-04-18 01:48:28] Ep. 1 : Up. 78400 : Sen. 48,412,586 : Cost 2.70635200 : Time 81.64s : 12563.90 words/s : L.r. 1.3553e-04
+[2019-04-18 01:49:47] Ep. 1 : Up. 78500 : Sen. 48,468,375 : Cost 2.68011737 : Time 79.64s : 12025.29 words/s : L.r. 1.3544e-04
+[2019-04-18 01:51:13] Ep. 1 : Up. 78600 : Sen. 48,549,181 : Cost 2.60374475 : Time 85.41s : 12514.67 words/s : L.r. 1.3535e-04
+[2019-04-18 01:52:39] Ep. 1 : Up. 78700 : Sen. 48,615,802 : Cost 2.64288521 : Time 86.10s : 12603.89 words/s : L.r. 1.3527e-04
+[2019-04-18 01:54:03] Ep. 1 : Up. 78800 : Sen. 48,686,352 : Cost 2.63383794 : Time 84.43s : 12836.97 words/s : L.r. 1.3518e-04
+[2019-04-18 01:55:29] Ep. 1 : Up. 78900 : Sen. 48,759,311 : Cost 2.63013697 : Time 85.81s : 12640.51 words/s : L.r. 1.3510e-04
+[2019-04-18 01:56:53] Ep. 1 : Up. 79000 : Sen. 48,844,062 : Cost 2.64938951 : Time 84.02s : 12624.24 words/s : L.r. 1.3501e-04
+[2019-04-18 01:58:15] Ep. 1 : Up. 79100 : Sen. 48,908,475 : Cost 2.62346959 : Time 82.17s : 12756.40 words/s : L.r. 1.3493e-04
+[2019-04-18 01:59:38] Ep. 1 : Up. 79200 : Sen. 48,973,685 : Cost 2.69319677 : Time 82.58s : 12034.25 words/s : L.r. 1.3484e-04
+[2019-04-18 02:00:58] Ep. 1 : Up. 79300 : Sen. 49,037,772 : Cost 2.63834786 : Time 80.66s : 12233.89 words/s : L.r. 1.3475e-04
+[2019-04-18 02:02:18] Ep. 1 : Up. 79400 : Sen. 49,093,057 : Cost 2.60040927 : Time 79.85s : 12000.66 words/s : L.r. 1.3467e-04
+[2019-04-18 02:03:37] Ep. 1 : Up. 79500 : Sen. 49,156,787 : Cost 2.68155909 : Time 78.57s : 12348.76 words/s : L.r. 1.3459e-04
+[2019-04-18 02:04:53] Ep. 1 : Up. 79600 : Sen. 49,223,255 : Cost 2.67942595 : Time 76.59s : 11646.95 words/s : L.r. 1.3450e-04
+[2019-04-18 02:06:19] Ep. 1 : Up. 79700 : Sen. 49,284,891 : Cost 2.65135312 : Time 85.77s : 12395.23 words/s : L.r. 1.3442e-04
+[2019-04-18 02:07:43] Ep. 1 : Up. 79800 : Sen. 49,350,484 : Cost 2.65464234 : Time 83.93s : 12284.05 words/s : L.r. 1.3433e-04
+[2019-04-18 02:09:04] Ep. 1 : Up. 79900 : Sen. 49,421,767 : Cost 2.62757373 : Time 80.64s : 12008.85 words/s : L.r. 1.3425e-04
+[2019-04-18 02:10:26] Ep. 1 : Up. 80000 : Sen. 49,486,150 : Cost 2.69535494 : Time 81.99s : 11875.15 words/s : L.r. 1.3416e-04
+[2019-04-18 02:10:26] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-18 02:10:29] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-18 02:10:32] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-18 02:10:42] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-ce-mean-words.npz
+[2019-04-18 02:10:44] [valid] Ep. 1 : Up. 80000 : ce-mean-words : 1.53659 : new best
+[2019-04-18 02:10:47] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.best-perplexity.npz
+[2019-04-18 02:10:49] [valid] Ep. 1 : Up. 80000 : perplexity : 4.64869 : new best
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-18 02:11:33] [valid] Ep. 1 : Up. 80000 : translation : 26.18 : stalled 26 times (last best: 26.31)
+[2019-04-18 02:12:56] Ep. 1 : Up. 80100 : Sen. 49,551,353 : Cost 2.65627885 : Time 150.03s : 6774.54 words/s : L.r. 1.3408e-04
+[2019-04-18 02:14:19] Ep. 1 : Up. 80200 : Sen. 49,622,730 : Cost 2.57519102 : Time 82.86s : 12029.79 words/s : L.r. 1.3400e-04
+[2019-04-18 02:15:39] Ep. 1 : Up. 80300 : Sen. 49,690,925 : Cost 2.61702991 : Time 80.68s : 11816.91 words/s : L.r. 1.3391e-04
+[2019-04-18 02:17:03] Ep. 1 : Up. 80400 : Sen. 49,768,219 : Cost 2.63479257 : Time 83.68s : 12083.03 words/s : L.r. 1.3383e-04
+[2019-04-18 02:18:32] Ep. 1 : Up. 80500 : Sen. 49,844,030 : Cost 2.66486096 : Time 89.34s : 13003.41 words/s : L.r. 1.3375e-04
+[2019-04-18 02:19:54] Ep. 1 : Up. 80600 : Sen. 49,912,923 : Cost 2.66153073 : Time 81.62s : 12380.58 words/s : L.r. 1.3366e-04
+[2019-04-18 02:21:18] Ep. 1 : Up. 80700 : Sen. 49,986,211 : Cost 2.69240785 : Time 84.40s : 12694.02 words/s : L.r. 1.3358e-04
+[2019-04-18 02:22:44] Ep. 1 : Up. 80800 : Sen. 50,050,421 : Cost 2.64780045 : Time 85.92s : 12064.96 words/s : L.r. 1.3350e-04
+[2019-04-18 02:24:06] Ep. 1 : Up. 80900 : Sen. 50,110,557 : Cost 2.63681293 : Time 81.48s : 11858.42 words/s : L.r. 1.3342e-04
+[2019-04-18 02:25:22] Ep. 1 : Up. 81000 : Sen. 50,168,664 : Cost 2.67089677 : Time 75.99s : 11673.22 words/s : L.r. 1.3333e-04
+[2019-04-18 02:26:49] Ep. 1 : Up. 81100 : Sen. 50,247,543 : Cost 2.63955879 : Time 87.66s : 12621.85 words/s : L.r. 1.3325e-04
+[2019-04-18 02:28:11] Ep. 1 : Up. 81200 : Sen. 50,305,863 : Cost 2.67153311 : Time 81.71s : 12401.70 words/s : L.r. 1.3317e-04
+[2019-04-18 02:29:37] Ep. 1 : Up. 81300 : Sen. 50,369,934 : Cost 2.64874792 : Time 85.60s : 12838.16 words/s : L.r. 1.3309e-04
+[2019-04-18 02:31:02] Ep. 1 : Up. 81400 : Sen. 50,440,096 : Cost 2.67040777 : Time 85.42s : 12691.85 words/s : L.r. 1.3301e-04
+[2019-04-18 02:32:21] Ep. 1 : Up. 81500 : Sen. 50,498,011 : Cost 2.64138293 : Time 79.05s : 11710.33 words/s : L.r. 1.3292e-04
+[2019-04-18 02:33:42] Ep. 1 : Up. 81600 : Sen. 50,562,689 : Cost 2.64956641 : Time 80.39s : 12033.84 words/s : L.r. 1.3284e-04
+[2019-04-18 02:35:08] Ep. 1 : Up. 81700 : Sen. 50,626,208 : Cost 2.61271572 : Time 86.18s : 12081.46 words/s : L.r. 1.3276e-04
+[2019-04-18 02:36:29] Ep. 1 : Up. 81800 : Sen. 50,689,395 : Cost 2.63613534 : Time 81.45s : 12389.68 words/s : L.r. 1.3268e-04
+[2019-04-18 02:37:56] Ep. 1 : Up. 81900 : Sen. 50,755,756 : Cost 2.64519715 : Time 86.44s : 12778.59 words/s : L.r. 1.3260e-04
+[2019-04-18 02:39:19] Ep. 1 : Up. 82000 : Sen. 50,825,412 : Cost 2.65572071 : Time 83.29s : 12834.56 words/s : L.r. 1.3252e-04
+[2019-04-18 02:39:19] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-18 02:39:22] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-18 02:39:26] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-18 02:39:36] [valid] Ep. 1 : Up. 82000 : ce-mean-words : 1.53668 : stalled 1 times (last best: 1.53659)
+[2019-04-18 02:39:39] [valid] Ep. 1 : Up. 82000 : perplexity : 4.64911 : stalled 1 times (last best: 4.64869)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-18 02:40:23] [valid] Ep. 1 : Up. 82000 : translation : 26.19 : stalled 27 times (last best: 26.31)
+[2019-04-18 02:41:49] Ep. 1 : Up. 82100 : Sen. 50,896,868 : Cost 2.65746140 : Time 150.24s : 7099.01 words/s : L.r. 1.3244e-04
+[2019-04-18 02:43:14] Ep. 1 : Up. 82200 : Sen. 50,963,941 : Cost 2.64854193 : Time 85.09s : 12441.50 words/s : L.r. 1.3236e-04
+[2019-04-18 02:44:35] Ep. 1 : Up. 82300 : Sen. 51,034,600 : Cost 2.63888931 : Time 81.08s : 11904.77 words/s : L.r. 1.3228e-04
+[2019-04-18 02:46:01] Ep. 1 : Up. 82400 : Sen. 51,102,307 : Cost 2.67464209 : Time 85.64s : 12676.30 words/s : L.r. 1.3220e-04
+[2019-04-18 02:47:26] Ep. 1 : Up. 82500 : Sen. 51,176,963 : Cost 2.65096617 : Time 85.00s : 12560.28 words/s : L.r. 1.3212e-04
+[2019-04-18 02:48:43] Ep. 1 : Up. 82600 : Sen. 51,240,433 : Cost 2.65844750 : Time 77.48s : 12001.08 words/s : L.r. 1.3204e-04
+[2019-04-18 02:50:04] Ep. 1 : Up. 82700 : Sen. 51,304,034 : Cost 2.66919398 : Time 80.19s : 11885.47 words/s : L.r. 1.3196e-04
+[2019-04-18 02:51:20] Ep. 1 : Up. 82800 : Sen. 51,362,946 : Cost 2.73295331 : Time 76.78s : 12098.60 words/s : L.r. 1.3188e-04
+[2019-04-18 02:52:39] Ep. 1 : Up. 82900 : Sen. 51,423,705 : Cost 2.65475917 : Time 78.70s : 11980.35 words/s : L.r. 1.3180e-04
+[2019-04-18 02:54:04] Ep. 1 : Up. 83000 : Sen. 51,505,589 : Cost 2.59903479 : Time 85.36s : 12159.15 words/s : L.r. 1.3172e-04
+[2019-04-18 02:55:28] Ep. 1 : Up. 83100 : Sen. 51,578,662 : Cost 2.62056851 : Time 83.41s : 12290.13 words/s : L.r. 1.3164e-04
+[2019-04-18 02:56:47] Ep. 1 : Up. 83200 : Sen. 51,651,675 : Cost 2.67180634 : Time 79.26s : 11727.68 words/s : L.r. 1.3156e-04
+[2019-04-18 02:58:13] Ep. 1 : Up. 83300 : Sen. 51,728,397 : Cost 2.68206644 : Time 86.25s : 12610.95 words/s : L.r. 1.3148e-04
+[2019-04-18 02:59:37] Ep. 1 : Up. 83400 : Sen. 51,796,325 : Cost 2.68576527 : Time 84.04s : 12610.08 words/s : L.r. 1.3140e-04
+[2019-04-18 03:01:01] Ep. 1 : Up. 83500 : Sen. 51,864,279 : Cost 2.63669801 : Time 83.58s : 12321.98 words/s : L.r. 1.3132e-04
+[2019-04-18 03:02:30] Ep. 1 : Up. 83600 : Sen. 51,936,360 : Cost 2.64377046 : Time 88.56s : 13138.66 words/s : L.r. 1.3124e-04
+[2019-04-18 03:03:54] Ep. 1 : Up. 83700 : Sen. 52,004,036 : Cost 2.61906338 : Time 84.19s : 12306.38 words/s : L.r. 1.3117e-04
+[2019-04-18 03:05:15] Ep. 1 : Up. 83800 : Sen. 52,064,307 : Cost 2.58878326 : Time 80.93s : 12000.84 words/s : L.r. 1.3109e-04
+[2019-04-18 03:06:38] Ep. 1 : Up. 83900 : Sen. 52,135,697 : Cost 2.65449977 : Time 83.00s : 12191.72 words/s : L.r. 1.3101e-04
+[2019-04-18 03:07:56] Ep. 1 : Up. 84000 : Sen. 52,193,450 : Cost 2.67424440 : Time 78.31s : 12000.01 words/s : L.r. 1.3093e-04
+[2019-04-18 03:07:56] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-18 03:07:59] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-18 03:08:03] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz
+[2019-04-18 03:08:12] [valid] Ep. 1 : Up. 84000 : ce-mean-words : 1.53668 : stalled 2 times (last best: 1.53659)
+[2019-04-18 03:08:16] [valid] Ep. 1 : Up. 84000 : perplexity : 4.64911 : stalled 2 times (last best: 4.64869)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-18 03:09:00] [valid] Ep. 1 : Up. 84000 : translation : 26.19 : stalled 28 times (last best: 26.31)
+[2019-04-18 03:10:20] Ep. 1 : Up. 84100 : Sen. 52,261,935 : Cost 2.69506359 : Time 143.67s : 6652.13 words/s : L.r. 1.3085e-04
+[2019-04-18 03:11:42] Ep. 1 : Up. 84200 : Sen. 52,324,038 : Cost 2.61765456 : Time 82.27s : 12327.96 words/s : L.r. 1.3078e-04
+[2019-04-18 03:13:03] Ep. 1 : Up. 84300 : Sen. 52,397,155 : Cost 2.67764568 : Time 80.75s : 11779.78 words/s : L.r. 1.3070e-04
+[2019-04-18 03:14:28] Ep. 1 : Up. 84400 : Sen. 52,459,722 : Cost 2.62987542 : Time 85.37s : 12426.74 words/s : L.r. 1.3062e-04
+[2019-04-18 03:15:49] Ep. 1 : Up. 84500 : Sen. 52,519,217 : Cost 2.66348314 : Time 81.22s : 12086.21 words/s : L.r. 1.3054e-04
+[2019-04-18 03:17:06] Ep. 1 : Up. 84600 : Sen. 52,576,748 : Cost 2.63727546 : Time 77.17s : 11346.09 words/s : L.r. 1.3047e-04
+[2019-04-18 03:18:17] Ep. 1 : Up. 84700 : Sen. 52,632,252 : Cost 2.64514589 : Time 70.67s : 10880.77 words/s : L.r. 1.3039e-04
+[2019-04-18 03:19:30] Ep. 1 : Up. 84800 : Sen. 52,681,850 : Cost 2.62790322 : Time 72.86s : 10831.24 words/s : L.r. 1.3031e-04
+[2019-04-18 03:20:41] Ep. 1 : Up. 84900 : Sen. 52,723,297 : Cost 2.67606735 : Time 70.62s : 10532.49 words/s : L.r. 1.3023e-04
+[2019-04-18 03:21:54] Ep. 1 : Up. 85000 : Sen. 52,783,443 : Cost 2.63194871 : Time 73.58s : 11218.60 words/s : L.r. 1.3016e-04
+[2019-04-18 03:23:04] Ep. 1 : Up. 85100 : Sen. 52,830,151 : Cost 2.65262818 : Time 70.18s : 10434.96 words/s : L.r. 1.3008e-04
+[2019-04-18 03:23:33] Seen 52849860 samples
+[2019-04-18 03:23:33] Starting epoch 2
+[2019-04-18 03:23:33] Training finished
+[2019-04-18 03:23:37] [valid] Ep. 2 : Up. 85142 : ce-mean-words : 1.53677 : stalled 3 times (last best: 1.53659)
+[2019-04-18 03:23:41] [valid] Ep. 2 : Up. 85142 : perplexity : 4.64956 : stalled 3 times (last best: 4.64869)
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-04-18 03:24:25] [valid] Ep. 2 : Up. 85142 : translation : 26.21 : stalled 29 times (last best: 26.31)
+[2019-04-18 03:24:27] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.orig.npz
+[2019-04-18 03:24:30] Saving model weights and runtime parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz
+[2019-04-18 03:24:34] Saving Adam parameters to model/model_bt_noise_encz_bicleaner_cosmas_doc_from_base.npz.optimizer.npz

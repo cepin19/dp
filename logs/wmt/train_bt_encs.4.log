@@ -1,0 +1,2627 @@
+ITERATION 4
+[2019-03-30 13:16:26] Error: There are option(s) in a config file that are not expected
+[2019-03-30 13:16:26] Error: Aborted from void marian::ConfigParser::parseOptions(int, char**, bool) in /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/src/common/config_parser.cpp:707
+
+[CALL STACK]
+[0x552329]                                                            
+[0x5325c6]                                                            
+[0x5344bd]                                                            
+[0x534525]                                                            
+[0x44d27b]                                                            
+[0x421b70]                                                            
+[0x7f9d32cf9b35]    __libc_start_main                                  + 0xf5
+[0x44a19c]                                                            
+
+train_bt_encs.sh: line 2: 16919 Aborted                 (core dumped) $marian/marian --model model/model_bt_encz.npz --type transformer --train-sets corpus+paracrawl.2M.en.bpe corpus+paracrawl.2M.cz.bpe -e $e --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 4 --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-30 13:16:28] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-30 13:16:28] [marian] Running on spider3.lingea.cz as process 16924 with command line:
+[2019-03-30 13:16:28] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets bt.encz.en.bpe bt.encz.cz.bpe -e 5 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --optimizer-delay 4 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-30 13:16:29] [config] after-batches: 0
+[2019-03-30 13:16:29] [config] after-epochs: 5
+[2019-03-30 13:16:29] [config] allow-unk: false
+[2019-03-30 13:16:29] [config] beam-size: 6
+[2019-03-30 13:16:29] [config] best-deep: false
+[2019-03-30 13:16:29] [config] clip-gemm: 0
+[2019-03-30 13:16:29] [config] clip-norm: 5
+[2019-03-30 13:16:29] [config] cost-type: ce-mean-words
+[2019-03-30 13:16:29] [config] cpu-threads: 0
+[2019-03-30 13:16:29] [config] data-weighting-type: sentence
+[2019-03-30 13:16:29] [config] dec-cell: gru
+[2019-03-30 13:16:29] [config] dec-cell-base-depth: 2
+[2019-03-30 13:16:29] [config] dec-cell-high-depth: 1
+[2019-03-30 13:16:29] [config] dec-depth: 6
+[2019-03-30 13:16:29] [config] devices:
+[2019-03-30 13:16:29] [config]   - 0
+[2019-03-30 13:16:29] [config]   - 1
+[2019-03-30 13:16:29] [config] dim-emb: 1024
+[2019-03-30 13:16:29] [config] dim-rnn: 1024
+[2019-03-30 13:16:29] [config] dim-vocabs:
+[2019-03-30 13:16:29] [config]   - 34028
+[2019-03-30 13:16:29] [config]   - 34028
+[2019-03-30 13:16:29] [config] disp-first: 0
+[2019-03-30 13:16:29] [config] disp-freq: 500
+[2019-03-30 13:16:29] [config] disp-label-counts: false
+[2019-03-30 13:16:29] [config] dropout-rnn: 0
+[2019-03-30 13:16:29] [config] dropout-src: 0
+[2019-03-30 13:16:29] [config] dropout-trg: 0
+[2019-03-30 13:16:29] [config] early-stopping: 5
+[2019-03-30 13:16:29] [config] embedding-fix-src: false
+[2019-03-30 13:16:29] [config] embedding-fix-trg: false
+[2019-03-30 13:16:29] [config] embedding-normalization: false
+[2019-03-30 13:16:29] [config] enc-cell: gru
+[2019-03-30 13:16:29] [config] enc-cell-depth: 1
+[2019-03-30 13:16:29] [config] enc-depth: 6
+[2019-03-30 13:16:29] [config] enc-type: bidirectional
+[2019-03-30 13:16:29] [config] exponential-smoothing: 0.0001
+[2019-03-30 13:16:29] [config] grad-dropping-momentum: 0
+[2019-03-30 13:16:29] [config] grad-dropping-rate: 0
+[2019-03-30 13:16:29] [config] grad-dropping-warmup: 100
+[2019-03-30 13:16:29] [config] guided-alignment: none
+[2019-03-30 13:16:29] [config] guided-alignment-cost: mse
+[2019-03-30 13:16:29] [config] guided-alignment-weight: 0.1
+[2019-03-30 13:16:29] [config] ignore-model-config: false
+[2019-03-30 13:16:29] [config] interpolate-env-vars: false
+[2019-03-30 13:16:29] [config] keep-best: true
+[2019-03-30 13:16:29] [config] label-smoothing: 0.1
+[2019-03-30 13:16:29] [config] layer-normalization: false
+[2019-03-30 13:16:29] [config] learn-rate: 0.0002
+[2019-03-30 13:16:29] [config] log: model/bt_encz.log
+[2019-03-30 13:16:29] [config] log-level: info
+[2019-03-30 13:16:29] [config] lr-decay: 0
+[2019-03-30 13:16:29] [config] lr-decay-freq: 50000
+[2019-03-30 13:16:29] [config] lr-decay-inv-sqrt: 8000
+[2019-03-30 13:16:29] [config] lr-decay-repeat-warmup: false
+[2019-03-30 13:16:29] [config] lr-decay-reset-optimizer: false
+[2019-03-30 13:16:29] [config] lr-decay-start:
+[2019-03-30 13:16:29] [config]   - 10
+[2019-03-30 13:16:29] [config]   - 1
+[2019-03-30 13:16:29] [config] lr-decay-strategy: epoch+stalled
+[2019-03-30 13:16:29] [config] lr-report: true
+[2019-03-30 13:16:29] [config] lr-warmup: 8000
+[2019-03-30 13:16:29] [config] lr-warmup-at-reload: false
+[2019-03-30 13:16:29] [config] lr-warmup-cycle: false
+[2019-03-30 13:16:29] [config] lr-warmup-start-rate: 0
+[2019-03-30 13:16:29] [config] max-length: 100
+[2019-03-30 13:16:29] [config] max-length-crop: false
+[2019-03-30 13:16:29] [config] max-length-factor: 3
+[2019-03-30 13:16:29] [config] maxi-batch: 10000
+[2019-03-30 13:16:29] [config] maxi-batch-sort: trg
+[2019-03-30 13:16:29] [config] mini-batch: 1000
+[2019-03-30 13:16:29] [config] mini-batch-fit: true
+[2019-03-30 13:16:29] [config] mini-batch-fit-step: 10
+[2019-03-30 13:16:29] [config] mini-batch-words: 0
+[2019-03-30 13:16:29] [config] model: model/model_bt_encz.npz
+[2019-03-30 13:16:29] [config] multi-node: false
+[2019-03-30 13:16:29] [config] multi-node-overlap: true
+[2019-03-30 13:16:29] [config] n-best: false
+[2019-03-30 13:16:29] [config] no-nccl: true
+[2019-03-30 13:16:29] [config] no-reload: false
+[2019-03-30 13:16:29] [config] no-restore-corpus: false
+[2019-03-30 13:16:29] [config] no-shuffle: false
+[2019-03-30 13:16:29] [config] normalize: 0.6
+[2019-03-30 13:16:29] [config] optimizer: adam
+[2019-03-30 13:16:29] [config] optimizer-delay: 4
+[2019-03-30 13:16:29] [config] optimizer-params:
+[2019-03-30 13:16:29] [config]   - 0.9
+[2019-03-30 13:16:29] [config]   - 0.98
+[2019-03-30 13:16:29] [config]   - 1e-09
+[2019-03-30 13:16:29] [config] overwrite: true
+[2019-03-30 13:16:29] [config] quiet: false
+[2019-03-30 13:16:29] [config] quiet-translation: true
+[2019-03-30 13:16:29] [config] relative-paths: false
+[2019-03-30 13:16:29] [config] right-left: false
+[2019-03-30 13:16:29] [config] save-freq: 5000
+[2019-03-30 13:16:29] [config] seed: 0
+[2019-03-30 13:16:29] [config] sentencepiece-alphas:
+[2019-03-30 13:16:29] [config]   []
+[2019-03-30 13:16:29] [config] sentencepiece-max-lines: 10000000
+[2019-03-30 13:16:29] [config] sentencepiece-options: ""
+[2019-03-30 13:16:29] [config] shuffle-in-ram: false
+[2019-03-30 13:16:29] [config] skip: false
+[2019-03-30 13:16:29] [config] sqlite: temporary
+[2019-03-30 13:16:29] [config] sqlite-drop: false
+[2019-03-30 13:16:29] [config] sync-sgd: true
+[2019-03-30 13:16:29] [config] tempdir: /tmp
+[2019-03-30 13:16:29] [config] tied-embeddings: false
+[2019-03-30 13:16:29] [config] tied-embeddings-all: true
+[2019-03-30 13:16:29] [config] tied-embeddings-src: false
+[2019-03-30 13:16:29] [config] train-sets:
+[2019-03-30 13:16:29] [config]   - bt.encz.en.bpe
+[2019-03-30 13:16:29] [config]   - bt.encz.cz.bpe
+[2019-03-30 13:16:29] [config] transformer-aan-activation: swish
+[2019-03-30 13:16:29] [config] transformer-aan-depth: 2
+[2019-03-30 13:16:29] [config] transformer-aan-nogate: false
+[2019-03-30 13:16:29] [config] transformer-decoder-autoreg: self-attention
+[2019-03-30 13:16:29] [config] transformer-dim-aan: 2048
+[2019-03-30 13:16:29] [config] transformer-dim-ffn: 4096
+[2019-03-30 13:16:29] [config] transformer-dropout: 0.1
+[2019-03-30 13:16:29] [config] transformer-dropout-attention: 0.1
+[2019-03-30 13:16:29] [config] transformer-dropout-ffn: 0.1
+[2019-03-30 13:16:29] [config] transformer-ffn-activation: swish
+[2019-03-30 13:16:29] [config] transformer-ffn-depth: 2
+[2019-03-30 13:16:29] [config] transformer-guided-alignment-layer: last
+[2019-03-30 13:16:29] [config] transformer-heads: 16
+[2019-03-30 13:16:29] [config] transformer-no-projection: false
+[2019-03-30 13:16:29] [config] transformer-postprocess: da
+[2019-03-30 13:16:29] [config] transformer-postprocess-emb: d
+[2019-03-30 13:16:29] [config] transformer-preprocess: n
+[2019-03-30 13:16:29] [config] transformer-tied-layers:
+[2019-03-30 13:16:29] [config]   []
+[2019-03-30 13:16:29] [config] type: transformer
+[2019-03-30 13:16:29] [config] ulr: false
+[2019-03-30 13:16:29] [config] ulr-dim-emb: 0
+[2019-03-30 13:16:29] [config] ulr-dropout: 0
+[2019-03-30 13:16:29] [config] ulr-keys-vectors: ""
+[2019-03-30 13:16:29] [config] ulr-query-vectors: ""
+[2019-03-30 13:16:29] [config] ulr-softmax-temperature: 1
+[2019-03-30 13:16:29] [config] ulr-trainable-transformation: false
+[2019-03-30 13:16:29] [config] valid-freq: 5000
+[2019-03-30 13:16:29] [config] valid-log: model/valid.log
+[2019-03-30 13:16:29] [config] valid-max-length: 1000
+[2019-03-30 13:16:29] [config] valid-metrics:
+[2019-03-30 13:16:29] [config]   - ce-mean-words
+[2019-03-30 13:16:29] [config]   - perplexity
+[2019-03-30 13:16:29] [config]   - translation
+[2019-03-30 13:16:29] [config] valid-mini-batch: 16
+[2019-03-30 13:16:29] [config] valid-script-path: ./val.sh
+[2019-03-30 13:16:29] [config] valid-sets:
+[2019-03-30 13:16:29] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-30 13:16:29] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-30 13:16:29] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-30 13:16:29] [config] vocabs:
+[2019-03-30 13:16:29] [config]   - corp/vocab.encs.yml
+[2019-03-30 13:16:29] [config]   - corp/vocab.encs.yml
+[2019-03-30 13:16:29] [config] word-penalty: 0
+[2019-03-30 13:16:29] [config] workspace: 8600
+[2019-03-30 13:16:29] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-30 13:16:29] Using synchronous training
+[2019-03-30 13:16:29] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-30 13:16:29] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-30 13:16:29] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-30 13:16:30] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-30 13:16:30] [sqlite] Creating temporary database in /tmp
+[2019-03-30 13:16:34] [sqlite] Inserted 1000000 lines
+[2019-03-30 13:16:37] [sqlite] Inserted 2000000 lines
+[2019-03-30 13:16:45] [sqlite] Inserted 4000000 lines
+[2019-03-30 13:17:00] [sqlite] Inserted 8000000 lines
+[2019-03-30 13:17:38] [sqlite] Inserted 16000000 lines
+[2019-03-30 13:18:56] [sqlite] Inserted 32000000 lines
+[2019-03-30 13:20:11] [sqlite] Inserted 49633032 lines
+[2019-03-30 13:20:11] [sqlite] Creating primary index
+[2019-03-30 13:22:04] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-30 13:22:04] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-30 13:22:11] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-30 13:22:13] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-30 13:22:13] [comm] NCCL communicator overridden
+[2019-03-30 13:22:13] [memory] Reserving 805 MB, device gpu0
+[2019-03-30 13:22:13] [memory] Reserving 805 MB, device gpu0
+[2019-03-30 13:22:25] [batching] Done
+[2019-03-30 13:22:25] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-30 13:22:25] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-30 13:22:25] [comm] NCCL communicator overridden
+[2019-03-30 13:22:25] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-30 13:22:37] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-30 13:22:40] Loading Adam parameters from model/model_bt_encz.npz.optimizer.npz
+[2019-03-30 13:23:03] [memory] Reserving 805 MB, device gpu0
+[2019-03-30 13:23:03] [memory] Reserving 805 MB, device gpu1
+[2019-03-30 13:23:05] [data] Restoring the corpus state to epoch 5, batch 175000
+[2019-03-30 13:25:50] [sqlite] Selecting shuffled data
+[2019-03-30 13:47:50] Training started
+[2019-03-30 13:47:50] [memory] Reserving 805 MB, device gpu0
+[2019-03-30 13:47:51] [memory] Reserving 805 MB, device gpu1
+[2019-03-30 13:47:52] Loading model from model/model_bt_encz.npz
+[2019-03-30 13:48:00] [memory] Reserving 805 MB, device cpu0
+[2019-03-30 13:48:02] [memory] Reserving 402 MB, device gpu0
+[2019-03-30 13:48:02] [memory] Reserving 402 MB, device gpu1
+[2019-03-30 13:48:02] [memory] Reserving 805 MB, device gpu1
+[2019-03-30 13:48:02] [memory] Reserving 805 MB, device gpu0
+[2019-03-30 13:48:04] [memory] Reserving 402 MB, device gpu0
+[2019-03-30 13:48:04] [memory] Reserving 402 MB, device gpu1
+[2019-03-30 14:06:44] Ep. 5 : Up. 175500 : Sen. 14,321,460 : Cost 2.06849146 : Time 2659.27s : 3535.86 words/s : L.r. 4.2701e-05
+[2019-03-30 14:25:33] Ep. 5 : Up. 176000 : Sen. 14,714,583 : Cost 2.06709123 : Time 1128.35s : 8291.95 words/s : L.r. 4.2640e-05
+[2019-03-30 14:44:26] Ep. 5 : Up. 176500 : Sen. 15,090,869 : Cost 2.05783510 : Time 1133.54s : 8256.15 words/s : L.r. 4.2580e-05
+[2019-03-30 15:03:27] Ep. 5 : Up. 177000 : Sen. 15,480,971 : Cost 2.06507444 : Time 1140.73s : 8275.43 words/s : L.r. 4.2520e-05
+[2019-03-30 15:22:14] Ep. 5 : Up. 177500 : Sen. 15,858,440 : Cost 2.07230592 : Time 1127.61s : 8266.22 words/s : L.r. 4.2460e-05
+[2019-03-30 15:41:11] Ep. 5 : Up. 178000 : Sen. 16,238,832 : Cost 2.06080365 : Time 1136.44s : 8276.11 words/s : L.r. 4.2400e-05
+[2019-03-30 16:00:01] Ep. 5 : Up. 178500 : Sen. 16,597,204 : Cost 2.06411433 : Time 1130.43s : 8322.27 words/s : L.r. 4.2340e-05
+[2019-03-30 16:18:58] Ep. 5 : Up. 179000 : Sen. 16,972,671 : Cost 2.06548834 : Time 1137.13s : 8305.96 words/s : L.r. 4.2281e-05
+[2019-03-30 16:38:03] Ep. 5 : Up. 179500 : Sen. 17,353,129 : Cost 2.06203437 : Time 1144.88s : 8285.13 words/s : L.r. 4.2222e-05
+[2019-03-30 16:57:02] Ep. 5 : Up. 180000 : Sen. 17,728,803 : Cost 2.06500793 : Time 1138.49s : 8284.45 words/s : L.r. 4.2164e-05
+[2019-03-30 16:57:02] Saving model weights and runtime parameters to model/model_bt_encz.npz.orig.npz
+[2019-03-30 16:57:16] Saving model weights and runtime parameters to model/model_bt_encz.npz
+[2019-03-30 16:57:30] Saving Adam parameters to model/model_bt_encz.npz.optimizer.npz
+[2019-03-30 16:58:08] [valid] Ep. 5 : Up. 180000 : ce-mean-words : 1.58793 : stalled 3 times
+[2019-03-30 16:58:12] [valid] Ep. 5 : Up. 180000 : perplexity : 4.89361 : stalled 3 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-30 16:59:58] Saving model weights and runtime parameters to model/model_bt_encz.npz.best-translation.npz
+[2019-03-30 17:00:10] [valid] Ep. 5 : Up. 180000 : translation : 27.36 : new best
+[2019-03-30 17:19:08] Ep. 5 : Up. 180500 : Sen. 18,118,023 : Cost 2.05476880 : Time 1326.72s : 7099.16 words/s : L.r. 4.2105e-05
+[2019-03-30 17:38:03] Ep. 5 : Up. 181000 : Sen. 18,491,287 : Cost 2.05378103 : Time 1134.95s : 8279.45 words/s : L.r. 4.2047e-05
+[2019-03-30 17:57:00] Ep. 5 : Up. 181500 : Sen. 18,876,271 : Cost 2.05887771 : Time 1136.66s : 8271.89 words/s : L.r. 4.1989e-05
+[2019-03-30 18:15:53] Ep. 5 : Up. 182000 : Sen. 19,258,871 : Cost 2.05269980 : Time 1132.70s : 8232.95 words/s : L.r. 4.1931e-05
+[2019-03-30 18:34:49] Ep. 5 : Up. 182500 : Sen. 19,643,108 : Cost 2.05184007 : Time 1136.68s : 8231.17 words/s : L.r. 4.1874e-05
+[2019-03-30 18:53:51] Ep. 5 : Up. 183000 : Sen. 20,020,649 : Cost 2.05494618 : Time 1141.26s : 8284.30 words/s : L.r. 4.1817e-05
+[2019-03-30 19:12:40] Ep. 5 : Up. 183500 : Sen. 20,397,266 : Cost 2.04732585 : Time 1128.85s : 8236.12 words/s : L.r. 4.1760e-05
+[2019-03-30 19:31:29] Ep. 5 : Up. 184000 : Sen. 20,767,831 : Cost 2.05832338 : Time 1129.04s : 8300.17 words/s : L.r. 4.1703e-05
+[2019-03-30 19:50:12] Ep. 5 : Up. 184500 : Sen. 21,142,537 : Cost 2.04852319 : Time 1123.57s : 8293.85 words/s : L.r. 4.1646e-05
+[2019-03-30 20:09:06] Ep. 5 : Up. 185000 : Sen. 21,525,733 : Cost 2.04684806 : Time 1133.74s : 8299.55 words/s : L.r. 4.1590e-05
+[2019-03-30 20:09:06] Saving model weights and runtime parameters to model/model_bt_encz.npz.orig.npz
+[2019-03-30 20:09:20] Saving model weights and runtime parameters to model/model_bt_encz.npz
+[2019-03-30 20:09:34] Saving Adam parameters to model/model_bt_encz.npz.optimizer.npz
+[2019-03-30 20:10:11] [valid] Ep. 5 : Up. 185000 : ce-mean-words : 1.61462 : stalled 4 times
+[2019-03-30 20:10:15] [valid] Ep. 5 : Up. 185000 : perplexity : 5.02598 : stalled 4 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-30 20:12:07] [valid] Ep. 5 : Up. 185000 : translation : 27.27 : stalled 1 times
+[2019-03-30 20:31:02] Ep. 5 : Up. 185500 : Sen. 21,911,084 : Cost 2.04603648 : Time 1316.44s : 7110.02 words/s : L.r. 4.1534e-05
+[2019-03-30 20:49:56] Ep. 5 : Up. 186000 : Sen. 22,289,085 : Cost 2.05048656 : Time 1133.91s : 8284.08 words/s : L.r. 4.1478e-05
+[2019-03-30 21:08:49] Ep. 5 : Up. 186500 : Sen. 22,682,684 : Cost 2.04729891 : Time 1132.27s : 8223.17 words/s : L.r. 4.1422e-05
+[2019-03-30 21:27:43] Ep. 5 : Up. 187000 : Sen. 23,041,767 : Cost 2.04780149 : Time 1134.32s : 8244.01 words/s : L.r. 4.1367e-05
+[2019-03-30 21:46:52] Ep. 5 : Up. 187500 : Sen. 23,423,175 : Cost 2.04902887 : Time 1148.78s : 8286.45 words/s : L.r. 4.1312e-05
+[2019-03-30 22:05:49] Ep. 5 : Up. 188000 : Sen. 23,805,303 : Cost 2.04203701 : Time 1137.54s : 8266.48 words/s : L.r. 4.1257e-05
+[2019-03-30 22:24:45] Ep. 5 : Up. 188500 : Sen. 24,186,175 : Cost 2.04429364 : Time 1135.62s : 8275.23 words/s : L.r. 4.1202e-05
+[2019-03-30 22:43:41] Ep. 5 : Up. 189000 : Sen. 24,563,206 : Cost 2.04704285 : Time 1136.37s : 8273.39 words/s : L.r. 4.1148e-05
+[2019-03-30 23:02:43] Ep. 5 : Up. 189500 : Sen. 24,940,734 : Cost 2.04898262 : Time 1142.09s : 8310.02 words/s : L.r. 4.1093e-05
+[2019-03-30 23:21:38] Ep. 5 : Up. 190000 : Sen. 25,317,146 : Cost 2.04182553 : Time 1134.86s : 8290.69 words/s : L.r. 4.1039e-05
+[2019-03-30 23:21:38] Saving model weights and runtime parameters to model/model_bt_encz.npz.orig.npz
+[2019-03-30 23:21:50] Saving model weights and runtime parameters to model/model_bt_encz.npz
+[2019-03-30 23:22:03] Saving Adam parameters to model/model_bt_encz.npz.optimizer.npz
+[2019-03-30 23:22:39] [valid] Ep. 5 : Up. 190000 : ce-mean-words : 1.6346 : stalled 5 times
+[2019-03-30 23:22:43] [valid] Ep. 5 : Up. 190000 : perplexity : 5.12743 : stalled 5 times
+Detokenizer Version $Revision: 4134 $
+Language: en
+[2019-03-30 23:24:28] [valid] Ep. 5 : Up. 190000 : translation : 27.13 : stalled 2 times
+[2019-03-30 23:24:29] Training finished
+[2019-03-30 23:24:29] Saving model weights and runtime parameters to model/model_bt_encz.npz.orig.npz
+[2019-03-30 23:24:42] Saving model weights and runtime parameters to model/model_bt_encz.npz
+[2019-03-30 23:24:55] Saving Adam parameters to model/model_bt_encz.npz.optimizer.npz
+ITERATION 5
+[2019-03-30 23:25:28] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-30 23:25:28] [marian] Running on spider3.lingea.cz as process 7239 with command line:
+[2019-03-30 23:25:28] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets corpus+paracrawl.2M.en.bpe corpus+paracrawl.2M.cz.bpe -e 5 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 4 --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-30 23:25:29] [config] after-batches: 0
+[2019-03-30 23:25:29] [config] after-epochs: 5
+[2019-03-30 23:25:29] [config] allow-unk: false
+[2019-03-30 23:25:29] [config] beam-size: 6
+[2019-03-30 23:25:29] [config] best-deep: false
+[2019-03-30 23:25:29] [config] clip-gemm: 0
+[2019-03-30 23:25:29] [config] clip-norm: 5
+[2019-03-30 23:25:29] [config] cost-type: ce-mean-words
+[2019-03-30 23:25:29] [config] cpu-threads: 0
+[2019-03-30 23:25:29] [config] data-weighting-type: sentence
+[2019-03-30 23:25:29] [config] dec-cell: gru
+[2019-03-30 23:25:29] [config] dec-cell-base-depth: 2
+[2019-03-30 23:25:29] [config] dec-cell-high-depth: 1
+[2019-03-30 23:25:29] [config] dec-depth: 6
+[2019-03-30 23:25:29] [config] devices:
+[2019-03-30 23:25:29] [config]   - 0
+[2019-03-30 23:25:29] [config]   - 1
+[2019-03-30 23:25:29] [config] dim-emb: 1024
+[2019-03-30 23:25:29] [config] dim-rnn: 1024
+[2019-03-30 23:25:29] [config] dim-vocabs:
+[2019-03-30 23:25:29] [config]   - 34028
+[2019-03-30 23:25:29] [config]   - 34028
+[2019-03-30 23:25:29] [config] disp-first: 0
+[2019-03-30 23:25:29] [config] disp-freq: 500
+[2019-03-30 23:25:29] [config] disp-label-counts: false
+[2019-03-30 23:25:29] [config] dropout-rnn: 0
+[2019-03-30 23:25:29] [config] dropout-src: 0
+[2019-03-30 23:25:29] [config] dropout-trg: 0
+[2019-03-30 23:25:29] [config] early-stopping: 5
+[2019-03-30 23:25:29] [config] embedding-fix-src: false
+[2019-03-30 23:25:29] [config] embedding-fix-trg: false
+[2019-03-30 23:25:29] [config] embedding-normalization: false
+[2019-03-30 23:25:29] [config] enc-cell: gru
+[2019-03-30 23:25:29] [config] enc-cell-depth: 1
+[2019-03-30 23:25:29] [config] enc-depth: 6
+[2019-03-30 23:25:29] [config] enc-type: bidirectional
+[2019-03-30 23:25:29] [config] exponential-smoothing: 0.0001
+[2019-03-30 23:25:29] [config] grad-dropping-momentum: 0
+[2019-03-30 23:25:29] [config] grad-dropping-rate: 0
+[2019-03-30 23:25:29] [config] grad-dropping-warmup: 100
+[2019-03-30 23:25:29] [config] guided-alignment: none
+[2019-03-30 23:25:29] [config] guided-alignment-cost: mse
+[2019-03-30 23:25:29] [config] guided-alignment-weight: 0.1
+[2019-03-30 23:25:29] [config] ignore-model-config: false
+[2019-03-30 23:25:29] [config] interpolate-env-vars: false
+[2019-03-30 23:25:29] [config] keep-best: true
+[2019-03-30 23:25:29] [config] label-smoothing: 0.1
+[2019-03-30 23:25:29] [config] layer-normalization: false
+[2019-03-30 23:25:29] [config] learn-rate: 0.0002
+[2019-03-30 23:25:29] [config] log: model/bt_encz.log
+[2019-03-30 23:25:29] [config] log-level: info
+[2019-03-30 23:25:29] [config] lr-decay: 0
+[2019-03-30 23:25:29] [config] lr-decay-freq: 50000
+[2019-03-30 23:25:29] [config] lr-decay-inv-sqrt: 8000
+[2019-03-30 23:25:29] [config] lr-decay-repeat-warmup: false
+[2019-03-30 23:25:29] [config] lr-decay-reset-optimizer: false
+[2019-03-30 23:25:29] [config] lr-decay-start:
+[2019-03-30 23:25:29] [config]   - 10
+[2019-03-30 23:25:29] [config]   - 1
+[2019-03-30 23:25:29] [config] lr-decay-strategy: epoch+stalled
+[2019-03-30 23:25:29] [config] lr-report: true
+[2019-03-30 23:25:29] [config] lr-warmup: 8000
+[2019-03-30 23:25:29] [config] lr-warmup-at-reload: false
+[2019-03-30 23:25:29] [config] lr-warmup-cycle: false
+[2019-03-30 23:25:29] [config] lr-warmup-start-rate: 0
+[2019-03-30 23:25:29] [config] max-length: 100
+[2019-03-30 23:25:29] [config] max-length-crop: false
+[2019-03-30 23:25:29] [config] max-length-factor: 3
+[2019-03-30 23:25:29] [config] maxi-batch: 10000
+[2019-03-30 23:25:29] [config] maxi-batch-sort: trg
+[2019-03-30 23:25:29] [config] mini-batch: 1000
+[2019-03-30 23:25:29] [config] mini-batch-fit: true
+[2019-03-30 23:25:29] [config] mini-batch-fit-step: 10
+[2019-03-30 23:25:29] [config] mini-batch-words: 0
+[2019-03-30 23:25:29] [config] model: model/model_bt_encz.npz
+[2019-03-30 23:25:29] [config] multi-node: false
+[2019-03-30 23:25:29] [config] multi-node-overlap: true
+[2019-03-30 23:25:29] [config] n-best: false
+[2019-03-30 23:25:29] [config] no-nccl: true
+[2019-03-30 23:25:29] [config] no-reload: false
+[2019-03-30 23:25:29] [config] no-restore-corpus: false
+[2019-03-30 23:25:29] [config] no-shuffle: false
+[2019-03-30 23:25:29] [config] normalize: 0.6
+[2019-03-30 23:25:29] [config] optimizer: adam
+[2019-03-30 23:25:29] [config] optimizer-delay: 4
+[2019-03-30 23:25:29] [config] optimizer-params:
+[2019-03-30 23:25:29] [config]   - 0.9
+[2019-03-30 23:25:29] [config]   - 0.98
+[2019-03-30 23:25:29] [config]   - 1e-09
+[2019-03-30 23:25:29] [config] overwrite: true
+[2019-03-30 23:25:29] [config] quiet: false
+[2019-03-30 23:25:29] [config] quiet-translation: true
+[2019-03-30 23:25:29] [config] relative-paths: false
+[2019-03-30 23:25:29] [config] right-left: false
+[2019-03-30 23:25:29] [config] save-freq: 5000
+[2019-03-30 23:25:29] [config] seed: 0
+[2019-03-30 23:25:29] [config] sentencepiece-alphas:
+[2019-03-30 23:25:29] [config]   []
+[2019-03-30 23:25:29] [config] sentencepiece-max-lines: 10000000
+[2019-03-30 23:25:29] [config] sentencepiece-options: ""
+[2019-03-30 23:25:29] [config] shuffle-in-ram: false
+[2019-03-30 23:25:29] [config] skip: false
+[2019-03-30 23:25:29] [config] sqlite: temporary
+[2019-03-30 23:25:29] [config] sqlite-drop: false
+[2019-03-30 23:25:29] [config] sync-sgd: true
+[2019-03-30 23:25:29] [config] tempdir: /tmp
+[2019-03-30 23:25:29] [config] tied-embeddings: false
+[2019-03-30 23:25:29] [config] tied-embeddings-all: true
+[2019-03-30 23:25:29] [config] tied-embeddings-src: false
+[2019-03-30 23:25:29] [config] train-sets:
+[2019-03-30 23:25:29] [config]   - corpus+paracrawl.2M.en.bpe
+[2019-03-30 23:25:29] [config]   - corpus+paracrawl.2M.cz.bpe
+[2019-03-30 23:25:29] [config] transformer-aan-activation: swish
+[2019-03-30 23:25:29] [config] transformer-aan-depth: 2
+[2019-03-30 23:25:29] [config] transformer-aan-nogate: false
+[2019-03-30 23:25:29] [config] transformer-decoder-autoreg: self-attention
+[2019-03-30 23:25:29] [config] transformer-dim-aan: 2048
+[2019-03-30 23:25:29] [config] transformer-dim-ffn: 4096
+[2019-03-30 23:25:29] [config] transformer-dropout: 0.1
+[2019-03-30 23:25:29] [config] transformer-dropout-attention: 0.1
+[2019-03-30 23:25:29] [config] transformer-dropout-ffn: 0.1
+[2019-03-30 23:25:29] [config] transformer-ffn-activation: swish
+[2019-03-30 23:25:29] [config] transformer-ffn-depth: 2
+[2019-03-30 23:25:29] [config] transformer-guided-alignment-layer: last
+[2019-03-30 23:25:29] [config] transformer-heads: 16
+[2019-03-30 23:25:29] [config] transformer-no-projection: false
+[2019-03-30 23:25:29] [config] transformer-postprocess: da
+[2019-03-30 23:25:29] [config] transformer-postprocess-emb: d
+[2019-03-30 23:25:29] [config] transformer-preprocess: n
+[2019-03-30 23:25:29] [config] transformer-tied-layers:
+[2019-03-30 23:25:29] [config]   []
+[2019-03-30 23:25:29] [config] type: transformer
+[2019-03-30 23:25:29] [config] ulr: false
+[2019-03-30 23:25:29] [config] ulr-dim-emb: 0
+[2019-03-30 23:25:29] [config] ulr-dropout: 0
+[2019-03-30 23:25:29] [config] ulr-keys-vectors: ""
+[2019-03-30 23:25:29] [config] ulr-query-vectors: ""
+[2019-03-30 23:25:29] [config] ulr-softmax-temperature: 1
+[2019-03-30 23:25:29] [config] ulr-trainable-transformation: false
+[2019-03-30 23:25:29] [config] valid-freq: 5000
+[2019-03-30 23:25:29] [config] valid-log: model/valid.log
+[2019-03-30 23:25:29] [config] valid-max-length: 1000
+[2019-03-30 23:25:29] [config] valid-metrics:
+[2019-03-30 23:25:29] [config]   - ce-mean-words
+[2019-03-30 23:25:29] [config]   - perplexity
+[2019-03-30 23:25:29] [config]   - translation
+[2019-03-30 23:25:29] [config] valid-mini-batch: 16
+[2019-03-30 23:25:29] [config] valid-script-path: ./val.sh
+[2019-03-30 23:25:29] [config] valid-sets:
+[2019-03-30 23:25:29] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-30 23:25:29] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-30 23:25:29] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-30 23:25:29] [config] vocabs:
+[2019-03-30 23:25:29] [config]   - corp/vocab.encs.yml
+[2019-03-30 23:25:29] [config]   - corp/vocab.encs.yml
+[2019-03-30 23:25:29] [config] word-penalty: 0
+[2019-03-30 23:25:29] [config] workspace: 8600
+[2019-03-30 23:25:29] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-30 23:25:29] Using synchronous training
+[2019-03-30 23:25:29] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-30 23:25:30] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-30 23:25:30] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-30 23:25:30] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-30 23:25:30] [sqlite] Creating temporary database in /tmp
+[2019-03-30 23:25:33] [sqlite] Inserted 1000000 lines
+[2019-03-30 23:25:37] [sqlite] Inserted 2000000 lines
+[2019-03-30 23:25:44] [sqlite] Inserted 4000000 lines
+[2019-03-30 23:26:00] [sqlite] Inserted 8000000 lines
+[2019-03-30 23:26:29] [sqlite] Inserted 16000000 lines
+[2019-03-30 23:27:28] [sqlite] Inserted 32000000 lines
+[2019-03-30 23:28:06] [sqlite] Inserted 41438108 lines
+[2019-03-30 23:28:06] [sqlite] Creating primary index
+[2019-03-30 23:29:01] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-30 23:29:01] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-30 23:29:05] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-30 23:29:07] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-30 23:29:07] [comm] NCCL communicator overridden
+[2019-03-30 23:29:07] [memory] Reserving 805 MB, device gpu0
+[2019-03-30 23:29:07] [memory] Reserving 805 MB, device gpu0
+[2019-03-30 23:29:18] [batching] Done
+[2019-03-30 23:29:19] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-30 23:29:19] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-30 23:29:19] [comm] NCCL communicator overridden
+[2019-03-30 23:29:19] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-30 23:29:28] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-30 23:29:29] Loading Adam parameters from model/model_bt_encz.npz.optimizer.npz
+[2019-03-30 23:29:47] [memory] Reserving 805 MB, device gpu0
+[2019-03-30 23:29:47] [memory] Reserving 805 MB, device gpu1
+[2019-03-30 23:29:48] [data] Restoring the corpus state to epoch 5, batch 190000
+[2019-03-30 23:32:04] [sqlite] Selecting shuffled data
+[2019-03-30 23:55:13] Training started
+[2019-03-30 23:55:13] Training finished
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+[2019-03-30 23:55:19] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-30 23:55:19] [marian] Running on spider3.lingea.cz as process 7556 with command line:
+[2019-03-30 23:55:19] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets bt.encz.en.bpe bt.encz.cz.bpe -e 6 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --optimizer-delay 4 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-30 23:55:20] [config] after-batches: 0
+[2019-03-30 23:55:20] [config] after-epochs: 6
+[2019-03-30 23:55:20] [config] allow-unk: false
+[2019-03-30 23:55:20] [config] beam-size: 6
+[2019-03-30 23:55:20] [config] best-deep: false
+[2019-03-30 23:55:20] [config] clip-gemm: 0
+[2019-03-30 23:55:20] [config] clip-norm: 5
+[2019-03-30 23:55:20] [config] cost-type: ce-mean-words
+[2019-03-30 23:55:20] [config] cpu-threads: 0
+[2019-03-30 23:55:20] [config] data-weighting-type: sentence
+[2019-03-30 23:55:20] [config] dec-cell: gru
+[2019-03-30 23:55:20] [config] dec-cell-base-depth: 2
+[2019-03-30 23:55:20] [config] dec-cell-high-depth: 1
+[2019-03-30 23:55:20] [config] dec-depth: 6
+[2019-03-30 23:55:20] [config] devices:
+[2019-03-30 23:55:20] [config]   - 0
+[2019-03-30 23:55:20] [config]   - 1
+[2019-03-30 23:55:20] [config] dim-emb: 1024
+[2019-03-30 23:55:20] [config] dim-rnn: 1024
+[2019-03-30 23:55:20] [config] dim-vocabs:
+[2019-03-30 23:55:20] [config]   - 34028
+[2019-03-30 23:55:20] [config]   - 34028
+[2019-03-30 23:55:20] [config] disp-first: 0
+[2019-03-30 23:55:20] [config] disp-freq: 500
+[2019-03-30 23:55:20] [config] disp-label-counts: false
+[2019-03-30 23:55:20] [config] dropout-rnn: 0
+[2019-03-30 23:55:20] [config] dropout-src: 0
+[2019-03-30 23:55:20] [config] dropout-trg: 0
+[2019-03-30 23:55:20] [config] early-stopping: 5
+[2019-03-30 23:55:20] [config] embedding-fix-src: false
+[2019-03-30 23:55:20] [config] embedding-fix-trg: false
+[2019-03-30 23:55:20] [config] embedding-normalization: false
+[2019-03-30 23:55:20] [config] enc-cell: gru
+[2019-03-30 23:55:20] [config] enc-cell-depth: 1
+[2019-03-30 23:55:20] [config] enc-depth: 6
+[2019-03-30 23:55:20] [config] enc-type: bidirectional
+[2019-03-30 23:55:20] [config] exponential-smoothing: 0.0001
+[2019-03-30 23:55:20] [config] grad-dropping-momentum: 0
+[2019-03-30 23:55:20] [config] grad-dropping-rate: 0
+[2019-03-30 23:55:20] [config] grad-dropping-warmup: 100
+[2019-03-30 23:55:20] [config] guided-alignment: none
+[2019-03-30 23:55:20] [config] guided-alignment-cost: mse
+[2019-03-30 23:55:20] [config] guided-alignment-weight: 0.1
+[2019-03-30 23:55:20] [config] ignore-model-config: false
+[2019-03-30 23:55:20] [config] interpolate-env-vars: false
+[2019-03-30 23:55:20] [config] keep-best: true
+[2019-03-30 23:55:20] [config] label-smoothing: 0.1
+[2019-03-30 23:55:20] [config] layer-normalization: false
+[2019-03-30 23:55:20] [config] learn-rate: 0.0002
+[2019-03-30 23:55:20] [config] log: model/bt_encz.log
+[2019-03-30 23:55:20] [config] log-level: info
+[2019-03-30 23:55:20] [config] lr-decay: 0
+[2019-03-30 23:55:20] [config] lr-decay-freq: 50000
+[2019-03-30 23:55:20] [config] lr-decay-inv-sqrt: 8000
+[2019-03-30 23:55:20] [config] lr-decay-repeat-warmup: false
+[2019-03-30 23:55:20] [config] lr-decay-reset-optimizer: false
+[2019-03-30 23:55:20] [config] lr-decay-start:
+[2019-03-30 23:55:20] [config]   - 10
+[2019-03-30 23:55:20] [config]   - 1
+[2019-03-30 23:55:20] [config] lr-decay-strategy: epoch+stalled
+[2019-03-30 23:55:20] [config] lr-report: true
+[2019-03-30 23:55:20] [config] lr-warmup: 8000
+[2019-03-30 23:55:20] [config] lr-warmup-at-reload: false
+[2019-03-30 23:55:20] [config] lr-warmup-cycle: false
+[2019-03-30 23:55:20] [config] lr-warmup-start-rate: 0
+[2019-03-30 23:55:20] [config] max-length: 100
+[2019-03-30 23:55:20] [config] max-length-crop: false
+[2019-03-30 23:55:20] [config] max-length-factor: 3
+[2019-03-30 23:55:20] [config] maxi-batch: 10000
+[2019-03-30 23:55:20] [config] maxi-batch-sort: trg
+[2019-03-30 23:55:20] [config] mini-batch: 1000
+[2019-03-30 23:55:20] [config] mini-batch-fit: true
+[2019-03-30 23:55:20] [config] mini-batch-fit-step: 10
+[2019-03-30 23:55:20] [config] mini-batch-words: 0
+[2019-03-30 23:55:20] [config] model: model/model_bt_encz.npz
+[2019-03-30 23:55:20] [config] multi-node: false
+[2019-03-30 23:55:20] [config] multi-node-overlap: true
+[2019-03-30 23:55:20] [config] n-best: false
+[2019-03-30 23:55:20] [config] no-nccl: true
+[2019-03-30 23:55:20] [config] no-reload: false
+[2019-03-30 23:55:20] [config] no-restore-corpus: false
+[2019-03-30 23:55:20] [config] no-shuffle: false
+[2019-03-30 23:55:20] [config] normalize: 0.6
+[2019-03-30 23:55:20] [config] optimizer: adam
+[2019-03-30 23:55:20] [config] optimizer-delay: 4
+[2019-03-30 23:55:20] [config] optimizer-params:
+[2019-03-30 23:55:20] [config]   - 0.9
+[2019-03-30 23:55:20] [config]   - 0.98
+[2019-03-30 23:55:20] [config]   - 1e-09
+[2019-03-30 23:55:20] [config] overwrite: true
+[2019-03-30 23:55:20] [config] quiet: false
+[2019-03-30 23:55:20] [config] quiet-translation: true
+[2019-03-30 23:55:20] [config] relative-paths: false
+[2019-03-30 23:55:20] [config] right-left: false
+[2019-03-30 23:55:20] [config] save-freq: 5000
+[2019-03-30 23:55:20] [config] seed: 0
+[2019-03-30 23:55:20] [config] sentencepiece-alphas:
+[2019-03-30 23:55:20] [config]   []
+[2019-03-30 23:55:20] [config] sentencepiece-max-lines: 10000000
+[2019-03-30 23:55:20] [config] sentencepiece-options: ""
+[2019-03-30 23:55:20] [config] shuffle-in-ram: false
+[2019-03-30 23:55:20] [config] skip: false
+[2019-03-30 23:55:20] [config] sqlite: temporary
+[2019-03-30 23:55:20] [config] sqlite-drop: false
+[2019-03-30 23:55:20] [config] sync-sgd: true
+[2019-03-30 23:55:20] [config] tempdir: /tmp
+[2019-03-30 23:55:20] [config] tied-embeddings: false
+[2019-03-30 23:55:20] [config] tied-embeddings-all: true
+[2019-03-30 23:55:20] [config] tied-embeddings-src: false
+[2019-03-30 23:55:20] [config] train-sets:
+[2019-03-30 23:55:20] [config]   - bt.encz.en.bpe
+[2019-03-30 23:55:20] [config]   - bt.encz.cz.bpe
+[2019-03-30 23:55:20] [config] transformer-aan-activation: swish
+[2019-03-30 23:55:20] [config] transformer-aan-depth: 2
+[2019-03-30 23:55:20] [config] transformer-aan-nogate: false
+[2019-03-30 23:55:20] [config] transformer-decoder-autoreg: self-attention
+[2019-03-30 23:55:20] [config] transformer-dim-aan: 2048
+[2019-03-30 23:55:20] [config] transformer-dim-ffn: 4096
+[2019-03-30 23:55:20] [config] transformer-dropout: 0.1
+[2019-03-30 23:55:20] [config] transformer-dropout-attention: 0.1
+[2019-03-30 23:55:20] [config] transformer-dropout-ffn: 0.1
+[2019-03-30 23:55:20] [config] transformer-ffn-activation: swish
+[2019-03-30 23:55:20] [config] transformer-ffn-depth: 2
+[2019-03-30 23:55:20] [config] transformer-guided-alignment-layer: last
+[2019-03-30 23:55:20] [config] transformer-heads: 16
+[2019-03-30 23:55:20] [config] transformer-no-projection: false
+[2019-03-30 23:55:20] [config] transformer-postprocess: da
+[2019-03-30 23:55:20] [config] transformer-postprocess-emb: d
+[2019-03-30 23:55:20] [config] transformer-preprocess: n
+[2019-03-30 23:55:20] [config] transformer-tied-layers:
+[2019-03-30 23:55:20] [config]   []
+[2019-03-30 23:55:20] [config] type: transformer
+[2019-03-30 23:55:20] [config] ulr: false
+[2019-03-30 23:55:20] [config] ulr-dim-emb: 0
+[2019-03-30 23:55:20] [config] ulr-dropout: 0
+[2019-03-30 23:55:20] [config] ulr-keys-vectors: ""
+[2019-03-30 23:55:20] [config] ulr-query-vectors: ""
+[2019-03-30 23:55:20] [config] ulr-softmax-temperature: 1
+[2019-03-30 23:55:20] [config] ulr-trainable-transformation: false
+[2019-03-30 23:55:20] [config] valid-freq: 5000
+[2019-03-30 23:55:20] [config] valid-log: model/valid.log
+[2019-03-30 23:55:20] [config] valid-max-length: 1000
+[2019-03-30 23:55:20] [config] valid-metrics:
+[2019-03-30 23:55:20] [config]   - ce-mean-words
+[2019-03-30 23:55:20] [config]   - perplexity
+[2019-03-30 23:55:20] [config]   - translation
+[2019-03-30 23:55:20] [config] valid-mini-batch: 16
+[2019-03-30 23:55:20] [config] valid-script-path: ./val.sh
+[2019-03-30 23:55:20] [config] valid-sets:
+[2019-03-30 23:55:20] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-30 23:55:20] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-30 23:55:20] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-30 23:55:20] [config] vocabs:
+[2019-03-30 23:55:20] [config]   - corp/vocab.encs.yml
+[2019-03-30 23:55:20] [config]   - corp/vocab.encs.yml
+[2019-03-30 23:55:20] [config] word-penalty: 0
+[2019-03-30 23:55:20] [config] workspace: 8600
+[2019-03-30 23:55:20] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-30 23:55:20] Using synchronous training
+[2019-03-30 23:55:20] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-30 23:55:20] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-30 23:55:20] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-30 23:55:21] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-30 23:55:21] [sqlite] Creating temporary database in /tmp
+[2019-03-30 23:55:25] [sqlite] Inserted 1000000 lines
+[2019-03-30 23:55:28] [sqlite] Inserted 2000000 lines
+[2019-03-30 23:55:36] [sqlite] Inserted 4000000 lines
+[2019-03-30 23:55:51] [sqlite] Inserted 8000000 lines
+[2019-03-30 23:56:34] [sqlite] Inserted 16000000 lines
+[2019-03-30 23:57:48] [sqlite] Inserted 32000000 lines
+[2019-03-30 23:59:11] [sqlite] Inserted 49633032 lines
+[2019-03-30 23:59:11] [sqlite] Creating primary index
+[2019-03-31 00:00:44] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 00:00:44] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 00:00:48] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 00:00:49] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 00:00:49] [comm] NCCL communicator overridden
+[2019-03-31 00:00:50] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 00:00:50] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 00:01:02] [batching] Done
+[2019-03-31 00:01:02] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 00:01:02] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 00:01:02] [comm] NCCL communicator overridden
+[2019-03-31 00:01:02] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 00:01:06] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 00:01:10] Loading Adam parameters from model/model_bt_encz.npz.optimizer.npz
+[2019-03-31 00:01:30] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 00:01:30] [memory] Reserving 805 MB, device gpu1
+[2019-03-31 00:01:31] [data] Restoring the corpus state to epoch 5, batch 190000
+[2019-03-31 00:04:15] [sqlite] Selecting shuffled data
+[2019-03-31 00:35:55] Training started
+[2019-03-31 00:35:55] Training finished
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+ITERATION 6
+[2019-03-31 00:36:01] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 00:36:01] [marian] Running on spider3.lingea.cz as process 7980 with command line:
+[2019-03-31 00:36:01] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets corpus+paracrawl.2M.en.bpe corpus+paracrawl.2M.cz.bpe -e 6 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 4 --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 00:36:02] [config] after-batches: 0
+[2019-03-31 00:36:02] [config] after-epochs: 6
+[2019-03-31 00:36:02] [config] allow-unk: false
+[2019-03-31 00:36:02] [config] beam-size: 6
+[2019-03-31 00:36:02] [config] best-deep: false
+[2019-03-31 00:36:02] [config] clip-gemm: 0
+[2019-03-31 00:36:02] [config] clip-norm: 5
+[2019-03-31 00:36:02] [config] cost-type: ce-mean-words
+[2019-03-31 00:36:02] [config] cpu-threads: 0
+[2019-03-31 00:36:02] [config] data-weighting-type: sentence
+[2019-03-31 00:36:02] [config] dec-cell: gru
+[2019-03-31 00:36:02] [config] dec-cell-base-depth: 2
+[2019-03-31 00:36:02] [config] dec-cell-high-depth: 1
+[2019-03-31 00:36:02] [config] dec-depth: 6
+[2019-03-31 00:36:02] [config] devices:
+[2019-03-31 00:36:02] [config]   - 0
+[2019-03-31 00:36:02] [config]   - 1
+[2019-03-31 00:36:02] [config] dim-emb: 1024
+[2019-03-31 00:36:02] [config] dim-rnn: 1024
+[2019-03-31 00:36:02] [config] dim-vocabs:
+[2019-03-31 00:36:02] [config]   - 34028
+[2019-03-31 00:36:02] [config]   - 34028
+[2019-03-31 00:36:02] [config] disp-first: 0
+[2019-03-31 00:36:02] [config] disp-freq: 500
+[2019-03-31 00:36:02] [config] disp-label-counts: false
+[2019-03-31 00:36:02] [config] dropout-rnn: 0
+[2019-03-31 00:36:02] [config] dropout-src: 0
+[2019-03-31 00:36:02] [config] dropout-trg: 0
+[2019-03-31 00:36:02] [config] early-stopping: 5
+[2019-03-31 00:36:02] [config] embedding-fix-src: false
+[2019-03-31 00:36:02] [config] embedding-fix-trg: false
+[2019-03-31 00:36:02] [config] embedding-normalization: false
+[2019-03-31 00:36:02] [config] enc-cell: gru
+[2019-03-31 00:36:02] [config] enc-cell-depth: 1
+[2019-03-31 00:36:02] [config] enc-depth: 6
+[2019-03-31 00:36:02] [config] enc-type: bidirectional
+[2019-03-31 00:36:02] [config] exponential-smoothing: 0.0001
+[2019-03-31 00:36:02] [config] grad-dropping-momentum: 0
+[2019-03-31 00:36:02] [config] grad-dropping-rate: 0
+[2019-03-31 00:36:02] [config] grad-dropping-warmup: 100
+[2019-03-31 00:36:02] [config] guided-alignment: none
+[2019-03-31 00:36:02] [config] guided-alignment-cost: mse
+[2019-03-31 00:36:02] [config] guided-alignment-weight: 0.1
+[2019-03-31 00:36:02] [config] ignore-model-config: false
+[2019-03-31 00:36:02] [config] interpolate-env-vars: false
+[2019-03-31 00:36:02] [config] keep-best: true
+[2019-03-31 00:36:02] [config] label-smoothing: 0.1
+[2019-03-31 00:36:02] [config] layer-normalization: false
+[2019-03-31 00:36:02] [config] learn-rate: 0.0002
+[2019-03-31 00:36:02] [config] log: model/bt_encz.log
+[2019-03-31 00:36:02] [config] log-level: info
+[2019-03-31 00:36:02] [config] lr-decay: 0
+[2019-03-31 00:36:02] [config] lr-decay-freq: 50000
+[2019-03-31 00:36:02] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 00:36:02] [config] lr-decay-repeat-warmup: false
+[2019-03-31 00:36:02] [config] lr-decay-reset-optimizer: false
+[2019-03-31 00:36:02] [config] lr-decay-start:
+[2019-03-31 00:36:02] [config]   - 10
+[2019-03-31 00:36:02] [config]   - 1
+[2019-03-31 00:36:02] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 00:36:02] [config] lr-report: true
+[2019-03-31 00:36:02] [config] lr-warmup: 8000
+[2019-03-31 00:36:02] [config] lr-warmup-at-reload: false
+[2019-03-31 00:36:02] [config] lr-warmup-cycle: false
+[2019-03-31 00:36:02] [config] lr-warmup-start-rate: 0
+[2019-03-31 00:36:02] [config] max-length: 100
+[2019-03-31 00:36:02] [config] max-length-crop: false
+[2019-03-31 00:36:02] [config] max-length-factor: 3
+[2019-03-31 00:36:02] [config] maxi-batch: 10000
+[2019-03-31 00:36:02] [config] maxi-batch-sort: trg
+[2019-03-31 00:36:02] [config] mini-batch: 1000
+[2019-03-31 00:36:02] [config] mini-batch-fit: true
+[2019-03-31 00:36:02] [config] mini-batch-fit-step: 10
+[2019-03-31 00:36:02] [config] mini-batch-words: 0
+[2019-03-31 00:36:02] [config] model: model/model_bt_encz.npz
+[2019-03-31 00:36:02] [config] multi-node: false
+[2019-03-31 00:36:02] [config] multi-node-overlap: true
+[2019-03-31 00:36:02] [config] n-best: false
+[2019-03-31 00:36:02] [config] no-nccl: true
+[2019-03-31 00:36:02] [config] no-reload: false
+[2019-03-31 00:36:02] [config] no-restore-corpus: false
+[2019-03-31 00:36:02] [config] no-shuffle: false
+[2019-03-31 00:36:02] [config] normalize: 0.6
+[2019-03-31 00:36:02] [config] optimizer: adam
+[2019-03-31 00:36:02] [config] optimizer-delay: 4
+[2019-03-31 00:36:02] [config] optimizer-params:
+[2019-03-31 00:36:02] [config]   - 0.9
+[2019-03-31 00:36:02] [config]   - 0.98
+[2019-03-31 00:36:02] [config]   - 1e-09
+[2019-03-31 00:36:02] [config] overwrite: true
+[2019-03-31 00:36:02] [config] quiet: false
+[2019-03-31 00:36:02] [config] quiet-translation: true
+[2019-03-31 00:36:02] [config] relative-paths: false
+[2019-03-31 00:36:02] [config] right-left: false
+[2019-03-31 00:36:02] [config] save-freq: 5000
+[2019-03-31 00:36:02] [config] seed: 0
+[2019-03-31 00:36:02] [config] sentencepiece-alphas:
+[2019-03-31 00:36:02] [config]   []
+[2019-03-31 00:36:02] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 00:36:02] [config] sentencepiece-options: ""
+[2019-03-31 00:36:02] [config] shuffle-in-ram: false
+[2019-03-31 00:36:02] [config] skip: false
+[2019-03-31 00:36:02] [config] sqlite: temporary
+[2019-03-31 00:36:02] [config] sqlite-drop: false
+[2019-03-31 00:36:02] [config] sync-sgd: true
+[2019-03-31 00:36:02] [config] tempdir: /tmp
+[2019-03-31 00:36:02] [config] tied-embeddings: false
+[2019-03-31 00:36:02] [config] tied-embeddings-all: true
+[2019-03-31 00:36:02] [config] tied-embeddings-src: false
+[2019-03-31 00:36:02] [config] train-sets:
+[2019-03-31 00:36:02] [config]   - corpus+paracrawl.2M.en.bpe
+[2019-03-31 00:36:02] [config]   - corpus+paracrawl.2M.cz.bpe
+[2019-03-31 00:36:02] [config] transformer-aan-activation: swish
+[2019-03-31 00:36:02] [config] transformer-aan-depth: 2
+[2019-03-31 00:36:02] [config] transformer-aan-nogate: false
+[2019-03-31 00:36:02] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 00:36:02] [config] transformer-dim-aan: 2048
+[2019-03-31 00:36:02] [config] transformer-dim-ffn: 4096
+[2019-03-31 00:36:02] [config] transformer-dropout: 0.1
+[2019-03-31 00:36:02] [config] transformer-dropout-attention: 0.1
+[2019-03-31 00:36:02] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 00:36:02] [config] transformer-ffn-activation: swish
+[2019-03-31 00:36:02] [config] transformer-ffn-depth: 2
+[2019-03-31 00:36:02] [config] transformer-guided-alignment-layer: last
+[2019-03-31 00:36:02] [config] transformer-heads: 16
+[2019-03-31 00:36:02] [config] transformer-no-projection: false
+[2019-03-31 00:36:02] [config] transformer-postprocess: da
+[2019-03-31 00:36:02] [config] transformer-postprocess-emb: d
+[2019-03-31 00:36:02] [config] transformer-preprocess: n
+[2019-03-31 00:36:02] [config] transformer-tied-layers:
+[2019-03-31 00:36:02] [config]   []
+[2019-03-31 00:36:02] [config] type: transformer
+[2019-03-31 00:36:02] [config] ulr: false
+[2019-03-31 00:36:02] [config] ulr-dim-emb: 0
+[2019-03-31 00:36:02] [config] ulr-dropout: 0
+[2019-03-31 00:36:02] [config] ulr-keys-vectors: ""
+[2019-03-31 00:36:02] [config] ulr-query-vectors: ""
+[2019-03-31 00:36:02] [config] ulr-softmax-temperature: 1
+[2019-03-31 00:36:02] [config] ulr-trainable-transformation: false
+[2019-03-31 00:36:02] [config] valid-freq: 5000
+[2019-03-31 00:36:02] [config] valid-log: model/valid.log
+[2019-03-31 00:36:02] [config] valid-max-length: 1000
+[2019-03-31 00:36:02] [config] valid-metrics:
+[2019-03-31 00:36:02] [config]   - ce-mean-words
+[2019-03-31 00:36:02] [config]   - perplexity
+[2019-03-31 00:36:02] [config]   - translation
+[2019-03-31 00:36:02] [config] valid-mini-batch: 16
+[2019-03-31 00:36:02] [config] valid-script-path: ./val.sh
+[2019-03-31 00:36:02] [config] valid-sets:
+[2019-03-31 00:36:02] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 00:36:02] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 00:36:02] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 00:36:02] [config] vocabs:
+[2019-03-31 00:36:02] [config]   - corp/vocab.encs.yml
+[2019-03-31 00:36:02] [config]   - corp/vocab.encs.yml
+[2019-03-31 00:36:02] [config] word-penalty: 0
+[2019-03-31 00:36:02] [config] workspace: 8600
+[2019-03-31 00:36:02] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 00:36:02] Using synchronous training
+[2019-03-31 00:36:02] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 00:36:03] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 00:36:03] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 00:36:03] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 00:36:03] [sqlite] Creating temporary database in /tmp
+[2019-03-31 00:36:07] [sqlite] Inserted 1000000 lines
+[2019-03-31 00:36:10] [sqlite] Inserted 2000000 lines
+[2019-03-31 00:36:16] [sqlite] Inserted 4000000 lines
+[2019-03-31 00:36:29] [sqlite] Inserted 8000000 lines
+[2019-03-31 00:37:00] [sqlite] Inserted 16000000 lines
+[2019-03-31 00:38:02] [sqlite] Inserted 32000000 lines
+[2019-03-31 00:38:37] [sqlite] Inserted 41438108 lines
+[2019-03-31 00:38:37] [sqlite] Creating primary index
+[2019-03-31 00:39:32] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 00:39:32] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 00:39:34] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 00:39:35] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 00:39:35] [comm] NCCL communicator overridden
+[2019-03-31 00:39:35] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 00:39:36] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 00:39:47] [batching] Done
+[2019-03-31 00:39:47] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 00:39:47] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 00:39:47] [comm] NCCL communicator overridden
+[2019-03-31 00:39:47] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 00:39:52] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 00:39:54] Loading Adam parameters from model/model_bt_encz.npz.optimizer.npz
+[2019-03-31 00:40:11] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 00:40:11] [memory] Reserving 805 MB, device gpu1
+[2019-03-31 00:40:12] [data] Restoring the corpus state to epoch 5, batch 190000
+[2019-03-31 00:42:27] [sqlite] Selecting shuffled data
+[2019-03-31 01:10:01] Training started
+[2019-03-31 01:10:01] Training finished
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+[2019-03-31 01:10:07] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 01:10:07] [marian] Running on spider3.lingea.cz as process 8459 with command line:
+[2019-03-31 01:10:07] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets bt.encz.en.bpe bt.encz.cz.bpe -e 7 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --optimizer-delay 4 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 01:10:08] [config] after-batches: 0
+[2019-03-31 01:10:08] [config] after-epochs: 7
+[2019-03-31 01:10:08] [config] allow-unk: false
+[2019-03-31 01:10:08] [config] beam-size: 6
+[2019-03-31 01:10:08] [config] best-deep: false
+[2019-03-31 01:10:08] [config] clip-gemm: 0
+[2019-03-31 01:10:08] [config] clip-norm: 5
+[2019-03-31 01:10:08] [config] cost-type: ce-mean-words
+[2019-03-31 01:10:08] [config] cpu-threads: 0
+[2019-03-31 01:10:08] [config] data-weighting-type: sentence
+[2019-03-31 01:10:08] [config] dec-cell: gru
+[2019-03-31 01:10:08] [config] dec-cell-base-depth: 2
+[2019-03-31 01:10:08] [config] dec-cell-high-depth: 1
+[2019-03-31 01:10:08] [config] dec-depth: 6
+[2019-03-31 01:10:08] [config] devices:
+[2019-03-31 01:10:08] [config]   - 0
+[2019-03-31 01:10:08] [config]   - 1
+[2019-03-31 01:10:08] [config] dim-emb: 1024
+[2019-03-31 01:10:08] [config] dim-rnn: 1024
+[2019-03-31 01:10:08] [config] dim-vocabs:
+[2019-03-31 01:10:08] [config]   - 34028
+[2019-03-31 01:10:08] [config]   - 34028
+[2019-03-31 01:10:08] [config] disp-first: 0
+[2019-03-31 01:10:08] [config] disp-freq: 500
+[2019-03-31 01:10:08] [config] disp-label-counts: false
+[2019-03-31 01:10:08] [config] dropout-rnn: 0
+[2019-03-31 01:10:08] [config] dropout-src: 0
+[2019-03-31 01:10:08] [config] dropout-trg: 0
+[2019-03-31 01:10:08] [config] early-stopping: 5
+[2019-03-31 01:10:08] [config] embedding-fix-src: false
+[2019-03-31 01:10:08] [config] embedding-fix-trg: false
+[2019-03-31 01:10:08] [config] embedding-normalization: false
+[2019-03-31 01:10:08] [config] enc-cell: gru
+[2019-03-31 01:10:08] [config] enc-cell-depth: 1
+[2019-03-31 01:10:08] [config] enc-depth: 6
+[2019-03-31 01:10:08] [config] enc-type: bidirectional
+[2019-03-31 01:10:08] [config] exponential-smoothing: 0.0001
+[2019-03-31 01:10:08] [config] grad-dropping-momentum: 0
+[2019-03-31 01:10:08] [config] grad-dropping-rate: 0
+[2019-03-31 01:10:08] [config] grad-dropping-warmup: 100
+[2019-03-31 01:10:08] [config] guided-alignment: none
+[2019-03-31 01:10:08] [config] guided-alignment-cost: mse
+[2019-03-31 01:10:08] [config] guided-alignment-weight: 0.1
+[2019-03-31 01:10:08] [config] ignore-model-config: false
+[2019-03-31 01:10:08] [config] interpolate-env-vars: false
+[2019-03-31 01:10:08] [config] keep-best: true
+[2019-03-31 01:10:08] [config] label-smoothing: 0.1
+[2019-03-31 01:10:08] [config] layer-normalization: false
+[2019-03-31 01:10:08] [config] learn-rate: 0.0002
+[2019-03-31 01:10:08] [config] log: model/bt_encz.log
+[2019-03-31 01:10:08] [config] log-level: info
+[2019-03-31 01:10:08] [config] lr-decay: 0
+[2019-03-31 01:10:08] [config] lr-decay-freq: 50000
+[2019-03-31 01:10:08] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 01:10:08] [config] lr-decay-repeat-warmup: false
+[2019-03-31 01:10:08] [config] lr-decay-reset-optimizer: false
+[2019-03-31 01:10:08] [config] lr-decay-start:
+[2019-03-31 01:10:08] [config]   - 10
+[2019-03-31 01:10:08] [config]   - 1
+[2019-03-31 01:10:08] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 01:10:08] [config] lr-report: true
+[2019-03-31 01:10:08] [config] lr-warmup: 8000
+[2019-03-31 01:10:08] [config] lr-warmup-at-reload: false
+[2019-03-31 01:10:08] [config] lr-warmup-cycle: false
+[2019-03-31 01:10:08] [config] lr-warmup-start-rate: 0
+[2019-03-31 01:10:08] [config] max-length: 100
+[2019-03-31 01:10:08] [config] max-length-crop: false
+[2019-03-31 01:10:08] [config] max-length-factor: 3
+[2019-03-31 01:10:08] [config] maxi-batch: 10000
+[2019-03-31 01:10:08] [config] maxi-batch-sort: trg
+[2019-03-31 01:10:08] [config] mini-batch: 1000
+[2019-03-31 01:10:08] [config] mini-batch-fit: true
+[2019-03-31 01:10:08] [config] mini-batch-fit-step: 10
+[2019-03-31 01:10:08] [config] mini-batch-words: 0
+[2019-03-31 01:10:08] [config] model: model/model_bt_encz.npz
+[2019-03-31 01:10:08] [config] multi-node: false
+[2019-03-31 01:10:08] [config] multi-node-overlap: true
+[2019-03-31 01:10:08] [config] n-best: false
+[2019-03-31 01:10:08] [config] no-nccl: true
+[2019-03-31 01:10:08] [config] no-reload: false
+[2019-03-31 01:10:08] [config] no-restore-corpus: false
+[2019-03-31 01:10:08] [config] no-shuffle: false
+[2019-03-31 01:10:08] [config] normalize: 0.6
+[2019-03-31 01:10:08] [config] optimizer: adam
+[2019-03-31 01:10:08] [config] optimizer-delay: 4
+[2019-03-31 01:10:08] [config] optimizer-params:
+[2019-03-31 01:10:08] [config]   - 0.9
+[2019-03-31 01:10:08] [config]   - 0.98
+[2019-03-31 01:10:08] [config]   - 1e-09
+[2019-03-31 01:10:08] [config] overwrite: true
+[2019-03-31 01:10:08] [config] quiet: false
+[2019-03-31 01:10:08] [config] quiet-translation: true
+[2019-03-31 01:10:08] [config] relative-paths: false
+[2019-03-31 01:10:08] [config] right-left: false
+[2019-03-31 01:10:08] [config] save-freq: 5000
+[2019-03-31 01:10:08] [config] seed: 0
+[2019-03-31 01:10:08] [config] sentencepiece-alphas:
+[2019-03-31 01:10:08] [config]   []
+[2019-03-31 01:10:08] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 01:10:08] [config] sentencepiece-options: ""
+[2019-03-31 01:10:08] [config] shuffle-in-ram: false
+[2019-03-31 01:10:08] [config] skip: false
+[2019-03-31 01:10:08] [config] sqlite: temporary
+[2019-03-31 01:10:08] [config] sqlite-drop: false
+[2019-03-31 01:10:08] [config] sync-sgd: true
+[2019-03-31 01:10:08] [config] tempdir: /tmp
+[2019-03-31 01:10:08] [config] tied-embeddings: false
+[2019-03-31 01:10:08] [config] tied-embeddings-all: true
+[2019-03-31 01:10:08] [config] tied-embeddings-src: false
+[2019-03-31 01:10:08] [config] train-sets:
+[2019-03-31 01:10:08] [config]   - bt.encz.en.bpe
+[2019-03-31 01:10:08] [config]   - bt.encz.cz.bpe
+[2019-03-31 01:10:08] [config] transformer-aan-activation: swish
+[2019-03-31 01:10:08] [config] transformer-aan-depth: 2
+[2019-03-31 01:10:08] [config] transformer-aan-nogate: false
+[2019-03-31 01:10:08] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 01:10:08] [config] transformer-dim-aan: 2048
+[2019-03-31 01:10:08] [config] transformer-dim-ffn: 4096
+[2019-03-31 01:10:08] [config] transformer-dropout: 0.1
+[2019-03-31 01:10:08] [config] transformer-dropout-attention: 0.1
+[2019-03-31 01:10:08] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 01:10:08] [config] transformer-ffn-activation: swish
+[2019-03-31 01:10:08] [config] transformer-ffn-depth: 2
+[2019-03-31 01:10:08] [config] transformer-guided-alignment-layer: last
+[2019-03-31 01:10:08] [config] transformer-heads: 16
+[2019-03-31 01:10:08] [config] transformer-no-projection: false
+[2019-03-31 01:10:08] [config] transformer-postprocess: da
+[2019-03-31 01:10:08] [config] transformer-postprocess-emb: d
+[2019-03-31 01:10:08] [config] transformer-preprocess: n
+[2019-03-31 01:10:08] [config] transformer-tied-layers:
+[2019-03-31 01:10:08] [config]   []
+[2019-03-31 01:10:08] [config] type: transformer
+[2019-03-31 01:10:08] [config] ulr: false
+[2019-03-31 01:10:08] [config] ulr-dim-emb: 0
+[2019-03-31 01:10:08] [config] ulr-dropout: 0
+[2019-03-31 01:10:08] [config] ulr-keys-vectors: ""
+[2019-03-31 01:10:08] [config] ulr-query-vectors: ""
+[2019-03-31 01:10:08] [config] ulr-softmax-temperature: 1
+[2019-03-31 01:10:08] [config] ulr-trainable-transformation: false
+[2019-03-31 01:10:08] [config] valid-freq: 5000
+[2019-03-31 01:10:08] [config] valid-log: model/valid.log
+[2019-03-31 01:10:08] [config] valid-max-length: 1000
+[2019-03-31 01:10:08] [config] valid-metrics:
+[2019-03-31 01:10:08] [config]   - ce-mean-words
+[2019-03-31 01:10:08] [config]   - perplexity
+[2019-03-31 01:10:08] [config]   - translation
+[2019-03-31 01:10:08] [config] valid-mini-batch: 16
+[2019-03-31 01:10:08] [config] valid-script-path: ./val.sh
+[2019-03-31 01:10:08] [config] valid-sets:
+[2019-03-31 01:10:08] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 01:10:08] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 01:10:08] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 01:10:08] [config] vocabs:
+[2019-03-31 01:10:08] [config]   - corp/vocab.encs.yml
+[2019-03-31 01:10:08] [config]   - corp/vocab.encs.yml
+[2019-03-31 01:10:08] [config] word-penalty: 0
+[2019-03-31 01:10:08] [config] workspace: 8600
+[2019-03-31 01:10:08] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 01:10:08] Using synchronous training
+[2019-03-31 01:10:08] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 01:10:09] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 01:10:09] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 01:10:09] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 01:10:09] [sqlite] Creating temporary database in /tmp
+[2019-03-31 01:10:13] [sqlite] Inserted 1000000 lines
+[2019-03-31 01:10:17] [sqlite] Inserted 2000000 lines
+[2019-03-31 01:10:25] [sqlite] Inserted 4000000 lines
+[2019-03-31 01:10:41] [sqlite] Inserted 8000000 lines
+[2019-03-31 01:11:18] [sqlite] Inserted 16000000 lines
+[2019-03-31 01:12:31] [sqlite] Inserted 32000000 lines
+[2019-03-31 01:14:43] [sqlite] Inserted 49633032 lines
+[2019-03-31 01:14:43] [sqlite] Creating primary index
+[2019-03-31 01:17:27] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 01:17:27] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 01:17:30] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 01:17:31] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 01:17:31] [comm] NCCL communicator overridden
+[2019-03-31 01:17:31] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 01:17:31] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 01:17:43] [batching] Done
+[2019-03-31 01:17:43] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 01:17:43] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 01:17:43] [comm] NCCL communicator overridden
+[2019-03-31 01:17:43] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 01:17:49] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 01:17:56] Loading Adam parameters from model/model_bt_encz.npz.optimizer.npz
+[2019-03-31 01:18:19] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 01:18:19] [memory] Reserving 805 MB, device gpu1
+[2019-03-31 01:18:20] [data] Restoring the corpus state to epoch 5, batch 190000
+[2019-03-31 01:21:25] [sqlite] Selecting shuffled data
+[2019-03-31 03:04:48] Training started
+[2019-03-31 03:04:48] Training finished
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+ITERATION 7
+[2019-03-31 03:04:59] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 03:04:59] [marian] Running on spider3.lingea.cz as process 9264 with command line:
+[2019-03-31 03:04:59] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets corpus+paracrawl.2M.en.bpe corpus+paracrawl.2M.cz.bpe -e 7 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 4 --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 03:05:00] [config] after-batches: 0
+[2019-03-31 03:05:00] [config] after-epochs: 7
+[2019-03-31 03:05:00] [config] allow-unk: false
+[2019-03-31 03:05:00] [config] beam-size: 6
+[2019-03-31 03:05:00] [config] best-deep: false
+[2019-03-31 03:05:00] [config] clip-gemm: 0
+[2019-03-31 03:05:00] [config] clip-norm: 5
+[2019-03-31 03:05:00] [config] cost-type: ce-mean-words
+[2019-03-31 03:05:00] [config] cpu-threads: 0
+[2019-03-31 03:05:00] [config] data-weighting-type: sentence
+[2019-03-31 03:05:00] [config] dec-cell: gru
+[2019-03-31 03:05:00] [config] dec-cell-base-depth: 2
+[2019-03-31 03:05:00] [config] dec-cell-high-depth: 1
+[2019-03-31 03:05:00] [config] dec-depth: 6
+[2019-03-31 03:05:00] [config] devices:
+[2019-03-31 03:05:00] [config]   - 0
+[2019-03-31 03:05:00] [config]   - 1
+[2019-03-31 03:05:00] [config] dim-emb: 1024
+[2019-03-31 03:05:00] [config] dim-rnn: 1024
+[2019-03-31 03:05:00] [config] dim-vocabs:
+[2019-03-31 03:05:00] [config]   - 34028
+[2019-03-31 03:05:00] [config]   - 34028
+[2019-03-31 03:05:00] [config] disp-first: 0
+[2019-03-31 03:05:00] [config] disp-freq: 500
+[2019-03-31 03:05:00] [config] disp-label-counts: false
+[2019-03-31 03:05:00] [config] dropout-rnn: 0
+[2019-03-31 03:05:00] [config] dropout-src: 0
+[2019-03-31 03:05:00] [config] dropout-trg: 0
+[2019-03-31 03:05:00] [config] early-stopping: 5
+[2019-03-31 03:05:00] [config] embedding-fix-src: false
+[2019-03-31 03:05:00] [config] embedding-fix-trg: false
+[2019-03-31 03:05:00] [config] embedding-normalization: false
+[2019-03-31 03:05:00] [config] enc-cell: gru
+[2019-03-31 03:05:00] [config] enc-cell-depth: 1
+[2019-03-31 03:05:00] [config] enc-depth: 6
+[2019-03-31 03:05:00] [config] enc-type: bidirectional
+[2019-03-31 03:05:00] [config] exponential-smoothing: 0.0001
+[2019-03-31 03:05:00] [config] grad-dropping-momentum: 0
+[2019-03-31 03:05:00] [config] grad-dropping-rate: 0
+[2019-03-31 03:05:00] [config] grad-dropping-warmup: 100
+[2019-03-31 03:05:00] [config] guided-alignment: none
+[2019-03-31 03:05:00] [config] guided-alignment-cost: mse
+[2019-03-31 03:05:00] [config] guided-alignment-weight: 0.1
+[2019-03-31 03:05:00] [config] ignore-model-config: false
+[2019-03-31 03:05:00] [config] interpolate-env-vars: false
+[2019-03-31 03:05:00] [config] keep-best: true
+[2019-03-31 03:05:00] [config] label-smoothing: 0.1
+[2019-03-31 03:05:00] [config] layer-normalization: false
+[2019-03-31 03:05:00] [config] learn-rate: 0.0002
+[2019-03-31 03:05:00] [config] log: model/bt_encz.log
+[2019-03-31 03:05:00] [config] log-level: info
+[2019-03-31 03:05:00] [config] lr-decay: 0
+[2019-03-31 03:05:00] [config] lr-decay-freq: 50000
+[2019-03-31 03:05:00] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 03:05:00] [config] lr-decay-repeat-warmup: false
+[2019-03-31 03:05:00] [config] lr-decay-reset-optimizer: false
+[2019-03-31 03:05:00] [config] lr-decay-start:
+[2019-03-31 03:05:00] [config]   - 10
+[2019-03-31 03:05:00] [config]   - 1
+[2019-03-31 03:05:00] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 03:05:00] [config] lr-report: true
+[2019-03-31 03:05:00] [config] lr-warmup: 8000
+[2019-03-31 03:05:00] [config] lr-warmup-at-reload: false
+[2019-03-31 03:05:00] [config] lr-warmup-cycle: false
+[2019-03-31 03:05:00] [config] lr-warmup-start-rate: 0
+[2019-03-31 03:05:00] [config] max-length: 100
+[2019-03-31 03:05:00] [config] max-length-crop: false
+[2019-03-31 03:05:00] [config] max-length-factor: 3
+[2019-03-31 03:05:00] [config] maxi-batch: 10000
+[2019-03-31 03:05:00] [config] maxi-batch-sort: trg
+[2019-03-31 03:05:00] [config] mini-batch: 1000
+[2019-03-31 03:05:00] [config] mini-batch-fit: true
+[2019-03-31 03:05:00] [config] mini-batch-fit-step: 10
+[2019-03-31 03:05:00] [config] mini-batch-words: 0
+[2019-03-31 03:05:00] [config] model: model/model_bt_encz.npz
+[2019-03-31 03:05:00] [config] multi-node: false
+[2019-03-31 03:05:00] [config] multi-node-overlap: true
+[2019-03-31 03:05:00] [config] n-best: false
+[2019-03-31 03:05:00] [config] no-nccl: true
+[2019-03-31 03:05:00] [config] no-reload: false
+[2019-03-31 03:05:00] [config] no-restore-corpus: false
+[2019-03-31 03:05:00] [config] no-shuffle: false
+[2019-03-31 03:05:00] [config] normalize: 0.6
+[2019-03-31 03:05:00] [config] optimizer: adam
+[2019-03-31 03:05:00] [config] optimizer-delay: 4
+[2019-03-31 03:05:00] [config] optimizer-params:
+[2019-03-31 03:05:00] [config]   - 0.9
+[2019-03-31 03:05:00] [config]   - 0.98
+[2019-03-31 03:05:00] [config]   - 1e-09
+[2019-03-31 03:05:00] [config] overwrite: true
+[2019-03-31 03:05:00] [config] quiet: false
+[2019-03-31 03:05:00] [config] quiet-translation: true
+[2019-03-31 03:05:00] [config] relative-paths: false
+[2019-03-31 03:05:00] [config] right-left: false
+[2019-03-31 03:05:00] [config] save-freq: 5000
+[2019-03-31 03:05:00] [config] seed: 0
+[2019-03-31 03:05:00] [config] sentencepiece-alphas:
+[2019-03-31 03:05:00] [config]   []
+[2019-03-31 03:05:00] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 03:05:00] [config] sentencepiece-options: ""
+[2019-03-31 03:05:00] [config] shuffle-in-ram: false
+[2019-03-31 03:05:00] [config] skip: false
+[2019-03-31 03:05:00] [config] sqlite: temporary
+[2019-03-31 03:05:00] [config] sqlite-drop: false
+[2019-03-31 03:05:00] [config] sync-sgd: true
+[2019-03-31 03:05:00] [config] tempdir: /tmp
+[2019-03-31 03:05:00] [config] tied-embeddings: false
+[2019-03-31 03:05:00] [config] tied-embeddings-all: true
+[2019-03-31 03:05:00] [config] tied-embeddings-src: false
+[2019-03-31 03:05:00] [config] train-sets:
+[2019-03-31 03:05:00] [config]   - corpus+paracrawl.2M.en.bpe
+[2019-03-31 03:05:00] [config]   - corpus+paracrawl.2M.cz.bpe
+[2019-03-31 03:05:00] [config] transformer-aan-activation: swish
+[2019-03-31 03:05:00] [config] transformer-aan-depth: 2
+[2019-03-31 03:05:00] [config] transformer-aan-nogate: false
+[2019-03-31 03:05:00] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 03:05:00] [config] transformer-dim-aan: 2048
+[2019-03-31 03:05:00] [config] transformer-dim-ffn: 4096
+[2019-03-31 03:05:00] [config] transformer-dropout: 0.1
+[2019-03-31 03:05:00] [config] transformer-dropout-attention: 0.1
+[2019-03-31 03:05:00] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 03:05:00] [config] transformer-ffn-activation: swish
+[2019-03-31 03:05:00] [config] transformer-ffn-depth: 2
+[2019-03-31 03:05:00] [config] transformer-guided-alignment-layer: last
+[2019-03-31 03:05:00] [config] transformer-heads: 16
+[2019-03-31 03:05:00] [config] transformer-no-projection: false
+[2019-03-31 03:05:00] [config] transformer-postprocess: da
+[2019-03-31 03:05:00] [config] transformer-postprocess-emb: d
+[2019-03-31 03:05:00] [config] transformer-preprocess: n
+[2019-03-31 03:05:00] [config] transformer-tied-layers:
+[2019-03-31 03:05:00] [config]   []
+[2019-03-31 03:05:00] [config] type: transformer
+[2019-03-31 03:05:00] [config] ulr: false
+[2019-03-31 03:05:00] [config] ulr-dim-emb: 0
+[2019-03-31 03:05:00] [config] ulr-dropout: 0
+[2019-03-31 03:05:00] [config] ulr-keys-vectors: ""
+[2019-03-31 03:05:00] [config] ulr-query-vectors: ""
+[2019-03-31 03:05:00] [config] ulr-softmax-temperature: 1
+[2019-03-31 03:05:00] [config] ulr-trainable-transformation: false
+[2019-03-31 03:05:00] [config] valid-freq: 5000
+[2019-03-31 03:05:00] [config] valid-log: model/valid.log
+[2019-03-31 03:05:00] [config] valid-max-length: 1000
+[2019-03-31 03:05:00] [config] valid-metrics:
+[2019-03-31 03:05:00] [config]   - ce-mean-words
+[2019-03-31 03:05:00] [config]   - perplexity
+[2019-03-31 03:05:00] [config]   - translation
+[2019-03-31 03:05:00] [config] valid-mini-batch: 16
+[2019-03-31 03:05:00] [config] valid-script-path: ./val.sh
+[2019-03-31 03:05:00] [config] valid-sets:
+[2019-03-31 03:05:00] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 03:05:00] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 03:05:00] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 03:05:00] [config] vocabs:
+[2019-03-31 03:05:00] [config]   - corp/vocab.encs.yml
+[2019-03-31 03:05:00] [config]   - corp/vocab.encs.yml
+[2019-03-31 03:05:00] [config] word-penalty: 0
+[2019-03-31 03:05:00] [config] workspace: 8600
+[2019-03-31 03:05:00] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 03:05:00] Using synchronous training
+[2019-03-31 03:05:00] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 03:05:01] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 03:05:01] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 03:05:01] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 03:05:01] [sqlite] Creating temporary database in /tmp
+[2019-03-31 03:05:05] [sqlite] Inserted 1000000 lines
+[2019-03-31 03:05:08] [sqlite] Inserted 2000000 lines
+[2019-03-31 03:05:15] [sqlite] Inserted 4000000 lines
+[2019-03-31 03:05:30] [sqlite] Inserted 8000000 lines
+[2019-03-31 03:05:59] [sqlite] Inserted 16000000 lines
+[2019-03-31 03:07:01] [sqlite] Inserted 32000000 lines
+[2019-03-31 03:07:34] [sqlite] Inserted 41438108 lines
+[2019-03-31 03:07:34] [sqlite] Creating primary index
+[2019-03-31 03:08:34] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 03:08:34] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 03:08:39] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 03:08:40] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 03:08:40] [comm] NCCL communicator overridden
+[2019-03-31 03:08:40] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 03:08:41] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 03:08:52] [batching] Done
+[2019-03-31 03:08:52] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 03:08:52] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 03:08:52] [comm] NCCL communicator overridden
+[2019-03-31 03:08:52] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 03:08:54] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 03:08:56] Loading Adam parameters from model/model_bt_encz.npz.optimizer.npz
+[2019-03-31 03:09:13] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 03:09:14] [memory] Reserving 805 MB, device gpu1
+[2019-03-31 03:09:14] [data] Restoring the corpus state to epoch 5, batch 190000
+[2019-03-31 03:11:44] [sqlite] Selecting shuffled data
+[2019-03-31 03:39:12] Training started
+[2019-03-31 03:39:12] Training finished
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+[2019-03-31 03:39:19] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 03:39:19] [marian] Running on spider3.lingea.cz as process 9769 with command line:
+[2019-03-31 03:39:19] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets bt.encz.en.bpe bt.encz.cz.bpe -e 8 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --optimizer-delay 4 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 03:39:20] [config] after-batches: 0
+[2019-03-31 03:39:20] [config] after-epochs: 8
+[2019-03-31 03:39:20] [config] allow-unk: false
+[2019-03-31 03:39:20] [config] beam-size: 6
+[2019-03-31 03:39:20] [config] best-deep: false
+[2019-03-31 03:39:20] [config] clip-gemm: 0
+[2019-03-31 03:39:20] [config] clip-norm: 5
+[2019-03-31 03:39:20] [config] cost-type: ce-mean-words
+[2019-03-31 03:39:20] [config] cpu-threads: 0
+[2019-03-31 03:39:20] [config] data-weighting-type: sentence
+[2019-03-31 03:39:20] [config] dec-cell: gru
+[2019-03-31 03:39:20] [config] dec-cell-base-depth: 2
+[2019-03-31 03:39:20] [config] dec-cell-high-depth: 1
+[2019-03-31 03:39:20] [config] dec-depth: 6
+[2019-03-31 03:39:20] [config] devices:
+[2019-03-31 03:39:20] [config]   - 0
+[2019-03-31 03:39:20] [config]   - 1
+[2019-03-31 03:39:20] [config] dim-emb: 1024
+[2019-03-31 03:39:20] [config] dim-rnn: 1024
+[2019-03-31 03:39:20] [config] dim-vocabs:
+[2019-03-31 03:39:20] [config]   - 34028
+[2019-03-31 03:39:20] [config]   - 34028
+[2019-03-31 03:39:20] [config] disp-first: 0
+[2019-03-31 03:39:20] [config] disp-freq: 500
+[2019-03-31 03:39:20] [config] disp-label-counts: false
+[2019-03-31 03:39:20] [config] dropout-rnn: 0
+[2019-03-31 03:39:20] [config] dropout-src: 0
+[2019-03-31 03:39:20] [config] dropout-trg: 0
+[2019-03-31 03:39:20] [config] early-stopping: 5
+[2019-03-31 03:39:20] [config] embedding-fix-src: false
+[2019-03-31 03:39:20] [config] embedding-fix-trg: false
+[2019-03-31 03:39:20] [config] embedding-normalization: false
+[2019-03-31 03:39:20] [config] enc-cell: gru
+[2019-03-31 03:39:20] [config] enc-cell-depth: 1
+[2019-03-31 03:39:20] [config] enc-depth: 6
+[2019-03-31 03:39:20] [config] enc-type: bidirectional
+[2019-03-31 03:39:20] [config] exponential-smoothing: 0.0001
+[2019-03-31 03:39:20] [config] grad-dropping-momentum: 0
+[2019-03-31 03:39:20] [config] grad-dropping-rate: 0
+[2019-03-31 03:39:20] [config] grad-dropping-warmup: 100
+[2019-03-31 03:39:20] [config] guided-alignment: none
+[2019-03-31 03:39:20] [config] guided-alignment-cost: mse
+[2019-03-31 03:39:20] [config] guided-alignment-weight: 0.1
+[2019-03-31 03:39:20] [config] ignore-model-config: false
+[2019-03-31 03:39:20] [config] interpolate-env-vars: false
+[2019-03-31 03:39:20] [config] keep-best: true
+[2019-03-31 03:39:20] [config] label-smoothing: 0.1
+[2019-03-31 03:39:20] [config] layer-normalization: false
+[2019-03-31 03:39:20] [config] learn-rate: 0.0002
+[2019-03-31 03:39:20] [config] log: model/bt_encz.log
+[2019-03-31 03:39:20] [config] log-level: info
+[2019-03-31 03:39:20] [config] lr-decay: 0
+[2019-03-31 03:39:20] [config] lr-decay-freq: 50000
+[2019-03-31 03:39:20] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 03:39:20] [config] lr-decay-repeat-warmup: false
+[2019-03-31 03:39:20] [config] lr-decay-reset-optimizer: false
+[2019-03-31 03:39:20] [config] lr-decay-start:
+[2019-03-31 03:39:20] [config]   - 10
+[2019-03-31 03:39:20] [config]   - 1
+[2019-03-31 03:39:20] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 03:39:20] [config] lr-report: true
+[2019-03-31 03:39:20] [config] lr-warmup: 8000
+[2019-03-31 03:39:20] [config] lr-warmup-at-reload: false
+[2019-03-31 03:39:20] [config] lr-warmup-cycle: false
+[2019-03-31 03:39:20] [config] lr-warmup-start-rate: 0
+[2019-03-31 03:39:20] [config] max-length: 100
+[2019-03-31 03:39:20] [config] max-length-crop: false
+[2019-03-31 03:39:20] [config] max-length-factor: 3
+[2019-03-31 03:39:20] [config] maxi-batch: 10000
+[2019-03-31 03:39:20] [config] maxi-batch-sort: trg
+[2019-03-31 03:39:20] [config] mini-batch: 1000
+[2019-03-31 03:39:20] [config] mini-batch-fit: true
+[2019-03-31 03:39:20] [config] mini-batch-fit-step: 10
+[2019-03-31 03:39:20] [config] mini-batch-words: 0
+[2019-03-31 03:39:20] [config] model: model/model_bt_encz.npz
+[2019-03-31 03:39:20] [config] multi-node: false
+[2019-03-31 03:39:20] [config] multi-node-overlap: true
+[2019-03-31 03:39:20] [config] n-best: false
+[2019-03-31 03:39:20] [config] no-nccl: true
+[2019-03-31 03:39:20] [config] no-reload: false
+[2019-03-31 03:39:20] [config] no-restore-corpus: false
+[2019-03-31 03:39:20] [config] no-shuffle: false
+[2019-03-31 03:39:20] [config] normalize: 0.6
+[2019-03-31 03:39:20] [config] optimizer: adam
+[2019-03-31 03:39:20] [config] optimizer-delay: 4
+[2019-03-31 03:39:20] [config] optimizer-params:
+[2019-03-31 03:39:20] [config]   - 0.9
+[2019-03-31 03:39:20] [config]   - 0.98
+[2019-03-31 03:39:20] [config]   - 1e-09
+[2019-03-31 03:39:20] [config] overwrite: true
+[2019-03-31 03:39:20] [config] quiet: false
+[2019-03-31 03:39:20] [config] quiet-translation: true
+[2019-03-31 03:39:20] [config] relative-paths: false
+[2019-03-31 03:39:20] [config] right-left: false
+[2019-03-31 03:39:20] [config] save-freq: 5000
+[2019-03-31 03:39:20] [config] seed: 0
+[2019-03-31 03:39:20] [config] sentencepiece-alphas:
+[2019-03-31 03:39:20] [config]   []
+[2019-03-31 03:39:20] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 03:39:20] [config] sentencepiece-options: ""
+[2019-03-31 03:39:20] [config] shuffle-in-ram: false
+[2019-03-31 03:39:20] [config] skip: false
+[2019-03-31 03:39:20] [config] sqlite: temporary
+[2019-03-31 03:39:20] [config] sqlite-drop: false
+[2019-03-31 03:39:20] [config] sync-sgd: true
+[2019-03-31 03:39:20] [config] tempdir: /tmp
+[2019-03-31 03:39:20] [config] tied-embeddings: false
+[2019-03-31 03:39:20] [config] tied-embeddings-all: true
+[2019-03-31 03:39:20] [config] tied-embeddings-src: false
+[2019-03-31 03:39:20] [config] train-sets:
+[2019-03-31 03:39:20] [config]   - bt.encz.en.bpe
+[2019-03-31 03:39:20] [config]   - bt.encz.cz.bpe
+[2019-03-31 03:39:20] [config] transformer-aan-activation: swish
+[2019-03-31 03:39:20] [config] transformer-aan-depth: 2
+[2019-03-31 03:39:20] [config] transformer-aan-nogate: false
+[2019-03-31 03:39:20] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 03:39:20] [config] transformer-dim-aan: 2048
+[2019-03-31 03:39:20] [config] transformer-dim-ffn: 4096
+[2019-03-31 03:39:20] [config] transformer-dropout: 0.1
+[2019-03-31 03:39:20] [config] transformer-dropout-attention: 0.1
+[2019-03-31 03:39:20] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 03:39:20] [config] transformer-ffn-activation: swish
+[2019-03-31 03:39:20] [config] transformer-ffn-depth: 2
+[2019-03-31 03:39:20] [config] transformer-guided-alignment-layer: last
+[2019-03-31 03:39:20] [config] transformer-heads: 16
+[2019-03-31 03:39:20] [config] transformer-no-projection: false
+[2019-03-31 03:39:20] [config] transformer-postprocess: da
+[2019-03-31 03:39:20] [config] transformer-postprocess-emb: d
+[2019-03-31 03:39:20] [config] transformer-preprocess: n
+[2019-03-31 03:39:20] [config] transformer-tied-layers:
+[2019-03-31 03:39:20] [config]   []
+[2019-03-31 03:39:20] [config] type: transformer
+[2019-03-31 03:39:20] [config] ulr: false
+[2019-03-31 03:39:20] [config] ulr-dim-emb: 0
+[2019-03-31 03:39:20] [config] ulr-dropout: 0
+[2019-03-31 03:39:20] [config] ulr-keys-vectors: ""
+[2019-03-31 03:39:20] [config] ulr-query-vectors: ""
+[2019-03-31 03:39:20] [config] ulr-softmax-temperature: 1
+[2019-03-31 03:39:20] [config] ulr-trainable-transformation: false
+[2019-03-31 03:39:20] [config] valid-freq: 5000
+[2019-03-31 03:39:20] [config] valid-log: model/valid.log
+[2019-03-31 03:39:20] [config] valid-max-length: 1000
+[2019-03-31 03:39:20] [config] valid-metrics:
+[2019-03-31 03:39:20] [config]   - ce-mean-words
+[2019-03-31 03:39:20] [config]   - perplexity
+[2019-03-31 03:39:20] [config]   - translation
+[2019-03-31 03:39:20] [config] valid-mini-batch: 16
+[2019-03-31 03:39:20] [config] valid-script-path: ./val.sh
+[2019-03-31 03:39:20] [config] valid-sets:
+[2019-03-31 03:39:20] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 03:39:20] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 03:39:20] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 03:39:20] [config] vocabs:
+[2019-03-31 03:39:20] [config]   - corp/vocab.encs.yml
+[2019-03-31 03:39:20] [config]   - corp/vocab.encs.yml
+[2019-03-31 03:39:20] [config] word-penalty: 0
+[2019-03-31 03:39:20] [config] workspace: 8600
+[2019-03-31 03:39:20] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 03:39:20] Using synchronous training
+[2019-03-31 03:39:20] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 03:39:20] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 03:39:20] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 03:39:21] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 03:39:21] [sqlite] Creating temporary database in /tmp
+[2019-03-31 03:39:27] [sqlite] Inserted 1000000 lines
+[2019-03-31 03:39:31] [sqlite] Inserted 2000000 lines
+[2019-03-31 03:39:38] [sqlite] Inserted 4000000 lines
+[2019-03-31 03:39:54] [sqlite] Inserted 8000000 lines
+[2019-03-31 03:40:27] [sqlite] Inserted 16000000 lines
+[2019-03-31 03:42:09] [sqlite] Inserted 32000000 lines
+[2019-03-31 03:44:23] [sqlite] Inserted 49633032 lines
+[2019-03-31 03:44:23] [sqlite] Creating primary index
+[2019-03-31 03:47:23] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 03:47:23] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 03:47:25] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 03:47:26] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 03:47:26] [comm] NCCL communicator overridden
+[2019-03-31 03:47:26] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 03:47:26] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 03:47:38] [batching] Done
+[2019-03-31 03:47:38] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 03:47:38] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 03:47:38] [comm] NCCL communicator overridden
+[2019-03-31 03:47:38] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 03:47:55] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 03:48:00] Loading Adam parameters from model/model_bt_encz.npz.optimizer.npz
+[2019-03-31 03:48:21] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 03:48:22] [memory] Reserving 805 MB, device gpu1
+[2019-03-31 03:48:23] [data] Restoring the corpus state to epoch 5, batch 190000
+[2019-03-31 03:51:19] [sqlite] Selecting shuffled data
+[2019-03-31 04:34:58] Training started
+[2019-03-31 04:34:58] Training finished
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+ITERATION 8
+[2019-03-31 04:35:07] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 04:35:07] [marian] Running on spider3.lingea.cz as process 10624 with command line:
+[2019-03-31 04:35:07] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets corpus+paracrawl.2M.en.bpe corpus+paracrawl.2M.cz.bpe -e 8 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 4 --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 04:35:08] [config] after-batches: 0
+[2019-03-31 04:35:08] [config] after-epochs: 8
+[2019-03-31 04:35:08] [config] allow-unk: false
+[2019-03-31 04:35:08] [config] beam-size: 6
+[2019-03-31 04:35:08] [config] best-deep: false
+[2019-03-31 04:35:08] [config] clip-gemm: 0
+[2019-03-31 04:35:08] [config] clip-norm: 5
+[2019-03-31 04:35:08] [config] cost-type: ce-mean-words
+[2019-03-31 04:35:08] [config] cpu-threads: 0
+[2019-03-31 04:35:08] [config] data-weighting-type: sentence
+[2019-03-31 04:35:08] [config] dec-cell: gru
+[2019-03-31 04:35:08] [config] dec-cell-base-depth: 2
+[2019-03-31 04:35:08] [config] dec-cell-high-depth: 1
+[2019-03-31 04:35:08] [config] dec-depth: 6
+[2019-03-31 04:35:08] [config] devices:
+[2019-03-31 04:35:08] [config]   - 0
+[2019-03-31 04:35:08] [config]   - 1
+[2019-03-31 04:35:08] [config] dim-emb: 1024
+[2019-03-31 04:35:08] [config] dim-rnn: 1024
+[2019-03-31 04:35:08] [config] dim-vocabs:
+[2019-03-31 04:35:08] [config]   - 34028
+[2019-03-31 04:35:08] [config]   - 34028
+[2019-03-31 04:35:08] [config] disp-first: 0
+[2019-03-31 04:35:08] [config] disp-freq: 500
+[2019-03-31 04:35:08] [config] disp-label-counts: false
+[2019-03-31 04:35:08] [config] dropout-rnn: 0
+[2019-03-31 04:35:08] [config] dropout-src: 0
+[2019-03-31 04:35:08] [config] dropout-trg: 0
+[2019-03-31 04:35:08] [config] early-stopping: 5
+[2019-03-31 04:35:08] [config] embedding-fix-src: false
+[2019-03-31 04:35:08] [config] embedding-fix-trg: false
+[2019-03-31 04:35:08] [config] embedding-normalization: false
+[2019-03-31 04:35:08] [config] enc-cell: gru
+[2019-03-31 04:35:08] [config] enc-cell-depth: 1
+[2019-03-31 04:35:08] [config] enc-depth: 6
+[2019-03-31 04:35:08] [config] enc-type: bidirectional
+[2019-03-31 04:35:08] [config] exponential-smoothing: 0.0001
+[2019-03-31 04:35:08] [config] grad-dropping-momentum: 0
+[2019-03-31 04:35:08] [config] grad-dropping-rate: 0
+[2019-03-31 04:35:08] [config] grad-dropping-warmup: 100
+[2019-03-31 04:35:08] [config] guided-alignment: none
+[2019-03-31 04:35:08] [config] guided-alignment-cost: mse
+[2019-03-31 04:35:08] [config] guided-alignment-weight: 0.1
+[2019-03-31 04:35:08] [config] ignore-model-config: false
+[2019-03-31 04:35:08] [config] interpolate-env-vars: false
+[2019-03-31 04:35:08] [config] keep-best: true
+[2019-03-31 04:35:08] [config] label-smoothing: 0.1
+[2019-03-31 04:35:08] [config] layer-normalization: false
+[2019-03-31 04:35:08] [config] learn-rate: 0.0002
+[2019-03-31 04:35:08] [config] log: model/bt_encz.log
+[2019-03-31 04:35:08] [config] log-level: info
+[2019-03-31 04:35:08] [config] lr-decay: 0
+[2019-03-31 04:35:08] [config] lr-decay-freq: 50000
+[2019-03-31 04:35:08] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 04:35:08] [config] lr-decay-repeat-warmup: false
+[2019-03-31 04:35:08] [config] lr-decay-reset-optimizer: false
+[2019-03-31 04:35:08] [config] lr-decay-start:
+[2019-03-31 04:35:08] [config]   - 10
+[2019-03-31 04:35:08] [config]   - 1
+[2019-03-31 04:35:08] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 04:35:08] [config] lr-report: true
+[2019-03-31 04:35:08] [config] lr-warmup: 8000
+[2019-03-31 04:35:08] [config] lr-warmup-at-reload: false
+[2019-03-31 04:35:08] [config] lr-warmup-cycle: false
+[2019-03-31 04:35:08] [config] lr-warmup-start-rate: 0
+[2019-03-31 04:35:08] [config] max-length: 100
+[2019-03-31 04:35:08] [config] max-length-crop: false
+[2019-03-31 04:35:08] [config] max-length-factor: 3
+[2019-03-31 04:35:08] [config] maxi-batch: 10000
+[2019-03-31 04:35:08] [config] maxi-batch-sort: trg
+[2019-03-31 04:35:08] [config] mini-batch: 1000
+[2019-03-31 04:35:08] [config] mini-batch-fit: true
+[2019-03-31 04:35:08] [config] mini-batch-fit-step: 10
+[2019-03-31 04:35:08] [config] mini-batch-words: 0
+[2019-03-31 04:35:08] [config] model: model/model_bt_encz.npz
+[2019-03-31 04:35:08] [config] multi-node: false
+[2019-03-31 04:35:08] [config] multi-node-overlap: true
+[2019-03-31 04:35:08] [config] n-best: false
+[2019-03-31 04:35:08] [config] no-nccl: true
+[2019-03-31 04:35:08] [config] no-reload: false
+[2019-03-31 04:35:08] [config] no-restore-corpus: false
+[2019-03-31 04:35:08] [config] no-shuffle: false
+[2019-03-31 04:35:08] [config] normalize: 0.6
+[2019-03-31 04:35:08] [config] optimizer: adam
+[2019-03-31 04:35:08] [config] optimizer-delay: 4
+[2019-03-31 04:35:08] [config] optimizer-params:
+[2019-03-31 04:35:08] [config]   - 0.9
+[2019-03-31 04:35:08] [config]   - 0.98
+[2019-03-31 04:35:08] [config]   - 1e-09
+[2019-03-31 04:35:08] [config] overwrite: true
+[2019-03-31 04:35:08] [config] quiet: false
+[2019-03-31 04:35:08] [config] quiet-translation: true
+[2019-03-31 04:35:08] [config] relative-paths: false
+[2019-03-31 04:35:08] [config] right-left: false
+[2019-03-31 04:35:08] [config] save-freq: 5000
+[2019-03-31 04:35:08] [config] seed: 0
+[2019-03-31 04:35:08] [config] sentencepiece-alphas:
+[2019-03-31 04:35:08] [config]   []
+[2019-03-31 04:35:08] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 04:35:08] [config] sentencepiece-options: ""
+[2019-03-31 04:35:08] [config] shuffle-in-ram: false
+[2019-03-31 04:35:08] [config] skip: false
+[2019-03-31 04:35:08] [config] sqlite: temporary
+[2019-03-31 04:35:08] [config] sqlite-drop: false
+[2019-03-31 04:35:08] [config] sync-sgd: true
+[2019-03-31 04:35:08] [config] tempdir: /tmp
+[2019-03-31 04:35:08] [config] tied-embeddings: false
+[2019-03-31 04:35:08] [config] tied-embeddings-all: true
+[2019-03-31 04:35:08] [config] tied-embeddings-src: false
+[2019-03-31 04:35:08] [config] train-sets:
+[2019-03-31 04:35:08] [config]   - corpus+paracrawl.2M.en.bpe
+[2019-03-31 04:35:08] [config]   - corpus+paracrawl.2M.cz.bpe
+[2019-03-31 04:35:08] [config] transformer-aan-activation: swish
+[2019-03-31 04:35:08] [config] transformer-aan-depth: 2
+[2019-03-31 04:35:08] [config] transformer-aan-nogate: false
+[2019-03-31 04:35:08] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 04:35:08] [config] transformer-dim-aan: 2048
+[2019-03-31 04:35:08] [config] transformer-dim-ffn: 4096
+[2019-03-31 04:35:08] [config] transformer-dropout: 0.1
+[2019-03-31 04:35:08] [config] transformer-dropout-attention: 0.1
+[2019-03-31 04:35:08] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 04:35:08] [config] transformer-ffn-activation: swish
+[2019-03-31 04:35:08] [config] transformer-ffn-depth: 2
+[2019-03-31 04:35:08] [config] transformer-guided-alignment-layer: last
+[2019-03-31 04:35:08] [config] transformer-heads: 16
+[2019-03-31 04:35:08] [config] transformer-no-projection: false
+[2019-03-31 04:35:08] [config] transformer-postprocess: da
+[2019-03-31 04:35:08] [config] transformer-postprocess-emb: d
+[2019-03-31 04:35:08] [config] transformer-preprocess: n
+[2019-03-31 04:35:08] [config] transformer-tied-layers:
+[2019-03-31 04:35:08] [config]   []
+[2019-03-31 04:35:08] [config] type: transformer
+[2019-03-31 04:35:08] [config] ulr: false
+[2019-03-31 04:35:08] [config] ulr-dim-emb: 0
+[2019-03-31 04:35:08] [config] ulr-dropout: 0
+[2019-03-31 04:35:08] [config] ulr-keys-vectors: ""
+[2019-03-31 04:35:08] [config] ulr-query-vectors: ""
+[2019-03-31 04:35:08] [config] ulr-softmax-temperature: 1
+[2019-03-31 04:35:08] [config] ulr-trainable-transformation: false
+[2019-03-31 04:35:08] [config] valid-freq: 5000
+[2019-03-31 04:35:08] [config] valid-log: model/valid.log
+[2019-03-31 04:35:08] [config] valid-max-length: 1000
+[2019-03-31 04:35:08] [config] valid-metrics:
+[2019-03-31 04:35:08] [config]   - ce-mean-words
+[2019-03-31 04:35:08] [config]   - perplexity
+[2019-03-31 04:35:08] [config]   - translation
+[2019-03-31 04:35:08] [config] valid-mini-batch: 16
+[2019-03-31 04:35:08] [config] valid-script-path: ./val.sh
+[2019-03-31 04:35:08] [config] valid-sets:
+[2019-03-31 04:35:08] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 04:35:08] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 04:35:08] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 04:35:08] [config] vocabs:
+[2019-03-31 04:35:08] [config]   - corp/vocab.encs.yml
+[2019-03-31 04:35:08] [config]   - corp/vocab.encs.yml
+[2019-03-31 04:35:08] [config] word-penalty: 0
+[2019-03-31 04:35:08] [config] workspace: 8600
+[2019-03-31 04:35:08] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 04:35:08] Using synchronous training
+[2019-03-31 04:35:08] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 04:35:09] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 04:35:09] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 04:35:09] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 04:35:09] [sqlite] Creating temporary database in /tmp
+[2019-03-31 04:35:13] [sqlite] Inserted 1000000 lines
+[2019-03-31 04:35:16] [sqlite] Inserted 2000000 lines
+[2019-03-31 04:35:23] [sqlite] Inserted 4000000 lines
+[2019-03-31 04:35:37] [sqlite] Inserted 8000000 lines
+[2019-03-31 04:36:05] [sqlite] Inserted 16000000 lines
+[2019-03-31 04:37:14] [sqlite] Inserted 32000000 lines
+[2019-03-31 04:38:13] [sqlite] Inserted 41438108 lines
+[2019-03-31 04:38:13] [sqlite] Creating primary index
+[2019-03-31 04:39:17] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 04:39:17] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 04:39:20] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 04:39:20] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 04:39:21] [comm] NCCL communicator overridden
+[2019-03-31 04:39:21] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 04:39:21] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 04:39:32] [batching] Done
+[2019-03-31 04:39:32] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 04:39:33] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 04:39:33] [comm] NCCL communicator overridden
+[2019-03-31 04:39:33] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 04:39:42] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 04:39:45] Loading Adam parameters from model/model_bt_encz.npz.optimizer.npz
+[2019-03-31 04:40:07] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 04:40:08] [memory] Reserving 805 MB, device gpu1
+[2019-03-31 04:40:09] [data] Restoring the corpus state to epoch 5, batch 190000
+[2019-03-31 04:42:56] [sqlite] Selecting shuffled data
+[2019-03-31 05:16:39] Training started
+[2019-03-31 05:16:39] Training finished
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+[2019-03-31 05:16:47] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 05:16:47] [marian] Running on spider3.lingea.cz as process 11270 with command line:
+[2019-03-31 05:16:47] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets bt.encz.en.bpe bt.encz.cz.bpe -e 9 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --optimizer-delay 4 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 05:16:48] [config] after-batches: 0
+[2019-03-31 05:16:48] [config] after-epochs: 9
+[2019-03-31 05:16:48] [config] allow-unk: false
+[2019-03-31 05:16:48] [config] beam-size: 6
+[2019-03-31 05:16:48] [config] best-deep: false
+[2019-03-31 05:16:48] [config] clip-gemm: 0
+[2019-03-31 05:16:48] [config] clip-norm: 5
+[2019-03-31 05:16:48] [config] cost-type: ce-mean-words
+[2019-03-31 05:16:48] [config] cpu-threads: 0
+[2019-03-31 05:16:48] [config] data-weighting-type: sentence
+[2019-03-31 05:16:48] [config] dec-cell: gru
+[2019-03-31 05:16:48] [config] dec-cell-base-depth: 2
+[2019-03-31 05:16:48] [config] dec-cell-high-depth: 1
+[2019-03-31 05:16:48] [config] dec-depth: 6
+[2019-03-31 05:16:48] [config] devices:
+[2019-03-31 05:16:48] [config]   - 0
+[2019-03-31 05:16:48] [config]   - 1
+[2019-03-31 05:16:48] [config] dim-emb: 1024
+[2019-03-31 05:16:48] [config] dim-rnn: 1024
+[2019-03-31 05:16:48] [config] dim-vocabs:
+[2019-03-31 05:16:48] [config]   - 34028
+[2019-03-31 05:16:48] [config]   - 34028
+[2019-03-31 05:16:48] [config] disp-first: 0
+[2019-03-31 05:16:48] [config] disp-freq: 500
+[2019-03-31 05:16:48] [config] disp-label-counts: false
+[2019-03-31 05:16:48] [config] dropout-rnn: 0
+[2019-03-31 05:16:48] [config] dropout-src: 0
+[2019-03-31 05:16:48] [config] dropout-trg: 0
+[2019-03-31 05:16:48] [config] early-stopping: 5
+[2019-03-31 05:16:48] [config] embedding-fix-src: false
+[2019-03-31 05:16:48] [config] embedding-fix-trg: false
+[2019-03-31 05:16:48] [config] embedding-normalization: false
+[2019-03-31 05:16:48] [config] enc-cell: gru
+[2019-03-31 05:16:48] [config] enc-cell-depth: 1
+[2019-03-31 05:16:48] [config] enc-depth: 6
+[2019-03-31 05:16:48] [config] enc-type: bidirectional
+[2019-03-31 05:16:48] [config] exponential-smoothing: 0.0001
+[2019-03-31 05:16:48] [config] grad-dropping-momentum: 0
+[2019-03-31 05:16:48] [config] grad-dropping-rate: 0
+[2019-03-31 05:16:48] [config] grad-dropping-warmup: 100
+[2019-03-31 05:16:48] [config] guided-alignment: none
+[2019-03-31 05:16:48] [config] guided-alignment-cost: mse
+[2019-03-31 05:16:48] [config] guided-alignment-weight: 0.1
+[2019-03-31 05:16:48] [config] ignore-model-config: false
+[2019-03-31 05:16:48] [config] interpolate-env-vars: false
+[2019-03-31 05:16:48] [config] keep-best: true
+[2019-03-31 05:16:48] [config] label-smoothing: 0.1
+[2019-03-31 05:16:48] [config] layer-normalization: false
+[2019-03-31 05:16:48] [config] learn-rate: 0.0002
+[2019-03-31 05:16:48] [config] log: model/bt_encz.log
+[2019-03-31 05:16:48] [config] log-level: info
+[2019-03-31 05:16:48] [config] lr-decay: 0
+[2019-03-31 05:16:48] [config] lr-decay-freq: 50000
+[2019-03-31 05:16:48] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 05:16:48] [config] lr-decay-repeat-warmup: false
+[2019-03-31 05:16:48] [config] lr-decay-reset-optimizer: false
+[2019-03-31 05:16:48] [config] lr-decay-start:
+[2019-03-31 05:16:48] [config]   - 10
+[2019-03-31 05:16:48] [config]   - 1
+[2019-03-31 05:16:48] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 05:16:48] [config] lr-report: true
+[2019-03-31 05:16:48] [config] lr-warmup: 8000
+[2019-03-31 05:16:48] [config] lr-warmup-at-reload: false
+[2019-03-31 05:16:48] [config] lr-warmup-cycle: false
+[2019-03-31 05:16:48] [config] lr-warmup-start-rate: 0
+[2019-03-31 05:16:48] [config] max-length: 100
+[2019-03-31 05:16:48] [config] max-length-crop: false
+[2019-03-31 05:16:48] [config] max-length-factor: 3
+[2019-03-31 05:16:48] [config] maxi-batch: 10000
+[2019-03-31 05:16:48] [config] maxi-batch-sort: trg
+[2019-03-31 05:16:48] [config] mini-batch: 1000
+[2019-03-31 05:16:48] [config] mini-batch-fit: true
+[2019-03-31 05:16:48] [config] mini-batch-fit-step: 10
+[2019-03-31 05:16:48] [config] mini-batch-words: 0
+[2019-03-31 05:16:48] [config] model: model/model_bt_encz.npz
+[2019-03-31 05:16:48] [config] multi-node: false
+[2019-03-31 05:16:48] [config] multi-node-overlap: true
+[2019-03-31 05:16:48] [config] n-best: false
+[2019-03-31 05:16:48] [config] no-nccl: true
+[2019-03-31 05:16:48] [config] no-reload: false
+[2019-03-31 05:16:48] [config] no-restore-corpus: false
+[2019-03-31 05:16:48] [config] no-shuffle: false
+[2019-03-31 05:16:48] [config] normalize: 0.6
+[2019-03-31 05:16:48] [config] optimizer: adam
+[2019-03-31 05:16:48] [config] optimizer-delay: 4
+[2019-03-31 05:16:48] [config] optimizer-params:
+[2019-03-31 05:16:48] [config]   - 0.9
+[2019-03-31 05:16:48] [config]   - 0.98
+[2019-03-31 05:16:48] [config]   - 1e-09
+[2019-03-31 05:16:48] [config] overwrite: true
+[2019-03-31 05:16:48] [config] quiet: false
+[2019-03-31 05:16:48] [config] quiet-translation: true
+[2019-03-31 05:16:48] [config] relative-paths: false
+[2019-03-31 05:16:48] [config] right-left: false
+[2019-03-31 05:16:48] [config] save-freq: 5000
+[2019-03-31 05:16:48] [config] seed: 0
+[2019-03-31 05:16:48] [config] sentencepiece-alphas:
+[2019-03-31 05:16:48] [config]   []
+[2019-03-31 05:16:48] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 05:16:48] [config] sentencepiece-options: ""
+[2019-03-31 05:16:48] [config] shuffle-in-ram: false
+[2019-03-31 05:16:48] [config] skip: false
+[2019-03-31 05:16:48] [config] sqlite: temporary
+[2019-03-31 05:16:48] [config] sqlite-drop: false
+[2019-03-31 05:16:48] [config] sync-sgd: true
+[2019-03-31 05:16:48] [config] tempdir: /tmp
+[2019-03-31 05:16:48] [config] tied-embeddings: false
+[2019-03-31 05:16:48] [config] tied-embeddings-all: true
+[2019-03-31 05:16:48] [config] tied-embeddings-src: false
+[2019-03-31 05:16:48] [config] train-sets:
+[2019-03-31 05:16:48] [config]   - bt.encz.en.bpe
+[2019-03-31 05:16:48] [config]   - bt.encz.cz.bpe
+[2019-03-31 05:16:48] [config] transformer-aan-activation: swish
+[2019-03-31 05:16:48] [config] transformer-aan-depth: 2
+[2019-03-31 05:16:48] [config] transformer-aan-nogate: false
+[2019-03-31 05:16:48] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 05:16:48] [config] transformer-dim-aan: 2048
+[2019-03-31 05:16:48] [config] transformer-dim-ffn: 4096
+[2019-03-31 05:16:48] [config] transformer-dropout: 0.1
+[2019-03-31 05:16:48] [config] transformer-dropout-attention: 0.1
+[2019-03-31 05:16:48] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 05:16:48] [config] transformer-ffn-activation: swish
+[2019-03-31 05:16:48] [config] transformer-ffn-depth: 2
+[2019-03-31 05:16:48] [config] transformer-guided-alignment-layer: last
+[2019-03-31 05:16:48] [config] transformer-heads: 16
+[2019-03-31 05:16:48] [config] transformer-no-projection: false
+[2019-03-31 05:16:48] [config] transformer-postprocess: da
+[2019-03-31 05:16:48] [config] transformer-postprocess-emb: d
+[2019-03-31 05:16:48] [config] transformer-preprocess: n
+[2019-03-31 05:16:48] [config] transformer-tied-layers:
+[2019-03-31 05:16:48] [config]   []
+[2019-03-31 05:16:48] [config] type: transformer
+[2019-03-31 05:16:48] [config] ulr: false
+[2019-03-31 05:16:48] [config] ulr-dim-emb: 0
+[2019-03-31 05:16:48] [config] ulr-dropout: 0
+[2019-03-31 05:16:48] [config] ulr-keys-vectors: ""
+[2019-03-31 05:16:48] [config] ulr-query-vectors: ""
+[2019-03-31 05:16:48] [config] ulr-softmax-temperature: 1
+[2019-03-31 05:16:48] [config] ulr-trainable-transformation: false
+[2019-03-31 05:16:48] [config] valid-freq: 5000
+[2019-03-31 05:16:48] [config] valid-log: model/valid.log
+[2019-03-31 05:16:48] [config] valid-max-length: 1000
+[2019-03-31 05:16:48] [config] valid-metrics:
+[2019-03-31 05:16:48] [config]   - ce-mean-words
+[2019-03-31 05:16:48] [config]   - perplexity
+[2019-03-31 05:16:48] [config]   - translation
+[2019-03-31 05:16:48] [config] valid-mini-batch: 16
+[2019-03-31 05:16:48] [config] valid-script-path: ./val.sh
+[2019-03-31 05:16:48] [config] valid-sets:
+[2019-03-31 05:16:48] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 05:16:48] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 05:16:48] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 05:16:48] [config] vocabs:
+[2019-03-31 05:16:48] [config]   - corp/vocab.encs.yml
+[2019-03-31 05:16:48] [config]   - corp/vocab.encs.yml
+[2019-03-31 05:16:48] [config] word-penalty: 0
+[2019-03-31 05:16:48] [config] workspace: 8600
+[2019-03-31 05:16:48] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 05:16:48] Using synchronous training
+[2019-03-31 05:16:48] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 05:16:49] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 05:16:49] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 05:16:49] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 05:16:49] [sqlite] Creating temporary database in /tmp
+[2019-03-31 05:16:53] [sqlite] Inserted 1000000 lines
+[2019-03-31 05:16:57] [sqlite] Inserted 2000000 lines
+[2019-03-31 05:17:05] [sqlite] Inserted 4000000 lines
+[2019-03-31 05:17:21] [sqlite] Inserted 8000000 lines
+[2019-03-31 05:17:56] [sqlite] Inserted 16000000 lines
+[2019-03-31 05:19:15] [sqlite] Inserted 32000000 lines
+[2019-03-31 05:21:22] [sqlite] Inserted 49633032 lines
+[2019-03-31 05:21:22] [sqlite] Creating primary index
+[2019-03-31 05:24:21] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 05:24:21] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 05:24:29] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 05:24:30] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 05:24:30] [comm] NCCL communicator overridden
+[2019-03-31 05:24:31] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 05:24:31] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 05:24:43] [batching] Done
+[2019-03-31 05:24:43] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 05:24:43] [memory] Extending reserved space to 8704 MB (device gpu1)
+[2019-03-31 05:24:43] [comm] NCCL communicator overridden
+[2019-03-31 05:24:43] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 05:24:54] Loading model from model/model_bt_encz.npz.orig.npz
+[2019-03-31 05:24:58] Loading Adam parameters from model/model_bt_encz.npz.optimizer.npz
+[2019-03-31 05:25:20] [memory] Reserving 805 MB, device gpu0
+[2019-03-31 05:25:21] [memory] Reserving 805 MB, device gpu1
+[2019-03-31 05:25:22] [data] Restoring the corpus state to epoch 5, batch 190000
+[2019-03-31 05:28:26] [sqlite] Selecting shuffled data
+[2019-03-31 06:40:09] Training started
+[2019-03-31 06:40:09] Training finished
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+ITERATION 9
+[2019-03-31 06:40:15] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 06:40:15] [marian] Running on spider3.lingea.cz as process 12663 with command line:
+[2019-03-31 06:40:15] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets corpus+paracrawl.2M.en.bpe corpus+paracrawl.2M.cz.bpe -e 9 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 4 --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 06:40:16] [config] after-batches: 0
+[2019-03-31 06:40:16] [config] after-epochs: 9
+[2019-03-31 06:40:16] [config] allow-unk: false
+[2019-03-31 06:40:16] [config] beam-size: 6
+[2019-03-31 06:40:16] [config] best-deep: false
+[2019-03-31 06:40:16] [config] clip-gemm: 0
+[2019-03-31 06:40:16] [config] clip-norm: 5
+[2019-03-31 06:40:16] [config] cost-type: ce-mean-words
+[2019-03-31 06:40:16] [config] cpu-threads: 0
+[2019-03-31 06:40:16] [config] data-weighting-type: sentence
+[2019-03-31 06:40:16] [config] dec-cell: gru
+[2019-03-31 06:40:16] [config] dec-cell-base-depth: 2
+[2019-03-31 06:40:16] [config] dec-cell-high-depth: 1
+[2019-03-31 06:40:16] [config] dec-depth: 6
+[2019-03-31 06:40:16] [config] devices:
+[2019-03-31 06:40:16] [config]   - 0
+[2019-03-31 06:40:16] [config]   - 1
+[2019-03-31 06:40:16] [config] dim-emb: 1024
+[2019-03-31 06:40:16] [config] dim-rnn: 1024
+[2019-03-31 06:40:16] [config] dim-vocabs:
+[2019-03-31 06:40:16] [config]   - 34028
+[2019-03-31 06:40:16] [config]   - 34028
+[2019-03-31 06:40:16] [config] disp-first: 0
+[2019-03-31 06:40:16] [config] disp-freq: 500
+[2019-03-31 06:40:16] [config] disp-label-counts: false
+[2019-03-31 06:40:16] [config] dropout-rnn: 0
+[2019-03-31 06:40:16] [config] dropout-src: 0
+[2019-03-31 06:40:16] [config] dropout-trg: 0
+[2019-03-31 06:40:16] [config] early-stopping: 5
+[2019-03-31 06:40:16] [config] embedding-fix-src: false
+[2019-03-31 06:40:16] [config] embedding-fix-trg: false
+[2019-03-31 06:40:16] [config] embedding-normalization: false
+[2019-03-31 06:40:16] [config] enc-cell: gru
+[2019-03-31 06:40:16] [config] enc-cell-depth: 1
+[2019-03-31 06:40:16] [config] enc-depth: 6
+[2019-03-31 06:40:16] [config] enc-type: bidirectional
+[2019-03-31 06:40:16] [config] exponential-smoothing: 0.0001
+[2019-03-31 06:40:16] [config] grad-dropping-momentum: 0
+[2019-03-31 06:40:16] [config] grad-dropping-rate: 0
+[2019-03-31 06:40:16] [config] grad-dropping-warmup: 100
+[2019-03-31 06:40:16] [config] guided-alignment: none
+[2019-03-31 06:40:16] [config] guided-alignment-cost: mse
+[2019-03-31 06:40:16] [config] guided-alignment-weight: 0.1
+[2019-03-31 06:40:16] [config] ignore-model-config: false
+[2019-03-31 06:40:16] [config] interpolate-env-vars: false
+[2019-03-31 06:40:16] [config] keep-best: true
+[2019-03-31 06:40:16] [config] label-smoothing: 0.1
+[2019-03-31 06:40:16] [config] layer-normalization: false
+[2019-03-31 06:40:16] [config] learn-rate: 0.0002
+[2019-03-31 06:40:16] [config] log: model/bt_encz.log
+[2019-03-31 06:40:16] [config] log-level: info
+[2019-03-31 06:40:16] [config] lr-decay: 0
+[2019-03-31 06:40:16] [config] lr-decay-freq: 50000
+[2019-03-31 06:40:16] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 06:40:16] [config] lr-decay-repeat-warmup: false
+[2019-03-31 06:40:16] [config] lr-decay-reset-optimizer: false
+[2019-03-31 06:40:16] [config] lr-decay-start:
+[2019-03-31 06:40:16] [config]   - 10
+[2019-03-31 06:40:16] [config]   - 1
+[2019-03-31 06:40:16] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 06:40:16] [config] lr-report: true
+[2019-03-31 06:40:16] [config] lr-warmup: 8000
+[2019-03-31 06:40:16] [config] lr-warmup-at-reload: false
+[2019-03-31 06:40:16] [config] lr-warmup-cycle: false
+[2019-03-31 06:40:16] [config] lr-warmup-start-rate: 0
+[2019-03-31 06:40:16] [config] max-length: 100
+[2019-03-31 06:40:16] [config] max-length-crop: false
+[2019-03-31 06:40:16] [config] max-length-factor: 3
+[2019-03-31 06:40:16] [config] maxi-batch: 10000
+[2019-03-31 06:40:16] [config] maxi-batch-sort: trg
+[2019-03-31 06:40:16] [config] mini-batch: 1000
+[2019-03-31 06:40:16] [config] mini-batch-fit: true
+[2019-03-31 06:40:16] [config] mini-batch-fit-step: 10
+[2019-03-31 06:40:16] [config] mini-batch-words: 0
+[2019-03-31 06:40:16] [config] model: model/model_bt_encz.npz
+[2019-03-31 06:40:16] [config] multi-node: false
+[2019-03-31 06:40:16] [config] multi-node-overlap: true
+[2019-03-31 06:40:16] [config] n-best: false
+[2019-03-31 06:40:16] [config] no-nccl: true
+[2019-03-31 06:40:16] [config] no-reload: false
+[2019-03-31 06:40:16] [config] no-restore-corpus: false
+[2019-03-31 06:40:16] [config] no-shuffle: false
+[2019-03-31 06:40:16] [config] normalize: 0.6
+[2019-03-31 06:40:16] [config] optimizer: adam
+[2019-03-31 06:40:16] [config] optimizer-delay: 4
+[2019-03-31 06:40:16] [config] optimizer-params:
+[2019-03-31 06:40:16] [config]   - 0.9
+[2019-03-31 06:40:16] [config]   - 0.98
+[2019-03-31 06:40:16] [config]   - 1e-09
+[2019-03-31 06:40:16] [config] overwrite: true
+[2019-03-31 06:40:16] [config] quiet: false
+[2019-03-31 06:40:16] [config] quiet-translation: true
+[2019-03-31 06:40:16] [config] relative-paths: false
+[2019-03-31 06:40:16] [config] right-left: false
+[2019-03-31 06:40:16] [config] save-freq: 5000
+[2019-03-31 06:40:16] [config] seed: 0
+[2019-03-31 06:40:16] [config] sentencepiece-alphas:
+[2019-03-31 06:40:16] [config]   []
+[2019-03-31 06:40:16] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 06:40:16] [config] sentencepiece-options: ""
+[2019-03-31 06:40:16] [config] shuffle-in-ram: false
+[2019-03-31 06:40:16] [config] skip: false
+[2019-03-31 06:40:16] [config] sqlite: temporary
+[2019-03-31 06:40:16] [config] sqlite-drop: false
+[2019-03-31 06:40:16] [config] sync-sgd: true
+[2019-03-31 06:40:16] [config] tempdir: /tmp
+[2019-03-31 06:40:16] [config] tied-embeddings: false
+[2019-03-31 06:40:16] [config] tied-embeddings-all: true
+[2019-03-31 06:40:16] [config] tied-embeddings-src: false
+[2019-03-31 06:40:16] [config] train-sets:
+[2019-03-31 06:40:16] [config]   - corpus+paracrawl.2M.en.bpe
+[2019-03-31 06:40:16] [config]   - corpus+paracrawl.2M.cz.bpe
+[2019-03-31 06:40:16] [config] transformer-aan-activation: swish
+[2019-03-31 06:40:16] [config] transformer-aan-depth: 2
+[2019-03-31 06:40:16] [config] transformer-aan-nogate: false
+[2019-03-31 06:40:16] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 06:40:16] [config] transformer-dim-aan: 2048
+[2019-03-31 06:40:16] [config] transformer-dim-ffn: 4096
+[2019-03-31 06:40:16] [config] transformer-dropout: 0.1
+[2019-03-31 06:40:16] [config] transformer-dropout-attention: 0.1
+[2019-03-31 06:40:16] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 06:40:16] [config] transformer-ffn-activation: swish
+[2019-03-31 06:40:16] [config] transformer-ffn-depth: 2
+[2019-03-31 06:40:16] [config] transformer-guided-alignment-layer: last
+[2019-03-31 06:40:16] [config] transformer-heads: 16
+[2019-03-31 06:40:16] [config] transformer-no-projection: false
+[2019-03-31 06:40:16] [config] transformer-postprocess: da
+[2019-03-31 06:40:16] [config] transformer-postprocess-emb: d
+[2019-03-31 06:40:16] [config] transformer-preprocess: n
+[2019-03-31 06:40:16] [config] transformer-tied-layers:
+[2019-03-31 06:40:16] [config]   []
+[2019-03-31 06:40:16] [config] type: transformer
+[2019-03-31 06:40:16] [config] ulr: false
+[2019-03-31 06:40:16] [config] ulr-dim-emb: 0
+[2019-03-31 06:40:16] [config] ulr-dropout: 0
+[2019-03-31 06:40:16] [config] ulr-keys-vectors: ""
+[2019-03-31 06:40:16] [config] ulr-query-vectors: ""
+[2019-03-31 06:40:16] [config] ulr-softmax-temperature: 1
+[2019-03-31 06:40:16] [config] ulr-trainable-transformation: false
+[2019-03-31 06:40:16] [config] valid-freq: 5000
+[2019-03-31 06:40:16] [config] valid-log: model/valid.log
+[2019-03-31 06:40:16] [config] valid-max-length: 1000
+[2019-03-31 06:40:16] [config] valid-metrics:
+[2019-03-31 06:40:16] [config]   - ce-mean-words
+[2019-03-31 06:40:16] [config]   - perplexity
+[2019-03-31 06:40:16] [config]   - translation
+[2019-03-31 06:40:16] [config] valid-mini-batch: 16
+[2019-03-31 06:40:16] [config] valid-script-path: ./val.sh
+[2019-03-31 06:40:16] [config] valid-sets:
+[2019-03-31 06:40:16] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 06:40:16] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 06:40:16] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 06:40:16] [config] vocabs:
+[2019-03-31 06:40:16] [config]   - corp/vocab.encs.yml
+[2019-03-31 06:40:16] [config]   - corp/vocab.encs.yml
+[2019-03-31 06:40:16] [config] word-penalty: 0
+[2019-03-31 06:40:16] [config] workspace: 8600
+[2019-03-31 06:40:16] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 06:40:16] Using synchronous training
+[2019-03-31 06:40:16] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 06:40:16] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 06:40:16] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 06:40:17] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 06:40:17] [sqlite] Creating temporary database in /tmp
+[2019-03-31 06:40:20] [sqlite] Inserted 1000000 lines
+[2019-03-31 06:40:23] [sqlite] Inserted 2000000 lines
+[2019-03-31 06:40:30] [sqlite] Inserted 4000000 lines
+[2019-03-31 06:40:43] [sqlite] Inserted 8000000 lines
+[2019-03-31 06:41:49] [sqlite] Inserted 16000000 lines
+[2019-03-31 06:43:09] [sqlite] Inserted 32000000 lines
+[2019-03-31 06:44:03] [sqlite] Inserted 41438108 lines
+[2019-03-31 06:44:03] [sqlite] Creating primary index
+[2019-03-31 06:47:09] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 06:47:09] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 06:47:13] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 06:47:13] Error: CUDA error 2 'out of memory' - /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/src/tensors/gpu/device.cu:38: cudaMalloc(&data_, size)
+[2019-03-31 06:47:13] Error: Aborted from virtual void marian::gpu::Device::reserve(size_t) in /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/src/tensors/gpu/device.cu:38
+
+[CALL STACK]
+[0xa50f57]                                                            
+[0x755b28]                                                            
+[0x47ec84]                                                            
+[0x505a1a]                                                            
+[0x44d72d]                                                            
+[0x421b70]                                                            
+[0x7ff516b21b35]    __libc_start_main                                  + 0xf5
+[0x44a19c]                                                            
+
+train_bt_encs.sh: line 2: 12663 Aborted                 (core dumped) $marian/marian --model model/model_bt_encz.npz --type transformer --train-sets corpus+paracrawl.2M.en.bpe corpus+paracrawl.2M.cz.bpe -e $e --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 4 --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+[2019-03-31 06:47:25] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 06:47:25] [marian] Running on spider3.lingea.cz as process 12798 with command line:
+[2019-03-31 06:47:25] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets bt.encz.en.bpe bt.encz.cz.bpe -e 10 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --optimizer-delay 4 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 06:47:26] [config] after-batches: 0
+[2019-03-31 06:47:26] [config] after-epochs: 10
+[2019-03-31 06:47:26] [config] allow-unk: false
+[2019-03-31 06:47:26] [config] beam-size: 6
+[2019-03-31 06:47:26] [config] best-deep: false
+[2019-03-31 06:47:26] [config] clip-gemm: 0
+[2019-03-31 06:47:26] [config] clip-norm: 5
+[2019-03-31 06:47:26] [config] cost-type: ce-mean-words
+[2019-03-31 06:47:26] [config] cpu-threads: 0
+[2019-03-31 06:47:26] [config] data-weighting-type: sentence
+[2019-03-31 06:47:26] [config] dec-cell: gru
+[2019-03-31 06:47:26] [config] dec-cell-base-depth: 2
+[2019-03-31 06:47:26] [config] dec-cell-high-depth: 1
+[2019-03-31 06:47:26] [config] dec-depth: 6
+[2019-03-31 06:47:26] [config] devices:
+[2019-03-31 06:47:26] [config]   - 0
+[2019-03-31 06:47:26] [config]   - 1
+[2019-03-31 06:47:26] [config] dim-emb: 1024
+[2019-03-31 06:47:26] [config] dim-rnn: 1024
+[2019-03-31 06:47:26] [config] dim-vocabs:
+[2019-03-31 06:47:26] [config]   - 34028
+[2019-03-31 06:47:26] [config]   - 34028
+[2019-03-31 06:47:26] [config] disp-first: 0
+[2019-03-31 06:47:26] [config] disp-freq: 500
+[2019-03-31 06:47:26] [config] disp-label-counts: false
+[2019-03-31 06:47:26] [config] dropout-rnn: 0
+[2019-03-31 06:47:26] [config] dropout-src: 0
+[2019-03-31 06:47:26] [config] dropout-trg: 0
+[2019-03-31 06:47:26] [config] early-stopping: 5
+[2019-03-31 06:47:26] [config] embedding-fix-src: false
+[2019-03-31 06:47:26] [config] embedding-fix-trg: false
+[2019-03-31 06:47:26] [config] embedding-normalization: false
+[2019-03-31 06:47:26] [config] enc-cell: gru
+[2019-03-31 06:47:26] [config] enc-cell-depth: 1
+[2019-03-31 06:47:26] [config] enc-depth: 6
+[2019-03-31 06:47:26] [config] enc-type: bidirectional
+[2019-03-31 06:47:26] [config] exponential-smoothing: 0.0001
+[2019-03-31 06:47:26] [config] grad-dropping-momentum: 0
+[2019-03-31 06:47:26] [config] grad-dropping-rate: 0
+[2019-03-31 06:47:26] [config] grad-dropping-warmup: 100
+[2019-03-31 06:47:26] [config] guided-alignment: none
+[2019-03-31 06:47:26] [config] guided-alignment-cost: mse
+[2019-03-31 06:47:26] [config] guided-alignment-weight: 0.1
+[2019-03-31 06:47:26] [config] ignore-model-config: false
+[2019-03-31 06:47:26] [config] interpolate-env-vars: false
+[2019-03-31 06:47:26] [config] keep-best: true
+[2019-03-31 06:47:26] [config] label-smoothing: 0.1
+[2019-03-31 06:47:26] [config] layer-normalization: false
+[2019-03-31 06:47:26] [config] learn-rate: 0.0002
+[2019-03-31 06:47:26] [config] log: model/bt_encz.log
+[2019-03-31 06:47:26] [config] log-level: info
+[2019-03-31 06:47:26] [config] lr-decay: 0
+[2019-03-31 06:47:26] [config] lr-decay-freq: 50000
+[2019-03-31 06:47:26] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 06:47:26] [config] lr-decay-repeat-warmup: false
+[2019-03-31 06:47:26] [config] lr-decay-reset-optimizer: false
+[2019-03-31 06:47:26] [config] lr-decay-start:
+[2019-03-31 06:47:26] [config]   - 10
+[2019-03-31 06:47:26] [config]   - 1
+[2019-03-31 06:47:26] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 06:47:26] [config] lr-report: true
+[2019-03-31 06:47:26] [config] lr-warmup: 8000
+[2019-03-31 06:47:26] [config] lr-warmup-at-reload: false
+[2019-03-31 06:47:26] [config] lr-warmup-cycle: false
+[2019-03-31 06:47:26] [config] lr-warmup-start-rate: 0
+[2019-03-31 06:47:26] [config] max-length: 100
+[2019-03-31 06:47:26] [config] max-length-crop: false
+[2019-03-31 06:47:26] [config] max-length-factor: 3
+[2019-03-31 06:47:26] [config] maxi-batch: 10000
+[2019-03-31 06:47:26] [config] maxi-batch-sort: trg
+[2019-03-31 06:47:26] [config] mini-batch: 1000
+[2019-03-31 06:47:26] [config] mini-batch-fit: true
+[2019-03-31 06:47:26] [config] mini-batch-fit-step: 10
+[2019-03-31 06:47:26] [config] mini-batch-words: 0
+[2019-03-31 06:47:26] [config] model: model/model_bt_encz.npz
+[2019-03-31 06:47:26] [config] multi-node: false
+[2019-03-31 06:47:26] [config] multi-node-overlap: true
+[2019-03-31 06:47:26] [config] n-best: false
+[2019-03-31 06:47:26] [config] no-nccl: true
+[2019-03-31 06:47:26] [config] no-reload: false
+[2019-03-31 06:47:26] [config] no-restore-corpus: false
+[2019-03-31 06:47:26] [config] no-shuffle: false
+[2019-03-31 06:47:26] [config] normalize: 0.6
+[2019-03-31 06:47:26] [config] optimizer: adam
+[2019-03-31 06:47:26] [config] optimizer-delay: 4
+[2019-03-31 06:47:26] [config] optimizer-params:
+[2019-03-31 06:47:26] [config]   - 0.9
+[2019-03-31 06:47:26] [config]   - 0.98
+[2019-03-31 06:47:26] [config]   - 1e-09
+[2019-03-31 06:47:26] [config] overwrite: true
+[2019-03-31 06:47:26] [config] quiet: false
+[2019-03-31 06:47:26] [config] quiet-translation: true
+[2019-03-31 06:47:26] [config] relative-paths: false
+[2019-03-31 06:47:26] [config] right-left: false
+[2019-03-31 06:47:26] [config] save-freq: 5000
+[2019-03-31 06:47:26] [config] seed: 0
+[2019-03-31 06:47:26] [config] sentencepiece-alphas:
+[2019-03-31 06:47:26] [config]   []
+[2019-03-31 06:47:26] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 06:47:26] [config] sentencepiece-options: ""
+[2019-03-31 06:47:26] [config] shuffle-in-ram: false
+[2019-03-31 06:47:26] [config] skip: false
+[2019-03-31 06:47:26] [config] sqlite: temporary
+[2019-03-31 06:47:26] [config] sqlite-drop: false
+[2019-03-31 06:47:26] [config] sync-sgd: true
+[2019-03-31 06:47:26] [config] tempdir: /tmp
+[2019-03-31 06:47:26] [config] tied-embeddings: false
+[2019-03-31 06:47:26] [config] tied-embeddings-all: true
+[2019-03-31 06:47:26] [config] tied-embeddings-src: false
+[2019-03-31 06:47:26] [config] train-sets:
+[2019-03-31 06:47:26] [config]   - bt.encz.en.bpe
+[2019-03-31 06:47:26] [config]   - bt.encz.cz.bpe
+[2019-03-31 06:47:26] [config] transformer-aan-activation: swish
+[2019-03-31 06:47:26] [config] transformer-aan-depth: 2
+[2019-03-31 06:47:26] [config] transformer-aan-nogate: false
+[2019-03-31 06:47:26] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 06:47:26] [config] transformer-dim-aan: 2048
+[2019-03-31 06:47:26] [config] transformer-dim-ffn: 4096
+[2019-03-31 06:47:26] [config] transformer-dropout: 0.1
+[2019-03-31 06:47:26] [config] transformer-dropout-attention: 0.1
+[2019-03-31 06:47:26] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 06:47:26] [config] transformer-ffn-activation: swish
+[2019-03-31 06:47:26] [config] transformer-ffn-depth: 2
+[2019-03-31 06:47:26] [config] transformer-guided-alignment-layer: last
+[2019-03-31 06:47:26] [config] transformer-heads: 16
+[2019-03-31 06:47:26] [config] transformer-no-projection: false
+[2019-03-31 06:47:26] [config] transformer-postprocess: da
+[2019-03-31 06:47:26] [config] transformer-postprocess-emb: d
+[2019-03-31 06:47:26] [config] transformer-preprocess: n
+[2019-03-31 06:47:26] [config] transformer-tied-layers:
+[2019-03-31 06:47:26] [config]   []
+[2019-03-31 06:47:26] [config] type: transformer
+[2019-03-31 06:47:26] [config] ulr: false
+[2019-03-31 06:47:26] [config] ulr-dim-emb: 0
+[2019-03-31 06:47:26] [config] ulr-dropout: 0
+[2019-03-31 06:47:26] [config] ulr-keys-vectors: ""
+[2019-03-31 06:47:26] [config] ulr-query-vectors: ""
+[2019-03-31 06:47:26] [config] ulr-softmax-temperature: 1
+[2019-03-31 06:47:26] [config] ulr-trainable-transformation: false
+[2019-03-31 06:47:26] [config] valid-freq: 5000
+[2019-03-31 06:47:26] [config] valid-log: model/valid.log
+[2019-03-31 06:47:26] [config] valid-max-length: 1000
+[2019-03-31 06:47:26] [config] valid-metrics:
+[2019-03-31 06:47:26] [config]   - ce-mean-words
+[2019-03-31 06:47:26] [config]   - perplexity
+[2019-03-31 06:47:26] [config]   - translation
+[2019-03-31 06:47:26] [config] valid-mini-batch: 16
+[2019-03-31 06:47:26] [config] valid-script-path: ./val.sh
+[2019-03-31 06:47:26] [config] valid-sets:
+[2019-03-31 06:47:26] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 06:47:26] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 06:47:26] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 06:47:26] [config] vocabs:
+[2019-03-31 06:47:26] [config]   - corp/vocab.encs.yml
+[2019-03-31 06:47:26] [config]   - corp/vocab.encs.yml
+[2019-03-31 06:47:26] [config] word-penalty: 0
+[2019-03-31 06:47:26] [config] workspace: 8600
+[2019-03-31 06:47:26] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 06:47:26] Using synchronous training
+[2019-03-31 06:47:26] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 06:47:27] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 06:47:27] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 06:47:27] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 06:47:27] [sqlite] Creating temporary database in /tmp
+[2019-03-31 06:47:31] [sqlite] Inserted 1000000 lines
+[2019-03-31 06:47:35] [sqlite] Inserted 2000000 lines
+[2019-03-31 06:47:42] [sqlite] Inserted 4000000 lines
+[2019-03-31 06:47:58] [sqlite] Inserted 8000000 lines
+[2019-03-31 06:49:19] [sqlite] Inserted 16000000 lines
+[2019-03-31 06:56:01] [sqlite] Inserted 32000000 lines
+[2019-03-31 07:00:09] [sqlite] Inserted 49633032 lines
+[2019-03-31 07:00:09] [sqlite] Creating primary index
+[2019-03-31 07:13:38] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 07:13:38] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 07:13:40] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 07:13:40] Error: CUDA error 2 'out of memory' - /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/src/tensors/gpu/device.cu:38: cudaMalloc(&data_, size)
+[2019-03-31 07:13:40] Error: Aborted from virtual void marian::gpu::Device::reserve(size_t) in /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/src/tensors/gpu/device.cu:38
+
+[CALL STACK]
+[0xa50f57]                                                            
+[0x755b28]                                                            
+[0x47ec84]                                                            
+[0x505a1a]                                                            
+[0x44d72d]                                                            
+[0x421b70]                                                            
+[0x7fb2bc251b35]    __libc_start_main                                  + 0xf5
+[0x44a19c]                                                            
+
+train_bt_encs.sh: line 2: 12798 Aborted                 (core dumped) $marian/marian --model model/model_bt_encz.npz --type transformer --train-sets bt.encz.en.bpe bt.encz.cz.bpe -e $i --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --optimizer-delay 4 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+ITERATION 10
+[2019-03-31 07:13:53] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 07:13:53] [marian] Running on spider3.lingea.cz as process 13213 with command line:
+[2019-03-31 07:13:53] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets corpus+paracrawl.2M.en.bpe corpus+paracrawl.2M.cz.bpe -e 10 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 4 --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 07:13:54] [config] after-batches: 0
+[2019-03-31 07:13:54] [config] after-epochs: 10
+[2019-03-31 07:13:54] [config] allow-unk: false
+[2019-03-31 07:13:54] [config] beam-size: 6
+[2019-03-31 07:13:54] [config] best-deep: false
+[2019-03-31 07:13:54] [config] clip-gemm: 0
+[2019-03-31 07:13:54] [config] clip-norm: 5
+[2019-03-31 07:13:54] [config] cost-type: ce-mean-words
+[2019-03-31 07:13:54] [config] cpu-threads: 0
+[2019-03-31 07:13:54] [config] data-weighting-type: sentence
+[2019-03-31 07:13:54] [config] dec-cell: gru
+[2019-03-31 07:13:54] [config] dec-cell-base-depth: 2
+[2019-03-31 07:13:54] [config] dec-cell-high-depth: 1
+[2019-03-31 07:13:54] [config] dec-depth: 6
+[2019-03-31 07:13:54] [config] devices:
+[2019-03-31 07:13:54] [config]   - 0
+[2019-03-31 07:13:54] [config]   - 1
+[2019-03-31 07:13:54] [config] dim-emb: 1024
+[2019-03-31 07:13:54] [config] dim-rnn: 1024
+[2019-03-31 07:13:54] [config] dim-vocabs:
+[2019-03-31 07:13:54] [config]   - 34028
+[2019-03-31 07:13:54] [config]   - 34028
+[2019-03-31 07:13:54] [config] disp-first: 0
+[2019-03-31 07:13:54] [config] disp-freq: 500
+[2019-03-31 07:13:54] [config] disp-label-counts: false
+[2019-03-31 07:13:54] [config] dropout-rnn: 0
+[2019-03-31 07:13:54] [config] dropout-src: 0
+[2019-03-31 07:13:54] [config] dropout-trg: 0
+[2019-03-31 07:13:54] [config] early-stopping: 5
+[2019-03-31 07:13:54] [config] embedding-fix-src: false
+[2019-03-31 07:13:54] [config] embedding-fix-trg: false
+[2019-03-31 07:13:54] [config] embedding-normalization: false
+[2019-03-31 07:13:54] [config] enc-cell: gru
+[2019-03-31 07:13:54] [config] enc-cell-depth: 1
+[2019-03-31 07:13:54] [config] enc-depth: 6
+[2019-03-31 07:13:54] [config] enc-type: bidirectional
+[2019-03-31 07:13:54] [config] exponential-smoothing: 0.0001
+[2019-03-31 07:13:54] [config] grad-dropping-momentum: 0
+[2019-03-31 07:13:54] [config] grad-dropping-rate: 0
+[2019-03-31 07:13:54] [config] grad-dropping-warmup: 100
+[2019-03-31 07:13:54] [config] guided-alignment: none
+[2019-03-31 07:13:54] [config] guided-alignment-cost: mse
+[2019-03-31 07:13:54] [config] guided-alignment-weight: 0.1
+[2019-03-31 07:13:54] [config] ignore-model-config: false
+[2019-03-31 07:13:54] [config] interpolate-env-vars: false
+[2019-03-31 07:13:54] [config] keep-best: true
+[2019-03-31 07:13:54] [config] label-smoothing: 0.1
+[2019-03-31 07:13:54] [config] layer-normalization: false
+[2019-03-31 07:13:54] [config] learn-rate: 0.0002
+[2019-03-31 07:13:54] [config] log: model/bt_encz.log
+[2019-03-31 07:13:54] [config] log-level: info
+[2019-03-31 07:13:54] [config] lr-decay: 0
+[2019-03-31 07:13:54] [config] lr-decay-freq: 50000
+[2019-03-31 07:13:54] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 07:13:54] [config] lr-decay-repeat-warmup: false
+[2019-03-31 07:13:54] [config] lr-decay-reset-optimizer: false
+[2019-03-31 07:13:54] [config] lr-decay-start:
+[2019-03-31 07:13:54] [config]   - 10
+[2019-03-31 07:13:54] [config]   - 1
+[2019-03-31 07:13:54] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 07:13:54] [config] lr-report: true
+[2019-03-31 07:13:54] [config] lr-warmup: 8000
+[2019-03-31 07:13:54] [config] lr-warmup-at-reload: false
+[2019-03-31 07:13:54] [config] lr-warmup-cycle: false
+[2019-03-31 07:13:54] [config] lr-warmup-start-rate: 0
+[2019-03-31 07:13:54] [config] max-length: 100
+[2019-03-31 07:13:54] [config] max-length-crop: false
+[2019-03-31 07:13:54] [config] max-length-factor: 3
+[2019-03-31 07:13:54] [config] maxi-batch: 10000
+[2019-03-31 07:13:54] [config] maxi-batch-sort: trg
+[2019-03-31 07:13:54] [config] mini-batch: 1000
+[2019-03-31 07:13:54] [config] mini-batch-fit: true
+[2019-03-31 07:13:54] [config] mini-batch-fit-step: 10
+[2019-03-31 07:13:54] [config] mini-batch-words: 0
+[2019-03-31 07:13:54] [config] model: model/model_bt_encz.npz
+[2019-03-31 07:13:54] [config] multi-node: false
+[2019-03-31 07:13:54] [config] multi-node-overlap: true
+[2019-03-31 07:13:54] [config] n-best: false
+[2019-03-31 07:13:54] [config] no-nccl: true
+[2019-03-31 07:13:54] [config] no-reload: false
+[2019-03-31 07:13:54] [config] no-restore-corpus: false
+[2019-03-31 07:13:54] [config] no-shuffle: false
+[2019-03-31 07:13:54] [config] normalize: 0.6
+[2019-03-31 07:13:54] [config] optimizer: adam
+[2019-03-31 07:13:54] [config] optimizer-delay: 4
+[2019-03-31 07:13:54] [config] optimizer-params:
+[2019-03-31 07:13:54] [config]   - 0.9
+[2019-03-31 07:13:54] [config]   - 0.98
+[2019-03-31 07:13:54] [config]   - 1e-09
+[2019-03-31 07:13:54] [config] overwrite: true
+[2019-03-31 07:13:54] [config] quiet: false
+[2019-03-31 07:13:54] [config] quiet-translation: true
+[2019-03-31 07:13:54] [config] relative-paths: false
+[2019-03-31 07:13:54] [config] right-left: false
+[2019-03-31 07:13:54] [config] save-freq: 5000
+[2019-03-31 07:13:54] [config] seed: 0
+[2019-03-31 07:13:54] [config] sentencepiece-alphas:
+[2019-03-31 07:13:54] [config]   []
+[2019-03-31 07:13:54] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 07:13:54] [config] sentencepiece-options: ""
+[2019-03-31 07:13:54] [config] shuffle-in-ram: false
+[2019-03-31 07:13:54] [config] skip: false
+[2019-03-31 07:13:54] [config] sqlite: temporary
+[2019-03-31 07:13:54] [config] sqlite-drop: false
+[2019-03-31 07:13:54] [config] sync-sgd: true
+[2019-03-31 07:13:54] [config] tempdir: /tmp
+[2019-03-31 07:13:54] [config] tied-embeddings: false
+[2019-03-31 07:13:54] [config] tied-embeddings-all: true
+[2019-03-31 07:13:54] [config] tied-embeddings-src: false
+[2019-03-31 07:13:54] [config] train-sets:
+[2019-03-31 07:13:54] [config]   - corpus+paracrawl.2M.en.bpe
+[2019-03-31 07:13:54] [config]   - corpus+paracrawl.2M.cz.bpe
+[2019-03-31 07:13:54] [config] transformer-aan-activation: swish
+[2019-03-31 07:13:54] [config] transformer-aan-depth: 2
+[2019-03-31 07:13:54] [config] transformer-aan-nogate: false
+[2019-03-31 07:13:54] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 07:13:54] [config] transformer-dim-aan: 2048
+[2019-03-31 07:13:54] [config] transformer-dim-ffn: 4096
+[2019-03-31 07:13:54] [config] transformer-dropout: 0.1
+[2019-03-31 07:13:54] [config] transformer-dropout-attention: 0.1
+[2019-03-31 07:13:54] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 07:13:54] [config] transformer-ffn-activation: swish
+[2019-03-31 07:13:54] [config] transformer-ffn-depth: 2
+[2019-03-31 07:13:54] [config] transformer-guided-alignment-layer: last
+[2019-03-31 07:13:54] [config] transformer-heads: 16
+[2019-03-31 07:13:54] [config] transformer-no-projection: false
+[2019-03-31 07:13:54] [config] transformer-postprocess: da
+[2019-03-31 07:13:54] [config] transformer-postprocess-emb: d
+[2019-03-31 07:13:54] [config] transformer-preprocess: n
+[2019-03-31 07:13:54] [config] transformer-tied-layers:
+[2019-03-31 07:13:54] [config]   []
+[2019-03-31 07:13:54] [config] type: transformer
+[2019-03-31 07:13:54] [config] ulr: false
+[2019-03-31 07:13:54] [config] ulr-dim-emb: 0
+[2019-03-31 07:13:54] [config] ulr-dropout: 0
+[2019-03-31 07:13:54] [config] ulr-keys-vectors: ""
+[2019-03-31 07:13:54] [config] ulr-query-vectors: ""
+[2019-03-31 07:13:54] [config] ulr-softmax-temperature: 1
+[2019-03-31 07:13:54] [config] ulr-trainable-transformation: false
+[2019-03-31 07:13:54] [config] valid-freq: 5000
+[2019-03-31 07:13:54] [config] valid-log: model/valid.log
+[2019-03-31 07:13:54] [config] valid-max-length: 1000
+[2019-03-31 07:13:54] [config] valid-metrics:
+[2019-03-31 07:13:54] [config]   - ce-mean-words
+[2019-03-31 07:13:54] [config]   - perplexity
+[2019-03-31 07:13:54] [config]   - translation
+[2019-03-31 07:13:54] [config] valid-mini-batch: 16
+[2019-03-31 07:13:54] [config] valid-script-path: ./val.sh
+[2019-03-31 07:13:54] [config] valid-sets:
+[2019-03-31 07:13:54] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 07:13:54] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 07:13:54] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 07:13:54] [config] vocabs:
+[2019-03-31 07:13:54] [config]   - corp/vocab.encs.yml
+[2019-03-31 07:13:54] [config]   - corp/vocab.encs.yml
+[2019-03-31 07:13:54] [config] word-penalty: 0
+[2019-03-31 07:13:54] [config] workspace: 8600
+[2019-03-31 07:13:54] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 07:13:54] Using synchronous training
+[2019-03-31 07:13:54] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 07:13:55] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 07:13:55] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 07:13:55] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 07:13:55] [sqlite] Creating temporary database in /tmp
+[2019-03-31 07:13:59] [sqlite] Inserted 1000000 lines
+[2019-03-31 07:14:02] [sqlite] Inserted 2000000 lines
+[2019-03-31 07:14:09] [sqlite] Inserted 4000000 lines
+[2019-03-31 07:14:23] [sqlite] Inserted 8000000 lines
+[2019-03-31 07:14:52] [sqlite] Inserted 16000000 lines
+[2019-03-31 07:15:55] [sqlite] Inserted 32000000 lines
+[2019-03-31 07:18:29] [sqlite] Inserted 41438108 lines
+[2019-03-31 07:18:29] [sqlite] Creating primary index
+[2019-03-31 07:22:18] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 07:22:18] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 07:22:19] [memory] Extending reserved space to 8704 MB (device gpu0)
+[2019-03-31 07:22:20] Error: CUDA error 2 'out of memory' - /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/src/tensors/gpu/device.cu:38: cudaMalloc(&data_, size)
+[2019-03-31 07:22:20] Error: Aborted from virtual void marian::gpu::Device::reserve(size_t) in /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/src/tensors/gpu/device.cu:38
+
+[CALL STACK]
+[0xa50f57]                                                            
+[0x755b28]                                                            
+[0x47ec84]                                                            
+[0x505a1a]                                                            
+[0x44d72d]                                                            
+[0x421b70]                                                            
+[0x7f375b511b35]    __libc_start_main                                  + 0xf5
+[0x44a19c]                                                            
+
+train_bt_encs.sh: line 2: 13213 Aborted                 (core dumped) $marian/marian --model model/model_bt_encz.npz --type transformer --train-sets corpus+paracrawl.2M.en.bpe corpus+paracrawl.2M.cz.bpe -e $e --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --optimizer-delay 4 --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
+[2019-03-31 07:22:37] [marian] Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 07:22:37] [marian] Running on spider3.lingea.cz as process 13350 with command line:
+[2019-03-31 07:22:37] [marian] /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/build/marian --model model/model_bt_encz.npz --type transformer --train-sets bt.encz.en.bpe bt.encz.cz.bpe -e 11 --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --optimizer-delay 4 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+[2019-03-31 07:22:38] [config] after-batches: 0
+[2019-03-31 07:22:38] [config] after-epochs: 11
+[2019-03-31 07:22:38] [config] allow-unk: false
+[2019-03-31 07:22:38] [config] beam-size: 6
+[2019-03-31 07:22:38] [config] best-deep: false
+[2019-03-31 07:22:38] [config] clip-gemm: 0
+[2019-03-31 07:22:38] [config] clip-norm: 5
+[2019-03-31 07:22:38] [config] cost-type: ce-mean-words
+[2019-03-31 07:22:38] [config] cpu-threads: 0
+[2019-03-31 07:22:38] [config] data-weighting-type: sentence
+[2019-03-31 07:22:38] [config] dec-cell: gru
+[2019-03-31 07:22:38] [config] dec-cell-base-depth: 2
+[2019-03-31 07:22:38] [config] dec-cell-high-depth: 1
+[2019-03-31 07:22:38] [config] dec-depth: 6
+[2019-03-31 07:22:38] [config] devices:
+[2019-03-31 07:22:38] [config]   - 0
+[2019-03-31 07:22:38] [config]   - 1
+[2019-03-31 07:22:38] [config] dim-emb: 1024
+[2019-03-31 07:22:38] [config] dim-rnn: 1024
+[2019-03-31 07:22:38] [config] dim-vocabs:
+[2019-03-31 07:22:38] [config]   - 34028
+[2019-03-31 07:22:38] [config]   - 34028
+[2019-03-31 07:22:38] [config] disp-first: 0
+[2019-03-31 07:22:38] [config] disp-freq: 500
+[2019-03-31 07:22:38] [config] disp-label-counts: false
+[2019-03-31 07:22:38] [config] dropout-rnn: 0
+[2019-03-31 07:22:38] [config] dropout-src: 0
+[2019-03-31 07:22:38] [config] dropout-trg: 0
+[2019-03-31 07:22:38] [config] early-stopping: 5
+[2019-03-31 07:22:38] [config] embedding-fix-src: false
+[2019-03-31 07:22:38] [config] embedding-fix-trg: false
+[2019-03-31 07:22:38] [config] embedding-normalization: false
+[2019-03-31 07:22:38] [config] enc-cell: gru
+[2019-03-31 07:22:38] [config] enc-cell-depth: 1
+[2019-03-31 07:22:38] [config] enc-depth: 6
+[2019-03-31 07:22:38] [config] enc-type: bidirectional
+[2019-03-31 07:22:38] [config] exponential-smoothing: 0.0001
+[2019-03-31 07:22:38] [config] grad-dropping-momentum: 0
+[2019-03-31 07:22:38] [config] grad-dropping-rate: 0
+[2019-03-31 07:22:38] [config] grad-dropping-warmup: 100
+[2019-03-31 07:22:38] [config] guided-alignment: none
+[2019-03-31 07:22:38] [config] guided-alignment-cost: mse
+[2019-03-31 07:22:38] [config] guided-alignment-weight: 0.1
+[2019-03-31 07:22:38] [config] ignore-model-config: false
+[2019-03-31 07:22:38] [config] interpolate-env-vars: false
+[2019-03-31 07:22:38] [config] keep-best: true
+[2019-03-31 07:22:38] [config] label-smoothing: 0.1
+[2019-03-31 07:22:38] [config] layer-normalization: false
+[2019-03-31 07:22:38] [config] learn-rate: 0.0002
+[2019-03-31 07:22:38] [config] log: model/bt_encz.log
+[2019-03-31 07:22:38] [config] log-level: info
+[2019-03-31 07:22:38] [config] lr-decay: 0
+[2019-03-31 07:22:38] [config] lr-decay-freq: 50000
+[2019-03-31 07:22:38] [config] lr-decay-inv-sqrt: 8000
+[2019-03-31 07:22:38] [config] lr-decay-repeat-warmup: false
+[2019-03-31 07:22:38] [config] lr-decay-reset-optimizer: false
+[2019-03-31 07:22:38] [config] lr-decay-start:
+[2019-03-31 07:22:38] [config]   - 10
+[2019-03-31 07:22:38] [config]   - 1
+[2019-03-31 07:22:38] [config] lr-decay-strategy: epoch+stalled
+[2019-03-31 07:22:38] [config] lr-report: true
+[2019-03-31 07:22:38] [config] lr-warmup: 8000
+[2019-03-31 07:22:38] [config] lr-warmup-at-reload: false
+[2019-03-31 07:22:38] [config] lr-warmup-cycle: false
+[2019-03-31 07:22:38] [config] lr-warmup-start-rate: 0
+[2019-03-31 07:22:38] [config] max-length: 100
+[2019-03-31 07:22:38] [config] max-length-crop: false
+[2019-03-31 07:22:38] [config] max-length-factor: 3
+[2019-03-31 07:22:38] [config] maxi-batch: 10000
+[2019-03-31 07:22:38] [config] maxi-batch-sort: trg
+[2019-03-31 07:22:38] [config] mini-batch: 1000
+[2019-03-31 07:22:38] [config] mini-batch-fit: true
+[2019-03-31 07:22:38] [config] mini-batch-fit-step: 10
+[2019-03-31 07:22:38] [config] mini-batch-words: 0
+[2019-03-31 07:22:38] [config] model: model/model_bt_encz.npz
+[2019-03-31 07:22:38] [config] multi-node: false
+[2019-03-31 07:22:38] [config] multi-node-overlap: true
+[2019-03-31 07:22:38] [config] n-best: false
+[2019-03-31 07:22:38] [config] no-nccl: true
+[2019-03-31 07:22:38] [config] no-reload: false
+[2019-03-31 07:22:38] [config] no-restore-corpus: false
+[2019-03-31 07:22:38] [config] no-shuffle: false
+[2019-03-31 07:22:38] [config] normalize: 0.6
+[2019-03-31 07:22:38] [config] optimizer: adam
+[2019-03-31 07:22:38] [config] optimizer-delay: 4
+[2019-03-31 07:22:38] [config] optimizer-params:
+[2019-03-31 07:22:38] [config]   - 0.9
+[2019-03-31 07:22:38] [config]   - 0.98
+[2019-03-31 07:22:38] [config]   - 1e-09
+[2019-03-31 07:22:38] [config] overwrite: true
+[2019-03-31 07:22:38] [config] quiet: false
+[2019-03-31 07:22:38] [config] quiet-translation: true
+[2019-03-31 07:22:38] [config] relative-paths: false
+[2019-03-31 07:22:38] [config] right-left: false
+[2019-03-31 07:22:38] [config] save-freq: 5000
+[2019-03-31 07:22:38] [config] seed: 0
+[2019-03-31 07:22:38] [config] sentencepiece-alphas:
+[2019-03-31 07:22:38] [config]   []
+[2019-03-31 07:22:38] [config] sentencepiece-max-lines: 10000000
+[2019-03-31 07:22:38] [config] sentencepiece-options: ""
+[2019-03-31 07:22:38] [config] shuffle-in-ram: false
+[2019-03-31 07:22:38] [config] skip: false
+[2019-03-31 07:22:38] [config] sqlite: temporary
+[2019-03-31 07:22:38] [config] sqlite-drop: false
+[2019-03-31 07:22:38] [config] sync-sgd: true
+[2019-03-31 07:22:38] [config] tempdir: /tmp
+[2019-03-31 07:22:38] [config] tied-embeddings: false
+[2019-03-31 07:22:38] [config] tied-embeddings-all: true
+[2019-03-31 07:22:38] [config] tied-embeddings-src: false
+[2019-03-31 07:22:38] [config] train-sets:
+[2019-03-31 07:22:38] [config]   - bt.encz.en.bpe
+[2019-03-31 07:22:38] [config]   - bt.encz.cz.bpe
+[2019-03-31 07:22:38] [config] transformer-aan-activation: swish
+[2019-03-31 07:22:38] [config] transformer-aan-depth: 2
+[2019-03-31 07:22:38] [config] transformer-aan-nogate: false
+[2019-03-31 07:22:38] [config] transformer-decoder-autoreg: self-attention
+[2019-03-31 07:22:38] [config] transformer-dim-aan: 2048
+[2019-03-31 07:22:38] [config] transformer-dim-ffn: 4096
+[2019-03-31 07:22:38] [config] transformer-dropout: 0.1
+[2019-03-31 07:22:38] [config] transformer-dropout-attention: 0.1
+[2019-03-31 07:22:38] [config] transformer-dropout-ffn: 0.1
+[2019-03-31 07:22:38] [config] transformer-ffn-activation: swish
+[2019-03-31 07:22:38] [config] transformer-ffn-depth: 2
+[2019-03-31 07:22:38] [config] transformer-guided-alignment-layer: last
+[2019-03-31 07:22:38] [config] transformer-heads: 16
+[2019-03-31 07:22:38] [config] transformer-no-projection: false
+[2019-03-31 07:22:38] [config] transformer-postprocess: da
+[2019-03-31 07:22:38] [config] transformer-postprocess-emb: d
+[2019-03-31 07:22:38] [config] transformer-preprocess: n
+[2019-03-31 07:22:38] [config] transformer-tied-layers:
+[2019-03-31 07:22:38] [config]   []
+[2019-03-31 07:22:38] [config] type: transformer
+[2019-03-31 07:22:38] [config] ulr: false
+[2019-03-31 07:22:38] [config] ulr-dim-emb: 0
+[2019-03-31 07:22:38] [config] ulr-dropout: 0
+[2019-03-31 07:22:38] [config] ulr-keys-vectors: ""
+[2019-03-31 07:22:38] [config] ulr-query-vectors: ""
+[2019-03-31 07:22:38] [config] ulr-softmax-temperature: 1
+[2019-03-31 07:22:38] [config] ulr-trainable-transformation: false
+[2019-03-31 07:22:38] [config] valid-freq: 5000
+[2019-03-31 07:22:38] [config] valid-log: model/valid.log
+[2019-03-31 07:22:38] [config] valid-max-length: 1000
+[2019-03-31 07:22:38] [config] valid-metrics:
+[2019-03-31 07:22:38] [config]   - ce-mean-words
+[2019-03-31 07:22:38] [config]   - perplexity
+[2019-03-31 07:22:38] [config]   - translation
+[2019-03-31 07:22:38] [config] valid-mini-batch: 16
+[2019-03-31 07:22:38] [config] valid-script-path: ./val.sh
+[2019-03-31 07:22:38] [config] valid-sets:
+[2019-03-31 07:22:38] [config]   - corp/newstest2016-encs-src.en.bpe
+[2019-03-31 07:22:38] [config]   - corp/newstest2016-encs-ref.cs.bpe
+[2019-03-31 07:22:38] [config] version: v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 07:22:38] [config] vocabs:
+[2019-03-31 07:22:38] [config]   - corp/vocab.encs.yml
+[2019-03-31 07:22:38] [config]   - corp/vocab.encs.yml
+[2019-03-31 07:22:38] [config] word-penalty: 0
+[2019-03-31 07:22:38] [config] workspace: 8600
+[2019-03-31 07:22:38] [config] Loaded model has been created with Marian v1.7.6 9cc5b17 2018-12-14 15:11:34 -0800
+[2019-03-31 07:22:38] Using synchronous training
+[2019-03-31 07:22:38] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 07:22:38] [data] Setting vocabulary size for input 0 to 34028
+[2019-03-31 07:22:38] [data] Loading vocabulary from JSON/Yaml file corp/vocab.encs.yml
+[2019-03-31 07:22:39] [data] Setting vocabulary size for input 1 to 34028
+[2019-03-31 07:22:39] [sqlite] Creating temporary database in /tmp
+[2019-03-31 07:22:43] [sqlite] Inserted 1000000 lines
+[2019-03-31 07:22:47] [sqlite] Inserted 2000000 lines
+[2019-03-31 07:22:54] [sqlite] Inserted 4000000 lines
+[2019-03-31 07:23:11] [sqlite] Inserted 8000000 lines
+[2019-03-31 07:24:26] [sqlite] Inserted 16000000 lines
+[2019-03-31 07:28:57] [sqlite] Inserted 32000000 lines
+[2019-03-31 07:32:50] [sqlite] Inserted 49633032 lines
+[2019-03-31 07:32:50] [sqlite] Creating primary index
+[2019-03-31 07:43:47] [batching] Collecting statistics for batch fitting with step size 10
+[2019-03-31 07:43:47] Compiled without MPI support. Falling back to FakeMPIWrapper
+[2019-03-31 07:43:48] Error: Curand error 203 - /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/src/tensors/rand.cpp:75: curandCreateGenerator(&generator_, CURAND_RNG_PSEUDO_DEFAULT)
+[2019-03-31 07:43:48] Error: Aborted from marian::CurandRandomGenerator::CurandRandomGenerator(size_t, marian::DeviceId) in /home/big_maggie/usr/marian_spider/marian_1.7.6/marian-dev/src/tensors/rand.cpp:75
+
+[CALL STACK]
+[0x90cd1d]                                                            
+[0x90d690]                                                            
+[0x90aac4]                                                            
+[0x909e7c]                                                            
+[0x5bd578]                                                            
+[0x75597e]                                                            
+[0x47ec84]                                                            
+[0x505a1a]                                                            
+[0x44d72d]                                                            
+[0x421b70]                                                            
+[0x7fec04209b35]    __libc_start_main                                  + 0xf5
+[0x44a19c]                                                            
+
+train_bt_encs.sh: line 2: 13350 Aborted                 (core dumped) $marian/marian --model model/model_bt_encz.npz --type transformer --train-sets bt.encz.en.bpe bt.encz.cz.bpe -e $i --max-length 100 --vocabs corp/vocab.encs.yml corp/vocab.encs.yml --mini-batch-fit -w 8600 --mini-batch 1000 --maxi-batch 10000 --valid-freq 5000 --save-freq 5000 --disp-freq 500 --optimizer-delay 4 --valid-metrics ce-mean-words perplexity translation --valid-sets corp/newstest2016-encs-src.en.bpe corp/newstest2016-encs-ref.cs.bpe --valid-script-path ./val.sh --quiet-translation --beam-size 6 --normalize=0.6 --valid-mini-batch 16 --overwrite --keep-best --early-stopping 5 --cost-type=ce-mean-words --log model/bt_encz.log --valid-log model/valid.log --enc-depth 6 --dec-depth 6 --transformer-preprocess n --transformer-postprocess da --tied-embeddings-all --dim-emb 1024 --transformer-dim-ffn 4096 --transformer-heads 16 --transformer-dropout 0.1 --transformer-dropout-attention 0.1 --transformer-dropout-ffn 0.1 --label-smoothing 0.1 --learn-rate 0.0002 --lr-warmup 8000 --lr-decay-inv-sqrt 8000 --lr-report --optimizer-params 0.9 0.98 1e-09 --clip-norm 5 --devices 0 1 --sync-sgd --seed 0 --no-nccl --exponential-smoothing --sqlite -T /tmp
+rm: cannot remove ‘model/model_bt_encz.npz.yml’: No such file or directory
