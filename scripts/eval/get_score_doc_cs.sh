@@ -1,0 +1,8 @@
+marian=/home/large/data/models/marian/marian-doc/same_emb_no_transpose_run1/marian-dev/build//marian-scorer
+
+$marian -m /home/large/data/models/marian/encz_exp/doc-level-nmt/opensub/OpenSubtitles2018/src1tgt0_fr/model/model.src1tgt0.dual.doc.same_emb2.npz  -v /home/large/data/models/marian/encz_exp/doc-level-nmt/opensub/OpenSubtitles2018/src1tgt0_fr/corp/vocab.encz.opensub.yml  /home/large/data/models/marian/encz_exp/doc-level-nmt/opensub/OpenSubtitles2018/src1tgt0_fr/corp/vocab.encz.opensub.yml /home/large/data/models/marian/encz_exp/doc-level-nmt/opensub/OpenSubtitles2018/src1tgt0_fr/corp/vocab.encz.opensub.yml -t coherence-cohesion.opensub.src.dual.src_prev coherence-cohesion.opensub.src.dual.src coherence-cohesion.opensub.correct --cpu-threads=8 > correct_scores
+
+$marian -m /home/large/data/models/marian/encz_exp/doc-level-nmt/opensub/OpenSubtitles2018/src1tgt0_fr/model/model.src1tgt0.dual.doc.same_emb2.npz  -v /home/large/data/models/marian/encz_exp/doc-level-nmt/opensub/OpenSubtitles2018/src1tgt0_fr/corp/vocab.encz.opensub.yml  /home/large/data/models/marian/encz_exp/doc-level-nmt/opensub/OpenSubtitles2018/src1tgt0_fr/corp/vocab.encz.opensub.yml /home/large/data/models/marian/encz_exp/doc-level-nmt/opensub/OpenSubtitles2018/src1tgt0_fr/corp/vocab.encz.opensub.yml  -t coherence-cohesion.opensub.src.dual.src_prev coherence-cohesion.opensub.src.dual.src coherence-cohesion.opensub.incorrect --cpu-threads=8 > incorrect_scores
+
+~                                                                                                                                                                       
+~             
